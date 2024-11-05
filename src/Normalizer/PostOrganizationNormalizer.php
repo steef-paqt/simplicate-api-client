@@ -145,7 +145,7 @@ class PostOrganizationNormalizer implements DenormalizerInterface, NormalizerInt
             $object->setInvoiceReceiver($data['invoice_receiver']);
         }
         if (array_key_exists('allow_autocollect', $data)) {
-            $object->setAllowAutocollect($data['allow_autocollect']);
+            $object->setAllowAutocollect((bool) $data['allow_autocollect']);
         }
         if (array_key_exists('bank_account', $data)) {
             $object->setBankAccount($data['bank_account']);
