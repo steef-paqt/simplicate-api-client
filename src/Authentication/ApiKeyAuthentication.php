@@ -5,19 +5,17 @@ declare(strict_types=1);
 namespace Steefdw\Simplicate\Authentication;
 
 use Jane\Component\OpenApiRuntime\Client\AuthenticationPlugin;
+use Psr\Http\Message\RequestInterface;
 
-class ApiKeyAuthentication implements AuthenticationPlugin
+readonly class ApiKeyAuthentication implements AuthenticationPlugin
 {
-    private $apiKey;
-
-    public function __construct(string $apiKey)
+    public function __construct(private string $apiKey)
     {
-        $this->{'apiKey'} = $apiKey;
     }
 
-    public function authentication(\Psr\Http\Message\RequestInterface $request): \Psr\Http\Message\RequestInterface
+    public function authentication(RequestInterface $request): RequestInterface
     {
-        return $request->withHeader('API Key Authentication', $this->{'apiKey'});
+        return $request->withHeader('API Key Authentication', $this->apiKey);
     }
 
     public function getScope(): string
