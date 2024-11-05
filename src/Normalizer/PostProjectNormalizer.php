@@ -31,10 +31,7 @@ class PostProjectNormalizer implements DenormalizerInterface, NormalizerInterfac
         return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostProject::class;
     }
 
-    /**
-     * @return mixed
-     */
-    public function denormalize($data, $class, $format = null, array $context = [])
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -112,10 +109,7 @@ class PostProjectNormalizer implements DenormalizerInterface, NormalizerInterfac
         return $object;
     }
 
-    /**
-     * @return array|string|int|float|bool|\ArrayObject|null
-     */
-    public function normalize($object, $format = null, array $context = [])
+    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('projectManagerId') && null !== $object->getProjectManagerId()) {

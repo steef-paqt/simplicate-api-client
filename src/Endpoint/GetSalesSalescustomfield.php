@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Model\RestResultCustomFields;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
 class GetSalesSalescustomfield extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -57,15 +59,16 @@ class GetSalesSalescustomfield extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldUnauthorizedException
+     * @return null|RestResultCustomFields
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFields
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
-    {
+    protected function transformResponseBody(
+        \Psr\Http\Message\ResponseInterface $response,
+        \Symfony\Component\Serializer\SerializerInterface $serializer,
+        ?string $contentType = null
+    ): ?RestResultCustomFields {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
@@ -80,6 +83,8 @@ class GetSalesSalescustomfield extends BaseEndpoint
         if (500 === $status) {
             throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldInternalServerErrorException($response);
         }
+
+        return null;
     }
 
     public function getAuthenticationScopes(): array

@@ -31,10 +31,7 @@ class RestResultSalesProgressNormalizer implements DenormalizerInterface, Normal
         return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\RestResultSalesProgress::class;
     }
 
-    /**
-     * @return mixed
-     */
-    public function denormalize($data, $class, $format = null, array $context = [])
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -46,20 +43,20 @@ class RestResultSalesProgressNormalizer implements DenormalizerInterface, Normal
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('data', $data)) {
+        if (\array_key_exists('data', $data) && $data['data'] !== null) {
             $object->setData($this->denormalizer->denormalize($data['data'], \Paqtcom\Simplicate\Model\SalesProgress::class, 'json', $context));
         }
         if (\array_key_exists('metadata', $data)) {
             $object->setMetadata($this->denormalizer->denormalize($data['metadata'], \Paqtcom\Simplicate\Model\MetaData::class, 'json', $context));
         }
-        if (\array_key_exists('errors', $data)) {
+        if (\array_key_exists('errors', $data) && is_iterable($data['errors'])) {
             $values = [];
             foreach ($data['errors'] as $value) {
                 $values[] = $value;
             }
             $object->setErrors($values);
         }
-        if (\array_key_exists('debug', $data)) {
+        if (\array_key_exists('debug', $data) && is_iterable($data['debug'])) {
             $values_1 = [];
             foreach ($data['debug'] as $value_1) {
                 $values_1[] = $value_1;
@@ -70,10 +67,7 @@ class RestResultSalesProgressNormalizer implements DenormalizerInterface, Normal
         return $object;
     }
 
-    /**
-     * @return array|string|int|float|bool|\ArrayObject|null
-     */
-    public function normalize($object, $format = null, array $context = [])
+    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('data') && null !== $object->getData()) {

@@ -43,7 +43,7 @@ class Client extends ParentClient
      */
     public function getCostsCoststype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new GetCostsCoststype($queryParameters), $fetch);
+        return $this->executeEndpoint(new GetCostsCoststype($queryParameters));
     }
 
     /**
@@ -58,7 +58,7 @@ class Client extends ParentClient
      */
     public function getCostsCoststypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCostsCoststypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCostsCoststypeById($id));
     }
 
     /**
@@ -76,7 +76,7 @@ class Client extends ParentClient
      */
     public function getCostsExpense(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCostsExpense($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCostsExpense($queryParameters));
     }
 
     /**
@@ -91,7 +91,7 @@ class Client extends ParentClient
      */
     public function getCostsExpenseById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCostsExpenseById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCostsExpenseById($id));
     }
 
     /**
@@ -110,7 +110,7 @@ class Client extends ParentClient
      */
     public function getCrmContactperson(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmContactperson($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmContactperson($queryParameters));
     }
 
     /**
@@ -124,7 +124,7 @@ class Client extends ParentClient
      */
     public function deleteCrmContactpersonById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCrmContactpersonById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCrmContactpersonById($id));
     }
 
     /**
@@ -139,7 +139,7 @@ class Client extends ParentClient
      */
     public function getCrmContactpersonById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmContactpersonById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmContactpersonById($id));
     }
 
     /**
@@ -157,7 +157,7 @@ class Client extends ParentClient
      */
     public function getCrmCountry(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmCountry($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmCountry($queryParameters));
     }
 
     /**
@@ -172,7 +172,7 @@ class Client extends ParentClient
      */
     public function getCrmCountryById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmCountryById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmCountryById($id));
     }
 
     /**
@@ -190,7 +190,7 @@ class Client extends ParentClient
      */
     public function getCrmDebtor(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmDebtor($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmDebtor($queryParameters));
     }
 
     /**
@@ -208,7 +208,7 @@ class Client extends ParentClient
      */
     public function getCrmDocument(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmDocument($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmDocument($queryParameters));
     }
 
     /**
@@ -222,7 +222,7 @@ class Client extends ParentClient
      */
     public function postCrmDocument(\Paqtcom\Simplicate\Model\PostDocument $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCrmDocument($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCrmDocument($body));
     }
 
     /**
@@ -236,7 +236,7 @@ class Client extends ParentClient
      */
     public function putCrmDocument(\Paqtcom\Simplicate\Model\PutDocument $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutCrmDocument($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutCrmDocument($body));
     }
 
     /**
@@ -250,7 +250,7 @@ class Client extends ParentClient
      */
     public function deleteCrmDocumentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCrmDocumentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCrmDocumentById($id));
     }
 
     /**
@@ -265,7 +265,7 @@ class Client extends ParentClient
      */
     public function getCrmDocumentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmDocumentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmDocumentById($id));
     }
 
     /**
@@ -283,7 +283,7 @@ class Client extends ParentClient
      */
     public function getCrmDocumenttype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmDocumenttype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmDocumenttype($queryParameters));
     }
 
     /**
@@ -298,7 +298,7 @@ class Client extends ParentClient
      */
     public function getCrmDocumenttypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmDocumenttypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmDocumenttypeById($id));
     }
 
     /**
@@ -316,7 +316,7 @@ class Client extends ParentClient
      */
     public function getCrmGender(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmGender($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmGender($queryParameters));
     }
 
     /**
@@ -331,7 +331,7 @@ class Client extends ParentClient
      */
     public function getCrmGenderById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmGenderById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmGenderById($id));
     }
 
     /**
@@ -349,7 +349,7 @@ class Client extends ParentClient
      */
     public function getCrmIndustry(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmIndustry($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmIndustry($queryParameters));
     }
 
     /**
@@ -364,7 +364,7 @@ class Client extends ParentClient
      */
     public function getCrmIndustryById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmIndustryById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmIndustryById($id));
     }
 
     /**
@@ -382,7 +382,7 @@ class Client extends ParentClient
      */
     public function getCrmInterest(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmInterest($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmInterest($queryParameters));
     }
 
     /**
@@ -397,7 +397,7 @@ class Client extends ParentClient
      */
     public function getCrmInterestById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmInterestById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmInterestById($id));
     }
 
     /**
@@ -415,7 +415,7 @@ class Client extends ParentClient
      */
     public function getCrmMyorganizationprofile(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmMyorganizationprofile($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmMyorganizationprofile($queryParameters));
     }
 
     /**
@@ -430,7 +430,7 @@ class Client extends ParentClient
      */
     public function getCrmMyorganizationprofileById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmMyorganizationprofileById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmMyorganizationprofileById($id));
     }
 
     /**
@@ -449,7 +449,7 @@ class Client extends ParentClient
      */
     public function getCrmOrganization(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganization($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganization($queryParameters));
     }
 
     /**
@@ -463,7 +463,7 @@ class Client extends ParentClient
      */
     public function postCrmOrganization(\Paqtcom\Simplicate\Model\PostOrganization $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCrmOrganization($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCrmOrganization($body));
     }
 
     /**
@@ -477,7 +477,7 @@ class Client extends ParentClient
      */
     public function deleteCrmOrganizationById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCrmOrganizationById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCrmOrganizationById($id));
     }
 
     /**
@@ -492,7 +492,7 @@ class Client extends ParentClient
      */
     public function getCrmOrganizationById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganizationById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganizationById($id));
     }
 
     /**
@@ -508,7 +508,7 @@ class Client extends ParentClient
      */
     public function putCrmOrganizationById(string $id, \Paqtcom\Simplicate\Model\PostOrganization $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutCrmOrganizationById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutCrmOrganizationById($id, $body));
     }
 
     /**
@@ -526,7 +526,7 @@ class Client extends ParentClient
      */
     public function getCrmOrganizationcustomfieldgroup(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganizationcustomfieldgroup($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganizationcustomfieldgroup($queryParameters));
     }
 
     /**
@@ -541,7 +541,7 @@ class Client extends ParentClient
      */
     public function getCrmOrganizationcustomfieldgroupById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganizationcustomfieldgroupById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganizationcustomfieldgroupById($id));
     }
 
     /**
@@ -559,7 +559,7 @@ class Client extends ParentClient
      */
     public function getCrmOrganizationcustomfield(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganizationcustomfield($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganizationcustomfield($queryParameters));
     }
 
     /**
@@ -574,7 +574,7 @@ class Client extends ParentClient
      */
     public function getCrmOrganizationcustomfieldById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganizationcustomfieldById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganizationcustomfieldById($id));
     }
 
     /**
@@ -592,7 +592,7 @@ class Client extends ParentClient
      */
     public function getCrmOrganizationsize(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganizationsize($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganizationsize($queryParameters));
     }
 
     /**
@@ -607,7 +607,7 @@ class Client extends ParentClient
      */
     public function getCrmOrganizationsizeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganizationsizeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmOrganizationsizeById($id));
     }
 
     /**
@@ -626,7 +626,7 @@ class Client extends ParentClient
      */
     public function getCrmPerson(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmPerson($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmPerson($queryParameters));
     }
 
     /**
@@ -640,7 +640,7 @@ class Client extends ParentClient
      */
     public function postCrmPerson(\Paqtcom\Simplicate\Model\PostPerson $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCrmPerson($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCrmPerson($body));
     }
 
     /**
@@ -654,7 +654,7 @@ class Client extends ParentClient
      */
     public function deleteCrmPersonById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCrmPersonById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCrmPersonById($id));
     }
 
     /**
@@ -669,7 +669,7 @@ class Client extends ParentClient
      */
     public function getCrmPersonById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmPersonById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmPersonById($id));
     }
 
     /**
@@ -685,7 +685,7 @@ class Client extends ParentClient
      */
     public function putCrmPersonById(string $id, \Paqtcom\Simplicate\Model\PostPerson $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutCrmPersonById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutCrmPersonById($id, $body));
     }
 
     /**
@@ -703,7 +703,7 @@ class Client extends ParentClient
      */
     public function getCrmPersoncustomfieldgroup(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmPersoncustomfieldgroup($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmPersoncustomfieldgroup($queryParameters));
     }
 
     /**
@@ -718,7 +718,7 @@ class Client extends ParentClient
      */
     public function getCrmPersoncustomfieldgroupById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmPersoncustomfieldgroupById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmPersoncustomfieldgroupById($id));
     }
 
     /**
@@ -736,7 +736,7 @@ class Client extends ParentClient
      */
     public function getCrmPersoncustomfield(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmPersoncustomfield($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmPersoncustomfield($queryParameters));
     }
 
     /**
@@ -751,7 +751,7 @@ class Client extends ParentClient
      */
     public function getCrmPersoncustomfieldById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmPersoncustomfieldById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmPersoncustomfieldById($id));
     }
 
     /**
@@ -769,7 +769,7 @@ class Client extends ParentClient
      */
     public function getCrmRelationtype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmRelationtype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmRelationtype($queryParameters));
     }
 
     /**
@@ -784,7 +784,7 @@ class Client extends ParentClient
      */
     public function getCrmRelationtypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmRelationtypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCrmRelationtypeById($id));
     }
 
     /**
@@ -802,7 +802,7 @@ class Client extends ParentClient
      */
     public function getCustomfieldsGroup(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsGroup($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsGroup($queryParameters));
     }
 
     /**
@@ -816,7 +816,7 @@ class Client extends ParentClient
      */
     public function deleteCustomfieldsGroupById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCustomfieldsGroupById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCustomfieldsGroupById($id));
     }
 
     /**
@@ -834,7 +834,7 @@ class Client extends ParentClient
      */
     public function getCustomfieldsGroupById(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsGroupById($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsGroupById($queryParameters));
     }
 
     /**
@@ -850,7 +850,7 @@ class Client extends ParentClient
      */
     public function postCustomfieldsGroupById(string $id, \Paqtcom\Simplicate\Model\CustomFieldGroup $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCustomfieldsGroupById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCustomfieldsGroupById($id, $body));
     }
 
     /**
@@ -866,7 +866,7 @@ class Client extends ParentClient
      */
     public function putCustomfieldsGroupById(string $id, \Paqtcom\Simplicate\Model\CustomFieldGroup $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutCustomfieldsGroupById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutCustomfieldsGroupById($id, $body));
     }
 
     /**
@@ -884,7 +884,7 @@ class Client extends ParentClient
      */
     public function getCustomfieldsModel(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsModel($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsModel($queryParameters));
     }
 
     /**
@@ -902,7 +902,7 @@ class Client extends ParentClient
      */
     public function getCustomfieldsModelById(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsModelById($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsModelById($queryParameters));
     }
 
     /**
@@ -920,7 +920,7 @@ class Client extends ParentClient
      */
     public function getCustomfieldsOption(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsOption($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsOption($queryParameters));
     }
 
     /**
@@ -934,7 +934,7 @@ class Client extends ParentClient
      */
     public function deleteCustomfieldsOptionById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCustomfieldsOptionById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCustomfieldsOptionById($id));
     }
 
     /**
@@ -953,7 +953,7 @@ class Client extends ParentClient
      */
     public function getCustomfieldsOptionById(string $id, array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsOptionById($id, $queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsOptionById($id, $queryParameters));
     }
 
     /**
@@ -968,7 +968,7 @@ class Client extends ParentClient
      */
     public function postCustomfieldsOptionById(\Paqtcom\Simplicate\Model\CustomFieldOption $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCustomfieldsOptionById($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCustomfieldsOptionById($body));
     }
 
     /**
@@ -984,7 +984,7 @@ class Client extends ParentClient
      */
     public function putCustomfieldsOptionById(string $id, \Paqtcom\Simplicate\Model\CustomFieldOption $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutCustomfieldsOptionById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutCustomfieldsOptionById($id, $body));
     }
 
     /**
@@ -1002,7 +1002,7 @@ class Client extends ParentClient
      */
     public function getCustomfieldsType(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsType($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsType($queryParameters));
     }
 
     /**
@@ -1020,7 +1020,7 @@ class Client extends ParentClient
      */
     public function getCustomfieldsTypeById(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsTypeById($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsTypeById($queryParameters));
     }
 
     /**
@@ -1038,7 +1038,7 @@ class Client extends ParentClient
      */
     public function getDocumentsDocument(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetDocumentsDocument($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetDocumentsDocument($queryParameters));
     }
 
     /**
@@ -1052,7 +1052,7 @@ class Client extends ParentClient
      */
     public function postDocumentsDocument(\Paqtcom\Simplicate\Model\PostDocument $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostDocumentsDocument($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostDocumentsDocument($body));
     }
 
     /**
@@ -1066,7 +1066,7 @@ class Client extends ParentClient
      */
     public function putDocumentsDocument(\Paqtcom\Simplicate\Model\PutDocument $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutDocumentsDocument($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutDocumentsDocument($body));
     }
 
     /**
@@ -1080,7 +1080,7 @@ class Client extends ParentClient
      */
     public function deleteDocumentsDocumentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteDocumentsDocumentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteDocumentsDocumentById($id));
     }
 
     /**
@@ -1095,7 +1095,7 @@ class Client extends ParentClient
      */
     public function getDocumentsDocumentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetDocumentsDocumentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetDocumentsDocumentById($id));
     }
 
     /**
@@ -1113,7 +1113,7 @@ class Client extends ParentClient
      */
     public function getDocumentsDocumenttype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetDocumentsDocumenttype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetDocumentsDocumenttype($queryParameters));
     }
 
     /**
@@ -1128,7 +1128,7 @@ class Client extends ParentClient
      */
     public function getDocumentsDocumenttypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetDocumentsDocumenttypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetDocumentsDocumenttypeById($id));
     }
 
     /**
@@ -1143,7 +1143,7 @@ class Client extends ParentClient
      */
     public function getDocumentsDownloadById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetDocumentsDownloadById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetDocumentsDownloadById($id));
     }
 
     /**
@@ -1157,7 +1157,7 @@ class Client extends ParentClient
      */
     public function postHoursAbsence(\Paqtcom\Simplicate\Model\PostAbsence $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursAbsence($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursAbsence($body));
     }
 
     /**
@@ -1173,7 +1173,7 @@ class Client extends ParentClient
      */
     public function putHoursAbsenceById(string $id, \Paqtcom\Simplicate\Model\PostAbsence $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHoursAbsenceById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHoursAbsenceById($id, $body));
     }
 
     /**
@@ -1191,7 +1191,7 @@ class Client extends ParentClient
      */
     public function getHoursApproval(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursApproval($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursApproval($queryParameters));
     }
 
     /**
@@ -1205,7 +1205,7 @@ class Client extends ParentClient
      */
     public function postHoursApproval(\Paqtcom\Simplicate\Model\PostApproval $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursApproval($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursApproval($body));
     }
 
     /**
@@ -1219,7 +1219,7 @@ class Client extends ParentClient
      */
     public function deleteHoursApprovalById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteHoursApprovalById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteHoursApprovalById($id));
     }
 
     /**
@@ -1234,7 +1234,7 @@ class Client extends ParentClient
      */
     public function getHoursApprovalById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursApprovalById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursApprovalById($id));
     }
 
     /**
@@ -1250,7 +1250,7 @@ class Client extends ParentClient
      */
     public function putHoursApprovalById(string $id, \Paqtcom\Simplicate\Model\PostApproval $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHoursApprovalById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHoursApprovalById($id, $body));
     }
 
     /**
@@ -1268,7 +1268,7 @@ class Client extends ParentClient
      */
     public function getHoursApprovalstatus(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursApprovalstatus($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursApprovalstatus($queryParameters));
     }
 
     /**
@@ -1283,7 +1283,7 @@ class Client extends ParentClient
      */
     public function getHoursApprovalstatusById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursApprovalstatusById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursApprovalstatusById($id));
     }
 
     /**
@@ -1301,7 +1301,7 @@ class Client extends ParentClient
      */
     public function getHoursEmployeeexpense(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursEmployeeexpense($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursEmployeeexpense($queryParameters));
     }
 
     /**
@@ -1316,7 +1316,7 @@ class Client extends ParentClient
      */
     public function getHoursEmployeeexpenseById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursEmployeeexpenseById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursEmployeeexpenseById($id));
     }
 
     /**
@@ -1334,7 +1334,7 @@ class Client extends ParentClient
      */
     public function getHoursHour(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursHour($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursHour($queryParameters));
     }
 
     /**
@@ -1348,7 +1348,7 @@ class Client extends ParentClient
      */
     public function postHoursHour(\Paqtcom\Simplicate\Model\PostHours $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursHour($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursHour($body));
     }
 
     /**
@@ -1362,7 +1362,7 @@ class Client extends ParentClient
      */
     public function deleteHoursHourById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteHoursHourById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteHoursHourById($id));
     }
 
     /**
@@ -1377,7 +1377,7 @@ class Client extends ParentClient
      */
     public function getHoursHourById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursHourById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursHourById($id));
     }
 
     /**
@@ -1393,7 +1393,7 @@ class Client extends ParentClient
      */
     public function putHoursHourById(string $id, \Paqtcom\Simplicate\Model\PostHours $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHoursHourById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHoursHourById($id, $body));
     }
 
     /**
@@ -1411,7 +1411,7 @@ class Client extends ParentClient
      */
     public function getHoursHourstype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursHourstype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursHourstype($queryParameters));
     }
 
     /**
@@ -1425,7 +1425,7 @@ class Client extends ParentClient
      */
     public function postHoursHourstype(\Paqtcom\Simplicate\Model\PostHoursType $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursHourstype($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursHourstype($body));
     }
 
     /**
@@ -1440,7 +1440,7 @@ class Client extends ParentClient
      */
     public function getHoursHourstypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursHourstypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursHourstypeById($id));
     }
 
     /**
@@ -1456,7 +1456,7 @@ class Client extends ParentClient
      */
     public function putHoursHourstypeById(string $id, \Paqtcom\Simplicate\Model\PostHoursType $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHoursHourstypeById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHoursHourstypeById($id, $body));
     }
 
     /**
@@ -1470,7 +1470,7 @@ class Client extends ParentClient
      */
     public function postHoursLeave(\Paqtcom\Simplicate\Model\PostLeave $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursLeave($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursLeave($body));
     }
 
     /**
@@ -1486,7 +1486,7 @@ class Client extends ParentClient
      */
     public function putHoursLeaveById(string $id, \Paqtcom\Simplicate\Model\PostLeave $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHoursLeaveById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHoursLeaveById($id, $body));
     }
 
     /**
@@ -1504,7 +1504,7 @@ class Client extends ParentClient
      */
     public function getHoursSubmission(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursSubmission($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursSubmission($queryParameters));
     }
 
     /**
@@ -1518,7 +1518,7 @@ class Client extends ParentClient
      */
     public function postHoursSubmission(\Paqtcom\Simplicate\Model\PostSubmission $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursSubmission($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursSubmission($body));
     }
 
     /**
@@ -1532,7 +1532,7 @@ class Client extends ParentClient
      */
     public function postHoursSubmit(\Paqtcom\Simplicate\Model\Submit $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursSubmit($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursSubmit($body));
     }
 
     /**
@@ -1550,7 +1550,7 @@ class Client extends ParentClient
      */
     public function getHoursTimesheetrow(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursTimesheetrow($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursTimesheetrow($queryParameters));
     }
 
     /**
@@ -1564,7 +1564,7 @@ class Client extends ParentClient
      */
     public function postHoursTimesheetrow(\Paqtcom\Simplicate\Model\PostTimesheetRow $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursTimesheetrow($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHoursTimesheetrow($body));
     }
 
     /**
@@ -1579,7 +1579,7 @@ class Client extends ParentClient
      */
     public function deleteHoursTimesheetrowById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteHoursTimesheetrowById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteHoursTimesheetrowById($id));
     }
 
     /**
@@ -1594,7 +1594,7 @@ class Client extends ParentClient
      */
     public function putHoursTimesheetrowOrder(array $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHoursTimesheetrowOrder($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHoursTimesheetrowOrder($body));
     }
 
     /**
@@ -1613,7 +1613,7 @@ class Client extends ParentClient
      */
     public function getHoursTimesheetrowMostrecent(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursTimesheetrowMostrecent($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHoursTimesheetrowMostrecent($queryParameters));
     }
 
     /**
@@ -1631,7 +1631,7 @@ class Client extends ParentClient
      */
     public function getHrmAbsence(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmAbsence($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmAbsence($queryParameters));
     }
 
     /**
@@ -1645,7 +1645,7 @@ class Client extends ParentClient
      */
     public function postHrmAbsence(\Paqtcom\Simplicate\Model\PostAbsence $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHrmAbsence($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHrmAbsence($body));
     }
 
     /**
@@ -1659,7 +1659,7 @@ class Client extends ParentClient
      */
     public function deleteHrmAbsenceById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteHrmAbsenceById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteHrmAbsenceById($id));
     }
 
     /**
@@ -1673,7 +1673,7 @@ class Client extends ParentClient
      */
     public function getHrmAbsenceById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmAbsenceById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmAbsenceById($id));
     }
 
     /**
@@ -1689,7 +1689,7 @@ class Client extends ParentClient
      */
     public function putHrmAbsenceById(string $id, \Paqtcom\Simplicate\Model\PostAbsence $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHrmAbsenceById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHrmAbsenceById($id, $body));
     }
 
     /**
@@ -1707,7 +1707,7 @@ class Client extends ParentClient
      */
     public function getHrmAbsencetype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmAbsencetype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmAbsencetype($queryParameters));
     }
 
     /**
@@ -1722,7 +1722,7 @@ class Client extends ParentClient
      */
     public function getHrmAbsencetypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmAbsencetypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmAbsencetypeById($id));
     }
 
     /**
@@ -1740,7 +1740,7 @@ class Client extends ParentClient
      */
     public function getHrmCivilstatus(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmCivilstatus($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmCivilstatus($queryParameters));
     }
 
     /**
@@ -1755,7 +1755,7 @@ class Client extends ParentClient
      */
     public function getHrmCivilstatusById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmCivilstatusById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmCivilstatusById($id));
     }
 
     /**
@@ -1773,7 +1773,7 @@ class Client extends ParentClient
      */
     public function getHrmContract(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmContract($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmContract($queryParameters));
     }
 
     /**
@@ -1788,7 +1788,7 @@ class Client extends ParentClient
      */
     public function getHrmContractById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmContractById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmContractById($id));
     }
 
     /**
@@ -1806,7 +1806,7 @@ class Client extends ParentClient
      */
     public function getHrmContracttype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmContracttype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmContracttype($queryParameters));
     }
 
     /**
@@ -1821,7 +1821,7 @@ class Client extends ParentClient
      */
     public function getHrmContracttypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmContracttypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmContracttypeById($id));
     }
 
     /**
@@ -1839,7 +1839,7 @@ class Client extends ParentClient
      */
     public function getHrmDocument(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmDocument($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmDocument($queryParameters));
     }
 
     /**
@@ -1853,7 +1853,7 @@ class Client extends ParentClient
      */
     public function postHrmDocument(\Paqtcom\Simplicate\Model\PostDocument $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHrmDocument($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHrmDocument($body));
     }
 
     /**
@@ -1867,7 +1867,7 @@ class Client extends ParentClient
      */
     public function putHrmDocument(\Paqtcom\Simplicate\Model\PutDocument $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHrmDocument($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHrmDocument($body));
     }
 
     /**
@@ -1881,7 +1881,7 @@ class Client extends ParentClient
      */
     public function deleteHrmDocumentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteHrmDocumentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteHrmDocumentById($id));
     }
 
     /**
@@ -1896,7 +1896,7 @@ class Client extends ParentClient
      */
     public function getHrmDocumentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmDocumentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmDocumentById($id));
     }
 
     /**
@@ -1914,7 +1914,7 @@ class Client extends ParentClient
      */
     public function getHrmDocumenttype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmDocumenttype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmDocumenttype($queryParameters));
     }
 
     /**
@@ -1929,7 +1929,7 @@ class Client extends ParentClient
      */
     public function getHrmDocumenttypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmDocumenttypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmDocumenttypeById($id));
     }
 
     /**
@@ -1947,7 +1947,7 @@ class Client extends ParentClient
      */
     public function getHrmEmployee(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployee($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployee($queryParameters));
     }
 
     /**
@@ -1961,7 +1961,7 @@ class Client extends ParentClient
      */
     public function postHrmEmployee(\Paqtcom\Simplicate\Model\PostEmployee $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHrmEmployee($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHrmEmployee($body));
     }
 
     /**
@@ -1976,7 +1976,7 @@ class Client extends ParentClient
      */
     public function getHrmEmployeeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployeeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployeeById($id));
     }
 
     /**
@@ -1990,7 +1990,7 @@ class Client extends ParentClient
      */
     public function putHrmEmployeeById(\Paqtcom\Simplicate\Model\PutEmployee $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHrmEmployeeById($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHrmEmployeeById($body));
     }
 
     /**
@@ -2008,7 +2008,7 @@ class Client extends ParentClient
      */
     public function getHrmEmployeecustomfieldgroup(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployeecustomfieldgroup($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployeecustomfieldgroup($queryParameters));
     }
 
     /**
@@ -2023,7 +2023,7 @@ class Client extends ParentClient
      */
     public function getHrmEmployeecustomfieldgroupById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployeecustomfieldgroupById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployeecustomfieldgroupById($id));
     }
 
     /**
@@ -2041,7 +2041,7 @@ class Client extends ParentClient
      */
     public function getHrmEmployeecustomfield(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployeecustomfield($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployeecustomfield($queryParameters));
     }
 
     /**
@@ -2056,7 +2056,7 @@ class Client extends ParentClient
      */
     public function getHrmEmployeecustomfieldById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployeecustomfieldById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployeecustomfieldById($id));
     }
 
     /**
@@ -2074,7 +2074,7 @@ class Client extends ParentClient
      */
     public function getHrmEmployeetype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployeetype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployeetype($queryParameters));
     }
 
     /**
@@ -2089,7 +2089,7 @@ class Client extends ParentClient
      */
     public function getHrmEmployeetypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployeetypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmployeetypeById($id));
     }
 
     /**
@@ -2107,7 +2107,7 @@ class Client extends ParentClient
      */
     public function getHrmEmploymenttype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmploymenttype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmploymenttype($queryParameters));
     }
 
     /**
@@ -2122,7 +2122,7 @@ class Client extends ParentClient
      */
     public function getHrmEmploymenttypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmploymenttypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmEmploymenttypeById($id));
     }
 
     /**
@@ -2140,7 +2140,7 @@ class Client extends ParentClient
      */
     public function getHrmLeave(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmLeave($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmLeave($queryParameters));
     }
 
     /**
@@ -2154,7 +2154,7 @@ class Client extends ParentClient
      */
     public function postHrmLeave(\Paqtcom\Simplicate\Model\PostLeave $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHrmLeave($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHrmLeave($body));
     }
 
     /**
@@ -2168,7 +2168,7 @@ class Client extends ParentClient
      */
     public function getHrmLeaveById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmLeaveById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmLeaveById($id));
     }
 
     /**
@@ -2184,7 +2184,7 @@ class Client extends ParentClient
      */
     public function putHrmLeaveById(string $id, \Paqtcom\Simplicate\Model\PostLeave $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHrmLeaveById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHrmLeaveById($id, $body));
     }
 
     /**
@@ -2202,7 +2202,7 @@ class Client extends ParentClient
      */
     public function getHrmLeavebalance(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmLeavebalance($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmLeavebalance($queryParameters));
     }
 
     /**
@@ -2220,7 +2220,7 @@ class Client extends ParentClient
      */
     public function getHrmLeavetype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmLeavetype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmLeavetype($queryParameters));
     }
 
     /**
@@ -2235,7 +2235,7 @@ class Client extends ParentClient
      */
     public function getHrmLeavetypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmLeavetypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmLeavetypeById($id));
     }
 
     /**
@@ -2253,7 +2253,7 @@ class Client extends ParentClient
      */
     public function getHrmTeam(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmTeam($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmTeam($queryParameters));
     }
 
     /**
@@ -2268,7 +2268,7 @@ class Client extends ParentClient
      */
     public function getHrmTeamById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmTeamById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmTeamById($id));
     }
 
     /**
@@ -2286,7 +2286,7 @@ class Client extends ParentClient
      */
     public function getHrmTimetable(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmTimetable($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetHrmTimetable($queryParameters));
     }
 
     /**
@@ -2300,7 +2300,7 @@ class Client extends ParentClient
      */
     public function postHrmTimetable(\Paqtcom\Simplicate\Model\PostTimetable $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHrmTimetable($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostHrmTimetable($body));
     }
 
     /**
@@ -2314,7 +2314,7 @@ class Client extends ParentClient
      */
     public function deleteHrmTimetableById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteHrmTimetableById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteHrmTimetableById($id));
     }
 
     /**
@@ -2328,7 +2328,7 @@ class Client extends ParentClient
      */
     public function putHrmTimetableById(\Paqtcom\Simplicate\Model\PutTimetable $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHrmTimetableById($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutHrmTimetableById($body));
     }
 
     /**
@@ -2346,7 +2346,7 @@ class Client extends ParentClient
      */
     public function getInvoicesDocument(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesDocument($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesDocument($queryParameters));
     }
 
     /**
@@ -2360,7 +2360,7 @@ class Client extends ParentClient
      */
     public function postInvoicesDocument(\Paqtcom\Simplicate\Model\PostDocument $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostInvoicesDocument($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostInvoicesDocument($body));
     }
 
     /**
@@ -2374,7 +2374,7 @@ class Client extends ParentClient
      */
     public function putInvoicesDocument(\Paqtcom\Simplicate\Model\PutDocument $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutInvoicesDocument($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutInvoicesDocument($body));
     }
 
     /**
@@ -2388,7 +2388,7 @@ class Client extends ParentClient
      */
     public function deleteInvoicesDocumentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteInvoicesDocumentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteInvoicesDocumentById($id));
     }
 
     /**
@@ -2403,7 +2403,7 @@ class Client extends ParentClient
      */
     public function getInvoicesDocumentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesDocumentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesDocumentById($id));
     }
 
     /**
@@ -2421,7 +2421,7 @@ class Client extends ParentClient
      */
     public function getInvoicesDocumenttype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesDocumenttype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesDocumenttype($queryParameters));
     }
 
     /**
@@ -2436,7 +2436,7 @@ class Client extends ParentClient
      */
     public function getInvoicesDocumenttypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesDocumenttypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesDocumenttypeById($id));
     }
 
     /**
@@ -2454,7 +2454,7 @@ class Client extends ParentClient
      */
     public function getInvoicesInvoice(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesInvoice($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesInvoice($queryParameters));
     }
 
     /**
@@ -2468,7 +2468,7 @@ class Client extends ParentClient
      */
     public function postInvoicesInvoice(\Paqtcom\Simplicate\Model\PostInvoice $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostInvoicesInvoice($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostInvoicesInvoice($body));
     }
 
     /**
@@ -2482,7 +2482,7 @@ class Client extends ParentClient
      */
     public function deleteInvoicesInvoiceById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteInvoicesInvoiceById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteInvoicesInvoiceById($id));
     }
 
     /**
@@ -2497,7 +2497,7 @@ class Client extends ParentClient
      */
     public function getInvoicesInvoiceById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesInvoiceById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesInvoiceById($id));
     }
 
     /**
@@ -2513,7 +2513,7 @@ class Client extends ParentClient
      */
     public function putInvoicesInvoiceById(string $id, \Paqtcom\Simplicate\Model\Invoice $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutInvoicesInvoiceById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutInvoicesInvoiceById($id, $body));
     }
 
     /**
@@ -2531,7 +2531,7 @@ class Client extends ParentClient
      */
     public function getInvoicesInvoicestatus(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesInvoicestatus($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesInvoicestatus($queryParameters));
     }
 
     /**
@@ -2546,7 +2546,7 @@ class Client extends ParentClient
      */
     public function getInvoicesInvoicestatusById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesInvoicestatusById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesInvoicestatusById($id));
     }
 
     /**
@@ -2564,7 +2564,7 @@ class Client extends ParentClient
      */
     public function getInvoicesPayment(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesPayment($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesPayment($queryParameters));
     }
 
     /**
@@ -2578,7 +2578,7 @@ class Client extends ParentClient
      */
     public function postInvoicesPayment(\Paqtcom\Simplicate\Model\Payment $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostInvoicesPayment($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostInvoicesPayment($body));
     }
 
     /**
@@ -2593,7 +2593,7 @@ class Client extends ParentClient
      */
     public function getInvoicesPaymentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesPaymentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesPaymentById($id));
     }
 
     /**
@@ -2609,7 +2609,7 @@ class Client extends ParentClient
      */
     public function putInvoicesPaymentById(string $id, \Paqtcom\Simplicate\Model\Payment $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutInvoicesPaymentById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutInvoicesPaymentById($id, $body));
     }
 
     /**
@@ -2627,7 +2627,7 @@ class Client extends ParentClient
      */
     public function getInvoicesPaymentterm(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesPaymentterm($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesPaymentterm($queryParameters));
     }
 
     /**
@@ -2642,7 +2642,7 @@ class Client extends ParentClient
      */
     public function getInvoicesPaymenttermById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesPaymenttermById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesPaymenttermById($id));
     }
 
     /**
@@ -2660,7 +2660,7 @@ class Client extends ParentClient
      */
     public function getInvoicesProposition(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesProposition($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesProposition($queryParameters));
     }
 
     /**
@@ -2678,7 +2678,7 @@ class Client extends ParentClient
      */
     public function getInvoicesReminderset(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesReminderset($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesReminderset($queryParameters));
     }
 
     /**
@@ -2693,7 +2693,7 @@ class Client extends ParentClient
      */
     public function getInvoicesRemindersetById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesRemindersetById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesRemindersetById($id));
     }
 
     /**
@@ -2711,7 +2711,7 @@ class Client extends ParentClient
      */
     public function getInvoicesRemindertemplate(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesRemindertemplate($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesRemindertemplate($queryParameters));
     }
 
     /**
@@ -2726,7 +2726,7 @@ class Client extends ParentClient
      */
     public function getInvoicesRemindertemplateById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesRemindertemplateById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesRemindertemplateById($id));
     }
 
     /**
@@ -2744,7 +2744,7 @@ class Client extends ParentClient
      */
     public function getInvoicesVatclass(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesVatclass($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesVatclass($queryParameters));
     }
 
     /**
@@ -2759,7 +2759,7 @@ class Client extends ParentClient
      */
     public function getInvoicesVatclassById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesVatclassById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetInvoicesVatclassById($id));
     }
 
     /**
@@ -2773,7 +2773,7 @@ class Client extends ParentClient
      */
     public function postMergerCompareorganization(\Paqtcom\Simplicate\Model\PostMergerCompare $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostMergerCompareorganization($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostMergerCompareorganization($body));
     }
 
     /**
@@ -2787,7 +2787,7 @@ class Client extends ParentClient
      */
     public function postMergerCompareperson(\Paqtcom\Simplicate\Model\PostMergerCompare $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostMergerCompareperson($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostMergerCompareperson($body));
     }
 
     /**
@@ -2801,7 +2801,7 @@ class Client extends ParentClient
      */
     public function postCrmMergeorganization(\Paqtcom\Simplicate\Model\PostMerger $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCrmMergeorganization($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCrmMergeorganization($body));
     }
 
     /**
@@ -2815,7 +2815,7 @@ class Client extends ParentClient
      */
     public function postCrmMergeperson(\Paqtcom\Simplicate\Model\PostMerger $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCrmMergeperson($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCrmMergeperson($body));
     }
 
     /**
@@ -2833,7 +2833,7 @@ class Client extends ParentClient
      */
     public function getMileageMileage(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetMileageMileage($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetMileageMileage($queryParameters));
     }
 
     /**
@@ -2847,7 +2847,7 @@ class Client extends ParentClient
      */
     public function postMileageMileage(\Paqtcom\Simplicate\Model\PostMileage $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostMileageMileage($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostMileageMileage($body));
     }
 
     /**
@@ -2861,7 +2861,7 @@ class Client extends ParentClient
      */
     public function deleteMileageMileageById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteMileageMileageById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteMileageMileageById($id));
     }
 
     /**
@@ -2876,7 +2876,7 @@ class Client extends ParentClient
      */
     public function getMileageMileageById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetMileageMileageById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetMileageMileageById($id));
     }
 
     /**
@@ -2892,7 +2892,7 @@ class Client extends ParentClient
      */
     public function putMileageMileageById(string $id, \Paqtcom\Simplicate\Model\PutMileage $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutMileageMileageById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutMileageMileageById($id, $body));
     }
 
     /**
@@ -2910,7 +2910,7 @@ class Client extends ParentClient
      */
     public function getProjectsAssignment(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsAssignment($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsAssignment($queryParameters));
     }
 
     /**
@@ -2925,7 +2925,7 @@ class Client extends ParentClient
      */
     public function postProjectsAssignment(\Paqtcom\Simplicate\Model\PostAssignment $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostProjectsAssignment($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostProjectsAssignment($body));
     }
 
     /**
@@ -2939,7 +2939,7 @@ class Client extends ParentClient
      */
     public function getProjectsAssignmentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsAssignmentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsAssignmentById($id));
     }
 
     /**
@@ -2955,7 +2955,7 @@ class Client extends ParentClient
      */
     public function putProjectsAssignmentById(string $id, \Paqtcom\Simplicate\Model\PutAssignment $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutProjectsAssignmentById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutProjectsAssignmentById($id, $body));
     }
 
     /**
@@ -2977,7 +2977,7 @@ class Client extends ParentClient
      */
     public function getProjectsAssignmentbudget(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsAssignmentbudget($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsAssignmentbudget($queryParameters));
     }
 
     /**
@@ -2995,7 +2995,7 @@ class Client extends ParentClient
      */
     public function getProjectsAssignmentstatus(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsAssignmentstatus($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsAssignmentstatus($queryParameters));
     }
 
     /**
@@ -3010,7 +3010,7 @@ class Client extends ParentClient
      */
     public function postProjectsAssignmentstatus(\Paqtcom\Simplicate\Model\AssignmentStatus $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostProjectsAssignmentstatus($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostProjectsAssignmentstatus($body));
     }
 
     /**
@@ -3029,7 +3029,7 @@ class Client extends ParentClient
      */
     public function getProjectsAssignmentstatusById(string $id, array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsAssignmentstatusById($id, $queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsAssignmentstatusById($id, $queryParameters));
     }
 
     /**
@@ -3045,7 +3045,7 @@ class Client extends ParentClient
      */
     public function putProjectsAssignmentstatusById(string $id, \Paqtcom\Simplicate\Model\AssignmentStatus $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutProjectsAssignmentstatusById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutProjectsAssignmentstatusById($id, $body));
     }
 
     /**
@@ -3063,7 +3063,7 @@ class Client extends ParentClient
      */
     public function getProjectsDocument(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsDocument($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsDocument($queryParameters));
     }
 
     /**
@@ -3077,7 +3077,7 @@ class Client extends ParentClient
      */
     public function postProjectsDocument(\Paqtcom\Simplicate\Model\PostDocument $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostProjectsDocument($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostProjectsDocument($body));
     }
 
     /**
@@ -3091,7 +3091,7 @@ class Client extends ParentClient
      */
     public function putProjectsDocument(\Paqtcom\Simplicate\Model\PutDocument $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutProjectsDocument($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutProjectsDocument($body));
     }
 
     /**
@@ -3105,7 +3105,7 @@ class Client extends ParentClient
      */
     public function deleteProjectsDocumentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteProjectsDocumentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteProjectsDocumentById($id));
     }
 
     /**
@@ -3120,7 +3120,7 @@ class Client extends ParentClient
      */
     public function getProjectsDocumentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsDocumentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsDocumentById($id));
     }
 
     /**
@@ -3138,7 +3138,7 @@ class Client extends ParentClient
      */
     public function getProjectsDocumenttype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsDocumenttype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsDocumenttype($queryParameters));
     }
 
     /**
@@ -3153,7 +3153,7 @@ class Client extends ParentClient
      */
     public function getProjectsDocumenttypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsDocumenttypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsDocumenttypeById($id));
     }
 
     /**
@@ -3171,7 +3171,7 @@ class Client extends ParentClient
      */
     public function getProjectsProject(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProject($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProject($queryParameters));
     }
 
     /**
@@ -3185,7 +3185,7 @@ class Client extends ParentClient
      */
     public function postProjectsProject(\Paqtcom\Simplicate\Model\PostProject $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostProjectsProject($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostProjectsProject($body));
     }
 
     /**
@@ -3199,7 +3199,7 @@ class Client extends ParentClient
      */
     public function deleteProjectsProjectById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteProjectsProjectById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteProjectsProjectById($id));
     }
 
     /**
@@ -3214,7 +3214,7 @@ class Client extends ParentClient
      */
     public function getProjectsProjectById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectById($id));
     }
 
     /**
@@ -3230,7 +3230,7 @@ class Client extends ParentClient
      */
     public function putProjectsProjectById(string $id, \Paqtcom\Simplicate\Model\PostProject $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutProjectsProjectById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutProjectsProjectById($id, $body));
     }
 
     /**
@@ -3249,7 +3249,7 @@ class Client extends ParentClient
      */
     public function getProjectsProjectByIdPlanningBudget(string $id, array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectByIdPlanningBudget($id, $queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectByIdPlanningBudget($id, $queryParameters));
     }
 
     /**
@@ -3267,7 +3267,7 @@ class Client extends ParentClient
      */
     public function getProjectsProjectcustomfieldgroup(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectcustomfieldgroup($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectcustomfieldgroup($queryParameters));
     }
 
     /**
@@ -3282,7 +3282,7 @@ class Client extends ParentClient
      */
     public function getProjectsProjectcustomfieldgroupById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectcustomfieldgroupById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectcustomfieldgroupById($id));
     }
 
     /**
@@ -3300,7 +3300,7 @@ class Client extends ParentClient
      */
     public function getProjectsProjectcustomfield(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectcustomfield($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectcustomfield($queryParameters));
     }
 
     /**
@@ -3315,7 +3315,7 @@ class Client extends ParentClient
      */
     public function getProjectsProjectcustomfieldById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectcustomfieldById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectcustomfieldById($id));
     }
 
     /**
@@ -3333,7 +3333,7 @@ class Client extends ParentClient
      */
     public function getProjectsProjectfilter(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectfilter($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectfilter($queryParameters));
     }
 
     /**
@@ -3348,7 +3348,7 @@ class Client extends ParentClient
      */
     public function getProjectsProjectfilterById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectfilterById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectfilterById($id));
     }
 
     /**
@@ -3366,7 +3366,7 @@ class Client extends ParentClient
      */
     public function getProjectsProjectstatus(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectstatus($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectstatus($queryParameters));
     }
 
     /**
@@ -3381,7 +3381,7 @@ class Client extends ParentClient
      */
     public function getProjectsProjectstatusById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectstatusById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsProjectstatusById($id));
     }
 
     /**
@@ -3399,7 +3399,7 @@ class Client extends ParentClient
      */
     public function getProjectsPurchase(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsPurchase($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsPurchase($queryParameters));
     }
 
     /**
@@ -3413,7 +3413,7 @@ class Client extends ParentClient
      */
     public function getProjectsPurchaseById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsPurchaseById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsPurchaseById($id));
     }
 
     /**
@@ -3431,7 +3431,7 @@ class Client extends ParentClient
      */
     public function getProjectsPurchasetype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsPurchasetype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsPurchasetype($queryParameters));
     }
 
     /**
@@ -3446,7 +3446,7 @@ class Client extends ParentClient
      */
     public function getProjectsPurchasetypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsPurchasetypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsPurchasetypeById($id));
     }
 
     /**
@@ -3464,7 +3464,7 @@ class Client extends ParentClient
      */
     public function getProjectsReverseinvoice(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsReverseinvoice($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsReverseinvoice($queryParameters));
     }
 
     /**
@@ -3478,7 +3478,7 @@ class Client extends ParentClient
      */
     public function getProjectsReverseinvoiceById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsReverseinvoiceById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsReverseinvoiceById($id));
     }
 
     /**
@@ -3494,7 +3494,7 @@ class Client extends ParentClient
      */
     public function postProjectsServiceByIdDuplicate(string $id, string $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostProjectsServiceByIdDuplicate($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostProjectsServiceByIdDuplicate($id, $body));
     }
 
     /**
@@ -3512,7 +3512,7 @@ class Client extends ParentClient
      */
     public function getProjectsService(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsService($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsService($queryParameters));
     }
 
     /**
@@ -3526,7 +3526,7 @@ class Client extends ParentClient
      */
     public function postProjectsService(\Paqtcom\Simplicate\Model\PostProjectService $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostProjectsService($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostProjectsService($body));
     }
 
     /**
@@ -3540,7 +3540,7 @@ class Client extends ParentClient
      */
     public function deleteProjectsServiceById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteProjectsServiceById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteProjectsServiceById($id));
     }
 
     /**
@@ -3555,7 +3555,7 @@ class Client extends ParentClient
      */
     public function getProjectsServiceById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsServiceById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsServiceById($id));
     }
 
     /**
@@ -3571,7 +3571,7 @@ class Client extends ParentClient
      */
     public function putProjectsServiceById(string $id, \Paqtcom\Simplicate\Model\PutProjectService $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutProjectsServiceById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutProjectsServiceById($id, $body));
     }
 
     /**
@@ -3590,7 +3590,7 @@ class Client extends ParentClient
      */
     public function getProjectsServiceByIdPlanningBudget(string $id, array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsServiceByIdPlanningBudget($id, $queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetProjectsServiceByIdPlanningBudget($id, $queryParameters));
     }
 
     /**
@@ -3605,7 +3605,7 @@ class Client extends ParentClient
      */
     public function getSalesConverttoprojectById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesConverttoprojectById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesConverttoprojectById($id));
     }
 
     /**
@@ -3623,7 +3623,7 @@ class Client extends ParentClient
      */
     public function getSalesDocument(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesDocument($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesDocument($queryParameters));
     }
 
     /**
@@ -3637,7 +3637,7 @@ class Client extends ParentClient
      */
     public function postSalesDocument(\Paqtcom\Simplicate\Model\PostDocument $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSalesDocument($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSalesDocument($body));
     }
 
     /**
@@ -3651,7 +3651,7 @@ class Client extends ParentClient
      */
     public function putSalesDocument(\Paqtcom\Simplicate\Model\PutDocument $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutSalesDocument($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutSalesDocument($body));
     }
 
     /**
@@ -3665,7 +3665,7 @@ class Client extends ParentClient
      */
     public function deleteSalesDocumentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteSalesDocumentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteSalesDocumentById($id));
     }
 
     /**
@@ -3680,7 +3680,7 @@ class Client extends ParentClient
      */
     public function getSalesDocumentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesDocumentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesDocumentById($id));
     }
 
     /**
@@ -3698,7 +3698,7 @@ class Client extends ParentClient
      */
     public function getSalesDocumenttype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesDocumenttype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesDocumenttype($queryParameters));
     }
 
     /**
@@ -3713,7 +3713,7 @@ class Client extends ParentClient
      */
     public function getSalesDocumenttypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesDocumenttypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesDocumenttypeById($id));
     }
 
     /**
@@ -3731,7 +3731,7 @@ class Client extends ParentClient
      */
     public function getSalesQuote(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesQuote($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesQuote($queryParameters));
     }
 
     /**
@@ -3745,7 +3745,7 @@ class Client extends ParentClient
      */
     public function postSalesQuote(\Paqtcom\Simplicate\Model\PostQuote $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSalesQuote($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSalesQuote($body));
     }
 
     /**
@@ -3759,7 +3759,7 @@ class Client extends ParentClient
      */
     public function deleteSalesQuoteById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteSalesQuoteById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteSalesQuoteById($id));
     }
 
     /**
@@ -3774,7 +3774,7 @@ class Client extends ParentClient
      */
     public function getSalesQuoteById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesQuoteById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesQuoteById($id));
     }
 
     /**
@@ -3789,7 +3789,7 @@ class Client extends ParentClient
      */
     public function putSalesQuoteById(string $id, \Paqtcom\Simplicate\Model\PostQuote $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutSalesQuoteById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutSalesQuoteById($id, $body));
     }
 
     /**
@@ -3804,7 +3804,7 @@ class Client extends ParentClient
      */
     public function putSalesQuoteemailById(string $id, \Paqtcom\Simplicate\Model\PutQuoteEmail $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutSalesQuoteemailById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutSalesQuoteemailById($id, $body));
     }
 
     /**
@@ -3818,7 +3818,7 @@ class Client extends ParentClient
      */
     public function getSalesQuotestatus(string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesQuotestatus(), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesQuotestatus());
     }
 
     /**
@@ -3833,7 +3833,7 @@ class Client extends ParentClient
      */
     public function getSalesQuotestatusById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesQuotestatusById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesQuotestatusById($id));
     }
 
     /**
@@ -3851,7 +3851,7 @@ class Client extends ParentClient
      */
     public function getSalesQuotetemplate(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesQuotetemplate($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesQuotetemplate($queryParameters));
     }
 
     /**
@@ -3865,7 +3865,7 @@ class Client extends ParentClient
      */
     public function postSalesQuotetemplate(\Paqtcom\Simplicate\Model\PostQuoteTemplate $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSalesQuotetemplate($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSalesQuotetemplate($body));
     }
 
     /**
@@ -3879,7 +3879,7 @@ class Client extends ParentClient
      */
     public function deleteSalesQuotetemplateById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteSalesQuotetemplateById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteSalesQuotetemplateById($id));
     }
 
     /**
@@ -3894,7 +3894,7 @@ class Client extends ParentClient
      */
     public function getSalesQuotetemplateById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesQuotetemplateById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesQuotetemplateById($id));
     }
 
     /**
@@ -3909,7 +3909,7 @@ class Client extends ParentClient
      */
     public function putSalesQuotetemplateById(string $id, \Paqtcom\Simplicate\Model\PostQuoteTemplate $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutSalesQuotetemplateById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutSalesQuotetemplateById($id, $body));
     }
 
     /**
@@ -3927,7 +3927,7 @@ class Client extends ParentClient
      */
     public function getSalesRevenuegroup(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesRevenuegroup($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesRevenuegroup($queryParameters));
     }
 
     /**
@@ -3942,7 +3942,7 @@ class Client extends ParentClient
      */
     public function getSalesRevenuegroupById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesRevenuegroupById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesRevenuegroupById($id));
     }
 
     /**
@@ -3960,7 +3960,7 @@ class Client extends ParentClient
      */
     public function getSalesSale(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSale($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSale($queryParameters));
     }
 
     /**
@@ -3974,7 +3974,7 @@ class Client extends ParentClient
      */
     public function postSalesSale(\Paqtcom\Simplicate\Model\PostSales $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSalesSale($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSalesSale($body));
     }
 
     /**
@@ -3989,7 +3989,7 @@ class Client extends ParentClient
      */
     public function getSalesSaleById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSaleById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSaleById($id));
     }
 
     /**
@@ -4005,7 +4005,7 @@ class Client extends ParentClient
      */
     public function putSalesSaleById(string $id, \Paqtcom\Simplicate\Model\PostSales $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutSalesSaleById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutSalesSaleById($id, $body));
     }
 
     /**
@@ -4021,7 +4021,7 @@ class Client extends ParentClient
      */
     public function postSalesSalesByIdDuplicate(string $id, \Paqtcom\Simplicate\Model\PostDuplicateSales $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSalesSalesByIdDuplicate($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSalesSalesByIdDuplicate($id, $body));
     }
 
     /**
@@ -4039,7 +4039,7 @@ class Client extends ParentClient
      */
     public function getSalesSalescustomfieldgroup(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalescustomfieldgroup($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalescustomfieldgroup($queryParameters));
     }
 
     /**
@@ -4054,7 +4054,7 @@ class Client extends ParentClient
      */
     public function getSalesSalescustomfieldgroupById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalescustomfieldgroupById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalescustomfieldgroupById($id));
     }
 
     /**
@@ -4072,7 +4072,7 @@ class Client extends ParentClient
      */
     public function getSalesSalescustomfield(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalescustomfield($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalescustomfield($queryParameters));
     }
 
     /**
@@ -4087,7 +4087,7 @@ class Client extends ParentClient
      */
     public function getSalesSalescustomfieldById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalescustomfieldById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalescustomfieldById($id));
     }
 
     /**
@@ -4105,7 +4105,7 @@ class Client extends ParentClient
      */
     public function getSalesSalesfilter(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesfilter($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesfilter($queryParameters));
     }
 
     /**
@@ -4120,7 +4120,7 @@ class Client extends ParentClient
      */
     public function getSalesSalesfilterById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesfilterById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesfilterById($id));
     }
 
     /**
@@ -4138,7 +4138,7 @@ class Client extends ParentClient
      */
     public function getSalesSalesprogress(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesprogress($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesprogress($queryParameters));
     }
 
     /**
@@ -4153,7 +4153,7 @@ class Client extends ParentClient
      */
     public function getSalesSalesprogressById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesprogressById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesprogressById($id));
     }
 
     /**
@@ -4172,7 +4172,7 @@ class Client extends ParentClient
      */
     public function getSalesSalesreason(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesreason($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesreason($queryParameters));
     }
 
     /**
@@ -4187,7 +4187,7 @@ class Client extends ParentClient
      */
     public function getSalesSalesreasonById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesreasonById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesreasonById($id));
     }
 
     /**
@@ -4205,7 +4205,7 @@ class Client extends ParentClient
      */
     public function getSalesSalessource(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalessource($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalessource($queryParameters));
     }
 
     /**
@@ -4220,7 +4220,7 @@ class Client extends ParentClient
      */
     public function getSalesSalessourceById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalessourceById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalessourceById($id));
     }
 
     /**
@@ -4238,7 +4238,7 @@ class Client extends ParentClient
      */
     public function getSalesSalesstatus(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesstatus($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesstatus($queryParameters));
     }
 
     /**
@@ -4253,7 +4253,7 @@ class Client extends ParentClient
      */
     public function getSalesSalesstatusById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesstatusById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesSalesstatusById($id));
     }
 
     /**
@@ -4269,7 +4269,7 @@ class Client extends ParentClient
      */
     public function postSalesServiceByIdDuplicate(string $id, string $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSalesServiceByIdDuplicate($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSalesServiceByIdDuplicate($id, $body));
     }
 
     /**
@@ -4287,7 +4287,7 @@ class Client extends ParentClient
      */
     public function getSalesService(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesService($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesService($queryParameters));
     }
 
     /**
@@ -4301,7 +4301,7 @@ class Client extends ParentClient
      */
     public function postSalesService(\Paqtcom\Simplicate\Model\PostSalesService $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSalesService($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSalesService($body));
     }
 
     /**
@@ -4315,7 +4315,7 @@ class Client extends ParentClient
      */
     public function deleteSalesServiceById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteSalesServiceById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteSalesServiceById($id));
     }
 
     /**
@@ -4330,7 +4330,7 @@ class Client extends ParentClient
      */
     public function getSalesServiceById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesServiceById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesServiceById($id));
     }
 
     /**
@@ -4346,7 +4346,7 @@ class Client extends ParentClient
      */
     public function putSalesServiceById(string $id, \Paqtcom\Simplicate\Model\PostSalesService $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutSalesServiceById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutSalesServiceById($id, $body));
     }
 
     /**
@@ -4364,7 +4364,7 @@ class Client extends ParentClient
      */
     public function getServicesDefaultservice(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetServicesDefaultservice($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetServicesDefaultservice($queryParameters));
     }
 
     /**
@@ -4378,7 +4378,7 @@ class Client extends ParentClient
      */
     public function postServicesDefaultservice(\Paqtcom\Simplicate\Model\PostDefaultService $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostServicesDefaultservice($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostServicesDefaultservice($body));
     }
 
     /**
@@ -4392,7 +4392,7 @@ class Client extends ParentClient
      */
     public function deleteServicesDefaultserviceById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteServicesDefaultserviceById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteServicesDefaultserviceById($id));
     }
 
     /**
@@ -4407,7 +4407,7 @@ class Client extends ParentClient
      */
     public function getServicesDefaultserviceById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetServicesDefaultserviceById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetServicesDefaultserviceById($id));
     }
 
     /**
@@ -4423,7 +4423,7 @@ class Client extends ParentClient
      */
     public function putServicesDefaultserviceById(string $id, \Paqtcom\Simplicate\Model\PostDefaultService $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutServicesDefaultserviceById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutServicesDefaultserviceById($id, $body));
     }
 
     /**
@@ -4441,7 +4441,7 @@ class Client extends ParentClient
      */
     public function getSharedItem(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSharedItem($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSharedItem($queryParameters));
     }
 
     /**
@@ -4455,7 +4455,7 @@ class Client extends ParentClient
      */
     public function postSharedItem(\Paqtcom\Simplicate\Model\PostSharedItem $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSharedItem($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostSharedItem($body));
     }
 
     /**
@@ -4469,7 +4469,7 @@ class Client extends ParentClient
      */
     public function deleteSharedItemById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteSharedItemById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteSharedItemById($id));
     }
 
     /**
@@ -4484,7 +4484,7 @@ class Client extends ParentClient
      */
     public function getSharedItemById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSharedItemById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSharedItemById($id));
     }
 
     /**
@@ -4499,7 +4499,7 @@ class Client extends ParentClient
      */
     public function putSharedItemById(string $id, \Paqtcom\Simplicate\Model\PostSharedItem $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutSharedItemById($id, $body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutSharedItemById($id, $body));
     }
 
     /**
@@ -4511,7 +4511,7 @@ class Client extends ParentClient
      */
     public function postTimelineAttachment(\Paqtcom\Simplicate\Model\PostAttachment $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostTimelineAttachment($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostTimelineAttachment($body));
     }
 
     /**
@@ -4525,7 +4525,7 @@ class Client extends ParentClient
      */
     public function deleteTimelineAttachmentById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteTimelineAttachmentById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteTimelineAttachmentById($id));
     }
 
     /**
@@ -4543,7 +4543,7 @@ class Client extends ParentClient
      */
     public function getTimelineMessage(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetTimelineMessage($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetTimelineMessage($queryParameters));
     }
 
     /**
@@ -4557,7 +4557,7 @@ class Client extends ParentClient
      */
     public function postTimelineMessage(\Paqtcom\Simplicate\Model\PostMessage $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostTimelineMessage($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostTimelineMessage($body));
     }
 
     /**
@@ -4571,7 +4571,7 @@ class Client extends ParentClient
      */
     public function deleteTimelineMessageById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteTimelineMessageById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteTimelineMessageById($id));
     }
 
     /**
@@ -4586,7 +4586,7 @@ class Client extends ParentClient
      */
     public function getTimelineMessageById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetTimelineMessageById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetTimelineMessageById($id));
     }
 
     /**
@@ -4604,7 +4604,7 @@ class Client extends ParentClient
      */
     public function getTimelineMessagetype(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetTimelineMessagetype($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetTimelineMessagetype($queryParameters));
     }
 
     /**
@@ -4619,7 +4619,7 @@ class Client extends ParentClient
      */
     public function getTimelineMessagetypeById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetTimelineMessagetypeById($id), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetTimelineMessagetypeById($id));
     }
 
     /**
@@ -4637,7 +4637,7 @@ class Client extends ParentClient
      */
     public function getTimersTimer(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetTimersTimer($queryParameters), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetTimersTimer($queryParameters));
     }
 
     /**
@@ -4651,7 +4651,7 @@ class Client extends ParentClient
      */
     public function postTimersTimer(\Paqtcom\Simplicate\Model\PostTimer $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostTimersTimer($body), $fetch);
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostTimersTimer($body));
     }
 
     /**
@@ -4665,7 +4665,7 @@ class Client extends ParentClient
      */
     public function deleteTimersTimerById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new DeleteTimersTimerById($id), $fetch);
+        return $this->executeEndpoint(new DeleteTimersTimerById($id));
     }
 
     /**
@@ -4680,7 +4680,7 @@ class Client extends ParentClient
      */
     public function getTimersTimerById(string $id, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new GetTimersTimerById($id), $fetch);
+        return $this->executeEndpoint(new GetTimersTimerById($id));
     }
 
     /**
@@ -4696,7 +4696,7 @@ class Client extends ParentClient
      */
     public function putTimersTimerById(string $id, PutTimer $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new PutTimersTimerById($id, $body), $fetch);
+        return $this->executeEndpoint(new PutTimersTimerById($id, $body));
     }
 
     /**
@@ -4711,7 +4711,7 @@ class Client extends ParentClient
      */
     public function postUploadChunked(PostChunked $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new PostUploadChunked($body), $fetch);
+        return $this->executeEndpoint(new PostUploadChunked($body));
     }
 
     /**
@@ -4727,7 +4727,7 @@ class Client extends ParentClient
      */
     public function putUploadChunkedById(string $id, PutChunked $body, string $fetch = self::FETCH_OBJECT)
     {
-        return $this->executeEndpoint(new PutUploadChunkedById($id, $body), $fetch);
+        return $this->executeEndpoint(new PutUploadChunkedById($id, $body));
     }
 
     public static function create($httpClient = null, array $additionalPlugins = [], array $additionalNormalizers = [])

@@ -31,10 +31,7 @@ class RestResultQuoteTemplatesNormalizer implements DenormalizerInterface, Norma
         return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\RestResultQuoteTemplates::class;
     }
 
-    /**
-     * @return mixed
-     */
-    public function denormalize($data, $class, $format = null, array $context = [])
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -46,7 +43,7 @@ class RestResultQuoteTemplatesNormalizer implements DenormalizerInterface, Norma
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('data', $data)) {
+        if (\array_key_exists('data', $data) && $data['data'] !== null) {
             $values = [];
             foreach ($data['data'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\QuoteTemplate::class, 'json', $context);
@@ -56,14 +53,14 @@ class RestResultQuoteTemplatesNormalizer implements DenormalizerInterface, Norma
         if (\array_key_exists('metadata', $data)) {
             $object->setMetadata($this->denormalizer->denormalize($data['metadata'], \Paqtcom\Simplicate\Model\MetaData::class, 'json', $context));
         }
-        if (\array_key_exists('errors', $data)) {
+        if (\array_key_exists('errors', $data) && is_iterable($data['errors'])) {
             $values_1 = [];
             foreach ($data['errors'] as $value_1) {
                 $values_1[] = $value_1;
             }
             $object->setErrors($values_1);
         }
-        if (\array_key_exists('debug', $data)) {
+        if (\array_key_exists('debug', $data) && is_iterable($data['debug'])) {
             $values_2 = [];
             foreach ($data['debug'] as $value_2) {
                 $values_2[] = $value_2;
@@ -74,10 +71,7 @@ class RestResultQuoteTemplatesNormalizer implements DenormalizerInterface, Norma
         return $object;
     }
 
-    /**
-     * @return array|string|int|float|bool|\ArrayObject|null
-     */
-    public function normalize($object, $format = null, array $context = [])
+    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('data') && null !== $object->getData()) {

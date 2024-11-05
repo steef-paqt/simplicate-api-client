@@ -45,7 +45,7 @@ interface Endpoint
     /**
      * Parse and transform a PSR7 Response into a different object.
      *
-     * Implementations may vary depending the status code of the response and the fetch mode used.
+     * Implementations may vary depending on the status code of the response and the fetch mode used.
      */
-    public function parseResponse(ResponseInterface $response, SerializerInterface $serializer, string $fetchMode = Client::FETCH_OBJECT);
+    public function parseResponse(ResponseInterface $response, SerializerInterface $serializer);
 }
