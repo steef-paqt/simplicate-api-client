@@ -11,9 +11,9 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 abstract class BaseEndpoint implements Endpoint
 {
-    protected $queryParameters = [];
-    protected $headerParameters = [];
-    protected $body;
+    protected array $queryParameters = [];
+    protected array $headerParameters = [];
+    protected array $body;
 
     abstract public function getMethod(): string;
 

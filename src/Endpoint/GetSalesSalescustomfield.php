@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace Steefdw\Simplicate\Endpoint;
 
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
-use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class GetSalesSalescustomfield extends BaseEndpoint implements Endpoint
+class GetSalesSalescustomfield extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 

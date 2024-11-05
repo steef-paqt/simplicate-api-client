@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace Steefdw\Simplicate\Endpoint;
 
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
-use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class PutMileageMileageById extends BaseEndpoint implements Endpoint
+class PutMileageMileageById extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
-    protected $id;
 
     /**
      *
@@ -18,9 +16,8 @@ class PutMileageMileageById extends BaseEndpoint implements Endpoint
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PutMileage $body Mileage object that needs to be updated
      */
-    public function __construct(string $id, \Steefdw\Simplicate\Model\PutMileage $body)
+    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PutMileage $body)
     {
-        $this->id = $id;
         $this->body = $body;
     }
 
@@ -51,13 +48,11 @@ class PutMileageMileageById extends BaseEndpoint implements Endpoint
      * @throws \Steefdw\Simplicate\Exception\PutMileageMileageByIdUnauthorizedException
      * @throws \Steefdw\Simplicate\Exception\PutMileageMileageByIdNotFoundException
      * @throws \Steefdw\Simplicate\Exception\PutMileageMileageByIdInternalServerErrorException
-     *
-     * @return null
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $body = (string) $response->getBody();
+        $response->getBody();
         if (200 === $status) {
             return null;
         }

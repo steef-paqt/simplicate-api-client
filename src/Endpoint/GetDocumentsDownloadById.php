@@ -7,19 +7,17 @@ namespace Steefdw\Simplicate\Endpoint;
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
 use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class GetDocumentsDownloadById extends BaseEndpoint implements Endpoint
+class GetDocumentsDownloadById extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
-    protected $id;
 
     /**
      *
      *
      * @param string $id The template's id
      */
-    public function __construct(string $id)
+    public function __construct(protected string $id)
     {
-        $this->id = $id;
     }
 
     public function getMethod(): string
@@ -49,8 +47,6 @@ class GetDocumentsDownloadById extends BaseEndpoint implements Endpoint
      * @throws \Steefdw\Simplicate\Exception\GetDocumentsDownloadByIdNotFoundException
      * @throws \Steefdw\Simplicate\Exception\GetDocumentsDownloadByIdUnprocessableEntityException
      * @throws \Steefdw\Simplicate\Exception\GetDocumentsDownloadByIdInternalServerErrorException
-     *
-     * @return null
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {

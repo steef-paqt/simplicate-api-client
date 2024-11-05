@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace Steefdw\Simplicate\Endpoint;
 
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
-use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class GetProjectsAssignmentstatusById extends BaseEndpoint implements Endpoint
+class GetProjectsAssignmentstatusById extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
-    protected $id;
 
     /**
      *
@@ -22,9 +20,8 @@ class GetProjectsAssignmentstatusById extends BaseEndpoint implements Endpoint
      *     @var string $sort Sort the result by column name
      * }
      */
-    public function __construct(string $id, array $queryParameters = [])
+    public function __construct(protected string $id, array $queryParameters = [])
     {
-        $this->id = $id;
         $this->queryParameters = $queryParameters;
     }
 

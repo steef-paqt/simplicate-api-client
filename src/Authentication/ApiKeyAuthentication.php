@@ -17,9 +17,7 @@ class ApiKeyAuthentication implements AuthenticationPlugin
 
     public function authentication(\Psr\Http\Message\RequestInterface $request): \Psr\Http\Message\RequestInterface
     {
-        $request = $request->withHeader('API Key Authentication', $this->{'apiKey'});
-
-        return $request;
+        return $request->withHeader('API Key Authentication', $this->{'apiKey'});
     }
 
     public function getScope(): string

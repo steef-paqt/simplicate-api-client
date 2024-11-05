@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace Steefdw\Simplicate\Endpoint;
 
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
-use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class PutSalesQuoteById extends BaseEndpoint implements Endpoint
+class PutSalesQuoteById extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
-    protected $id;
 
     /**
      *
@@ -18,9 +16,8 @@ class PutSalesQuoteById extends BaseEndpoint implements Endpoint
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PostQuote $body Quote template object containing data
      */
-    public function __construct(string $id, \Steefdw\Simplicate\Model\PostQuote $body)
+    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PostQuote $body)
     {
-        $this->id = $id;
         $this->body = $body;
     }
 
@@ -50,13 +47,11 @@ class PutSalesQuoteById extends BaseEndpoint implements Endpoint
      * @throws \Steefdw\Simplicate\Exception\PutSalesQuoteByIdBadRequestException
      * @throws \Steefdw\Simplicate\Exception\PutSalesQuoteByIdUnauthorizedException
      * @throws \Steefdw\Simplicate\Exception\PutSalesQuoteByIdInternalServerErrorException
-     *
-     * @return null
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $body = (string) $response->getBody();
+        $response->getBody();
         if (200 === $status) {
             return null;
         }

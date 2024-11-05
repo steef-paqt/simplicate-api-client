@@ -6,7 +6,7 @@ namespace Steefdw\Simplicate\Exception;
 
 class GetSalesDocumentByIdUnprocessableEntityException extends UnprocessableEntityException
 {
-    public function __construct(private ?\Psr\Http\Message\ResponseInterface $response = null)
+    public function __construct(private readonly ?\Psr\Http\Message\ResponseInterface $response = null)
     {
         parent::__construct('Unprocessable Entity');
     }

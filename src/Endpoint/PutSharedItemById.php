@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace Steefdw\Simplicate\Endpoint;
 
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
-use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class PutSharedItemById extends BaseEndpoint implements Endpoint
+class PutSharedItemById extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
-    protected $id;
 
     /**
      *
@@ -18,9 +16,8 @@ class PutSharedItemById extends BaseEndpoint implements Endpoint
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PostSharedItem $body Shared item object that with the data that needs to be updated
      */
-    public function __construct(string $id, \Steefdw\Simplicate\Model\PostSharedItem $body)
+    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PostSharedItem $body)
     {
-        $this->id = $id;
         $this->body = $body;
     }
 
@@ -50,13 +47,11 @@ class PutSharedItemById extends BaseEndpoint implements Endpoint
      * @throws \Steefdw\Simplicate\Exception\PutSharedItemByIdUnauthorizedException
      * @throws \Steefdw\Simplicate\Exception\PutSharedItemByIdNotFoundException
      * @throws \Steefdw\Simplicate\Exception\PutSharedItemByIdInternalServerErrorException
-     *
-     * @return null
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $body = (string) $response->getBody();
+        $response->getBody();
         if (200 === $status) {
             return null;
         }

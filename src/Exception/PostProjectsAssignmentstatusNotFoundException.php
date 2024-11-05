@@ -6,7 +6,7 @@ namespace Steefdw\Simplicate\Exception;
 
 class PostProjectsAssignmentstatusNotFoundException extends NotFoundException
 {
-    public function __construct(private ?\Psr\Http\Message\ResponseInterface $response = null)
+    public function __construct(private readonly ?\Psr\Http\Message\ResponseInterface $response = null)
     {
         parent::__construct('Entity Not Found');
     }

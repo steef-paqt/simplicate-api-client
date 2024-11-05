@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace Steefdw\Simplicate\Endpoint;
 
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
-use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class PostProjectsServiceByIdDuplicate extends BaseEndpoint implements Endpoint
+class PostProjectsServiceByIdDuplicate extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
-    protected $id;
 
     /**
      *
@@ -18,9 +16,8 @@ class PostProjectsServiceByIdDuplicate extends BaseEndpoint implements Endpoint
      * @param string $id The template's id
      * @param string $body Optional parameters to overwrite
      */
-    public function __construct(string $id, string $body)
+    public function __construct(protected string $id, string $body)
     {
-        $this->id = $id;
         $this->body = $body;
     }
 
@@ -51,13 +48,11 @@ class PostProjectsServiceByIdDuplicate extends BaseEndpoint implements Endpoint
      * @throws \Steefdw\Simplicate\Exception\PostProjectsServiceByIdDuplicateUnauthorizedException
      * @throws \Steefdw\Simplicate\Exception\PostProjectsServiceByIdDuplicateNotFoundException
      * @throws \Steefdw\Simplicate\Exception\PostProjectsServiceByIdDuplicateInternalServerErrorException
-     *
-     * @return null
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $body = (string) $response->getBody();
+        $response->getBody();
         if (200 === $status) {
             return null;
         }

@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace Steefdw\Simplicate\Endpoint;
 
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
-use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class PostTimelineMessage extends BaseEndpoint implements Endpoint
+class PostTimelineMessage extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
@@ -47,13 +46,11 @@ class PostTimelineMessage extends BaseEndpoint implements Endpoint
      * @throws \Steefdw\Simplicate\Exception\PostTimelineMessageUnauthorizedException
      * @throws \Steefdw\Simplicate\Exception\PostTimelineMessageNotFoundException
      * @throws \Steefdw\Simplicate\Exception\PostTimelineMessageInternalServerErrorException
-     *
-     * @return null
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $body = (string) $response->getBody();
+        $response->getBody();
         if (200 === $status) {
             return null;
         }

@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace Steefdw\Simplicate\Endpoint;
 
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
-use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class GetProjectsServiceByIdPlanningBudget extends BaseEndpoint implements Endpoint
+class GetProjectsServiceByIdPlanningBudget extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
-    protected $id;
 
     /**
      *
@@ -21,9 +19,8 @@ class GetProjectsServiceByIdPlanningBudget extends BaseEndpoint implements Endpo
      *     @var string $until_date Y-m-d
      * }
      */
-    public function __construct(string $id, array $queryParameters = [])
+    public function __construct(protected string $id, array $queryParameters = [])
     {
-        $this->id = $id;
         $this->queryParameters = $queryParameters;
     }
 
@@ -66,13 +63,11 @@ class GetProjectsServiceByIdPlanningBudget extends BaseEndpoint implements Endpo
      * @throws \Steefdw\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetNotFoundException
      * @throws \Steefdw\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetUnprocessableEntityException
      * @throws \Steefdw\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetInternalServerErrorException
-     *
-     * @return null
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $body = (string) $response->getBody();
+        $response->getBody();
         if (200 === $status) {
             return null;
         }

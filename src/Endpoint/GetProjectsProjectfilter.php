@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace Steefdw\Simplicate\Endpoint;
 
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
-use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class GetProjectsProjectfilter extends BaseEndpoint implements Endpoint
+class GetProjectsProjectfilter extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
@@ -64,13 +63,11 @@ class GetProjectsProjectfilter extends BaseEndpoint implements Endpoint
      * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectfilterUnauthorizedException
      * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectfilterNotFoundException
      * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectfilterInternalServerErrorException
-     *
-     * @return null
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $body = (string) $response->getBody();
+        $response->getBody();
         if (200 === $status) {
             return null;
         }

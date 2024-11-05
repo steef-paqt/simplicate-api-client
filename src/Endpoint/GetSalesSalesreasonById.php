@@ -7,19 +7,17 @@ namespace Steefdw\Simplicate\Endpoint;
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
 use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class GetSalesSalesreasonById extends BaseEndpoint implements Endpoint
+class GetSalesSalesreasonById extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
-    protected $id;
 
     /**
      *
      *
      * @param string $id The template's id
      */
-    public function __construct(string $id)
+    public function __construct(protected string $id)
     {
-        $this->id = $id;
     }
 
     public function getMethod(): string

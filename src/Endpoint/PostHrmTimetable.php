@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace Steefdw\Simplicate\Endpoint;
 
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
-use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class PostHrmTimetable extends BaseEndpoint implements Endpoint
+class PostHrmTimetable extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
@@ -47,13 +46,11 @@ class PostHrmTimetable extends BaseEndpoint implements Endpoint
      * @throws \Steefdw\Simplicate\Exception\PostHrmTimetableUnauthorizedException
      * @throws \Steefdw\Simplicate\Exception\PostHrmTimetableNotFoundException
      * @throws \Steefdw\Simplicate\Exception\PostHrmTimetableInternalServerErrorException
-     *
-     * @return null
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $body = (string) $response->getBody();
+        $response->getBody();
         if (200 === $status) {
             return null;
         }

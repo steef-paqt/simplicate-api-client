@@ -7,19 +7,17 @@ namespace Steefdw\Simplicate\Endpoint;
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
 use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class GetProjectsProjectfilterById extends BaseEndpoint implements Endpoint
+class GetProjectsProjectfilterById extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
-    protected $id;
 
     /**
      *
      *
      * @param string $id The template's id
      */
-    public function __construct(string $id)
+    public function __construct(protected string $id)
     {
-        $this->id = $id;
     }
 
     public function getMethod(): string
@@ -49,13 +47,11 @@ class GetProjectsProjectfilterById extends BaseEndpoint implements Endpoint
      * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectfilterByIdNotFoundException
      * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectfilterByIdUnprocessableEntityException
      * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectfilterByIdInternalServerErrorException
-     *
-     * @return null
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $body = (string) $response->getBody();
+        $response->getBody();
         if (200 === $status) {
             return null;
         }

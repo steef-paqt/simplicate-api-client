@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace Steefdw\Simplicate\Endpoint;
 
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
-use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class PostHrmEmployee extends BaseEndpoint implements Endpoint
+class PostHrmEmployee extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
@@ -47,13 +46,11 @@ class PostHrmEmployee extends BaseEndpoint implements Endpoint
      * @throws \Steefdw\Simplicate\Exception\PostHrmEmployeeUnauthorizedException
      * @throws \Steefdw\Simplicate\Exception\PostHrmEmployeeNotFoundException
      * @throws \Steefdw\Simplicate\Exception\PostHrmEmployeeInternalServerErrorException
-     *
-     * @return null
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $body = (string) $response->getBody();
+        $response->getBody();
         if (200 === $status) {
             return null;
         }

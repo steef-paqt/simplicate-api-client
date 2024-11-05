@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace Steefdw\Simplicate\Endpoint;
 
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
-use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class PutUploadChunkedById extends BaseEndpoint implements Endpoint
+class PutUploadChunkedById extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
-    protected $id;
 
     /**
      *
@@ -18,9 +16,8 @@ class PutUploadChunkedById extends BaseEndpoint implements Endpoint
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PutChunked $body Next chunk for an chunked_upload
      */
-    public function __construct(string $id, \Steefdw\Simplicate\Model\PutChunked $body)
+    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PutChunked $body)
     {
-        $this->id = $id;
         $this->body = $body;
     }
 
@@ -51,13 +48,11 @@ class PutUploadChunkedById extends BaseEndpoint implements Endpoint
      * @throws \Steefdw\Simplicate\Exception\PutUploadChunkedByIdUnauthorizedException
      * @throws \Steefdw\Simplicate\Exception\PutUploadChunkedByIdNotFoundException
      * @throws \Steefdw\Simplicate\Exception\PutUploadChunkedByIdInternalServerErrorException
-     *
-     * @return null
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $body = (string) $response->getBody();
+        $response->getBody();
         if (200 === $status) {
             return null;
         }

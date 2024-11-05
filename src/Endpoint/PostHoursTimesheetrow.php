@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace Steefdw\Simplicate\Endpoint;
 
 use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
-use Steefdw\Simplicate\Runtime\Client\Endpoint;
 
-class PostHoursTimesheetrow extends BaseEndpoint implements Endpoint
+class PostHoursTimesheetrow extends BaseEndpoint
 {
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
@@ -47,13 +46,11 @@ class PostHoursTimesheetrow extends BaseEndpoint implements Endpoint
      * @throws \Steefdw\Simplicate\Exception\PostHoursTimesheetrowBadRequestException
      * @throws \Steefdw\Simplicate\Exception\PostHoursTimesheetrowUnauthorizedException
      * @throws \Steefdw\Simplicate\Exception\PostHoursTimesheetrowInternalServerErrorException
-     *
-     * @return null
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $body = (string) $response->getBody();
+        $response->getBody();
         if (200 === $status) {
             return null;
         }
