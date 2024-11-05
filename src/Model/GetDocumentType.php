@@ -16,99 +16,67 @@ class GetDocumentType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var bool
      */
     protected $canHaveAttachment;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForCrm;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForContact;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForSale;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForDebtor;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForProject;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForSubscription;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForEmployee;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForInvoice;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForMyorganizationprofile;
     /**
-     *
-     *
      * @var bool
      */
     protected $isBlocked;
     /**
-     *
-     *
      * @var bool
      */
     protected $isVisibleOnAll;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -117,8 +85,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -132,8 +98,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -142,8 +106,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -157,8 +119,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -167,8 +127,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -182,8 +140,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getCanHaveAttachment(): bool
@@ -192,8 +148,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param bool $canHaveAttachment
      *
      * @return self
@@ -207,8 +161,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForCrm(): bool
@@ -217,8 +169,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param bool $isForCrm
      *
      * @return self
@@ -232,8 +182,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForContact(): bool
@@ -242,8 +190,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param bool $isForContact
      *
      * @return self
@@ -257,8 +203,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForSale(): bool
@@ -267,8 +211,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param bool $isForSale
      *
      * @return self
@@ -282,8 +224,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForDebtor(): bool
@@ -292,8 +232,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param bool $isForDebtor
      *
      * @return self
@@ -307,8 +245,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForProject(): bool
@@ -317,8 +253,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param bool $isForProject
      *
      * @return self
@@ -332,8 +266,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForSubscription(): bool
@@ -342,8 +274,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param bool $isForSubscription
      *
      * @return self
@@ -357,8 +287,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForEmployee(): bool
@@ -367,8 +295,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param bool $isForEmployee
      *
      * @return self
@@ -382,8 +308,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForInvoice(): bool
@@ -392,8 +316,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param bool $isForInvoice
      *
      * @return self
@@ -407,8 +329,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForMyorganizationprofile(): bool
@@ -417,8 +337,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param bool $isForMyorganizationprofile
      *
      * @return self
@@ -432,8 +350,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsBlocked(): bool
@@ -442,8 +358,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param bool $isBlocked
      *
      * @return self
@@ -457,8 +371,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsVisibleOnAll(): bool
@@ -467,8 +379,6 @@ class GetDocumentType
     }
 
     /**
-     *
-     *
      * @param bool $isVisibleOnAll
      *
      * @return self

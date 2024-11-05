@@ -16,45 +16,31 @@ class PostDefaultService
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $vatClassId;
     /**
-     *
-     *
      * @var string
      */
     protected $revenueGroupId;
     /**
-     *
-     *
      * @var string
      */
     protected $myOrganizationProfileId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var bool
      */
     protected $priceEditable;
     /**
-     *
-     *
      * @var float
      */
     protected $price;
 
     /**
-     *
-     *
      * @return string
      */
     public function getVatClassId(): string
@@ -63,8 +49,6 @@ class PostDefaultService
     }
 
     /**
-     *
-     *
      * @param string $vatClassId
      *
      * @return self
@@ -78,8 +62,6 @@ class PostDefaultService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRevenueGroupId(): string
@@ -88,8 +70,6 @@ class PostDefaultService
     }
 
     /**
-     *
-     *
      * @param string $revenueGroupId
      *
      * @return self
@@ -103,8 +83,6 @@ class PostDefaultService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMyOrganizationProfileId(): string
@@ -113,8 +91,6 @@ class PostDefaultService
     }
 
     /**
-     *
-     *
      * @param string $myOrganizationProfileId
      *
      * @return self
@@ -128,8 +104,6 @@ class PostDefaultService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -138,8 +112,6 @@ class PostDefaultService
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -153,8 +125,6 @@ class PostDefaultService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getPriceEditable(): bool
@@ -163,8 +133,6 @@ class PostDefaultService
     }
 
     /**
-     *
-     *
      * @param bool $priceEditable
      *
      * @return self
@@ -178,8 +146,6 @@ class PostDefaultService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPrice(): float
@@ -188,8 +154,6 @@ class PostDefaultService
     }
 
     /**
-     *
-     *
      * @param float $price
      *
      * @return self

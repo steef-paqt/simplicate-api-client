@@ -16,141 +16,95 @@ class GetEmployee
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var int
      */
     protected $isUser;
     /**
-     *
-     *
      * @var Team[]
      */
     protected $teams;
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $supervisor;
     /**
-     *
-     *
      * @var EmployeeStatus
      */
     protected $status;
     /**
-     *
-     *
      * @var GetCustomField[]
      */
     protected $customFields;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $bankAccount;
     /**
-     *
-     *
      * @var string
      */
     protected $function;
     /**
-     *
-     *
      * @var mixed
      */
     protected $type;
     /**
-     *
-     *
      * @var string
      */
     protected $employmentStatus;
     /**
-     *
-     *
      * @var string
      */
     protected $civilStatus;
     /**
-     *
-     *
      * @var string
      */
     protected $workPhone;
     /**
-     *
-     *
      * @var string
      */
     protected $workMobile;
     /**
-     *
-     *
      * @var string
      */
     protected $workEmail;
     /**
-     *
-     *
      * @var float
      */
     protected $hourlySalesTariff;
     /**
-     *
-     *
      * @var float
      */
     protected $hourlyCostTariff;
     /**
-     *
-     *
      * @var Avatar
      */
     protected $avatar;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $simplicateUrl;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -159,8 +113,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -174,8 +126,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getIsUser(): int
@@ -184,8 +134,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param int $isUser
      *
      * @return self
@@ -199,8 +147,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return Team[]
      */
     public function getTeams(): array
@@ -209,8 +155,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param Team[] $teams
      *
      * @return self
@@ -224,8 +168,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getSupervisor(): GetEmployeeSimple
@@ -234,8 +176,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $supervisor
      *
      * @return self
@@ -249,8 +189,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return EmployeeStatus
      */
     public function getStatus(): EmployeeStatus
@@ -259,8 +197,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param EmployeeStatus $status
      *
      * @return self
@@ -274,8 +210,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return GetCustomField[]
      */
     public function getCustomFields(): array
@@ -284,8 +218,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param GetCustomField[] $customFields
      *
      * @return self
@@ -299,8 +231,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -309,8 +239,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -324,8 +252,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -334,8 +260,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -349,8 +273,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBankAccount(): string
@@ -359,8 +281,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param string $bankAccount
      *
      * @return self
@@ -374,8 +294,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFunction(): string
@@ -384,8 +302,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param string $function
      *
      * @return self
@@ -399,8 +315,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return mixed
      */
     public function getType()
@@ -409,8 +323,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param mixed $type
      *
      * @return self
@@ -424,8 +336,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmploymentStatus(): string
@@ -434,8 +344,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param string $employmentStatus
      *
      * @return self
@@ -449,8 +357,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCivilStatus(): string
@@ -459,8 +365,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param string $civilStatus
      *
      * @return self
@@ -474,8 +378,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkPhone(): string
@@ -484,8 +386,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param string $workPhone
      *
      * @return self
@@ -499,8 +399,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkMobile(): string
@@ -509,8 +407,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param string $workMobile
      *
      * @return self
@@ -524,8 +420,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkEmail(): string
@@ -534,8 +428,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param string $workEmail
      *
      * @return self
@@ -549,8 +441,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getHourlySalesTariff(): float
@@ -559,8 +449,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param float $hourlySalesTariff
      *
      * @return self
@@ -574,8 +462,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getHourlyCostTariff(): float
@@ -584,8 +470,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param float $hourlyCostTariff
      *
      * @return self
@@ -599,8 +483,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return Avatar
      */
     public function getAvatar(): Avatar
@@ -609,8 +491,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param Avatar $avatar
      *
      * @return self
@@ -624,8 +504,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -634,8 +512,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -649,8 +525,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -659,8 +533,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -674,8 +546,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSimplicateUrl(): string
@@ -684,8 +554,6 @@ class GetEmployee
     }
 
     /**
-     *
-     *
      * @param string $simplicateUrl
      *
      * @return self

@@ -16,81 +16,55 @@ class Journal
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $journalizeDate;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceDate;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceNumber;
     /**
-     *
-     *
      * @var string
      */
     protected $dueDate;
     /**
-     *
-     *
      * @var string
      */
     protected $subject;
     /**
-     *
-     *
      * @var string
      */
     protected $relationId;
     /**
-     *
-     *
      * @var float
      */
     protected $amountExcl;
     /**
-     *
-     *
      * @var float
      */
     protected $amountIncl;
     /**
-     *
-     *
      * @var bool
      */
     protected $autocollect;
     /**
-     *
-     *
      * @var RevenueGroup
      */
     protected $revenuegroup;
     /**
-     *
-     *
      * @var JournalLine[]
      */
     protected $journalLines;
     /**
-     *
-     *
      * @var JournalVat[]
      */
     protected $vat;
 
     /**
-     *
-     *
      * @return string
      */
     public function getJournalizeDate(): string
@@ -99,8 +73,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @param string $journalizeDate
      *
      * @return self
@@ -114,8 +86,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceDate(): string
@@ -124,8 +94,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @param string $invoiceDate
      *
      * @return self
@@ -139,8 +107,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceNumber(): string
@@ -149,8 +115,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @param string $invoiceNumber
      *
      * @return self
@@ -164,8 +128,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDueDate(): string
@@ -174,8 +136,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @param string $dueDate
      *
      * @return self
@@ -189,8 +149,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubject(): string
@@ -199,8 +157,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @param string $subject
      *
      * @return self
@@ -214,8 +170,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRelationId(): string
@@ -224,8 +178,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @param string $relationId
      *
      * @return self
@@ -239,8 +191,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmountExcl(): float
@@ -249,8 +199,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @param float $amountExcl
      *
      * @return self
@@ -264,8 +212,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmountIncl(): float
@@ -274,8 +220,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @param float $amountIncl
      *
      * @return self
@@ -289,8 +233,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getAutocollect(): bool
@@ -299,8 +241,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @param bool $autocollect
      *
      * @return self
@@ -314,8 +254,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @return RevenueGroup
      */
     public function getRevenuegroup(): RevenueGroup
@@ -324,8 +262,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @param RevenueGroup $revenuegroup
      *
      * @return self
@@ -339,8 +275,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @return JournalLine[]
      */
     public function getJournalLines(): array
@@ -349,8 +283,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @param JournalLine[] $journalLines
      *
      * @return self
@@ -364,8 +296,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @return JournalVat[]
      */
     public function getVat(): array
@@ -374,8 +304,6 @@ class Journal
     }
 
     /**
-     *
-     *
      * @param JournalVat[] $vat
      *
      * @return self

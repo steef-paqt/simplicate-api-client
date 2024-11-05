@@ -16,45 +16,31 @@ class PostQuote
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $quotetemplateId;
     /**
-     *
-     *
      * @var string
      */
     protected $salesId;
     /**
-     *
-     *
      * @var string
      */
     protected $quoteSubject;
     /**
-     *
-     *
      * @var string
      */
     protected $json;
     /**
-     *
-     *
      * @var string
      */
     protected $customerReference;
     /**
-     *
-     *
      * @var int
      */
     protected $isBlocked;
 
     /**
-     *
-     *
      * @return string
      */
     public function getQuotetemplateId(): string
@@ -63,8 +49,6 @@ class PostQuote
     }
 
     /**
-     *
-     *
      * @param string $quotetemplateId
      *
      * @return self
@@ -78,8 +62,6 @@ class PostQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSalesId(): string
@@ -88,8 +70,6 @@ class PostQuote
     }
 
     /**
-     *
-     *
      * @param string $salesId
      *
      * @return self
@@ -103,8 +83,6 @@ class PostQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getQuoteSubject(): string
@@ -113,8 +91,6 @@ class PostQuote
     }
 
     /**
-     *
-     *
      * @param string $quoteSubject
      *
      * @return self
@@ -128,8 +104,6 @@ class PostQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getJson(): string
@@ -138,8 +112,6 @@ class PostQuote
     }
 
     /**
-     *
-     *
      * @param string $json
      *
      * @return self
@@ -153,8 +125,6 @@ class PostQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCustomerReference(): string
@@ -163,8 +133,6 @@ class PostQuote
     }
 
     /**
-     *
-     *
      * @param string $customerReference
      *
      * @return self
@@ -178,8 +146,6 @@ class PostQuote
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getIsBlocked(): int
@@ -188,8 +154,6 @@ class PostQuote
     }
 
     /**
-     *
-     *
      * @param int $isBlocked
      *
      * @return self

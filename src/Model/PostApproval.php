@@ -16,8 +16,6 @@ class PostApproval
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
@@ -28,15 +26,11 @@ class PostApproval
      */
     protected $approvalstatusId;
     /**
-     *
-     *
      * @var string
      */
     protected $date;
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -45,8 +39,6 @@ class PostApproval
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -85,8 +77,6 @@ class PostApproval
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDate(): string
@@ -95,8 +85,6 @@ class PostApproval
     }
 
     /**
-     *
-     *
      * @param string $date
      *
      * @return self

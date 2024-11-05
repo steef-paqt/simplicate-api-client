@@ -16,27 +16,19 @@ class Absence
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -45,8 +37,6 @@ class Absence
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -60,8 +50,6 @@ class Absence
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -70,8 +58,6 @@ class Absence
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -85,8 +71,6 @@ class Absence
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -95,8 +79,6 @@ class Absence
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

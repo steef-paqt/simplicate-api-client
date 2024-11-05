@@ -16,33 +16,23 @@ class BudgetHours
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var float
      */
     protected $amountBudget;
     /**
-     *
-     *
      * @var float
      */
     protected $amountSpent;
     /**
-     *
-     *
      * @var float
      */
     protected $valueBudget;
     /**
-     *
-     *
      * @var float
      */
     protected $valueSpent;
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmountBudget(): float
@@ -51,8 +41,6 @@ class BudgetHours
     }
 
     /**
-     *
-     *
      * @param float $amountBudget
      *
      * @return self
@@ -66,8 +54,6 @@ class BudgetHours
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmountSpent(): float
@@ -76,8 +62,6 @@ class BudgetHours
     }
 
     /**
-     *
-     *
      * @param float $amountSpent
      *
      * @return self
@@ -91,8 +75,6 @@ class BudgetHours
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getValueBudget(): float
@@ -101,8 +83,6 @@ class BudgetHours
     }
 
     /**
-     *
-     *
      * @param float $valueBudget
      *
      * @return self
@@ -116,8 +96,6 @@ class BudgetHours
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getValueSpent(): float
@@ -126,8 +104,6 @@ class BudgetHours
     }
 
     /**
-     *
-     *
      * @param float $valueSpent
      *
      * @return self

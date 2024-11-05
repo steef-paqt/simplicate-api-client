@@ -16,63 +16,43 @@ class QuoteTemplate
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
     /**
-     *
-     *
      * @var string
      */
     protected $html;
     /**
-     *
-     *
      * @var bool
      */
     protected $isBlocked;
     /**
-     *
-     *
      * @var string
      */
     protected $json;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -81,8 +61,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -96,8 +74,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -106,8 +82,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -121,8 +95,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -131,8 +103,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self
@@ -146,8 +116,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getHtml(): string
@@ -156,8 +124,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @param string $html
      *
      * @return self
@@ -171,8 +137,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsBlocked(): bool
@@ -181,8 +145,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @param bool $isBlocked
      *
      * @return self
@@ -196,8 +158,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getJson(): string
@@ -206,8 +166,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @param string $json
      *
      * @return self
@@ -221,8 +179,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -231,8 +187,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -246,8 +200,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -256,8 +208,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -271,8 +221,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -281,8 +229,6 @@ class QuoteTemplate
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self

@@ -16,57 +16,39 @@ class GetHoursType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
     /**
-     *
-     *
      * @var float
      */
     protected $billable;
     /**
-     *
-     *
      * @var VatClass
      */
     protected $vatclass;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $tariff;
     /**
-     *
-     *
      * @var bool
      */
     protected $blocked;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -75,8 +57,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -90,8 +70,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -100,8 +78,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self
@@ -115,8 +91,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getBillable(): float
@@ -125,8 +99,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @param float $billable
      *
      * @return self
@@ -140,8 +112,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @return VatClass
      */
     public function getVatclass(): VatClass
@@ -150,8 +120,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @param VatClass $vatclass
      *
      * @return self
@@ -165,8 +133,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -175,8 +141,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -190,8 +154,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTariff(): string
@@ -200,8 +162,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @param string $tariff
      *
      * @return self
@@ -215,8 +175,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBlocked(): bool
@@ -225,8 +183,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @param bool $blocked
      *
      * @return self
@@ -240,8 +196,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -250,8 +204,6 @@ class GetHoursType
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self

@@ -16,21 +16,15 @@ class PostTeam
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var bool
      */
     protected $value;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -39,8 +33,6 @@ class PostTeam
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -54,8 +46,6 @@ class PostTeam
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getValue(): bool
@@ -64,8 +54,6 @@ class PostTeam
     }
 
     /**
-     *
-     *
      * @param bool $value
      *
      * @return self

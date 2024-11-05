@@ -16,51 +16,35 @@ class GetPurchaseType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var bool
      */
     protected $blocked;
     /**
-     *
-     *
      * @var float
      */
     protected $tariff;
     /**
-     *
-     *
      * @var bool
      */
     protected $isUnitTariff;
     /**
-     *
-     *
      * @var string
      */
     protected $unitName;
     /**
-     *
-     *
      * @var bool
      */
     protected $isAttachmentAllowed;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -69,8 +53,6 @@ class GetPurchaseType
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -84,8 +66,6 @@ class GetPurchaseType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -94,8 +74,6 @@ class GetPurchaseType
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -109,8 +87,6 @@ class GetPurchaseType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBlocked(): bool
@@ -119,8 +95,6 @@ class GetPurchaseType
     }
 
     /**
-     *
-     *
      * @param bool $blocked
      *
      * @return self
@@ -134,8 +108,6 @@ class GetPurchaseType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTariff(): float
@@ -144,8 +116,6 @@ class GetPurchaseType
     }
 
     /**
-     *
-     *
      * @param float $tariff
      *
      * @return self
@@ -159,8 +129,6 @@ class GetPurchaseType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsUnitTariff(): bool
@@ -169,8 +137,6 @@ class GetPurchaseType
     }
 
     /**
-     *
-     *
      * @param bool $isUnitTariff
      *
      * @return self
@@ -184,8 +150,6 @@ class GetPurchaseType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUnitName(): string
@@ -194,8 +158,6 @@ class GetPurchaseType
     }
 
     /**
-     *
-     *
      * @param string $unitName
      *
      * @return self
@@ -209,8 +171,6 @@ class GetPurchaseType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsAttachmentAllowed(): bool
@@ -219,8 +179,6 @@ class GetPurchaseType
     }
 
     /**
-     *
-     *
      * @param bool $isAttachmentAllowed
      *
      * @return self

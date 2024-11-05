@@ -16,51 +16,35 @@ class MetaData
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var int
      */
     protected $count;
     /**
-     *
-     *
      * @var int
      */
     protected $totalCount;
     /**
-     *
-     *
      * @var int
      */
     protected $offset;
     /**
-     *
-     *
      * @var int
      */
     protected $limit;
     /**
-     *
-     *
      * @var int
      */
     protected $upperLimit;
     /**
-     *
-     *
      * @var bool
      */
     protected $nocleanup;
     /**
-     *
-     *
      * @var string
      */
     protected $checksum;
 
     /**
-     *
-     *
      * @return int
      */
     public function getCount(): int
@@ -69,8 +53,6 @@ class MetaData
     }
 
     /**
-     *
-     *
      * @param int $count
      *
      * @return self
@@ -84,8 +66,6 @@ class MetaData
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getTotalCount(): int
@@ -94,8 +74,6 @@ class MetaData
     }
 
     /**
-     *
-     *
      * @param int $totalCount
      *
      * @return self
@@ -109,8 +87,6 @@ class MetaData
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getOffset(): int
@@ -119,8 +95,6 @@ class MetaData
     }
 
     /**
-     *
-     *
      * @param int $offset
      *
      * @return self
@@ -134,8 +108,6 @@ class MetaData
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getLimit(): int
@@ -144,8 +116,6 @@ class MetaData
     }
 
     /**
-     *
-     *
      * @param int $limit
      *
      * @return self
@@ -159,8 +129,6 @@ class MetaData
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getUpperLimit(): int
@@ -169,8 +137,6 @@ class MetaData
     }
 
     /**
-     *
-     *
      * @param int $upperLimit
      *
      * @return self
@@ -184,8 +150,6 @@ class MetaData
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getNocleanup(): bool
@@ -194,8 +158,6 @@ class MetaData
     }
 
     /**
-     *
-     *
      * @param bool $nocleanup
      *
      * @return self
@@ -209,8 +171,6 @@ class MetaData
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getChecksum(): string
@@ -219,8 +179,6 @@ class MetaData
     }
 
     /**
-     *
-     *
      * @param string $checksum
      *
      * @return self

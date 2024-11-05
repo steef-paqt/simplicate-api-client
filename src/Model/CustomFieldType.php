@@ -16,57 +16,39 @@ class CustomFieldType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var int
      */
     protected $position;
     /**
-     *
-     *
      * @var bool
      */
     protected $isMandatoryConfigurable;
     /**
-     *
-     *
      * @var bool
      */
     protected $isSearchableConfigurable;
     /**
-     *
-     *
      * @var bool
      */
     protected $isFilterableConfigurable;
     /**
-     *
-     *
      * @var bool
      */
     protected $isCollectiveMutatableConfigurable;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -75,8 +57,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -90,8 +70,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -100,8 +78,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self
@@ -115,8 +91,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -125,8 +99,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -140,8 +112,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getPosition(): int
@@ -150,8 +120,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @param int $position
      *
      * @return self
@@ -165,8 +133,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsMandatoryConfigurable(): bool
@@ -175,8 +141,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @param bool $isMandatoryConfigurable
      *
      * @return self
@@ -190,8 +154,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsSearchableConfigurable(): bool
@@ -200,8 +162,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @param bool $isSearchableConfigurable
      *
      * @return self
@@ -215,8 +175,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsFilterableConfigurable(): bool
@@ -225,8 +183,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @param bool $isFilterableConfigurable
      *
      * @return self
@@ -240,8 +196,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsCollectiveMutatableConfigurable(): bool
@@ -250,8 +204,6 @@ class CustomFieldType
     }
 
     /**
-     *
-     *
      * @param bool $isCollectiveMutatableConfigurable
      *
      * @return self

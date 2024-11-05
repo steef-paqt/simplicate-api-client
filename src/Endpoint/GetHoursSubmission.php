@@ -11,8 +11,6 @@ class GetHoursSubmission extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param array $queryParameters {
      *     @var string $q[start_date]
      *     @var string $q[end_date]

@@ -16,21 +16,15 @@ class RestBatchValidationError
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var RestError
      */
     protected $error;
     /**
-     *
-     *
      * @var mixed
      */
     protected $submittedData;
 
     /**
-     *
-     *
      * @return RestError
      */
     public function getError(): RestError
@@ -39,8 +33,6 @@ class RestBatchValidationError
     }
 
     /**
-     *
-     *
      * @param RestError $error
      *
      * @return self
@@ -54,8 +46,6 @@ class RestBatchValidationError
     }
 
     /**
-     *
-     *
      * @return mixed
      */
     public function getSubmittedData()
@@ -64,8 +54,6 @@ class RestBatchValidationError
     }
 
     /**
-     *
-     *
      * @param mixed $submittedData
      *
      * @return self

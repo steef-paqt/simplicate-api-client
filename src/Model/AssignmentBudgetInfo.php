@@ -16,51 +16,35 @@ class AssignmentBudgetInfo
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id = 'assignmentbudget:abc';
     /**
-     *
-     *
      * @var AssignmentBudgetInfoFuturePast
      */
     protected $assignmentsPlanned;
     /**
-     *
-     *
      * @var string
      */
     protected $assignmentsUnplanned = 'PT28H45M';
     /**
-     *
-     *
      * @var AssignmentBudgetInfoFuturePast
      */
     protected $assignmentsHoursWritten;
     /**
-     *
-     *
      * @var AssignmentBudgetInfoFuturePast
      */
     protected $itemtypesHoursWritten;
     /**
-     *
-     *
      * @var AssignmentBudgetInfoFuturePast
      */
     protected $assignmentsHoursCorrections;
     /**
-     *
-     *
      * @var AssignmentBudgetInfoFuturePast
      */
     protected $itemtypesHoursCorrections;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -69,8 +53,6 @@ class AssignmentBudgetInfo
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -84,8 +66,6 @@ class AssignmentBudgetInfo
     }
 
     /**
-     *
-     *
      * @return AssignmentBudgetInfoFuturePast
      */
     public function getAssignmentsPlanned(): AssignmentBudgetInfoFuturePast
@@ -94,8 +74,6 @@ class AssignmentBudgetInfo
     }
 
     /**
-     *
-     *
      * @param AssignmentBudgetInfoFuturePast $assignmentsPlanned
      *
      * @return self
@@ -109,8 +87,6 @@ class AssignmentBudgetInfo
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAssignmentsUnplanned(): string
@@ -119,8 +95,6 @@ class AssignmentBudgetInfo
     }
 
     /**
-     *
-     *
      * @param string $assignmentsUnplanned
      *
      * @return self
@@ -134,8 +108,6 @@ class AssignmentBudgetInfo
     }
 
     /**
-     *
-     *
      * @return AssignmentBudgetInfoFuturePast
      */
     public function getAssignmentsHoursWritten(): AssignmentBudgetInfoFuturePast
@@ -144,8 +116,6 @@ class AssignmentBudgetInfo
     }
 
     /**
-     *
-     *
      * @param AssignmentBudgetInfoFuturePast $assignmentsHoursWritten
      *
      * @return self
@@ -159,8 +129,6 @@ class AssignmentBudgetInfo
     }
 
     /**
-     *
-     *
      * @return AssignmentBudgetInfoFuturePast
      */
     public function getItemtypesHoursWritten(): AssignmentBudgetInfoFuturePast
@@ -169,8 +137,6 @@ class AssignmentBudgetInfo
     }
 
     /**
-     *
-     *
      * @param AssignmentBudgetInfoFuturePast $itemtypesHoursWritten
      *
      * @return self
@@ -184,8 +150,6 @@ class AssignmentBudgetInfo
     }
 
     /**
-     *
-     *
      * @return AssignmentBudgetInfoFuturePast
      */
     public function getAssignmentsHoursCorrections(): AssignmentBudgetInfoFuturePast
@@ -194,8 +158,6 @@ class AssignmentBudgetInfo
     }
 
     /**
-     *
-     *
      * @param AssignmentBudgetInfoFuturePast $assignmentsHoursCorrections
      *
      * @return self
@@ -209,8 +171,6 @@ class AssignmentBudgetInfo
     }
 
     /**
-     *
-     *
      * @return AssignmentBudgetInfoFuturePast
      */
     public function getItemtypesHoursCorrections(): AssignmentBudgetInfoFuturePast
@@ -219,8 +179,6 @@ class AssignmentBudgetInfo
     }
 
     /**
-     *
-     *
      * @param AssignmentBudgetInfoFuturePast $itemtypesHoursCorrections
      *
      * @return self

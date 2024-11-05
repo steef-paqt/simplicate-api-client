@@ -16,57 +16,39 @@ class PostMileage
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $projectId;
     /**
-     *
-     *
      * @var string
      */
     protected $approvalstatusId;
     /**
-     *
-     *
      * @var float
      */
     protected $mileage;
     /**
-     *
-     *
      * @var string
      */
     protected $relatedHoursId;
     /**
-     *
-     *
      * @var string
      */
     protected $source;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -75,8 +57,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -90,8 +70,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectId(): string
@@ -100,8 +78,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @param string $projectId
      *
      * @return self
@@ -115,8 +91,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getApprovalstatusId(): string
@@ -125,8 +99,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @param string $approvalstatusId
      *
      * @return self
@@ -140,8 +112,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getMileage(): float
@@ -150,8 +120,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @param float $mileage
      *
      * @return self
@@ -165,8 +133,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRelatedHoursId(): string
@@ -175,8 +141,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @param string $relatedHoursId
      *
      * @return self
@@ -190,8 +154,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSource(): string
@@ -200,8 +162,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @param string $source
      *
      * @return self
@@ -215,8 +175,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -225,8 +183,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -240,8 +196,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -250,8 +204,6 @@ class PostMileage
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self

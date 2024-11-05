@@ -16,20 +16,14 @@ class Attachment
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var AttachmentType
      */
     protected $attachmentType;
     /**
-     *
-     *
      * @var string
      */
     protected $title;
@@ -40,15 +34,11 @@ class Attachment
      */
     protected $documentId;
     /**
-     *
-     *
      * @var string
      */
     protected $downloadLink;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -57,8 +47,6 @@ class Attachment
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -72,8 +60,6 @@ class Attachment
     }
 
     /**
-     *
-     *
      * @return AttachmentType
      */
     public function getAttachmentType(): AttachmentType
@@ -82,8 +68,6 @@ class Attachment
     }
 
     /**
-     *
-     *
      * @param AttachmentType $attachmentType
      *
      * @return self
@@ -97,8 +81,6 @@ class Attachment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -107,8 +89,6 @@ class Attachment
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -147,8 +127,6 @@ class Attachment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDownloadLink(): string
@@ -157,8 +135,6 @@ class Attachment
     }
 
     /**
-     *
-     *
      * @param string $downloadLink
      *
      * @return self

@@ -16,39 +16,27 @@ class AssignmentStatus
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
     /**
-     *
-     *
      * @var bool
      */
     protected $isDone;
     /**
-     *
-     *
      * @var bool
      */
     protected $isBlocked;
     /**
-     *
-     *
      * @var int
      */
     protected $order;
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -57,8 +45,6 @@ class AssignmentStatus
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -72,8 +58,6 @@ class AssignmentStatus
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -82,8 +66,6 @@ class AssignmentStatus
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self
@@ -97,8 +79,6 @@ class AssignmentStatus
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsDone(): bool
@@ -107,8 +87,6 @@ class AssignmentStatus
     }
 
     /**
-     *
-     *
      * @param bool $isDone
      *
      * @return self
@@ -122,8 +100,6 @@ class AssignmentStatus
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsBlocked(): bool
@@ -132,8 +108,6 @@ class AssignmentStatus
     }
 
     /**
-     *
-     *
      * @param bool $isBlocked
      *
      * @return self
@@ -147,8 +121,6 @@ class AssignmentStatus
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getOrder(): int
@@ -157,8 +129,6 @@ class AssignmentStatus
     }
 
     /**
-     *
-     *
      * @param int $order
      *
      * @return self

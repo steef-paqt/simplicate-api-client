@@ -11,8 +11,6 @@ class PostSalesQuotetemplate extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data
      */
     public function __construct(\Steefdw\Simplicate\Model\PostQuoteTemplate $body)

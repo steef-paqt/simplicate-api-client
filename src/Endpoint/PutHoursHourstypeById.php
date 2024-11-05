@@ -11,8 +11,6 @@ class PutHoursHourstypeById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PostHoursType $body Hours type object that needs to be updated
      */

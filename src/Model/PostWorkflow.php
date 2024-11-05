@@ -16,75 +16,51 @@ class PostWorkflow
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $defaultworkflowId;
     /**
-     *
-     *
      * @var CreatedBy
      */
     protected $createdBy;
     /**
-     *
-     *
      * @var LinkedTo[]
      */
     protected $linkedTo;
     /**
-     *
-     *
      * @var PostDocument[]
      */
     protected $attachments;
     /**
-     *
-     *
      * @var Comment[]
      */
     protected $comments;
     /**
-     *
-     *
      * @var string
      */
     protected $destinationEmployeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $transferToEmployeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $transferToMessage;
     /**
-     *
-     *
      * @var string
      */
     protected $title;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var string
      */
     protected $deadlineDate;
 
     /**
-     *
-     *
      * @return string
      */
     public function getDefaultworkflowId(): string
@@ -93,8 +69,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @param string $defaultworkflowId
      *
      * @return self
@@ -108,8 +82,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @return CreatedBy
      */
     public function getCreatedBy(): CreatedBy
@@ -118,8 +90,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @param CreatedBy $createdBy
      *
      * @return self
@@ -133,8 +103,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @return LinkedTo[]
      */
     public function getLinkedTo(): array
@@ -143,8 +111,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @param LinkedTo[] $linkedTo
      *
      * @return self
@@ -158,8 +124,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @return PostDocument[]
      */
     public function getAttachments(): array
@@ -168,8 +132,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @param PostDocument[] $attachments
      *
      * @return self
@@ -183,8 +145,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @return Comment[]
      */
     public function getComments(): array
@@ -193,8 +153,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @param Comment[] $comments
      *
      * @return self
@@ -208,8 +166,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDestinationEmployeeId(): string
@@ -218,8 +174,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @param string $destinationEmployeeId
      *
      * @return self
@@ -233,8 +187,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTransferToEmployeeId(): string
@@ -243,8 +195,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @param string $transferToEmployeeId
      *
      * @return self
@@ -258,8 +208,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTransferToMessage(): string
@@ -268,8 +216,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @param string $transferToMessage
      *
      * @return self
@@ -283,8 +229,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -293,8 +237,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -308,8 +250,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -318,8 +258,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -333,8 +271,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDeadlineDate(): string
@@ -343,8 +279,6 @@ class PostWorkflow
     }
 
     /**
-     *
-     *
      * @param string $deadlineDate
      *
      * @return self

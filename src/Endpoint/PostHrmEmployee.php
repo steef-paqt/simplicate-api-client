@@ -11,8 +11,6 @@ class PostHrmEmployee extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\PostEmployee $body Employee object that needs to be added
      */
     public function __construct(\Steefdw\Simplicate\Model\PostEmployee $body)

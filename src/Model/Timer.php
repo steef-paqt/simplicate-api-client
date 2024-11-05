@@ -16,14 +16,10 @@ class Timer
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $state;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
@@ -35,8 +31,6 @@ class Timer
     protected $metadata;
 
     /**
-     *
-     *
      * @return string
      */
     public function getState(): string
@@ -45,8 +39,6 @@ class Timer
     }
 
     /**
-     *
-     *
      * @param string $state
      *
      * @return self
@@ -60,8 +52,6 @@ class Timer
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -70,8 +60,6 @@ class Timer
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

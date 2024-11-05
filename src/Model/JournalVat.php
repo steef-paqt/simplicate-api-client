@@ -16,27 +16,19 @@ class JournalVat
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $vatId;
     /**
-     *
-     *
      * @var float
      */
     protected $amountVat;
     /**
-     *
-     *
      * @var float
      */
     protected $amountExcl;
 
     /**
-     *
-     *
      * @return string
      */
     public function getVatId(): string
@@ -45,8 +37,6 @@ class JournalVat
     }
 
     /**
-     *
-     *
      * @param string $vatId
      *
      * @return self
@@ -60,8 +50,6 @@ class JournalVat
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmountVat(): float
@@ -70,8 +58,6 @@ class JournalVat
     }
 
     /**
-     *
-     *
      * @param float $amountVat
      *
      * @return self
@@ -85,8 +71,6 @@ class JournalVat
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmountExcl(): float
@@ -95,8 +79,6 @@ class JournalVat
     }
 
     /**
-     *
-     *
      * @param float $amountExcl
      *
      * @return self

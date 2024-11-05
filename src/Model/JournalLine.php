@@ -16,45 +16,31 @@ class JournalLine
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $vatId;
     /**
-     *
-     *
      * @var bool
      */
     protected $vatIncluded;
     /**
-     *
-     *
      * @var float
      */
     protected $vatPercentage;
     /**
-     *
-     *
      * @var float
      */
     protected $amount;
     /**
-     *
-     *
      * @var int
      */
     protected $quantity;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
 
     /**
-     *
-     *
      * @return string
      */
     public function getVatId(): string
@@ -63,8 +49,6 @@ class JournalLine
     }
 
     /**
-     *
-     *
      * @param string $vatId
      *
      * @return self
@@ -78,8 +62,6 @@ class JournalLine
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getVatIncluded(): bool
@@ -88,8 +70,6 @@ class JournalLine
     }
 
     /**
-     *
-     *
      * @param bool $vatIncluded
      *
      * @return self
@@ -103,8 +83,6 @@ class JournalLine
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getVatPercentage(): float
@@ -113,8 +91,6 @@ class JournalLine
     }
 
     /**
-     *
-     *
      * @param float $vatPercentage
      *
      * @return self
@@ -128,8 +104,6 @@ class JournalLine
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmount(): float
@@ -138,8 +112,6 @@ class JournalLine
     }
 
     /**
-     *
-     *
      * @param float $amount
      *
      * @return self
@@ -153,8 +125,6 @@ class JournalLine
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getQuantity(): int
@@ -163,8 +133,6 @@ class JournalLine
     }
 
     /**
-     *
-     *
      * @param int $quantity
      *
      * @return self
@@ -178,8 +146,6 @@ class JournalLine
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -188,8 +154,6 @@ class JournalLine
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

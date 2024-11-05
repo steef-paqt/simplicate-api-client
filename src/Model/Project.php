@@ -16,81 +16,55 @@ class Project
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $myOrganizationProfileId;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $organizationId;
     /**
-     *
-     *
      * @var string
      */
     protected $contactId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var bool
      */
     protected $billable;
     /**
-     *
-     *
      * @var bool
      */
     protected $canRegisterMileage;
     /**
-     *
-     *
      * @var string
      */
     protected $projectNumber;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceReference;
 
     /**
-     *
-     *
      * @return string
      */
     public function getMyOrganizationProfileId(): string
@@ -99,8 +73,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @param string $myOrganizationProfileId
      *
      * @return self
@@ -114,8 +86,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -124,8 +94,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -139,8 +107,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizationId(): string
@@ -149,8 +115,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @param string $organizationId
      *
      * @return self
@@ -164,8 +128,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getContactId(): string
@@ -174,8 +136,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @param string $contactId
      *
      * @return self
@@ -189,8 +149,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -199,8 +157,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -214,8 +170,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBillable(): bool
@@ -224,8 +178,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @param bool $billable
      *
      * @return self
@@ -239,8 +191,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getCanRegisterMileage(): bool
@@ -249,8 +199,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @param bool $canRegisterMileage
      *
      * @return self
@@ -264,8 +212,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectNumber(): string
@@ -274,8 +220,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @param string $projectNumber
      *
      * @return self
@@ -289,8 +233,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -299,8 +241,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -314,8 +254,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -324,8 +262,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -339,8 +275,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -349,8 +283,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -364,8 +296,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceReference(): string
@@ -374,8 +304,6 @@ class Project
     }
 
     /**
-     *
-     *
      * @param string $invoiceReference
      *
      * @return self

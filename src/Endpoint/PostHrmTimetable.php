@@ -11,8 +11,6 @@ class PostHrmTimetable extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\PostTimetable $body Timetable object that needs to be added
      */
     public function __construct(\Steefdw\Simplicate\Model\PostTimetable $body)

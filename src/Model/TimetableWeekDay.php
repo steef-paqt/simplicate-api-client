@@ -16,27 +16,19 @@ class TimetableWeekDay
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var float
      */
     protected $startTime;
     /**
-     *
-     *
      * @var float
      */
     protected $endTime;
     /**
-     *
-     *
      * @var float
      */
     protected $hours;
 
     /**
-     *
-     *
      * @return float
      */
     public function getStartTime(): float
@@ -45,8 +37,6 @@ class TimetableWeekDay
     }
 
     /**
-     *
-     *
      * @param float $startTime
      *
      * @return self
@@ -60,8 +50,6 @@ class TimetableWeekDay
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getEndTime(): float
@@ -70,8 +58,6 @@ class TimetableWeekDay
     }
 
     /**
-     *
-     *
      * @param float $endTime
      *
      * @return self
@@ -85,8 +71,6 @@ class TimetableWeekDay
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getHours(): float
@@ -95,8 +79,6 @@ class TimetableWeekDay
     }
 
     /**
-     *
-     *
      * @param float $hours
      *
      * @return self

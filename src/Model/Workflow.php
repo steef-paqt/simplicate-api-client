@@ -16,27 +16,19 @@ class Workflow
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $title;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var string
      */
     protected $deadlineDate;
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -45,8 +37,6 @@ class Workflow
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -60,8 +50,6 @@ class Workflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -70,8 +58,6 @@ class Workflow
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -85,8 +71,6 @@ class Workflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDeadlineDate(): string
@@ -95,8 +79,6 @@ class Workflow
     }
 
     /**
-     *
-     *
      * @param string $deadlineDate
      *
      * @return self

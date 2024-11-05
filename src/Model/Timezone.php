@@ -16,33 +16,23 @@ class Timezone
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $timezone;
     /**
-     *
-     *
      * @var string
      */
     protected $location;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -51,8 +41,6 @@ class Timezone
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -66,8 +54,6 @@ class Timezone
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTimezone(): string
@@ -76,8 +62,6 @@ class Timezone
     }
 
     /**
-     *
-     *
      * @param string $timezone
      *
      * @return self
@@ -91,8 +75,6 @@ class Timezone
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLocation(): string
@@ -101,8 +83,6 @@ class Timezone
     }
 
     /**
-     *
-     *
      * @param string $location
      *
      * @return self
@@ -116,8 +96,6 @@ class Timezone
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -126,8 +104,6 @@ class Timezone
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

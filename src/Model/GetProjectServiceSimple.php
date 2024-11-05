@@ -16,39 +16,27 @@ class GetProjectServiceSimple
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $defaultServiceId;
     /**
-     *
-     *
      * @var string
      */
     protected $revenueGroupId;
     /**
-     *
-     *
      * @var bool
      */
     protected $useInResourcePlanner;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -57,8 +45,6 @@ class GetProjectServiceSimple
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -72,8 +58,6 @@ class GetProjectServiceSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -82,8 +66,6 @@ class GetProjectServiceSimple
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -97,8 +79,6 @@ class GetProjectServiceSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDefaultServiceId(): string
@@ -107,8 +87,6 @@ class GetProjectServiceSimple
     }
 
     /**
-     *
-     *
      * @param string $defaultServiceId
      *
      * @return self
@@ -122,8 +100,6 @@ class GetProjectServiceSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRevenueGroupId(): string
@@ -132,8 +108,6 @@ class GetProjectServiceSimple
     }
 
     /**
-     *
-     *
      * @param string $revenueGroupId
      *
      * @return self
@@ -147,8 +121,6 @@ class GetProjectServiceSimple
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getUseInResourcePlanner(): bool
@@ -157,8 +129,6 @@ class GetProjectServiceSimple
     }
 
     /**
-     *
-     *
      * @param bool $useInResourcePlanner
      *
      * @return self

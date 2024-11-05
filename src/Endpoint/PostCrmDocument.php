@@ -11,8 +11,6 @@ class PostCrmDocument extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\PostDocument $body Document object containing data
      */
     public function __construct(\Steefdw\Simplicate\Model\PostDocument $body)

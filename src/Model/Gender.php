@@ -16,21 +16,15 @@ class Gender
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -39,8 +33,6 @@ class Gender
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -54,8 +46,6 @@ class Gender
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -64,8 +54,6 @@ class Gender
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self

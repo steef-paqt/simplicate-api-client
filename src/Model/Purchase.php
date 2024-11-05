@@ -16,51 +16,35 @@ class Purchase
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetOrganizationSimple
      */
     protected $organization;
     /**
-     *
-     *
      * @var GetPersonSimple
      */
     protected $person;
     /**
-     *
-     *
      * @var string
      */
     protected $supplier;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceNumber;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
     /**
-     *
-     *
      * @var GetProjectSimple[]
      */
     protected $projects;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -69,8 +53,6 @@ class Purchase
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -84,8 +66,6 @@ class Purchase
     }
 
     /**
-     *
-     *
      * @return GetOrganizationSimple
      */
     public function getOrganization(): GetOrganizationSimple
@@ -94,8 +74,6 @@ class Purchase
     }
 
     /**
-     *
-     *
      * @param GetOrganizationSimple $organization
      *
      * @return self
@@ -109,8 +87,6 @@ class Purchase
     }
 
     /**
-     *
-     *
      * @return GetPersonSimple
      */
     public function getPerson(): GetPersonSimple
@@ -119,8 +95,6 @@ class Purchase
     }
 
     /**
-     *
-     *
      * @param GetPersonSimple $person
      *
      * @return self
@@ -134,8 +108,6 @@ class Purchase
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSupplier(): string
@@ -144,8 +116,6 @@ class Purchase
     }
 
     /**
-     *
-     *
      * @param string $supplier
      *
      * @return self
@@ -159,8 +129,6 @@ class Purchase
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceNumber(): string
@@ -169,8 +137,6 @@ class Purchase
     }
 
     /**
-     *
-     *
      * @param string $invoiceNumber
      *
      * @return self
@@ -184,8 +150,6 @@ class Purchase
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -194,8 +158,6 @@ class Purchase
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self
@@ -209,8 +171,6 @@ class Purchase
     }
 
     /**
-     *
-     *
      * @return GetProjectSimple[]
      */
     public function getProjects(): array
@@ -219,8 +179,6 @@ class Purchase
     }
 
     /**
-     *
-     *
      * @param GetProjectSimple[] $projects
      *
      * @return self

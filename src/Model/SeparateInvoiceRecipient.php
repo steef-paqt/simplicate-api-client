@@ -16,15 +16,11 @@ class SeparateInvoiceRecipient
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var bool
      */
     protected $isSeparateInvoiceRecipient;
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsSeparateInvoiceRecipient(): bool
@@ -33,8 +29,6 @@ class SeparateInvoiceRecipient
     }
 
     /**
-     *
-     *
      * @param bool $isSeparateInvoiceRecipient
      *
      * @return self

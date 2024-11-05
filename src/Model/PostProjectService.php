@@ -16,20 +16,14 @@ class PostProjectService
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $projectId;
     /**
-     *
-     *
      * @var bool
      */
     protected $useInResourcePlanner;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
@@ -64,63 +58,43 @@ class PostProjectService
      */
     protected $revenueGroupId;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceMethod;
     /**
-     *
-     *
      * @var PostProjectServiceHoursType[]
      */
     protected $hourTypes;
     /**
-     *
-     *
      * @var string
      */
     protected $defaultServiceId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $explanation;
     /**
-     *
-     *
      * @var float
      */
     protected $amount;
     /**
-     *
-     *
      * @var float
      */
     protected $price;
     /**
-     *
-     *
      * @var bool
      */
     protected $trackHours;
     /**
-     *
-     *
      * @var bool
      */
     protected $trackCost;
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectId(): string
@@ -129,8 +103,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @param string $projectId
      *
      * @return self
@@ -144,8 +116,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getUseInResourcePlanner(): bool
@@ -154,8 +124,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @param bool $useInResourcePlanner
      *
      * @return self
@@ -169,8 +137,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -179,8 +145,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -319,8 +283,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceMethod(): string
@@ -329,8 +291,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @param string $invoiceMethod
      *
      * @return self
@@ -344,8 +304,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @return PostProjectServiceHoursType[]
      */
     public function getHourTypes(): array
@@ -354,8 +312,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @param PostProjectServiceHoursType[] $hourTypes
      *
      * @return self
@@ -369,8 +325,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDefaultServiceId(): string
@@ -379,8 +333,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @param string $defaultServiceId
      *
      * @return self
@@ -394,8 +346,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -404,8 +354,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -419,8 +367,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getExplanation(): string
@@ -429,8 +375,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @param string $explanation
      *
      * @return self
@@ -444,8 +388,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmount(): float
@@ -454,8 +396,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @param float $amount
      *
      * @return self
@@ -469,8 +409,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPrice(): float
@@ -479,8 +417,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @param float $price
      *
      * @return self
@@ -494,8 +430,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getTrackHours(): bool
@@ -504,8 +438,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @param bool $trackHours
      *
      * @return self
@@ -519,8 +451,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getTrackCost(): bool
@@ -529,8 +459,6 @@ class PostProjectService
     }
 
     /**
-     *
-     *
      * @param bool $trackCost
      *
      * @return self

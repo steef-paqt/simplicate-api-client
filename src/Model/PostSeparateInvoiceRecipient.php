@@ -34,8 +34,6 @@ class PostSeparateInvoiceRecipient
      */
     protected $contactId;
     /**
-     *
-     *
      * @var bool
      */
     protected $isSeparateInvoiceRecipient;
@@ -116,8 +114,6 @@ class PostSeparateInvoiceRecipient
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsSeparateInvoiceRecipient(): bool
@@ -126,8 +122,6 @@ class PostSeparateInvoiceRecipient
     }
 
     /**
-     *
-     *
      * @param bool $isSeparateInvoiceRecipient
      *
      * @return self

@@ -16,51 +16,35 @@ class PostAbsence
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var int
      */
     protected $year;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $absenceTypeId;
     /**
-     *
-     *
      * @var bool
      */
     protected $isTimeDefined;
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -69,8 +53,6 @@ class PostAbsence
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -84,8 +66,6 @@ class PostAbsence
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -94,8 +74,6 @@ class PostAbsence
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -109,8 +87,6 @@ class PostAbsence
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getYear(): int
@@ -119,8 +95,6 @@ class PostAbsence
     }
 
     /**
-     *
-     *
      * @param int $year
      *
      * @return self
@@ -134,8 +108,6 @@ class PostAbsence
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -144,8 +116,6 @@ class PostAbsence
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -159,8 +129,6 @@ class PostAbsence
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -169,8 +137,6 @@ class PostAbsence
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -184,8 +150,6 @@ class PostAbsence
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAbsenceTypeId(): string
@@ -194,8 +158,6 @@ class PostAbsence
     }
 
     /**
-     *
-     *
      * @param string $absenceTypeId
      *
      * @return self
@@ -209,8 +171,6 @@ class PostAbsence
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsTimeDefined(): bool
@@ -219,8 +179,6 @@ class PostAbsence
     }
 
     /**
-     *
-     *
      * @param bool $isTimeDefined
      *
      * @return self

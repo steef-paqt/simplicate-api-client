@@ -11,8 +11,6 @@ class PutHrmEmployeeById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\PutEmployee $body Employee object that needs to be updated
      */
     public function __construct(\Steefdw\Simplicate\Model\PutEmployee $body)

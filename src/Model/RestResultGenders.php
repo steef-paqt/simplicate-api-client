@@ -16,33 +16,23 @@ class RestResultGenders
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var Gender[]
      */
     protected $data;
     /**
-     *
-     *
      * @var MetaData
      */
     protected $metadata;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $errors;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $debug;
 
     /**
-     *
-     *
      * @return Gender[]
      */
     public function getData(): array
@@ -51,8 +41,6 @@ class RestResultGenders
     }
 
     /**
-     *
-     *
      * @param Gender[] $data
      *
      * @return self
@@ -66,8 +54,6 @@ class RestResultGenders
     }
 
     /**
-     *
-     *
      * @return MetaData
      */
     public function getMetadata(): MetaData
@@ -76,8 +62,6 @@ class RestResultGenders
     }
 
     /**
-     *
-     *
      * @param MetaData $metadata
      *
      * @return self
@@ -91,8 +75,6 @@ class RestResultGenders
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getErrors(): array
@@ -101,8 +83,6 @@ class RestResultGenders
     }
 
     /**
-     *
-     *
      * @param mixed[] $errors
      *
      * @return self
@@ -116,8 +96,6 @@ class RestResultGenders
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getDebug(): array
@@ -126,8 +104,6 @@ class RestResultGenders
     }
 
     /**
-     *
-     *
      * @param mixed[] $debug
      *
      * @return self

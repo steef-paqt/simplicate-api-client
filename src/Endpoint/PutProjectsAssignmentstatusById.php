@@ -11,8 +11,6 @@ class PutProjectsAssignmentstatusById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\AssignmentStatus $body Project assignment POST body
      */

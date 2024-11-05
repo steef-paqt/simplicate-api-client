@@ -16,195 +16,131 @@ class GetProjectService
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $projectId;
     /**
-     *
-     *
      * @var string
      */
     protected $relatedServiceId;
     /**
-     *
-     *
      * @var string
      */
     protected $expectedInvoiceDate;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceDate;
     /**
-     *
-     *
      * @var string
      */
     protected $status;
     /**
-     *
-     *
      * @var GetProjectServiceHoursType[]
      */
     protected $hourTypes;
     /**
-     *
-     *
      * @var GetProjectServiceCostType[]
      */
     protected $costTypes;
     /**
-     *
-     *
      * @var VatClass
      */
     protected $vatClass;
     /**
-     *
-     *
      * @var RevenueGroup
      */
     protected $revenueGroup;
     /**
-     *
-     *
      * @var bool
      */
     protected $invoiceInInstallments;
     /**
-     *
-     *
      * @var Installment[]
      */
     protected $installments;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $budgetFinancialHours;
     /**
-     *
-     *
      * @var string
      */
     protected $writeHoursStartDate;
     /**
-     *
-     *
      * @var string
      */
     protected $writeHoursEndDate;
     /**
-     *
-     *
      * @var string
      */
     protected $serviceNumber;
     /**
-     *
-     *
      * @var bool
      */
     protected $useInResourcePlanner;
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var string
      */
     protected $subscriptionCycle;
     /**
-     *
-     *
      * @var float
      */
     protected $budget;
     /**
-     *
-     *
      * @var string
      */
     protected $defaultServiceId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $explanation;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceMethod;
     /**
-     *
-     *
      * @var float
      */
     protected $amount;
     /**
-     *
-     *
      * @var float
      */
     protected $price;
     /**
-     *
-     *
      * @var bool
      */
     protected $trackHours;
     /**
-     *
-     *
      * @var bool
      */
     protected $trackCost;
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectId(): string
@@ -213,8 +149,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $projectId
      *
      * @return self
@@ -228,8 +162,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRelatedServiceId(): string
@@ -238,8 +170,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $relatedServiceId
      *
      * @return self
@@ -253,8 +183,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getExpectedInvoiceDate(): string
@@ -263,8 +191,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $expectedInvoiceDate
      *
      * @return self
@@ -278,8 +204,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceDate(): string
@@ -288,8 +212,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $invoiceDate
      *
      * @return self
@@ -303,8 +225,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatus(): string
@@ -313,8 +233,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $status
      *
      * @return self
@@ -328,8 +246,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return GetProjectServiceHoursType[]
      */
     public function getHourTypes(): array
@@ -338,8 +254,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param GetProjectServiceHoursType[] $hourTypes
      *
      * @return self
@@ -353,8 +267,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return GetProjectServiceCostType[]
      */
     public function getCostTypes(): array
@@ -363,8 +275,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param GetProjectServiceCostType[] $costTypes
      *
      * @return self
@@ -378,8 +288,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return VatClass
      */
     public function getVatClass(): VatClass
@@ -388,8 +296,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param VatClass $vatClass
      *
      * @return self
@@ -403,8 +309,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return RevenueGroup
      */
     public function getRevenueGroup(): RevenueGroup
@@ -413,8 +317,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param RevenueGroup $revenueGroup
      *
      * @return self
@@ -428,8 +330,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getInvoiceInInstallments(): bool
@@ -438,8 +338,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param bool $invoiceInInstallments
      *
      * @return self
@@ -453,8 +351,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return Installment[]
      */
     public function getInstallments(): array
@@ -463,8 +359,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param Installment[] $installments
      *
      * @return self
@@ -478,8 +372,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -488,8 +380,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -503,8 +393,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -513,8 +401,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -528,8 +414,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBudgetFinancialHours(): string
@@ -538,8 +422,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $budgetFinancialHours
      *
      * @return self
@@ -553,8 +435,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWriteHoursStartDate(): string
@@ -563,8 +443,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $writeHoursStartDate
      *
      * @return self
@@ -578,8 +456,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWriteHoursEndDate(): string
@@ -588,8 +464,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $writeHoursEndDate
      *
      * @return self
@@ -603,8 +477,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getServiceNumber(): string
@@ -613,8 +485,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $serviceNumber
      *
      * @return self
@@ -628,8 +498,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getUseInResourcePlanner(): bool
@@ -638,8 +506,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param bool $useInResourcePlanner
      *
      * @return self
@@ -653,8 +519,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -663,8 +527,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -678,8 +540,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -688,8 +548,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -703,8 +561,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -713,8 +569,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -728,8 +582,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubscriptionCycle(): string
@@ -738,8 +590,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $subscriptionCycle
      *
      * @return self
@@ -753,8 +603,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getBudget(): float
@@ -763,8 +611,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param float $budget
      *
      * @return self
@@ -778,8 +624,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDefaultServiceId(): string
@@ -788,8 +632,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $defaultServiceId
      *
      * @return self
@@ -803,8 +645,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -813,8 +653,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -828,8 +666,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getExplanation(): string
@@ -838,8 +674,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $explanation
      *
      * @return self
@@ -853,8 +687,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceMethod(): string
@@ -863,8 +695,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param string $invoiceMethod
      *
      * @return self
@@ -878,8 +708,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmount(): float
@@ -888,8 +716,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param float $amount
      *
      * @return self
@@ -903,8 +729,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPrice(): float
@@ -913,8 +737,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param float $price
      *
      * @return self
@@ -928,8 +750,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getTrackHours(): bool
@@ -938,8 +758,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param bool $trackHours
      *
      * @return self
@@ -953,8 +771,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getTrackCost(): bool
@@ -963,8 +779,6 @@ class GetProjectService
     }
 
     /**
-     *
-     *
      * @param bool $trackCost
      *
      * @return self

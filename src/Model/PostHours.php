@@ -16,135 +16,91 @@ class PostHours
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $projectId;
     /**
-     *
-     *
      * @var string
      */
     protected $projectserviceId;
     /**
-     *
-     *
      * @var string
      */
     protected $typeId;
     /**
-     *
-     *
      * @var string
      */
     protected $approvalstatusId;
     /**
-     *
-     *
      * @var PostCalendarItem
      */
     protected $externalItem;
     /**
-     *
-     *
      * @var string
      */
     protected $assignmentId;
     /**
-     *
-     *
      * @var string
      */
     protected $addressId;
     /**
-     *
-     *
      * @var float
      */
     protected $hours;
     /**
-     *
-     *
      * @var int
      */
     protected $durationInMinutes;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var bool
      */
     protected $isTimeDefined;
     /**
-     *
-     *
      * @var bool
      */
     protected $isRecurring;
     /**
-     *
-     *
      * @var Recurrence
      */
     protected $recurrence;
     /**
-     *
-     *
      * @var bool
      */
     protected $isExternal;
     /**
-     *
-     *
      * @var bool
      */
     protected $billable;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var Address
      */
     protected $address;
     /**
-     *
-     *
      * @var bool
      */
     protected $shouldSyncToCronofy;
     /**
-     *
-     *
      * @var string
      */
     protected $source;
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -153,8 +109,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -168,8 +122,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectId(): string
@@ -178,8 +130,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param string $projectId
      *
      * @return self
@@ -193,8 +143,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectserviceId(): string
@@ -203,8 +151,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param string $projectserviceId
      *
      * @return self
@@ -218,8 +164,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTypeId(): string
@@ -228,8 +172,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param string $typeId
      *
      * @return self
@@ -243,8 +185,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getApprovalstatusId(): string
@@ -253,8 +193,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param string $approvalstatusId
      *
      * @return self
@@ -268,8 +206,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return PostCalendarItem
      */
     public function getExternalItem(): PostCalendarItem
@@ -278,8 +214,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param PostCalendarItem $externalItem
      *
      * @return self
@@ -293,8 +227,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAssignmentId(): string
@@ -303,8 +235,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param string $assignmentId
      *
      * @return self
@@ -318,8 +248,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAddressId(): string
@@ -328,8 +256,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param string $addressId
      *
      * @return self
@@ -343,8 +269,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getHours(): float
@@ -353,8 +277,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param float $hours
      *
      * @return self
@@ -368,8 +290,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getDurationInMinutes(): int
@@ -378,8 +298,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param int $durationInMinutes
      *
      * @return self
@@ -393,8 +311,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -403,8 +319,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -418,8 +332,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -428,8 +340,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -443,8 +353,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsTimeDefined(): bool
@@ -453,8 +361,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param bool $isTimeDefined
      *
      * @return self
@@ -468,8 +374,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsRecurring(): bool
@@ -478,8 +382,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param bool $isRecurring
      *
      * @return self
@@ -493,8 +395,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return Recurrence
      */
     public function getRecurrence(): Recurrence
@@ -503,8 +403,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param Recurrence $recurrence
      *
      * @return self
@@ -518,8 +416,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsExternal(): bool
@@ -528,8 +424,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param bool $isExternal
      *
      * @return self
@@ -543,8 +437,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBillable(): bool
@@ -553,8 +445,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param bool $billable
      *
      * @return self
@@ -568,8 +458,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -578,8 +466,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -593,8 +479,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return Address
      */
     public function getAddress(): Address
@@ -603,8 +487,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param Address $address
      *
      * @return self
@@ -618,8 +500,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getShouldSyncToCronofy(): bool
@@ -628,8 +508,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param bool $shouldSyncToCronofy
      *
      * @return self
@@ -643,8 +521,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSource(): string
@@ -653,8 +529,6 @@ class PostHours
     }
 
     /**
-     *
-     *
      * @param string $source
      *
      * @return self

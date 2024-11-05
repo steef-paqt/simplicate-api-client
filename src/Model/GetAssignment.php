@@ -16,123 +16,83 @@ class GetAssignment
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id = 'assignment:abc';
     /**
-     *
-     *
      * @var string
      */
     protected $startDate = '2032-01-01';
     /**
-     *
-     *
      * @var string
      */
     protected $endDate = '2032-12-31';
     /**
-     *
-     *
      * @var float
      */
     protected $hoursTotal;
     /**
-     *
-     *
      * @var float
      */
     protected $hours;
     /**
-     *
-     *
      * @var string
      */
     protected $hoursType = 'total';
     /**
-     *
-     *
      * @var int[]
      */
     protected $spread;
     /**
-     *
-     *
      * @var GetAssignmentStatus
      */
     protected $status;
     /**
-     *
-     *
      * @var GetProjectSimple
      */
     protected $project;
     /**
-     *
-     *
      * @var GetProjectServiceSimple
      */
     protected $projectservice;
     /**
-     *
-     *
      * @var GetProjectServiceHoursType
      */
     protected $projecthourstype;
     /**
-     *
-     *
      * @var GetEmployeeSimple[]
      */
     protected $employees;
     /**
-     *
-     *
      * @var string
      */
     protected $spentAmount;
     /**
-     *
-     *
      * @var bool
      */
     protected $isPlanned;
     /**
-     *
-     *
      * @var string
      */
     protected $name = 'Website Design Assignment';
     /**
-     *
-     *
      * @var bool
      */
     protected $useSpread;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -141,8 +101,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -156,8 +114,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -166,8 +122,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -181,8 +135,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -191,8 +143,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -206,8 +156,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getHoursTotal(): float
@@ -216,8 +164,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param float $hoursTotal
      *
      * @return self
@@ -231,8 +177,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getHours(): float
@@ -241,8 +185,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param float $hours
      *
      * @return self
@@ -256,8 +198,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getHoursType(): string
@@ -266,8 +206,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param string $hoursType
      *
      * @return self
@@ -281,8 +219,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return int[]
      */
     public function getSpread(): array
@@ -291,8 +227,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param int[] $spread
      *
      * @return self
@@ -306,8 +240,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return GetAssignmentStatus
      */
     public function getStatus(): GetAssignmentStatus
@@ -316,8 +248,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param GetAssignmentStatus $status
      *
      * @return self
@@ -331,8 +261,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return GetProjectSimple
      */
     public function getProject(): GetProjectSimple
@@ -341,8 +269,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param GetProjectSimple $project
      *
      * @return self
@@ -356,8 +282,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return GetProjectServiceSimple
      */
     public function getProjectservice(): GetProjectServiceSimple
@@ -366,8 +290,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param GetProjectServiceSimple $projectservice
      *
      * @return self
@@ -381,8 +303,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return GetProjectServiceHoursType
      */
     public function getProjecthourstype(): GetProjectServiceHoursType
@@ -391,8 +311,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param GetProjectServiceHoursType $projecthourstype
      *
      * @return self
@@ -406,8 +324,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple[]
      */
     public function getEmployees(): array
@@ -416,8 +332,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple[] $employees
      *
      * @return self
@@ -431,8 +345,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSpentAmount(): string
@@ -441,8 +353,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param string $spentAmount
      *
      * @return self
@@ -456,8 +366,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsPlanned(): bool
@@ -466,8 +374,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param bool $isPlanned
      *
      * @return self
@@ -481,8 +387,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -491,8 +395,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -506,8 +408,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getUseSpread(): bool
@@ -516,8 +416,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param bool $useSpread
      *
      * @return self
@@ -531,8 +429,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -541,8 +437,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -556,8 +450,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -566,8 +458,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -581,8 +471,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -591,8 +479,6 @@ class GetAssignment
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self

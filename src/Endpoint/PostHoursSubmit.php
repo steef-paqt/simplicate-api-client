@@ -11,8 +11,6 @@ class PostHoursSubmit extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\Submit $body Data that is needed to submit hours
      */
     public function __construct(\Steefdw\Simplicate\Model\Submit $body)

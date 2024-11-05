@@ -16,147 +16,99 @@ class Person
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var RelationType
      */
     protected $relationType;
     /**
-     *
-     *
      * @var string
      */
     protected $gender;
     /**
-     *
-     *
      * @var string
      */
     protected $initials;
     /**
-     *
-     *
      * @var string
      */
     protected $firstName;
     /**
-     *
-     *
      * @var string
      */
     protected $familyNamePrefix;
     /**
-     *
-     *
      * @var string
      */
     protected $familyName;
     /**
-     *
-     *
      * @var string
      */
     protected $fullName;
     /**
-     *
-     *
      * @var string
      */
     protected $dateOfBirth;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var string
      */
     protected $email;
     /**
-     *
-     *
      * @var string
      */
     protected $phone;
     /**
-     *
-     *
      * @var string
      */
     protected $websiteUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $twitterUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $linkedinUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $facebookUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $relationNumber;
     /**
-     *
-     *
      * @var string
      */
     protected $bankAccount;
     /**
-     *
-     *
      * @var string
      */
     protected $bankBic;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceReceiver;
     /**
-     *
-     *
      * @var Address
      */
     protected $address;
     /**
-     *
-     *
      * @var string
      */
     protected $mailingListEmail;
     /**
-     *
-     *
      * @var PersonMailingList[]
      */
     protected $mailingLists;
     /**
-     *
-     *
      * @var bool
      */
     protected $isActive;
 
     /**
-     *
-     *
      * @return RelationType
      */
     public function getRelationType(): RelationType
@@ -165,8 +117,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param RelationType $relationType
      *
      * @return self
@@ -180,8 +130,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getGender(): string
@@ -190,8 +138,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $gender
      *
      * @return self
@@ -205,8 +151,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInitials(): string
@@ -215,8 +159,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $initials
      *
      * @return self
@@ -230,8 +172,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFirstName(): string
@@ -240,8 +180,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $firstName
      *
      * @return self
@@ -255,8 +193,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFamilyNamePrefix(): string
@@ -265,8 +201,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $familyNamePrefix
      *
      * @return self
@@ -280,8 +214,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFamilyName(): string
@@ -290,8 +222,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $familyName
      *
      * @return self
@@ -305,8 +235,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFullName(): string
@@ -315,8 +243,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $fullName
      *
      * @return self
@@ -330,8 +256,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDateOfBirth(): string
@@ -340,8 +264,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $dateOfBirth
      *
      * @return self
@@ -355,8 +277,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -365,8 +285,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -380,8 +298,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmail(): string
@@ -390,8 +306,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $email
      *
      * @return self
@@ -405,8 +319,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPhone(): string
@@ -415,8 +327,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $phone
      *
      * @return self
@@ -430,8 +340,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWebsiteUrl(): string
@@ -440,8 +348,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $websiteUrl
      *
      * @return self
@@ -455,8 +361,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTwitterUrl(): string
@@ -465,8 +369,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $twitterUrl
      *
      * @return self
@@ -480,8 +382,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLinkedinUrl(): string
@@ -490,8 +390,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $linkedinUrl
      *
      * @return self
@@ -505,8 +403,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFacebookUrl(): string
@@ -515,8 +411,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $facebookUrl
      *
      * @return self
@@ -530,8 +424,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRelationNumber(): string
@@ -540,8 +432,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $relationNumber
      *
      * @return self
@@ -555,8 +445,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBankAccount(): string
@@ -565,8 +453,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $bankAccount
      *
      * @return self
@@ -580,8 +466,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBankBic(): string
@@ -590,8 +474,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $bankBic
      *
      * @return self
@@ -605,8 +487,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceReceiver(): string
@@ -615,8 +495,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $invoiceReceiver
      *
      * @return self
@@ -630,8 +508,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return Address
      */
     public function getAddress(): Address
@@ -640,8 +516,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param Address $address
      *
      * @return self
@@ -655,8 +529,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMailingListEmail(): string
@@ -665,8 +537,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param string $mailingListEmail
      *
      * @return self
@@ -680,8 +550,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return PersonMailingList[]
      */
     public function getMailingLists(): array
@@ -690,8 +558,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param PersonMailingList[] $mailingLists
      *
      * @return self
@@ -705,8 +571,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsActive(): bool
@@ -715,8 +579,6 @@ class Person
     }
 
     /**
-     *
-     *
      * @param bool $isActive
      *
      * @return self

@@ -11,8 +11,6 @@ class PostHoursTimesheetrow extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\PostTimesheetRow $body Description of timesheetrow that is submitted.
      */
     public function __construct(\Steefdw\Simplicate\Model\PostTimesheetRow $body)

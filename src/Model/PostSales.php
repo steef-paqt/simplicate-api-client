@@ -16,26 +16,18 @@ class PostSales
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $responsibleEmployeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $progressId;
     /**
-     *
-     *
      * @var string
      */
     protected $sourceId;
     /**
-     *
-     *
      * @var string
      */
     protected $statusId;
@@ -46,99 +38,67 @@ class PostSales
      */
     protected $teams;
     /**
-     *
-     *
      * @var PostSeparateInvoiceRecipient
      */
     protected $separateInvoiceRecipient;
     /**
-     *
-     *
      * @var PostCustomFieldValue[]
      */
     protected $customFields;
     /**
-     *
-     *
      * @var string
      */
     protected $myOrganizationProfileId;
     /**
-     *
-     *
      * @var string
      */
     protected $organizationId;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $contactId;
     /**
-     *
-     *
      * @var SalesReason
      */
     protected $reason;
     /**
-     *
-     *
      * @var ContactPerson
      */
     protected $contact;
     /**
-     *
-     *
      * @var string
      */
     protected $subject;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $expectedClosingDate;
     /**
-     *
-     *
      * @var float
      */
     protected $expectedRevenue;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var int
      */
     protected $chanceToScore;
     /**
-     *
-     *
      * @var LostToCompetitor
      */
     protected $lostToCompetitor;
 
     /**
-     *
-     *
      * @return string
      */
     public function getResponsibleEmployeeId(): string
@@ -147,8 +107,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param string $responsibleEmployeeId
      *
      * @return self
@@ -162,8 +120,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProgressId(): string
@@ -172,8 +128,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param string $progressId
      *
      * @return self
@@ -187,8 +141,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSourceId(): string
@@ -197,8 +149,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param string $sourceId
      *
      * @return self
@@ -212,8 +162,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatusId(): string
@@ -222,8 +170,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param string $statusId
      *
      * @return self
@@ -262,8 +208,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return PostSeparateInvoiceRecipient
      */
     public function getSeparateInvoiceRecipient(): PostSeparateInvoiceRecipient
@@ -272,8 +216,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param PostSeparateInvoiceRecipient $separateInvoiceRecipient
      *
      * @return self
@@ -287,8 +229,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return PostCustomFieldValue[]
      */
     public function getCustomFields(): array
@@ -297,8 +237,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param PostCustomFieldValue[] $customFields
      *
      * @return self
@@ -312,8 +250,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMyOrganizationProfileId(): string
@@ -322,8 +258,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param string $myOrganizationProfileId
      *
      * @return self
@@ -337,8 +271,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizationId(): string
@@ -347,8 +279,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param string $organizationId
      *
      * @return self
@@ -362,8 +292,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -372,8 +300,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -387,8 +313,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getContactId(): string
@@ -397,8 +321,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param string $contactId
      *
      * @return self
@@ -412,8 +334,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return SalesReason
      */
     public function getReason(): SalesReason
@@ -422,8 +342,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param SalesReason $reason
      *
      * @return self
@@ -437,8 +355,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return ContactPerson
      */
     public function getContact(): ContactPerson
@@ -447,8 +363,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param ContactPerson $contact
      *
      * @return self
@@ -462,8 +376,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubject(): string
@@ -472,8 +384,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param string $subject
      *
      * @return self
@@ -487,8 +397,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -497,8 +405,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -512,8 +418,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getExpectedClosingDate(): string
@@ -522,8 +426,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param string $expectedClosingDate
      *
      * @return self
@@ -537,8 +439,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getExpectedRevenue(): float
@@ -547,8 +447,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param float $expectedRevenue
      *
      * @return self
@@ -562,8 +460,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -572,8 +468,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -587,8 +481,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getChanceToScore(): int
@@ -597,8 +489,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param int $chanceToScore
      *
      * @return self
@@ -612,8 +502,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @return LostToCompetitor
      */
     public function getLostToCompetitor(): LostToCompetitor
@@ -622,8 +510,6 @@ class PostSales
     }
 
     /**
-     *
-     *
      * @param LostToCompetitor $lostToCompetitor
      *
      * @return self

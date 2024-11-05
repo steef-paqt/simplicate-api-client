@@ -16,21 +16,15 @@ class Log
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $timestamp;
     /**
-     *
-     *
      * @var string
      */
     protected $message;
 
     /**
-     *
-     *
      * @return string
      */
     public function getTimestamp(): string
@@ -39,8 +33,6 @@ class Log
     }
 
     /**
-     *
-     *
      * @param string $timestamp
      *
      * @return self
@@ -54,8 +46,6 @@ class Log
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMessage(): string
@@ -64,8 +54,6 @@ class Log
     }
 
     /**
-     *
-     *
      * @param string $message
      *
      * @return self

@@ -16,57 +16,39 @@ class GetSharedItem
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $tag;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $shared;
     /**
-     *
-     *
      * @var string
      */
     protected $data;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -75,8 +57,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -90,8 +70,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -100,8 +78,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -115,8 +91,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -125,8 +99,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -140,8 +112,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTag(): string
@@ -150,8 +120,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @param string $tag
      *
      * @return self
@@ -165,8 +133,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -175,8 +141,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self
@@ -190,8 +154,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -200,8 +162,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -215,8 +175,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getShared(): string
@@ -225,8 +183,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @param string $shared
      *
      * @return self
@@ -240,8 +196,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getData(): string
@@ -250,8 +204,6 @@ class GetSharedItem
     }
 
     /**
-     *
-     *
      * @param string $data
      *
      * @return self

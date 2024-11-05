@@ -16,177 +16,119 @@ class GetQuote
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var QuoteTemplate
      */
     protected $quotetemplate;
     /**
-     *
-     *
      * @var string
      */
     protected $sendType;
     /**
-     *
-     *
      * @var string
      */
     protected $quoteNumber;
     /**
-     *
-     *
      * @var string
      */
     protected $quoteDate;
     /**
-     *
-     *
      * @var QuoteStatus
      */
     protected $quotestatus;
     /**
-     *
-     *
      * @var string
      */
     protected $json;
     /**
-     *
-     *
      * @var QuoteSalesService[]
      */
     protected $services;
     /**
-     *
-     *
      * @var string
      */
     protected $totalExcl;
     /**
-     *
-     *
      * @var string
      */
     protected $totalIncl;
     /**
-     *
-     *
      * @var string
      */
     protected $totalVat;
     /**
-     *
-     *
      * @var mixed
      */
     protected $vat;
     /**
-     *
-     *
      * @var mixed
      */
     protected $grandTotals;
     /**
-     *
-     *
      * @var mixed
      */
     protected $receivers;
     /**
-     *
-     *
      * @var int
      */
     protected $validDays;
     /**
-     *
-     *
      * @var mixed
      */
     protected $paymentTerm;
     /**
-     *
-     *
      * @var mixed
      */
     protected $downloadUrl;
     /**
-     *
-     *
      * @var int
      */
     protected $isSepaAuthorization;
     /**
-     *
-     *
      * @var int
      */
     protected $isOutdated;
     /**
-     *
-     *
      * @var int
      */
     protected $isBlocked;
     /**
-     *
-     *
      * @var string
      */
     protected $createdBy;
     /**
-     *
-     *
      * @var string
      */
     protected $lastUpdatedApprovalStatus;
     /**
-     *
-     *
      * @var string
      */
     protected $sentAt;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $salesId;
     /**
-     *
-     *
      * @var string
      */
     protected $quoteSubject;
     /**
-     *
-     *
      * @var string
      */
     protected $customerReference;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -195,8 +137,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -210,8 +150,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return QuoteTemplate
      */
     public function getQuotetemplate(): QuoteTemplate
@@ -220,8 +158,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param QuoteTemplate $quotetemplate
      *
      * @return self
@@ -235,8 +171,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSendType(): string
@@ -245,8 +179,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $sendType
      *
      * @return self
@@ -260,8 +192,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getQuoteNumber(): string
@@ -270,8 +200,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $quoteNumber
      *
      * @return self
@@ -285,8 +213,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getQuoteDate(): string
@@ -295,8 +221,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $quoteDate
      *
      * @return self
@@ -310,8 +234,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return QuoteStatus
      */
     public function getQuotestatus(): QuoteStatus
@@ -320,8 +242,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param QuoteStatus $quotestatus
      *
      * @return self
@@ -335,8 +255,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getJson(): string
@@ -345,8 +263,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $json
      *
      * @return self
@@ -360,8 +276,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return QuoteSalesService[]
      */
     public function getServices(): array
@@ -370,8 +284,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param QuoteSalesService[] $services
      *
      * @return self
@@ -385,8 +297,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTotalExcl(): string
@@ -395,8 +305,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $totalExcl
      *
      * @return self
@@ -410,8 +318,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTotalIncl(): string
@@ -420,8 +326,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $totalIncl
      *
      * @return self
@@ -435,8 +339,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTotalVat(): string
@@ -445,8 +347,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $totalVat
      *
      * @return self
@@ -460,8 +360,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return mixed
      */
     public function getVat()
@@ -470,8 +368,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param mixed $vat
      *
      * @return self
@@ -485,8 +381,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return mixed
      */
     public function getGrandTotals()
@@ -495,8 +389,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param mixed $grandTotals
      *
      * @return self
@@ -510,8 +402,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return mixed
      */
     public function getReceivers()
@@ -520,8 +410,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param mixed $receivers
      *
      * @return self
@@ -535,8 +423,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getValidDays(): int
@@ -545,8 +431,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param int $validDays
      *
      * @return self
@@ -560,8 +444,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return mixed
      */
     public function getPaymentTerm()
@@ -570,8 +452,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param mixed $paymentTerm
      *
      * @return self
@@ -585,8 +465,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return mixed
      */
     public function getDownloadUrl()
@@ -595,8 +473,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param mixed $downloadUrl
      *
      * @return self
@@ -610,8 +486,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getIsSepaAuthorization(): int
@@ -620,8 +494,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param int $isSepaAuthorization
      *
      * @return self
@@ -635,8 +507,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getIsOutdated(): int
@@ -645,8 +515,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param int $isOutdated
      *
      * @return self
@@ -660,8 +528,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getIsBlocked(): int
@@ -670,8 +536,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param int $isBlocked
      *
      * @return self
@@ -685,8 +549,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedBy(): string
@@ -695,8 +557,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $createdBy
      *
      * @return self
@@ -710,8 +570,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLastUpdatedApprovalStatus(): string
@@ -720,8 +578,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $lastUpdatedApprovalStatus
      *
      * @return self
@@ -735,8 +591,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSentAt(): string
@@ -745,8 +599,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $sentAt
      *
      * @return self
@@ -760,8 +612,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -770,8 +620,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -785,8 +633,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -795,8 +641,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -810,8 +654,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSalesId(): string
@@ -820,8 +662,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $salesId
      *
      * @return self
@@ -835,8 +675,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getQuoteSubject(): string
@@ -845,8 +683,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $quoteSubject
      *
      * @return self
@@ -860,8 +696,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCustomerReference(): string
@@ -870,8 +704,6 @@ class GetQuote
     }
 
     /**
-     *
-     *
      * @param string $customerReference
      *
      * @return self

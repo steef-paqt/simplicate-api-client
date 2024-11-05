@@ -16,21 +16,15 @@ class DateTimeRange
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -39,8 +33,6 @@ class DateTimeRange
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -54,8 +46,6 @@ class DateTimeRange
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -64,8 +54,6 @@ class DateTimeRange
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self

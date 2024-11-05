@@ -16,15 +16,11 @@ class WorkflowItemType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $type;
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -33,8 +29,6 @@ class WorkflowItemType
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self

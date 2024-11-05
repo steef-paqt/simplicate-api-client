@@ -16,39 +16,27 @@ class GetSalesServiceHoursType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetHoursType
      */
     protected $hourstype;
     /**
-     *
-     *
      * @var float
      */
     protected $budgetedAmount;
     /**
-     *
-     *
      * @var float
      */
     protected $tariff;
     /**
-     *
-     *
      * @var bool
      */
     protected $billable;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -57,8 +45,6 @@ class GetSalesServiceHoursType
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -72,8 +58,6 @@ class GetSalesServiceHoursType
     }
 
     /**
-     *
-     *
      * @return GetHoursType
      */
     public function getHourstype(): GetHoursType
@@ -82,8 +66,6 @@ class GetSalesServiceHoursType
     }
 
     /**
-     *
-     *
      * @param GetHoursType $hourstype
      *
      * @return self
@@ -97,8 +79,6 @@ class GetSalesServiceHoursType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getBudgetedAmount(): float
@@ -107,8 +87,6 @@ class GetSalesServiceHoursType
     }
 
     /**
-     *
-     *
      * @param float $budgetedAmount
      *
      * @return self
@@ -122,8 +100,6 @@ class GetSalesServiceHoursType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTariff(): float
@@ -132,8 +108,6 @@ class GetSalesServiceHoursType
     }
 
     /**
-     *
-     *
      * @param float $tariff
      *
      * @return self
@@ -147,8 +121,6 @@ class GetSalesServiceHoursType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBillable(): bool
@@ -157,8 +129,6 @@ class GetSalesServiceHoursType
     }
 
     /**
-     *
-     *
      * @param bool $billable
      *
      * @return self

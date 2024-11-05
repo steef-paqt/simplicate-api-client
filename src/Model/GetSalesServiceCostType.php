@@ -16,51 +16,35 @@ class GetSalesServiceCostType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetPurchaseType
      */
     protected $costtype;
     /**
-     *
-     *
      * @var float
      */
     protected $budgetedAmount;
     /**
-     *
-     *
      * @var float
      */
     protected $tariff;
     /**
-     *
-     *
      * @var float
      */
     protected $purchaseMargin;
     /**
-     *
-     *
      * @var float
      */
     protected $purchaseTariff;
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -69,8 +53,6 @@ class GetSalesServiceCostType
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -84,8 +66,6 @@ class GetSalesServiceCostType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -94,8 +74,6 @@ class GetSalesServiceCostType
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -109,8 +87,6 @@ class GetSalesServiceCostType
     }
 
     /**
-     *
-     *
      * @return GetPurchaseType
      */
     public function getCosttype(): GetPurchaseType
@@ -119,8 +95,6 @@ class GetSalesServiceCostType
     }
 
     /**
-     *
-     *
      * @param GetPurchaseType $costtype
      *
      * @return self
@@ -134,8 +108,6 @@ class GetSalesServiceCostType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getBudgetedAmount(): float
@@ -144,8 +116,6 @@ class GetSalesServiceCostType
     }
 
     /**
-     *
-     *
      * @param float $budgetedAmount
      *
      * @return self
@@ -159,8 +129,6 @@ class GetSalesServiceCostType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTariff(): float
@@ -169,8 +137,6 @@ class GetSalesServiceCostType
     }
 
     /**
-     *
-     *
      * @param float $tariff
      *
      * @return self
@@ -184,8 +150,6 @@ class GetSalesServiceCostType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPurchaseMargin(): float
@@ -194,8 +158,6 @@ class GetSalesServiceCostType
     }
 
     /**
-     *
-     *
      * @param float $purchaseMargin
      *
      * @return self
@@ -209,8 +171,6 @@ class GetSalesServiceCostType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPurchaseTariff(): float
@@ -219,8 +179,6 @@ class GetSalesServiceCostType
     }
 
     /**
-     *
-     *
      * @param float $purchaseTariff
      *
      * @return self

@@ -16,27 +16,19 @@ class ProjectServiceHoursType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var float
      */
     protected $budgetedAmount;
     /**
-     *
-     *
      * @var float
      */
     protected $tariff;
     /**
-     *
-     *
      * @var bool
      */
     protected $billable;
 
     /**
-     *
-     *
      * @return float
      */
     public function getBudgetedAmount(): float
@@ -45,8 +37,6 @@ class ProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @param float $budgetedAmount
      *
      * @return self
@@ -60,8 +50,6 @@ class ProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTariff(): float
@@ -70,8 +58,6 @@ class ProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @param float $tariff
      *
      * @return self
@@ -85,8 +71,6 @@ class ProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBillable(): bool
@@ -95,8 +79,6 @@ class ProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @param bool $billable
      *
      * @return self

@@ -16,21 +16,15 @@ class ApprovalStatus
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -39,8 +33,6 @@ class ApprovalStatus
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -54,8 +46,6 @@ class ApprovalStatus
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -64,8 +54,6 @@ class ApprovalStatus
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

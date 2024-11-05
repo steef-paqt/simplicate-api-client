@@ -16,21 +16,15 @@ class ReminderSet
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var bool
      */
     protected $disabled;
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -39,8 +33,6 @@ class ReminderSet
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -54,8 +46,6 @@ class ReminderSet
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getDisabled(): bool
@@ -64,8 +54,6 @@ class ReminderSet
     }
 
     /**
-     *
-     *
      * @param bool $disabled
      *
      * @return self

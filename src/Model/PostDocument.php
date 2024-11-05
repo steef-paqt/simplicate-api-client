@@ -16,39 +16,27 @@ class PostDocument
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var PostDocumentLinkedTo[]
      */
     protected $linkedTo;
     /**
-     *
-     *
      * @var string
      */
     protected $documentTypeId;
     /**
-     *
-     *
      * @var string
      */
     protected $uploadQueueId;
     /**
-     *
-     *
      * @var string
      */
     protected $title;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
 
     /**
-     *
-     *
      * @return PostDocumentLinkedTo[]
      */
     public function getLinkedTo(): array
@@ -57,8 +45,6 @@ class PostDocument
     }
 
     /**
-     *
-     *
      * @param PostDocumentLinkedTo[] $linkedTo
      *
      * @return self
@@ -72,8 +58,6 @@ class PostDocument
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDocumentTypeId(): string
@@ -82,8 +66,6 @@ class PostDocument
     }
 
     /**
-     *
-     *
      * @param string $documentTypeId
      *
      * @return self
@@ -97,8 +79,6 @@ class PostDocument
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUploadQueueId(): string
@@ -107,8 +87,6 @@ class PostDocument
     }
 
     /**
-     *
-     *
      * @param string $uploadQueueId
      *
      * @return self
@@ -122,8 +100,6 @@ class PostDocument
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -132,8 +108,6 @@ class PostDocument
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -147,8 +121,6 @@ class PostDocument
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -157,8 +129,6 @@ class PostDocument
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

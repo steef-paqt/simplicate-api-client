@@ -16,27 +16,19 @@ class GetReminderSetSimple
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var bool
      */
     protected $disabled;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -45,8 +37,6 @@ class GetReminderSetSimple
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -60,8 +50,6 @@ class GetReminderSetSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -70,8 +58,6 @@ class GetReminderSetSimple
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -85,8 +71,6 @@ class GetReminderSetSimple
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getDisabled(): bool
@@ -95,8 +79,6 @@ class GetReminderSetSimple
     }
 
     /**
-     *
-     *
      * @param bool $disabled
      *
      * @return self

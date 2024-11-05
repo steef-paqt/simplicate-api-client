@@ -16,26 +16,18 @@ class PostPerson
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var PostInterest[]
      */
     protected $interests;
     /**
-     *
-     *
      * @var PostAddress
      */
     protected $address;
     /**
-     *
-     *
      * @var PostContactOrganizationFk[]
      */
     protected $linkedAsContactToOrganization;
     /**
-     *
-     *
      * @var string
      */
     protected $genderId;
@@ -46,147 +38,99 @@ class PostPerson
      */
     protected $teams;
     /**
-     *
-     *
      * @var PostCustomFieldValue[]
      */
     protected $customFields;
     /**
-     *
-     *
      * @var RelationType
      */
     protected $relationType;
     /**
-     *
-     *
      * @var string
      */
     protected $gender;
     /**
-     *
-     *
      * @var string
      */
     protected $initials;
     /**
-     *
-     *
      * @var string
      */
     protected $firstName;
     /**
-     *
-     *
      * @var string
      */
     protected $familyNamePrefix;
     /**
-     *
-     *
      * @var string
      */
     protected $familyName;
     /**
-     *
-     *
      * @var string
      */
     protected $fullName;
     /**
-     *
-     *
      * @var string
      */
     protected $dateOfBirth;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var string
      */
     protected $email;
     /**
-     *
-     *
      * @var string
      */
     protected $phone;
     /**
-     *
-     *
      * @var string
      */
     protected $websiteUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $twitterUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $linkedinUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $facebookUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $relationNumber;
     /**
-     *
-     *
      * @var string
      */
     protected $bankAccount;
     /**
-     *
-     *
      * @var string
      */
     protected $bankBic;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceReceiver;
     /**
-     *
-     *
      * @var string
      */
     protected $mailingListEmail;
     /**
-     *
-     *
      * @var PersonMailingList[]
      */
     protected $mailingLists;
     /**
-     *
-     *
      * @var bool
      */
     protected $isActive;
 
     /**
-     *
-     *
      * @return PostInterest[]
      */
     public function getInterests(): array
@@ -195,8 +139,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param PostInterest[] $interests
      *
      * @return self
@@ -210,8 +152,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return PostAddress
      */
     public function getAddress(): PostAddress
@@ -220,8 +160,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param PostAddress $address
      *
      * @return self
@@ -235,8 +173,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return PostContactOrganizationFk[]
      */
     public function getLinkedAsContactToOrganization(): array
@@ -245,8 +181,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param PostContactOrganizationFk[] $linkedAsContactToOrganization
      *
      * @return self
@@ -260,8 +194,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getGenderId(): string
@@ -270,8 +202,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $genderId
      *
      * @return self
@@ -310,8 +240,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return PostCustomFieldValue[]
      */
     public function getCustomFields(): array
@@ -320,8 +248,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param PostCustomFieldValue[] $customFields
      *
      * @return self
@@ -335,8 +261,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return RelationType
      */
     public function getRelationType(): RelationType
@@ -345,8 +269,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param RelationType $relationType
      *
      * @return self
@@ -360,8 +282,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getGender(): string
@@ -370,8 +290,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $gender
      *
      * @return self
@@ -385,8 +303,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInitials(): string
@@ -395,8 +311,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $initials
      *
      * @return self
@@ -410,8 +324,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFirstName(): string
@@ -420,8 +332,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $firstName
      *
      * @return self
@@ -435,8 +345,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFamilyNamePrefix(): string
@@ -445,8 +353,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $familyNamePrefix
      *
      * @return self
@@ -460,8 +366,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFamilyName(): string
@@ -470,8 +374,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $familyName
      *
      * @return self
@@ -485,8 +387,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFullName(): string
@@ -495,8 +395,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $fullName
      *
      * @return self
@@ -510,8 +408,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDateOfBirth(): string
@@ -520,8 +416,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $dateOfBirth
      *
      * @return self
@@ -535,8 +429,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -545,8 +437,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -560,8 +450,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmail(): string
@@ -570,8 +458,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $email
      *
      * @return self
@@ -585,8 +471,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPhone(): string
@@ -595,8 +479,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $phone
      *
      * @return self
@@ -610,8 +492,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWebsiteUrl(): string
@@ -620,8 +500,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $websiteUrl
      *
      * @return self
@@ -635,8 +513,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTwitterUrl(): string
@@ -645,8 +521,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $twitterUrl
      *
      * @return self
@@ -660,8 +534,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLinkedinUrl(): string
@@ -670,8 +542,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $linkedinUrl
      *
      * @return self
@@ -685,8 +555,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFacebookUrl(): string
@@ -695,8 +563,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $facebookUrl
      *
      * @return self
@@ -710,8 +576,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRelationNumber(): string
@@ -720,8 +584,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $relationNumber
      *
      * @return self
@@ -735,8 +597,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBankAccount(): string
@@ -745,8 +605,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $bankAccount
      *
      * @return self
@@ -760,8 +618,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBankBic(): string
@@ -770,8 +626,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $bankBic
      *
      * @return self
@@ -785,8 +639,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceReceiver(): string
@@ -795,8 +647,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $invoiceReceiver
      *
      * @return self
@@ -810,8 +660,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMailingListEmail(): string
@@ -820,8 +668,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param string $mailingListEmail
      *
      * @return self
@@ -835,8 +681,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return PersonMailingList[]
      */
     public function getMailingLists(): array
@@ -845,8 +689,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param PersonMailingList[] $mailingLists
      *
      * @return self
@@ -860,8 +702,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsActive(): bool
@@ -870,8 +710,6 @@ class PostPerson
     }
 
     /**
-     *
-     *
      * @param bool $isActive
      *
      * @return self

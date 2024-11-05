@@ -16,27 +16,19 @@ class GetContactSimple
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetPersonSimple
      */
     protected $person;
     /**
-     *
-     *
      * @var GetOrganizationSimple
      */
     protected $organization;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -45,8 +37,6 @@ class GetContactSimple
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -60,8 +50,6 @@ class GetContactSimple
     }
 
     /**
-     *
-     *
      * @return GetPersonSimple
      */
     public function getPerson(): GetPersonSimple
@@ -70,8 +58,6 @@ class GetContactSimple
     }
 
     /**
-     *
-     *
      * @param GetPersonSimple $person
      *
      * @return self
@@ -85,8 +71,6 @@ class GetContactSimple
     }
 
     /**
-     *
-     *
      * @return GetOrganizationSimple
      */
     public function getOrganization(): GetOrganizationSimple
@@ -95,8 +79,6 @@ class GetContactSimple
     }
 
     /**
-     *
-     *
      * @param GetOrganizationSimple $organization
      *
      * @return self

@@ -16,75 +16,51 @@ class GetMessage
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var Attachment[]
      */
     protected $attachments;
     /**
-     *
-     *
      * @var MessageType
      */
     protected $messageType;
     /**
-     *
-     *
      * @var LinkedToEntity[]
      */
     protected $linkedTo;
     /**
-     *
-     *
      * @var Creator
      */
     protected $createdBy;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $title;
     /**
-     *
-     *
      * @var ContentField[]
      */
     protected $contentFields;
     /**
-     *
-     *
      * @var string
      */
     protected $content;
     /**
-     *
-     *
      * @var string
      */
     protected $displayDate;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -93,8 +69,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -108,8 +82,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @return Attachment[]
      */
     public function getAttachments(): array
@@ -118,8 +90,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @param Attachment[] $attachments
      *
      * @return self
@@ -133,8 +103,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @return MessageType
      */
     public function getMessageType(): MessageType
@@ -143,8 +111,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @param MessageType $messageType
      *
      * @return self
@@ -158,8 +124,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @return LinkedToEntity[]
      */
     public function getLinkedTo(): array
@@ -168,8 +132,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @param LinkedToEntity[] $linkedTo
      *
      * @return self
@@ -183,8 +145,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @return Creator
      */
     public function getCreatedBy(): Creator
@@ -193,8 +153,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @param Creator $createdBy
      *
      * @return self
@@ -208,8 +166,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -218,8 +174,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -233,8 +187,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -243,8 +195,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -258,8 +208,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -268,8 +216,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -283,8 +229,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @return ContentField[]
      */
     public function getContentFields(): array
@@ -293,8 +237,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @param ContentField[] $contentFields
      *
      * @return self
@@ -308,8 +250,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getContent(): string
@@ -318,8 +258,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @param string $content
      *
      * @return self
@@ -333,8 +271,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDisplayDate(): string
@@ -343,8 +279,6 @@ class GetMessage
     }
 
     /**
-     *
-     *
      * @param string $displayDate
      *
      * @return self

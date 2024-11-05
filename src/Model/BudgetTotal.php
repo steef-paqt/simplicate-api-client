@@ -16,27 +16,19 @@ class BudgetTotal
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var float
      */
     protected $valueBudget;
     /**
-     *
-     *
      * @var float
      */
     protected $valueSpent;
     /**
-     *
-     *
      * @var float
      */
     protected $valueInvoiced;
 
     /**
-     *
-     *
      * @return float
      */
     public function getValueBudget(): float
@@ -45,8 +37,6 @@ class BudgetTotal
     }
 
     /**
-     *
-     *
      * @param float $valueBudget
      *
      * @return self
@@ -60,8 +50,6 @@ class BudgetTotal
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getValueSpent(): float
@@ -70,8 +58,6 @@ class BudgetTotal
     }
 
     /**
-     *
-     *
      * @param float $valueSpent
      *
      * @return self
@@ -85,8 +71,6 @@ class BudgetTotal
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getValueInvoiced(): float
@@ -95,8 +79,6 @@ class BudgetTotal
     }
 
     /**
-     *
-     *
      * @param float $valueInvoiced
      *
      * @return self

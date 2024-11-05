@@ -11,8 +11,6 @@ class PostSalesService extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\PostSalesService $body template object that needs to be added
      */
     public function __construct(\Steefdw\Simplicate\Model\PostSalesService $body)

@@ -16,21 +16,15 @@ class IsSatisfiedReason
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $message;
     /**
-     *
-     *
      * @var string
      */
     protected $translatedMessage;
 
     /**
-     *
-     *
      * @return string
      */
     public function getMessage(): string
@@ -39,8 +33,6 @@ class IsSatisfiedReason
     }
 
     /**
-     *
-     *
      * @param string $message
      *
      * @return self
@@ -54,8 +46,6 @@ class IsSatisfiedReason
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTranslatedMessage(): string
@@ -64,8 +54,6 @@ class IsSatisfiedReason
     }
 
     /**
-     *
-     *
      * @param string $translatedMessage
      *
      * @return self

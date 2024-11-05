@@ -16,21 +16,15 @@ class ExpenseAttachment
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $fileHash;
     /**
-     *
-     *
      * @var string
      */
     protected $fileName;
 
     /**
-     *
-     *
      * @return string
      */
     public function getFileHash(): string
@@ -39,8 +33,6 @@ class ExpenseAttachment
     }
 
     /**
-     *
-     *
      * @param string $fileHash
      *
      * @return self
@@ -54,8 +46,6 @@ class ExpenseAttachment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFileName(): string
@@ -64,8 +54,6 @@ class ExpenseAttachment
     }
 
     /**
-     *
-     *
      * @param string $fileName
      *
      * @return self

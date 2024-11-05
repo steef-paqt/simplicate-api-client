@@ -16,14 +16,10 @@ class Debtor
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $provisionMethod;
     /**
-     *
-     *
      * @var bool
      */
     protected $sendInvoiceEmailToContact;
@@ -34,38 +30,26 @@ class Debtor
      */
     protected $provisionContactpersonId;
     /**
-     *
-     *
      * @var bool
      */
     protected $sendInvoiceEmailToProjectContact;
     /**
-     *
-     *
      * @var bool
      */
     protected $sendInvoiceEmailToFixedEmail;
     /**
-     *
-     *
      * @var string
      */
     protected $sendEmailEmail;
     /**
-     *
-     *
      * @var bool
      */
     protected $sendInvoiceEmailToCc;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $cc;
     /**
-     *
-     *
      * @var string
      */
     protected $attentionTo;
@@ -76,45 +60,31 @@ class Debtor
      */
     protected $attentionToPersonId;
     /**
-     *
-     *
      * @var string
      */
     protected $attentionToFixed;
     /**
-     *
-     *
      * @var bool
      */
     protected $autocollect;
     /**
-     *
-     *
      * @var bool
      */
     protected $reminders;
     /**
-     *
-     *
      * @var string
      */
     protected $sendEmailType;
     /**
-     *
-     *
      * @var bool
      */
     protected $autosendSubscriptionInvoice;
     /**
-     *
-     *
      * @var string
      */
     protected $invoicetemplateId;
 
     /**
-     *
-     *
      * @return string
      */
     public function getProvisionMethod(): string
@@ -123,8 +93,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @param string $provisionMethod
      *
      * @return self
@@ -138,8 +106,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getSendInvoiceEmailToContact(): bool
@@ -148,8 +114,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @param bool $sendInvoiceEmailToContact
      *
      * @return self
@@ -188,8 +152,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getSendInvoiceEmailToProjectContact(): bool
@@ -198,8 +160,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @param bool $sendInvoiceEmailToProjectContact
      *
      * @return self
@@ -213,8 +173,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getSendInvoiceEmailToFixedEmail(): bool
@@ -223,8 +181,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @param bool $sendInvoiceEmailToFixedEmail
      *
      * @return self
@@ -238,8 +194,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSendEmailEmail(): string
@@ -248,8 +202,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @param string $sendEmailEmail
      *
      * @return self
@@ -263,8 +215,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getSendInvoiceEmailToCc(): bool
@@ -273,8 +223,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @param bool $sendInvoiceEmailToCc
      *
      * @return self
@@ -288,8 +236,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getCc(): array
@@ -298,8 +244,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @param mixed[] $cc
      *
      * @return self
@@ -313,8 +257,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAttentionTo(): string
@@ -323,8 +265,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @param string $attentionTo
      *
      * @return self
@@ -363,8 +303,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAttentionToFixed(): string
@@ -373,8 +311,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @param string $attentionToFixed
      *
      * @return self
@@ -388,8 +324,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getAutocollect(): bool
@@ -398,8 +332,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @param bool $autocollect
      *
      * @return self
@@ -413,8 +345,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getReminders(): bool
@@ -423,8 +353,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @param bool $reminders
      *
      * @return self
@@ -438,8 +366,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSendEmailType(): string
@@ -448,8 +374,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @param string $sendEmailType
      *
      * @return self
@@ -463,8 +387,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getAutosendSubscriptionInvoice(): bool
@@ -473,8 +395,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @param bool $autosendSubscriptionInvoice
      *
      * @return self
@@ -488,8 +408,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoicetemplateId(): string
@@ -498,8 +416,6 @@ class Debtor
     }
 
     /**
-     *
-     *
      * @param string $invoicetemplateId
      *
      * @return self

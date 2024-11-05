@@ -16,207 +16,139 @@ class GetOrganization
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetAddress
      */
     protected $visitingAddress;
     /**
-     *
-     *
      * @var GetAddress
      */
     protected $postalAddress;
     /**
-     *
-     *
      * @var RelationType
      */
     protected $relationType;
     /**
-     *
-     *
      * @var Employee
      */
     protected $relationManager;
     /**
-     *
-     *
      * @var CustomerGroup
      */
     protected $customerGroup;
     /**
-     *
-     *
      * @var GetTeamSimple[]
      */
     protected $teams;
     /**
-     *
-     *
      * @var GetDebtor
      */
     protected $debtor;
     /**
-     *
-     *
      * @var OrganizationSize
      */
     protected $organizationsize;
     /**
-     *
-     *
      * @var ContactPerson[]
      */
     protected $linkedPersonsContacts;
     /**
-     *
-     *
      * @var Interest[]
      */
     protected $interests;
     /**
-     *
-     *
      * @var Accountancy
      */
     protected $accountancy;
     /**
-     *
-     *
      * @var GetCustomField[]
      */
     protected $customFields;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $simplicateUrl;
     /**
-     *
-     *
      * @var SbiCode[]
      */
     protected $sbiCodes;
     /**
-     *
-     *
      * @var bool
      */
     protected $isActive;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $cocCode;
     /**
-     *
-     *
      * @var string
      */
     protected $vatNumber;
     /**
-     *
-     *
      * @var string
      */
     protected $email;
     /**
-     *
-     *
      * @var string
      */
     protected $phone;
     /**
-     *
-     *
      * @var string
      */
     protected $url;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var string
      */
     protected $linkedinUrl;
     /**
-     *
-     *
      * @var bool
      */
     protected $hasDifferentPostalAddress;
     /**
-     *
-     *
      * @var Industry
      */
     protected $industry;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceReceiver;
     /**
-     *
-     *
      * @var bool
      */
     protected $allowAutocollect;
     /**
-     *
-     *
      * @var string
      */
     protected $bankAccount;
     /**
-     *
-     *
      * @var string
      */
     protected $bankBic;
     /**
-     *
-     *
      * @var string
      */
     protected $relationNumber;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -225,8 +157,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -240,8 +170,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return GetAddress
      */
     public function getVisitingAddress(): GetAddress
@@ -250,8 +178,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param GetAddress $visitingAddress
      *
      * @return self
@@ -265,8 +191,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return GetAddress
      */
     public function getPostalAddress(): GetAddress
@@ -275,8 +199,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param GetAddress $postalAddress
      *
      * @return self
@@ -290,8 +212,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return RelationType
      */
     public function getRelationType(): RelationType
@@ -300,8 +220,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param RelationType $relationType
      *
      * @return self
@@ -315,8 +233,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return Employee
      */
     public function getRelationManager(): Employee
@@ -325,8 +241,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param Employee $relationManager
      *
      * @return self
@@ -340,8 +254,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return CustomerGroup
      */
     public function getCustomerGroup(): CustomerGroup
@@ -350,8 +262,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param CustomerGroup $customerGroup
      *
      * @return self
@@ -365,8 +275,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return GetTeamSimple[]
      */
     public function getTeams(): array
@@ -375,8 +283,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param GetTeamSimple[] $teams
      *
      * @return self
@@ -390,8 +296,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return GetDebtor
      */
     public function getDebtor(): GetDebtor
@@ -400,8 +304,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param GetDebtor $debtor
      *
      * @return self
@@ -415,8 +317,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return OrganizationSize
      */
     public function getOrganizationsize(): OrganizationSize
@@ -425,8 +325,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param OrganizationSize $organizationsize
      *
      * @return self
@@ -440,8 +338,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return ContactPerson[]
      */
     public function getLinkedPersonsContacts(): array
@@ -450,8 +346,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param ContactPerson[] $linkedPersonsContacts
      *
      * @return self
@@ -465,8 +359,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return Interest[]
      */
     public function getInterests(): array
@@ -475,8 +367,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param Interest[] $interests
      *
      * @return self
@@ -490,8 +380,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return Accountancy
      */
     public function getAccountancy(): Accountancy
@@ -500,8 +388,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param Accountancy $accountancy
      *
      * @return self
@@ -515,8 +401,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return GetCustomField[]
      */
     public function getCustomFields(): array
@@ -525,8 +409,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param GetCustomField[] $customFields
      *
      * @return self
@@ -540,8 +422,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -550,8 +430,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -565,8 +443,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -575,8 +451,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -590,8 +464,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSimplicateUrl(): string
@@ -600,8 +472,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $simplicateUrl
      *
      * @return self
@@ -615,8 +485,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return SbiCode[]
      */
     public function getSbiCodes(): array
@@ -625,8 +493,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param SbiCode[] $sbiCodes
      *
      * @return self
@@ -640,8 +506,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsActive(): bool
@@ -650,8 +514,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param bool $isActive
      *
      * @return self
@@ -665,8 +527,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -675,8 +535,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -690,8 +548,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCocCode(): string
@@ -700,8 +556,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $cocCode
      *
      * @return self
@@ -715,8 +569,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getVatNumber(): string
@@ -725,8 +577,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $vatNumber
      *
      * @return self
@@ -740,8 +590,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmail(): string
@@ -750,8 +598,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $email
      *
      * @return self
@@ -765,8 +611,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPhone(): string
@@ -775,8 +619,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $phone
      *
      * @return self
@@ -790,8 +632,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUrl(): string
@@ -800,8 +640,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $url
      *
      * @return self
@@ -815,8 +653,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -825,8 +661,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -840,8 +674,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLinkedinUrl(): string
@@ -850,8 +682,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $linkedinUrl
      *
      * @return self
@@ -865,8 +695,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getHasDifferentPostalAddress(): bool
@@ -875,8 +703,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param bool $hasDifferentPostalAddress
      *
      * @return self
@@ -890,8 +716,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return Industry
      */
     public function getIndustry(): Industry
@@ -900,8 +724,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param Industry $industry
      *
      * @return self
@@ -915,8 +737,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceReceiver(): string
@@ -925,8 +745,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $invoiceReceiver
      *
      * @return self
@@ -940,8 +758,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getAllowAutocollect(): bool
@@ -950,8 +766,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param bool $allowAutocollect
      *
      * @return self
@@ -965,8 +779,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBankAccount(): string
@@ -975,8 +787,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $bankAccount
      *
      * @return self
@@ -990,8 +800,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBankBic(): string
@@ -1000,8 +808,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $bankBic
      *
      * @return self
@@ -1015,8 +821,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRelationNumber(): string
@@ -1025,8 +829,6 @@ class GetOrganization
     }
 
     /**
-     *
-     *
      * @param string $relationNumber
      *
      * @return self

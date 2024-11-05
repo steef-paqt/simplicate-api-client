@@ -16,39 +16,27 @@ class PostQuoteTemplate
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
     /**
-     *
-     *
      * @var string
      */
     protected $html;
     /**
-     *
-     *
      * @var string
      */
     protected $json;
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -57,8 +45,6 @@ class PostQuoteTemplate
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -72,8 +58,6 @@ class PostQuoteTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -82,8 +66,6 @@ class PostQuoteTemplate
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -97,8 +79,6 @@ class PostQuoteTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -107,8 +87,6 @@ class PostQuoteTemplate
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self
@@ -122,8 +100,6 @@ class PostQuoteTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getHtml(): string
@@ -132,8 +108,6 @@ class PostQuoteTemplate
     }
 
     /**
-     *
-     *
      * @param string $html
      *
      * @return self
@@ -147,8 +121,6 @@ class PostQuoteTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getJson(): string
@@ -157,8 +129,6 @@ class PostQuoteTemplate
     }
 
     /**
-     *
-     *
      * @param string $json
      *
      * @return self

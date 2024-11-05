@@ -16,33 +16,23 @@ class PostContactOrganizationFk
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $organizationId;
     /**
-     *
-     *
      * @var string
      */
     protected $workFunction;
     /**
-     *
-     *
      * @var string
      */
     protected $workEmail;
     /**
-     *
-     *
      * @var string
      */
     protected $workMobile;
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizationId(): string
@@ -51,8 +41,6 @@ class PostContactOrganizationFk
     }
 
     /**
-     *
-     *
      * @param string $organizationId
      *
      * @return self
@@ -66,8 +54,6 @@ class PostContactOrganizationFk
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkFunction(): string
@@ -76,8 +62,6 @@ class PostContactOrganizationFk
     }
 
     /**
-     *
-     *
      * @param string $workFunction
      *
      * @return self
@@ -91,8 +75,6 @@ class PostContactOrganizationFk
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkEmail(): string
@@ -101,8 +83,6 @@ class PostContactOrganizationFk
     }
 
     /**
-     *
-     *
      * @param string $workEmail
      *
      * @return self
@@ -116,8 +96,6 @@ class PostContactOrganizationFk
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkMobile(): string
@@ -126,8 +104,6 @@ class PostContactOrganizationFk
     }
 
     /**
-     *
-     *
      * @param string $workMobile
      *
      * @return self

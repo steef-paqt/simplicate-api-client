@@ -16,27 +16,19 @@ class QuoteStatus
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -45,8 +37,6 @@ class QuoteStatus
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -60,8 +50,6 @@ class QuoteStatus
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -70,8 +58,6 @@ class QuoteStatus
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -85,8 +71,6 @@ class QuoteStatus
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -95,8 +79,6 @@ class QuoteStatus
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self

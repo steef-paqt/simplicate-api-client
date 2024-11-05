@@ -11,8 +11,6 @@ class PostMergerCompareorganization extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\PostMergerCompare $body Compare objects containing the source id and target id
      */
     public function __construct(\Steefdw\Simplicate\Model\PostMergerCompare $body)

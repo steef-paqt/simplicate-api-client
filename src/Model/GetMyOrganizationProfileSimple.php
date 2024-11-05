@@ -16,21 +16,15 @@ class GetMyOrganizationProfileSimple
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetOrganizationSimple
      */
     protected $organization;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -39,8 +33,6 @@ class GetMyOrganizationProfileSimple
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -54,8 +46,6 @@ class GetMyOrganizationProfileSimple
     }
 
     /**
-     *
-     *
      * @return GetOrganizationSimple
      */
     public function getOrganization(): GetOrganizationSimple
@@ -64,8 +54,6 @@ class GetMyOrganizationProfileSimple
     }
 
     /**
-     *
-     *
      * @param GetOrganizationSimple $organization
      *
      * @return self

@@ -16,75 +16,51 @@ class GetContactPerson
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetOrganizationSimple
      */
     protected $organization;
     /**
-     *
-     *
      * @var GetPersonSimple
      */
     protected $person;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var bool
      */
     protected $isActive;
     /**
-     *
-     *
      * @var string
      */
     protected $workFunction;
     /**
-     *
-     *
      * @var string
      */
     protected $workEmail;
     /**
-     *
-     *
      * @var string
      */
     protected $workPhone;
     /**
-     *
-     *
      * @var string
      */
     protected $workMobile;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -93,8 +69,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -108,8 +82,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @return GetOrganizationSimple
      */
     public function getOrganization(): GetOrganizationSimple
@@ -118,8 +90,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @param GetOrganizationSimple $organization
      *
      * @return self
@@ -133,8 +103,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @return GetPersonSimple
      */
     public function getPerson(): GetPersonSimple
@@ -143,8 +111,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @param GetPersonSimple $person
      *
      * @return self
@@ -158,8 +124,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -168,8 +132,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -183,8 +145,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -193,8 +153,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -208,8 +166,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsActive(): bool
@@ -218,8 +174,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @param bool $isActive
      *
      * @return self
@@ -233,8 +187,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkFunction(): string
@@ -243,8 +195,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @param string $workFunction
      *
      * @return self
@@ -258,8 +208,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkEmail(): string
@@ -268,8 +216,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @param string $workEmail
      *
      * @return self
@@ -283,8 +229,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkPhone(): string
@@ -293,8 +237,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @param string $workPhone
      *
      * @return self
@@ -308,8 +250,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkMobile(): string
@@ -318,8 +258,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @param string $workMobile
      *
      * @return self
@@ -333,8 +271,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -343,8 +279,6 @@ class GetContactPerson
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self

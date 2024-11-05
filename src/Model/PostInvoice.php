@@ -16,75 +16,51 @@ class PostInvoice
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $paymentTermId;
     /**
-     *
-     *
      * @var PostInvoiceLine[]
      */
     protected $invoiceLines;
     /**
-     *
-     *
      * @var string
      */
     protected $statusId;
     /**
-     *
-     *
      * @var string
      */
     protected $myOrganizationProfileId;
     /**
-     *
-     *
      * @var string
      */
     protected $organizationId;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $date;
     /**
-     *
-     *
      * @var string
      */
     protected $subject;
     /**
-     *
-     *
      * @var string
      */
     protected $reference;
     /**
-     *
-     *
      * @var string
      */
     protected $projectId;
     /**
-     *
-     *
      * @var string
      */
     protected $comments;
 
     /**
-     *
-     *
      * @return string
      */
     public function getPaymentTermId(): string
@@ -93,8 +69,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @param string $paymentTermId
      *
      * @return self
@@ -108,8 +82,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @return PostInvoiceLine[]
      */
     public function getInvoiceLines(): array
@@ -118,8 +90,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @param PostInvoiceLine[] $invoiceLines
      *
      * @return self
@@ -133,8 +103,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatusId(): string
@@ -143,8 +111,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @param string $statusId
      *
      * @return self
@@ -158,8 +124,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMyOrganizationProfileId(): string
@@ -168,8 +132,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @param string $myOrganizationProfileId
      *
      * @return self
@@ -183,8 +145,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizationId(): string
@@ -193,8 +153,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @param string $organizationId
      *
      * @return self
@@ -208,8 +166,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -218,8 +174,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -233,8 +187,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDate(): string
@@ -243,8 +195,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @param string $date
      *
      * @return self
@@ -258,8 +208,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubject(): string
@@ -268,8 +216,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @param string $subject
      *
      * @return self
@@ -283,8 +229,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getReference(): string
@@ -293,8 +237,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @param string $reference
      *
      * @return self
@@ -308,8 +250,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectId(): string
@@ -318,8 +258,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @param string $projectId
      *
      * @return self
@@ -333,8 +271,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getComments(): string
@@ -343,8 +279,6 @@ class PostInvoice
     }
 
     /**
-     *
-     *
      * @param string $comments
      *
      * @return self

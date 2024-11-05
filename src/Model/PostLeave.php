@@ -16,57 +16,39 @@ class PostLeave
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $leaveTypeId;
     /**
-     *
-     *
      * @var bool
      */
     protected $isTimeDefined;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var int
      */
     protected $year;
     /**
-     *
-     *
      * @var int
      */
     protected $hours;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -75,8 +57,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -90,8 +70,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLeaveTypeId(): string
@@ -100,8 +78,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @param string $leaveTypeId
      *
      * @return self
@@ -115,8 +91,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsTimeDefined(): bool
@@ -125,8 +99,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @param bool $isTimeDefined
      *
      * @return self
@@ -140,8 +112,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -150,8 +120,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -165,8 +133,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -175,8 +141,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -190,8 +154,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getYear(): int
@@ -200,8 +162,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @param int $year
      *
      * @return self
@@ -215,8 +175,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getHours(): int
@@ -225,8 +183,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @param int $hours
      *
      * @return self
@@ -240,8 +196,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -250,8 +204,6 @@ class PostLeave
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

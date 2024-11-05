@@ -16,21 +16,15 @@ class RecentSalesQuoteStatus
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var int
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $statusLabel;
 
     /**
-     *
-     *
      * @return int
      */
     public function getId(): int
@@ -39,8 +33,6 @@ class RecentSalesQuoteStatus
     }
 
     /**
-     *
-     *
      * @param int $id
      *
      * @return self
@@ -54,8 +46,6 @@ class RecentSalesQuoteStatus
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatusLabel(): string
@@ -64,8 +54,6 @@ class RecentSalesQuoteStatus
     }
 
     /**
-     *
-     *
      * @param string $statusLabel
      *
      * @return self

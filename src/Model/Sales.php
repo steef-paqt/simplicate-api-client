@@ -16,87 +16,59 @@ class Sales
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $myOrganizationProfileId;
     /**
-     *
-     *
      * @var string
      */
     protected $organizationId;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $contactId;
     /**
-     *
-     *
      * @var SalesReason
      */
     protected $reason;
     /**
-     *
-     *
      * @var ContactPerson
      */
     protected $contact;
     /**
-     *
-     *
      * @var string
      */
     protected $subject;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $expectedClosingDate;
     /**
-     *
-     *
      * @var float
      */
     protected $expectedRevenue;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var int
      */
     protected $chanceToScore;
     /**
-     *
-     *
      * @var LostToCompetitor
      */
     protected $lostToCompetitor;
 
     /**
-     *
-     *
      * @return string
      */
     public function getMyOrganizationProfileId(): string
@@ -105,8 +77,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @param string $myOrganizationProfileId
      *
      * @return self
@@ -120,8 +90,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizationId(): string
@@ -130,8 +98,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @param string $organizationId
      *
      * @return self
@@ -145,8 +111,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -155,8 +119,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -170,8 +132,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getContactId(): string
@@ -180,8 +140,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @param string $contactId
      *
      * @return self
@@ -195,8 +153,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @return SalesReason
      */
     public function getReason(): SalesReason
@@ -205,8 +161,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @param SalesReason $reason
      *
      * @return self
@@ -220,8 +174,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @return ContactPerson
      */
     public function getContact(): ContactPerson
@@ -230,8 +182,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @param ContactPerson $contact
      *
      * @return self
@@ -245,8 +195,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubject(): string
@@ -255,8 +203,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @param string $subject
      *
      * @return self
@@ -270,8 +216,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -280,8 +224,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -295,8 +237,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getExpectedClosingDate(): string
@@ -305,8 +245,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @param string $expectedClosingDate
      *
      * @return self
@@ -320,8 +258,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getExpectedRevenue(): float
@@ -330,8 +266,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @param float $expectedRevenue
      *
      * @return self
@@ -345,8 +279,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -355,8 +287,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -370,8 +300,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getChanceToScore(): int
@@ -380,8 +308,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @param int $chanceToScore
      *
      * @return self
@@ -395,8 +321,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @return LostToCompetitor
      */
     public function getLostToCompetitor(): LostToCompetitor
@@ -405,8 +329,6 @@ class Sales
     }
 
     /**
-     *
-     *
      * @param LostToCompetitor $lostToCompetitor
      *
      * @return self

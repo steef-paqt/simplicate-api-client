@@ -16,51 +16,35 @@ class DefaultTask
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var int
      */
     protected $order;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var bool
      */
     protected $canChangeDestination;
     /**
-     *
-     *
      * @var bool
      */
     protected $willSendEmail;
     /**
-     *
-     *
      * @var bool
      */
     protected $isReturnToSender;
     /**
-     *
-     *
      * @var float
      */
     protected $averageHoursCost;
     /**
-     *
-     *
      * @var bool
      */
     protected $canBeTransferred;
 
     /**
-     *
-     *
      * @return int
      */
     public function getOrder(): int
@@ -69,8 +53,6 @@ class DefaultTask
     }
 
     /**
-     *
-     *
      * @param int $order
      *
      * @return self
@@ -84,8 +66,6 @@ class DefaultTask
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -94,8 +74,6 @@ class DefaultTask
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -109,8 +87,6 @@ class DefaultTask
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getCanChangeDestination(): bool
@@ -119,8 +95,6 @@ class DefaultTask
     }
 
     /**
-     *
-     *
      * @param bool $canChangeDestination
      *
      * @return self
@@ -134,8 +108,6 @@ class DefaultTask
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getWillSendEmail(): bool
@@ -144,8 +116,6 @@ class DefaultTask
     }
 
     /**
-     *
-     *
      * @param bool $willSendEmail
      *
      * @return self
@@ -159,8 +129,6 @@ class DefaultTask
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsReturnToSender(): bool
@@ -169,8 +137,6 @@ class DefaultTask
     }
 
     /**
-     *
-     *
      * @param bool $isReturnToSender
      *
      * @return self
@@ -184,8 +150,6 @@ class DefaultTask
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAverageHoursCost(): float
@@ -194,8 +158,6 @@ class DefaultTask
     }
 
     /**
-     *
-     *
      * @param float $averageHoursCost
      *
      * @return self
@@ -209,8 +171,6 @@ class DefaultTask
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getCanBeTransferred(): bool
@@ -219,8 +179,6 @@ class DefaultTask
     }
 
     /**
-     *
-     *
      * @param bool $canBeTransferred
      *
      * @return self

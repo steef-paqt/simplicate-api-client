@@ -11,8 +11,6 @@ class PutProjectsServiceById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PutProjectService $body Service object that needs to be updated
      */

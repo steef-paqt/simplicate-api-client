@@ -16,33 +16,23 @@ class RestResultReminderSets
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var GetReminderSet[]
      */
     protected $data;
     /**
-     *
-     *
      * @var MetaData
      */
     protected $metadata;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $errors;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $debug;
 
     /**
-     *
-     *
      * @return GetReminderSet[]
      */
     public function getData(): array
@@ -51,8 +41,6 @@ class RestResultReminderSets
     }
 
     /**
-     *
-     *
      * @param GetReminderSet[] $data
      *
      * @return self
@@ -66,8 +54,6 @@ class RestResultReminderSets
     }
 
     /**
-     *
-     *
      * @return MetaData
      */
     public function getMetadata(): MetaData
@@ -76,8 +62,6 @@ class RestResultReminderSets
     }
 
     /**
-     *
-     *
      * @param MetaData $metadata
      *
      * @return self
@@ -91,8 +75,6 @@ class RestResultReminderSets
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getErrors(): array
@@ -101,8 +83,6 @@ class RestResultReminderSets
     }
 
     /**
-     *
-     *
      * @param mixed[] $errors
      *
      * @return self
@@ -116,8 +96,6 @@ class RestResultReminderSets
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getDebug(): array
@@ -126,8 +104,6 @@ class RestResultReminderSets
     }
 
     /**
-     *
-     *
      * @param mixed[] $debug
      *
      * @return self

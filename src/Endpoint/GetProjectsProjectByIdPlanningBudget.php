@@ -11,8 +11,6 @@ class GetProjectsProjectByIdPlanningBudget extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param array $queryParameters {
      *     @var string $by

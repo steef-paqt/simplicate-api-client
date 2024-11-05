@@ -16,51 +16,35 @@ class InvoiceTemplate
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var bool
      */
     protected $hideAmount;
     /**
-     *
-     *
      * @var bool
      */
     protected $hidePrice;
     /**
-     *
-     *
      * @var string
      */
     protected $footerNormal;
     /**
-     *
-     *
      * @var string
      */
     protected $footerDirectdebit;
     /**
-     *
-     *
      * @var string
      */
     protected $defaultNote;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -69,8 +53,6 @@ class InvoiceTemplate
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -84,8 +66,6 @@ class InvoiceTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -94,8 +74,6 @@ class InvoiceTemplate
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -109,8 +87,6 @@ class InvoiceTemplate
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getHideAmount(): bool
@@ -119,8 +95,6 @@ class InvoiceTemplate
     }
 
     /**
-     *
-     *
      * @param bool $hideAmount
      *
      * @return self
@@ -134,8 +108,6 @@ class InvoiceTemplate
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getHidePrice(): bool
@@ -144,8 +116,6 @@ class InvoiceTemplate
     }
 
     /**
-     *
-     *
      * @param bool $hidePrice
      *
      * @return self
@@ -159,8 +129,6 @@ class InvoiceTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFooterNormal(): string
@@ -169,8 +137,6 @@ class InvoiceTemplate
     }
 
     /**
-     *
-     *
      * @param string $footerNormal
      *
      * @return self
@@ -184,8 +150,6 @@ class InvoiceTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFooterDirectdebit(): string
@@ -194,8 +158,6 @@ class InvoiceTemplate
     }
 
     /**
-     *
-     *
      * @param string $footerDirectdebit
      *
      * @return self
@@ -209,8 +171,6 @@ class InvoiceTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDefaultNote(): string
@@ -219,8 +179,6 @@ class InvoiceTemplate
     }
 
     /**
-     *
-     *
      * @param string $defaultNote
      *
      * @return self

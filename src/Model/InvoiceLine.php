@@ -16,33 +16,23 @@ class InvoiceLine
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $date;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var float
      */
     protected $amount;
     /**
-     *
-     *
      * @var float
      */
     protected $price;
 
     /**
-     *
-     *
      * @return string
      */
     public function getDate(): string
@@ -51,8 +41,6 @@ class InvoiceLine
     }
 
     /**
-     *
-     *
      * @param string $date
      *
      * @return self
@@ -66,8 +54,6 @@ class InvoiceLine
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -76,8 +62,6 @@ class InvoiceLine
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -91,8 +75,6 @@ class InvoiceLine
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmount(): float
@@ -101,8 +83,6 @@ class InvoiceLine
     }
 
     /**
-     *
-     *
      * @param float $amount
      *
      * @return self
@@ -116,8 +96,6 @@ class InvoiceLine
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPrice(): float
@@ -126,8 +104,6 @@ class InvoiceLine
     }
 
     /**
-     *
-     *
      * @param float $price
      *
      * @return self

@@ -16,63 +16,43 @@ class GetDefaultTask
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetSimpleDefaultWorkflow
      */
     protected $defaultworkflow;
     /**
-     *
-     *
      * @var int
      */
     protected $order;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var bool
      */
     protected $canChangeDestination;
     /**
-     *
-     *
      * @var bool
      */
     protected $willSendEmail;
     /**
-     *
-     *
      * @var bool
      */
     protected $isReturnToSender;
     /**
-     *
-     *
      * @var float
      */
     protected $averageHoursCost;
     /**
-     *
-     *
      * @var bool
      */
     protected $canBeTransferred;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -81,8 +61,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -96,8 +74,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @return GetSimpleDefaultWorkflow
      */
     public function getDefaultworkflow(): GetSimpleDefaultWorkflow
@@ -106,8 +82,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @param GetSimpleDefaultWorkflow $defaultworkflow
      *
      * @return self
@@ -121,8 +95,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getOrder(): int
@@ -131,8 +103,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @param int $order
      *
      * @return self
@@ -146,8 +116,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -156,8 +124,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -171,8 +137,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getCanChangeDestination(): bool
@@ -181,8 +145,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @param bool $canChangeDestination
      *
      * @return self
@@ -196,8 +158,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getWillSendEmail(): bool
@@ -206,8 +166,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @param bool $willSendEmail
      *
      * @return self
@@ -221,8 +179,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsReturnToSender(): bool
@@ -231,8 +187,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @param bool $isReturnToSender
      *
      * @return self
@@ -246,8 +200,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAverageHoursCost(): float
@@ -256,8 +208,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @param float $averageHoursCost
      *
      * @return self
@@ -271,8 +221,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getCanBeTransferred(): bool
@@ -281,8 +229,6 @@ class GetDefaultTask
     }
 
     /**
-     *
-     *
      * @param bool $canBeTransferred
      *
      * @return self

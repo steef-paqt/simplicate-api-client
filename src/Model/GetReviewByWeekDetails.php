@@ -16,8 +16,6 @@ class GetReviewByWeekDetails
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $employee;
@@ -34,99 +32,67 @@ class GetReviewByWeekDetails
      */
     protected $endDate;
     /**
-     *
-     *
      * @var string
      */
     protected $statusId;
     /**
-     *
-     *
      * @var string
      */
     protected $statusCategory;
     /**
-     *
-     *
      * @var string
      */
     protected $statusLabel;
     /**
-     *
-     *
      * @var float
      */
     protected $rasterHours;
     /**
-     *
-     *
      * @var float
      */
     protected $writtenHours;
     /**
-     *
-     *
      * @var float
      */
     protected $overtime;
     /**
-     *
-     *
      * @var float
      */
     protected $leave;
     /**
-     *
-     *
      * @var float
      */
     protected $absence;
     /**
-     *
-     *
      * @var float
      */
     protected $mileage;
     /**
-     *
-     *
      * @var float
      */
     protected $costs;
     /**
-     *
-     *
      * @var float
      */
     protected $declarability;
     /**
-     *
-     *
      * @var float
      */
     protected $productivity;
     /**
-     *
-     *
      * @var float
      */
     protected $productivityTarget;
     /**
-     *
-     *
      * @var float
      */
     protected $productivityValue;
     /**
-     *
-     *
      * @var float
      */
     protected $productivityValueTarget;
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getEmployee(): GetEmployeeSimple
@@ -135,8 +101,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $employee
      *
      * @return self
@@ -200,8 +164,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatusId(): string
@@ -210,8 +172,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param string $statusId
      *
      * @return self
@@ -225,8 +185,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatusCategory(): string
@@ -235,8 +193,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param string $statusCategory
      *
      * @return self
@@ -250,8 +206,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatusLabel(): string
@@ -260,8 +214,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param string $statusLabel
      *
      * @return self
@@ -275,8 +227,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getRasterHours(): float
@@ -285,8 +235,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param float $rasterHours
      *
      * @return self
@@ -300,8 +248,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getWrittenHours(): float
@@ -310,8 +256,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param float $writtenHours
      *
      * @return self
@@ -325,8 +269,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getOvertime(): float
@@ -335,8 +277,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param float $overtime
      *
      * @return self
@@ -350,8 +290,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getLeave(): float
@@ -360,8 +298,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param float $leave
      *
      * @return self
@@ -375,8 +311,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAbsence(): float
@@ -385,8 +319,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param float $absence
      *
      * @return self
@@ -400,8 +332,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getMileage(): float
@@ -410,8 +340,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param float $mileage
      *
      * @return self
@@ -425,8 +353,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getCosts(): float
@@ -435,8 +361,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param float $costs
      *
      * @return self
@@ -450,8 +374,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getDeclarability(): float
@@ -460,8 +382,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param float $declarability
      *
      * @return self
@@ -475,8 +395,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getProductivity(): float
@@ -485,8 +403,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param float $productivity
      *
      * @return self
@@ -500,8 +416,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getProductivityTarget(): float
@@ -510,8 +424,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param float $productivityTarget
      *
      * @return self
@@ -525,8 +437,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getProductivityValue(): float
@@ -535,8 +445,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param float $productivityValue
      *
      * @return self
@@ -550,8 +458,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getProductivityValueTarget(): float
@@ -560,8 +466,6 @@ class GetReviewByWeekDetails
     }
 
     /**
-     *
-     *
      * @param float $productivityValueTarget
      *
      * @return self

@@ -16,33 +16,23 @@ class BaseSetting
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $timestamp;
     /**
-     *
-     *
      * @var string
      */
     protected $appId;
     /**
-     *
-     *
      * @var string
      */
     protected $key;
     /**
-     *
-     *
      * @var string
      */
     protected $value;
 
     /**
-     *
-     *
      * @return string
      */
     public function getTimestamp(): string
@@ -51,8 +41,6 @@ class BaseSetting
     }
 
     /**
-     *
-     *
      * @param string $timestamp
      *
      * @return self
@@ -66,8 +54,6 @@ class BaseSetting
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAppId(): string
@@ -76,8 +62,6 @@ class BaseSetting
     }
 
     /**
-     *
-     *
      * @param string $appId
      *
      * @return self
@@ -91,8 +75,6 @@ class BaseSetting
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getKey(): string
@@ -101,8 +83,6 @@ class BaseSetting
     }
 
     /**
-     *
-     *
      * @param string $key
      *
      * @return self
@@ -116,8 +96,6 @@ class BaseSetting
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getValue(): string
@@ -126,8 +104,6 @@ class BaseSetting
     }
 
     /**
-     *
-     *
      * @param string $value
      *
      * @return self

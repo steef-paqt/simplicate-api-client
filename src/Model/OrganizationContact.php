@@ -16,63 +16,43 @@ class OrganizationContact
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $organizationId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var bool
      */
     protected $isActive;
     /**
-     *
-     *
      * @var string
      */
     protected $workFunction;
     /**
-     *
-     *
      * @var string
      */
     protected $workEmail;
     /**
-     *
-     *
      * @var string
      */
     protected $workPhone;
     /**
-     *
-     *
      * @var string
      */
     protected $workMobile;
     /**
-     *
-     *
      * @var Interest[]
      */
     protected $interests;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -81,8 +61,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -96,8 +74,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizationId(): string
@@ -106,8 +82,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @param string $organizationId
      *
      * @return self
@@ -121,8 +95,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -131,8 +103,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -146,8 +116,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsActive(): bool
@@ -156,8 +124,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @param bool $isActive
      *
      * @return self
@@ -171,8 +137,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkFunction(): string
@@ -181,8 +145,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @param string $workFunction
      *
      * @return self
@@ -196,8 +158,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkEmail(): string
@@ -206,8 +166,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @param string $workEmail
      *
      * @return self
@@ -221,8 +179,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkPhone(): string
@@ -231,8 +187,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @param string $workPhone
      *
      * @return self
@@ -246,8 +200,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkMobile(): string
@@ -256,8 +208,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @param string $workMobile
      *
      * @return self
@@ -271,8 +221,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @return Interest[]
      */
     public function getInterests(): array
@@ -281,8 +229,6 @@ class OrganizationContact
     }
 
     /**
-     *
-     *
      * @param Interest[] $interests
      *
      * @return self

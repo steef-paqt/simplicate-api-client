@@ -16,21 +16,15 @@ class HrmPostTeam
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $employeeIds;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getEmployeeIds(): array
@@ -39,8 +33,6 @@ class HrmPostTeam
     }
 
     /**
-     *
-     *
      * @param mixed[] $employeeIds
      *
      * @return self
@@ -54,8 +46,6 @@ class HrmPostTeam
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -64,8 +54,6 @@ class HrmPostTeam
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self

@@ -16,33 +16,23 @@ class VatClass
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $code;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var float
      */
     protected $percentage;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -51,8 +41,6 @@ class VatClass
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -66,8 +54,6 @@ class VatClass
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCode(): string
@@ -76,8 +62,6 @@ class VatClass
     }
 
     /**
-     *
-     *
      * @param string $code
      *
      * @return self
@@ -91,8 +75,6 @@ class VatClass
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -101,8 +83,6 @@ class VatClass
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -116,8 +96,6 @@ class VatClass
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPercentage(): float
@@ -126,8 +104,6 @@ class VatClass
     }
 
     /**
-     *
-     *
      * @param float $percentage
      *
      * @return self

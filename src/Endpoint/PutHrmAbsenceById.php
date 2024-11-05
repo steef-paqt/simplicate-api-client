@@ -11,8 +11,6 @@ class PutHrmAbsenceById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values
      */

@@ -16,33 +16,23 @@ class LeaveType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var bool
      */
     protected $blocked;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
     /**
-     *
-     *
      * @var bool
      */
     protected $affectsBalance;
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -51,8 +41,6 @@ class LeaveType
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -66,8 +54,6 @@ class LeaveType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBlocked(): bool
@@ -76,8 +62,6 @@ class LeaveType
     }
 
     /**
-     *
-     *
      * @param bool $blocked
      *
      * @return self
@@ -91,8 +75,6 @@ class LeaveType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -101,8 +83,6 @@ class LeaveType
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self
@@ -116,8 +96,6 @@ class LeaveType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getAffectsBalance(): bool
@@ -126,8 +104,6 @@ class LeaveType
     }
 
     /**
-     *
-     *
      * @param bool $affectsBalance
      *
      * @return self

@@ -16,45 +16,31 @@ class Contract
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var bool
      */
     protected $endDate;
     /**
-     *
-     *
      * @var float
      */
     protected $salaryFulltime;
     /**
-     *
-     *
      * @var float
      */
     protected $parttimePercentage;
     /**
-     *
-     *
      * @var float
      */
     protected $daysOff;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -63,8 +49,6 @@ class Contract
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -78,8 +62,6 @@ class Contract
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -88,8 +70,6 @@ class Contract
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -103,8 +83,6 @@ class Contract
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getEndDate(): bool
@@ -113,8 +91,6 @@ class Contract
     }
 
     /**
-     *
-     *
      * @param bool $endDate
      *
      * @return self
@@ -128,8 +104,6 @@ class Contract
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getSalaryFulltime(): float
@@ -138,8 +112,6 @@ class Contract
     }
 
     /**
-     *
-     *
      * @param float $salaryFulltime
      *
      * @return self
@@ -153,8 +125,6 @@ class Contract
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getParttimePercentage(): float
@@ -163,8 +133,6 @@ class Contract
     }
 
     /**
-     *
-     *
      * @param float $parttimePercentage
      *
      * @return self
@@ -178,8 +146,6 @@ class Contract
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getDaysOff(): float
@@ -188,8 +154,6 @@ class Contract
     }
 
     /**
-     *
-     *
      * @param float $daysOff
      *
      * @return self

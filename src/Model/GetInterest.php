@@ -16,51 +16,35 @@ class GetInterest
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $value;
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $apiName;
     /**
-     *
-     *
      * @var bool
      */
     protected $organization;
     /**
-     *
-     *
      * @var bool
      */
     protected $person;
     /**
-     *
-     *
      * @var bool
      */
     protected $contact;
 
     /**
-     *
-     *
      * @return string
      */
     public function getValue(): string
@@ -69,8 +53,6 @@ class GetInterest
     }
 
     /**
-     *
-     *
      * @param string $value
      *
      * @return self
@@ -84,8 +66,6 @@ class GetInterest
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -94,8 +74,6 @@ class GetInterest
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -109,8 +87,6 @@ class GetInterest
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -119,8 +95,6 @@ class GetInterest
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -134,8 +108,6 @@ class GetInterest
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getApiName(): string
@@ -144,8 +116,6 @@ class GetInterest
     }
 
     /**
-     *
-     *
      * @param string $apiName
      *
      * @return self
@@ -159,8 +129,6 @@ class GetInterest
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getOrganization(): bool
@@ -169,8 +137,6 @@ class GetInterest
     }
 
     /**
-     *
-     *
      * @param bool $organization
      *
      * @return self
@@ -184,8 +150,6 @@ class GetInterest
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getPerson(): bool
@@ -194,8 +158,6 @@ class GetInterest
     }
 
     /**
-     *
-     *
      * @param bool $person
      *
      * @return self
@@ -209,8 +171,6 @@ class GetInterest
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getContact(): bool
@@ -219,8 +179,6 @@ class GetInterest
     }
 
     /**
-     *
-     *
      * @param bool $contact
      *
      * @return self

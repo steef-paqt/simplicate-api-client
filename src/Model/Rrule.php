@@ -16,57 +16,39 @@ class Rrule
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $dtstart;
     /**
-     *
-     *
      * @var int
      */
     protected $freq;
     /**
-     *
-     *
      * @var string
      */
     protected $until;
     /**
-     *
-     *
      * @var int
      */
     protected $count;
     /**
-     *
-     *
      * @var int
      */
     protected $interval;
     /**
-     *
-     *
      * @var string
      */
     protected $wkst;
     /**
-     *
-     *
      * @var string
      */
     protected $byday;
     /**
-     *
-     *
      * @var string
      */
     protected $bysetpos;
 
     /**
-     *
-     *
      * @return string
      */
     public function getDtstart(): string
@@ -75,8 +57,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @param string $dtstart
      *
      * @return self
@@ -90,8 +70,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getFreq(): int
@@ -100,8 +78,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @param int $freq
      *
      * @return self
@@ -115,8 +91,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUntil(): string
@@ -125,8 +99,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @param string $until
      *
      * @return self
@@ -140,8 +112,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getCount(): int
@@ -150,8 +120,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @param int $count
      *
      * @return self
@@ -165,8 +133,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getInterval(): int
@@ -175,8 +141,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @param int $interval
      *
      * @return self
@@ -190,8 +154,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWkst(): string
@@ -200,8 +162,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @param string $wkst
      *
      * @return self
@@ -215,8 +175,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getByday(): string
@@ -225,8 +183,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @param string $byday
      *
      * @return self
@@ -240,8 +196,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBysetpos(): string
@@ -250,8 +204,6 @@ class Rrule
     }
 
     /**
-     *
-     *
      * @param string $bysetpos
      *
      * @return self

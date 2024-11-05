@@ -16,8 +16,6 @@ class Submit
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
@@ -35,8 +33,6 @@ class Submit
     protected $endDate;
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -45,8 +41,6 @@ class Submit
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self

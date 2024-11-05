@@ -16,135 +16,91 @@ class Expense
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetProjectSimple
      */
     protected $project;
     /**
-     *
-     *
      * @var string
      */
     protected $serviceId;
     /**
-     *
-     *
      * @var GetProjectServiceCostType
      */
     protected $costtype;
     /**
-     *
-     *
      * @var GetPurchaseType
      */
     protected $defaultCosttype;
     /**
-     *
-     *
      * @var float
      */
     protected $amount;
     /**
-     *
-     *
      * @var float
      */
     protected $purchasePriceUnit;
     /**
-     *
-     *
      * @var float
      */
     protected $tariff;
     /**
-     *
-     *
      * @var float
      */
     protected $purchasePriceTotal;
     /**
-     *
-     *
      * @var float
      */
     protected $purchaseMargin;
     /**
-     *
-     *
      * @var float
      */
     protected $totalPrice;
     /**
-     *
-     *
      * @var bool
      */
     protected $isBillable;
     /**
-     *
-     *
      * @var ApprovalStatus
      */
     protected $approvalStatus;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceStatus;
     /**
-     *
-     *
      * @var GetInvoice
      */
     protected $invoice;
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $employee;
     /**
-     *
-     *
      * @var string
      */
     protected $date;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var string
      */
     protected $servicePurchaseStartDate;
     /**
-     *
-     *
      * @var string
      */
     protected $servicePurchaseEndDate;
     /**
-     *
-     *
      * @var ExpenseAttachment[]
      */
     protected $attachments;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -153,8 +109,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -168,8 +122,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return GetProjectSimple
      */
     public function getProject(): GetProjectSimple
@@ -178,8 +130,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param GetProjectSimple $project
      *
      * @return self
@@ -193,8 +143,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getServiceId(): string
@@ -203,8 +151,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param string $serviceId
      *
      * @return self
@@ -218,8 +164,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return GetProjectServiceCostType
      */
     public function getCosttype(): GetProjectServiceCostType
@@ -228,8 +172,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param GetProjectServiceCostType $costtype
      *
      * @return self
@@ -243,8 +185,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return GetPurchaseType
      */
     public function getDefaultCosttype(): GetPurchaseType
@@ -253,8 +193,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param GetPurchaseType $defaultCosttype
      *
      * @return self
@@ -268,8 +206,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmount(): float
@@ -278,8 +214,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param float $amount
      *
      * @return self
@@ -293,8 +227,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPurchasePriceUnit(): float
@@ -303,8 +235,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param float $purchasePriceUnit
      *
      * @return self
@@ -318,8 +248,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTariff(): float
@@ -328,8 +256,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param float $tariff
      *
      * @return self
@@ -343,8 +269,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPurchasePriceTotal(): float
@@ -353,8 +277,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param float $purchasePriceTotal
      *
      * @return self
@@ -368,8 +290,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPurchaseMargin(): float
@@ -378,8 +298,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param float $purchaseMargin
      *
      * @return self
@@ -393,8 +311,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTotalPrice(): float
@@ -403,8 +319,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param float $totalPrice
      *
      * @return self
@@ -418,8 +332,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsBillable(): bool
@@ -428,8 +340,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param bool $isBillable
      *
      * @return self
@@ -443,8 +353,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return ApprovalStatus
      */
     public function getApprovalStatus(): ApprovalStatus
@@ -453,8 +361,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param ApprovalStatus $approvalStatus
      *
      * @return self
@@ -468,8 +374,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceStatus(): string
@@ -478,8 +382,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param string $invoiceStatus
      *
      * @return self
@@ -493,8 +395,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return GetInvoice
      */
     public function getInvoice(): GetInvoice
@@ -503,8 +403,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param GetInvoice $invoice
      *
      * @return self
@@ -518,8 +416,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getEmployee(): GetEmployeeSimple
@@ -528,8 +424,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $employee
      *
      * @return self
@@ -543,8 +437,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDate(): string
@@ -553,8 +445,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param string $date
      *
      * @return self
@@ -568,8 +458,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -578,8 +466,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -593,8 +479,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getServicePurchaseStartDate(): string
@@ -603,8 +487,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param string $servicePurchaseStartDate
      *
      * @return self
@@ -618,8 +500,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getServicePurchaseEndDate(): string
@@ -628,8 +508,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param string $servicePurchaseEndDate
      *
      * @return self
@@ -643,8 +521,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @return ExpenseAttachment[]
      */
     public function getAttachments(): array
@@ -653,8 +529,6 @@ class Expense
     }
 
     /**
-     *
-     *
      * @param ExpenseAttachment[] $attachments
      *
      * @return self

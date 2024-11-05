@@ -16,51 +16,35 @@ class LinkedTo
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $organizationId;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $salesId;
     /**
-     *
-     *
      * @var string
      */
     protected $projectId;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceId;
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizationId(): string
@@ -69,8 +53,6 @@ class LinkedTo
     }
 
     /**
-     *
-     *
      * @param string $organizationId
      *
      * @return self
@@ -84,8 +66,6 @@ class LinkedTo
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -94,8 +74,6 @@ class LinkedTo
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -109,8 +87,6 @@ class LinkedTo
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSalesId(): string
@@ -119,8 +95,6 @@ class LinkedTo
     }
 
     /**
-     *
-     *
      * @param string $salesId
      *
      * @return self
@@ -134,8 +108,6 @@ class LinkedTo
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectId(): string
@@ -144,8 +116,6 @@ class LinkedTo
     }
 
     /**
-     *
-     *
      * @param string $projectId
      *
      * @return self
@@ -159,8 +129,6 @@ class LinkedTo
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceId(): string
@@ -169,8 +137,6 @@ class LinkedTo
     }
 
     /**
-     *
-     *
      * @param string $invoiceId
      *
      * @return self
@@ -184,8 +150,6 @@ class LinkedTo
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -194,8 +158,6 @@ class LinkedTo
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -209,8 +171,6 @@ class LinkedTo
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -219,8 +179,6 @@ class LinkedTo
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self

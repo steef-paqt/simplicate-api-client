@@ -16,8 +16,6 @@ class GetEmployeeSimple
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
@@ -28,15 +26,11 @@ class GetEmployeeSimple
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -45,8 +39,6 @@ class GetEmployeeSimple
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -85,8 +77,6 @@ class GetEmployeeSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -95,8 +85,6 @@ class GetEmployeeSimple
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self

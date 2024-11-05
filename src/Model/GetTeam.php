@@ -16,27 +16,19 @@ class GetTeam
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetEmployeeSimple[]
      */
     protected $employees;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -45,8 +37,6 @@ class GetTeam
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -60,8 +50,6 @@ class GetTeam
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple[]
      */
     public function getEmployees(): array
@@ -70,8 +58,6 @@ class GetTeam
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple[] $employees
      *
      * @return self
@@ -85,8 +71,6 @@ class GetTeam
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -95,8 +79,6 @@ class GetTeam
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self

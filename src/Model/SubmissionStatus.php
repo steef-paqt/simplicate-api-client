@@ -16,8 +16,6 @@ class SubmissionStatus
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
@@ -28,15 +26,11 @@ class SubmissionStatus
      */
     protected $date;
     /**
-     *
-     *
      * @var string
      */
     protected $status;
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -45,8 +39,6 @@ class SubmissionStatus
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -85,8 +77,6 @@ class SubmissionStatus
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatus(): string
@@ -95,8 +85,6 @@ class SubmissionStatus
     }
 
     /**
-     *
-     *
      * @param string $status
      *
      * @return self

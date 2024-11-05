@@ -16,33 +16,23 @@ class ProjectServiceCostType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var float
      */
     protected $budgetedAmount;
     /**
-     *
-     *
      * @var float
      */
     protected $tariff;
     /**
-     *
-     *
      * @var float
      */
     protected $purchaseMargin;
     /**
-     *
-     *
      * @var float
      */
     protected $purchaseTariff;
 
     /**
-     *
-     *
      * @return float
      */
     public function getBudgetedAmount(): float
@@ -51,8 +41,6 @@ class ProjectServiceCostType
     }
 
     /**
-     *
-     *
      * @param float $budgetedAmount
      *
      * @return self
@@ -66,8 +54,6 @@ class ProjectServiceCostType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTariff(): float
@@ -76,8 +62,6 @@ class ProjectServiceCostType
     }
 
     /**
-     *
-     *
      * @param float $tariff
      *
      * @return self
@@ -91,8 +75,6 @@ class ProjectServiceCostType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPurchaseMargin(): float
@@ -101,8 +83,6 @@ class ProjectServiceCostType
     }
 
     /**
-     *
-     *
      * @param float $purchaseMargin
      *
      * @return self
@@ -116,8 +96,6 @@ class ProjectServiceCostType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPurchaseTariff(): float
@@ -126,8 +104,6 @@ class ProjectServiceCostType
     }
 
     /**
-     *
-     *
      * @param float $purchaseTariff
      *
      * @return self

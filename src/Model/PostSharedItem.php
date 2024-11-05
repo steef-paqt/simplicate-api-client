@@ -16,39 +16,27 @@ class PostSharedItem
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $tag;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $shared;
     /**
-     *
-     *
      * @var string
      */
     protected $data;
 
     /**
-     *
-     *
      * @return string
      */
     public function getTag(): string
@@ -57,8 +45,6 @@ class PostSharedItem
     }
 
     /**
-     *
-     *
      * @param string $tag
      *
      * @return self
@@ -72,8 +58,6 @@ class PostSharedItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -82,8 +66,6 @@ class PostSharedItem
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self
@@ -97,8 +79,6 @@ class PostSharedItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -107,8 +87,6 @@ class PostSharedItem
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -122,8 +100,6 @@ class PostSharedItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getShared(): string
@@ -132,8 +108,6 @@ class PostSharedItem
     }
 
     /**
-     *
-     *
      * @param string $shared
      *
      * @return self
@@ -147,8 +121,6 @@ class PostSharedItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getData(): string
@@ -157,8 +129,6 @@ class PostSharedItem
     }
 
     /**
-     *
-     *
      * @param string $data
      *
      * @return self

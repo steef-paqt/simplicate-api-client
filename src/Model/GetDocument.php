@@ -16,63 +16,43 @@ class GetDocument
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $downloadUrl;
     /**
-     *
-     *
      * @var DocumentTypeSimple
      */
     protected $documentType;
     /**
-     *
-     *
      * @var LinkedToEntity[]
      */
     protected $linkedTo;
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $createdBy;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $title;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -81,8 +61,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -96,8 +74,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDownloadUrl(): string
@@ -106,8 +82,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @param string $downloadUrl
      *
      * @return self
@@ -121,8 +95,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @return DocumentTypeSimple
      */
     public function getDocumentType(): DocumentTypeSimple
@@ -131,8 +103,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @param DocumentTypeSimple $documentType
      *
      * @return self
@@ -146,8 +116,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @return LinkedToEntity[]
      */
     public function getLinkedTo(): array
@@ -156,8 +124,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @param LinkedToEntity[] $linkedTo
      *
      * @return self
@@ -171,8 +137,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getCreatedBy(): GetEmployeeSimple
@@ -181,8 +145,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $createdBy
      *
      * @return self
@@ -196,8 +158,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -206,8 +166,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -221,8 +179,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -231,8 +187,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -246,8 +200,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -256,8 +208,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -271,8 +221,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -281,8 +229,6 @@ class GetDocument
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

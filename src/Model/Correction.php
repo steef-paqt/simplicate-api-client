@@ -16,27 +16,19 @@ class Correction
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var float
      */
     protected $amount;
     /**
-     *
-     *
      * @var float
      */
     protected $value;
     /**
-     *
-     *
      * @var string
      */
     protected $lastCorrectionDate;
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmount(): float
@@ -45,8 +37,6 @@ class Correction
     }
 
     /**
-     *
-     *
      * @param float $amount
      *
      * @return self
@@ -60,8 +50,6 @@ class Correction
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getValue(): float
@@ -70,8 +58,6 @@ class Correction
     }
 
     /**
-     *
-     *
      * @param float $value
      *
      * @return self
@@ -85,8 +71,6 @@ class Correction
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLastCorrectionDate(): string
@@ -95,8 +79,6 @@ class Correction
     }
 
     /**
-     *
-     *
      * @param string $lastCorrectionDate
      *
      * @return self

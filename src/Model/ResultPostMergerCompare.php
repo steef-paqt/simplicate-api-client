@@ -16,45 +16,31 @@ class ResultPostMergerCompare
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var bool
      */
     protected $isValid;
     /**
-     *
-     *
      * @var string
      */
     protected $token;
     /**
-     *
-     *
      * @var string
      */
     protected $message;
     /**
-     *
-     *
      * @var bool
      */
     protected $swapLock;
     /**
-     *
-     *
      * @var string
      */
     protected $sourceId;
     /**
-     *
-     *
      * @var string
      */
     protected $targetId;
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsValid(): bool
@@ -63,8 +49,6 @@ class ResultPostMergerCompare
     }
 
     /**
-     *
-     *
      * @param bool $isValid
      *
      * @return self
@@ -78,8 +62,6 @@ class ResultPostMergerCompare
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getToken(): string
@@ -88,8 +70,6 @@ class ResultPostMergerCompare
     }
 
     /**
-     *
-     *
      * @param string $token
      *
      * @return self
@@ -103,8 +83,6 @@ class ResultPostMergerCompare
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMessage(): string
@@ -113,8 +91,6 @@ class ResultPostMergerCompare
     }
 
     /**
-     *
-     *
      * @param string $message
      *
      * @return self
@@ -128,8 +104,6 @@ class ResultPostMergerCompare
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getSwapLock(): bool
@@ -138,8 +112,6 @@ class ResultPostMergerCompare
     }
 
     /**
-     *
-     *
      * @param bool $swapLock
      *
      * @return self
@@ -153,8 +125,6 @@ class ResultPostMergerCompare
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSourceId(): string
@@ -163,8 +133,6 @@ class ResultPostMergerCompare
     }
 
     /**
-     *
-     *
      * @param string $sourceId
      *
      * @return self
@@ -178,8 +146,6 @@ class ResultPostMergerCompare
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTargetId(): string
@@ -188,8 +154,6 @@ class ResultPostMergerCompare
     }
 
     /**
-     *
-     *
      * @param string $targetId
      *
      * @return self

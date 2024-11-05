@@ -16,21 +16,15 @@ class ContentField
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $title;
     /**
-     *
-     *
      * @var string
      */
     protected $value;
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -39,8 +33,6 @@ class ContentField
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -54,8 +46,6 @@ class ContentField
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getValue(): string
@@ -64,8 +54,6 @@ class ContentField
     }
 
     /**
-     *
-     *
      * @param string $value
      *
      * @return self

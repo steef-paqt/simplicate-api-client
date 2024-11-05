@@ -16,15 +16,11 @@ class WorkflowItem
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $subject;
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubject(): string
@@ -33,8 +29,6 @@ class WorkflowItem
     }
 
     /**
-     *
-     *
      * @param string $subject
      *
      * @return self

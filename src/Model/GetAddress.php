@@ -16,69 +16,47 @@ class GetAddress
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $country;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
     /**
-     *
-     *
      * @var string
      */
     protected $line1;
     /**
-     *
-     *
      * @var string
      */
     protected $line2;
     /**
-     *
-     *
      * @var string
      */
     protected $postalCode;
     /**
-     *
-     *
      * @var string
      */
     protected $province;
     /**
-     *
-     *
      * @var string
      */
     protected $locality;
     /**
-     *
-     *
      * @var string
      */
     protected $countryCode;
     /**
-     *
-     *
      * @var string
      */
     protected $countryId;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -87,8 +65,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -102,8 +78,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCountry(): string
@@ -112,8 +86,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @param string $country
      *
      * @return self
@@ -127,8 +99,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -137,8 +107,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self
@@ -152,8 +120,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLine1(): string
@@ -162,8 +128,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @param string $line1
      *
      * @return self
@@ -177,8 +141,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLine2(): string
@@ -187,8 +149,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @param string $line2
      *
      * @return self
@@ -202,8 +162,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPostalCode(): string
@@ -212,8 +170,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @param string $postalCode
      *
      * @return self
@@ -227,8 +183,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProvince(): string
@@ -237,8 +191,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @param string $province
      *
      * @return self
@@ -252,8 +204,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLocality(): string
@@ -262,8 +212,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @param string $locality
      *
      * @return self
@@ -277,8 +225,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCountryCode(): string
@@ -287,8 +233,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @param string $countryCode
      *
      * @return self
@@ -302,8 +246,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCountryId(): string
@@ -312,8 +254,6 @@ class GetAddress
     }
 
     /**
-     *
-     *
      * @param string $countryId
      *
      * @return self

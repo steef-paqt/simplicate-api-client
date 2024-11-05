@@ -16,105 +16,71 @@ class GetDefaultWorkflow
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetDefaultWorkflowGroup
      */
     protected $workflowgroup;
     /**
-     *
-     *
      * @var string
      */
     protected $title;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var bool
      */
     protected $canHaveAttachment;
     /**
-     *
-     *
      * @var bool
      */
     protected $isBlocked;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForCrm;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForContact;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForSale;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForDebtor;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForProject;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForSubscription;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForEmployee;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForInvoice;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForMyorganizationprofile;
     /**
-     *
-     *
      * @var bool
      */
     protected $isVisibleOnAll;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -123,8 +89,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -138,8 +102,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return GetDefaultWorkflowGroup
      */
     public function getWorkflowgroup(): GetDefaultWorkflowGroup
@@ -148,8 +110,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param GetDefaultWorkflowGroup $workflowgroup
      *
      * @return self
@@ -163,8 +123,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -173,8 +131,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -188,8 +144,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -198,8 +152,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -213,8 +165,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getCanHaveAttachment(): bool
@@ -223,8 +173,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $canHaveAttachment
      *
      * @return self
@@ -238,8 +186,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsBlocked(): bool
@@ -248,8 +194,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isBlocked
      *
      * @return self
@@ -263,8 +207,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForCrm(): bool
@@ -273,8 +215,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForCrm
      *
      * @return self
@@ -288,8 +228,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForContact(): bool
@@ -298,8 +236,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForContact
      *
      * @return self
@@ -313,8 +249,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForSale(): bool
@@ -323,8 +257,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForSale
      *
      * @return self
@@ -338,8 +270,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForDebtor(): bool
@@ -348,8 +278,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForDebtor
      *
      * @return self
@@ -363,8 +291,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForProject(): bool
@@ -373,8 +299,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForProject
      *
      * @return self
@@ -388,8 +312,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForSubscription(): bool
@@ -398,8 +320,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForSubscription
      *
      * @return self
@@ -413,8 +333,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForEmployee(): bool
@@ -423,8 +341,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForEmployee
      *
      * @return self
@@ -438,8 +354,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForInvoice(): bool
@@ -448,8 +362,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForInvoice
      *
      * @return self
@@ -463,8 +375,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForMyorganizationprofile(): bool
@@ -473,8 +383,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForMyorganizationprofile
      *
      * @return self
@@ -488,8 +396,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsVisibleOnAll(): bool
@@ -498,8 +404,6 @@ class GetDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isVisibleOnAll
      *
      * @return self

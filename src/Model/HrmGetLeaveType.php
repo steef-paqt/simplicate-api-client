@@ -16,39 +16,27 @@ class HrmGetLeaveType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var bool
      */
     protected $blocked;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
     /**
-     *
-     *
      * @var bool
      */
     protected $affectsBalance;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -57,8 +45,6 @@ class HrmGetLeaveType
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -72,8 +58,6 @@ class HrmGetLeaveType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -82,8 +66,6 @@ class HrmGetLeaveType
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -97,8 +79,6 @@ class HrmGetLeaveType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBlocked(): bool
@@ -107,8 +87,6 @@ class HrmGetLeaveType
     }
 
     /**
-     *
-     *
      * @param bool $blocked
      *
      * @return self
@@ -122,8 +100,6 @@ class HrmGetLeaveType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -132,8 +108,6 @@ class HrmGetLeaveType
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self
@@ -147,8 +121,6 @@ class HrmGetLeaveType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getAffectsBalance(): bool
@@ -157,8 +129,6 @@ class HrmGetLeaveType
     }
 
     /**
-     *
-     *
      * @param bool $affectsBalance
      *
      * @return self

@@ -16,21 +16,15 @@ class AssignmentBudgetInfoFuturePast
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $past = '-PT1H30M';
     /**
-     *
-     *
      * @var string
      */
     protected $future = 'PT15M';
 
     /**
-     *
-     *
      * @return string
      */
     public function getPast(): string
@@ -39,8 +33,6 @@ class AssignmentBudgetInfoFuturePast
     }
 
     /**
-     *
-     *
      * @param string $past
      *
      * @return self
@@ -54,8 +46,6 @@ class AssignmentBudgetInfoFuturePast
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFuture(): string
@@ -64,8 +54,6 @@ class AssignmentBudgetInfoFuturePast
     }
 
     /**
-     *
-     *
      * @param string $future
      *
      * @return self

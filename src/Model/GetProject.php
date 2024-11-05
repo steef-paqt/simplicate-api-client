@@ -16,225 +16,151 @@ class GetProject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $projectManager;
     /**
-     *
-     *
      * @var ProjectStatus
      */
     protected $projectStatus;
     /**
-     *
-     *
      * @var string
      */
     protected $hoursRateType;
     /**
-     *
-     *
      * @var bool
      */
     protected $abnormalAddress;
     /**
-     *
-     *
      * @var string
      */
     protected $abnormalPersonId;
     /**
-     *
-     *
      * @var string
      */
     protected $abnormalOrganizationId;
     /**
-     *
-     *
      * @var GetOrganizationSimple
      */
     protected $organization;
     /**
-     *
-     *
      * @var GetPersonSimple
      */
     protected $person;
     /**
-     *
-     *
      * @var GetSeparateInvoiceRecipient
      */
     protected $separateInvoiceRecipient;
     /**
-     *
-     *
      * @var GetContactSimple
      */
     protected $contact;
     /**
-     *
-     *
      * @var GetMyOrganizationProfileSimple
      */
     protected $myOrganizationProfile;
     /**
-     *
-     *
      * @var GetPaymentTerm
      */
     protected $divergentPaymentTerm;
     /**
-     *
-     *
      * @var GetEmployeeSimple[]
      */
     protected $employees;
     /**
-     *
-     *
      * @var GetTeamSimple[]
      */
     protected $teams;
     /**
-     *
-     *
      * @var Budget
      */
     protected $budget;
     /**
-     *
-     *
      * @var string
      */
     protected $abnormalContactId;
     /**
-     *
-     *
      * @var GetCustomField[]
      */
     protected $customFields;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $simplicateUrl;
     /**
-     *
-     *
      * @var bool
      */
     protected $isReverseBilling;
     /**
-     *
-     *
      * @var bool
      */
     protected $isInvoiceApproval;
     /**
-     *
-     *
      * @var GetProjectSimple
      */
     protected $copiedFromProject;
     /**
-     *
-     *
      * @var string
      */
     protected $myOrganizationProfileId;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $organizationId;
     /**
-     *
-     *
      * @var string
      */
     protected $contactId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var bool
      */
     protected $billable;
     /**
-     *
-     *
      * @var bool
      */
     protected $canRegisterMileage;
     /**
-     *
-     *
      * @var string
      */
     protected $projectNumber;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceReference;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -243,8 +169,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -258,8 +182,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getProjectManager(): GetEmployeeSimple
@@ -268,8 +190,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $projectManager
      *
      * @return self
@@ -283,8 +203,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return ProjectStatus
      */
     public function getProjectStatus(): ProjectStatus
@@ -293,8 +211,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param ProjectStatus $projectStatus
      *
      * @return self
@@ -308,8 +224,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getHoursRateType(): string
@@ -318,8 +232,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $hoursRateType
      *
      * @return self
@@ -333,8 +245,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getAbnormalAddress(): bool
@@ -343,8 +253,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param bool $abnormalAddress
      *
      * @return self
@@ -358,8 +266,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAbnormalPersonId(): string
@@ -368,8 +274,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $abnormalPersonId
      *
      * @return self
@@ -383,8 +287,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAbnormalOrganizationId(): string
@@ -393,8 +295,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $abnormalOrganizationId
      *
      * @return self
@@ -408,8 +308,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return GetOrganizationSimple
      */
     public function getOrganization(): GetOrganizationSimple
@@ -418,8 +316,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param GetOrganizationSimple $organization
      *
      * @return self
@@ -433,8 +329,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return GetPersonSimple
      */
     public function getPerson(): GetPersonSimple
@@ -443,8 +337,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param GetPersonSimple $person
      *
      * @return self
@@ -458,8 +350,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return GetSeparateInvoiceRecipient
      */
     public function getSeparateInvoiceRecipient(): GetSeparateInvoiceRecipient
@@ -468,8 +358,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param GetSeparateInvoiceRecipient $separateInvoiceRecipient
      *
      * @return self
@@ -483,8 +371,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return GetContactSimple
      */
     public function getContact(): GetContactSimple
@@ -493,8 +379,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param GetContactSimple $contact
      *
      * @return self
@@ -508,8 +392,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return GetMyOrganizationProfileSimple
      */
     public function getMyOrganizationProfile(): GetMyOrganizationProfileSimple
@@ -518,8 +400,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param GetMyOrganizationProfileSimple $myOrganizationProfile
      *
      * @return self
@@ -533,8 +413,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return GetPaymentTerm
      */
     public function getDivergentPaymentTerm(): GetPaymentTerm
@@ -543,8 +421,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param GetPaymentTerm $divergentPaymentTerm
      *
      * @return self
@@ -558,8 +434,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple[]
      */
     public function getEmployees(): array
@@ -568,8 +442,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple[] $employees
      *
      * @return self
@@ -583,8 +455,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return GetTeamSimple[]
      */
     public function getTeams(): array
@@ -593,8 +463,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param GetTeamSimple[] $teams
      *
      * @return self
@@ -608,8 +476,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return Budget
      */
     public function getBudget(): Budget
@@ -618,8 +484,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param Budget $budget
      *
      * @return self
@@ -633,8 +497,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAbnormalContactId(): string
@@ -643,8 +505,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $abnormalContactId
      *
      * @return self
@@ -658,8 +518,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return GetCustomField[]
      */
     public function getCustomFields(): array
@@ -668,8 +526,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param GetCustomField[] $customFields
      *
      * @return self
@@ -683,8 +539,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -693,8 +547,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -708,8 +560,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -718,8 +568,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -733,8 +581,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSimplicateUrl(): string
@@ -743,8 +589,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $simplicateUrl
      *
      * @return self
@@ -758,8 +602,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsReverseBilling(): bool
@@ -768,8 +610,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param bool $isReverseBilling
      *
      * @return self
@@ -783,8 +623,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsInvoiceApproval(): bool
@@ -793,8 +631,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param bool $isInvoiceApproval
      *
      * @return self
@@ -808,8 +644,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return GetProjectSimple
      */
     public function getCopiedFromProject(): GetProjectSimple
@@ -818,8 +652,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param GetProjectSimple $copiedFromProject
      *
      * @return self
@@ -833,8 +665,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMyOrganizationProfileId(): string
@@ -843,8 +673,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $myOrganizationProfileId
      *
      * @return self
@@ -858,8 +686,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -868,8 +694,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -883,8 +707,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizationId(): string
@@ -893,8 +715,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $organizationId
      *
      * @return self
@@ -908,8 +728,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getContactId(): string
@@ -918,8 +736,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $contactId
      *
      * @return self
@@ -933,8 +749,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -943,8 +757,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -958,8 +770,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBillable(): bool
@@ -968,8 +778,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param bool $billable
      *
      * @return self
@@ -983,8 +791,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getCanRegisterMileage(): bool
@@ -993,8 +799,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param bool $canRegisterMileage
      *
      * @return self
@@ -1008,8 +812,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectNumber(): string
@@ -1018,8 +820,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $projectNumber
      *
      * @return self
@@ -1033,8 +833,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -1043,8 +841,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -1058,8 +854,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -1068,8 +862,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -1083,8 +875,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -1093,8 +883,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -1108,8 +896,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceReference(): string
@@ -1118,8 +904,6 @@ class GetProject
     }
 
     /**
-     *
-     *
      * @param string $invoiceReference
      *
      * @return self

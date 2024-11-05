@@ -22,8 +22,6 @@ class PostCalendarItem
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $location;
@@ -54,8 +52,6 @@ class PostCalendarItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLocation(): string
@@ -64,8 +60,6 @@ class PostCalendarItem
     }
 
     /**
-     *
-     *
      * @param string $location
      *
      * @return self

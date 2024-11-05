@@ -16,38 +16,26 @@ class GetMileage
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $employee;
     /**
-     *
-     *
      * @var GetProjectSimple
      */
     protected $project;
     /**
-     *
-     *
      * @var GetHoursType
      */
     protected $type;
     /**
-     *
-     *
      * @var GetApprovalStatus
      */
     protected $approvalstatus;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceStatus;
@@ -64,63 +52,43 @@ class GetMileage
      */
     protected $invoicelineId;
     /**
-     *
-     *
      * @var float
      */
     protected $tariff;
     /**
-     *
-     *
      * @var VatClass
      */
     protected $vatclass;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var float
      */
     protected $mileage;
     /**
-     *
-     *
      * @var string
      */
     protected $relatedHoursId;
     /**
-     *
-     *
      * @var string
      */
     protected $source;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -129,8 +97,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -144,8 +110,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getEmployee(): GetEmployeeSimple
@@ -154,8 +118,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $employee
      *
      * @return self
@@ -169,8 +131,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @return GetProjectSimple
      */
     public function getProject(): GetProjectSimple
@@ -179,8 +139,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param GetProjectSimple $project
      *
      * @return self
@@ -194,8 +152,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @return GetHoursType
      */
     public function getType(): GetHoursType
@@ -204,8 +160,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param GetHoursType $type
      *
      * @return self
@@ -219,8 +173,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @return GetApprovalStatus
      */
     public function getApprovalstatus(): GetApprovalStatus
@@ -229,8 +181,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param GetApprovalStatus $approvalstatus
      *
      * @return self
@@ -244,8 +194,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceStatus(): string
@@ -254,8 +202,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param string $invoiceStatus
      *
      * @return self
@@ -319,8 +265,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTariff(): float
@@ -329,8 +273,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param float $tariff
      *
      * @return self
@@ -344,8 +286,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @return VatClass
      */
     public function getVatclass(): VatClass
@@ -354,8 +294,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param VatClass $vatclass
      *
      * @return self
@@ -369,8 +307,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -379,8 +315,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -394,8 +328,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -404,8 +336,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -419,8 +349,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getMileage(): float
@@ -429,8 +357,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param float $mileage
      *
      * @return self
@@ -444,8 +370,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRelatedHoursId(): string
@@ -454,8 +378,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param string $relatedHoursId
      *
      * @return self
@@ -469,8 +391,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSource(): string
@@ -479,8 +399,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param string $source
      *
      * @return self
@@ -494,8 +412,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -504,8 +420,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -519,8 +433,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -529,8 +441,6 @@ class GetMileage
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self

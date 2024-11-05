@@ -28,8 +28,6 @@ class PostProject
      */
     protected $projectStatusId;
     /**
-     *
-     *
      * @var PostSeparateInvoiceRecipient
      */
     protected $separateInvoiceRecipient;
@@ -46,80 +44,54 @@ class PostProject
      */
     protected $teams;
     /**
-     *
-     *
      * @var PostCustomFieldValue[]
      */
     protected $customFields;
     /**
-     *
-     *
      * @var string
      */
     protected $myOrganizationProfileId;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $organizationId;
     /**
-     *
-     *
      * @var string
      */
     protected $contactId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var bool
      */
     protected $billable;
     /**
-     *
-     *
      * @var bool
      */
     protected $canRegisterMileage;
     /**
-     *
-     *
      * @var string
      */
     protected $projectNumber;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceReference;
@@ -175,8 +147,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @return PostSeparateInvoiceRecipient
      */
     public function getSeparateInvoiceRecipient(): PostSeparateInvoiceRecipient
@@ -185,8 +155,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @param PostSeparateInvoiceRecipient $separateInvoiceRecipient
      *
      * @return self
@@ -250,8 +218,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @return PostCustomFieldValue[]
      */
     public function getCustomFields(): array
@@ -260,8 +226,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @param PostCustomFieldValue[] $customFields
      *
      * @return self
@@ -275,8 +239,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMyOrganizationProfileId(): string
@@ -285,8 +247,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @param string $myOrganizationProfileId
      *
      * @return self
@@ -300,8 +260,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -310,8 +268,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -325,8 +281,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizationId(): string
@@ -335,8 +289,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @param string $organizationId
      *
      * @return self
@@ -350,8 +302,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getContactId(): string
@@ -360,8 +310,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @param string $contactId
      *
      * @return self
@@ -375,8 +323,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -385,8 +331,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -400,8 +344,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBillable(): bool
@@ -410,8 +352,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @param bool $billable
      *
      * @return self
@@ -425,8 +365,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getCanRegisterMileage(): bool
@@ -435,8 +373,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @param bool $canRegisterMileage
      *
      * @return self
@@ -450,8 +386,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectNumber(): string
@@ -460,8 +394,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @param string $projectNumber
      *
      * @return self
@@ -475,8 +407,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -485,8 +415,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -500,8 +428,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -510,8 +436,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -525,8 +449,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -535,8 +457,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -550,8 +470,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceReference(): string
@@ -560,8 +478,6 @@ class PostProject
     }
 
     /**
-     *
-     *
      * @param string $invoiceReference
      *
      * @return self

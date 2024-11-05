@@ -22,14 +22,10 @@ class PostDebtor
      */
     protected $paymentTermId;
     /**
-     *
-     *
      * @var string
      */
     protected $provisionMethod;
     /**
-     *
-     *
      * @var bool
      */
     protected $sendInvoiceEmailToContact;
@@ -40,38 +36,26 @@ class PostDebtor
      */
     protected $provisionContactpersonId;
     /**
-     *
-     *
      * @var bool
      */
     protected $sendInvoiceEmailToProjectContact;
     /**
-     *
-     *
      * @var bool
      */
     protected $sendInvoiceEmailToFixedEmail;
     /**
-     *
-     *
      * @var string
      */
     protected $sendEmailEmail;
     /**
-     *
-     *
      * @var bool
      */
     protected $sendInvoiceEmailToCc;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $cc;
     /**
-     *
-     *
      * @var string
      */
     protected $attentionTo;
@@ -82,38 +66,26 @@ class PostDebtor
      */
     protected $attentionToPersonId;
     /**
-     *
-     *
      * @var string
      */
     protected $attentionToFixed;
     /**
-     *
-     *
      * @var bool
      */
     protected $autocollect;
     /**
-     *
-     *
      * @var bool
      */
     protected $reminders;
     /**
-     *
-     *
      * @var string
      */
     protected $sendEmailType;
     /**
-     *
-     *
      * @var bool
      */
     protected $autosendSubscriptionInvoice;
     /**
-     *
-     *
      * @var string
      */
     protected $invoicetemplateId;
@@ -144,8 +116,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProvisionMethod(): string
@@ -154,8 +124,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @param string $provisionMethod
      *
      * @return self
@@ -169,8 +137,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getSendInvoiceEmailToContact(): bool
@@ -179,8 +145,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @param bool $sendInvoiceEmailToContact
      *
      * @return self
@@ -219,8 +183,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getSendInvoiceEmailToProjectContact(): bool
@@ -229,8 +191,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @param bool $sendInvoiceEmailToProjectContact
      *
      * @return self
@@ -244,8 +204,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getSendInvoiceEmailToFixedEmail(): bool
@@ -254,8 +212,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @param bool $sendInvoiceEmailToFixedEmail
      *
      * @return self
@@ -269,8 +225,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSendEmailEmail(): string
@@ -279,8 +233,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @param string $sendEmailEmail
      *
      * @return self
@@ -294,8 +246,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getSendInvoiceEmailToCc(): bool
@@ -304,8 +254,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @param bool $sendInvoiceEmailToCc
      *
      * @return self
@@ -319,8 +267,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getCc(): array
@@ -329,8 +275,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @param mixed[] $cc
      *
      * @return self
@@ -344,8 +288,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAttentionTo(): string
@@ -354,8 +296,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @param string $attentionTo
      *
      * @return self
@@ -394,8 +334,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAttentionToFixed(): string
@@ -404,8 +342,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @param string $attentionToFixed
      *
      * @return self
@@ -419,8 +355,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getAutocollect(): bool
@@ -429,8 +363,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @param bool $autocollect
      *
      * @return self
@@ -444,8 +376,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getReminders(): bool
@@ -454,8 +384,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @param bool $reminders
      *
      * @return self
@@ -469,8 +397,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSendEmailType(): string
@@ -479,8 +405,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @param string $sendEmailType
      *
      * @return self
@@ -494,8 +418,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getAutosendSubscriptionInvoice(): bool
@@ -504,8 +426,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @param bool $autosendSubscriptionInvoice
      *
      * @return self
@@ -519,8 +439,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoicetemplateId(): string
@@ -529,8 +447,6 @@ class PostDebtor
     }
 
     /**
-     *
-     *
      * @param string $invoicetemplateId
      *
      * @return self

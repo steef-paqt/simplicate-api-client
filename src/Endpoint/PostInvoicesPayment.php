@@ -11,8 +11,6 @@ class PostInvoicesPayment extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\Payment $body Payment object that needs to be added
      */
     public function __construct(\Steefdw\Simplicate\Model\Payment $body)

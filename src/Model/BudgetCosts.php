@@ -16,21 +16,15 @@ class BudgetCosts
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var float
      */
     protected $valueBudget;
     /**
-     *
-     *
      * @var float
      */
     protected $valueSpent;
 
     /**
-     *
-     *
      * @return float
      */
     public function getValueBudget(): float
@@ -39,8 +33,6 @@ class BudgetCosts
     }
 
     /**
-     *
-     *
      * @param float $valueBudget
      *
      * @return self
@@ -54,8 +46,6 @@ class BudgetCosts
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getValueSpent(): float
@@ -64,8 +54,6 @@ class BudgetCosts
     }
 
     /**
-     *
-     *
      * @param float $valueSpent
      *
      * @return self

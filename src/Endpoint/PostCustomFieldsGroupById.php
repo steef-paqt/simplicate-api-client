@@ -11,8 +11,6 @@ class PostCustomFieldsGroupById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values
      */

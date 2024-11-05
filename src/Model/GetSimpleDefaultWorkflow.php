@@ -16,27 +16,19 @@ class GetSimpleDefaultWorkflow
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $title;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -45,8 +37,6 @@ class GetSimpleDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -60,8 +50,6 @@ class GetSimpleDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -70,8 +58,6 @@ class GetSimpleDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -85,8 +71,6 @@ class GetSimpleDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -95,8 +79,6 @@ class GetSimpleDefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

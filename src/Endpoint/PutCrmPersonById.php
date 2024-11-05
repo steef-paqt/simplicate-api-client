@@ -11,8 +11,6 @@ class PutCrmPersonById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PostPerson $body Person object that needs to be added
      */

@@ -16,93 +16,63 @@ class Hours
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var float
      */
     protected $hours;
     /**
-     *
-     *
      * @var int
      */
     protected $durationInMinutes;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var bool
      */
     protected $isTimeDefined;
     /**
-     *
-     *
      * @var bool
      */
     protected $isRecurring;
     /**
-     *
-     *
      * @var Recurrence
      */
     protected $recurrence;
     /**
-     *
-     *
      * @var bool
      */
     protected $isExternal;
     /**
-     *
-     *
      * @var bool
      */
     protected $billable;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var Address
      */
     protected $address;
     /**
-     *
-     *
      * @var string
      */
     protected $assignmentId;
     /**
-     *
-     *
      * @var bool
      */
     protected $shouldSyncToCronofy;
     /**
-     *
-     *
      * @var string
      */
     protected $source;
 
     /**
-     *
-     *
      * @return float
      */
     public function getHours(): float
@@ -111,8 +81,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @param float $hours
      *
      * @return self
@@ -126,8 +94,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getDurationInMinutes(): int
@@ -136,8 +102,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @param int $durationInMinutes
      *
      * @return self
@@ -151,8 +115,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -161,8 +123,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -176,8 +136,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -186,8 +144,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -201,8 +157,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsTimeDefined(): bool
@@ -211,8 +165,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @param bool $isTimeDefined
      *
      * @return self
@@ -226,8 +178,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsRecurring(): bool
@@ -236,8 +186,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @param bool $isRecurring
      *
      * @return self
@@ -251,8 +199,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @return Recurrence
      */
     public function getRecurrence(): Recurrence
@@ -261,8 +207,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @param Recurrence $recurrence
      *
      * @return self
@@ -276,8 +220,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsExternal(): bool
@@ -286,8 +228,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @param bool $isExternal
      *
      * @return self
@@ -301,8 +241,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBillable(): bool
@@ -311,8 +249,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @param bool $billable
      *
      * @return self
@@ -326,8 +262,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -336,8 +270,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -351,8 +283,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @return Address
      */
     public function getAddress(): Address
@@ -361,8 +291,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @param Address $address
      *
      * @return self
@@ -376,8 +304,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAssignmentId(): string
@@ -386,8 +312,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @param string $assignmentId
      *
      * @return self
@@ -401,8 +325,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getShouldSyncToCronofy(): bool
@@ -411,8 +333,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @param bool $shouldSyncToCronofy
      *
      * @return self
@@ -426,8 +346,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSource(): string
@@ -436,8 +354,6 @@ class Hours
     }
 
     /**
-     *
-     *
      * @param string $source
      *
      * @return self

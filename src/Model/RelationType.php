@@ -16,33 +16,23 @@ class RelationType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -51,8 +41,6 @@ class RelationType
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -66,8 +54,6 @@ class RelationType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -76,8 +62,6 @@ class RelationType
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -91,8 +75,6 @@ class RelationType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -101,8 +83,6 @@ class RelationType
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self
@@ -116,8 +96,6 @@ class RelationType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -126,8 +104,6 @@ class RelationType
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self

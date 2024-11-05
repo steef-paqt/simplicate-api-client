@@ -16,39 +16,27 @@ class CustomFieldGroup
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $position;
     /**
-     *
-     *
      * @var CustomFieldModel
      */
     protected $model;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -57,8 +45,6 @@ class CustomFieldGroup
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -72,8 +58,6 @@ class CustomFieldGroup
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -82,8 +66,6 @@ class CustomFieldGroup
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -97,8 +79,6 @@ class CustomFieldGroup
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPosition(): string
@@ -107,8 +87,6 @@ class CustomFieldGroup
     }
 
     /**
-     *
-     *
      * @param string $position
      *
      * @return self
@@ -122,8 +100,6 @@ class CustomFieldGroup
     }
 
     /**
-     *
-     *
      * @return CustomFieldModel
      */
     public function getModel(): CustomFieldModel
@@ -132,8 +108,6 @@ class CustomFieldGroup
     }
 
     /**
-     *
-     *
      * @param CustomFieldModel $model
      *
      * @return self
@@ -147,8 +121,6 @@ class CustomFieldGroup
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -157,8 +129,6 @@ class CustomFieldGroup
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self

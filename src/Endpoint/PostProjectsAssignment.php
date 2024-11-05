@@ -11,8 +11,6 @@ class PostProjectsAssignment extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\PostAssignment $body Project assignment POST body
      */
     public function __construct(\Steefdw\Simplicate\Model\PostAssignment $body)

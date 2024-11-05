@@ -16,21 +16,15 @@ class PostMerger
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $sourceId;
     /**
-     *
-     *
      * @var string
      */
     protected $targetId;
 
     /**
-     *
-     *
      * @return string
      */
     public function getSourceId(): string
@@ -39,8 +33,6 @@ class PostMerger
     }
 
     /**
-     *
-     *
      * @param string $sourceId
      *
      * @return self
@@ -54,8 +46,6 @@ class PostMerger
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTargetId(): string
@@ -64,8 +54,6 @@ class PostMerger
     }
 
     /**
-     *
-     *
      * @param string $targetId
      *
      * @return self

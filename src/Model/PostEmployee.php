@@ -16,33 +16,23 @@ class PostEmployee
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var PostEmployeeFk
      */
     protected $supervisor;
     /**
-     *
-     *
      * @var PostEmployeeStatusFk
      */
     protected $status;
     /**
-     *
-     *
      * @var PostCustomFieldValue[]
      */
     protected $customFields;
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -51,8 +41,6 @@ class PostEmployee
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -66,8 +54,6 @@ class PostEmployee
     }
 
     /**
-     *
-     *
      * @return PostEmployeeFk
      */
     public function getSupervisor(): PostEmployeeFk
@@ -76,8 +62,6 @@ class PostEmployee
     }
 
     /**
-     *
-     *
      * @param PostEmployeeFk $supervisor
      *
      * @return self
@@ -91,8 +75,6 @@ class PostEmployee
     }
 
     /**
-     *
-     *
      * @return PostEmployeeStatusFk
      */
     public function getStatus(): PostEmployeeStatusFk
@@ -101,8 +83,6 @@ class PostEmployee
     }
 
     /**
-     *
-     *
      * @param PostEmployeeStatusFk $status
      *
      * @return self
@@ -116,8 +96,6 @@ class PostEmployee
     }
 
     /**
-     *
-     *
      * @return PostCustomFieldValue[]
      */
     public function getCustomFields(): array
@@ -126,8 +104,6 @@ class PostEmployee
     }
 
     /**
-     *
-     *
      * @param PostCustomFieldValue[] $customFields
      *
      * @return self

@@ -16,15 +16,11 @@ class Task
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $status;
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatus(): string
@@ -33,8 +29,6 @@ class Task
     }
 
     /**
-     *
-     *
      * @param string $status
      *
      * @return self

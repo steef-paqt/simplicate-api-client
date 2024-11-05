@@ -16,45 +16,31 @@ class GetDefaultAction
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetSimpleDefaultTask
      */
     protected $task;
     /**
-     *
-     *
      * @var GetSimpleDefaultTask
      */
     protected $toTask;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var bool
      */
     protected $isResponseRequired;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -63,8 +49,6 @@ class GetDefaultAction
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -78,8 +62,6 @@ class GetDefaultAction
     }
 
     /**
-     *
-     *
      * @return GetSimpleDefaultTask
      */
     public function getTask(): GetSimpleDefaultTask
@@ -88,8 +70,6 @@ class GetDefaultAction
     }
 
     /**
-     *
-     *
      * @param GetSimpleDefaultTask $task
      *
      * @return self
@@ -103,8 +83,6 @@ class GetDefaultAction
     }
 
     /**
-     *
-     *
      * @return GetSimpleDefaultTask
      */
     public function getToTask(): GetSimpleDefaultTask
@@ -113,8 +91,6 @@ class GetDefaultAction
     }
 
     /**
-     *
-     *
      * @param GetSimpleDefaultTask $toTask
      *
      * @return self
@@ -128,8 +104,6 @@ class GetDefaultAction
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -138,8 +112,6 @@ class GetDefaultAction
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -153,8 +125,6 @@ class GetDefaultAction
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsResponseRequired(): bool
@@ -163,8 +133,6 @@ class GetDefaultAction
     }
 
     /**
-     *
-     *
      * @param bool $isResponseRequired
      *
      * @return self
@@ -178,8 +146,6 @@ class GetDefaultAction
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -188,8 +154,6 @@ class GetDefaultAction
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self

@@ -16,45 +16,31 @@ class Assignment
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $name = 'Website Design Assignment';
     /**
-     *
-     *
      * @var bool
      */
     protected $useSpread;
     /**
-     *
-     *
      * @var string
      */
     protected $hoursType;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -63,8 +49,6 @@ class Assignment
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -78,8 +62,6 @@ class Assignment
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getUseSpread(): bool
@@ -88,8 +70,6 @@ class Assignment
     }
 
     /**
-     *
-     *
      * @param bool $useSpread
      *
      * @return self
@@ -103,8 +83,6 @@ class Assignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getHoursType(): string
@@ -113,8 +91,6 @@ class Assignment
     }
 
     /**
-     *
-     *
      * @param string $hoursType
      *
      * @return self
@@ -128,8 +104,6 @@ class Assignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -138,8 +112,6 @@ class Assignment
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -153,8 +125,6 @@ class Assignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -163,8 +133,6 @@ class Assignment
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -178,8 +146,6 @@ class Assignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -188,8 +154,6 @@ class Assignment
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self

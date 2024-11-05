@@ -16,33 +16,23 @@ class GetInvoiceSimple
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceNumber;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceDate;
     /**
-     *
-     *
      * @var InvoiceStatus
      */
     protected $status;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -51,8 +41,6 @@ class GetInvoiceSimple
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -66,8 +54,6 @@ class GetInvoiceSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceNumber(): string
@@ -76,8 +62,6 @@ class GetInvoiceSimple
     }
 
     /**
-     *
-     *
      * @param string $invoiceNumber
      *
      * @return self
@@ -91,8 +75,6 @@ class GetInvoiceSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceDate(): string
@@ -101,8 +83,6 @@ class GetInvoiceSimple
     }
 
     /**
-     *
-     *
      * @param string $invoiceDate
      *
      * @return self
@@ -116,8 +96,6 @@ class GetInvoiceSimple
     }
 
     /**
-     *
-     *
      * @return InvoiceStatus
      */
     public function getStatus(): InvoiceStatus
@@ -126,8 +104,6 @@ class GetInvoiceSimple
     }
 
     /**
-     *
-     *
      * @param InvoiceStatus $status
      *
      * @return self

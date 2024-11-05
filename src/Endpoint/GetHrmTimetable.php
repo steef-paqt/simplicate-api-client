@@ -11,8 +11,6 @@ class GetHrmTimetable extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param array $queryParameters {
      *     @var int $offset The offset to search from
      *     @var int $limit The limit of max allowed results

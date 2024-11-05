@@ -11,8 +11,6 @@ class PostServicesDefaultservice extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\PostDefaultService $body Default service object that needs to be added
      */
     public function __construct(\Steefdw\Simplicate\Model\PostDefaultService $body)

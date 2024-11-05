@@ -16,57 +16,39 @@ class PutAssignment
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var PostEmployeeFk[]
      */
     protected $employees;
     /**
-     *
-     *
      * @var string
      */
     protected $statusId = 'assignmentstatus:abc';
     /**
-     *
-     *
      * @var string
      */
     protected $name = 'Website Design Assignment';
     /**
-     *
-     *
      * @var bool
      */
     protected $useSpread;
     /**
-     *
-     *
      * @var string
      */
     protected $hoursType;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
 
     /**
-     *
-     *
      * @return PostEmployeeFk[]
      */
     public function getEmployees(): array
@@ -75,8 +57,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @param PostEmployeeFk[] $employees
      *
      * @return self
@@ -90,8 +70,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatusId(): string
@@ -100,8 +78,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @param string $statusId
      *
      * @return self
@@ -115,8 +91,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -125,8 +99,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -140,8 +112,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getUseSpread(): bool
@@ -150,8 +120,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @param bool $useSpread
      *
      * @return self
@@ -165,8 +133,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getHoursType(): string
@@ -175,8 +141,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @param string $hoursType
      *
      * @return self
@@ -190,8 +154,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -200,8 +162,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -215,8 +175,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -225,8 +183,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -240,8 +196,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -250,8 +204,6 @@ class PutAssignment
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self

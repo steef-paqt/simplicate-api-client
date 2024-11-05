@@ -16,45 +16,31 @@ class GetTimesheetRowItemtype
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $unitName;
     /**
-     *
-     *
      * @var bool
      */
     protected $isUnitTariff;
     /**
-     *
-     *
      * @var bool
      */
     protected $isAttachmentAllowed;
     /**
-     *
-     *
      * @var bool
      */
     protected $hasWorkflow;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -63,8 +49,6 @@ class GetTimesheetRowItemtype
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -78,8 +62,6 @@ class GetTimesheetRowItemtype
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -88,8 +70,6 @@ class GetTimesheetRowItemtype
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -103,8 +83,6 @@ class GetTimesheetRowItemtype
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUnitName(): string
@@ -113,8 +91,6 @@ class GetTimesheetRowItemtype
     }
 
     /**
-     *
-     *
      * @param string $unitName
      *
      * @return self
@@ -128,8 +104,6 @@ class GetTimesheetRowItemtype
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsUnitTariff(): bool
@@ -138,8 +112,6 @@ class GetTimesheetRowItemtype
     }
 
     /**
-     *
-     *
      * @param bool $isUnitTariff
      *
      * @return self
@@ -153,8 +125,6 @@ class GetTimesheetRowItemtype
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsAttachmentAllowed(): bool
@@ -163,8 +133,6 @@ class GetTimesheetRowItemtype
     }
 
     /**
-     *
-     *
      * @param bool $isAttachmentAllowed
      *
      * @return self
@@ -178,8 +146,6 @@ class GetTimesheetRowItemtype
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getHasWorkflow(): bool
@@ -188,8 +154,6 @@ class GetTimesheetRowItemtype
     }
 
     /**
-     *
-     *
      * @param bool $hasWorkflow
      *
      * @return self

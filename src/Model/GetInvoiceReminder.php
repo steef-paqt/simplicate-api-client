@@ -16,33 +16,23 @@ class GetInvoiceReminder
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var ReminderSet
      */
     protected $set;
     /**
-     *
-     *
      * @var string
      */
     protected $status;
     /**
-     *
-     *
      * @var bool
      */
     protected $paused;
     /**
-     *
-     *
      * @var string
      */
     protected $nextAction;
 
     /**
-     *
-     *
      * @return ReminderSet
      */
     public function getSet(): ReminderSet
@@ -51,8 +41,6 @@ class GetInvoiceReminder
     }
 
     /**
-     *
-     *
      * @param ReminderSet $set
      *
      * @return self
@@ -66,8 +54,6 @@ class GetInvoiceReminder
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatus(): string
@@ -76,8 +62,6 @@ class GetInvoiceReminder
     }
 
     /**
-     *
-     *
      * @param string $status
      *
      * @return self
@@ -91,8 +75,6 @@ class GetInvoiceReminder
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getPaused(): bool
@@ -101,8 +83,6 @@ class GetInvoiceReminder
     }
 
     /**
-     *
-     *
      * @param bool $paused
      *
      * @return self
@@ -116,8 +96,6 @@ class GetInvoiceReminder
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNextAction(): string
@@ -126,8 +104,6 @@ class GetInvoiceReminder
     }
 
     /**
-     *
-     *
      * @param string $nextAction
      *
      * @return self

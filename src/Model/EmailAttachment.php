@@ -16,21 +16,15 @@ class EmailAttachment
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $filePath;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -39,8 +33,6 @@ class EmailAttachment
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -54,8 +46,6 @@ class EmailAttachment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFilePath(): string
@@ -64,8 +54,6 @@ class EmailAttachment
     }
 
     /**
-     *
-     *
      * @param string $filePath
      *
      * @return self

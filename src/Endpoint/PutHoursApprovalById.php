@@ -11,8 +11,6 @@ class PutHoursApprovalById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PostApproval $body Approval object that needs to be updated
      */

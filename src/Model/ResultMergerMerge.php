@@ -16,21 +16,15 @@ class ResultMergerMerge
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var bool
      */
     protected $success;
     /**
-     *
-     *
      * @var string
      */
     protected $message;
 
     /**
-     *
-     *
      * @return bool
      */
     public function getSuccess(): bool
@@ -39,8 +33,6 @@ class ResultMergerMerge
     }
 
     /**
-     *
-     *
      * @param bool $success
      *
      * @return self
@@ -54,8 +46,6 @@ class ResultMergerMerge
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMessage(): string
@@ -64,8 +54,6 @@ class ResultMergerMerge
     }
 
     /**
-     *
-     *
      * @param string $message
      *
      * @return self

@@ -40,14 +40,10 @@ class PostTimer
      */
     protected $hourstypeId;
     /**
-     *
-     *
      * @var string
      */
     protected $state;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
@@ -159,8 +155,6 @@ class PostTimer
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getState(): string
@@ -169,8 +163,6 @@ class PostTimer
     }
 
     /**
-     *
-     *
      * @param string $state
      *
      * @return self
@@ -184,8 +176,6 @@ class PostTimer
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -194,8 +184,6 @@ class PostTimer
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

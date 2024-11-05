@@ -16,69 +16,47 @@ class GetDefaultService
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var VatClass
      */
     protected $vatClass;
     /**
-     *
-     *
      * @var RevenueGroup
      */
     protected $revenueGroup;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $modified;
     /**
-     *
-     *
      * @var string
      */
     protected $myOrganizationProfileId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var bool
      */
     protected $priceEditable;
     /**
-     *
-     *
      * @var float
      */
     protected $price;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -87,8 +65,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -102,8 +78,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @return VatClass
      */
     public function getVatClass(): VatClass
@@ -112,8 +86,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @param VatClass $vatClass
      *
      * @return self
@@ -127,8 +99,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @return RevenueGroup
      */
     public function getRevenueGroup(): RevenueGroup
@@ -137,8 +107,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @param RevenueGroup $revenueGroup
      *
      * @return self
@@ -152,8 +120,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -162,8 +128,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -177,8 +141,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -187,8 +149,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -202,8 +162,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getModified(): string
@@ -212,8 +170,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @param string $modified
      *
      * @return self
@@ -227,8 +183,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMyOrganizationProfileId(): string
@@ -237,8 +191,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @param string $myOrganizationProfileId
      *
      * @return self
@@ -252,8 +204,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -262,8 +212,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -277,8 +225,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getPriceEditable(): bool
@@ -287,8 +233,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @param bool $priceEditable
      *
      * @return self
@@ -302,8 +246,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPrice(): float
@@ -312,8 +254,6 @@ class GetDefaultService
     }
 
     /**
-     *
-     *
      * @param float $price
      *
      * @return self

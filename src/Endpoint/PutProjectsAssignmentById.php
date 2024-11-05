@@ -11,8 +11,6 @@ class PutProjectsAssignmentById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PutAssignment $body Project assignment PUT body
      */

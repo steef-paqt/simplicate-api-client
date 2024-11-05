@@ -16,45 +16,31 @@ class GetServiceCostType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetPurchaseType
      */
     protected $costtype;
     /**
-     *
-     *
      * @var float
      */
     protected $budgetedAmount;
     /**
-     *
-     *
      * @var float
      */
     protected $tariff;
     /**
-     *
-     *
      * @var float
      */
     protected $purchaseMargin;
     /**
-     *
-     *
      * @var float
      */
     protected $purchaseTariff;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -63,8 +49,6 @@ class GetServiceCostType
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -78,8 +62,6 @@ class GetServiceCostType
     }
 
     /**
-     *
-     *
      * @return GetPurchaseType
      */
     public function getCosttype(): GetPurchaseType
@@ -88,8 +70,6 @@ class GetServiceCostType
     }
 
     /**
-     *
-     *
      * @param GetPurchaseType $costtype
      *
      * @return self
@@ -103,8 +83,6 @@ class GetServiceCostType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getBudgetedAmount(): float
@@ -113,8 +91,6 @@ class GetServiceCostType
     }
 
     /**
-     *
-     *
      * @param float $budgetedAmount
      *
      * @return self
@@ -128,8 +104,6 @@ class GetServiceCostType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTariff(): float
@@ -138,8 +112,6 @@ class GetServiceCostType
     }
 
     /**
-     *
-     *
      * @param float $tariff
      *
      * @return self
@@ -153,8 +125,6 @@ class GetServiceCostType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPurchaseMargin(): float
@@ -163,8 +133,6 @@ class GetServiceCostType
     }
 
     /**
-     *
-     *
      * @param float $purchaseMargin
      *
      * @return self
@@ -178,8 +146,6 @@ class GetServiceCostType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPurchaseTariff(): float
@@ -188,8 +154,6 @@ class GetServiceCostType
     }
 
     /**
-     *
-     *
      * @param float $purchaseTariff
      *
      * @return self

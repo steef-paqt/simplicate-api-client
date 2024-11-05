@@ -16,39 +16,27 @@ class Right
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $moduleKey;
     /**
-     *
-     *
      * @var string
      */
     protected $moduleLabel;
     /**
-     *
-     *
      * @var string
      */
     protected $rightKey;
     /**
-     *
-     *
      * @var string
      */
     protected $rightLabel;
     /**
-     *
-     *
      * @var string
      */
     protected $rightsgroupLabel;
 
     /**
-     *
-     *
      * @return string
      */
     public function getModuleKey(): string
@@ -57,8 +45,6 @@ class Right
     }
 
     /**
-     *
-     *
      * @param string $moduleKey
      *
      * @return self
@@ -72,8 +58,6 @@ class Right
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getModuleLabel(): string
@@ -82,8 +66,6 @@ class Right
     }
 
     /**
-     *
-     *
      * @param string $moduleLabel
      *
      * @return self
@@ -97,8 +79,6 @@ class Right
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRightKey(): string
@@ -107,8 +87,6 @@ class Right
     }
 
     /**
-     *
-     *
      * @param string $rightKey
      *
      * @return self
@@ -122,8 +100,6 @@ class Right
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRightLabel(): string
@@ -132,8 +108,6 @@ class Right
     }
 
     /**
-     *
-     *
      * @param string $rightLabel
      *
      * @return self
@@ -147,8 +121,6 @@ class Right
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRightsgroupLabel(): string
@@ -157,8 +129,6 @@ class Right
     }
 
     /**
-     *
-     *
      * @param string $rightsgroupLabel
      *
      * @return self

@@ -11,8 +11,6 @@ class PostHoursLeave extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\PostLeave $body leave object containing data
      */
     public function __construct(\Steefdw\Simplicate\Model\PostLeave $body)

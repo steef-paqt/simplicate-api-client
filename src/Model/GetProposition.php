@@ -16,81 +16,55 @@ class GetProposition
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var float
      */
     protected $totalHours;
     /**
-     *
-     *
      * @var float
      */
     protected $totalMileage;
     /**
-     *
-     *
      * @var float
      */
     protected $totalFixed;
     /**
-     *
-     *
      * @var float
      */
     protected $totalTerms;
     /**
-     *
-     *
      * @var float
      */
     protected $totalPurchase;
     /**
-     *
-     *
      * @var float
      */
     protected $totalAdvanceDeposit;
     /**
-     *
-     *
      * @var float
      */
     protected $totalFuture;
     /**
-     *
-     *
      * @var string
      */
     protected $simplicateUrl;
     /**
-     *
-     *
      * @var GetProjectSimple
      */
     protected $project;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -99,8 +73,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -114,8 +86,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTotalHours(): float
@@ -124,8 +94,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @param float $totalHours
      *
      * @return self
@@ -139,8 +107,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTotalMileage(): float
@@ -149,8 +115,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @param float $totalMileage
      *
      * @return self
@@ -164,8 +128,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTotalFixed(): float
@@ -174,8 +136,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @param float $totalFixed
      *
      * @return self
@@ -189,8 +149,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTotalTerms(): float
@@ -199,8 +157,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @param float $totalTerms
      *
      * @return self
@@ -214,8 +170,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTotalPurchase(): float
@@ -224,8 +178,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @param float $totalPurchase
      *
      * @return self
@@ -239,8 +191,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTotalAdvanceDeposit(): float
@@ -249,8 +199,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @param float $totalAdvanceDeposit
      *
      * @return self
@@ -264,8 +212,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTotalFuture(): float
@@ -274,8 +220,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @param float $totalFuture
      *
      * @return self
@@ -289,8 +233,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSimplicateUrl(): string
@@ -299,8 +241,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @param string $simplicateUrl
      *
      * @return self
@@ -314,8 +254,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @return GetProjectSimple
      */
     public function getProject(): GetProjectSimple
@@ -324,8 +262,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @param GetProjectSimple $project
      *
      * @return self
@@ -339,8 +275,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -349,8 +283,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -364,8 +296,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -374,8 +304,6 @@ class GetProposition
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self

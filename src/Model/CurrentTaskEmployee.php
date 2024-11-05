@@ -16,15 +16,11 @@ class CurrentTaskEmployee
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -33,8 +29,6 @@ class CurrentTaskEmployee
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self

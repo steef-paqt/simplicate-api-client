@@ -16,27 +16,19 @@ class App
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $key;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $state;
 
     /**
-     *
-     *
      * @return string
      */
     public function getKey(): string
@@ -45,8 +37,6 @@ class App
     }
 
     /**
-     *
-     *
      * @param string $key
      *
      * @return self
@@ -60,8 +50,6 @@ class App
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -70,8 +58,6 @@ class App
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -85,8 +71,6 @@ class App
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getState(): string
@@ -95,8 +79,6 @@ class App
     }
 
     /**
-     *
-     *
      * @param string $state
      *
      * @return self

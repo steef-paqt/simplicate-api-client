@@ -16,21 +16,15 @@ class EmployeeType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -39,8 +33,6 @@ class EmployeeType
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -54,8 +46,6 @@ class EmployeeType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -64,8 +54,6 @@ class EmployeeType
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self

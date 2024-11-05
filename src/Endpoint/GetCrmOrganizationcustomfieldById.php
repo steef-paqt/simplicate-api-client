@@ -11,8 +11,6 @@ class GetCrmOrganizationcustomfieldById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      */
     public function __construct(protected string $id)

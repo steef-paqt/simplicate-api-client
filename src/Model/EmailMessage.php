@@ -16,99 +16,67 @@ class EmailMessage
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $sentAt;
     /**
-     *
-     *
      * @var string
      */
     protected $receivedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $sender;
     /**
-     *
-     *
      * @var string
      */
     protected $recipients;
     /**
-     *
-     *
      * @var string
      */
     protected $ccRecipients;
     /**
-     *
-     *
      * @var string
      */
     protected $bccRecipients;
     /**
-     *
-     *
      * @var string
      */
     protected $subject;
     /**
-     *
-     *
      * @var string
      */
     protected $htmlMessage;
     /**
-     *
-     *
      * @var string
      */
     protected $htmlBody;
     /**
-     *
-     *
      * @var string
      */
     protected $plainText;
     /**
-     *
-     *
      * @var EmailAttachment[]
      */
     protected $attachments;
     /**
-     *
-     *
      * @var LinkedToEntity[]
      */
     protected $linkedTo;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -117,8 +85,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -132,8 +98,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -142,8 +106,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -157,8 +119,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -167,8 +127,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -182,8 +140,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSentAt(): string
@@ -192,8 +148,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param string $sentAt
      *
      * @return self
@@ -207,8 +161,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getReceivedAt(): string
@@ -217,8 +169,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param string $receivedAt
      *
      * @return self
@@ -232,8 +182,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSender(): string
@@ -242,8 +190,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param string $sender
      *
      * @return self
@@ -257,8 +203,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRecipients(): string
@@ -267,8 +211,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param string $recipients
      *
      * @return self
@@ -282,8 +224,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCcRecipients(): string
@@ -292,8 +232,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param string $ccRecipients
      *
      * @return self
@@ -307,8 +245,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBccRecipients(): string
@@ -317,8 +253,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param string $bccRecipients
      *
      * @return self
@@ -332,8 +266,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubject(): string
@@ -342,8 +274,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param string $subject
      *
      * @return self
@@ -357,8 +287,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getHtmlMessage(): string
@@ -367,8 +295,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param string $htmlMessage
      *
      * @return self
@@ -382,8 +308,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getHtmlBody(): string
@@ -392,8 +316,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param string $htmlBody
      *
      * @return self
@@ -407,8 +329,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPlainText(): string
@@ -417,8 +337,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param string $plainText
      *
      * @return self
@@ -432,8 +350,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @return EmailAttachment[]
      */
     public function getAttachments(): array
@@ -442,8 +358,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param EmailAttachment[] $attachments
      *
      * @return self
@@ -457,8 +371,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @return LinkedToEntity[]
      */
     public function getLinkedTo(): array
@@ -467,8 +379,6 @@ class EmailMessage
     }
 
     /**
-     *
-     *
      * @param LinkedToEntity[] $linkedTo
      *
      * @return self

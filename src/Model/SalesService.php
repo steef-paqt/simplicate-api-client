@@ -16,87 +16,59 @@ class SalesService
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $salesId;
     /**
-     *
-     *
      * @var string
      */
     protected $defaultServiceId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceMethod;
     /**
-     *
-     *
      * @var float
      */
     protected $amount;
     /**
-     *
-     *
      * @var float
      */
     protected $price;
     /**
-     *
-     *
      * @var int
      */
     protected $showItemtype;
     /**
-     *
-     *
      * @var string
      */
     protected $total;
     /**
-     *
-     *
      * @var int
      */
     protected $position;
     /**
-     *
-     *
      * @var string
      */
     protected $subscriptionCycle;
     /**
-     *
-     *
      * @var string
      */
     protected $explanation;
     /**
-     *
-     *
      * @var bool
      */
     protected $trackHours;
     /**
-     *
-     *
      * @var bool
      */
     protected $trackCost;
 
     /**
-     *
-     *
      * @return string
      */
     public function getSalesId(): string
@@ -105,8 +77,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @param string $salesId
      *
      * @return self
@@ -120,8 +90,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDefaultServiceId(): string
@@ -130,8 +98,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @param string $defaultServiceId
      *
      * @return self
@@ -145,8 +111,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -155,8 +119,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -170,8 +132,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceMethod(): string
@@ -180,8 +140,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @param string $invoiceMethod
      *
      * @return self
@@ -195,8 +153,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmount(): float
@@ -205,8 +161,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @param float $amount
      *
      * @return self
@@ -220,8 +174,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPrice(): float
@@ -230,8 +182,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @param float $price
      *
      * @return self
@@ -245,8 +195,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getShowItemtype(): int
@@ -255,8 +203,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @param int $showItemtype
      *
      * @return self
@@ -270,8 +216,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTotal(): string
@@ -280,8 +224,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @param string $total
      *
      * @return self
@@ -295,8 +237,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getPosition(): int
@@ -305,8 +245,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @param int $position
      *
      * @return self
@@ -320,8 +258,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubscriptionCycle(): string
@@ -330,8 +266,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @param string $subscriptionCycle
      *
      * @return self
@@ -345,8 +279,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getExplanation(): string
@@ -355,8 +287,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @param string $explanation
      *
      * @return self
@@ -370,8 +300,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getTrackHours(): bool
@@ -380,8 +308,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @param bool $trackHours
      *
      * @return self
@@ -395,8 +321,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getTrackCost(): bool
@@ -405,8 +329,6 @@ class SalesService
     }
 
     /**
-     *
-     *
      * @param bool $trackCost
      *
      * @return self

@@ -16,33 +16,23 @@ class MessageType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var bool
      */
     protected $blocked;
     /**
-     *
-     *
      * @var string
      */
     protected $logAction;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -51,8 +41,6 @@ class MessageType
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -66,8 +54,6 @@ class MessageType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -76,8 +62,6 @@ class MessageType
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -91,8 +75,6 @@ class MessageType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBlocked(): bool
@@ -101,8 +83,6 @@ class MessageType
     }
 
     /**
-     *
-     *
      * @param bool $blocked
      *
      * @return self
@@ -116,8 +96,6 @@ class MessageType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLogAction(): string
@@ -126,8 +104,6 @@ class MessageType
     }
 
     /**
-     *
-     *
      * @param string $logAction
      *
      * @return self

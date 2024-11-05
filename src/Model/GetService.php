@@ -16,87 +16,59 @@ class GetService
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var string
      */
     protected $subscriptionCycle;
     /**
-     *
-     *
      * @var float
      */
     protected $budget;
     /**
-     *
-     *
      * @var string
      */
     protected $defaultServiceId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $explanation;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceMethod;
     /**
-     *
-     *
      * @var float
      */
     protected $amount;
     /**
-     *
-     *
      * @var float
      */
     protected $price;
     /**
-     *
-     *
      * @var bool
      */
     protected $trackHours;
     /**
-     *
-     *
      * @var bool
      */
     protected $trackCost;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -105,8 +77,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -120,8 +90,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -130,8 +98,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -145,8 +111,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -155,8 +119,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -170,8 +132,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubscriptionCycle(): string
@@ -180,8 +140,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @param string $subscriptionCycle
      *
      * @return self
@@ -195,8 +153,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getBudget(): float
@@ -205,8 +161,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @param float $budget
      *
      * @return self
@@ -220,8 +174,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDefaultServiceId(): string
@@ -230,8 +182,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @param string $defaultServiceId
      *
      * @return self
@@ -245,8 +195,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -255,8 +203,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -270,8 +216,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getExplanation(): string
@@ -280,8 +224,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @param string $explanation
      *
      * @return self
@@ -295,8 +237,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceMethod(): string
@@ -305,8 +245,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @param string $invoiceMethod
      *
      * @return self
@@ -320,8 +258,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmount(): float
@@ -330,8 +266,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @param float $amount
      *
      * @return self
@@ -345,8 +279,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPrice(): float
@@ -355,8 +287,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @param float $price
      *
      * @return self
@@ -370,8 +300,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getTrackHours(): bool
@@ -380,8 +308,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @param bool $trackHours
      *
      * @return self
@@ -395,8 +321,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getTrackCost(): bool
@@ -405,8 +329,6 @@ class GetService
     }
 
     /**
-     *
-     *
      * @param bool $trackCost
      *
      * @return self

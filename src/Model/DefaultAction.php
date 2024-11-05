@@ -16,27 +16,19 @@ class DefaultAction
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var bool
      */
     protected $isResponseRequired;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -45,8 +37,6 @@ class DefaultAction
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -60,8 +50,6 @@ class DefaultAction
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsResponseRequired(): bool
@@ -70,8 +58,6 @@ class DefaultAction
     }
 
     /**
-     *
-     *
      * @param bool $isResponseRequired
      *
      * @return self
@@ -85,8 +71,6 @@ class DefaultAction
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -95,8 +79,6 @@ class DefaultAction
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self

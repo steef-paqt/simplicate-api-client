@@ -16,15 +16,11 @@ class ServiceGroup
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $label;
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -33,8 +29,6 @@ class ServiceGroup
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self

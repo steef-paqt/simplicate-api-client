@@ -16,8 +16,6 @@ class GetReviewByWeekId
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
@@ -35,8 +33,6 @@ class GetReviewByWeekId
     protected $endDate;
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -45,8 +41,6 @@ class GetReviewByWeekId
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self

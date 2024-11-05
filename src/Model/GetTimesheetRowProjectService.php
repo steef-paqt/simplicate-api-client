@@ -16,45 +16,31 @@ class GetTimesheetRowProjectService
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $untilDate;
     /**
-     *
-     *
      * @var string
      */
     protected $purchaseStartDate;
     /**
-     *
-     *
      * @var string
      */
     protected $purchaseEndDate;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -63,8 +49,6 @@ class GetTimesheetRowProjectService
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -78,8 +62,6 @@ class GetTimesheetRowProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -88,8 +70,6 @@ class GetTimesheetRowProjectService
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -103,8 +83,6 @@ class GetTimesheetRowProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -113,8 +91,6 @@ class GetTimesheetRowProjectService
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -128,8 +104,6 @@ class GetTimesheetRowProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUntilDate(): string
@@ -138,8 +112,6 @@ class GetTimesheetRowProjectService
     }
 
     /**
-     *
-     *
      * @param string $untilDate
      *
      * @return self
@@ -153,8 +125,6 @@ class GetTimesheetRowProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPurchaseStartDate(): string
@@ -163,8 +133,6 @@ class GetTimesheetRowProjectService
     }
 
     /**
-     *
-     *
      * @param string $purchaseStartDate
      *
      * @return self
@@ -178,8 +146,6 @@ class GetTimesheetRowProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPurchaseEndDate(): string
@@ -188,8 +154,6 @@ class GetTimesheetRowProjectService
     }
 
     /**
-     *
-     *
      * @param string $purchaseEndDate
      *
      * @return self

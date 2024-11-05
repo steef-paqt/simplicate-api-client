@@ -16,45 +16,31 @@ class GetProjectServiceHoursType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetHoursType
      */
     protected $hourstype;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
     /**
-     *
-     *
      * @var float
      */
     protected $budgetedAmount;
     /**
-     *
-     *
      * @var float
      */
     protected $tariff;
     /**
-     *
-     *
      * @var bool
      */
     protected $billable;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -63,8 +49,6 @@ class GetProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -78,8 +62,6 @@ class GetProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @return GetHoursType
      */
     public function getHourstype(): GetHoursType
@@ -88,8 +70,6 @@ class GetProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @param GetHoursType $hourstype
      *
      * @return self
@@ -103,8 +83,6 @@ class GetProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -113,8 +91,6 @@ class GetProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self
@@ -128,8 +104,6 @@ class GetProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getBudgetedAmount(): float
@@ -138,8 +112,6 @@ class GetProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @param float $budgetedAmount
      *
      * @return self
@@ -153,8 +125,6 @@ class GetProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTariff(): float
@@ -163,8 +133,6 @@ class GetProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @param float $tariff
      *
      * @return self
@@ -178,8 +146,6 @@ class GetProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBillable(): bool
@@ -188,8 +154,6 @@ class GetProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @param bool $billable
      *
      * @return self

@@ -16,99 +16,67 @@ class GetHoursSimple
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var float
      */
     protected $hours;
     /**
-     *
-     *
      * @var int
      */
     protected $durationInMinutes;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var bool
      */
     protected $isTimeDefined;
     /**
-     *
-     *
      * @var bool
      */
     protected $isRecurring;
     /**
-     *
-     *
      * @var Recurrence
      */
     protected $recurrence;
     /**
-     *
-     *
      * @var bool
      */
     protected $isExternal;
     /**
-     *
-     *
      * @var bool
      */
     protected $billable;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var Address
      */
     protected $address;
     /**
-     *
-     *
      * @var string
      */
     protected $assignmentId;
     /**
-     *
-     *
      * @var bool
      */
     protected $shouldSyncToCronofy;
     /**
-     *
-     *
      * @var string
      */
     protected $source;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -117,8 +85,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -132,8 +98,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getHours(): float
@@ -142,8 +106,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param float $hours
      *
      * @return self
@@ -157,8 +119,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getDurationInMinutes(): int
@@ -167,8 +127,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param int $durationInMinutes
      *
      * @return self
@@ -182,8 +140,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -192,8 +148,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -207,8 +161,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -217,8 +169,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -232,8 +182,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsTimeDefined(): bool
@@ -242,8 +190,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param bool $isTimeDefined
      *
      * @return self
@@ -257,8 +203,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsRecurring(): bool
@@ -267,8 +211,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param bool $isRecurring
      *
      * @return self
@@ -282,8 +224,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @return Recurrence
      */
     public function getRecurrence(): Recurrence
@@ -292,8 +232,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param Recurrence $recurrence
      *
      * @return self
@@ -307,8 +245,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsExternal(): bool
@@ -317,8 +253,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param bool $isExternal
      *
      * @return self
@@ -332,8 +266,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBillable(): bool
@@ -342,8 +274,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param bool $billable
      *
      * @return self
@@ -357,8 +287,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -367,8 +295,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -382,8 +308,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @return Address
      */
     public function getAddress(): Address
@@ -392,8 +316,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param Address $address
      *
      * @return self
@@ -407,8 +329,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAssignmentId(): string
@@ -417,8 +337,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param string $assignmentId
      *
      * @return self
@@ -432,8 +350,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getShouldSyncToCronofy(): bool
@@ -442,8 +358,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param bool $shouldSyncToCronofy
      *
      * @return self
@@ -457,8 +371,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSource(): string
@@ -467,8 +379,6 @@ class GetHoursSimple
     }
 
     /**
-     *
-     *
      * @param string $source
      *
      * @return self

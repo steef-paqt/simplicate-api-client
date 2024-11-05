@@ -16,8 +16,6 @@ class ProjectManager
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
@@ -28,15 +26,11 @@ class ProjectManager
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -45,8 +39,6 @@ class ProjectManager
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -85,8 +77,6 @@ class ProjectManager
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -95,8 +85,6 @@ class ProjectManager
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self

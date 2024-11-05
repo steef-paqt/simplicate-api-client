@@ -16,33 +16,23 @@ class GetOrganizationDebtorSimple
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var RelationType
      */
     protected $relationType;
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $relationNumber;
 
     /**
-     *
-     *
      * @return RelationType
      */
     public function getRelationType(): RelationType
@@ -51,8 +41,6 @@ class GetOrganizationDebtorSimple
     }
 
     /**
-     *
-     *
      * @param RelationType $relationType
      *
      * @return self
@@ -66,8 +54,6 @@ class GetOrganizationDebtorSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -76,8 +62,6 @@ class GetOrganizationDebtorSimple
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -91,8 +75,6 @@ class GetOrganizationDebtorSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -101,8 +83,6 @@ class GetOrganizationDebtorSimple
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -116,8 +96,6 @@ class GetOrganizationDebtorSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRelationNumber(): string
@@ -126,8 +104,6 @@ class GetOrganizationDebtorSimple
     }
 
     /**
-     *
-     *
      * @param string $relationNumber
      *
      * @return self

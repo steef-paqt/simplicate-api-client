@@ -16,45 +16,31 @@ class ContactPerson
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var bool
      */
     protected $isActive;
     /**
-     *
-     *
      * @var string
      */
     protected $workFunction;
     /**
-     *
-     *
      * @var string
      */
     protected $workEmail;
     /**
-     *
-     *
      * @var string
      */
     protected $workPhone;
     /**
-     *
-     *
      * @var string
      */
     protected $workMobile;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsActive(): bool
@@ -63,8 +49,6 @@ class ContactPerson
     }
 
     /**
-     *
-     *
      * @param bool $isActive
      *
      * @return self
@@ -78,8 +62,6 @@ class ContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkFunction(): string
@@ -88,8 +70,6 @@ class ContactPerson
     }
 
     /**
-     *
-     *
      * @param string $workFunction
      *
      * @return self
@@ -103,8 +83,6 @@ class ContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkEmail(): string
@@ -113,8 +91,6 @@ class ContactPerson
     }
 
     /**
-     *
-     *
      * @param string $workEmail
      *
      * @return self
@@ -128,8 +104,6 @@ class ContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkPhone(): string
@@ -138,8 +112,6 @@ class ContactPerson
     }
 
     /**
-     *
-     *
      * @param string $workPhone
      *
      * @return self
@@ -153,8 +125,6 @@ class ContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkMobile(): string
@@ -163,8 +133,6 @@ class ContactPerson
     }
 
     /**
-     *
-     *
      * @param string $workMobile
      *
      * @return self
@@ -178,8 +146,6 @@ class ContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -188,8 +154,6 @@ class ContactPerson
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self

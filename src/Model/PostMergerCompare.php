@@ -16,27 +16,19 @@ class PostMergerCompare
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var bool
      */
     protected $swapLock;
     /**
-     *
-     *
      * @var string
      */
     protected $sourceId;
     /**
-     *
-     *
      * @var string
      */
     protected $targetId;
 
     /**
-     *
-     *
      * @return bool
      */
     public function getSwapLock(): bool
@@ -45,8 +37,6 @@ class PostMergerCompare
     }
 
     /**
-     *
-     *
      * @param bool $swapLock
      *
      * @return self
@@ -60,8 +50,6 @@ class PostMergerCompare
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSourceId(): string
@@ -70,8 +58,6 @@ class PostMergerCompare
     }
 
     /**
-     *
-     *
      * @param string $sourceId
      *
      * @return self
@@ -85,8 +71,6 @@ class PostMergerCompare
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTargetId(): string
@@ -95,8 +79,6 @@ class PostMergerCompare
     }
 
     /**
-     *
-     *
      * @param string $targetId
      *
      * @return self

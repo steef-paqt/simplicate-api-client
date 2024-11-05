@@ -16,27 +16,19 @@ class PersonMailingList
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var bool
      */
     protected $value;
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
 
     /**
-     *
-     *
      * @return bool
      */
     public function getValue(): bool
@@ -45,8 +37,6 @@ class PersonMailingList
     }
 
     /**
-     *
-     *
      * @param bool $value
      *
      * @return self
@@ -60,8 +50,6 @@ class PersonMailingList
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -70,8 +58,6 @@ class PersonMailingList
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -85,8 +71,6 @@ class PersonMailingList
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -95,8 +79,6 @@ class PersonMailingList
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self

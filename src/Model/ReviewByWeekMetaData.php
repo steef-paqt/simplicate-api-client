@@ -16,57 +16,39 @@ class ReviewByWeekMetaData
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var bool
      */
     protected $isOutOfDate;
     /**
-     *
-     *
      * @var int
      */
     protected $count;
     /**
-     *
-     *
      * @var int
      */
     protected $totalCount;
     /**
-     *
-     *
      * @var int
      */
     protected $offset;
     /**
-     *
-     *
      * @var int
      */
     protected $limit;
     /**
-     *
-     *
      * @var int
      */
     protected $upperLimit;
     /**
-     *
-     *
      * @var bool
      */
     protected $nocleanup;
     /**
-     *
-     *
      * @var string
      */
     protected $checksum;
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsOutOfDate(): bool
@@ -75,8 +57,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @param bool $isOutOfDate
      *
      * @return self
@@ -90,8 +70,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getCount(): int
@@ -100,8 +78,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @param int $count
      *
      * @return self
@@ -115,8 +91,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getTotalCount(): int
@@ -125,8 +99,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @param int $totalCount
      *
      * @return self
@@ -140,8 +112,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getOffset(): int
@@ -150,8 +120,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @param int $offset
      *
      * @return self
@@ -165,8 +133,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getLimit(): int
@@ -175,8 +141,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @param int $limit
      *
      * @return self
@@ -190,8 +154,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getUpperLimit(): int
@@ -200,8 +162,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @param int $upperLimit
      *
      * @return self
@@ -215,8 +175,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getNocleanup(): bool
@@ -225,8 +183,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @param bool $nocleanup
      *
      * @return self
@@ -240,8 +196,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getChecksum(): string
@@ -250,8 +204,6 @@ class ReviewByWeekMetaData
     }
 
     /**
-     *
-     *
      * @param string $checksum
      *
      * @return self

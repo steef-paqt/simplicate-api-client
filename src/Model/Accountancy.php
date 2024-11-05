@@ -16,39 +16,27 @@ class Accountancy
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var bool
      */
     protected $isTaxUnitVat;
     /**
-     *
-     *
      * @var string
      */
     protected $vatNumberFe;
     /**
-     *
-     *
      * @var string
      */
     protected $taxUnitVatRole;
     /**
-     *
-     *
      * @var bool
      */
     protected $isTaxUnitVpb;
     /**
-     *
-     *
      * @var string
      */
     protected $taxUnitVpbRole;
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsTaxUnitVat(): bool
@@ -57,8 +45,6 @@ class Accountancy
     }
 
     /**
-     *
-     *
      * @param bool $isTaxUnitVat
      *
      * @return self
@@ -72,8 +58,6 @@ class Accountancy
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getVatNumberFe(): string
@@ -82,8 +66,6 @@ class Accountancy
     }
 
     /**
-     *
-     *
      * @param string $vatNumberFe
      *
      * @return self
@@ -97,8 +79,6 @@ class Accountancy
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTaxUnitVatRole(): string
@@ -107,8 +87,6 @@ class Accountancy
     }
 
     /**
-     *
-     *
      * @param string $taxUnitVatRole
      *
      * @return self
@@ -122,8 +100,6 @@ class Accountancy
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsTaxUnitVpb(): bool
@@ -132,8 +108,6 @@ class Accountancy
     }
 
     /**
-     *
-     *
      * @param bool $isTaxUnitVpb
      *
      * @return self
@@ -147,8 +121,6 @@ class Accountancy
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTaxUnitVpbRole(): string
@@ -157,8 +129,6 @@ class Accountancy
     }
 
     /**
-     *
-     *
      * @param string $taxUnitVpbRole
      *
      * @return self

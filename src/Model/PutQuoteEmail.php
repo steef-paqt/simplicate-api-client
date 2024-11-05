@@ -16,45 +16,31 @@ class PutQuoteEmail
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $subject;
     /**
-     *
-     *
      * @var string
      */
     protected $body;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $attachments;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $to;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $cc;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $bcc;
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubject(): string
@@ -63,8 +49,6 @@ class PutQuoteEmail
     }
 
     /**
-     *
-     *
      * @param string $subject
      *
      * @return self
@@ -78,8 +62,6 @@ class PutQuoteEmail
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBody(): string
@@ -88,8 +70,6 @@ class PutQuoteEmail
     }
 
     /**
-     *
-     *
      * @param string $body
      *
      * @return self
@@ -103,8 +83,6 @@ class PutQuoteEmail
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getAttachments(): array
@@ -113,8 +91,6 @@ class PutQuoteEmail
     }
 
     /**
-     *
-     *
      * @param mixed[] $attachments
      *
      * @return self
@@ -128,8 +104,6 @@ class PutQuoteEmail
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getTo(): array
@@ -138,8 +112,6 @@ class PutQuoteEmail
     }
 
     /**
-     *
-     *
      * @param mixed[] $to
      *
      * @return self
@@ -153,8 +125,6 @@ class PutQuoteEmail
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getCc(): array
@@ -163,8 +133,6 @@ class PutQuoteEmail
     }
 
     /**
-     *
-     *
      * @param mixed[] $cc
      *
      * @return self
@@ -178,8 +146,6 @@ class PutQuoteEmail
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getBcc(): array
@@ -188,8 +154,6 @@ class PutQuoteEmail
     }
 
     /**
-     *
-     *
      * @param mixed[] $bcc
      *
      * @return self

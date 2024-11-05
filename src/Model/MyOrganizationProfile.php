@@ -16,51 +16,35 @@ class MyOrganizationProfile
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $organizationId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $cocCode;
     /**
-     *
-     *
      * @var string
      */
     protected $vatNumber;
     /**
-     *
-     *
      * @var string
      */
     protected $bankAccount;
     /**
-     *
-     *
      * @var bool
      */
     protected $blocked;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -69,8 +53,6 @@ class MyOrganizationProfile
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -84,8 +66,6 @@ class MyOrganizationProfile
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizationId(): string
@@ -94,8 +74,6 @@ class MyOrganizationProfile
     }
 
     /**
-     *
-     *
      * @param string $organizationId
      *
      * @return self
@@ -109,8 +87,6 @@ class MyOrganizationProfile
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -119,8 +95,6 @@ class MyOrganizationProfile
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -134,8 +108,6 @@ class MyOrganizationProfile
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCocCode(): string
@@ -144,8 +116,6 @@ class MyOrganizationProfile
     }
 
     /**
-     *
-     *
      * @param string $cocCode
      *
      * @return self
@@ -159,8 +129,6 @@ class MyOrganizationProfile
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getVatNumber(): string
@@ -169,8 +137,6 @@ class MyOrganizationProfile
     }
 
     /**
-     *
-     *
      * @param string $vatNumber
      *
      * @return self
@@ -184,8 +150,6 @@ class MyOrganizationProfile
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBankAccount(): string
@@ -194,8 +158,6 @@ class MyOrganizationProfile
     }
 
     /**
-     *
-     *
      * @param string $bankAccount
      *
      * @return self
@@ -209,8 +171,6 @@ class MyOrganizationProfile
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBlocked(): bool
@@ -219,8 +179,6 @@ class MyOrganizationProfile
     }
 
     /**
-     *
-     *
      * @param bool $blocked
      *
      * @return self

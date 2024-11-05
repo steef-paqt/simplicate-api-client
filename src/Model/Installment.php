@@ -16,63 +16,43 @@ class Installment
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var float
      */
     protected $percentage;
     /**
-     *
-     *
      * @var float
      */
     protected $price;
     /**
-     *
-     *
      * @var int
      */
     protected $order;
     /**
-     *
-     *
      * @var string
      */
     protected $expirationDate;
     /**
-     *
-     *
      * @var string
      */
     protected $status;
     /**
-     *
-     *
      * @var string
      */
     protected $invoicedDate;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceId;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceLineId;
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -81,8 +61,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -96,8 +74,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPercentage(): float
@@ -106,8 +82,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @param float $percentage
      *
      * @return self
@@ -121,8 +95,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPrice(): float
@@ -131,8 +103,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @param float $price
      *
      * @return self
@@ -146,8 +116,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getOrder(): int
@@ -156,8 +124,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @param int $order
      *
      * @return self
@@ -171,8 +137,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getExpirationDate(): string
@@ -181,8 +145,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @param string $expirationDate
      *
      * @return self
@@ -196,8 +158,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatus(): string
@@ -206,8 +166,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @param string $status
      *
      * @return self
@@ -221,8 +179,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoicedDate(): string
@@ -231,8 +187,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @param string $invoicedDate
      *
      * @return self
@@ -246,8 +200,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceId(): string
@@ -256,8 +208,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @param string $invoiceId
      *
      * @return self
@@ -271,8 +221,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceLineId(): string
@@ -281,8 +229,6 @@ class Installment
     }
 
     /**
-     *
-     *
      * @param string $invoiceLineId
      *
      * @return self

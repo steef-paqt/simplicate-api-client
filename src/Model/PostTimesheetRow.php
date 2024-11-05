@@ -16,15 +16,11 @@ class PostTimesheetRow
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $missing;
 
     /**
-     *
-     *
      * @return string
      */
     public function getMissing(): string
@@ -33,8 +29,6 @@ class PostTimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $missing
      *
      * @return self

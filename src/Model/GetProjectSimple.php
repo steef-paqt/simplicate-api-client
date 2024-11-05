@@ -16,57 +16,39 @@ class GetProjectSimple
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id = 'project:abc';
     /**
-     *
-     *
      * @var string
      */
     protected $name = 'My Project Name';
     /**
-     *
-     *
      * @var string
      */
     protected $projectNumber = 'P1000A';
     /**
-     *
-     *
      * @var GetOrganizationSimple
      */
     protected $organization;
     /**
-     *
-     *
      * @var GetPersonSimple
      */
     protected $person;
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $projectManager;
     /**
-     *
-     *
      * @var mixed
      */
     protected $separateInvoiceRecipient;
     /**
-     *
-     *
      * @var bool
      */
     protected $hasRegisterMileageEnabled;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -75,8 +57,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -90,8 +70,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -100,8 +78,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -115,8 +91,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectNumber(): string
@@ -125,8 +99,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @param string $projectNumber
      *
      * @return self
@@ -140,8 +112,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @return GetOrganizationSimple
      */
     public function getOrganization(): GetOrganizationSimple
@@ -150,8 +120,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @param GetOrganizationSimple $organization
      *
      * @return self
@@ -165,8 +133,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @return GetPersonSimple
      */
     public function getPerson(): GetPersonSimple
@@ -175,8 +141,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @param GetPersonSimple $person
      *
      * @return self
@@ -190,8 +154,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getProjectManager(): GetEmployeeSimple
@@ -200,8 +162,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $projectManager
      *
      * @return self
@@ -215,8 +175,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @return mixed
      */
     public function getSeparateInvoiceRecipient()
@@ -225,8 +183,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @param mixed $separateInvoiceRecipient
      *
      * @return self
@@ -240,8 +196,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getHasRegisterMileageEnabled(): bool
@@ -250,8 +204,6 @@ class GetProjectSimple
     }
 
     /**
-     *
-     *
      * @param bool $hasRegisterMileageEnabled
      *
      * @return self

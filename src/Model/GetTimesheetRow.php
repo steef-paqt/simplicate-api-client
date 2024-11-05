@@ -16,93 +16,63 @@ class GetTimesheetRow
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var int
      */
     protected $order;
     /**
-     *
-     *
      * @var GetTimesheetRowProject
      */
     protected $project;
     /**
-     *
-     *
      * @var GetTimesheetRowProjectService
      */
     protected $projectService;
     /**
-     *
-     *
      * @var GetTimesheetRowItemtype
      */
     protected $itemtype;
     /**
-     *
-     *
      * @var GetTimesheetRowPersonRelation
      */
     protected $person;
     /**
-     *
-     *
      * @var GetTimesheetRowOrganizationRelation
      */
     protected $organization;
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var string
      */
     protected $projectId;
     /**
-     *
-     *
      * @var string
      */
     protected $projectServiceId;
     /**
-     *
-     *
      * @var string
      */
     protected $itemtypeId;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -111,8 +81,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -126,8 +94,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getOrder(): int
@@ -136,8 +102,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @param int $order
      *
      * @return self
@@ -151,8 +115,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @return GetTimesheetRowProject
      */
     public function getProject(): GetTimesheetRowProject
@@ -161,8 +123,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @param GetTimesheetRowProject $project
      *
      * @return self
@@ -176,8 +136,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @return GetTimesheetRowProjectService
      */
     public function getProjectService(): GetTimesheetRowProjectService
@@ -186,8 +144,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @param GetTimesheetRowProjectService $projectService
      *
      * @return self
@@ -201,8 +157,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @return GetTimesheetRowItemtype
      */
     public function getItemtype(): GetTimesheetRowItemtype
@@ -211,8 +165,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @param GetTimesheetRowItemtype $itemtype
      *
      * @return self
@@ -226,8 +178,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @return GetTimesheetRowPersonRelation
      */
     public function getPerson(): GetTimesheetRowPersonRelation
@@ -236,8 +186,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @param GetTimesheetRowPersonRelation $person
      *
      * @return self
@@ -251,8 +199,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @return GetTimesheetRowOrganizationRelation
      */
     public function getOrganization(): GetTimesheetRowOrganizationRelation
@@ -261,8 +207,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @param GetTimesheetRowOrganizationRelation $organization
      *
      * @return self
@@ -276,8 +220,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -286,8 +228,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -301,8 +241,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -311,8 +249,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -326,8 +262,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -336,8 +270,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -351,8 +283,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectId(): string
@@ -361,8 +291,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $projectId
      *
      * @return self
@@ -376,8 +304,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectServiceId(): string
@@ -386,8 +312,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $projectServiceId
      *
      * @return self
@@ -401,8 +325,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getItemtypeId(): string
@@ -411,8 +333,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $itemtypeId
      *
      * @return self
@@ -426,8 +346,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -436,8 +354,6 @@ class GetTimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self

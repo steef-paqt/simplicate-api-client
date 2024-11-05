@@ -11,8 +11,6 @@ class PostUploadChunked extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\PostChunked $body Data required to initialize an upload
      */
     public function __construct(\Steefdw\Simplicate\Model\PostChunked $body)

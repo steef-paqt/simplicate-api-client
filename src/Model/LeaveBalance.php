@@ -16,45 +16,31 @@ class LeaveBalance
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $employee;
     /**
-     *
-     *
      * @var float
      */
     protected $balance;
     /**
-     *
-     *
      * @var string
      */
     protected $firstChange;
     /**
-     *
-     *
      * @var float
      */
     protected $lastChange;
     /**
-     *
-     *
      * @var int
      */
     protected $year;
     /**
-     *
-     *
      * @var HrmGetLeaveType
      */
     protected $leavetype;
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getEmployee(): GetEmployeeSimple
@@ -63,8 +49,6 @@ class LeaveBalance
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $employee
      *
      * @return self
@@ -78,8 +62,6 @@ class LeaveBalance
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getBalance(): float
@@ -88,8 +70,6 @@ class LeaveBalance
     }
 
     /**
-     *
-     *
      * @param float $balance
      *
      * @return self
@@ -103,8 +83,6 @@ class LeaveBalance
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFirstChange(): string
@@ -113,8 +91,6 @@ class LeaveBalance
     }
 
     /**
-     *
-     *
      * @param string $firstChange
      *
      * @return self
@@ -128,8 +104,6 @@ class LeaveBalance
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getLastChange(): float
@@ -138,8 +112,6 @@ class LeaveBalance
     }
 
     /**
-     *
-     *
      * @param float $lastChange
      *
      * @return self
@@ -153,8 +125,6 @@ class LeaveBalance
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getYear(): int
@@ -163,8 +133,6 @@ class LeaveBalance
     }
 
     /**
-     *
-     *
      * @param int $year
      *
      * @return self
@@ -178,8 +146,6 @@ class LeaveBalance
     }
 
     /**
-     *
-     *
      * @return HrmGetLeaveType
      */
     public function getLeavetype(): HrmGetLeaveType
@@ -188,8 +154,6 @@ class LeaveBalance
     }
 
     /**
-     *
-     *
      * @param HrmGetLeaveType $leavetype
      *
      * @return self

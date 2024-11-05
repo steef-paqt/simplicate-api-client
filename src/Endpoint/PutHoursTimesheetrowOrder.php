@@ -11,8 +11,6 @@ class PutHoursTimesheetrowOrder extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param array $body List of external ids for timesheetrows that need to be ordered.
      */
     public function __construct(array $body)

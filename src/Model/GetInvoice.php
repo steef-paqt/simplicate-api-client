@@ -16,189 +16,127 @@ class GetInvoice
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $contactId;
     /**
-     *
-     *
      * @var PaymentTerm
      */
     protected $paymentTerm;
     /**
-     *
-     *
      * @var GetInvoiceLine[]
      */
     protected $invoiceLines;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceNumber;
     /**
-     *
-     *
      * @var string
      */
     protected $status;
     /**
-     *
-     *
      * @var float
      */
     protected $totalExcludingVat;
     /**
-     *
-     *
      * @var float
      */
     protected $totalVat;
     /**
-     *
-     *
      * @var float
      */
     protected $totalIncludingVat;
     /**
-     *
-     *
      * @var float
      */
     protected $totalOutstanding;
     /**
-     *
-     *
      * @var GetOrganizationSimple
      */
     protected $organization;
     /**
-     *
-     *
      * @var GetPersonSimple
      */
     protected $person;
     /**
-     *
-     *
      * @var GetMyOrganizationProfileSimple
      */
     protected $myOrganizationProfile;
     /**
-     *
-     *
      * @var SubscriptionCycle
      */
     protected $subscriptionCycle;
     /**
-     *
-     *
      * @var GetProjectSimple
      */
     protected $project;
     /**
-     *
-     *
      * @var GetProjectSimple[]
      */
     protected $projects;
     /**
-     *
-     *
      * @var string
      */
     protected $sendingMethod;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $simplicateUrl;
     /**
-     *
-     *
      * @var GetInvoiceReminder
      */
     protected $reminder;
     /**
-     *
-     *
      * @var string
      */
     protected $compositionType;
     /**
-     *
-     *
      * @var string
      */
     protected $myOrganizationProfileId;
     /**
-     *
-     *
      * @var string
      */
     protected $organizationId;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $date;
     /**
-     *
-     *
      * @var string
      */
     protected $subject;
     /**
-     *
-     *
      * @var string
      */
     protected $reference;
     /**
-     *
-     *
      * @var string
      */
     protected $projectId;
     /**
-     *
-     *
      * @var string
      */
     protected $comments;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -207,8 +145,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -222,8 +158,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getContactId(): string
@@ -232,8 +166,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $contactId
      *
      * @return self
@@ -247,8 +179,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return PaymentTerm
      */
     public function getPaymentTerm(): PaymentTerm
@@ -257,8 +187,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param PaymentTerm $paymentTerm
      *
      * @return self
@@ -272,8 +200,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return GetInvoiceLine[]
      */
     public function getInvoiceLines(): array
@@ -282,8 +208,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param GetInvoiceLine[] $invoiceLines
      *
      * @return self
@@ -297,8 +221,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceNumber(): string
@@ -307,8 +229,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $invoiceNumber
      *
      * @return self
@@ -322,8 +242,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatus(): string
@@ -332,8 +250,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $status
      *
      * @return self
@@ -347,8 +263,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTotalExcludingVat(): float
@@ -357,8 +271,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param float $totalExcludingVat
      *
      * @return self
@@ -372,8 +284,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTotalVat(): float
@@ -382,8 +292,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param float $totalVat
      *
      * @return self
@@ -397,8 +305,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTotalIncludingVat(): float
@@ -407,8 +313,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param float $totalIncludingVat
      *
      * @return self
@@ -422,8 +326,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTotalOutstanding(): float
@@ -432,8 +334,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param float $totalOutstanding
      *
      * @return self
@@ -447,8 +347,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return GetOrganizationSimple
      */
     public function getOrganization(): GetOrganizationSimple
@@ -457,8 +355,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param GetOrganizationSimple $organization
      *
      * @return self
@@ -472,8 +368,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return GetPersonSimple
      */
     public function getPerson(): GetPersonSimple
@@ -482,8 +376,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param GetPersonSimple $person
      *
      * @return self
@@ -497,8 +389,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return GetMyOrganizationProfileSimple
      */
     public function getMyOrganizationProfile(): GetMyOrganizationProfileSimple
@@ -507,8 +397,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param GetMyOrganizationProfileSimple $myOrganizationProfile
      *
      * @return self
@@ -522,8 +410,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return SubscriptionCycle
      */
     public function getSubscriptionCycle(): SubscriptionCycle
@@ -532,8 +418,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param SubscriptionCycle $subscriptionCycle
      *
      * @return self
@@ -547,8 +431,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return GetProjectSimple
      */
     public function getProject(): GetProjectSimple
@@ -557,8 +439,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param GetProjectSimple $project
      *
      * @return self
@@ -572,8 +452,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return GetProjectSimple[]
      */
     public function getProjects(): array
@@ -582,8 +460,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param GetProjectSimple[] $projects
      *
      * @return self
@@ -597,8 +473,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSendingMethod(): string
@@ -607,8 +481,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $sendingMethod
      *
      * @return self
@@ -622,8 +494,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -632,8 +502,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -647,8 +515,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -657,8 +523,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -672,8 +536,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSimplicateUrl(): string
@@ -682,8 +544,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $simplicateUrl
      *
      * @return self
@@ -697,8 +557,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return GetInvoiceReminder
      */
     public function getReminder(): GetInvoiceReminder
@@ -707,8 +565,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param GetInvoiceReminder $reminder
      *
      * @return self
@@ -722,8 +578,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCompositionType(): string
@@ -732,8 +586,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $compositionType
      *
      * @return self
@@ -747,8 +599,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMyOrganizationProfileId(): string
@@ -757,8 +607,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $myOrganizationProfileId
      *
      * @return self
@@ -772,8 +620,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizationId(): string
@@ -782,8 +628,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $organizationId
      *
      * @return self
@@ -797,8 +641,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -807,8 +649,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -822,8 +662,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDate(): string
@@ -832,8 +670,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $date
      *
      * @return self
@@ -847,8 +683,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubject(): string
@@ -857,8 +691,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $subject
      *
      * @return self
@@ -872,8 +704,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getReference(): string
@@ -882,8 +712,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $reference
      *
      * @return self
@@ -897,8 +725,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectId(): string
@@ -907,8 +733,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $projectId
      *
      * @return self
@@ -922,8 +746,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getComments(): string
@@ -932,8 +754,6 @@ class GetInvoice
     }
 
     /**
-     *
-     *
      * @param string $comments
      *
      * @return self

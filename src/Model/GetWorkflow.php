@@ -16,93 +16,63 @@ class GetWorkflow
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetSimpleDefaultWorkflow
      */
     protected $defaultworkflow;
     /**
-     *
-     *
      * @var CurrentTask
      */
     protected $currentTask;
     /**
-     *
-     *
      * @var GetDefaultAction[]
      */
     protected $actions;
     /**
-     *
-     *
      * @var LinkedTo[]
      */
     protected $linkedTo;
     /**
-     *
-     *
      * @var string
      */
     protected $filename;
     /**
-     *
-     *
      * @var GetDocument[]
      */
     protected $attachments;
     /**
-     *
-     *
      * @var Comment[]
      */
     protected $comments;
     /**
-     *
-     *
      * @var CreatedBy
      */
     protected $createdBy;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $title;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var string
      */
     protected $deadlineDate;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -111,8 +81,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -126,8 +94,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @return GetSimpleDefaultWorkflow
      */
     public function getDefaultworkflow(): GetSimpleDefaultWorkflow
@@ -136,8 +102,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @param GetSimpleDefaultWorkflow $defaultworkflow
      *
      * @return self
@@ -151,8 +115,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @return CurrentTask
      */
     public function getCurrentTask(): CurrentTask
@@ -161,8 +123,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @param CurrentTask $currentTask
      *
      * @return self
@@ -176,8 +136,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @return GetDefaultAction[]
      */
     public function getActions(): array
@@ -186,8 +144,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @param GetDefaultAction[] $actions
      *
      * @return self
@@ -201,8 +157,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @return LinkedTo[]
      */
     public function getLinkedTo(): array
@@ -211,8 +165,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @param LinkedTo[] $linkedTo
      *
      * @return self
@@ -226,8 +178,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFilename(): string
@@ -236,8 +186,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @param string $filename
      *
      * @return self
@@ -251,8 +199,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @return GetDocument[]
      */
     public function getAttachments(): array
@@ -261,8 +207,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @param GetDocument[] $attachments
      *
      * @return self
@@ -276,8 +220,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @return Comment[]
      */
     public function getComments(): array
@@ -286,8 +228,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @param Comment[] $comments
      *
      * @return self
@@ -301,8 +241,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @return CreatedBy
      */
     public function getCreatedBy(): CreatedBy
@@ -311,8 +249,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @param CreatedBy $createdBy
      *
      * @return self
@@ -326,8 +262,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -336,8 +270,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -351,8 +283,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -361,8 +291,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -376,8 +304,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -386,8 +312,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -401,8 +325,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -411,8 +333,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -426,8 +346,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDeadlineDate(): string
@@ -436,8 +354,6 @@ class GetWorkflow
     }
 
     /**
-     *
-     *
      * @param string $deadlineDate
      *
      * @return self

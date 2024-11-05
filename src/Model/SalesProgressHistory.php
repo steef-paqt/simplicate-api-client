@@ -16,57 +16,39 @@ class SalesProgressHistory
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var mixed
      */
     protected $sales;
     /**
-     *
-     *
      * @var string
      */
     protected $salesId;
     /**
-     *
-     *
      * @var SalesProgress
      */
     protected $fromSalesProgress;
     /**
-     *
-     *
      * @var string
      */
     protected $fromSalesProgressId;
     /**
-     *
-     *
      * @var SalesProgress
      */
     protected $toSalesProgress;
     /**
-     *
-     *
      * @var string
      */
     protected $toSalesProgressId;
     /**
-     *
-     *
      * @var string
      */
     protected $date;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -75,8 +57,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -90,8 +70,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @return mixed
      */
     public function getSales()
@@ -100,8 +78,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @param mixed $sales
      *
      * @return self
@@ -115,8 +91,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSalesId(): string
@@ -125,8 +99,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @param string $salesId
      *
      * @return self
@@ -140,8 +112,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @return SalesProgress
      */
     public function getFromSalesProgress(): SalesProgress
@@ -150,8 +120,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @param SalesProgress $fromSalesProgress
      *
      * @return self
@@ -165,8 +133,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFromSalesProgressId(): string
@@ -175,8 +141,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @param string $fromSalesProgressId
      *
      * @return self
@@ -190,8 +154,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @return SalesProgress
      */
     public function getToSalesProgress(): SalesProgress
@@ -200,8 +162,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @param SalesProgress $toSalesProgress
      *
      * @return self
@@ -215,8 +175,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getToSalesProgressId(): string
@@ -225,8 +183,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @param string $toSalesProgressId
      *
      * @return self
@@ -240,8 +196,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDate(): string
@@ -250,8 +204,6 @@ class SalesProgressHistory
     }
 
     /**
-     *
-     *
      * @param string $date
      *
      * @return self

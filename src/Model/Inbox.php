@@ -16,39 +16,27 @@ class Inbox
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var Employee
      */
     protected $employee;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -57,8 +45,6 @@ class Inbox
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -72,8 +58,6 @@ class Inbox
     }
 
     /**
-     *
-     *
      * @return Employee
      */
     public function getEmployee(): Employee
@@ -82,8 +66,6 @@ class Inbox
     }
 
     /**
-     *
-     *
      * @param Employee $employee
      *
      * @return self
@@ -97,8 +79,6 @@ class Inbox
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -107,8 +87,6 @@ class Inbox
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -122,8 +100,6 @@ class Inbox
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -132,8 +108,6 @@ class Inbox
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -147,8 +121,6 @@ class Inbox
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -157,8 +129,6 @@ class Inbox
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self

@@ -16,21 +16,15 @@ class ProjectAssignmentDeleteResultRest
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var mixed
      */
     protected $assignmentId;
     /**
-     *
-     *
      * @var bool
      */
     protected $isDeleted;
 
     /**
-     *
-     *
      * @return mixed
      */
     public function getAssignmentId()
@@ -39,8 +33,6 @@ class ProjectAssignmentDeleteResultRest
     }
 
     /**
-     *
-     *
      * @param mixed $assignmentId
      *
      * @return self
@@ -54,8 +46,6 @@ class ProjectAssignmentDeleteResultRest
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsDeleted(): bool
@@ -64,8 +54,6 @@ class ProjectAssignmentDeleteResultRest
     }
 
     /**
-     *
-     *
      * @param bool $isDeleted
      *
      * @return self

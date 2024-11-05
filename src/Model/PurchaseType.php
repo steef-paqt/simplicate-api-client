@@ -16,45 +16,31 @@ class PurchaseType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var bool
      */
     protected $blocked;
     /**
-     *
-     *
      * @var float
      */
     protected $tariff;
     /**
-     *
-     *
      * @var bool
      */
     protected $isUnitTariff;
     /**
-     *
-     *
      * @var string
      */
     protected $unitName;
     /**
-     *
-     *
      * @var bool
      */
     protected $isAttachmentAllowed;
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -63,8 +49,6 @@ class PurchaseType
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -78,8 +62,6 @@ class PurchaseType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBlocked(): bool
@@ -88,8 +70,6 @@ class PurchaseType
     }
 
     /**
-     *
-     *
      * @param bool $blocked
      *
      * @return self
@@ -103,8 +83,6 @@ class PurchaseType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTariff(): float
@@ -113,8 +91,6 @@ class PurchaseType
     }
 
     /**
-     *
-     *
      * @param float $tariff
      *
      * @return self
@@ -128,8 +104,6 @@ class PurchaseType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsUnitTariff(): bool
@@ -138,8 +112,6 @@ class PurchaseType
     }
 
     /**
-     *
-     *
      * @param bool $isUnitTariff
      *
      * @return self
@@ -153,8 +125,6 @@ class PurchaseType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUnitName(): string
@@ -163,8 +133,6 @@ class PurchaseType
     }
 
     /**
-     *
-     *
      * @param string $unitName
      *
      * @return self
@@ -178,8 +146,6 @@ class PurchaseType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsAttachmentAllowed(): bool
@@ -188,8 +154,6 @@ class PurchaseType
     }
 
     /**
-     *
-     *
      * @param bool $isAttachmentAllowed
      *
      * @return self

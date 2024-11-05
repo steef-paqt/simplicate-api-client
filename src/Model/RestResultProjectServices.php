@@ -16,33 +16,23 @@ class RestResultProjectServices
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var GetProjectService[]
      */
     protected $data;
     /**
-     *
-     *
      * @var MetaData
      */
     protected $metadata;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $errors;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $debug;
 
     /**
-     *
-     *
      * @return GetProjectService[]
      */
     public function getData(): array
@@ -51,8 +41,6 @@ class RestResultProjectServices
     }
 
     /**
-     *
-     *
      * @param GetProjectService[] $data
      *
      * @return self
@@ -66,8 +54,6 @@ class RestResultProjectServices
     }
 
     /**
-     *
-     *
      * @return MetaData
      */
     public function getMetadata(): MetaData
@@ -76,8 +62,6 @@ class RestResultProjectServices
     }
 
     /**
-     *
-     *
      * @param MetaData $metadata
      *
      * @return self
@@ -91,8 +75,6 @@ class RestResultProjectServices
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getErrors(): array
@@ -101,8 +83,6 @@ class RestResultProjectServices
     }
 
     /**
-     *
-     *
      * @param mixed[] $errors
      *
      * @return self
@@ -116,8 +96,6 @@ class RestResultProjectServices
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getDebug(): array
@@ -126,8 +104,6 @@ class RestResultProjectServices
     }
 
     /**
-     *
-     *
      * @param mixed[] $debug
      *
      * @return self

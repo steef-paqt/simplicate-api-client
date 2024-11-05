@@ -16,33 +16,23 @@ class RestResultWorkflowItems
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var WorkflowItem[]
      */
     protected $data;
     /**
-     *
-     *
      * @var MetaData
      */
     protected $metadata;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $errors;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $debug;
 
     /**
-     *
-     *
      * @return WorkflowItem[]
      */
     public function getData(): array
@@ -51,8 +41,6 @@ class RestResultWorkflowItems
     }
 
     /**
-     *
-     *
      * @param WorkflowItem[] $data
      *
      * @return self
@@ -66,8 +54,6 @@ class RestResultWorkflowItems
     }
 
     /**
-     *
-     *
      * @return MetaData
      */
     public function getMetadata(): MetaData
@@ -76,8 +62,6 @@ class RestResultWorkflowItems
     }
 
     /**
-     *
-     *
      * @param MetaData $metadata
      *
      * @return self
@@ -91,8 +75,6 @@ class RestResultWorkflowItems
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getErrors(): array
@@ -101,8 +83,6 @@ class RestResultWorkflowItems
     }
 
     /**
-     *
-     *
      * @param mixed[] $errors
      *
      * @return self
@@ -116,8 +96,6 @@ class RestResultWorkflowItems
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getDebug(): array
@@ -126,8 +104,6 @@ class RestResultWorkflowItems
     }
 
     /**
-     *
-     *
      * @param mixed[] $debug
      *
      * @return self

@@ -16,27 +16,19 @@ class Recurrence
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var Rrule
      */
     protected $rrule;
     /**
-     *
-     *
      * @var string
      */
     protected $update;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -45,8 +37,6 @@ class Recurrence
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -60,8 +50,6 @@ class Recurrence
     }
 
     /**
-     *
-     *
      * @return Rrule
      */
     public function getRrule(): Rrule
@@ -70,8 +58,6 @@ class Recurrence
     }
 
     /**
-     *
-     *
      * @param Rrule $rrule
      *
      * @return self
@@ -85,8 +71,6 @@ class Recurrence
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdate(): string
@@ -95,8 +79,6 @@ class Recurrence
     }
 
     /**
-     *
-     *
      * @param string $update
      *
      * @return self

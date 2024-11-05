@@ -16,21 +16,15 @@ class GetAssignmentSimple
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id = 'assignment:abc';
     /**
-     *
-     *
      * @var string
      */
     protected $name = 'Website Design Assignment';
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -39,8 +33,6 @@ class GetAssignmentSimple
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -54,8 +46,6 @@ class GetAssignmentSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -64,8 +54,6 @@ class GetAssignmentSimple
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self

@@ -16,39 +16,27 @@ class SalesProgress
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
     /**
-     *
-     *
      * @var float
      */
     protected $chanceToScore;
     /**
-     *
-     *
      * @var int
      */
     protected $position;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -57,8 +45,6 @@ class SalesProgress
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -72,8 +58,6 @@ class SalesProgress
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -82,8 +66,6 @@ class SalesProgress
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -97,8 +79,6 @@ class SalesProgress
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -107,8 +87,6 @@ class SalesProgress
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self
@@ -122,8 +100,6 @@ class SalesProgress
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getChanceToScore(): float
@@ -132,8 +108,6 @@ class SalesProgress
     }
 
     /**
-     *
-     *
      * @param float $chanceToScore
      *
      * @return self
@@ -147,8 +121,6 @@ class SalesProgress
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getPosition(): int
@@ -157,8 +129,6 @@ class SalesProgress
     }
 
     /**
-     *
-     *
      * @param int $position
      *
      * @return self

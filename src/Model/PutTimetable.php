@@ -16,57 +16,39 @@ class PutTimetable
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var bool
      */
     protected $hasOddWeeks;
     /**
-     *
-     *
      * @var TimetableWeek
      */
     protected $evenWeek;
     /**
-     *
-     *
      * @var TimetableWeek
      */
     protected $oddWeek;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var int
      */
     protected $productivityTarget;
     /**
-     *
-     *
      * @var bool
      */
     protected $shouldWriteHours;
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -75,8 +57,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -90,8 +70,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -100,8 +78,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -115,8 +91,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getHasOddWeeks(): bool
@@ -125,8 +99,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @param bool $hasOddWeeks
      *
      * @return self
@@ -140,8 +112,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @return TimetableWeek
      */
     public function getEvenWeek(): TimetableWeek
@@ -150,8 +120,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @param TimetableWeek $evenWeek
      *
      * @return self
@@ -165,8 +133,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @return TimetableWeek
      */
     public function getOddWeek(): TimetableWeek
@@ -175,8 +141,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @param TimetableWeek $oddWeek
      *
      * @return self
@@ -190,8 +154,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -200,8 +162,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -215,8 +175,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getProductivityTarget(): int
@@ -225,8 +183,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @param int $productivityTarget
      *
      * @return self
@@ -240,8 +196,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getShouldWriteHours(): bool
@@ -250,8 +204,6 @@ class PutTimetable
     }
 
     /**
-     *
-     *
      * @param bool $shouldWriteHours
      *
      * @return self

@@ -16,14 +16,10 @@ class GetHoursProjectService
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id = 'service:abc123';
     /**
-     *
-     *
      * @var string
      */
     protected $name;
@@ -53,8 +49,6 @@ class GetHoursProjectService
     protected $purchaseEndDate = '2020-01-01';
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -63,8 +57,6 @@ class GetHoursProjectService
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -78,8 +70,6 @@ class GetHoursProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -88,8 +78,6 @@ class GetHoursProjectService
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self

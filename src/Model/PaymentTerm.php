@@ -16,27 +16,19 @@ class PaymentTerm
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var int
      */
     protected $days;
     /**
-     *
-     *
      * @var string
      */
     protected $method;
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -45,8 +37,6 @@ class PaymentTerm
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -60,8 +50,6 @@ class PaymentTerm
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getDays(): int
@@ -70,8 +58,6 @@ class PaymentTerm
     }
 
     /**
-     *
-     *
      * @param int $days
      *
      * @return self
@@ -85,8 +71,6 @@ class PaymentTerm
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMethod(): string
@@ -95,8 +79,6 @@ class PaymentTerm
     }
 
     /**
-     *
-     *
      * @param string $method
      *
      * @return self

@@ -11,8 +11,6 @@ class GetHoursTimesheetrow extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param array $queryParameters {
      *     @var string $q[start_date] Y-m-d, must be a Monday
      *     @var string $q[end_date] Y-m-d, must be the Sunday after the Monday of the start_date

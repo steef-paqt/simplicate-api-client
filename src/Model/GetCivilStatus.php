@@ -16,27 +16,19 @@ class GetCivilStatus
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var bool
      */
     protected $blocked;
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBlocked(): bool
@@ -45,8 +37,6 @@ class GetCivilStatus
     }
 
     /**
-     *
-     *
      * @param bool $blocked
      *
      * @return self
@@ -60,8 +50,6 @@ class GetCivilStatus
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -70,8 +58,6 @@ class GetCivilStatus
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -85,8 +71,6 @@ class GetCivilStatus
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -95,8 +79,6 @@ class GetCivilStatus
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self

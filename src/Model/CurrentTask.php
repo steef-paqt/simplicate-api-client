@@ -16,57 +16,39 @@ class CurrentTask
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var bool
      */
     protected $canChangeDestination;
     /**
-     *
-     *
      * @var bool
      */
     protected $willSendEmail;
     /**
-     *
-     *
      * @var bool
      */
     protected $isReturnToSender;
     /**
-     *
-     *
      * @var float
      */
     protected $averageHoursCost;
     /**
-     *
-     *
      * @var bool
      */
     protected $canBeTransferred;
     /**
-     *
-     *
      * @var CurrentTaskEmployee[]
      */
     protected $employees;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -75,8 +57,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -90,8 +70,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -100,8 +78,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -115,8 +91,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getCanChangeDestination(): bool
@@ -125,8 +99,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @param bool $canChangeDestination
      *
      * @return self
@@ -140,8 +112,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getWillSendEmail(): bool
@@ -150,8 +120,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @param bool $willSendEmail
      *
      * @return self
@@ -165,8 +133,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsReturnToSender(): bool
@@ -175,8 +141,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @param bool $isReturnToSender
      *
      * @return self
@@ -190,8 +154,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAverageHoursCost(): float
@@ -200,8 +162,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @param float $averageHoursCost
      *
      * @return self
@@ -215,8 +175,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getCanBeTransferred(): bool
@@ -225,8 +183,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @param bool $canBeTransferred
      *
      * @return self
@@ -240,8 +196,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @return CurrentTaskEmployee[]
      */
     public function getEmployees(): array
@@ -250,8 +204,6 @@ class CurrentTask
     }
 
     /**
-     *
-     *
      * @param CurrentTaskEmployee[] $employees
      *
      * @return self

@@ -16,27 +16,19 @@ class Budget
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var BudgetHours
      */
     protected $hours;
     /**
-     *
-     *
      * @var BudgetCosts
      */
     protected $costs;
     /**
-     *
-     *
      * @var BudgetTotal
      */
     protected $total;
 
     /**
-     *
-     *
      * @return BudgetHours
      */
     public function getHours(): BudgetHours
@@ -45,8 +37,6 @@ class Budget
     }
 
     /**
-     *
-     *
      * @param BudgetHours $hours
      *
      * @return self
@@ -60,8 +50,6 @@ class Budget
     }
 
     /**
-     *
-     *
      * @return BudgetCosts
      */
     public function getCosts(): BudgetCosts
@@ -70,8 +58,6 @@ class Budget
     }
 
     /**
-     *
-     *
      * @param BudgetCosts $costs
      *
      * @return self
@@ -85,8 +71,6 @@ class Budget
     }
 
     /**
-     *
-     *
      * @return BudgetTotal
      */
     public function getTotal(): BudgetTotal
@@ -95,8 +79,6 @@ class Budget
     }
 
     /**
-     *
-     *
      * @param BudgetTotal $total
      *
      * @return self

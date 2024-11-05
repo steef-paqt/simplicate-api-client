@@ -16,81 +16,55 @@ class GetContract
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetEmployee
      */
     protected $employee;
     /**
-     *
-     *
      * @var GetOrganizationSimple
      */
     protected $employer;
     /**
-     *
-     *
      * @var EmploymentType
      */
     protected $employmentType;
     /**
-     *
-     *
      * @var ContractType
      */
     protected $contractType;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var bool
      */
     protected $endDate;
     /**
-     *
-     *
      * @var float
      */
     protected $salaryFulltime;
     /**
-     *
-     *
      * @var float
      */
     protected $parttimePercentage;
     /**
-     *
-     *
      * @var float
      */
     protected $daysOff;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -99,8 +73,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -114,8 +86,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @return GetEmployee
      */
     public function getEmployee(): GetEmployee
@@ -124,8 +94,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @param GetEmployee $employee
      *
      * @return self
@@ -139,8 +107,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @return GetOrganizationSimple
      */
     public function getEmployer(): GetOrganizationSimple
@@ -149,8 +115,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @param GetOrganizationSimple $employer
      *
      * @return self
@@ -164,8 +128,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @return EmploymentType
      */
     public function getEmploymentType(): EmploymentType
@@ -174,8 +136,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @param EmploymentType $employmentType
      *
      * @return self
@@ -189,8 +149,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @return ContractType
      */
     public function getContractType(): ContractType
@@ -199,8 +157,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @param ContractType $contractType
      *
      * @return self
@@ -214,8 +170,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -224,8 +178,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -239,8 +191,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -249,8 +199,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -264,8 +212,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -274,8 +220,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -289,8 +233,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getEndDate(): bool
@@ -299,8 +241,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @param bool $endDate
      *
      * @return self
@@ -314,8 +254,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getSalaryFulltime(): float
@@ -324,8 +262,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @param float $salaryFulltime
      *
      * @return self
@@ -339,8 +275,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getParttimePercentage(): float
@@ -349,8 +283,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @param float $parttimePercentage
      *
      * @return self
@@ -364,8 +296,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getDaysOff(): float
@@ -374,8 +304,6 @@ class GetContract
     }
 
     /**
-     *
-     *
      * @param float $daysOff
      *
      * @return self

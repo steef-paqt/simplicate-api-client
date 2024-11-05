@@ -16,51 +16,35 @@ class ReverseInvoice
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $status;
     /**
-     *
-     *
      * @var string
      */
     protected $date;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceNumber;
     /**
-     *
-     *
      * @var float
      */
     protected $price;
     /**
-     *
-     *
      * @var GetProjectSimple
      */
     protected $project;
     /**
-     *
-     *
      * @var GetInvoiceSimple
      */
     protected $invoice;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -69,8 +53,6 @@ class ReverseInvoice
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -84,8 +66,6 @@ class ReverseInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatus(): string
@@ -94,8 +74,6 @@ class ReverseInvoice
     }
 
     /**
-     *
-     *
      * @param string $status
      *
      * @return self
@@ -109,8 +87,6 @@ class ReverseInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDate(): string
@@ -119,8 +95,6 @@ class ReverseInvoice
     }
 
     /**
-     *
-     *
      * @param string $date
      *
      * @return self
@@ -134,8 +108,6 @@ class ReverseInvoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceNumber(): string
@@ -144,8 +116,6 @@ class ReverseInvoice
     }
 
     /**
-     *
-     *
      * @param string $invoiceNumber
      *
      * @return self
@@ -159,8 +129,6 @@ class ReverseInvoice
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPrice(): float
@@ -169,8 +137,6 @@ class ReverseInvoice
     }
 
     /**
-     *
-     *
      * @param float $price
      *
      * @return self
@@ -184,8 +150,6 @@ class ReverseInvoice
     }
 
     /**
-     *
-     *
      * @return GetProjectSimple
      */
     public function getProject(): GetProjectSimple
@@ -194,8 +158,6 @@ class ReverseInvoice
     }
 
     /**
-     *
-     *
      * @param GetProjectSimple $project
      *
      * @return self
@@ -209,8 +171,6 @@ class ReverseInvoice
     }
 
     /**
-     *
-     *
      * @return GetInvoiceSimple
      */
     public function getInvoice(): GetInvoiceSimple
@@ -219,8 +179,6 @@ class ReverseInvoice
     }
 
     /**
-     *
-     *
      * @param GetInvoiceSimple $invoice
      *
      * @return self

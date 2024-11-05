@@ -16,45 +16,31 @@ class PostInterest
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $apiName;
     /**
-     *
-     *
      * @var bool
      */
     protected $organization;
     /**
-     *
-     *
      * @var bool
      */
     protected $person;
     /**
-     *
-     *
      * @var bool
      */
     protected $contact;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -63,8 +49,6 @@ class PostInterest
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -78,8 +62,6 @@ class PostInterest
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -88,8 +70,6 @@ class PostInterest
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -103,8 +83,6 @@ class PostInterest
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getApiName(): string
@@ -113,8 +91,6 @@ class PostInterest
     }
 
     /**
-     *
-     *
      * @param string $apiName
      *
      * @return self
@@ -128,8 +104,6 @@ class PostInterest
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getOrganization(): bool
@@ -138,8 +112,6 @@ class PostInterest
     }
 
     /**
-     *
-     *
      * @param bool $organization
      *
      * @return self
@@ -153,8 +125,6 @@ class PostInterest
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getPerson(): bool
@@ -163,8 +133,6 @@ class PostInterest
     }
 
     /**
-     *
-     *
      * @param bool $person
      *
      * @return self
@@ -178,8 +146,6 @@ class PostInterest
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getContact(): bool
@@ -188,8 +154,6 @@ class PostInterest
     }
 
     /**
-     *
-     *
      * @param bool $contact
      *
      * @return self

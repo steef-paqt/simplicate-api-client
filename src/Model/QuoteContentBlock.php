@@ -16,39 +16,27 @@ class QuoteContentBlock
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $json;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -57,8 +45,6 @@ class QuoteContentBlock
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -72,8 +58,6 @@ class QuoteContentBlock
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -82,8 +66,6 @@ class QuoteContentBlock
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -97,8 +79,6 @@ class QuoteContentBlock
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getJson(): string
@@ -107,8 +87,6 @@ class QuoteContentBlock
     }
 
     /**
-     *
-     *
      * @param string $json
      *
      * @return self
@@ -122,8 +100,6 @@ class QuoteContentBlock
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -132,8 +108,6 @@ class QuoteContentBlock
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -147,8 +121,6 @@ class QuoteContentBlock
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -157,8 +129,6 @@ class QuoteContentBlock
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self

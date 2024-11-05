@@ -11,8 +11,6 @@ class PutHrmTimetableById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\PutTimetable $body Timetable object that needs to be updated
      */
     public function __construct(\Steefdw\Simplicate\Model\PutTimetable $body)

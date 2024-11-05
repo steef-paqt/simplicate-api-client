@@ -16,39 +16,27 @@ class Mileage
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var float
      */
     protected $mileage;
     /**
-     *
-     *
      * @var string
      */
     protected $relatedHoursId;
     /**
-     *
-     *
      * @var string
      */
     protected $source;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
 
     /**
-     *
-     *
      * @return float
      */
     public function getMileage(): float
@@ -57,8 +45,6 @@ class Mileage
     }
 
     /**
-     *
-     *
      * @param float $mileage
      *
      * @return self
@@ -72,8 +58,6 @@ class Mileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRelatedHoursId(): string
@@ -82,8 +66,6 @@ class Mileage
     }
 
     /**
-     *
-     *
      * @param string $relatedHoursId
      *
      * @return self
@@ -97,8 +79,6 @@ class Mileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSource(): string
@@ -107,8 +87,6 @@ class Mileage
     }
 
     /**
-     *
-     *
      * @param string $source
      *
      * @return self
@@ -122,8 +100,6 @@ class Mileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -132,8 +108,6 @@ class Mileage
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -147,8 +121,6 @@ class Mileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -157,8 +129,6 @@ class Mileage
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self

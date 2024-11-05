@@ -16,75 +16,51 @@ class PostAssignment
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $startDate = '2032-01-01';
     /**
-     *
-     *
      * @var string
      */
     protected $endDate = '2032-12-31';
     /**
-     *
-     *
      * @var string
      */
     protected $projecthourstypeId = 'hourstype:abc';
     /**
-     *
-     *
      * @var PostEmployeeFk[]
      */
     protected $employees;
     /**
-     *
-     *
      * @var string
      */
     protected $statusId = 'assignmentstatus:abc';
     /**
-     *
-     *
      * @var string
      */
     protected $name = 'Website Design Assignment';
     /**
-     *
-     *
      * @var bool
      */
     protected $useSpread;
     /**
-     *
-     *
      * @var string
      */
     protected $hoursType;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -93,8 +69,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -108,8 +82,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -118,8 +90,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -133,8 +103,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjecthourstypeId(): string
@@ -143,8 +111,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @param string $projecthourstypeId
      *
      * @return self
@@ -158,8 +124,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @return PostEmployeeFk[]
      */
     public function getEmployees(): array
@@ -168,8 +132,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @param PostEmployeeFk[] $employees
      *
      * @return self
@@ -183,8 +145,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatusId(): string
@@ -193,8 +153,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @param string $statusId
      *
      * @return self
@@ -208,8 +166,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -218,8 +174,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -233,8 +187,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getUseSpread(): bool
@@ -243,8 +195,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @param bool $useSpread
      *
      * @return self
@@ -258,8 +208,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getHoursType(): string
@@ -268,8 +216,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @param string $hoursType
      *
      * @return self
@@ -283,8 +229,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -293,8 +237,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -308,8 +250,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -318,8 +258,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -333,8 +271,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -343,8 +279,6 @@ class PostAssignment
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self

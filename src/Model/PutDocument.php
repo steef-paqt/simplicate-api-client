@@ -16,33 +16,23 @@ class PutDocument
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $documentTypeId;
     /**
-     *
-     *
      * @var string
      */
     protected $uploadQueueId;
     /**
-     *
-     *
      * @var string
      */
     protected $title;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
 
     /**
-     *
-     *
      * @return string
      */
     public function getDocumentTypeId(): string
@@ -51,8 +41,6 @@ class PutDocument
     }
 
     /**
-     *
-     *
      * @param string $documentTypeId
      *
      * @return self
@@ -66,8 +54,6 @@ class PutDocument
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUploadQueueId(): string
@@ -76,8 +62,6 @@ class PutDocument
     }
 
     /**
-     *
-     *
      * @param string $uploadQueueId
      *
      * @return self
@@ -91,8 +75,6 @@ class PutDocument
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -101,8 +83,6 @@ class PutDocument
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -116,8 +96,6 @@ class PutDocument
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -126,8 +104,6 @@ class PutDocument
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

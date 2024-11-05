@@ -16,39 +16,27 @@ class Leave
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var int
      */
     protected $year;
     /**
-     *
-     *
      * @var int
      */
     protected $hours;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -57,8 +45,6 @@ class Leave
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -72,8 +58,6 @@ class Leave
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -82,8 +66,6 @@ class Leave
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -97,8 +79,6 @@ class Leave
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getYear(): int
@@ -107,8 +87,6 @@ class Leave
     }
 
     /**
-     *
-     *
      * @param int $year
      *
      * @return self
@@ -122,8 +100,6 @@ class Leave
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getHours(): int
@@ -132,8 +108,6 @@ class Leave
     }
 
     /**
-     *
-     *
      * @param int $hours
      *
      * @return self
@@ -147,8 +121,6 @@ class Leave
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -157,8 +129,6 @@ class Leave
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

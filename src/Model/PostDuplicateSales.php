@@ -16,63 +16,43 @@ class PostDuplicateSales
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var bool
      */
     protected $isNewSubject;
     /**
-     *
-     *
      * @var string
      */
     protected $subject;
     /**
-     *
-     *
      * @var bool
      */
     protected $isNewResponsibleEmployee;
     /**
-     *
-     *
      * @var string
      */
     protected $responsibleEmployeeId;
     /**
-     *
-     *
      * @var bool
      */
     protected $isNewOrganizationOrPerson;
     /**
-     *
-     *
      * @var string
      */
     protected $organizationId;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsNewSubject(): bool
@@ -81,8 +61,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @param bool $isNewSubject
      *
      * @return self
@@ -96,8 +74,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubject(): string
@@ -106,8 +82,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @param string $subject
      *
      * @return self
@@ -121,8 +95,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsNewResponsibleEmployee(): bool
@@ -131,8 +103,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @param bool $isNewResponsibleEmployee
      *
      * @return self
@@ -146,8 +116,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getResponsibleEmployeeId(): string
@@ -156,8 +124,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @param string $responsibleEmployeeId
      *
      * @return self
@@ -171,8 +137,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsNewOrganizationOrPerson(): bool
@@ -181,8 +145,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @param bool $isNewOrganizationOrPerson
      *
      * @return self
@@ -196,8 +158,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizationId(): string
@@ -206,8 +166,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @param string $organizationId
      *
      * @return self
@@ -221,8 +179,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -231,8 +187,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -246,8 +200,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -256,8 +208,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -271,8 +221,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -281,8 +229,6 @@ class PostDuplicateSales
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self

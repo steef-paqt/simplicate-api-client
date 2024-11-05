@@ -16,21 +16,15 @@ class IsSatisfied
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var bool
      */
     protected $value;
     /**
-     *
-     *
      * @var IsSatisfiedReason
      */
     protected $reason;
 
     /**
-     *
-     *
      * @return bool
      */
     public function getValue(): bool
@@ -39,8 +33,6 @@ class IsSatisfied
     }
 
     /**
-     *
-     *
      * @param bool $value
      *
      * @return self
@@ -54,8 +46,6 @@ class IsSatisfied
     }
 
     /**
-     *
-     *
      * @return IsSatisfiedReason
      */
     public function getReason(): IsSatisfiedReason
@@ -64,8 +54,6 @@ class IsSatisfied
     }
 
     /**
-     *
-     *
      * @param IsSatisfiedReason $reason
      *
      * @return self

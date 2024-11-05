@@ -16,33 +16,23 @@ class ProjectEmployee
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $projectId;
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var float
      */
     protected $tariff;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -51,8 +41,6 @@ class ProjectEmployee
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -66,8 +54,6 @@ class ProjectEmployee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectId(): string
@@ -76,8 +62,6 @@ class ProjectEmployee
     }
 
     /**
-     *
-     *
      * @param string $projectId
      *
      * @return self
@@ -91,8 +75,6 @@ class ProjectEmployee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -101,8 +83,6 @@ class ProjectEmployee
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -116,8 +96,6 @@ class ProjectEmployee
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTariff(): float
@@ -126,8 +104,6 @@ class ProjectEmployee
     }
 
     /**
-     *
-     *
      * @param float $tariff
      *
      * @return self

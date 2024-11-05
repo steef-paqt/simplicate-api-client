@@ -16,8 +16,6 @@ class PostChunked
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $fileName;
@@ -29,8 +27,6 @@ class PostChunked
     protected $fileSize;
 
     /**
-     *
-     *
      * @return string
      */
     public function getFileName(): string
@@ -39,8 +35,6 @@ class PostChunked
     }
 
     /**
-     *
-     *
      * @param string $fileName
      *
      * @return self

@@ -16,39 +16,27 @@ class Quote
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $salesId;
     /**
-     *
-     *
      * @var string
      */
     protected $quoteSubject;
     /**
-     *
-     *
      * @var string
      */
     protected $json;
     /**
-     *
-     *
      * @var string
      */
     protected $customerReference;
     /**
-     *
-     *
      * @var int
      */
     protected $isBlocked;
 
     /**
-     *
-     *
      * @return string
      */
     public function getSalesId(): string
@@ -57,8 +45,6 @@ class Quote
     }
 
     /**
-     *
-     *
      * @param string $salesId
      *
      * @return self
@@ -72,8 +58,6 @@ class Quote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getQuoteSubject(): string
@@ -82,8 +66,6 @@ class Quote
     }
 
     /**
-     *
-     *
      * @param string $quoteSubject
      *
      * @return self
@@ -97,8 +79,6 @@ class Quote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getJson(): string
@@ -107,8 +87,6 @@ class Quote
     }
 
     /**
-     *
-     *
      * @param string $json
      *
      * @return self
@@ -122,8 +100,6 @@ class Quote
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCustomerReference(): string
@@ -132,8 +108,6 @@ class Quote
     }
 
     /**
-     *
-     *
      * @param string $customerReference
      *
      * @return self
@@ -147,8 +121,6 @@ class Quote
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getIsBlocked(): int
@@ -157,8 +129,6 @@ class Quote
     }
 
     /**
-     *
-     *
      * @param int $isBlocked
      *
      * @return self

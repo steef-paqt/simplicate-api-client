@@ -28,56 +28,38 @@ class PutProjectService
      */
     protected $revenueGroupId;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceMethod;
     /**
-     *
-     *
      * @var PostProjectServiceHoursType[]
      */
     protected $hourTypes;
     /**
-     *
-     *
      * @var string
      */
     protected $defaultServiceId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $explanation;
     /**
-     *
-     *
      * @var float
      */
     protected $amount;
     /**
-     *
-     *
      * @var float
      */
     protected $price;
     /**
-     *
-     *
      * @var bool
      */
     protected $trackHours;
     /**
-     *
-     *
      * @var bool
      */
     protected $trackCost;
@@ -133,8 +115,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceMethod(): string
@@ -143,8 +123,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @param string $invoiceMethod
      *
      * @return self
@@ -158,8 +136,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @return PostProjectServiceHoursType[]
      */
     public function getHourTypes(): array
@@ -168,8 +144,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @param PostProjectServiceHoursType[] $hourTypes
      *
      * @return self
@@ -183,8 +157,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDefaultServiceId(): string
@@ -193,8 +165,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @param string $defaultServiceId
      *
      * @return self
@@ -208,8 +178,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -218,8 +186,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -233,8 +199,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getExplanation(): string
@@ -243,8 +207,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @param string $explanation
      *
      * @return self
@@ -258,8 +220,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmount(): float
@@ -268,8 +228,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @param float $amount
      *
      * @return self
@@ -283,8 +241,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPrice(): float
@@ -293,8 +249,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @param float $price
      *
      * @return self
@@ -308,8 +262,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getTrackHours(): bool
@@ -318,8 +270,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @param bool $trackHours
      *
      * @return self
@@ -333,8 +283,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getTrackCost(): bool
@@ -343,8 +291,6 @@ class PutProjectService
     }
 
     /**
-     *
-     *
      * @param bool $trackCost
      *
      * @return self

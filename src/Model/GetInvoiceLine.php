@@ -16,81 +16,55 @@ class GetInvoiceLine
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var RevenueGroup
      */
     protected $revenueGroup;
     /**
-     *
-     *
      * @var string
      */
     protected $defaultServiceId;
     /**
-     *
-     *
      * @var VatClass
      */
     protected $vatClass;
     /**
-     *
-     *
      * @var float
      */
     protected $totalVat;
     /**
-     *
-     *
      * @var string
      */
     protected $serviceId;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $date;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var float
      */
     protected $amount;
     /**
-     *
-     *
      * @var float
      */
     protected $price;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -99,8 +73,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -114,8 +86,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @return RevenueGroup
      */
     public function getRevenueGroup(): RevenueGroup
@@ -124,8 +94,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @param RevenueGroup $revenueGroup
      *
      * @return self
@@ -139,8 +107,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDefaultServiceId(): string
@@ -149,8 +115,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @param string $defaultServiceId
      *
      * @return self
@@ -164,8 +128,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @return VatClass
      */
     public function getVatClass(): VatClass
@@ -174,8 +136,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @param VatClass $vatClass
      *
      * @return self
@@ -189,8 +149,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTotalVat(): float
@@ -199,8 +157,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @param float $totalVat
      *
      * @return self
@@ -214,8 +170,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getServiceId(): string
@@ -224,8 +178,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @param string $serviceId
      *
      * @return self
@@ -239,8 +191,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -249,8 +199,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -264,8 +212,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -274,8 +220,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -289,8 +233,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDate(): string
@@ -299,8 +241,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @param string $date
      *
      * @return self
@@ -314,8 +254,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -324,8 +262,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -339,8 +275,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmount(): float
@@ -349,8 +283,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @param float $amount
      *
      * @return self
@@ -364,8 +296,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPrice(): float
@@ -374,8 +304,6 @@ class GetInvoiceLine
     }
 
     /**
-     *
-     *
      * @param float $price
      *
      * @return self

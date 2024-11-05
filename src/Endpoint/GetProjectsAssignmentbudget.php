@@ -11,8 +11,6 @@ class GetProjectsAssignmentbudget extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param array $queryParameters {
      *     @var string $q[range_start]
      *     @var string $q[employee_id]

@@ -16,111 +16,75 @@ class Employee
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $bankAccount;
     /**
-     *
-     *
      * @var string
      */
     protected $function;
     /**
-     *
-     *
      * @var mixed
      */
     protected $type;
     /**
-     *
-     *
      * @var string
      */
     protected $employmentStatus;
     /**
-     *
-     *
      * @var string
      */
     protected $civilStatus;
     /**
-     *
-     *
      * @var string
      */
     protected $workPhone;
     /**
-     *
-     *
      * @var string
      */
     protected $workMobile;
     /**
-     *
-     *
      * @var string
      */
     protected $workEmail;
     /**
-     *
-     *
      * @var float
      */
     protected $hourlySalesTariff;
     /**
-     *
-     *
      * @var float
      */
     protected $hourlyCostTariff;
     /**
-     *
-     *
      * @var Avatar
      */
     protected $avatar;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $simplicateUrl;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -129,8 +93,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -144,8 +106,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -154,8 +114,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -169,8 +127,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -179,8 +135,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -194,8 +148,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBankAccount(): string
@@ -204,8 +156,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param string $bankAccount
      *
      * @return self
@@ -219,8 +169,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFunction(): string
@@ -229,8 +177,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param string $function
      *
      * @return self
@@ -244,8 +190,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return mixed
      */
     public function getType()
@@ -254,8 +198,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param mixed $type
      *
      * @return self
@@ -269,8 +211,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmploymentStatus(): string
@@ -279,8 +219,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param string $employmentStatus
      *
      * @return self
@@ -294,8 +232,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCivilStatus(): string
@@ -304,8 +240,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param string $civilStatus
      *
      * @return self
@@ -319,8 +253,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkPhone(): string
@@ -329,8 +261,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param string $workPhone
      *
      * @return self
@@ -344,8 +274,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkMobile(): string
@@ -354,8 +282,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param string $workMobile
      *
      * @return self
@@ -369,8 +295,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkEmail(): string
@@ -379,8 +303,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param string $workEmail
      *
      * @return self
@@ -394,8 +316,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getHourlySalesTariff(): float
@@ -404,8 +324,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param float $hourlySalesTariff
      *
      * @return self
@@ -419,8 +337,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getHourlyCostTariff(): float
@@ -429,8 +345,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param float $hourlyCostTariff
      *
      * @return self
@@ -444,8 +358,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return Avatar
      */
     public function getAvatar(): Avatar
@@ -454,8 +366,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param Avatar $avatar
      *
      * @return self
@@ -469,8 +379,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -479,8 +387,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -494,8 +400,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -504,8 +408,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -519,8 +421,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSimplicateUrl(): string
@@ -529,8 +429,6 @@ class Employee
     }
 
     /**
-     *
-     *
      * @param string $simplicateUrl
      *
      * @return self

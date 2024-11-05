@@ -11,8 +11,6 @@ class PutUploadChunkedById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PutChunked $body Next chunk for an chunked_upload
      */

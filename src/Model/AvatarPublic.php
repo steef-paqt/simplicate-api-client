@@ -16,39 +16,27 @@ class AvatarPublic
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $fullName;
     /**
-     *
-     *
      * @var string
      */
     protected $urlSmall;
     /**
-     *
-     *
      * @var string
      */
     protected $urlLarge;
     /**
-     *
-     *
      * @var string
      */
     protected $initials;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
 
     /**
-     *
-     *
      * @return string
      */
     public function getFullName(): string
@@ -57,8 +45,6 @@ class AvatarPublic
     }
 
     /**
-     *
-     *
      * @param string $fullName
      *
      * @return self
@@ -72,8 +58,6 @@ class AvatarPublic
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUrlSmall(): string
@@ -82,8 +66,6 @@ class AvatarPublic
     }
 
     /**
-     *
-     *
      * @param string $urlSmall
      *
      * @return self
@@ -97,8 +79,6 @@ class AvatarPublic
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUrlLarge(): string
@@ -107,8 +87,6 @@ class AvatarPublic
     }
 
     /**
-     *
-     *
      * @param string $urlLarge
      *
      * @return self
@@ -122,8 +100,6 @@ class AvatarPublic
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInitials(): string
@@ -132,8 +108,6 @@ class AvatarPublic
     }
 
     /**
-     *
-     *
      * @param string $initials
      *
      * @return self
@@ -147,8 +121,6 @@ class AvatarPublic
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -157,8 +129,6 @@ class AvatarPublic
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self

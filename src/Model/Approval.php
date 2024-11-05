@@ -16,15 +16,11 @@ class Approval
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $date;
 
     /**
-     *
-     *
      * @return string
      */
     public function getDate(): string
@@ -33,8 +29,6 @@ class Approval
     }
 
     /**
-     *
-     *
      * @param string $date
      *
      * @return self

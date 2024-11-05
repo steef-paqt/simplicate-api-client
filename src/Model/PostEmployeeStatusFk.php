@@ -16,15 +16,11 @@ class PostEmployeeStatusFk
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id = 'employeestatus:abc';
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -33,8 +29,6 @@ class PostEmployeeStatusFk
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self

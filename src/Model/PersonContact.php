@@ -16,75 +16,51 @@ class PersonContact
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var mixed
      */
     protected $firstName;
     /**
-     *
-     *
      * @var string
      */
     protected $familyNamePrefix;
     /**
-     *
-     *
      * @var string
      */
     protected $familyName;
     /**
-     *
-     *
      * @var bool
      */
     protected $isActive;
     /**
-     *
-     *
      * @var string
      */
     protected $workFunction;
     /**
-     *
-     *
      * @var string
      */
     protected $workEmail;
     /**
-     *
-     *
      * @var string
      */
     protected $workPhone;
     /**
-     *
-     *
      * @var string
      */
     protected $workMobile;
     /**
-     *
-     *
      * @var Interest[]
      */
     protected $interests;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -93,8 +69,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -108,8 +82,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -118,8 +90,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -133,8 +103,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @return mixed
      */
     public function getFirstName()
@@ -143,8 +111,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @param mixed $firstName
      *
      * @return self
@@ -158,8 +124,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFamilyNamePrefix(): string
@@ -168,8 +132,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @param string $familyNamePrefix
      *
      * @return self
@@ -183,8 +145,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFamilyName(): string
@@ -193,8 +153,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @param string $familyName
      *
      * @return self
@@ -208,8 +166,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsActive(): bool
@@ -218,8 +174,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @param bool $isActive
      *
      * @return self
@@ -233,8 +187,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkFunction(): string
@@ -243,8 +195,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @param string $workFunction
      *
      * @return self
@@ -258,8 +208,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkEmail(): string
@@ -268,8 +216,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @param string $workEmail
      *
      * @return self
@@ -283,8 +229,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkPhone(): string
@@ -293,8 +237,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @param string $workPhone
      *
      * @return self
@@ -308,8 +250,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkMobile(): string
@@ -318,8 +258,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @param string $workMobile
      *
      * @return self
@@ -333,8 +271,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @return Interest[]
      */
     public function getInterests(): array
@@ -343,8 +279,6 @@ class PersonContact
     }
 
     /**
-     *
-     *
      * @param Interest[] $interests
      *
      * @return self

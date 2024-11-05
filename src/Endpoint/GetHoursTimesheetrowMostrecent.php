@@ -11,8 +11,6 @@ class GetHoursTimesheetrowMostrecent extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param array $queryParameters {
      *     @var string $q[before_date]
      *     @var string $q[employee_id]

@@ -16,39 +16,27 @@ class ReminderTemplate
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $subject;
     /**
-     *
-     *
      * @var string
      */
     protected $body;
     /**
-     *
-     *
      * @var bool
      */
     protected $attachInvoice;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -57,8 +45,6 @@ class ReminderTemplate
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -72,8 +58,6 @@ class ReminderTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -82,8 +66,6 @@ class ReminderTemplate
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -97,8 +79,6 @@ class ReminderTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubject(): string
@@ -107,8 +87,6 @@ class ReminderTemplate
     }
 
     /**
-     *
-     *
      * @param string $subject
      *
      * @return self
@@ -122,8 +100,6 @@ class ReminderTemplate
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBody(): string
@@ -132,8 +108,6 @@ class ReminderTemplate
     }
 
     /**
-     *
-     *
      * @param string $body
      *
      * @return self
@@ -147,8 +121,6 @@ class ReminderTemplate
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getAttachInvoice(): bool
@@ -157,8 +129,6 @@ class ReminderTemplate
     }
 
     /**
-     *
-     *
      * @param bool $attachInvoice
      *
      * @return self

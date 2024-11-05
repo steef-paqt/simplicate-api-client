@@ -16,33 +16,23 @@ class DefaultService
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $myOrganizationProfileId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var bool
      */
     protected $priceEditable;
     /**
-     *
-     *
      * @var float
      */
     protected $price;
 
     /**
-     *
-     *
      * @return string
      */
     public function getMyOrganizationProfileId(): string
@@ -51,8 +41,6 @@ class DefaultService
     }
 
     /**
-     *
-     *
      * @param string $myOrganizationProfileId
      *
      * @return self
@@ -66,8 +54,6 @@ class DefaultService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -76,8 +62,6 @@ class DefaultService
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -91,8 +75,6 @@ class DefaultService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getPriceEditable(): bool
@@ -101,8 +83,6 @@ class DefaultService
     }
 
     /**
-     *
-     *
      * @param bool $priceEditable
      *
      * @return self
@@ -116,8 +96,6 @@ class DefaultService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPrice(): float
@@ -126,8 +104,6 @@ class DefaultService
     }
 
     /**
-     *
-     *
      * @param float $price
      *
      * @return self

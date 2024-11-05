@@ -16,33 +16,23 @@ class Payment
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceId;
     /**
-     *
-     *
      * @var string
      */
     protected $date;
     /**
-     *
-     *
      * @var float
      */
     protected $amount;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceId(): string
@@ -51,8 +41,6 @@ class Payment
     }
 
     /**
-     *
-     *
      * @param string $invoiceId
      *
      * @return self
@@ -66,8 +54,6 @@ class Payment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDate(): string
@@ -76,8 +62,6 @@ class Payment
     }
 
     /**
-     *
-     *
      * @param string $date
      *
      * @return self
@@ -91,8 +75,6 @@ class Payment
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmount(): float
@@ -101,8 +83,6 @@ class Payment
     }
 
     /**
-     *
-     *
      * @param float $amount
      *
      * @return self
@@ -116,8 +96,6 @@ class Payment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -126,8 +104,6 @@ class Payment
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

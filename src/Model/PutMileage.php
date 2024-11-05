@@ -16,45 +16,31 @@ class PutMileage
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $approvalstatusId;
     /**
-     *
-     *
      * @var float
      */
     protected $mileage;
     /**
-     *
-     *
      * @var string
      */
     protected $relatedHoursId;
     /**
-     *
-     *
      * @var string
      */
     protected $source;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
 
     /**
-     *
-     *
      * @return string
      */
     public function getApprovalstatusId(): string
@@ -63,8 +49,6 @@ class PutMileage
     }
 
     /**
-     *
-     *
      * @param string $approvalstatusId
      *
      * @return self
@@ -78,8 +62,6 @@ class PutMileage
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getMileage(): float
@@ -88,8 +70,6 @@ class PutMileage
     }
 
     /**
-     *
-     *
      * @param float $mileage
      *
      * @return self
@@ -103,8 +83,6 @@ class PutMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRelatedHoursId(): string
@@ -113,8 +91,6 @@ class PutMileage
     }
 
     /**
-     *
-     *
      * @param string $relatedHoursId
      *
      * @return self
@@ -128,8 +104,6 @@ class PutMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSource(): string
@@ -138,8 +112,6 @@ class PutMileage
     }
 
     /**
-     *
-     *
      * @param string $source
      *
      * @return self
@@ -153,8 +125,6 @@ class PutMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -163,8 +133,6 @@ class PutMileage
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -178,8 +146,6 @@ class PutMileage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -188,8 +154,6 @@ class PutMileage
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self

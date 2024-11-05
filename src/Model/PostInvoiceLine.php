@@ -16,45 +16,31 @@ class PostInvoiceLine
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $vatClassId;
     /**
-     *
-     *
      * @var string
      */
     protected $revenueGroupId;
     /**
-     *
-     *
      * @var string
      */
     protected $date;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var float
      */
     protected $amount;
     /**
-     *
-     *
      * @var float
      */
     protected $price;
 
     /**
-     *
-     *
      * @return string
      */
     public function getVatClassId(): string
@@ -63,8 +49,6 @@ class PostInvoiceLine
     }
 
     /**
-     *
-     *
      * @param string $vatClassId
      *
      * @return self
@@ -78,8 +62,6 @@ class PostInvoiceLine
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRevenueGroupId(): string
@@ -88,8 +70,6 @@ class PostInvoiceLine
     }
 
     /**
-     *
-     *
      * @param string $revenueGroupId
      *
      * @return self
@@ -103,8 +83,6 @@ class PostInvoiceLine
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDate(): string
@@ -113,8 +91,6 @@ class PostInvoiceLine
     }
 
     /**
-     *
-     *
      * @param string $date
      *
      * @return self
@@ -128,8 +104,6 @@ class PostInvoiceLine
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -138,8 +112,6 @@ class PostInvoiceLine
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -153,8 +125,6 @@ class PostInvoiceLine
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmount(): float
@@ -163,8 +133,6 @@ class PostInvoiceLine
     }
 
     /**
-     *
-     *
      * @param float $amount
      *
      * @return self
@@ -178,8 +146,6 @@ class PostInvoiceLine
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPrice(): float
@@ -188,8 +154,6 @@ class PostInvoiceLine
     }
 
     /**
-     *
-     *
      * @param float $price
      *
      * @return self

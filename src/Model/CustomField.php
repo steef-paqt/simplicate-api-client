@@ -16,81 +16,55 @@ class CustomField
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $value;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
     /**
-     *
-     *
      * @var string
      */
     protected $renderType;
     /**
-     *
-     *
      * @var int
      */
     protected $position;
     /**
-     *
-     *
      * @var bool
      */
     protected $filterable;
     /**
-     *
-     *
      * @var bool
      */
     protected $searchable;
     /**
-     *
-     *
      * @var bool
      */
     protected $mandatory;
     /**
-     *
-     *
      * @var string
      */
     protected $valueType;
     /**
-     *
-     *
      * @var CustomFieldGroup
      */
     protected $customFieldGroup;
     /**
-     *
-     *
      * @var CustomFieldOption[]
      */
     protected $options;
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -99,8 +73,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -114,8 +86,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -124,8 +94,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -139,8 +107,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getValue(): string
@@ -149,8 +115,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @param string $value
      *
      * @return self
@@ -164,8 +128,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -174,8 +136,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self
@@ -189,8 +149,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRenderType(): string
@@ -199,8 +157,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @param string $renderType
      *
      * @return self
@@ -214,8 +170,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getPosition(): int
@@ -224,8 +178,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @param int $position
      *
      * @return self
@@ -239,8 +191,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getFilterable(): bool
@@ -249,8 +199,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @param bool $filterable
      *
      * @return self
@@ -264,8 +212,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getSearchable(): bool
@@ -274,8 +220,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @param bool $searchable
      *
      * @return self
@@ -289,8 +233,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getMandatory(): bool
@@ -299,8 +241,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @param bool $mandatory
      *
      * @return self
@@ -314,8 +254,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getValueType(): string
@@ -324,8 +262,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @param string $valueType
      *
      * @return self
@@ -339,8 +275,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @return CustomFieldGroup
      */
     public function getCustomFieldGroup(): CustomFieldGroup
@@ -349,8 +283,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @param CustomFieldGroup $customFieldGroup
      *
      * @return self
@@ -364,8 +296,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @return CustomFieldOption[]
      */
     public function getOptions(): array
@@ -374,8 +304,6 @@ class CustomField
     }
 
     /**
-     *
-     *
      * @param CustomFieldOption[] $options
      *
      * @return self

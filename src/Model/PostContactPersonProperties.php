@@ -16,27 +16,19 @@ class PostContactPersonProperties
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $workFunction;
     /**
-     *
-     *
      * @var string
      */
     protected $workEmail;
     /**
-     *
-     *
      * @var string
      */
     protected $workMobile;
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkFunction(): string
@@ -45,8 +37,6 @@ class PostContactPersonProperties
     }
 
     /**
-     *
-     *
      * @param string $workFunction
      *
      * @return self
@@ -60,8 +50,6 @@ class PostContactPersonProperties
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkEmail(): string
@@ -70,8 +58,6 @@ class PostContactPersonProperties
     }
 
     /**
-     *
-     *
      * @param string $workEmail
      *
      * @return self
@@ -85,8 +71,6 @@ class PostContactPersonProperties
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkMobile(): string
@@ -95,8 +79,6 @@ class PostContactPersonProperties
     }
 
     /**
-     *
-     *
      * @param string $workMobile
      *
      * @return self

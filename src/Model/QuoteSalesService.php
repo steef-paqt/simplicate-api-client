@@ -16,99 +16,67 @@ class QuoteSalesService
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $vatCode;
     /**
-     *
-     *
      * @var string
      */
     protected $vatDescription;
     /**
-     *
-     *
      * @var string
      */
     protected $salesId;
     /**
-     *
-     *
      * @var string
      */
     protected $defaultServiceId;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceMethod;
     /**
-     *
-     *
      * @var float
      */
     protected $amount;
     /**
-     *
-     *
      * @var float
      */
     protected $price;
     /**
-     *
-     *
      * @var int
      */
     protected $showItemtype;
     /**
-     *
-     *
      * @var string
      */
     protected $total;
     /**
-     *
-     *
      * @var int
      */
     protected $position;
     /**
-     *
-     *
      * @var string
      */
     protected $subscriptionCycle;
     /**
-     *
-     *
      * @var string
      */
     protected $explanation;
     /**
-     *
-     *
      * @var bool
      */
     protected $trackHours;
     /**
-     *
-     *
      * @var bool
      */
     protected $trackCost;
 
     /**
-     *
-     *
      * @return string
      */
     public function getVatCode(): string
@@ -117,8 +85,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param string $vatCode
      *
      * @return self
@@ -132,8 +98,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getVatDescription(): string
@@ -142,8 +106,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param string $vatDescription
      *
      * @return self
@@ -157,8 +119,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSalesId(): string
@@ -167,8 +127,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param string $salesId
      *
      * @return self
@@ -182,8 +140,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDefaultServiceId(): string
@@ -192,8 +148,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param string $defaultServiceId
      *
      * @return self
@@ -207,8 +161,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -217,8 +169,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -232,8 +182,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceMethod(): string
@@ -242,8 +190,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param string $invoiceMethod
      *
      * @return self
@@ -257,8 +203,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmount(): float
@@ -267,8 +211,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param float $amount
      *
      * @return self
@@ -282,8 +224,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getPrice(): float
@@ -292,8 +232,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param float $price
      *
      * @return self
@@ -307,8 +245,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getShowItemtype(): int
@@ -317,8 +253,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param int $showItemtype
      *
      * @return self
@@ -332,8 +266,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTotal(): string
@@ -342,8 +274,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param string $total
      *
      * @return self
@@ -357,8 +287,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getPosition(): int
@@ -367,8 +295,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param int $position
      *
      * @return self
@@ -382,8 +308,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubscriptionCycle(): string
@@ -392,8 +316,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param string $subscriptionCycle
      *
      * @return self
@@ -407,8 +329,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getExplanation(): string
@@ -417,8 +337,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param string $explanation
      *
      * @return self
@@ -432,8 +350,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getTrackHours(): bool
@@ -442,8 +358,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param bool $trackHours
      *
      * @return self
@@ -457,8 +371,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getTrackCost(): bool
@@ -467,8 +379,6 @@ class QuoteSalesService
     }
 
     /**
-     *
-     *
      * @param bool $trackCost
      *
      * @return self

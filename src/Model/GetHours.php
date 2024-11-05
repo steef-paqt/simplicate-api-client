@@ -16,26 +16,18 @@ class GetHours
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $employee;
     /**
-     *
-     *
      * @var GetProjectSimple
      */
     protected $project;
     /**
-     *
-     *
      * @var GetHoursHoursProjectService
      */
     protected $projectservice;
@@ -46,14 +38,10 @@ class GetHours
      */
     protected $type;
     /**
-     *
-     *
      * @var GetApprovalStatus
      */
     protected $approvalstatus;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceStatus;
@@ -70,177 +58,119 @@ class GetHours
      */
     protected $invoicelineId;
     /**
-     *
-     *
      * @var float
      */
     protected $tariff;
     /**
-     *
-     *
      * @var GetCustomField[]
      */
     protected $customFields;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var bool
      */
     protected $locked;
     /**
-     *
-     *
      * @var IsSatisfied
      */
     protected $isEditable;
     /**
-     *
-     *
      * @var IsSatisfied
      */
     protected $isDeletable;
     /**
-     *
-     *
      * @var LeaveStatus
      */
     protected $leaveStatus;
     /**
-     *
-     *
      * @var string
      */
     protected $leaveId;
     /**
-     *
-     *
      * @var string
      */
     protected $absenceId;
     /**
-     *
-     *
      * @var string
      */
     protected $status;
     /**
-     *
-     *
      * @var Correction
      */
     protected $corrections;
     /**
-     *
-     *
      * @var GetMileageSimple
      */
     protected $mileage;
     /**
-     *
-     *
      * @var bool
      */
     protected $isProductive;
     /**
-     *
-     *
      * @var float
      */
     protected $hours;
     /**
-     *
-     *
      * @var int
      */
     protected $durationInMinutes;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var bool
      */
     protected $isTimeDefined;
     /**
-     *
-     *
      * @var bool
      */
     protected $isRecurring;
     /**
-     *
-     *
      * @var Recurrence
      */
     protected $recurrence;
     /**
-     *
-     *
      * @var bool
      */
     protected $isExternal;
     /**
-     *
-     *
      * @var bool
      */
     protected $billable;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var Address
      */
     protected $address;
     /**
-     *
-     *
      * @var string
      */
     protected $assignmentId;
     /**
-     *
-     *
      * @var bool
      */
     protected $shouldSyncToCronofy;
     /**
-     *
-     *
      * @var string
      */
     protected $source;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -249,8 +179,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -264,8 +192,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getEmployee(): GetEmployeeSimple
@@ -274,8 +200,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $employee
      *
      * @return self
@@ -289,8 +213,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return GetProjectSimple
      */
     public function getProject(): GetProjectSimple
@@ -299,8 +221,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param GetProjectSimple $project
      *
      * @return self
@@ -314,8 +234,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return GetHoursHoursProjectService
      */
     public function getProjectservice(): GetHoursHoursProjectService
@@ -324,8 +242,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param GetHoursHoursProjectService $projectservice
      *
      * @return self
@@ -364,8 +280,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return GetApprovalStatus
      */
     public function getApprovalstatus(): GetApprovalStatus
@@ -374,8 +288,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param GetApprovalStatus $approvalstatus
      *
      * @return self
@@ -389,8 +301,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceStatus(): string
@@ -399,8 +309,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param string $invoiceStatus
      *
      * @return self
@@ -464,8 +372,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTariff(): float
@@ -474,8 +380,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param float $tariff
      *
      * @return self
@@ -489,8 +393,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return GetCustomField[]
      */
     public function getCustomFields(): array
@@ -499,8 +401,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param GetCustomField[] $customFields
      *
      * @return self
@@ -514,8 +414,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -524,8 +422,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -539,8 +435,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -549,8 +443,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -564,8 +456,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getLocked(): bool
@@ -574,8 +464,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param bool $locked
      *
      * @return self
@@ -589,8 +477,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return IsSatisfied
      */
     public function getIsEditable(): IsSatisfied
@@ -599,8 +485,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param IsSatisfied $isEditable
      *
      * @return self
@@ -614,8 +498,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return IsSatisfied
      */
     public function getIsDeletable(): IsSatisfied
@@ -624,8 +506,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param IsSatisfied $isDeletable
      *
      * @return self
@@ -639,8 +519,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return LeaveStatus
      */
     public function getLeaveStatus(): LeaveStatus
@@ -649,8 +527,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param LeaveStatus $leaveStatus
      *
      * @return self
@@ -664,8 +540,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLeaveId(): string
@@ -674,8 +548,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param string $leaveId
      *
      * @return self
@@ -689,8 +561,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAbsenceId(): string
@@ -699,8 +569,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param string $absenceId
      *
      * @return self
@@ -714,8 +582,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatus(): string
@@ -724,8 +590,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param string $status
      *
      * @return self
@@ -739,8 +603,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return Correction
      */
     public function getCorrections(): Correction
@@ -749,8 +611,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param Correction $corrections
      *
      * @return self
@@ -764,8 +624,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return GetMileageSimple
      */
     public function getMileage(): GetMileageSimple
@@ -774,8 +632,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param GetMileageSimple $mileage
      *
      * @return self
@@ -789,8 +645,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsProductive(): bool
@@ -799,8 +653,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param bool $isProductive
      *
      * @return self
@@ -814,8 +666,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getHours(): float
@@ -824,8 +674,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param float $hours
      *
      * @return self
@@ -839,8 +687,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getDurationInMinutes(): int
@@ -849,8 +695,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param int $durationInMinutes
      *
      * @return self
@@ -864,8 +708,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -874,8 +716,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -889,8 +729,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -899,8 +737,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -914,8 +750,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsTimeDefined(): bool
@@ -924,8 +758,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param bool $isTimeDefined
      *
      * @return self
@@ -939,8 +771,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsRecurring(): bool
@@ -949,8 +779,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param bool $isRecurring
      *
      * @return self
@@ -964,8 +792,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return Recurrence
      */
     public function getRecurrence(): Recurrence
@@ -974,8 +800,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param Recurrence $recurrence
      *
      * @return self
@@ -989,8 +813,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsExternal(): bool
@@ -999,8 +821,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param bool $isExternal
      *
      * @return self
@@ -1014,8 +834,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBillable(): bool
@@ -1024,8 +842,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param bool $billable
      *
      * @return self
@@ -1039,8 +855,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -1049,8 +863,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -1064,8 +876,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return Address
      */
     public function getAddress(): Address
@@ -1074,8 +884,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param Address $address
      *
      * @return self
@@ -1089,8 +897,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getAssignmentId(): string
@@ -1099,8 +905,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param string $assignmentId
      *
      * @return self
@@ -1114,8 +918,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getShouldSyncToCronofy(): bool
@@ -1124,8 +926,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param bool $shouldSyncToCronofy
      *
      * @return self
@@ -1139,8 +939,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSource(): string
@@ -1149,8 +947,6 @@ class GetHours
     }
 
     /**
-     *
-     *
      * @param string $source
      *
      * @return self

@@ -16,39 +16,27 @@ class QuotePortalLabel
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $quoteTemplateId;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $value;
     /**
-     *
-     *
      * @var string
      */
     protected $fallbackValue;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -57,8 +45,6 @@ class QuotePortalLabel
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -72,8 +58,6 @@ class QuotePortalLabel
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getQuoteTemplateId(): string
@@ -82,8 +66,6 @@ class QuotePortalLabel
     }
 
     /**
-     *
-     *
      * @param string $quoteTemplateId
      *
      * @return self
@@ -97,8 +79,6 @@ class QuotePortalLabel
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -107,8 +87,6 @@ class QuotePortalLabel
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -122,8 +100,6 @@ class QuotePortalLabel
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getValue(): string
@@ -132,8 +108,6 @@ class QuotePortalLabel
     }
 
     /**
-     *
-     *
      * @param string $value
      *
      * @return self
@@ -147,8 +121,6 @@ class QuotePortalLabel
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFallbackValue(): string
@@ -157,8 +129,6 @@ class QuotePortalLabel
     }
 
     /**
-     *
-     *
      * @param string $fallbackValue
      *
      * @return self

@@ -22,68 +22,46 @@ class GetTimetable
      */
     protected $id;
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $employee;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var float
      */
     protected $hourlySalesTariff;
     /**
-     *
-     *
      * @var float
      */
     protected $hourlyCostTariff;
     /**
-     *
-     *
      * @var TimetableWeek
      */
     protected $evenWeek;
     /**
-     *
-     *
      * @var TimetableWeek
      */
     protected $oddWeek;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var int
      */
     protected $productivityTarget;
     /**
-     *
-     *
      * @var bool
      */
     protected $shouldWriteHours;
@@ -114,8 +92,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getEmployee(): GetEmployeeSimple
@@ -124,8 +100,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $employee
      *
      * @return self
@@ -139,8 +113,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -149,8 +121,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -164,8 +134,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -174,8 +142,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -189,8 +155,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getHourlySalesTariff(): float
@@ -199,8 +163,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @param float $hourlySalesTariff
      *
      * @return self
@@ -214,8 +176,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getHourlyCostTariff(): float
@@ -224,8 +184,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @param float $hourlyCostTariff
      *
      * @return self
@@ -239,8 +197,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @return TimetableWeek
      */
     public function getEvenWeek(): TimetableWeek
@@ -249,8 +205,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @param TimetableWeek $evenWeek
      *
      * @return self
@@ -264,8 +218,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @return TimetableWeek
      */
     public function getOddWeek(): TimetableWeek
@@ -274,8 +226,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @param TimetableWeek $oddWeek
      *
      * @return self
@@ -289,8 +239,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -299,8 +247,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -314,8 +260,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -324,8 +268,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -339,8 +281,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getProductivityTarget(): int
@@ -349,8 +289,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @param int $productivityTarget
      *
      * @return self
@@ -364,8 +302,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getShouldWriteHours(): bool
@@ -374,8 +310,6 @@ class GetTimetable
     }
 
     /**
-     *
-     *
      * @param bool $shouldWriteHours
      *
      * @return self

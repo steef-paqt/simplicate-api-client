@@ -16,51 +16,35 @@ class TimetableWeek
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var TimetableWeekDay
      */
     protected $day1;
     /**
-     *
-     *
      * @var TimetableWeekDay
      */
     protected $day2;
     /**
-     *
-     *
      * @var TimetableWeekDay
      */
     protected $day3;
     /**
-     *
-     *
      * @var TimetableWeekDay
      */
     protected $day4;
     /**
-     *
-     *
      * @var TimetableWeekDay
      */
     protected $day5;
     /**
-     *
-     *
      * @var TimetableWeekDay
      */
     protected $day6;
     /**
-     *
-     *
      * @var TimetableWeekDay
      */
     protected $day7;
 
     /**
-     *
-     *
      * @return TimetableWeekDay
      */
     public function getDay1(): TimetableWeekDay
@@ -69,8 +53,6 @@ class TimetableWeek
     }
 
     /**
-     *
-     *
      * @param TimetableWeekDay $day1
      *
      * @return self
@@ -84,8 +66,6 @@ class TimetableWeek
     }
 
     /**
-     *
-     *
      * @return TimetableWeekDay
      */
     public function getDay2(): TimetableWeekDay
@@ -94,8 +74,6 @@ class TimetableWeek
     }
 
     /**
-     *
-     *
      * @param TimetableWeekDay $day2
      *
      * @return self
@@ -109,8 +87,6 @@ class TimetableWeek
     }
 
     /**
-     *
-     *
      * @return TimetableWeekDay
      */
     public function getDay3(): TimetableWeekDay
@@ -119,8 +95,6 @@ class TimetableWeek
     }
 
     /**
-     *
-     *
      * @param TimetableWeekDay $day3
      *
      * @return self
@@ -134,8 +108,6 @@ class TimetableWeek
     }
 
     /**
-     *
-     *
      * @return TimetableWeekDay
      */
     public function getDay4(): TimetableWeekDay
@@ -144,8 +116,6 @@ class TimetableWeek
     }
 
     /**
-     *
-     *
      * @param TimetableWeekDay $day4
      *
      * @return self
@@ -159,8 +129,6 @@ class TimetableWeek
     }
 
     /**
-     *
-     *
      * @return TimetableWeekDay
      */
     public function getDay5(): TimetableWeekDay
@@ -169,8 +137,6 @@ class TimetableWeek
     }
 
     /**
-     *
-     *
      * @param TimetableWeekDay $day5
      *
      * @return self
@@ -184,8 +150,6 @@ class TimetableWeek
     }
 
     /**
-     *
-     *
      * @return TimetableWeekDay
      */
     public function getDay6(): TimetableWeekDay
@@ -194,8 +158,6 @@ class TimetableWeek
     }
 
     /**
-     *
-     *
      * @param TimetableWeekDay $day6
      *
      * @return self
@@ -209,8 +171,6 @@ class TimetableWeek
     }
 
     /**
-     *
-     *
      * @return TimetableWeekDay
      */
     public function getDay7(): TimetableWeekDay
@@ -219,8 +179,6 @@ class TimetableWeek
     }
 
     /**
-     *
-     *
      * @param TimetableWeekDay $day7
      *
      * @return self

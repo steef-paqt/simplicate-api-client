@@ -16,33 +16,23 @@ class GetSeparateInvoiceRecipient
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var GetOrganizationSimple
      */
     protected $organization;
     /**
-     *
-     *
      * @var GetPersonSimple
      */
     protected $person;
     /**
-     *
-     *
      * @var GetContactSimple
      */
     protected $contact;
     /**
-     *
-     *
      * @var bool
      */
     protected $isSeparateInvoiceRecipient;
 
     /**
-     *
-     *
      * @return GetOrganizationSimple
      */
     public function getOrganization(): GetOrganizationSimple
@@ -51,8 +41,6 @@ class GetSeparateInvoiceRecipient
     }
 
     /**
-     *
-     *
      * @param GetOrganizationSimple $organization
      *
      * @return self
@@ -66,8 +54,6 @@ class GetSeparateInvoiceRecipient
     }
 
     /**
-     *
-     *
      * @return GetPersonSimple
      */
     public function getPerson(): GetPersonSimple
@@ -76,8 +62,6 @@ class GetSeparateInvoiceRecipient
     }
 
     /**
-     *
-     *
      * @param GetPersonSimple $person
      *
      * @return self
@@ -91,8 +75,6 @@ class GetSeparateInvoiceRecipient
     }
 
     /**
-     *
-     *
      * @return GetContactSimple
      */
     public function getContact(): GetContactSimple
@@ -101,8 +83,6 @@ class GetSeparateInvoiceRecipient
     }
 
     /**
-     *
-     *
      * @param GetContactSimple $contact
      *
      * @return self
@@ -116,8 +96,6 @@ class GetSeparateInvoiceRecipient
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsSeparateInvoiceRecipient(): bool
@@ -126,8 +104,6 @@ class GetSeparateInvoiceRecipient
     }
 
     /**
-     *
-     *
      * @param bool $isSeparateInvoiceRecipient
      *
      * @return self

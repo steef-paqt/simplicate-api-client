@@ -16,33 +16,23 @@ class PostProjectServiceHoursType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $hourstypeId;
     /**
-     *
-     *
      * @var float
      */
     protected $budgetedAmount;
     /**
-     *
-     *
      * @var float
      */
     protected $tariff;
     /**
-     *
-     *
      * @var bool
      */
     protected $billable;
 
     /**
-     *
-     *
      * @return string
      */
     public function getHourstypeId(): string
@@ -51,8 +41,6 @@ class PostProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @param string $hourstypeId
      *
      * @return self
@@ -66,8 +54,6 @@ class PostProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getBudgetedAmount(): float
@@ -76,8 +62,6 @@ class PostProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @param float $budgetedAmount
      *
      * @return self
@@ -91,8 +75,6 @@ class PostProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getTariff(): float
@@ -101,8 +83,6 @@ class PostProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @param float $tariff
      *
      * @return self
@@ -116,8 +96,6 @@ class PostProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBillable(): bool
@@ -126,8 +104,6 @@ class PostProjectServiceHoursType
     }
 
     /**
-     *
-     *
      * @param bool $billable
      *
      * @return self

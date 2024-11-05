@@ -16,63 +16,43 @@ class GetLeaveType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var bool
      */
     protected $hasWorkflow;
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
     /**
-     *
-     *
      * @var float
      */
     protected $billable;
     /**
-     *
-     *
      * @var VatClass
      */
     protected $vatclass;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $tariff;
     /**
-     *
-     *
      * @var bool
      */
     protected $blocked;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
 
     /**
-     *
-     *
      * @return bool
      */
     public function getHasWorkflow(): bool
@@ -81,8 +61,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @param bool $hasWorkflow
      *
      * @return self
@@ -96,8 +74,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -106,8 +82,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -121,8 +95,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -131,8 +103,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self
@@ -146,8 +116,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getBillable(): float
@@ -156,8 +124,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @param float $billable
      *
      * @return self
@@ -171,8 +137,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @return VatClass
      */
     public function getVatclass(): VatClass
@@ -181,8 +145,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @param VatClass $vatclass
      *
      * @return self
@@ -196,8 +158,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -206,8 +166,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -221,8 +179,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTariff(): string
@@ -231,8 +187,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @param string $tariff
      *
      * @return self
@@ -246,8 +200,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBlocked(): bool
@@ -256,8 +208,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @param bool $blocked
      *
      * @return self
@@ -271,8 +221,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -281,8 +229,6 @@ class GetLeaveType
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self

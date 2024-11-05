@@ -16,21 +16,15 @@ class RecentSalesQuote
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $quoteNumber;
     /**
-     *
-     *
      * @var RecentSalesQuoteStatus
      */
     protected $status;
 
     /**
-     *
-     *
      * @return string
      */
     public function getQuoteNumber(): string
@@ -39,8 +33,6 @@ class RecentSalesQuote
     }
 
     /**
-     *
-     *
      * @param string $quoteNumber
      *
      * @return self
@@ -54,8 +46,6 @@ class RecentSalesQuote
     }
 
     /**
-     *
-     *
      * @return RecentSalesQuoteStatus
      */
     public function getStatus(): RecentSalesQuoteStatus
@@ -64,8 +54,6 @@ class RecentSalesQuote
     }
 
     /**
-     *
-     *
      * @param RecentSalesQuoteStatus $status
      *
      * @return self

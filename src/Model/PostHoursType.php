@@ -16,8 +16,6 @@ class PostHoursType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $type;
@@ -28,33 +26,23 @@ class PostHoursType
      */
     protected $vatclassId;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $tariff;
     /**
-     *
-     *
      * @var bool
      */
     protected $blocked;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -63,8 +51,6 @@ class PostHoursType
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self
@@ -103,8 +89,6 @@ class PostHoursType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -113,8 +97,6 @@ class PostHoursType
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -128,8 +110,6 @@ class PostHoursType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTariff(): string
@@ -138,8 +118,6 @@ class PostHoursType
     }
 
     /**
-     *
-     *
      * @param string $tariff
      *
      * @return self
@@ -153,8 +131,6 @@ class PostHoursType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBlocked(): bool
@@ -163,8 +139,6 @@ class PostHoursType
     }
 
     /**
-     *
-     *
      * @param bool $blocked
      *
      * @return self
@@ -178,8 +152,6 @@ class PostHoursType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -188,8 +160,6 @@ class PostHoursType
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self

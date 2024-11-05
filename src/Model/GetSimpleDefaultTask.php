@@ -16,21 +16,15 @@ class GetSimpleDefaultTask
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var bool
      */
     protected $description;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -39,8 +33,6 @@ class GetSimpleDefaultTask
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -54,8 +46,6 @@ class GetSimpleDefaultTask
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getDescription(): bool
@@ -64,8 +54,6 @@ class GetSimpleDefaultTask
     }
 
     /**
-     *
-     *
      * @param bool $description
      *
      * @return self

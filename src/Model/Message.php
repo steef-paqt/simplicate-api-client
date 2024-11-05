@@ -16,33 +16,23 @@ class Message
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $title;
     /**
-     *
-     *
      * @var ContentField[]
      */
     protected $contentFields;
     /**
-     *
-     *
      * @var string
      */
     protected $content;
     /**
-     *
-     *
      * @var string
      */
     protected $displayDate;
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -51,8 +41,6 @@ class Message
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -66,8 +54,6 @@ class Message
     }
 
     /**
-     *
-     *
      * @return ContentField[]
      */
     public function getContentFields(): array
@@ -76,8 +62,6 @@ class Message
     }
 
     /**
-     *
-     *
      * @param ContentField[] $contentFields
      *
      * @return self
@@ -91,8 +75,6 @@ class Message
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getContent(): string
@@ -101,8 +83,6 @@ class Message
     }
 
     /**
-     *
-     *
      * @param string $content
      *
      * @return self
@@ -116,8 +96,6 @@ class Message
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDisplayDate(): string
@@ -126,8 +104,6 @@ class Message
     }
 
     /**
-     *
-     *
      * @param string $displayDate
      *
      * @return self

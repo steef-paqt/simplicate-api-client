@@ -16,39 +16,27 @@ class RestError
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var int
      */
     protected $code;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
     /**
-     *
-     *
      * @var string
      */
     protected $message;
     /**
-     *
-     *
      * @var string
      */
     protected $translatedMessage;
     /**
-     *
-     *
      * @var string
      */
     protected $errorMessage;
 
     /**
-     *
-     *
      * @return int
      */
     public function getCode(): int
@@ -57,8 +45,6 @@ class RestError
     }
 
     /**
-     *
-     *
      * @param int $code
      *
      * @return self
@@ -72,8 +58,6 @@ class RestError
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -82,8 +66,6 @@ class RestError
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self
@@ -97,8 +79,6 @@ class RestError
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMessage(): string
@@ -107,8 +87,6 @@ class RestError
     }
 
     /**
-     *
-     *
      * @param string $message
      *
      * @return self
@@ -122,8 +100,6 @@ class RestError
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTranslatedMessage(): string
@@ -132,8 +108,6 @@ class RestError
     }
 
     /**
-     *
-     *
      * @param string $translatedMessage
      *
      * @return self
@@ -147,8 +121,6 @@ class RestError
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getErrorMessage(): string
@@ -157,8 +129,6 @@ class RestError
     }
 
     /**
-     *
-     *
      * @param string $errorMessage
      *
      * @return self

@@ -16,27 +16,19 @@ class SubscriptionCycle
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var bool
      */
     protected $isInvoiced;
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -45,8 +37,6 @@ class SubscriptionCycle
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -60,8 +50,6 @@ class SubscriptionCycle
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -70,8 +58,6 @@ class SubscriptionCycle
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -85,8 +71,6 @@ class SubscriptionCycle
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsInvoiced(): bool
@@ -95,8 +79,6 @@ class SubscriptionCycle
     }
 
     /**
-     *
-     *
      * @param bool $isInvoiced
      *
      * @return self

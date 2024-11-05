@@ -16,21 +16,15 @@ class DefaultWorkflowGroup
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var bool
      */
     protected $isBlocked;
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -39,8 +33,6 @@ class DefaultWorkflowGroup
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -54,8 +46,6 @@ class DefaultWorkflowGroup
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsBlocked(): bool
@@ -64,8 +54,6 @@ class DefaultWorkflowGroup
     }
 
     /**
-     *
-     *
      * @param bool $isBlocked
      *
      * @return self

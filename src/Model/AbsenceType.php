@@ -16,27 +16,19 @@ class AbsenceType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var bool
      */
     protected $blocked;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -45,8 +37,6 @@ class AbsenceType
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -60,8 +50,6 @@ class AbsenceType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBlocked(): bool
@@ -70,8 +58,6 @@ class AbsenceType
     }
 
     /**
-     *
-     *
      * @param bool $blocked
      *
      * @return self
@@ -85,8 +71,6 @@ class AbsenceType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -95,8 +79,6 @@ class AbsenceType
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self

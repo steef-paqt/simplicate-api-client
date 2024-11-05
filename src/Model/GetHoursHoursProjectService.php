@@ -16,14 +16,10 @@ class GetHoursHoursProjectService
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id = 'service:abc123';
     /**
-     *
-     *
      * @var string
      */
     protected $name;
@@ -40,21 +36,15 @@ class GetHoursHoursProjectService
      */
     protected $untilDate = '2020-01-01';
     /**
-     *
-     *
      * @var string
      */
     protected $defaultServiceId = 'defaultservice:abc123';
     /**
-     *
-     *
      * @var string
      */
     protected $revenueGroupId = 'revenuegroup:abc123';
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -63,8 +53,6 @@ class GetHoursHoursProjectService
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -78,8 +66,6 @@ class GetHoursHoursProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -88,8 +74,6 @@ class GetHoursHoursProjectService
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -153,8 +137,6 @@ class GetHoursHoursProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDefaultServiceId(): string
@@ -163,8 +145,6 @@ class GetHoursHoursProjectService
     }
 
     /**
-     *
-     *
      * @param string $defaultServiceId
      *
      * @return self
@@ -178,8 +158,6 @@ class GetHoursHoursProjectService
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRevenueGroupId(): string
@@ -188,8 +166,6 @@ class GetHoursHoursProjectService
     }
 
     /**
-     *
-     *
      * @param string $revenueGroupId
      *
      * @return self

@@ -11,8 +11,6 @@ class PutTimersTimerById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PutTimer $body Timer object that needs to be updated
      */

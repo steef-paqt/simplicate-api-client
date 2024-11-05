@@ -16,14 +16,10 @@ class GetReviewByWeek
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $employeeName;
@@ -40,27 +36,19 @@ class GetReviewByWeek
      */
     protected $endDate;
     /**
-     *
-     *
      * @var string
      */
     protected $statusId;
     /**
-     *
-     *
      * @var string
      */
     protected $statusCategory;
     /**
-     *
-     *
      * @var string
      */
     protected $statusLabel;
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -69,8 +57,6 @@ class GetReviewByWeek
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -84,8 +70,6 @@ class GetReviewByWeek
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeName(): string
@@ -94,8 +78,6 @@ class GetReviewByWeek
     }
 
     /**
-     *
-     *
      * @param string $employeeName
      *
      * @return self
@@ -159,8 +141,6 @@ class GetReviewByWeek
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatusId(): string
@@ -169,8 +149,6 @@ class GetReviewByWeek
     }
 
     /**
-     *
-     *
      * @param string $statusId
      *
      * @return self
@@ -184,8 +162,6 @@ class GetReviewByWeek
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatusCategory(): string
@@ -194,8 +170,6 @@ class GetReviewByWeek
     }
 
     /**
-     *
-     *
      * @param string $statusCategory
      *
      * @return self
@@ -209,8 +183,6 @@ class GetReviewByWeek
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatusLabel(): string
@@ -219,8 +191,6 @@ class GetReviewByWeek
     }
 
     /**
-     *
-     *
      * @param string $statusLabel
      *
      * @return self

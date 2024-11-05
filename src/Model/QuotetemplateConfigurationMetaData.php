@@ -34,44 +34,30 @@ class QuotetemplateConfigurationMetaData
      */
     protected $defaultViewAndSignButtonTextColor;
     /**
-     *
-     *
      * @var int
      */
     protected $count;
     /**
-     *
-     *
      * @var int
      */
     protected $totalCount;
     /**
-     *
-     *
      * @var int
      */
     protected $offset;
     /**
-     *
-     *
      * @var int
      */
     protected $limit;
     /**
-     *
-     *
      * @var int
      */
     protected $upperLimit;
     /**
-     *
-     *
      * @var bool
      */
     protected $nocleanup;
     /**
-     *
-     *
      * @var string
      */
     protected $checksum;
@@ -152,8 +138,6 @@ class QuotetemplateConfigurationMetaData
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getCount(): int
@@ -162,8 +146,6 @@ class QuotetemplateConfigurationMetaData
     }
 
     /**
-     *
-     *
      * @param int $count
      *
      * @return self
@@ -177,8 +159,6 @@ class QuotetemplateConfigurationMetaData
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getTotalCount(): int
@@ -187,8 +167,6 @@ class QuotetemplateConfigurationMetaData
     }
 
     /**
-     *
-     *
      * @param int $totalCount
      *
      * @return self
@@ -202,8 +180,6 @@ class QuotetemplateConfigurationMetaData
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getOffset(): int
@@ -212,8 +188,6 @@ class QuotetemplateConfigurationMetaData
     }
 
     /**
-     *
-     *
      * @param int $offset
      *
      * @return self
@@ -227,8 +201,6 @@ class QuotetemplateConfigurationMetaData
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getLimit(): int
@@ -237,8 +209,6 @@ class QuotetemplateConfigurationMetaData
     }
 
     /**
-     *
-     *
      * @param int $limit
      *
      * @return self
@@ -252,8 +222,6 @@ class QuotetemplateConfigurationMetaData
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getUpperLimit(): int
@@ -262,8 +230,6 @@ class QuotetemplateConfigurationMetaData
     }
 
     /**
-     *
-     *
      * @param int $upperLimit
      *
      * @return self
@@ -277,8 +243,6 @@ class QuotetemplateConfigurationMetaData
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getNocleanup(): bool
@@ -287,8 +251,6 @@ class QuotetemplateConfigurationMetaData
     }
 
     /**
-     *
-     *
      * @param bool $nocleanup
      *
      * @return self
@@ -302,8 +264,6 @@ class QuotetemplateConfigurationMetaData
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getChecksum(): string
@@ -312,8 +272,6 @@ class QuotetemplateConfigurationMetaData
     }
 
     /**
-     *
-     *
      * @param string $checksum
      *
      * @return self

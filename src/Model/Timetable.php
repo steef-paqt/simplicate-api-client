@@ -16,45 +16,31 @@ class Timetable
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var TimetableWeek
      */
     protected $evenWeek;
     /**
-     *
-     *
      * @var TimetableWeek
      */
     protected $oddWeek;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var int
      */
     protected $productivityTarget;
     /**
-     *
-     *
      * @var bool
      */
     protected $shouldWriteHours;
 
     /**
-     *
-     *
      * @return TimetableWeek
      */
     public function getEvenWeek(): TimetableWeek
@@ -63,8 +49,6 @@ class Timetable
     }
 
     /**
-     *
-     *
      * @param TimetableWeek $evenWeek
      *
      * @return self
@@ -78,8 +62,6 @@ class Timetable
     }
 
     /**
-     *
-     *
      * @return TimetableWeek
      */
     public function getOddWeek(): TimetableWeek
@@ -88,8 +70,6 @@ class Timetable
     }
 
     /**
-     *
-     *
      * @param TimetableWeek $oddWeek
      *
      * @return self
@@ -103,8 +83,6 @@ class Timetable
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -113,8 +91,6 @@ class Timetable
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -128,8 +104,6 @@ class Timetable
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -138,8 +112,6 @@ class Timetable
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -153,8 +125,6 @@ class Timetable
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getProductivityTarget(): int
@@ -163,8 +133,6 @@ class Timetable
     }
 
     /**
-     *
-     *
      * @param int $productivityTarget
      *
      * @return self
@@ -178,8 +146,6 @@ class Timetable
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getShouldWriteHours(): bool
@@ -188,8 +154,6 @@ class Timetable
     }
 
     /**
-     *
-     *
      * @param bool $shouldWriteHours
      *
      * @return self

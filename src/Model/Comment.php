@@ -16,33 +16,23 @@ class Comment
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $message;
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $employee;
     /**
-     *
-     *
      * @var GetDocument[]
      */
     protected $attachments;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -51,8 +41,6 @@ class Comment
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -66,8 +54,6 @@ class Comment
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMessage(): string
@@ -76,8 +62,6 @@ class Comment
     }
 
     /**
-     *
-     *
      * @param string $message
      *
      * @return self
@@ -91,8 +75,6 @@ class Comment
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getEmployee(): GetEmployeeSimple
@@ -101,8 +83,6 @@ class Comment
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $employee
      *
      * @return self
@@ -116,8 +96,6 @@ class Comment
     }
 
     /**
-     *
-     *
      * @return GetDocument[]
      */
     public function getAttachments(): array
@@ -126,8 +104,6 @@ class Comment
     }
 
     /**
-     *
-     *
      * @param GetDocument[] $attachments
      *
      * @return self

@@ -16,51 +16,35 @@ class TimesheetRow
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var string
      */
     protected $projectId;
     /**
-     *
-     *
      * @var string
      */
     protected $projectServiceId;
     /**
-     *
-     *
      * @var string
      */
     protected $itemtypeId;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -69,8 +53,6 @@ class TimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -84,8 +66,6 @@ class TimesheetRow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -94,8 +74,6 @@ class TimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -109,8 +87,6 @@ class TimesheetRow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -119,8 +95,6 @@ class TimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -134,8 +108,6 @@ class TimesheetRow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectId(): string
@@ -144,8 +116,6 @@ class TimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $projectId
      *
      * @return self
@@ -159,8 +129,6 @@ class TimesheetRow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectServiceId(): string
@@ -169,8 +137,6 @@ class TimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $projectServiceId
      *
      * @return self
@@ -184,8 +150,6 @@ class TimesheetRow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getItemtypeId(): string
@@ -194,8 +158,6 @@ class TimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $itemtypeId
      *
      * @return self
@@ -209,8 +171,6 @@ class TimesheetRow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -219,8 +179,6 @@ class TimesheetRow
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self

@@ -16,21 +16,15 @@ class Document
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $title;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -39,8 +33,6 @@ class Document
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -54,8 +46,6 @@ class Document
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -64,8 +54,6 @@ class Document
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

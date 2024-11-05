@@ -11,8 +11,6 @@ class GetCustomFieldsOptionById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param array $queryParameters {
      *     @var int $offset The offset to search from

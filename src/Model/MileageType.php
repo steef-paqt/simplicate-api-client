@@ -16,33 +16,23 @@ class MileageType
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $tariff;
     /**
-     *
-     *
      * @var bool
      */
     protected $blocked;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -51,8 +41,6 @@ class MileageType
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -66,8 +54,6 @@ class MileageType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTariff(): string
@@ -76,8 +62,6 @@ class MileageType
     }
 
     /**
-     *
-     *
      * @param string $tariff
      *
      * @return self
@@ -91,8 +75,6 @@ class MileageType
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getBlocked(): bool
@@ -101,8 +83,6 @@ class MileageType
     }
 
     /**
-     *
-     *
      * @param bool $blocked
      *
      * @return self
@@ -116,8 +96,6 @@ class MileageType
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -126,8 +104,6 @@ class MileageType
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self

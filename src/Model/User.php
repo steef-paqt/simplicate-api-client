@@ -16,141 +16,95 @@ class User
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $username;
     /**
-     *
-     *
      * @var string
      */
     protected $email;
     /**
-     *
-     *
      * @var string
      */
     protected $gender;
     /**
-     *
-     *
      * @var string
      */
     protected $initials;
     /**
-     *
-     *
      * @var string
      */
     protected $firstName;
     /**
-     *
-     *
      * @var string
      */
     protected $familyNamePrefix;
     /**
-     *
-     *
      * @var string
      */
     protected $familyName;
     /**
-     *
-     *
      * @var string
      */
     protected $birthdate;
     /**
-     *
-     *
      * @var bool
      */
     protected $isAuthyEnabled;
     /**
-     *
-     *
      * @var bool
      */
     protected $isEmployee;
     /**
-     *
-     *
      * @var bool
      */
     protected $isLightUser;
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var bool
      */
     protected $isBlocked;
     /**
-     *
-     *
      * @var bool
      */
     protected $isLockNav;
     /**
-     *
-     *
      * @var string
      */
     protected $keyIdentifier;
     /**
-     *
-     *
      * @var Timezone
      */
     protected $timezone;
     /**
-     *
-     *
      * @var Country
      */
     protected $country;
     /**
-     *
-     *
      * @var string
      */
     protected $hoursViewMode;
     /**
-     *
-     *
      * @var bool
      */
     protected $isAccountOwner;
     /**
-     *
-     *
      * @var bool
      */
     protected $hasExternalAgendaIntegration;
     /**
-     *
-     *
      * @var Right[]
      */
     protected $rights;
 
     /**
-     *
-     *
      * @return string
      */
     public function getUsername(): string
@@ -159,8 +113,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param string $username
      *
      * @return self
@@ -174,8 +126,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmail(): string
@@ -184,8 +134,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param string $email
      *
      * @return self
@@ -199,8 +147,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getGender(): string
@@ -209,8 +155,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param string $gender
      *
      * @return self
@@ -224,8 +168,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInitials(): string
@@ -234,8 +176,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param string $initials
      *
      * @return self
@@ -249,8 +189,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFirstName(): string
@@ -259,8 +197,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param string $firstName
      *
      * @return self
@@ -274,8 +210,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFamilyNamePrefix(): string
@@ -284,8 +218,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param string $familyNamePrefix
      *
      * @return self
@@ -299,8 +231,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFamilyName(): string
@@ -309,8 +239,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param string $familyName
      *
      * @return self
@@ -324,8 +252,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBirthdate(): string
@@ -334,8 +260,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param string $birthdate
      *
      * @return self
@@ -349,8 +273,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsAuthyEnabled(): bool
@@ -359,8 +281,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param bool $isAuthyEnabled
      *
      * @return self
@@ -374,8 +294,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsEmployee(): bool
@@ -384,8 +302,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param bool $isEmployee
      *
      * @return self
@@ -399,8 +315,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsLightUser(): bool
@@ -409,8 +323,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param bool $isLightUser
      *
      * @return self
@@ -424,8 +336,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -434,8 +344,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -449,8 +357,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -459,8 +365,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -474,8 +378,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsBlocked(): bool
@@ -484,8 +386,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param bool $isBlocked
      *
      * @return self
@@ -499,8 +399,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsLockNav(): bool
@@ -509,8 +407,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param bool $isLockNav
      *
      * @return self
@@ -524,8 +420,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getKeyIdentifier(): string
@@ -534,8 +428,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param string $keyIdentifier
      *
      * @return self
@@ -549,8 +441,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return Timezone
      */
     public function getTimezone(): Timezone
@@ -559,8 +449,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param Timezone $timezone
      *
      * @return self
@@ -574,8 +462,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return Country
      */
     public function getCountry(): Country
@@ -584,8 +470,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param Country $country
      *
      * @return self
@@ -599,8 +483,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getHoursViewMode(): string
@@ -609,8 +491,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param string $hoursViewMode
      *
      * @return self
@@ -624,8 +504,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsAccountOwner(): bool
@@ -634,8 +512,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param bool $isAccountOwner
      *
      * @return self
@@ -649,8 +525,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getHasExternalAgendaIntegration(): bool
@@ -659,8 +533,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param bool $hasExternalAgendaIntegration
      *
      * @return self
@@ -674,8 +546,6 @@ class User
     }
 
     /**
-     *
-     *
      * @return Right[]
      */
     public function getRights(): array
@@ -684,8 +554,6 @@ class User
     }
 
     /**
-     *
-     *
      * @param Right[] $rights
      *
      * @return self

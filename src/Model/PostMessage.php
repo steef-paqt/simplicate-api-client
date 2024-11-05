@@ -16,14 +16,10 @@ class PostMessage
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $messagetypeId;
     /**
-     *
-     *
      * @var PostMessageLinkedTo
      */
     protected $linkedTo;
@@ -34,33 +30,23 @@ class PostMessage
      */
     protected $createdById = 'employee:abc123';
     /**
-     *
-     *
      * @var string
      */
     protected $title;
     /**
-     *
-     *
      * @var ContentField[]
      */
     protected $contentFields;
     /**
-     *
-     *
      * @var string
      */
     protected $content;
     /**
-     *
-     *
      * @var string
      */
     protected $displayDate;
 
     /**
-     *
-     *
      * @return string
      */
     public function getMessagetypeId(): string
@@ -69,8 +55,6 @@ class PostMessage
     }
 
     /**
-     *
-     *
      * @param string $messagetypeId
      *
      * @return self
@@ -84,8 +68,6 @@ class PostMessage
     }
 
     /**
-     *
-     *
      * @return PostMessageLinkedTo
      */
     public function getLinkedTo(): PostMessageLinkedTo
@@ -94,8 +76,6 @@ class PostMessage
     }
 
     /**
-     *
-     *
      * @param PostMessageLinkedTo $linkedTo
      *
      * @return self
@@ -134,8 +114,6 @@ class PostMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -144,8 +122,6 @@ class PostMessage
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -159,8 +135,6 @@ class PostMessage
     }
 
     /**
-     *
-     *
      * @return ContentField[]
      */
     public function getContentFields(): array
@@ -169,8 +143,6 @@ class PostMessage
     }
 
     /**
-     *
-     *
      * @param ContentField[] $contentFields
      *
      * @return self
@@ -184,8 +156,6 @@ class PostMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getContent(): string
@@ -194,8 +164,6 @@ class PostMessage
     }
 
     /**
-     *
-     *
      * @param string $content
      *
      * @return self
@@ -209,8 +177,6 @@ class PostMessage
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDisplayDate(): string
@@ -219,8 +185,6 @@ class PostMessage
     }
 
     /**
-     *
-     *
      * @param string $displayDate
      *
      * @return self

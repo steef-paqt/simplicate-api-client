@@ -16,33 +16,23 @@ class Filter
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $key;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $values;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -51,8 +41,6 @@ class Filter
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -66,8 +54,6 @@ class Filter
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -76,8 +62,6 @@ class Filter
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -91,8 +75,6 @@ class Filter
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getKey(): string
@@ -101,8 +83,6 @@ class Filter
     }
 
     /**
-     *
-     *
      * @param string $key
      *
      * @return self
@@ -116,8 +96,6 @@ class Filter
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getValues(): array
@@ -126,8 +104,6 @@ class Filter
     }
 
     /**
-     *
-     *
      * @param mixed[] $values
      *
      * @return self

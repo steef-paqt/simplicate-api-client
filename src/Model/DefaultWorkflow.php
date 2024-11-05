@@ -16,93 +16,63 @@ class DefaultWorkflow
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $title;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var bool
      */
     protected $canHaveAttachment;
     /**
-     *
-     *
      * @var bool
      */
     protected $isBlocked;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForCrm;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForContact;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForSale;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForDebtor;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForProject;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForSubscription;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForEmployee;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForInvoice;
     /**
-     *
-     *
      * @var bool
      */
     protected $isForMyorganizationprofile;
     /**
-     *
-     *
      * @var bool
      */
     protected $isVisibleOnAll;
 
     /**
-     *
-     *
      * @return string
      */
     public function getTitle(): string
@@ -111,8 +81,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param string $title
      *
      * @return self
@@ -126,8 +94,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -136,8 +102,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -151,8 +115,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getCanHaveAttachment(): bool
@@ -161,8 +123,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $canHaveAttachment
      *
      * @return self
@@ -176,8 +136,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsBlocked(): bool
@@ -186,8 +144,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isBlocked
      *
      * @return self
@@ -201,8 +157,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForCrm(): bool
@@ -211,8 +165,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForCrm
      *
      * @return self
@@ -226,8 +178,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForContact(): bool
@@ -236,8 +186,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForContact
      *
      * @return self
@@ -251,8 +199,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForSale(): bool
@@ -261,8 +207,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForSale
      *
      * @return self
@@ -276,8 +220,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForDebtor(): bool
@@ -286,8 +228,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForDebtor
      *
      * @return self
@@ -301,8 +241,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForProject(): bool
@@ -311,8 +249,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForProject
      *
      * @return self
@@ -326,8 +262,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForSubscription(): bool
@@ -336,8 +270,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForSubscription
      *
      * @return self
@@ -351,8 +283,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForEmployee(): bool
@@ -361,8 +291,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForEmployee
      *
      * @return self
@@ -376,8 +304,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForInvoice(): bool
@@ -386,8 +312,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForInvoice
      *
      * @return self
@@ -401,8 +325,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsForMyorganizationprofile(): bool
@@ -411,8 +333,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isForMyorganizationprofile
      *
      * @return self
@@ -426,8 +346,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsVisibleOnAll(): bool
@@ -436,8 +354,6 @@ class DefaultWorkflow
     }
 
     /**
-     *
-     *
      * @param bool $isVisibleOnAll
      *
      * @return self

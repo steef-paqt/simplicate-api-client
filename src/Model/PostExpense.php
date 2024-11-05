@@ -16,45 +16,31 @@ class PostExpense
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $projectId;
     /**
-     *
-     *
      * @var string
      */
     protected $serviceId;
     /**
-     *
-     *
      * @var string
      */
     protected $costtypeId;
     /**
-     *
-     *
      * @var float
      */
     protected $amount;
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var string
      */
     protected $date;
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectId(): string
@@ -63,8 +49,6 @@ class PostExpense
     }
 
     /**
-     *
-     *
      * @param string $projectId
      *
      * @return self
@@ -78,8 +62,6 @@ class PostExpense
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getServiceId(): string
@@ -88,8 +70,6 @@ class PostExpense
     }
 
     /**
-     *
-     *
      * @param string $serviceId
      *
      * @return self
@@ -103,8 +83,6 @@ class PostExpense
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCosttypeId(): string
@@ -113,8 +91,6 @@ class PostExpense
     }
 
     /**
-     *
-     *
      * @param string $costtypeId
      *
      * @return self
@@ -128,8 +104,6 @@ class PostExpense
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getAmount(): float
@@ -138,8 +112,6 @@ class PostExpense
     }
 
     /**
-     *
-     *
      * @param float $amount
      *
      * @return self
@@ -153,8 +125,6 @@ class PostExpense
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -163,8 +133,6 @@ class PostExpense
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -178,8 +146,6 @@ class PostExpense
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDate(): string
@@ -188,8 +154,6 @@ class PostExpense
     }
 
     /**
-     *
-     *
      * @param string $date
      *
      * @return self

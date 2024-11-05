@@ -16,74 +16,50 @@ class GetTimer
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var int
      */
     protected $secondsSpent;
     /**
-     *
-     *
      * @var int
      */
     protected $minSecondsStep;
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $employee;
     /**
-     *
-     *
      * @var GetProjectSimple
      */
     protected $project;
     /**
-     *
-     *
      * @var GetProjectServiceSimple
      */
     protected $projectservice;
     /**
-     *
-     *
      * @var GetHoursType
      */
     protected $hourstype;
     /**
-     *
-     *
      * @var GetHoursSimple
      */
     protected $relatedHours;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $state;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
@@ -95,8 +71,6 @@ class GetTimer
     protected $metadata;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -105,8 +79,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -120,8 +92,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getSecondsSpent(): int
@@ -130,8 +100,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @param int $secondsSpent
      *
      * @return self
@@ -145,8 +113,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getMinSecondsStep(): int
@@ -155,8 +121,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @param int $minSecondsStep
      *
      * @return self
@@ -170,8 +134,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getEmployee(): GetEmployeeSimple
@@ -180,8 +142,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $employee
      *
      * @return self
@@ -195,8 +155,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @return GetProjectSimple
      */
     public function getProject(): GetProjectSimple
@@ -205,8 +163,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @param GetProjectSimple $project
      *
      * @return self
@@ -220,8 +176,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @return GetProjectServiceSimple
      */
     public function getProjectservice(): GetProjectServiceSimple
@@ -230,8 +184,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @param GetProjectServiceSimple $projectservice
      *
      * @return self
@@ -245,8 +197,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @return GetHoursType
      */
     public function getHourstype(): GetHoursType
@@ -255,8 +205,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @param GetHoursType $hourstype
      *
      * @return self
@@ -270,8 +218,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @return GetHoursSimple
      */
     public function getRelatedHours(): GetHoursSimple
@@ -280,8 +226,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @param GetHoursSimple $relatedHours
      *
      * @return self
@@ -295,8 +239,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -305,8 +247,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -320,8 +260,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -330,8 +268,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -345,8 +281,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getState(): string
@@ -355,8 +289,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @param string $state
      *
      * @return self
@@ -370,8 +302,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -380,8 +310,6 @@ class GetTimer
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

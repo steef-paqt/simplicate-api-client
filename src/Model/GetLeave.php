@@ -16,69 +16,47 @@ class GetLeave
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $employee;
     /**
-     *
-     *
      * @var HrmGetLeaveType
      */
     protected $leavetype;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var int
      */
     protected $year;
     /**
-     *
-     *
      * @var int
      */
     protected $hours;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -87,8 +65,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -102,8 +78,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getEmployee(): GetEmployeeSimple
@@ -112,8 +86,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $employee
      *
      * @return self
@@ -127,8 +99,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @return HrmGetLeaveType
      */
     public function getLeavetype(): HrmGetLeaveType
@@ -137,8 +107,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @param HrmGetLeaveType $leavetype
      *
      * @return self
@@ -152,8 +120,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -162,8 +128,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -177,8 +141,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -187,8 +149,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -202,8 +162,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -212,8 +170,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -227,8 +183,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -237,8 +191,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -252,8 +204,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getYear(): int
@@ -262,8 +212,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @param int $year
      *
      * @return self
@@ -277,8 +225,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getHours(): int
@@ -287,8 +233,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @param int $hours
      *
      * @return self
@@ -302,8 +246,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -312,8 +254,6 @@ class GetLeave
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

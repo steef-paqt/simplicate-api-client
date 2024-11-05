@@ -16,15 +16,11 @@ class Administration
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $name;
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -33,8 +29,6 @@ class Administration
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self

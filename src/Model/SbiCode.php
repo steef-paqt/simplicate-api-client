@@ -16,27 +16,19 @@ class SbiCode
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var int
      */
     protected $code;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -45,8 +37,6 @@ class SbiCode
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -60,8 +50,6 @@ class SbiCode
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getCode(): int
@@ -70,8 +58,6 @@ class SbiCode
     }
 
     /**
-     *
-     *
      * @param int $code
      *
      * @return self
@@ -85,8 +71,6 @@ class SbiCode
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -95,8 +79,6 @@ class SbiCode
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self

@@ -16,33 +16,23 @@ class Avatar
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $urlSmall;
     /**
-     *
-     *
      * @var string
      */
     protected $urlLarge;
     /**
-     *
-     *
      * @var string
      */
     protected $initials;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
 
     /**
-     *
-     *
      * @return string
      */
     public function getUrlSmall(): string
@@ -51,8 +41,6 @@ class Avatar
     }
 
     /**
-     *
-     *
      * @param string $urlSmall
      *
      * @return self
@@ -66,8 +54,6 @@ class Avatar
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUrlLarge(): string
@@ -76,8 +62,6 @@ class Avatar
     }
 
     /**
-     *
-     *
      * @param string $urlLarge
      *
      * @return self
@@ -91,8 +75,6 @@ class Avatar
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInitials(): string
@@ -101,8 +83,6 @@ class Avatar
     }
 
     /**
-     *
-     *
      * @param string $initials
      *
      * @return self
@@ -116,8 +96,6 @@ class Avatar
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -126,8 +104,6 @@ class Avatar
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self

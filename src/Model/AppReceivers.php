@@ -16,21 +16,15 @@ class AppReceivers
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $type;
     /**
-     *
-     *
      * @var AppReceiverSetting[]
      */
     protected $channels;
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -39,8 +33,6 @@ class AppReceivers
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self
@@ -54,8 +46,6 @@ class AppReceivers
     }
 
     /**
-     *
-     *
      * @return AppReceiverSetting[]
      */
     public function getChannels(): array
@@ -64,8 +54,6 @@ class AppReceivers
     }
 
     /**
-     *
-     *
      * @param AppReceiverSetting[] $channels
      *
      * @return self

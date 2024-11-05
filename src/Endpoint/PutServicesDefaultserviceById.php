@@ -11,8 +11,6 @@ class PutServicesDefaultserviceById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PostDefaultService $body default service object that needs to be updated
      */

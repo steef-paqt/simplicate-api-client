@@ -16,27 +16,19 @@ class BaseHours
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $source;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
 
     /**
-     *
-     *
      * @return string
      */
     public function getSource(): string
@@ -45,8 +37,6 @@ class BaseHours
     }
 
     /**
-     *
-     *
      * @param string $source
      *
      * @return self
@@ -60,8 +50,6 @@ class BaseHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -70,8 +58,6 @@ class BaseHours
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -85,8 +71,6 @@ class BaseHours
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -95,8 +79,6 @@ class BaseHours
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self

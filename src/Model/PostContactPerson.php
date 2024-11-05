@@ -28,32 +28,22 @@ class PostContactPerson
      */
     protected $personId;
     /**
-     *
-     *
      * @var bool
      */
     protected $isActive;
     /**
-     *
-     *
      * @var string
      */
     protected $workFunction;
     /**
-     *
-     *
      * @var string
      */
     protected $workEmail;
     /**
-     *
-     *
      * @var string
      */
     protected $workPhone;
     /**
-     *
-     *
      * @var string
      */
     protected $workMobile;
@@ -109,8 +99,6 @@ class PostContactPerson
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsActive(): bool
@@ -119,8 +107,6 @@ class PostContactPerson
     }
 
     /**
-     *
-     *
      * @param bool $isActive
      *
      * @return self
@@ -134,8 +120,6 @@ class PostContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkFunction(): string
@@ -144,8 +128,6 @@ class PostContactPerson
     }
 
     /**
-     *
-     *
      * @param string $workFunction
      *
      * @return self
@@ -159,8 +141,6 @@ class PostContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkEmail(): string
@@ -169,8 +149,6 @@ class PostContactPerson
     }
 
     /**
-     *
-     *
      * @param string $workEmail
      *
      * @return self
@@ -184,8 +162,6 @@ class PostContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkPhone(): string
@@ -194,8 +170,6 @@ class PostContactPerson
     }
 
     /**
-     *
-     *
      * @param string $workPhone
      *
      * @return self
@@ -209,8 +183,6 @@ class PostContactPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWorkMobile(): string
@@ -219,8 +191,6 @@ class PostContactPerson
     }
 
     /**
-     *
-     *
      * @param string $workMobile
      *
      * @return self

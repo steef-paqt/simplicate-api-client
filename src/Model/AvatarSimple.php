@@ -16,21 +16,15 @@ class AvatarSimple
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $initials;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
 
     /**
-     *
-     *
      * @return string
      */
     public function getInitials(): string
@@ -39,8 +33,6 @@ class AvatarSimple
     }
 
     /**
-     *
-     *
      * @param string $initials
      *
      * @return self
@@ -54,8 +46,6 @@ class AvatarSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -64,8 +54,6 @@ class AvatarSimple
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self

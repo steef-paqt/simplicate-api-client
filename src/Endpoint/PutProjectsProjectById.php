@@ -11,8 +11,6 @@ class PutProjectsProjectById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PostProject $body project object that needs to be updated
      */

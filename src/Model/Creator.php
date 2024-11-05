@@ -16,33 +16,23 @@ class Creator
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $type;
     /**
-     *
-     *
      * @var string
      */
     protected $label;
     /**
-     *
-     *
      * @var string
      */
     protected $image;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -51,8 +41,6 @@ class Creator
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -66,8 +54,6 @@ class Creator
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getType(): string
@@ -76,8 +62,6 @@ class Creator
     }
 
     /**
-     *
-     *
      * @param string $type
      *
      * @return self
@@ -91,8 +75,6 @@ class Creator
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLabel(): string
@@ -101,8 +83,6 @@ class Creator
     }
 
     /**
-     *
-     *
      * @param string $label
      *
      * @return self
@@ -116,8 +96,6 @@ class Creator
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getImage(): string
@@ -126,8 +104,6 @@ class Creator
     }
 
     /**
-     *
-     *
      * @param string $image
      *
      * @return self

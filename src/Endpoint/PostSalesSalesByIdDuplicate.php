@@ -11,8 +11,6 @@ class PostSalesSalesByIdDuplicate extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PostDuplicateSales $body Optional parameters to overwrite
      */

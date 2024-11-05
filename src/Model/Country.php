@@ -16,33 +16,23 @@ class Country
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $countryCode;
     /**
-     *
-     *
      * @var string
      */
     protected $languageCode;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -51,8 +41,6 @@ class Country
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -66,8 +54,6 @@ class Country
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -76,8 +62,6 @@ class Country
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -91,8 +75,6 @@ class Country
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCountryCode(): string
@@ -101,8 +83,6 @@ class Country
     }
 
     /**
-     *
-     *
      * @param string $countryCode
      *
      * @return self
@@ -116,8 +96,6 @@ class Country
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLanguageCode(): string
@@ -126,8 +104,6 @@ class Country
     }
 
     /**
-     *
-     *
      * @param string $languageCode
      *
      * @return self

@@ -16,21 +16,15 @@ class GetMileageSimple
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var float
      */
     protected $mileage;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -39,8 +33,6 @@ class GetMileageSimple
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -54,8 +46,6 @@ class GetMileageSimple
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getMileage(): float
@@ -64,8 +54,6 @@ class GetMileageSimple
     }
 
     /**
-     *
-     *
      * @param float $mileage
      *
      * @return self

@@ -16,57 +16,39 @@ class Invoice
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $myOrganizationProfileId;
     /**
-     *
-     *
      * @var string
      */
     protected $organizationId;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $date;
     /**
-     *
-     *
      * @var string
      */
     protected $subject;
     /**
-     *
-     *
      * @var string
      */
     protected $reference;
     /**
-     *
-     *
      * @var string
      */
     protected $projectId;
     /**
-     *
-     *
      * @var string
      */
     protected $comments;
 
     /**
-     *
-     *
      * @return string
      */
     public function getMyOrganizationProfileId(): string
@@ -75,8 +57,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @param string $myOrganizationProfileId
      *
      * @return self
@@ -90,8 +70,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizationId(): string
@@ -100,8 +78,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @param string $organizationId
      *
      * @return self
@@ -115,8 +91,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -125,8 +99,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -140,8 +112,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDate(): string
@@ -150,8 +120,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @param string $date
      *
      * @return self
@@ -165,8 +133,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubject(): string
@@ -175,8 +141,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @param string $subject
      *
      * @return self
@@ -190,8 +154,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getReference(): string
@@ -200,8 +162,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @param string $reference
      *
      * @return self
@@ -215,8 +175,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getProjectId(): string
@@ -225,8 +183,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @param string $projectId
      *
      * @return self
@@ -240,8 +196,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getComments(): string
@@ -250,8 +204,6 @@ class Invoice
     }
 
     /**
-     *
-     *
      * @param string $comments
      *
      * @return self

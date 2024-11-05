@@ -16,27 +16,19 @@ class GetTimesheetRowPersonRelation
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $fullName;
     /**
-     *
-     *
      * @var string
      */
     protected $relationNumber;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -45,8 +37,6 @@ class GetTimesheetRowPersonRelation
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -60,8 +50,6 @@ class GetTimesheetRowPersonRelation
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFullName(): string
@@ -70,8 +58,6 @@ class GetTimesheetRowPersonRelation
     }
 
     /**
-     *
-     *
      * @param string $fullName
      *
      * @return self
@@ -85,8 +71,6 @@ class GetTimesheetRowPersonRelation
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRelationNumber(): string
@@ -95,8 +79,6 @@ class GetTimesheetRowPersonRelation
     }
 
     /**
-     *
-     *
      * @param string $relationNumber
      *
      * @return self

@@ -16,225 +16,151 @@ class GetPerson
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $genderId;
     /**
-     *
-     *
      * @var bool
      */
     protected $useCustomSalutation;
     /**
-     *
-     *
      * @var string
      */
     protected $customSalutation;
     /**
-     *
-     *
      * @var GetInterest[]
      */
     protected $interests;
     /**
-     *
-     *
      * @var string
      */
     protected $simplicateUrl;
     /**
-     *
-     *
      * @var GetAddress[]
      */
     protected $address;
     /**
-     *
-     *
      * @var Employee
      */
     protected $relationManager;
     /**
-     *
-     *
      * @var GetTeamSimple[]
      */
     protected $teams;
     /**
-     *
-     *
      * @var int
      */
     protected $isEmployee;
     /**
-     *
-     *
      * @var OrganizationContact[]
      */
     protected $linkedAsContactToOrganization;
     /**
-     *
-     *
      * @var GetCustomField[]
      */
     protected $customFields;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var bool
      */
     protected $isActive;
     /**
-     *
-     *
      * @var RelationType
      */
     protected $relationType;
     /**
-     *
-     *
      * @var string
      */
     protected $gender;
     /**
-     *
-     *
      * @var string
      */
     protected $initials;
     /**
-     *
-     *
      * @var string
      */
     protected $firstName;
     /**
-     *
-     *
      * @var string
      */
     protected $familyNamePrefix;
     /**
-     *
-     *
      * @var string
      */
     protected $familyName;
     /**
-     *
-     *
      * @var string
      */
     protected $fullName;
     /**
-     *
-     *
      * @var string
      */
     protected $dateOfBirth;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var string
      */
     protected $email;
     /**
-     *
-     *
      * @var string
      */
     protected $phone;
     /**
-     *
-     *
      * @var string
      */
     protected $websiteUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $twitterUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $linkedinUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $facebookUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $relationNumber;
     /**
-     *
-     *
      * @var string
      */
     protected $bankAccount;
     /**
-     *
-     *
      * @var string
      */
     protected $bankBic;
     /**
-     *
-     *
      * @var string
      */
     protected $invoiceReceiver;
     /**
-     *
-     *
      * @var string
      */
     protected $mailingListEmail;
     /**
-     *
-     *
      * @var PersonMailingList[]
      */
     protected $mailingLists;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -243,8 +169,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -258,8 +182,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getGenderId(): string
@@ -268,8 +190,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $genderId
      *
      * @return self
@@ -283,8 +203,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getUseCustomSalutation(): bool
@@ -293,8 +211,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param bool $useCustomSalutation
      *
      * @return self
@@ -308,8 +224,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCustomSalutation(): string
@@ -318,8 +232,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $customSalutation
      *
      * @return self
@@ -333,8 +245,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return GetInterest[]
      */
     public function getInterests(): array
@@ -343,8 +253,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param GetInterest[] $interests
      *
      * @return self
@@ -358,8 +266,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSimplicateUrl(): string
@@ -368,8 +274,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $simplicateUrl
      *
      * @return self
@@ -383,8 +287,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return GetAddress[]
      */
     public function getAddress(): array
@@ -393,8 +295,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param GetAddress[] $address
      *
      * @return self
@@ -408,8 +308,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return Employee
      */
     public function getRelationManager(): Employee
@@ -418,8 +316,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param Employee $relationManager
      *
      * @return self
@@ -433,8 +329,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return GetTeamSimple[]
      */
     public function getTeams(): array
@@ -443,8 +337,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param GetTeamSimple[] $teams
      *
      * @return self
@@ -458,8 +350,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getIsEmployee(): int
@@ -468,8 +358,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param int $isEmployee
      *
      * @return self
@@ -483,8 +371,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return OrganizationContact[]
      */
     public function getLinkedAsContactToOrganization(): array
@@ -493,8 +379,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param OrganizationContact[] $linkedAsContactToOrganization
      *
      * @return self
@@ -508,8 +392,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return GetCustomField[]
      */
     public function getCustomFields(): array
@@ -518,8 +400,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param GetCustomField[] $customFields
      *
      * @return self
@@ -533,8 +413,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -543,8 +421,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -558,8 +434,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -568,8 +442,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -583,8 +455,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsActive(): bool
@@ -593,8 +463,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param bool $isActive
      *
      * @return self
@@ -608,8 +476,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return RelationType
      */
     public function getRelationType(): RelationType
@@ -618,8 +484,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param RelationType $relationType
      *
      * @return self
@@ -633,8 +497,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getGender(): string
@@ -643,8 +505,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $gender
      *
      * @return self
@@ -658,8 +518,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInitials(): string
@@ -668,8 +526,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $initials
      *
      * @return self
@@ -683,8 +539,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFirstName(): string
@@ -693,8 +547,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $firstName
      *
      * @return self
@@ -708,8 +560,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFamilyNamePrefix(): string
@@ -718,8 +568,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $familyNamePrefix
      *
      * @return self
@@ -733,8 +581,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFamilyName(): string
@@ -743,8 +589,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $familyName
      *
      * @return self
@@ -758,8 +602,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFullName(): string
@@ -768,8 +610,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $fullName
      *
      * @return self
@@ -783,8 +623,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDateOfBirth(): string
@@ -793,8 +631,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $dateOfBirth
      *
      * @return self
@@ -808,8 +644,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -818,8 +652,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -833,8 +665,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmail(): string
@@ -843,8 +673,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $email
      *
      * @return self
@@ -858,8 +686,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPhone(): string
@@ -868,8 +694,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $phone
      *
      * @return self
@@ -883,8 +707,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getWebsiteUrl(): string
@@ -893,8 +715,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $websiteUrl
      *
      * @return self
@@ -908,8 +728,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTwitterUrl(): string
@@ -918,8 +736,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $twitterUrl
      *
      * @return self
@@ -933,8 +749,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLinkedinUrl(): string
@@ -943,8 +757,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $linkedinUrl
      *
      * @return self
@@ -958,8 +770,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFacebookUrl(): string
@@ -968,8 +778,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $facebookUrl
      *
      * @return self
@@ -983,8 +791,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRelationNumber(): string
@@ -993,8 +799,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $relationNumber
      *
      * @return self
@@ -1008,8 +812,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBankAccount(): string
@@ -1018,8 +820,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $bankAccount
      *
      * @return self
@@ -1033,8 +833,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBankBic(): string
@@ -1043,8 +841,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $bankBic
      *
      * @return self
@@ -1058,8 +854,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getInvoiceReceiver(): string
@@ -1068,8 +862,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $invoiceReceiver
      *
      * @return self
@@ -1083,8 +875,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMailingListEmail(): string
@@ -1093,8 +883,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param string $mailingListEmail
      *
      * @return self
@@ -1108,8 +896,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @return PersonMailingList[]
      */
     public function getMailingLists(): array
@@ -1118,8 +904,6 @@ class GetPerson
     }
 
     /**
-     *
-     *
      * @param PersonMailingList[] $mailingLists
      *
      * @return self

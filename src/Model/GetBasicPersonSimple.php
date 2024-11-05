@@ -16,81 +16,55 @@ class GetBasicPersonSimple
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $dateOfBirth;
     /**
-     *
-     *
      * @var string
      */
     protected $genderId;
     /**
-     *
-     *
      * @var string
      */
     protected $gender;
     /**
-     *
-     *
      * @var GetAddress
      */
     protected $address;
     /**
-     *
-     *
      * @var string
      */
     protected $email;
     /**
-     *
-     *
      * @var string
      */
     protected $phone;
     /**
-     *
-     *
      * @var string
      */
     protected $twitterUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $linkedinUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $facebookUrl;
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $fullName;
     /**
-     *
-     *
      * @var string
      */
     protected $relationNumber;
 
     /**
-     *
-     *
      * @return string
      */
     public function getDateOfBirth(): string
@@ -99,8 +73,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @param string $dateOfBirth
      *
      * @return self
@@ -114,8 +86,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getGenderId(): string
@@ -124,8 +94,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @param string $genderId
      *
      * @return self
@@ -139,8 +107,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getGender(): string
@@ -149,8 +115,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @param string $gender
      *
      * @return self
@@ -164,8 +128,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @return GetAddress
      */
     public function getAddress(): GetAddress
@@ -174,8 +136,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @param GetAddress $address
      *
      * @return self
@@ -189,8 +149,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmail(): string
@@ -199,8 +157,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @param string $email
      *
      * @return self
@@ -214,8 +170,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPhone(): string
@@ -224,8 +178,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @param string $phone
      *
      * @return self
@@ -239,8 +191,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getTwitterUrl(): string
@@ -249,8 +199,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @param string $twitterUrl
      *
      * @return self
@@ -264,8 +212,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLinkedinUrl(): string
@@ -274,8 +220,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @param string $linkedinUrl
      *
      * @return self
@@ -289,8 +233,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFacebookUrl(): string
@@ -299,8 +241,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @param string $facebookUrl
      *
      * @return self
@@ -314,8 +254,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -324,8 +262,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -339,8 +275,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getFullName(): string
@@ -349,8 +283,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @param string $fullName
      *
      * @return self
@@ -364,8 +296,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRelationNumber(): string
@@ -374,8 +304,6 @@ class GetBasicPersonSimple
     }
 
     /**
-     *
-     *
      * @param string $relationNumber
      *
      * @return self

@@ -16,32 +16,22 @@ class AssignmentBudget
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $assignmentId;
     /**
-     *
-     *
      * @var string
      */
     protected $rangeStart = '2020-02-03';
     /**
-     *
-     *
      * @var string
      */
     protected $budgetRangeStart;
     /**
-     *
-     *
      * @var string
      */
     protected $rangeEnd = '2020-02-10';
     /**
-     *
-     *
      * @var string
      */
     protected $budgetRangeEnd;
@@ -58,15 +48,11 @@ class AssignmentBudget
      */
     protected $spentAmount;
     /**
-     *
-     *
      * @var string
      */
     protected $hoursType;
 
     /**
-     *
-     *
      * @return string
      */
     public function getAssignmentId(): string
@@ -75,8 +61,6 @@ class AssignmentBudget
     }
 
     /**
-     *
-     *
      * @param string $assignmentId
      *
      * @return self
@@ -90,8 +74,6 @@ class AssignmentBudget
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRangeStart(): string
@@ -100,8 +82,6 @@ class AssignmentBudget
     }
 
     /**
-     *
-     *
      * @param string $rangeStart
      *
      * @return self
@@ -115,8 +95,6 @@ class AssignmentBudget
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBudgetRangeStart(): string
@@ -125,8 +103,6 @@ class AssignmentBudget
     }
 
     /**
-     *
-     *
      * @param string $budgetRangeStart
      *
      * @return self
@@ -140,8 +116,6 @@ class AssignmentBudget
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getRangeEnd(): string
@@ -150,8 +124,6 @@ class AssignmentBudget
     }
 
     /**
-     *
-     *
      * @param string $rangeEnd
      *
      * @return self
@@ -165,8 +137,6 @@ class AssignmentBudget
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getBudgetRangeEnd(): string
@@ -175,8 +145,6 @@ class AssignmentBudget
     }
 
     /**
-     *
-     *
      * @param string $budgetRangeEnd
      *
      * @return self
@@ -240,8 +208,6 @@ class AssignmentBudget
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getHoursType(): string
@@ -250,8 +216,6 @@ class AssignmentBudget
     }
 
     /**
-     *
-     *
      * @param string $hoursType
      *
      * @return self

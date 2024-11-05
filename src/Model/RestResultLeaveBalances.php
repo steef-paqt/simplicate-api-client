@@ -16,33 +16,23 @@ class RestResultLeaveBalances
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var LeaveBalance[]
      */
     protected $data;
     /**
-     *
-     *
      * @var MetaData
      */
     protected $metadata;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $errors;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $debug;
 
     /**
-     *
-     *
      * @return LeaveBalance[]
      */
     public function getData(): array
@@ -51,8 +41,6 @@ class RestResultLeaveBalances
     }
 
     /**
-     *
-     *
      * @param LeaveBalance[] $data
      *
      * @return self
@@ -66,8 +54,6 @@ class RestResultLeaveBalances
     }
 
     /**
-     *
-     *
      * @return MetaData
      */
     public function getMetadata(): MetaData
@@ -76,8 +62,6 @@ class RestResultLeaveBalances
     }
 
     /**
-     *
-     *
      * @param MetaData $metadata
      *
      * @return self
@@ -91,8 +75,6 @@ class RestResultLeaveBalances
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getErrors(): array
@@ -101,8 +83,6 @@ class RestResultLeaveBalances
     }
 
     /**
-     *
-     *
      * @param mixed[] $errors
      *
      * @return self
@@ -116,8 +96,6 @@ class RestResultLeaveBalances
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getDebug(): array
@@ -126,8 +104,6 @@ class RestResultLeaveBalances
     }
 
     /**
-     *
-     *
      * @param mixed[] $debug
      *
      * @return self

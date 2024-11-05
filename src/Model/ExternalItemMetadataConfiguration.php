@@ -16,27 +16,19 @@ class ExternalItemMetadataConfiguration
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $employeeId;
     /**
-     *
-     *
      * @var bool
      */
     protected $hasExternalAgendaIntegration;
     /**
-     *
-     *
      * @var mixed
      */
     protected $externalAgendaSyncMethod;
 
     /**
-     *
-     *
      * @return string
      */
     public function getEmployeeId(): string
@@ -45,8 +37,6 @@ class ExternalItemMetadataConfiguration
     }
 
     /**
-     *
-     *
      * @param string $employeeId
      *
      * @return self
@@ -60,8 +50,6 @@ class ExternalItemMetadataConfiguration
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getHasExternalAgendaIntegration(): bool
@@ -70,8 +58,6 @@ class ExternalItemMetadataConfiguration
     }
 
     /**
-     *
-     *
      * @param bool $hasExternalAgendaIntegration
      *
      * @return self
@@ -85,8 +71,6 @@ class ExternalItemMetadataConfiguration
     }
 
     /**
-     *
-     *
      * @return mixed
      */
     public function getExternalAgendaSyncMethod()
@@ -95,8 +79,6 @@ class ExternalItemMetadataConfiguration
     }
 
     /**
-     *
-     *
      * @param mixed $externalAgendaSyncMethod
      *
      * @return self

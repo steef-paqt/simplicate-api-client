@@ -16,111 +16,75 @@ class CalendarItem
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $employee;
     /**
-     *
-     *
      * @var string
      */
     protected $hours;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $endDate;
     /**
-     *
-     *
      * @var string
      */
     protected $description;
     /**
-     *
-     *
      * @var string
      */
     protected $summary;
     /**
-     *
-     *
      * @var string
      */
     protected $location;
     /**
-     *
-     *
      * @var bool
      */
     protected $deleted;
     /**
-     *
-     *
      * @var string
      */
     protected $status;
     /**
-     *
-     *
      * @var bool
      */
     protected $isRecurring;
     /**
-     *
-     *
      * @var bool
      */
     protected $isReadOnly;
     /**
-     *
-     *
      * @var bool
      */
     protected $isTimeDefined;
     /**
-     *
-     *
      * @var string
      */
     protected $organizerEmail;
     /**
-     *
-     *
      * @var bool
      */
     protected $private;
     /**
-     *
-     *
      * @var bool
      */
     protected $obfuscate;
     /**
-     *
-     *
      * @var string
      */
     protected $hoursId;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -129,8 +93,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -144,8 +106,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getEmployee(): GetEmployeeSimple
@@ -154,8 +114,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $employee
      *
      * @return self
@@ -169,8 +127,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getHours(): string
@@ -179,8 +135,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param string $hours
      *
      * @return self
@@ -194,8 +148,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -204,8 +156,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -219,8 +169,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -229,8 +177,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param string $endDate
      *
      * @return self
@@ -244,8 +190,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDescription(): string
@@ -254,8 +198,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param string $description
      *
      * @return self
@@ -269,8 +211,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSummary(): string
@@ -279,8 +219,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param string $summary
      *
      * @return self
@@ -294,8 +232,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getLocation(): string
@@ -304,8 +240,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param string $location
      *
      * @return self
@@ -319,8 +253,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getDeleted(): bool
@@ -329,8 +261,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param bool $deleted
      *
      * @return self
@@ -344,8 +274,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatus(): string
@@ -354,8 +282,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param string $status
      *
      * @return self
@@ -369,8 +295,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsRecurring(): bool
@@ -379,8 +303,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param bool $isRecurring
      *
      * @return self
@@ -394,8 +316,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsReadOnly(): bool
@@ -404,8 +324,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param bool $isReadOnly
      *
      * @return self
@@ -419,8 +337,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsTimeDefined(): bool
@@ -429,8 +345,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param bool $isTimeDefined
      *
      * @return self
@@ -444,8 +358,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizerEmail(): string
@@ -454,8 +366,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param string $organizerEmail
      *
      * @return self
@@ -469,8 +379,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getPrivate(): bool
@@ -479,8 +387,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param bool $private
      *
      * @return self
@@ -494,8 +400,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getObfuscate(): bool
@@ -504,8 +408,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param bool $obfuscate
      *
      * @return self
@@ -519,8 +421,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getHoursId(): string
@@ -529,8 +429,6 @@ class CalendarItem
     }
 
     /**
-     *
-     *
      * @param string $hoursId
      *
      * @return self

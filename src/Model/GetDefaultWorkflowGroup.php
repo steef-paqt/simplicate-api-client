@@ -16,27 +16,19 @@ class GetDefaultWorkflowGroup
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var bool
      */
     protected $isBlocked;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -45,8 +37,6 @@ class GetDefaultWorkflowGroup
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -60,8 +50,6 @@ class GetDefaultWorkflowGroup
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -70,8 +58,6 @@ class GetDefaultWorkflowGroup
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -85,8 +71,6 @@ class GetDefaultWorkflowGroup
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsBlocked(): bool
@@ -95,8 +79,6 @@ class GetDefaultWorkflowGroup
     }
 
     /**
-     *
-     *
      * @param bool $isBlocked
      *
      * @return self

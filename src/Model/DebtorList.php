@@ -16,21 +16,15 @@ class DebtorList
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var GetOrganizationDebtorSimple
      */
     protected $organization;
     /**
-     *
-     *
      * @var GetPersonDebtorSimple
      */
     protected $person;
 
     /**
-     *
-     *
      * @return GetOrganizationDebtorSimple
      */
     public function getOrganization(): GetOrganizationDebtorSimple
@@ -39,8 +33,6 @@ class DebtorList
     }
 
     /**
-     *
-     *
      * @param GetOrganizationDebtorSimple $organization
      *
      * @return self
@@ -54,8 +46,6 @@ class DebtorList
     }
 
     /**
-     *
-     *
      * @return GetPersonDebtorSimple
      */
     public function getPerson(): GetPersonDebtorSimple
@@ -64,8 +54,6 @@ class DebtorList
     }
 
     /**
-     *
-     *
      * @param GetPersonDebtorSimple $person
      *
      * @return self

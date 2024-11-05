@@ -16,21 +16,15 @@ class Setting
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $module;
     /**
-     *
-     *
      * @var mixed[]
      */
     protected $settings;
 
     /**
-     *
-     *
      * @return string
      */
     public function getModule(): string
@@ -39,8 +33,6 @@ class Setting
     }
 
     /**
-     *
-     *
      * @param string $module
      *
      * @return self
@@ -54,8 +46,6 @@ class Setting
     }
 
     /**
-     *
-     *
      * @return mixed[]
      */
     public function getSettings(): array
@@ -64,8 +54,6 @@ class Setting
     }
 
     /**
-     *
-     *
      * @param mixed[] $settings
      *
      * @return self

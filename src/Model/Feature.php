@@ -16,27 +16,19 @@ class Feature
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $identifier;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var bool
      */
     protected $isEnabled;
 
     /**
-     *
-     *
      * @return string
      */
     public function getIdentifier(): string
@@ -45,8 +37,6 @@ class Feature
     }
 
     /**
-     *
-     *
      * @param string $identifier
      *
      * @return self
@@ -60,8 +50,6 @@ class Feature
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -70,8 +58,6 @@ class Feature
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -85,8 +71,6 @@ class Feature
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsEnabled(): bool
@@ -95,8 +79,6 @@ class Feature
     }
 
     /**
-     *
-     *
      * @param bool $isEnabled
      *
      * @return self

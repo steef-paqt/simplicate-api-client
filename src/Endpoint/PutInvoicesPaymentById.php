@@ -11,8 +11,6 @@ class PutInvoicesPaymentById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\Payment $body Payment object that needs to be updated
      */

@@ -11,8 +11,6 @@ class PutSharedItemById extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param string $id The template's id
      * @param \Steefdw\Simplicate\Model\PostSharedItem $body Shared item object that with the data that needs to be updated
      */

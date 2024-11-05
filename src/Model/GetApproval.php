@@ -16,33 +16,23 @@ class GetApproval
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $employee;
     /**
-     *
-     *
      * @var GetApprovalStatus
      */
     protected $approvalstatus;
     /**
-     *
-     *
      * @var string
      */
     protected $date;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -51,8 +41,6 @@ class GetApproval
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -66,8 +54,6 @@ class GetApproval
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getEmployee(): GetEmployeeSimple
@@ -76,8 +62,6 @@ class GetApproval
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $employee
      *
      * @return self
@@ -91,8 +75,6 @@ class GetApproval
     }
 
     /**
-     *
-     *
      * @return GetApprovalStatus
      */
     public function getApprovalstatus(): GetApprovalStatus
@@ -101,8 +83,6 @@ class GetApproval
     }
 
     /**
-     *
-     *
      * @param GetApprovalStatus $approvalstatus
      *
      * @return self
@@ -116,8 +96,6 @@ class GetApproval
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getDate(): string
@@ -126,8 +104,6 @@ class GetApproval
     }
 
     /**
-     *
-     *
      * @param string $date
      *
      * @return self

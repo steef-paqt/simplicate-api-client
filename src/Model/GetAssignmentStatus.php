@@ -16,57 +16,39 @@ class GetAssignmentStatus
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id = 'assignmentstatus:abc';
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $name;
     /**
-     *
-     *
      * @var string
      */
     protected $color;
     /**
-     *
-     *
      * @var bool
      */
     protected $isDone;
     /**
-     *
-     *
      * @var bool
      */
     protected $isBlocked;
     /**
-     *
-     *
      * @var int
      */
     protected $order;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -75,8 +57,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -90,8 +70,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -100,8 +78,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -115,8 +91,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -125,8 +99,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -140,8 +112,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getName(): string
@@ -150,8 +120,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @param string $name
      *
      * @return self
@@ -165,8 +133,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getColor(): string
@@ -175,8 +141,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @param string $color
      *
      * @return self
@@ -190,8 +154,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsDone(): bool
@@ -200,8 +162,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @param bool $isDone
      *
      * @return self
@@ -215,8 +175,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @return bool
      */
     public function getIsBlocked(): bool
@@ -225,8 +183,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @param bool $isBlocked
      *
      * @return self
@@ -240,8 +196,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getOrder(): int
@@ -250,8 +204,6 @@ class GetAssignmentStatus
     }
 
     /**
-     *
-     *
      * @param int $order
      *
      * @return self

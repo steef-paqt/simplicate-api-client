@@ -11,8 +11,6 @@ class PostCrmPerson extends BaseEndpoint
     use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     *
-     *
      * @param \Steefdw\Simplicate\Model\PostPerson $body Person object that needs to be added
      */
     public function __construct(\Steefdw\Simplicate\Model\PostPerson $body)

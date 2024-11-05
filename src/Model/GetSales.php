@@ -16,177 +16,119 @@ class GetSales
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
-     *
      * @var string
      */
     protected $id;
     /**
-     *
-     *
      * @var GetEmployeeSimple
      */
     protected $responsibleEmployee;
     /**
-     *
-     *
      * @var GetPersonSimple
      */
     protected $person;
     /**
-     *
-     *
      * @var GetOrganizationSimple
      */
     protected $organization;
     /**
-     *
-     *
      * @var SalesProgress
      */
     protected $progress;
     /**
-     *
-     *
      * @var SalesSource
      */
     protected $source;
     /**
-     *
-     *
      * @var SalesStatus
      */
     protected $status;
     /**
-     *
-     *
      * @var GetSeparateInvoiceRecipient
      */
     protected $separateInvoiceRecipient;
     /**
-     *
-     *
      * @var GetTeamSimple[]
      */
     protected $teams;
     /**
-     *
-     *
      * @var GetCustomField[]
      */
     protected $customFields;
     /**
-     *
-     *
      * @var string
      */
     protected $createdAt;
     /**
-     *
-     *
      * @var string
      */
     protected $updatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $statusUpdatedAt;
     /**
-     *
-     *
      * @var string
      */
     protected $simplicateUrl;
     /**
-     *
-     *
      * @var GetProjectSimple
      */
     protected $linkedProject;
     /**
-     *
-     *
      * @var string
      */
     protected $myOrganizationProfileId;
     /**
-     *
-     *
      * @var string
      */
     protected $organizationId;
     /**
-     *
-     *
      * @var string
      */
     protected $personId;
     /**
-     *
-     *
      * @var string
      */
     protected $contactId;
     /**
-     *
-     *
      * @var SalesReason
      */
     protected $reason;
     /**
-     *
-     *
      * @var ContactPerson
      */
     protected $contact;
     /**
-     *
-     *
      * @var string
      */
     protected $subject;
     /**
-     *
-     *
      * @var string
      */
     protected $startDate;
     /**
-     *
-     *
      * @var string
      */
     protected $expectedClosingDate;
     /**
-     *
-     *
      * @var float
      */
     protected $expectedRevenue;
     /**
-     *
-     *
      * @var string
      */
     protected $note;
     /**
-     *
-     *
      * @var int
      */
     protected $chanceToScore;
     /**
-     *
-     *
      * @var LostToCompetitor
      */
     protected $lostToCompetitor;
 
     /**
-     *
-     *
      * @return string
      */
     public function getId(): string
@@ -195,8 +137,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param string $id
      *
      * @return self
@@ -210,8 +150,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return GetEmployeeSimple
      */
     public function getResponsibleEmployee(): GetEmployeeSimple
@@ -220,8 +158,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param GetEmployeeSimple $responsibleEmployee
      *
      * @return self
@@ -235,8 +171,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return GetPersonSimple
      */
     public function getPerson(): GetPersonSimple
@@ -245,8 +179,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param GetPersonSimple $person
      *
      * @return self
@@ -260,8 +192,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return GetOrganizationSimple
      */
     public function getOrganization(): GetOrganizationSimple
@@ -270,8 +200,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param GetOrganizationSimple $organization
      *
      * @return self
@@ -285,8 +213,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return SalesProgress
      */
     public function getProgress(): SalesProgress
@@ -295,8 +221,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param SalesProgress $progress
      *
      * @return self
@@ -310,8 +234,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return SalesSource
      */
     public function getSource(): SalesSource
@@ -320,8 +242,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param SalesSource $source
      *
      * @return self
@@ -335,8 +255,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return SalesStatus
      */
     public function getStatus(): SalesStatus
@@ -345,8 +263,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param SalesStatus $status
      *
      * @return self
@@ -360,8 +276,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return GetSeparateInvoiceRecipient
      */
     public function getSeparateInvoiceRecipient(): GetSeparateInvoiceRecipient
@@ -370,8 +284,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param GetSeparateInvoiceRecipient $separateInvoiceRecipient
      *
      * @return self
@@ -385,8 +297,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return GetTeamSimple[]
      */
     public function getTeams(): array
@@ -395,8 +305,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param GetTeamSimple[] $teams
      *
      * @return self
@@ -410,8 +318,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return GetCustomField[]
      */
     public function getCustomFields(): array
@@ -420,8 +326,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param GetCustomField[] $customFields
      *
      * @return self
@@ -435,8 +339,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getCreatedAt(): string
@@ -445,8 +347,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param string $createdAt
      *
      * @return self
@@ -460,8 +360,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getUpdatedAt(): string
@@ -470,8 +368,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param string $updatedAt
      *
      * @return self
@@ -485,8 +381,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStatusUpdatedAt(): string
@@ -495,8 +389,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param string $statusUpdatedAt
      *
      * @return self
@@ -510,8 +402,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSimplicateUrl(): string
@@ -520,8 +410,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param string $simplicateUrl
      *
      * @return self
@@ -535,8 +423,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return GetProjectSimple
      */
     public function getLinkedProject(): GetProjectSimple
@@ -545,8 +431,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param GetProjectSimple $linkedProject
      *
      * @return self
@@ -560,8 +444,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getMyOrganizationProfileId(): string
@@ -570,8 +452,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param string $myOrganizationProfileId
      *
      * @return self
@@ -585,8 +465,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getOrganizationId(): string
@@ -595,8 +473,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param string $organizationId
      *
      * @return self
@@ -610,8 +486,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getPersonId(): string
@@ -620,8 +494,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param string $personId
      *
      * @return self
@@ -635,8 +507,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getContactId(): string
@@ -645,8 +515,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param string $contactId
      *
      * @return self
@@ -660,8 +528,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return SalesReason
      */
     public function getReason(): SalesReason
@@ -670,8 +536,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param SalesReason $reason
      *
      * @return self
@@ -685,8 +549,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return ContactPerson
      */
     public function getContact(): ContactPerson
@@ -695,8 +557,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param ContactPerson $contact
      *
      * @return self
@@ -710,8 +570,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getSubject(): string
@@ -720,8 +578,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param string $subject
      *
      * @return self
@@ -735,8 +591,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -745,8 +599,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param string $startDate
      *
      * @return self
@@ -760,8 +612,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getExpectedClosingDate(): string
@@ -770,8 +620,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param string $expectedClosingDate
      *
      * @return self
@@ -785,8 +633,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return float
      */
     public function getExpectedRevenue(): float
@@ -795,8 +641,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param float $expectedRevenue
      *
      * @return self
@@ -810,8 +654,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return string
      */
     public function getNote(): string
@@ -820,8 +662,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param string $note
      *
      * @return self
@@ -835,8 +675,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return int
      */
     public function getChanceToScore(): int
@@ -845,8 +683,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param int $chanceToScore
      *
      * @return self
@@ -860,8 +696,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @return LostToCompetitor
      */
     public function getLostToCompetitor(): LostToCompetitor
@@ -870,8 +704,6 @@ class GetSales
     }
 
     /**
-     *
-     *
      * @param LostToCompetitor $lostToCompetitor
      *
      * @return self
