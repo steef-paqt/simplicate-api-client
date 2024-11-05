@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetSalesSalesfilterById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,10 +40,10 @@ class GetSalesSalesfilterById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalesfilterByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalesfilterByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalesfilterByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalesfilterByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,16 +53,16 @@ class GetSalesSalesfilterById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalesfilterByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesfilterByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalesfilterByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesfilterByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalesfilterByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesfilterByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalesfilterByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesfilterByIdInternalServerErrorException($response);
         }
     }
 

@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutSalesSaleById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\PostSales $body project object that needs to be updated
+     * @param \Paqtcom\Simplicate\Model\PostSales $body project object that needs to be updated
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PostSales $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostSales $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PutSalesSaleById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutSalesSaleByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutSalesSaleByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutSalesSaleByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutSalesSaleByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutSalesSaleByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutSalesSaleByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutSalesSaleByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutSalesSaleByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PutSalesSaleById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutSalesSaleByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutSalesSaleByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutSalesSaleByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutSalesSaleByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutSalesSaleByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutSalesSaleByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutSalesSaleByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutSalesSaleByIdInternalServerErrorException($response);
         }
     }
 

@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutProjectsAssignmentById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\PutAssignment $body Project assignment PUT body
+     * @param \Paqtcom\Simplicate\Model\PutAssignment $body Project assignment PUT body
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PutAssignment $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PutAssignment $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PutProjectsAssignmentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutProjectsAssignmentByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutProjectsAssignmentByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutProjectsAssignmentByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutProjectsAssignmentByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PutProjectsAssignmentById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutProjectsAssignmentByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutProjectsAssignmentByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutProjectsAssignmentByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutProjectsAssignmentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutProjectsAssignmentByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutProjectsAssignmentByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutProjectsAssignmentByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutProjectsAssignmentByIdInternalServerErrorException($response);
         }
     }
 

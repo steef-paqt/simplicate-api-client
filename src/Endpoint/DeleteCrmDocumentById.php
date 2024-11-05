@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteCrmDocumentById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteCrmDocumentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteCrmDocumentByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteCrmDocumentByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteCrmDocumentByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteCrmDocumentById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteCrmDocumentByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteCrmDocumentByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteCrmDocumentByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdInternalServerErrorException($response);
         }
     }
 

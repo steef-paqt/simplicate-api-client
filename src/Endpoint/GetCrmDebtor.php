@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmDebtor extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetCrmDebtor extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmDebtorUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmDebtorNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmDebtorInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmDebtorUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmDebtorNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmDebtorInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultDebtorList
+     * @return null|\Paqtcom\Simplicate\Model\RestResultDebtorList
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultDebtorList::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDebtorList::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmDebtorUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmDebtorUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmDebtorNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmDebtorNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmDebtorInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmDebtorInternalServerErrorException($response);
         }
     }
 

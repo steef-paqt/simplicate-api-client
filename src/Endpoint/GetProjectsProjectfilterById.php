@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetProjectsProjectfilterById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,10 +40,10 @@ class GetProjectsProjectfilterById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectfilterByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectfilterByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectfilterByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectfilterByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,16 +53,16 @@ class GetProjectsProjectfilterById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectfilterByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectfilterByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectfilterByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectfilterByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterByIdInternalServerErrorException($response);
         }
     }
 

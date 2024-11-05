@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetReminderSetNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetReminderSet::class;
+        return $type === \Paqtcom\Simplicate\Model\GetReminderSet::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetReminderSet::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetReminderSet::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetReminderSetNormalizer implements DenormalizerInterface, NormalizerInter
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetReminderSet();
+        $object = new \Paqtcom\Simplicate\Model\GetReminderSet();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -52,7 +52,7 @@ class GetReminderSetNormalizer implements DenormalizerInterface, NormalizerInter
         if (\array_key_exists('templates', $data)) {
             $values = [];
             foreach ($data['templates'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\ReminderSetTemplate::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\ReminderSetTemplate::class, 'json', $context);
             }
             $object->setTemplates($values);
         }
@@ -94,6 +94,6 @@ class GetReminderSetNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetReminderSet::class => false];
+        return [\Paqtcom\Simplicate\Model\GetReminderSet::class => false];
     }
 }

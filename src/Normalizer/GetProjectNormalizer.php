@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetProjectNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetProject::class;
+        return $type === \Paqtcom\Simplicate\Model\GetProject::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetProject::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetProject::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetProjectNormalizer implements DenormalizerInterface, NormalizerInterface
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetProject();
+        $object = new \Paqtcom\Simplicate\Model\GetProject();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,10 +50,10 @@ class GetProjectNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setId($data['id']);
         }
         if (\array_key_exists('project_manager', $data)) {
-            $object->setProjectManager($this->denormalizer->denormalize($data['project_manager'], \Steefdw\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+            $object->setProjectManager($this->denormalizer->denormalize($data['project_manager'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
         }
         if (\array_key_exists('project_status', $data)) {
-            $object->setProjectStatus($this->denormalizer->denormalize($data['project_status'], \Steefdw\Simplicate\Model\ProjectStatus::class, 'json', $context));
+            $object->setProjectStatus($this->denormalizer->denormalize($data['project_status'], \Paqtcom\Simplicate\Model\ProjectStatus::class, 'json', $context));
         }
         if (\array_key_exists('hours_rate_type', $data)) {
             $object->setHoursRateType($data['hours_rate_type']);
@@ -68,39 +68,39 @@ class GetProjectNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setAbnormalOrganizationId($data['abnormal_organization_id']);
         }
         if (\array_key_exists('organization', $data)) {
-            $object->setOrganization($this->denormalizer->denormalize($data['organization'], \Steefdw\Simplicate\Model\GetOrganizationSimple::class, 'json', $context));
+            $object->setOrganization($this->denormalizer->denormalize($data['organization'], \Paqtcom\Simplicate\Model\GetOrganizationSimple::class, 'json', $context));
         }
         if (\array_key_exists('person', $data)) {
-            $object->setPerson($this->denormalizer->denormalize($data['person'], \Steefdw\Simplicate\Model\GetPersonSimple::class, 'json', $context));
+            $object->setPerson($this->denormalizer->denormalize($data['person'], \Paqtcom\Simplicate\Model\GetPersonSimple::class, 'json', $context));
         }
         if (\array_key_exists('separate_invoice_recipient', $data)) {
-            $object->setSeparateInvoiceRecipient($this->denormalizer->denormalize($data['separate_invoice_recipient'], \Steefdw\Simplicate\Model\GetSeparateInvoiceRecipient::class, 'json', $context));
+            $object->setSeparateInvoiceRecipient($this->denormalizer->denormalize($data['separate_invoice_recipient'], \Paqtcom\Simplicate\Model\GetSeparateInvoiceRecipient::class, 'json', $context));
         }
         if (\array_key_exists('contact', $data)) {
-            $object->setContact($this->denormalizer->denormalize($data['contact'], \Steefdw\Simplicate\Model\GetContactSimple::class, 'json', $context));
+            $object->setContact($this->denormalizer->denormalize($data['contact'], \Paqtcom\Simplicate\Model\GetContactSimple::class, 'json', $context));
         }
         if (\array_key_exists('my_organization_profile', $data)) {
-            $object->setMyOrganizationProfile($this->denormalizer->denormalize($data['my_organization_profile'], \Steefdw\Simplicate\Model\GetMyOrganizationProfileSimple::class, 'json', $context));
+            $object->setMyOrganizationProfile($this->denormalizer->denormalize($data['my_organization_profile'], \Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple::class, 'json', $context));
         }
         if (\array_key_exists('divergent_payment_term', $data)) {
-            $object->setDivergentPaymentTerm($this->denormalizer->denormalize($data['divergent_payment_term'], \Steefdw\Simplicate\Model\GetPaymentTerm::class, 'json', $context));
+            $object->setDivergentPaymentTerm($this->denormalizer->denormalize($data['divergent_payment_term'], \Paqtcom\Simplicate\Model\GetPaymentTerm::class, 'json', $context));
         }
         if (\array_key_exists('employees', $data)) {
             $values = [];
             foreach ($data['employees'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\GetEmployeeSimple::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context);
             }
             $object->setEmployees($values);
         }
         if (\array_key_exists('teams', $data)) {
             $values_1 = [];
             foreach ($data['teams'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Steefdw\Simplicate\Model\GetTeamSimple::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\GetTeamSimple::class, 'json', $context);
             }
             $object->setTeams($values_1);
         }
         if (\array_key_exists('budget', $data)) {
-            $object->setBudget($this->denormalizer->denormalize($data['budget'], \Steefdw\Simplicate\Model\Budget::class, 'json', $context));
+            $object->setBudget($this->denormalizer->denormalize($data['budget'], \Paqtcom\Simplicate\Model\Budget::class, 'json', $context));
         }
         if (\array_key_exists('abnormal_contact_id', $data)) {
             $object->setAbnormalContactId($data['abnormal_contact_id']);
@@ -108,7 +108,7 @@ class GetProjectNormalizer implements DenormalizerInterface, NormalizerInterface
         if (\array_key_exists('custom_fields', $data)) {
             $values_2 = [];
             foreach ($data['custom_fields'] as $value_2) {
-                $values_2[] = $this->denormalizer->denormalize($value_2, \Steefdw\Simplicate\Model\GetCustomField::class, 'json', $context);
+                $values_2[] = $this->denormalizer->denormalize($value_2, \Paqtcom\Simplicate\Model\GetCustomField::class, 'json', $context);
             }
             $object->setCustomFields($values_2);
         }
@@ -128,7 +128,7 @@ class GetProjectNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setIsInvoiceApproval($data['is_invoice_approval']);
         }
         if (\array_key_exists('copied_from_project', $data)) {
-            $object->setCopiedFromProject($this->denormalizer->denormalize($data['copied_from_project'], \Steefdw\Simplicate\Model\GetProjectSimple::class, 'json', $context));
+            $object->setCopiedFromProject($this->denormalizer->denormalize($data['copied_from_project'], \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context));
         }
         if (\array_key_exists('my_organization_profile_id', $data)) {
             $object->setMyOrganizationProfileId($data['my_organization_profile_id']);
@@ -302,6 +302,6 @@ class GetProjectNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetProject::class => false];
+        return [\Paqtcom\Simplicate\Model\GetProject::class => false];
     }
 }

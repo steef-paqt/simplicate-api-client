@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostMileageMileage extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostMileage $body Mileage object that needs to be added
+     * @param \Paqtcom\Simplicate\Model\PostMileage $body Mileage object that needs to be added
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostMileage $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostMileage $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostMileageMileage extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostMileageMileageUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostMileageMileageNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostMileageMileageInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostMileageMileageUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostMileageMileageNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostMileageMileageInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostMileageMileage extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostMileageMileageUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostMileageMileageUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostMileageMileageNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostMileageMileageNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostMileageMileageInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostMileageMileageInternalServerErrorException($response);
         }
     }
 

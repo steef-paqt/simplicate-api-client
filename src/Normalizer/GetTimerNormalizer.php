@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetTimerNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetTimer::class;
+        return $type === \Paqtcom\Simplicate\Model\GetTimer::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetTimer::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetTimer::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetTimerNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetTimer();
+        $object = new \Paqtcom\Simplicate\Model\GetTimer();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -56,19 +56,19 @@ class GetTimerNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setMinSecondsStep($data['min_seconds_step']);
         }
         if (\array_key_exists('employee', $data)) {
-            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Steefdw\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
         }
         if (\array_key_exists('project', $data)) {
-            $object->setProject($this->denormalizer->denormalize($data['project'], \Steefdw\Simplicate\Model\GetProjectSimple::class, 'json', $context));
+            $object->setProject($this->denormalizer->denormalize($data['project'], \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context));
         }
         if (\array_key_exists('projectservice', $data)) {
-            $object->setProjectservice($this->denormalizer->denormalize($data['projectservice'], \Steefdw\Simplicate\Model\GetProjectServiceSimple::class, 'json', $context));
+            $object->setProjectservice($this->denormalizer->denormalize($data['projectservice'], \Paqtcom\Simplicate\Model\GetProjectServiceSimple::class, 'json', $context));
         }
         if (\array_key_exists('hourstype', $data)) {
-            $object->setHourstype($this->denormalizer->denormalize($data['hourstype'], \Steefdw\Simplicate\Model\GetHoursType::class, 'json', $context));
+            $object->setHourstype($this->denormalizer->denormalize($data['hourstype'], \Paqtcom\Simplicate\Model\GetHoursType::class, 'json', $context));
         }
         if (\array_key_exists('related_hours', $data)) {
-            $object->setRelatedHours($this->denormalizer->denormalize($data['related_hours'], \Steefdw\Simplicate\Model\GetHoursSimple::class, 'json', $context));
+            $object->setRelatedHours($this->denormalizer->denormalize($data['related_hours'], \Paqtcom\Simplicate\Model\GetHoursSimple::class, 'json', $context));
         }
         if (\array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
@@ -140,6 +140,6 @@ class GetTimerNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetTimer::class => false];
+        return [\Paqtcom\Simplicate\Model\GetTimer::class => false];
     }
 }

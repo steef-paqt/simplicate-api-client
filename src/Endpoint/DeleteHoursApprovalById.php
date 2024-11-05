@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteHoursApprovalById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteHoursApprovalById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteHoursApprovalByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteHoursApprovalByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteHoursApprovalByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteHoursApprovalById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHoursApprovalByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHoursApprovalByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHoursApprovalByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdInternalServerErrorException($response);
         }
     }
 

@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostHrmAbsence extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostAbsence $body absence object containing data
+     * @param \Paqtcom\Simplicate\Model\PostAbsence $body absence object containing data
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostAbsence $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostAbsence $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostHrmAbsence extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostHrmAbsenceBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PostHrmAbsenceUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostHrmAbsenceInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostHrmAbsenceBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostHrmAbsenceUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostHrmAbsenceInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -56,13 +56,13 @@ class PostHrmAbsence extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHrmAbsenceBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHrmAbsenceBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHrmAbsenceUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHrmAbsenceUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHrmAbsenceInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHrmAbsenceInternalServerErrorException($response);
         }
     }
 

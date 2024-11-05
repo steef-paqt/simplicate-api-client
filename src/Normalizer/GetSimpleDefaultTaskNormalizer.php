@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetSimpleDefaultTaskNormalizer implements DenormalizerInterface, Normalize
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetSimpleDefaultTask::class;
+        return $type === \Paqtcom\Simplicate\Model\GetSimpleDefaultTask::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetSimpleDefaultTask::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetSimpleDefaultTask::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetSimpleDefaultTaskNormalizer implements DenormalizerInterface, Normalize
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetSimpleDefaultTask();
+        $object = new \Paqtcom\Simplicate\Model\GetSimpleDefaultTask();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -74,6 +74,6 @@ class GetSimpleDefaultTaskNormalizer implements DenormalizerInterface, Normalize
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetSimpleDefaultTask::class => false];
+        return [\Paqtcom\Simplicate\Model\GetSimpleDefaultTask::class => false];
     }
 }

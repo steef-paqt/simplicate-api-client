@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostProjectsAssignment extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostAssignment $body Project assignment POST body
+     * @param \Paqtcom\Simplicate\Model\PostAssignment $body Project assignment POST body
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostAssignment $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostAssignment $body)
     {
         $this->body = $body;
     }
@@ -41,10 +41,10 @@ class PostProjectsAssignment extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostProjectsAssignmentBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PostProjectsAssignmentUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostProjectsAssignmentNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostProjectsAssignmentInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostProjectsAssignmentBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostProjectsAssignmentUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostProjectsAssignmentNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostProjectsAssignmentInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -54,16 +54,16 @@ class PostProjectsAssignment extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostProjectsAssignmentBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostProjectsAssignmentBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostProjectsAssignmentUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostProjectsAssignmentUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostProjectsAssignmentNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostProjectsAssignmentNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostProjectsAssignmentInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostProjectsAssignmentInternalServerErrorException($response);
         }
     }
 

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHrmContract extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetHrmContract extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHrmContractUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmContractNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmContractInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmContractUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmContractNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmContractInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultContracts
+     * @return null|\Paqtcom\Simplicate\Model\RestResultContracts
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultContracts::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultContracts::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmContractUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmContractUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmContractNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmContractNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmContractInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmContractInternalServerErrorException($response);
         }
     }
 

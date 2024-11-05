@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetSalesSalesstatus extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetSalesSalesstatus extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalesstatusUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalesstatusNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalesstatusInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesstatusUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesstatusNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesstatusInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultSalesStatusses
+     * @return null|\Paqtcom\Simplicate\Model\RestResultSalesStatusses
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultSalesStatusses::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultSalesStatusses::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalesstatusUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesstatusUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalesstatusNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesstatusNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalesstatusInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesstatusInternalServerErrorException($response);
         }
     }
 

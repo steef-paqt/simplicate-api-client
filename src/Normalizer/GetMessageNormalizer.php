@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetMessageNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetMessage::class;
+        return $type === \Paqtcom\Simplicate\Model\GetMessage::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetMessage::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetMessage::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetMessageNormalizer implements DenormalizerInterface, NormalizerInterface
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetMessage();
+        $object = new \Paqtcom\Simplicate\Model\GetMessage();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -52,22 +52,22 @@ class GetMessageNormalizer implements DenormalizerInterface, NormalizerInterface
         if (\array_key_exists('attachments', $data)) {
             $values = [];
             foreach ($data['attachments'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\Attachment::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\Attachment::class, 'json', $context);
             }
             $object->setAttachments($values);
         }
         if (\array_key_exists('message_type', $data)) {
-            $object->setMessageType($this->denormalizer->denormalize($data['message_type'], \Steefdw\Simplicate\Model\MessageType::class, 'json', $context));
+            $object->setMessageType($this->denormalizer->denormalize($data['message_type'], \Paqtcom\Simplicate\Model\MessageType::class, 'json', $context));
         }
         if (\array_key_exists('linked_to', $data)) {
             $values_1 = [];
             foreach ($data['linked_to'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Steefdw\Simplicate\Model\LinkedToEntity::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\LinkedToEntity::class, 'json', $context);
             }
             $object->setLinkedTo($values_1);
         }
         if (\array_key_exists('created_by', $data)) {
-            $object->setCreatedBy($this->denormalizer->denormalize($data['created_by'], \Steefdw\Simplicate\Model\Creator::class, 'json', $context));
+            $object->setCreatedBy($this->denormalizer->denormalize($data['created_by'], \Paqtcom\Simplicate\Model\Creator::class, 'json', $context));
         }
         if (\array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
@@ -81,7 +81,7 @@ class GetMessageNormalizer implements DenormalizerInterface, NormalizerInterface
         if (\array_key_exists('content_fields', $data)) {
             $values_2 = [];
             foreach ($data['content_fields'] as $value_2) {
-                $values_2[] = $this->denormalizer->denormalize($value_2, \Steefdw\Simplicate\Model\ContentField::class, 'json', $context);
+                $values_2[] = $this->denormalizer->denormalize($value_2, \Paqtcom\Simplicate\Model\ContentField::class, 'json', $context);
             }
             $object->setContentFields($values_2);
         }
@@ -152,6 +152,6 @@ class GetMessageNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetMessage::class => false];
+        return [\Paqtcom\Simplicate\Model\GetMessage::class => false];
     }
 }

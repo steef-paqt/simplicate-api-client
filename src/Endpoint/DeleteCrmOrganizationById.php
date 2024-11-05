@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteCrmOrganizationById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteCrmOrganizationById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteCrmOrganizationByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteCrmOrganizationByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteCrmOrganizationByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteCrmOrganizationById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteCrmOrganizationByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteCrmOrganizationByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteCrmOrganizationByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdInternalServerErrorException($response);
         }
     }
 

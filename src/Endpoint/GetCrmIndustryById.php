@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmIndustryById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetCrmIndustryById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmIndustryByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmIndustryByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmIndustryByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmIndustryByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultIndustry
+     * @return null|\Paqtcom\Simplicate\Model\RestResultIndustry
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultIndustry::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultIndustry::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmIndustryByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmIndustryByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmIndustryByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmIndustryByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdInternalServerErrorException($response);
         }
     }
 

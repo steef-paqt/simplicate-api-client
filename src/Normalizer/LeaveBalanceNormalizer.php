@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class LeaveBalanceNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\LeaveBalance::class;
+        return $type === \Paqtcom\Simplicate\Model\LeaveBalance::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\LeaveBalance::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\LeaveBalance::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class LeaveBalanceNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\LeaveBalance();
+        $object = new \Paqtcom\Simplicate\Model\LeaveBalance();
         if (\array_key_exists('balance', $data) && \is_int($data['balance'])) {
             $data['balance'] = (float) $data['balance'];
         }
@@ -53,7 +53,7 @@ class LeaveBalanceNormalizer implements DenormalizerInterface, NormalizerInterfa
             return $object;
         }
         if (\array_key_exists('employee', $data)) {
-            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Steefdw\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
         }
         if (\array_key_exists('balance', $data)) {
             $object->setBalance($data['balance']);
@@ -68,7 +68,7 @@ class LeaveBalanceNormalizer implements DenormalizerInterface, NormalizerInterfa
             $object->setYear($data['year']);
         }
         if (\array_key_exists('leavetype', $data)) {
-            $object->setLeavetype($this->denormalizer->denormalize($data['leavetype'], \Steefdw\Simplicate\Model\HrmGetLeaveType::class, 'json', $context));
+            $object->setLeavetype($this->denormalizer->denormalize($data['leavetype'], \Paqtcom\Simplicate\Model\HrmGetLeaveType::class, 'json', $context));
         }
 
         return $object;
@@ -104,6 +104,6 @@ class LeaveBalanceNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\LeaveBalance::class => false];
+        return [\Paqtcom\Simplicate\Model\LeaveBalance::class => false];
     }
 }

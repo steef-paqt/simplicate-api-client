@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetSalesSalescustomfieldgroupById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetSalesSalescustomfieldgroupById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultCustomFieldGroup
+     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultCustomFieldGroup::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdInternalServerErrorException($response);
         }
     }
 

@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostHrmEmployee extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostEmployee $body Employee object that needs to be added
+     * @param \Paqtcom\Simplicate\Model\PostEmployee $body Employee object that needs to be added
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostEmployee $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostEmployee $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostHrmEmployee extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostHrmEmployeeUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostHrmEmployeeNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostHrmEmployeeInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostHrmEmployeeUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostHrmEmployeeNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostHrmEmployeeInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostHrmEmployee extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHrmEmployeeUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHrmEmployeeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHrmEmployeeNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHrmEmployeeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHrmEmployeeInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHrmEmployeeInternalServerErrorException($response);
         }
     }
 

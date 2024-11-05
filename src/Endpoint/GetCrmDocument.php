@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmDocument extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetCrmDocument extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmDocumentUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmDocumentNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmDocumentInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumentUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumentNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumentInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultDocuments
+     * @return null|\Paqtcom\Simplicate\Model\RestResultDocuments
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultDocuments::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocuments::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmDocumentUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmDocumentUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmDocumentNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmDocumentNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmDocumentInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmDocumentInternalServerErrorException($response);
         }
     }
 

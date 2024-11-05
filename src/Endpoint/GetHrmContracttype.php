@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHrmContracttype extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetHrmContracttype extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHrmContracttypeUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmContracttypeNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmContracttypeInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmContracttypeUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmContracttypeNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmContracttypeInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultContractTypes
+     * @return null|\Paqtcom\Simplicate\Model\RestResultContractTypes
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultContractTypes::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultContractTypes::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmContracttypeUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmContracttypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmContracttypeNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmContracttypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmContracttypeInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmContracttypeInternalServerErrorException($response);
         }
     }
 

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetInvoiceSimpleNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetInvoiceSimple::class;
+        return $type === \Paqtcom\Simplicate\Model\GetInvoiceSimple::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetInvoiceSimple::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetInvoiceSimple::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetInvoiceSimpleNormalizer implements DenormalizerInterface, NormalizerInt
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetInvoiceSimple();
+        $object = new \Paqtcom\Simplicate\Model\GetInvoiceSimple();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -56,7 +56,7 @@ class GetInvoiceSimpleNormalizer implements DenormalizerInterface, NormalizerInt
             $object->setInvoiceDate($data['invoice_date']);
         }
         if (\array_key_exists('status', $data)) {
-            $object->setStatus($this->denormalizer->denormalize($data['status'], \Steefdw\Simplicate\Model\InvoiceStatus::class, 'json', $context));
+            $object->setStatus($this->denormalizer->denormalize($data['status'], \Paqtcom\Simplicate\Model\InvoiceStatus::class, 'json', $context));
         }
 
         return $object;
@@ -86,6 +86,6 @@ class GetInvoiceSimpleNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetInvoiceSimple::class => false];
+        return [\Paqtcom\Simplicate\Model\GetInvoiceSimple::class => false];
     }
 }

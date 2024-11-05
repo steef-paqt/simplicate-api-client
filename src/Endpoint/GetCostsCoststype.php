@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCostsCoststype extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetCostsCoststype extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCostsCoststypeUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCostsCoststypeNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCostsCoststypeInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultHourTypes
+     * @return null|\Paqtcom\Simplicate\Model\RestResultHourTypes
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultHourTypes::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultHourTypes::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCostsCoststypeUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCostsCoststypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCostsCoststypeNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCostsCoststypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCostsCoststypeInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCostsCoststypeInternalServerErrorException($response);
         }
     }
 

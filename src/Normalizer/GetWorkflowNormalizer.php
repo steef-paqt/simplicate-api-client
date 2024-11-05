@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetWorkflow::class;
+        return $type === \Paqtcom\Simplicate\Model\GetWorkflow::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetWorkflow::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetWorkflow::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetWorkflow();
+        $object = new \Paqtcom\Simplicate\Model\GetWorkflow();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,22 +50,22 @@ class GetWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfac
             $object->setId($data['id']);
         }
         if (\array_key_exists('defaultworkflow', $data)) {
-            $object->setDefaultworkflow($this->denormalizer->denormalize($data['defaultworkflow'], \Steefdw\Simplicate\Model\GetSimpleDefaultWorkflow::class, 'json', $context));
+            $object->setDefaultworkflow($this->denormalizer->denormalize($data['defaultworkflow'], \Paqtcom\Simplicate\Model\GetSimpleDefaultWorkflow::class, 'json', $context));
         }
         if (\array_key_exists('current_task', $data)) {
-            $object->setCurrentTask($this->denormalizer->denormalize($data['current_task'], \Steefdw\Simplicate\Model\CurrentTask::class, 'json', $context));
+            $object->setCurrentTask($this->denormalizer->denormalize($data['current_task'], \Paqtcom\Simplicate\Model\CurrentTask::class, 'json', $context));
         }
         if (\array_key_exists('actions', $data)) {
             $values = [];
             foreach ($data['actions'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\GetDefaultAction::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\GetDefaultAction::class, 'json', $context);
             }
             $object->setActions($values);
         }
         if (\array_key_exists('linked_to', $data)) {
             $values_1 = [];
             foreach ($data['linked_to'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Steefdw\Simplicate\Model\LinkedTo::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\LinkedTo::class, 'json', $context);
             }
             $object->setLinkedTo($values_1);
         }
@@ -75,19 +75,19 @@ class GetWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (\array_key_exists('attachments', $data)) {
             $values_2 = [];
             foreach ($data['attachments'] as $value_2) {
-                $values_2[] = $this->denormalizer->denormalize($value_2, \Steefdw\Simplicate\Model\GetDocument::class, 'json', $context);
+                $values_2[] = $this->denormalizer->denormalize($value_2, \Paqtcom\Simplicate\Model\GetDocument::class, 'json', $context);
             }
             $object->setAttachments($values_2);
         }
         if (\array_key_exists('comments', $data)) {
             $values_3 = [];
             foreach ($data['comments'] as $value_3) {
-                $values_3[] = $this->denormalizer->denormalize($value_3, \Steefdw\Simplicate\Model\Comment::class, 'json', $context);
+                $values_3[] = $this->denormalizer->denormalize($value_3, \Paqtcom\Simplicate\Model\Comment::class, 'json', $context);
             }
             $object->setComments($values_3);
         }
         if (\array_key_exists('created_by', $data)) {
-            $object->setCreatedBy($this->denormalizer->denormalize($data['created_by'], \Steefdw\Simplicate\Model\CreatedBy::class, 'json', $context));
+            $object->setCreatedBy($this->denormalizer->denormalize($data['created_by'], \Paqtcom\Simplicate\Model\CreatedBy::class, 'json', $context));
         }
         if (\array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
@@ -178,6 +178,6 @@ class GetWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetWorkflow::class => false];
+        return [\Paqtcom\Simplicate\Model\GetWorkflow::class => false];
     }
 }

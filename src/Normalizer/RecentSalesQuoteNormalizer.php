@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class RecentSalesQuoteNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\RecentSalesQuote::class;
+        return $type === \Paqtcom\Simplicate\Model\RecentSalesQuote::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\RecentSalesQuote::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\RecentSalesQuote::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class RecentSalesQuoteNormalizer implements DenormalizerInterface, NormalizerInt
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\RecentSalesQuote();
+        $object = new \Paqtcom\Simplicate\Model\RecentSalesQuote();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,7 +50,7 @@ class RecentSalesQuoteNormalizer implements DenormalizerInterface, NormalizerInt
             $object->setQuoteNumber($data['quote_number']);
         }
         if (\array_key_exists('status', $data)) {
-            $object->setStatus($this->denormalizer->denormalize($data['status'], \Steefdw\Simplicate\Model\RecentSalesQuoteStatus::class, 'json', $context));
+            $object->setStatus($this->denormalizer->denormalize($data['status'], \Paqtcom\Simplicate\Model\RecentSalesQuoteStatus::class, 'json', $context));
         }
 
         return $object;
@@ -74,6 +74,6 @@ class RecentSalesQuoteNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\RecentSalesQuote::class => false];
+        return [\Paqtcom\Simplicate\Model\RecentSalesQuote::class => false];
     }
 }

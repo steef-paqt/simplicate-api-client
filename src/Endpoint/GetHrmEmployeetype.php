@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHrmEmployeetype extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetHrmEmployeetype extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHrmEmployeetypeUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmEmployeetypeNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmEmployeetypeInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultEmployeeTypes
+     * @return null|\Paqtcom\Simplicate\Model\RestResultEmployeeTypes
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultEmployeeTypes::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultEmployeeTypes::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmEmployeetypeUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmEmployeetypeNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmEmployeetypeInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeInternalServerErrorException($response);
         }
     }
 

@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutSalesDocument extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PutDocument $body Document object containing data
+     * @param \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data
      */
-    public function __construct(\Steefdw\Simplicate\Model\PutDocument $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PutDocument $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PutSalesDocument extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutSalesDocumentBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutSalesDocumentUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutSalesDocumentInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutSalesDocumentBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutSalesDocumentUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutSalesDocumentInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PutSalesDocument extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutSalesDocumentBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutSalesDocumentBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutSalesDocumentUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutSalesDocumentUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutSalesDocumentInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutSalesDocumentInternalServerErrorException($response);
         }
     }
 

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetSalesDocumenttype extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetSalesDocumenttype extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetSalesDocumenttypeUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesDocumenttypeNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesDocumenttypeInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultDocumentTypes
+     * @return null|\Paqtcom\Simplicate\Model\RestResultDocumentTypes
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultDocumentTypes::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesDocumenttypeUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesDocumenttypeNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesDocumenttypeInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeInternalServerErrorException($response);
         }
     }
 

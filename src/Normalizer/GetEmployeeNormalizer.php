@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetEmployee::class;
+        return $type === \Paqtcom\Simplicate\Model\GetEmployee::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetEmployee::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetEmployee::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetEmployee();
+        $object = new \Paqtcom\Simplicate\Model\GetEmployee();
         if (\array_key_exists('hourly_sales_tariff', $data) && \is_int($data['hourly_sales_tariff'])) {
             $data['hourly_sales_tariff'] = (float) $data['hourly_sales_tariff'];
         }
@@ -61,20 +61,20 @@ class GetEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (\array_key_exists('teams', $data)) {
             $values = [];
             foreach ($data['teams'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\Team::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\Team::class, 'json', $context);
             }
             $object->setTeams($values);
         }
         if (\array_key_exists('supervisor', $data)) {
-            $object->setSupervisor($this->denormalizer->denormalize($data['supervisor'], \Steefdw\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+            $object->setSupervisor($this->denormalizer->denormalize($data['supervisor'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
         }
         if (\array_key_exists('status', $data)) {
-            $object->setStatus($this->denormalizer->denormalize($data['status'], \Steefdw\Simplicate\Model\EmployeeStatus::class, 'json', $context));
+            $object->setStatus($this->denormalizer->denormalize($data['status'], \Paqtcom\Simplicate\Model\EmployeeStatus::class, 'json', $context));
         }
         if (\array_key_exists('custom_fields', $data)) {
             $values_1 = [];
             foreach ($data['custom_fields'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Steefdw\Simplicate\Model\GetCustomField::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\GetCustomField::class, 'json', $context);
             }
             $object->setCustomFields($values_1);
         }
@@ -115,7 +115,7 @@ class GetEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfac
             $object->setHourlyCostTariff($data['hourly_cost_tariff']);
         }
         if (\array_key_exists('avatar', $data)) {
-            $object->setAvatar($this->denormalizer->denormalize($data['avatar'], \Steefdw\Simplicate\Model\Avatar::class, 'json', $context));
+            $object->setAvatar($this->denormalizer->denormalize($data['avatar'], \Paqtcom\Simplicate\Model\Avatar::class, 'json', $context));
         }
         if (\array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
@@ -216,6 +216,6 @@ class GetEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetEmployee::class => false];
+        return [\Paqtcom\Simplicate\Model\GetEmployee::class => false];
     }
 }

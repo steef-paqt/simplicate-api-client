@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostProjectsService extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostProjectService $body template object that needs to be added
+     * @param \Paqtcom\Simplicate\Model\PostProjectService $body template object that needs to be added
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostProjectService $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostProjectService $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostProjectsService extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostProjectsServiceUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostProjectsServiceNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostProjectsServiceInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostProjectsService extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostProjectsServiceUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostProjectsServiceUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostProjectsServiceNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostProjectsServiceNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostProjectsServiceInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostProjectsServiceInternalServerErrorException($response);
         }
     }
 

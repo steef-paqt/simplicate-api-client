@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostSalesServiceByIdDuplicate extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -42,10 +42,10 @@ class PostSalesServiceByIdDuplicate extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostSalesServiceByIdDuplicateBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PostSalesServiceByIdDuplicateUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostSalesServiceByIdDuplicateNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostSalesServiceByIdDuplicateInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceByIdDuplicateBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceByIdDuplicateUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceByIdDuplicateNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceByIdDuplicateInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PostSalesServiceByIdDuplicate extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSalesServiceByIdDuplicateBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSalesServiceByIdDuplicateBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSalesServiceByIdDuplicateUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSalesServiceByIdDuplicateUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSalesServiceByIdDuplicateNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSalesServiceByIdDuplicateNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSalesServiceByIdDuplicateInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSalesServiceByIdDuplicateInternalServerErrorException($response);
         }
     }
 

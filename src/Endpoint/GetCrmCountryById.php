@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmCountryById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetCrmCountryById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmCountryByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmCountryByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmCountryByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmCountryByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmCountryByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmCountryByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmCountryByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmCountryByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultCountry
+     * @return null|\Paqtcom\Simplicate\Model\RestResultCountry
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultCountry::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCountry::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmCountryByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmCountryByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmCountryByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmCountryByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmCountryByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmCountryByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmCountryByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmCountryByIdInternalServerErrorException($response);
         }
     }
 

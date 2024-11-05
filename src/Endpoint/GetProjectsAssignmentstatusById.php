@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetProjectsAssignmentstatusById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -59,27 +59,27 @@ class GetProjectsAssignmentstatusById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsAssignmentstatusByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsAssignmentstatusByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsAssignmentstatusByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultProjectAssignmentStatus
+     * @return null|\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultProjectAssignmentStatus::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsAssignmentstatusByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsAssignmentstatusByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsAssignmentstatusByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdInternalServerErrorException($response);
         }
     }
 

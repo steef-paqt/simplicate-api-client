@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteHoursHourById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteHoursHourById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteHoursHourByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteHoursHourByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteHoursHourByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteHoursHourById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHoursHourByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHoursHourByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHoursHourByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdInternalServerErrorException($response);
         }
     }
 

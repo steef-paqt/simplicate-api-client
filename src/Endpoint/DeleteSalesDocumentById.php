@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteSalesDocumentById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteSalesDocumentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteSalesDocumentByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteSalesDocumentByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteSalesDocumentByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteSalesDocumentById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSalesDocumentByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSalesDocumentByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSalesDocumentByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdInternalServerErrorException($response);
         }
     }
 

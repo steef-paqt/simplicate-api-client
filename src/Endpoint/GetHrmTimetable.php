@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHrmTimetable extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetHrmTimetable extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHrmTimetableUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmTimetableNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmTimetableInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmTimetableUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmTimetableNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmTimetableInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultTimetables
+     * @return null|\Paqtcom\Simplicate\Model\RestResultTimetables
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultTimetables::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultTimetables::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmTimetableUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmTimetableUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmTimetableNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmTimetableNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmTimetableInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmTimetableInternalServerErrorException($response);
         }
     }
 

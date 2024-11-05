@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetDocumentNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetDocument::class;
+        return $type === \Paqtcom\Simplicate\Model\GetDocument::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetDocument::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetDocument::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetDocumentNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetDocument();
+        $object = new \Paqtcom\Simplicate\Model\GetDocument();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -53,17 +53,17 @@ class GetDocumentNormalizer implements DenormalizerInterface, NormalizerInterfac
             $object->setDownloadUrl($data['download_url']);
         }
         if (\array_key_exists('document_type', $data)) {
-            $object->setDocumentType($this->denormalizer->denormalize($data['document_type'], \Steefdw\Simplicate\Model\DocumentTypeSimple::class, 'json', $context));
+            $object->setDocumentType($this->denormalizer->denormalize($data['document_type'], \Paqtcom\Simplicate\Model\DocumentTypeSimple::class, 'json', $context));
         }
         if (\array_key_exists('linked_to', $data)) {
             $values = [];
             foreach ($data['linked_to'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\LinkedToEntity::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\LinkedToEntity::class, 'json', $context);
             }
             $object->setLinkedTo($values);
         }
         if (\array_key_exists('created_by', $data)) {
-            $object->setCreatedBy($this->denormalizer->denormalize($data['created_by'], \Steefdw\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+            $object->setCreatedBy($this->denormalizer->denormalize($data['created_by'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
         }
         if (\array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
@@ -124,6 +124,6 @@ class GetDocumentNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetDocument::class => false];
+        return [\Paqtcom\Simplicate\Model\GetDocument::class => false];
     }
 }

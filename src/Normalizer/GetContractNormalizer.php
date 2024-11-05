@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetContractNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetContract::class;
+        return $type === \Paqtcom\Simplicate\Model\GetContract::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetContract::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetContract::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetContractNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetContract();
+        $object = new \Paqtcom\Simplicate\Model\GetContract();
         if (\array_key_exists('salary_fulltime', $data) && \is_int($data['salary_fulltime'])) {
             $data['salary_fulltime'] = (float) $data['salary_fulltime'];
         }
@@ -59,16 +59,16 @@ class GetContractNormalizer implements DenormalizerInterface, NormalizerInterfac
             $object->setId($data['id']);
         }
         if (\array_key_exists('employee', $data)) {
-            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Steefdw\Simplicate\Model\GetEmployee::class, 'json', $context));
+            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Paqtcom\Simplicate\Model\GetEmployee::class, 'json', $context));
         }
         if (\array_key_exists('employer', $data)) {
-            $object->setEmployer($this->denormalizer->denormalize($data['employer'], \Steefdw\Simplicate\Model\GetOrganizationSimple::class, 'json', $context));
+            $object->setEmployer($this->denormalizer->denormalize($data['employer'], \Paqtcom\Simplicate\Model\GetOrganizationSimple::class, 'json', $context));
         }
         if (\array_key_exists('employment_type', $data)) {
-            $object->setEmploymentType($this->denormalizer->denormalize($data['employment_type'], \Steefdw\Simplicate\Model\EmploymentType::class, 'json', $context));
+            $object->setEmploymentType($this->denormalizer->denormalize($data['employment_type'], \Paqtcom\Simplicate\Model\EmploymentType::class, 'json', $context));
         }
         if (\array_key_exists('contract_type', $data)) {
-            $object->setContractType($this->denormalizer->denormalize($data['contract_type'], \Steefdw\Simplicate\Model\ContractType::class, 'json', $context));
+            $object->setContractType($this->denormalizer->denormalize($data['contract_type'], \Paqtcom\Simplicate\Model\ContractType::class, 'json', $context));
         }
         if (\array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
@@ -143,6 +143,6 @@ class GetContractNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetContract::class => false];
+        return [\Paqtcom\Simplicate\Model\GetContract::class => false];
     }
 }

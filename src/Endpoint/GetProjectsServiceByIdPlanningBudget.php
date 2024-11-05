@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetProjectsServiceByIdPlanningBudget extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -57,10 +57,10 @@ class GetProjectsServiceByIdPlanningBudget extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -70,16 +70,16 @@ class GetProjectsServiceByIdPlanningBudget extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetInternalServerErrorException($response);
         }
     }
 

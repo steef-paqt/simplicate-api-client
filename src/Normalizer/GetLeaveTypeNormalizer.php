@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetLeaveTypeNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetLeaveType::class;
+        return $type === \Paqtcom\Simplicate\Model\GetLeaveType::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetLeaveType::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetLeaveType::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetLeaveTypeNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetLeaveType();
+        $object = new \Paqtcom\Simplicate\Model\GetLeaveType();
         if (\array_key_exists('billable', $data) && \is_int($data['billable'])) {
             $data['billable'] = (float) $data['billable'];
         }
@@ -62,7 +62,7 @@ class GetLeaveTypeNormalizer implements DenormalizerInterface, NormalizerInterfa
             $object->setBillable($data['billable']);
         }
         if (\array_key_exists('vatclass', $data)) {
-            $object->setVatclass($this->denormalizer->denormalize($data['vatclass'], \Steefdw\Simplicate\Model\VatClass::class, 'json', $context));
+            $object->setVatclass($this->denormalizer->denormalize($data['vatclass'], \Paqtcom\Simplicate\Model\VatClass::class, 'json', $context));
         }
         if (\array_key_exists('label', $data)) {
             $object->setLabel($data['label']);
@@ -119,6 +119,6 @@ class GetLeaveTypeNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetLeaveType::class => false];
+        return [\Paqtcom\Simplicate\Model\GetLeaveType::class => false];
     }
 }

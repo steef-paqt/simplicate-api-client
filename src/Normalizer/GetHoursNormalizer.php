@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetHoursNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetHours::class;
+        return $type === \Paqtcom\Simplicate\Model\GetHours::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetHours::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetHours::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetHoursNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetHours();
+        $object = new \Paqtcom\Simplicate\Model\GetHours();
         if (\array_key_exists('tariff', $data) && \is_int($data['tariff'])) {
             $data['tariff'] = (float) $data['tariff'];
         }
@@ -56,19 +56,19 @@ class GetHoursNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setId($data['id']);
         }
         if (\array_key_exists('employee', $data)) {
-            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Steefdw\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
         }
         if (\array_key_exists('project', $data)) {
-            $object->setProject($this->denormalizer->denormalize($data['project'], \Steefdw\Simplicate\Model\GetProjectSimple::class, 'json', $context));
+            $object->setProject($this->denormalizer->denormalize($data['project'], \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context));
         }
         if (\array_key_exists('projectservice', $data)) {
-            $object->setProjectservice($this->denormalizer->denormalize($data['projectservice'], \Steefdw\Simplicate\Model\GetHoursHoursProjectService::class, 'json', $context));
+            $object->setProjectservice($this->denormalizer->denormalize($data['projectservice'], \Paqtcom\Simplicate\Model\GetHoursHoursProjectService::class, 'json', $context));
         }
         if (\array_key_exists('type', $data)) {
             $object->setType($data['type']);
         }
         if (\array_key_exists('approvalstatus', $data)) {
-            $object->setApprovalstatus($this->denormalizer->denormalize($data['approvalstatus'], \Steefdw\Simplicate\Model\GetApprovalStatus::class, 'json', $context));
+            $object->setApprovalstatus($this->denormalizer->denormalize($data['approvalstatus'], \Paqtcom\Simplicate\Model\GetApprovalStatus::class, 'json', $context));
         }
         if (\array_key_exists('invoice_status', $data)) {
             $object->setInvoiceStatus($data['invoice_status']);
@@ -85,7 +85,7 @@ class GetHoursNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (\array_key_exists('custom_fields', $data)) {
             $values = [];
             foreach ($data['custom_fields'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\GetCustomField::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\GetCustomField::class, 'json', $context);
             }
             $object->setCustomFields($values);
         }
@@ -99,13 +99,13 @@ class GetHoursNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setLocked($data['locked']);
         }
         if (\array_key_exists('is_editable', $data)) {
-            $object->setIsEditable($this->denormalizer->denormalize($data['is_editable'], \Steefdw\Simplicate\Model\IsSatisfied::class, 'json', $context));
+            $object->setIsEditable($this->denormalizer->denormalize($data['is_editable'], \Paqtcom\Simplicate\Model\IsSatisfied::class, 'json', $context));
         }
         if (\array_key_exists('is_deletable', $data)) {
-            $object->setIsDeletable($this->denormalizer->denormalize($data['is_deletable'], \Steefdw\Simplicate\Model\IsSatisfied::class, 'json', $context));
+            $object->setIsDeletable($this->denormalizer->denormalize($data['is_deletable'], \Paqtcom\Simplicate\Model\IsSatisfied::class, 'json', $context));
         }
         if (\array_key_exists('leave_status', $data)) {
-            $object->setLeaveStatus($this->denormalizer->denormalize($data['leave_status'], \Steefdw\Simplicate\Model\LeaveStatus::class, 'json', $context));
+            $object->setLeaveStatus($this->denormalizer->denormalize($data['leave_status'], \Paqtcom\Simplicate\Model\LeaveStatus::class, 'json', $context));
         }
         if (\array_key_exists('leave_id', $data)) {
             $object->setLeaveId($data['leave_id']);
@@ -117,10 +117,10 @@ class GetHoursNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setStatus($data['status']);
         }
         if (\array_key_exists('corrections', $data)) {
-            $object->setCorrections($this->denormalizer->denormalize($data['corrections'], \Steefdw\Simplicate\Model\Correction::class, 'json', $context));
+            $object->setCorrections($this->denormalizer->denormalize($data['corrections'], \Paqtcom\Simplicate\Model\Correction::class, 'json', $context));
         }
         if (\array_key_exists('mileage', $data)) {
-            $object->setMileage($this->denormalizer->denormalize($data['mileage'], \Steefdw\Simplicate\Model\GetMileageSimple::class, 'json', $context));
+            $object->setMileage($this->denormalizer->denormalize($data['mileage'], \Paqtcom\Simplicate\Model\GetMileageSimple::class, 'json', $context));
         }
         if (\array_key_exists('is_productive', $data)) {
             $object->setIsProductive($data['is_productive']);
@@ -144,7 +144,7 @@ class GetHoursNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setIsRecurring($data['is_recurring']);
         }
         if (\array_key_exists('recurrence', $data)) {
-            $object->setRecurrence($this->denormalizer->denormalize($data['recurrence'], \Steefdw\Simplicate\Model\Recurrence::class, 'json', $context));
+            $object->setRecurrence($this->denormalizer->denormalize($data['recurrence'], \Paqtcom\Simplicate\Model\Recurrence::class, 'json', $context));
         }
         if (\array_key_exists('is_external', $data)) {
             $object->setIsExternal($data['is_external']);
@@ -156,7 +156,7 @@ class GetHoursNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setNote($data['note']);
         }
         if (\array_key_exists('address', $data)) {
-            $object->setAddress($this->denormalizer->denormalize($data['address'], \Steefdw\Simplicate\Model\Address::class, 'json', $context));
+            $object->setAddress($this->denormalizer->denormalize($data['address'], \Paqtcom\Simplicate\Model\Address::class, 'json', $context));
         }
         if (\array_key_exists('assignment_id', $data)) {
             $object->setAssignmentId($data['assignment_id']);
@@ -298,6 +298,6 @@ class GetHoursNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetHours::class => false];
+        return [\Paqtcom\Simplicate\Model\GetHours::class => false];
     }
 }

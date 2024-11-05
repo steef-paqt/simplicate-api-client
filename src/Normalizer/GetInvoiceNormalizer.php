@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetInvoiceNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetInvoice::class;
+        return $type === \Paqtcom\Simplicate\Model\GetInvoice::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetInvoice::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetInvoice::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetInvoiceNormalizer implements DenormalizerInterface, NormalizerInterface
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetInvoice();
+        $object = new \Paqtcom\Simplicate\Model\GetInvoice();
         if (\array_key_exists('total_excluding_vat', $data) && \is_int($data['total_excluding_vat'])) {
             $data['total_excluding_vat'] = (float) $data['total_excluding_vat'];
         }
@@ -65,12 +65,12 @@ class GetInvoiceNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setContactId($data['contact_id']);
         }
         if (\array_key_exists('payment_term', $data)) {
-            $object->setPaymentTerm($this->denormalizer->denormalize($data['payment_term'], \Steefdw\Simplicate\Model\PaymentTerm::class, 'json', $context));
+            $object->setPaymentTerm($this->denormalizer->denormalize($data['payment_term'], \Paqtcom\Simplicate\Model\PaymentTerm::class, 'json', $context));
         }
         if (\array_key_exists('invoice_lines', $data)) {
             $values = [];
             foreach ($data['invoice_lines'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\GetInvoiceLine::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\GetInvoiceLine::class, 'json', $context);
             }
             $object->setInvoiceLines($values);
         }
@@ -93,24 +93,24 @@ class GetInvoiceNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setTotalOutstanding($data['total_outstanding']);
         }
         if (\array_key_exists('organization', $data)) {
-            $object->setOrganization($this->denormalizer->denormalize($data['organization'], \Steefdw\Simplicate\Model\GetOrganizationSimple::class, 'json', $context));
+            $object->setOrganization($this->denormalizer->denormalize($data['organization'], \Paqtcom\Simplicate\Model\GetOrganizationSimple::class, 'json', $context));
         }
         if (\array_key_exists('person', $data)) {
-            $object->setPerson($this->denormalizer->denormalize($data['person'], \Steefdw\Simplicate\Model\GetPersonSimple::class, 'json', $context));
+            $object->setPerson($this->denormalizer->denormalize($data['person'], \Paqtcom\Simplicate\Model\GetPersonSimple::class, 'json', $context));
         }
         if (\array_key_exists('my_organization_profile', $data)) {
-            $object->setMyOrganizationProfile($this->denormalizer->denormalize($data['my_organization_profile'], \Steefdw\Simplicate\Model\GetMyOrganizationProfileSimple::class, 'json', $context));
+            $object->setMyOrganizationProfile($this->denormalizer->denormalize($data['my_organization_profile'], \Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple::class, 'json', $context));
         }
         if (\array_key_exists('subscription_cycle', $data)) {
-            $object->setSubscriptionCycle($this->denormalizer->denormalize($data['subscription_cycle'], \Steefdw\Simplicate\Model\SubscriptionCycle::class, 'json', $context));
+            $object->setSubscriptionCycle($this->denormalizer->denormalize($data['subscription_cycle'], \Paqtcom\Simplicate\Model\SubscriptionCycle::class, 'json', $context));
         }
         if (\array_key_exists('project', $data)) {
-            $object->setProject($this->denormalizer->denormalize($data['project'], \Steefdw\Simplicate\Model\GetProjectSimple::class, 'json', $context));
+            $object->setProject($this->denormalizer->denormalize($data['project'], \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context));
         }
         if (\array_key_exists('projects', $data)) {
             $values_1 = [];
             foreach ($data['projects'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Steefdw\Simplicate\Model\GetProjectSimple::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context);
             }
             $object->setProjects($values_1);
         }
@@ -127,7 +127,7 @@ class GetInvoiceNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setSimplicateUrl($data['simplicate_url']);
         }
         if (\array_key_exists('reminder', $data)) {
-            $object->setReminder($this->denormalizer->denormalize($data['reminder'], \Steefdw\Simplicate\Model\GetInvoiceReminder::class, 'json', $context));
+            $object->setReminder($this->denormalizer->denormalize($data['reminder'], \Paqtcom\Simplicate\Model\GetInvoiceReminder::class, 'json', $context));
         }
         if (\array_key_exists('composition_type', $data)) {
             $object->setCompositionType($data['composition_type']);
@@ -270,6 +270,6 @@ class GetInvoiceNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetInvoice::class => false];
+        return [\Paqtcom\Simplicate\Model\GetInvoice::class => false];
     }
 }

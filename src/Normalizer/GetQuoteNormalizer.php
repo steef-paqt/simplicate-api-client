@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetQuoteNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetQuote::class;
+        return $type === \Paqtcom\Simplicate\Model\GetQuote::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetQuote::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetQuote::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetQuoteNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetQuote();
+        $object = new \Paqtcom\Simplicate\Model\GetQuote();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,7 +50,7 @@ class GetQuoteNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setId($data['id']);
         }
         if (\array_key_exists('quotetemplate', $data)) {
-            $object->setQuotetemplate($this->denormalizer->denormalize($data['quotetemplate'], \Steefdw\Simplicate\Model\QuoteTemplate::class, 'json', $context));
+            $object->setQuotetemplate($this->denormalizer->denormalize($data['quotetemplate'], \Paqtcom\Simplicate\Model\QuoteTemplate::class, 'json', $context));
         }
         if (\array_key_exists('send_type', $data)) {
             $object->setSendType($data['send_type']);
@@ -62,7 +62,7 @@ class GetQuoteNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setQuoteDate($data['quote_date']);
         }
         if (\array_key_exists('quotestatus', $data)) {
-            $object->setQuotestatus($this->denormalizer->denormalize($data['quotestatus'], \Steefdw\Simplicate\Model\QuoteStatus::class, 'json', $context));
+            $object->setQuotestatus($this->denormalizer->denormalize($data['quotestatus'], \Paqtcom\Simplicate\Model\QuoteStatus::class, 'json', $context));
         }
         if (\array_key_exists('json', $data)) {
             $object->setJson($data['json']);
@@ -70,7 +70,7 @@ class GetQuoteNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (\array_key_exists('services', $data)) {
             $values = [];
             foreach ($data['services'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\QuoteSalesService::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\QuoteSalesService::class, 'json', $context);
             }
             $object->setServices($values);
         }
@@ -238,6 +238,6 @@ class GetQuoteNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetQuote::class => false];
+        return [\Paqtcom\Simplicate\Model\GetQuote::class => false];
     }
 }

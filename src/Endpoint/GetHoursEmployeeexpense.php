@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHoursEmployeeexpense extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetHoursEmployeeexpense extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHoursEmployeeexpenseUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursEmployeeexpenseNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursEmployeeexpenseInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultEmployeeExpenseList
+     * @return null|\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultEmployeeExpenseList::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursEmployeeexpenseUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursEmployeeexpenseNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursEmployeeexpenseInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseInternalServerErrorException($response);
         }
     }
 

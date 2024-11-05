@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class EmailMessageNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\EmailMessage::class;
+        return $type === \Paqtcom\Simplicate\Model\EmailMessage::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\EmailMessage::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\EmailMessage::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class EmailMessageNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\EmailMessage();
+        $object = new \Paqtcom\Simplicate\Model\EmailMessage();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -88,14 +88,14 @@ class EmailMessageNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (\array_key_exists('attachments', $data)) {
             $values = [];
             foreach ($data['attachments'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\EmailAttachment::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\EmailAttachment::class, 'json', $context);
             }
             $object->setAttachments($values);
         }
         if (\array_key_exists('linked_to', $data)) {
             $values_1 = [];
             foreach ($data['linked_to'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Steefdw\Simplicate\Model\LinkedToEntity::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\LinkedToEntity::class, 'json', $context);
             }
             $object->setLinkedTo($values_1);
         }
@@ -168,6 +168,6 @@ class EmailMessageNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\EmailMessage::class => false];
+        return [\Paqtcom\Simplicate\Model\EmailMessage::class => false];
     }
 }

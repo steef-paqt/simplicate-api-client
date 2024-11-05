@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHrmEmployeecustomfieldById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetHrmEmployeecustomfieldById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHrmEmployeecustomfieldByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmEmployeecustomfieldByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmEmployeecustomfieldByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmEmployeecustomfieldByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultCustomField
+     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomField
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultCustomField::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomField::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmEmployeecustomfieldByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmEmployeecustomfieldByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmEmployeecustomfieldByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmEmployeecustomfieldByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldByIdInternalServerErrorException($response);
         }
     }
 

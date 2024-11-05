@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class PersonNormalizer implements DenormalizerInterface, NormalizerInterface, De
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\Person::class;
+        return $type === \Paqtcom\Simplicate\Model\Person::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\Person::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Person::class;
     }
 
     /**
@@ -42,12 +42,12 @@ class PersonNormalizer implements DenormalizerInterface, NormalizerInterface, De
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\Person();
+        $object = new \Paqtcom\Simplicate\Model\Person();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
         if (\array_key_exists('relation_type', $data)) {
-            $object->setRelationType($this->denormalizer->denormalize($data['relation_type'], \Steefdw\Simplicate\Model\RelationType::class, 'json', $context));
+            $object->setRelationType($this->denormalizer->denormalize($data['relation_type'], \Paqtcom\Simplicate\Model\RelationType::class, 'json', $context));
         }
         if (\array_key_exists('gender', $data)) {
             $object->setGender($data['gender']);
@@ -104,7 +104,7 @@ class PersonNormalizer implements DenormalizerInterface, NormalizerInterface, De
             $object->setInvoiceReceiver($data['invoice_receiver']);
         }
         if (\array_key_exists('address', $data)) {
-            $object->setAddress($this->denormalizer->denormalize($data['address'], \Steefdw\Simplicate\Model\Address::class, 'json', $context));
+            $object->setAddress($this->denormalizer->denormalize($data['address'], \Paqtcom\Simplicate\Model\Address::class, 'json', $context));
         }
         if (\array_key_exists('mailing_list_email', $data)) {
             $object->setMailingListEmail($data['mailing_list_email']);
@@ -112,7 +112,7 @@ class PersonNormalizer implements DenormalizerInterface, NormalizerInterface, De
         if (\array_key_exists('mailing_lists', $data)) {
             $values = [];
             foreach ($data['mailing_lists'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\PersonMailingList::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\PersonMailingList::class, 'json', $context);
             }
             $object->setMailingLists($values);
         }
@@ -208,6 +208,6 @@ class PersonNormalizer implements DenormalizerInterface, NormalizerInterface, De
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\Person::class => false];
+        return [\Paqtcom\Simplicate\Model\Person::class => false];
     }
 }

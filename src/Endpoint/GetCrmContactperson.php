@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmContactperson extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -60,27 +60,27 @@ class GetCrmContactperson extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmContactpersonUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmContactpersonNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmContactpersonInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmContactpersonUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmContactpersonNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmContactpersonInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultContactPersons
+     * @return null|\Paqtcom\Simplicate\Model\RestResultContactPersons
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultContactPersons::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultContactPersons::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmContactpersonUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmContactpersonUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmContactpersonNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmContactpersonNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmContactpersonInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmContactpersonInternalServerErrorException($response);
         }
     }
 

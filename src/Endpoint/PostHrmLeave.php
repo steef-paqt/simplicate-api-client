@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostHrmLeave extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostLeave $body Leave object containing data
+     * @param \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostLeave $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostLeave $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostHrmLeave extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostHrmLeaveBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PostHrmLeaveUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostHrmLeaveInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostHrmLeaveBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostHrmLeaveUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostHrmLeaveInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostHrmLeave extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHrmLeaveBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHrmLeaveBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHrmLeaveUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHrmLeaveUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHrmLeaveInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHrmLeaveInternalServerErrorException($response);
         }
     }
 

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetInvoicesRemindersetById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetInvoicesRemindersetById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesRemindersetByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesRemindersetByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesRemindersetByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesRemindersetByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindersetByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindersetByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindersetByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindersetByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultReminderSet
+     * @return null|\Paqtcom\Simplicate\Model\RestResultReminderSet
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultReminderSet::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultReminderSet::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesRemindersetByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesRemindersetByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesRemindersetByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesRemindersetByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesRemindersetByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesRemindersetByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesRemindersetByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesRemindersetByIdInternalServerErrorException($response);
         }
     }
 

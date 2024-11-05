@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class BudgetCostsNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\BudgetCosts::class;
+        return $type === \Paqtcom\Simplicate\Model\BudgetCosts::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\BudgetCosts::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\BudgetCosts::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class BudgetCostsNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\BudgetCosts();
+        $object = new \Paqtcom\Simplicate\Model\BudgetCosts();
         if (\array_key_exists('value_budget', $data) && \is_int($data['value_budget'])) {
             $data['value_budget'] = (float) $data['value_budget'];
         }
@@ -80,6 +80,6 @@ class BudgetCostsNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\BudgetCosts::class => false];
+        return [\Paqtcom\Simplicate\Model\BudgetCosts::class => false];
     }
 }

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetTimelineMessageById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetTimelineMessageById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetTimelineMessageByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetTimelineMessageByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetTimelineMessageByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetTimelineMessageByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultTimelineMessage
+     * @return null|\Paqtcom\Simplicate\Model\RestResultTimelineMessage
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultTimelineMessage::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultTimelineMessage::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetTimelineMessageByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetTimelineMessageByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetTimelineMessageByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetTimelineMessageByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdInternalServerErrorException($response);
         }
     }
 

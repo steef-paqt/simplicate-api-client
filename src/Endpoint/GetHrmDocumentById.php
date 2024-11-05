@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHrmDocumentById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetHrmDocumentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHrmDocumentByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmDocumentByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmDocumentByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmDocumentByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultDocument
+     * @return null|\Paqtcom\Simplicate\Model\RestResultDocument
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultDocument::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocument::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmDocumentByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmDocumentByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmDocumentByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmDocumentByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdInternalServerErrorException($response);
         }
     }
 

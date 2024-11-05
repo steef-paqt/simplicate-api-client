@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetSalesSalesfilter extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,9 +58,9 @@ class GetSalesSalesfilter extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalesfilterUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalesfilterNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalesfilterInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -70,13 +70,13 @@ class GetSalesSalesfilter extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalesfilterUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesfilterUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalesfilterNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesfilterNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalesfilterInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesfilterInternalServerErrorException($response);
         }
     }
 

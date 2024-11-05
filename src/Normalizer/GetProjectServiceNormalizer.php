@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetProjectServiceNormalizer implements DenormalizerInterface, NormalizerIn
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetProjectService::class;
+        return $type === \Paqtcom\Simplicate\Model\GetProjectService::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetProjectService::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetProjectService::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetProjectServiceNormalizer implements DenormalizerInterface, NormalizerIn
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetProjectService();
+        $object = new \Paqtcom\Simplicate\Model\GetProjectService();
         if (\array_key_exists('budget', $data) && \is_int($data['budget'])) {
             $data['budget'] = (float) $data['budget'];
         }
@@ -73,22 +73,22 @@ class GetProjectServiceNormalizer implements DenormalizerInterface, NormalizerIn
         if (\array_key_exists('hour_types', $data)) {
             $values = [];
             foreach ($data['hour_types'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\GetProjectServiceHoursType::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\GetProjectServiceHoursType::class, 'json', $context);
             }
             $object->setHourTypes($values);
         }
         if (\array_key_exists('cost_types', $data)) {
             $values_1 = [];
             foreach ($data['cost_types'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Steefdw\Simplicate\Model\GetProjectServiceCostType::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\GetProjectServiceCostType::class, 'json', $context);
             }
             $object->setCostTypes($values_1);
         }
         if (\array_key_exists('vat_class', $data)) {
-            $object->setVatClass($this->denormalizer->denormalize($data['vat_class'], \Steefdw\Simplicate\Model\VatClass::class, 'json', $context));
+            $object->setVatClass($this->denormalizer->denormalize($data['vat_class'], \Paqtcom\Simplicate\Model\VatClass::class, 'json', $context));
         }
         if (\array_key_exists('revenue_group', $data)) {
-            $object->setRevenueGroup($this->denormalizer->denormalize($data['revenue_group'], \Steefdw\Simplicate\Model\RevenueGroup::class, 'json', $context));
+            $object->setRevenueGroup($this->denormalizer->denormalize($data['revenue_group'], \Paqtcom\Simplicate\Model\RevenueGroup::class, 'json', $context));
         }
         if (\array_key_exists('invoice_in_installments', $data)) {
             $object->setInvoiceInInstallments($data['invoice_in_installments']);
@@ -96,7 +96,7 @@ class GetProjectServiceNormalizer implements DenormalizerInterface, NormalizerIn
         if (\array_key_exists('installments', $data)) {
             $values_2 = [];
             foreach ($data['installments'] as $value_2) {
-                $values_2[] = $this->denormalizer->denormalize($value_2, \Steefdw\Simplicate\Model\Installment::class, 'json', $context);
+                $values_2[] = $this->denormalizer->denormalize($value_2, \Paqtcom\Simplicate\Model\Installment::class, 'json', $context);
             }
             $object->setInstallments($values_2);
         }
@@ -281,6 +281,6 @@ class GetProjectServiceNormalizer implements DenormalizerInterface, NormalizerIn
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetProjectService::class => false];
+        return [\Paqtcom\Simplicate\Model\GetProjectService::class => false];
     }
 }

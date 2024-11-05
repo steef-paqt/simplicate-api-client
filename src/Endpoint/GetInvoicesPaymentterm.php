@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetInvoicesPaymentterm extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetInvoicesPaymentterm extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesPaymenttermUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesPaymenttermNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesPaymenttermInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultPaymentTerms
+     * @return null|\Paqtcom\Simplicate\Model\RestResultPaymentTerms
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultPaymentTerms::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultPaymentTerms::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesPaymenttermUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesPaymenttermNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesPaymenttermInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermInternalServerErrorException($response);
         }
     }
 

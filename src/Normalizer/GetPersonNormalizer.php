@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetPersonNormalizer implements DenormalizerInterface, NormalizerInterface,
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetPerson::class;
+        return $type === \Paqtcom\Simplicate\Model\GetPerson::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetPerson::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetPerson::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetPersonNormalizer implements DenormalizerInterface, NormalizerInterface,
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetPerson();
+        $object = new \Paqtcom\Simplicate\Model\GetPerson();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -61,7 +61,7 @@ class GetPersonNormalizer implements DenormalizerInterface, NormalizerInterface,
         if (\array_key_exists('interests', $data)) {
             $values = [];
             foreach ($data['interests'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\GetInterest::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\GetInterest::class, 'json', $context);
             }
             $object->setInterests($values);
         }
@@ -71,17 +71,17 @@ class GetPersonNormalizer implements DenormalizerInterface, NormalizerInterface,
         if (\array_key_exists('address', $data)) {
             $values_1 = [];
             foreach ($data['address'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Steefdw\Simplicate\Model\GetAddress::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\GetAddress::class, 'json', $context);
             }
             $object->setAddress($values_1);
         }
         if (\array_key_exists('relation_manager', $data)) {
-            $object->setRelationManager($this->denormalizer->denormalize($data['relation_manager'], \Steefdw\Simplicate\Model\Employee::class, 'json', $context));
+            $object->setRelationManager($this->denormalizer->denormalize($data['relation_manager'], \Paqtcom\Simplicate\Model\Employee::class, 'json', $context));
         }
         if (\array_key_exists('teams', $data)) {
             $values_2 = [];
             foreach ($data['teams'] as $value_2) {
-                $values_2[] = $this->denormalizer->denormalize($value_2, \Steefdw\Simplicate\Model\GetTeamSimple::class, 'json', $context);
+                $values_2[] = $this->denormalizer->denormalize($value_2, \Paqtcom\Simplicate\Model\GetTeamSimple::class, 'json', $context);
             }
             $object->setTeams($values_2);
         }
@@ -91,14 +91,14 @@ class GetPersonNormalizer implements DenormalizerInterface, NormalizerInterface,
         if (\array_key_exists('linked_as_contact_to_organization', $data)) {
             $values_3 = [];
             foreach ($data['linked_as_contact_to_organization'] as $value_3) {
-                $values_3[] = $this->denormalizer->denormalize($value_3, \Steefdw\Simplicate\Model\OrganizationContact::class, 'json', $context);
+                $values_3[] = $this->denormalizer->denormalize($value_3, \Paqtcom\Simplicate\Model\OrganizationContact::class, 'json', $context);
             }
             $object->setLinkedAsContactToOrganization($values_3);
         }
         if (\array_key_exists('custom_fields', $data)) {
             $values_4 = [];
             foreach ($data['custom_fields'] as $value_4) {
-                $values_4[] = $this->denormalizer->denormalize($value_4, \Steefdw\Simplicate\Model\GetCustomField::class, 'json', $context);
+                $values_4[] = $this->denormalizer->denormalize($value_4, \Paqtcom\Simplicate\Model\GetCustomField::class, 'json', $context);
             }
             $object->setCustomFields($values_4);
         }
@@ -112,7 +112,7 @@ class GetPersonNormalizer implements DenormalizerInterface, NormalizerInterface,
             $object->setIsActive($data['is_active']);
         }
         if (\array_key_exists('relation_type', $data)) {
-            $object->setRelationType($this->denormalizer->denormalize($data['relation_type'], \Steefdw\Simplicate\Model\RelationType::class, 'json', $context));
+            $object->setRelationType($this->denormalizer->denormalize($data['relation_type'], \Paqtcom\Simplicate\Model\RelationType::class, 'json', $context));
         }
         if (\array_key_exists('gender', $data)) {
             $object->setGender($data['gender']);
@@ -174,7 +174,7 @@ class GetPersonNormalizer implements DenormalizerInterface, NormalizerInterface,
         if (\array_key_exists('mailing_lists', $data)) {
             $values_5 = [];
             foreach ($data['mailing_lists'] as $value_5) {
-                $values_5[] = $this->denormalizer->denormalize($value_5, \Steefdw\Simplicate\Model\PersonMailingList::class, 'json', $context);
+                $values_5[] = $this->denormalizer->denormalize($value_5, \Paqtcom\Simplicate\Model\PersonMailingList::class, 'json', $context);
             }
             $object->setMailingLists($values_5);
         }
@@ -326,6 +326,6 @@ class GetPersonNormalizer implements DenormalizerInterface, NormalizerInterface,
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetPerson::class => false];
+        return [\Paqtcom\Simplicate\Model\GetPerson::class => false];
     }
 }

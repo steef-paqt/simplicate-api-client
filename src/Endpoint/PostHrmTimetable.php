@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostHrmTimetable extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostTimetable $body Timetable object that needs to be added
+     * @param \Paqtcom\Simplicate\Model\PostTimetable $body Timetable object that needs to be added
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostTimetable $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostTimetable $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostHrmTimetable extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostHrmTimetableUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostHrmTimetableNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostHrmTimetableInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostHrmTimetableUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostHrmTimetableNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostHrmTimetableInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostHrmTimetable extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHrmTimetableUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHrmTimetableUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHrmTimetableNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHrmTimetableNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHrmTimetableInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHrmTimetableInternalServerErrorException($response);
         }
     }
 

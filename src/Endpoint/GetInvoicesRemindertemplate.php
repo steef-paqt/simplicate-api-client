@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetInvoicesRemindertemplate extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetInvoicesRemindertemplate extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesRemindertemplateUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesRemindertemplateNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesRemindertemplateInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultReminderTemplates
+     * @return null|\Paqtcom\Simplicate\Model\RestResultReminderTemplates
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultReminderTemplates::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultReminderTemplates::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesRemindertemplateUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesRemindertemplateNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesRemindertemplateInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateInternalServerErrorException($response);
         }
     }
 

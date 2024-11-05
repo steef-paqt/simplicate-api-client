@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutCustomFieldsGroupById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values
+     * @param \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\CustomFieldGroup $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\CustomFieldGroup $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PutCustomFieldsGroupById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutCustomFieldsGroupByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutCustomFieldsGroupByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutCustomFieldsGroupByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutCustomFieldsGroupByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsGroupByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsGroupByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsGroupByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsGroupByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PutCustomFieldsGroupById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutCustomFieldsGroupByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutCustomFieldsGroupByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutCustomFieldsGroupByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutCustomFieldsGroupByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutCustomFieldsGroupByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutCustomFieldsGroupByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutCustomFieldsGroupByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutCustomFieldsGroupByIdInternalServerErrorException($response);
         }
     }
 

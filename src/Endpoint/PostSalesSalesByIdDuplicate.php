@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostSalesSalesByIdDuplicate extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\PostDuplicateSales $body Optional parameters to overwrite
+     * @param \Paqtcom\Simplicate\Model\PostDuplicateSales $body Optional parameters to overwrite
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PostDuplicateSales $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostDuplicateSales $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PostSalesSalesByIdDuplicate extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostSalesSalesByIdDuplicateBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PostSalesSalesByIdDuplicateUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostSalesSalesByIdDuplicateNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostSalesSalesByIdDuplicateInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PostSalesSalesByIdDuplicate extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSalesSalesByIdDuplicateBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSalesSalesByIdDuplicateUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSalesSalesByIdDuplicateNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSalesSalesByIdDuplicateInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateInternalServerErrorException($response);
         }
     }
 

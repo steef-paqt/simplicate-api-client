@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteHrmTimetableById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteHrmTimetableById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteHrmTimetableByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteHrmTimetableByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteHrmTimetableByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHrmTimetableByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHrmTimetableByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHrmTimetableByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteHrmTimetableById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHrmTimetableByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHrmTimetableByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHrmTimetableByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHrmTimetableByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHrmTimetableByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHrmTimetableByIdInternalServerErrorException($response);
         }
     }
 

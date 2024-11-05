@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHrmLeavetypeById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetHrmLeavetypeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHrmLeavetypeByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmLeavetypeByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmLeavetypeByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmLeavetypeByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultLeaveType
+     * @return null|\Paqtcom\Simplicate\Model\RestResultLeaveType
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultLeaveType::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultLeaveType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmLeavetypeByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmLeavetypeByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmLeavetypeByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmLeavetypeByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdInternalServerErrorException($response);
         }
     }
 

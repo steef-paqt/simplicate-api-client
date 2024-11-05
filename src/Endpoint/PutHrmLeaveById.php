@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutHrmLeaveById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\PostLeave $body Leave object containing data that with the new values
+     * @param \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data that with the new values
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PostLeave $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostLeave $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PutHrmLeaveById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutHrmLeaveByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutHrmLeaveByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutHrmLeaveByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutHrmLeaveByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutHrmLeaveByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutHrmLeaveByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutHrmLeaveByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutHrmLeaveByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PutHrmLeaveById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHrmLeaveByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHrmLeaveByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHrmLeaveByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHrmLeaveByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHrmLeaveByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHrmLeaveByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHrmLeaveByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHrmLeaveByIdInternalServerErrorException($response);
         }
     }
 

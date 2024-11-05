@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetAbsenceNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetAbsence::class;
+        return $type === \Paqtcom\Simplicate\Model\GetAbsence::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetAbsence::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetAbsence::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetAbsenceNormalizer implements DenormalizerInterface, NormalizerInterface
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetAbsence();
+        $object = new \Paqtcom\Simplicate\Model\GetAbsence();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,13 +50,13 @@ class GetAbsenceNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setId($data['id']);
         }
         if (\array_key_exists('employee', $data)) {
-            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Steefdw\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
         }
         if (\array_key_exists('hours', $data)) {
             $object->setHours($data['hours']);
         }
         if (\array_key_exists('absencetype', $data)) {
-            $object->setAbsencetype($this->denormalizer->denormalize($data['absencetype'], \Steefdw\Simplicate\Model\GetAbsenceType::class, 'json', $context));
+            $object->setAbsencetype($this->denormalizer->denormalize($data['absencetype'], \Paqtcom\Simplicate\Model\GetAbsenceType::class, 'json', $context));
         }
         if (\array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
@@ -122,6 +122,6 @@ class GetAbsenceNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetAbsence::class => false];
+        return [\Paqtcom\Simplicate\Model\GetAbsence::class => false];
     }
 }

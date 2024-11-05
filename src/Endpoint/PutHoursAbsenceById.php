@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutHoursAbsenceById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values
+     * @param \Paqtcom\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PostAbsence $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostAbsence $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PutHoursAbsenceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutHoursAbsenceByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutHoursAbsenceByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutHoursAbsenceByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutHoursAbsenceByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PutHoursAbsenceById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHoursAbsenceByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHoursAbsenceByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHoursAbsenceByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHoursAbsenceByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdInternalServerErrorException($response);
         }
     }
 

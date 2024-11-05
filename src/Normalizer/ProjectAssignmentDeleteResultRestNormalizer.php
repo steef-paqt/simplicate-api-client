@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class ProjectAssignmentDeleteResultRestNormalizer implements DenormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\ProjectAssignmentDeleteResultRest::class;
+        return $type === \Paqtcom\Simplicate\Model\ProjectAssignmentDeleteResultRest::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\ProjectAssignmentDeleteResultRest::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\ProjectAssignmentDeleteResultRest::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class ProjectAssignmentDeleteResultRestNormalizer implements DenormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\ProjectAssignmentDeleteResultRest();
+        $object = new \Paqtcom\Simplicate\Model\ProjectAssignmentDeleteResultRest();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -74,6 +74,6 @@ class ProjectAssignmentDeleteResultRestNormalizer implements DenormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\ProjectAssignmentDeleteResultRest::class => false];
+        return [\Paqtcom\Simplicate\Model\ProjectAssignmentDeleteResultRest::class => false];
     }
 }

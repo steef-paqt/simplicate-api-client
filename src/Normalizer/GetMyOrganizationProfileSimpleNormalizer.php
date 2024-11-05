@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetMyOrganizationProfileSimpleNormalizer implements DenormalizerInterface,
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetMyOrganizationProfileSimple::class;
+        return $type === \Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetMyOrganizationProfileSimple::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetMyOrganizationProfileSimpleNormalizer implements DenormalizerInterface,
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetMyOrganizationProfileSimple();
+        $object = new \Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,7 +50,7 @@ class GetMyOrganizationProfileSimpleNormalizer implements DenormalizerInterface,
             $object->setId($data['id']);
         }
         if (\array_key_exists('organization', $data)) {
-            $object->setOrganization($this->denormalizer->denormalize($data['organization'], \Steefdw\Simplicate\Model\GetOrganizationSimple::class, 'json', $context));
+            $object->setOrganization($this->denormalizer->denormalize($data['organization'], \Paqtcom\Simplicate\Model\GetOrganizationSimple::class, 'json', $context));
         }
 
         return $object;
@@ -74,6 +74,6 @@ class GetMyOrganizationProfileSimpleNormalizer implements DenormalizerInterface,
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetMyOrganizationProfileSimple::class => false];
+        return [\Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple::class => false];
     }
 }

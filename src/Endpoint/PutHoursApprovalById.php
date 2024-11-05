@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutHoursApprovalById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\PostApproval $body Approval object that needs to be updated
+     * @param \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be updated
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PostApproval $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostApproval $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PutHoursApprovalById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutHoursApprovalByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutHoursApprovalByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutHoursApprovalByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutHoursApprovalByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutHoursApprovalByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutHoursApprovalByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutHoursApprovalByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutHoursApprovalByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PutHoursApprovalById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHoursApprovalByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHoursApprovalByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHoursApprovalByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHoursApprovalByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHoursApprovalByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHoursApprovalByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHoursApprovalByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHoursApprovalByIdInternalServerErrorException($response);
         }
     }
 

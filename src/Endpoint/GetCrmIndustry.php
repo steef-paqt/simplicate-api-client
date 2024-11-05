@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmIndustry extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetCrmIndustry extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmIndustryUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmIndustryNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmIndustryInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultIndustries
+     * @return null|\Paqtcom\Simplicate\Model\RestResultIndustries
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultIndustries::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultIndustries::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmIndustryUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmIndustryUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmIndustryNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmIndustryNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmIndustryInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmIndustryInternalServerErrorException($response);
         }
     }
 

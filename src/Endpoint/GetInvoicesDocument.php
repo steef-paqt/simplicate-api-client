@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetInvoicesDocument extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetInvoicesDocument extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesDocumentUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesDocumentNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesDocumentInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumentUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumentNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumentInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultDocuments
+     * @return null|\Paqtcom\Simplicate\Model\RestResultDocuments
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultDocuments::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocuments::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesDocumentUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesDocumentUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesDocumentNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesDocumentNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesDocumentInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesDocumentInternalServerErrorException($response);
         }
     }
 

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHoursHour extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetHoursHour extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHoursHourUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursHourNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursHourInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursHourUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursHourNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursHourInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultHours
+     * @return null|\Paqtcom\Simplicate\Model\RestResultHours
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultHours::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultHours::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursHourUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursHourUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursHourNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursHourNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursHourInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursHourInternalServerErrorException($response);
         }
     }
 

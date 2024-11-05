@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class SalesProgressHistoryNormalizer implements DenormalizerInterface, Normalize
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\SalesProgressHistory::class;
+        return $type === \Paqtcom\Simplicate\Model\SalesProgressHistory::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\SalesProgressHistory::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\SalesProgressHistory::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class SalesProgressHistoryNormalizer implements DenormalizerInterface, Normalize
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\SalesProgressHistory();
+        $object = new \Paqtcom\Simplicate\Model\SalesProgressHistory();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -56,13 +56,13 @@ class SalesProgressHistoryNormalizer implements DenormalizerInterface, Normalize
             $object->setSalesId($data['sales_id']);
         }
         if (\array_key_exists('from_sales_progress', $data)) {
-            $object->setFromSalesProgress($this->denormalizer->denormalize($data['from_sales_progress'], \Steefdw\Simplicate\Model\SalesProgress::class, 'json', $context));
+            $object->setFromSalesProgress($this->denormalizer->denormalize($data['from_sales_progress'], \Paqtcom\Simplicate\Model\SalesProgress::class, 'json', $context));
         }
         if (\array_key_exists('from_sales_progress_id', $data)) {
             $object->setFromSalesProgressId($data['from_sales_progress_id']);
         }
         if (\array_key_exists('to_sales_progress', $data)) {
-            $object->setToSalesProgress($this->denormalizer->denormalize($data['to_sales_progress'], \Steefdw\Simplicate\Model\SalesProgress::class, 'json', $context));
+            $object->setToSalesProgress($this->denormalizer->denormalize($data['to_sales_progress'], \Paqtcom\Simplicate\Model\SalesProgress::class, 'json', $context));
         }
         if (\array_key_exists('to_sales_progress_id', $data)) {
             $object->setToSalesProgressId($data['to_sales_progress_id']);
@@ -110,6 +110,6 @@ class SalesProgressHistoryNormalizer implements DenormalizerInterface, Normalize
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\SalesProgressHistory::class => false];
+        return [\Paqtcom\Simplicate\Model\SalesProgressHistory::class => false];
     }
 }

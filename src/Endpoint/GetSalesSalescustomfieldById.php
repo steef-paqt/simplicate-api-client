@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetSalesSalescustomfieldById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetSalesSalescustomfieldById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultCustomField
+     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomField
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultCustomField::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomField::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdInternalServerErrorException($response);
         }
     }
 

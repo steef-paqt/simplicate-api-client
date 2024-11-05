@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteServicesDefaultserviceById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteServicesDefaultserviceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteServicesDefaultserviceByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteServicesDefaultserviceByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteServicesDefaultserviceByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteServicesDefaultserviceById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteServicesDefaultserviceByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteServicesDefaultserviceByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteServicesDefaultserviceByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdInternalServerErrorException($response);
         }
     }
 

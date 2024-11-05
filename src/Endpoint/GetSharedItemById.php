@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetSharedItemById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetSharedItemById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetSharedItemByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetSharedItemByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetSharedItemByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetSharedItemByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetSharedItemByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetSharedItemByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetSharedItemByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetSharedItemByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultSharedItem
+     * @return null|\Paqtcom\Simplicate\Model\RestResultSharedItem
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultSharedItem::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultSharedItem::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSharedItemByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSharedItemByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSharedItemByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSharedItemByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSharedItemByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSharedItemByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSharedItemByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSharedItemByIdInternalServerErrorException($response);
         }
     }
 

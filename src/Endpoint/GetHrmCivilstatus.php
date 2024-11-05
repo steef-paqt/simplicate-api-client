@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHrmCivilstatus extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetHrmCivilstatus extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHrmCivilstatusUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmCivilstatusNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmCivilstatusInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmCivilstatusUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmCivilstatusNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmCivilstatusInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultCivilStatuses
+     * @return null|\Paqtcom\Simplicate\Model\RestResultCivilStatuses
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultCivilStatuses::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCivilStatuses::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmCivilstatusUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmCivilstatusUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmCivilstatusNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmCivilstatusNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmCivilstatusInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmCivilstatusInternalServerErrorException($response);
         }
     }
 

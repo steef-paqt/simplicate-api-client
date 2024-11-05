@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetLeaveNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetLeave::class;
+        return $type === \Paqtcom\Simplicate\Model\GetLeave::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetLeave::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetLeave::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetLeaveNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetLeave();
+        $object = new \Paqtcom\Simplicate\Model\GetLeave();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,10 +50,10 @@ class GetLeaveNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setId($data['id']);
         }
         if (\array_key_exists('employee', $data)) {
-            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Steefdw\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
         }
         if (\array_key_exists('leavetype', $data)) {
-            $object->setLeavetype($this->denormalizer->denormalize($data['leavetype'], \Steefdw\Simplicate\Model\HrmGetLeaveType::class, 'json', $context));
+            $object->setLeavetype($this->denormalizer->denormalize($data['leavetype'], \Paqtcom\Simplicate\Model\HrmGetLeaveType::class, 'json', $context));
         }
         if (\array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
@@ -122,6 +122,6 @@ class GetLeaveNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetLeave::class => false];
+        return [\Paqtcom\Simplicate\Model\GetLeave::class => false];
     }
 }

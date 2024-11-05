@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetInvoicesDocumenttypeById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetInvoicesDocumenttypeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesDocumenttypeByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesDocumenttypeByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultDocumentType
+     * @return null|\Paqtcom\Simplicate\Model\RestResultDocumentType
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultDocumentType::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocumentType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesDocumenttypeByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesDocumenttypeByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdInternalServerErrorException($response);
         }
     }
 

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetTimetableNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetTimetable::class;
+        return $type === \Paqtcom\Simplicate\Model\GetTimetable::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetTimetable::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetTimetable::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetTimetableNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetTimetable();
+        $object = new \Paqtcom\Simplicate\Model\GetTimetable();
         if (\array_key_exists('hourly_sales_tariff', $data) && \is_int($data['hourly_sales_tariff'])) {
             $data['hourly_sales_tariff'] = (float) $data['hourly_sales_tariff'];
         }
@@ -56,7 +56,7 @@ class GetTimetableNormalizer implements DenormalizerInterface, NormalizerInterfa
             $object->setId($data['id']);
         }
         if (\array_key_exists('employee', $data)) {
-            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Steefdw\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
         }
         if (\array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
@@ -71,10 +71,10 @@ class GetTimetableNormalizer implements DenormalizerInterface, NormalizerInterfa
             $object->setHourlyCostTariff($data['hourly_cost_tariff']);
         }
         if (\array_key_exists('even_week', $data)) {
-            $object->setEvenWeek($this->denormalizer->denormalize($data['even_week'], \Steefdw\Simplicate\Model\TimetableWeek::class, 'json', $context));
+            $object->setEvenWeek($this->denormalizer->denormalize($data['even_week'], \Paqtcom\Simplicate\Model\TimetableWeek::class, 'json', $context));
         }
         if (\array_key_exists('odd_week', $data)) {
-            $object->setOddWeek($this->denormalizer->denormalize($data['odd_week'], \Steefdw\Simplicate\Model\TimetableWeek::class, 'json', $context));
+            $object->setOddWeek($this->denormalizer->denormalize($data['odd_week'], \Paqtcom\Simplicate\Model\TimetableWeek::class, 'json', $context));
         }
         if (\array_key_exists('start_date', $data)) {
             $object->setStartDate($data['start_date']);
@@ -140,6 +140,6 @@ class GetTimetableNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetTimetable::class => false];
+        return [\Paqtcom\Simplicate\Model\GetTimetable::class => false];
     }
 }

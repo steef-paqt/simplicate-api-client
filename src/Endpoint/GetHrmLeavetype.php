@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHrmLeavetype extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetHrmLeavetype extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHrmLeavetypeUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmLeavetypeNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmLeavetypeInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultLeaveTypes
+     * @return null|\Paqtcom\Simplicate\Model\RestResultLeaveTypes
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultLeaveTypes::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultLeaveTypes::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmLeavetypeUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmLeavetypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmLeavetypeNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmLeavetypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmLeavetypeInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmLeavetypeInternalServerErrorException($response);
         }
     }
 

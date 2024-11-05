@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class PutTimetableNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\PutTimetable::class;
+        return $type === \Paqtcom\Simplicate\Model\PutTimetable::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\PutTimetable::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PutTimetable::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class PutTimetableNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\PutTimetable();
+        $object = new \Paqtcom\Simplicate\Model\PutTimetable();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -56,10 +56,10 @@ class PutTimetableNormalizer implements DenormalizerInterface, NormalizerInterfa
             $object->setHasOddWeeks($data['has_odd_weeks']);
         }
         if (\array_key_exists('even_week', $data)) {
-            $object->setEvenWeek($this->denormalizer->denormalize($data['even_week'], \Steefdw\Simplicate\Model\TimetableWeek::class, 'json', $context));
+            $object->setEvenWeek($this->denormalizer->denormalize($data['even_week'], \Paqtcom\Simplicate\Model\TimetableWeek::class, 'json', $context));
         }
         if (\array_key_exists('odd_week', $data)) {
-            $object->setOddWeek($this->denormalizer->denormalize($data['odd_week'], \Steefdw\Simplicate\Model\TimetableWeek::class, 'json', $context));
+            $object->setOddWeek($this->denormalizer->denormalize($data['odd_week'], \Paqtcom\Simplicate\Model\TimetableWeek::class, 'json', $context));
         }
         if (\array_key_exists('end_date', $data)) {
             $object->setEndDate($data['end_date']);
@@ -110,6 +110,6 @@ class PutTimetableNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\PutTimetable::class => false];
+        return [\Paqtcom\Simplicate\Model\PutTimetable::class => false];
     }
 }

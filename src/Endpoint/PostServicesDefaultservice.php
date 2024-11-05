@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostServicesDefaultservice extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostDefaultService $body Default service object that needs to be added
+     * @param \Paqtcom\Simplicate\Model\PostDefaultService $body Default service object that needs to be added
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostDefaultService $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostDefaultService $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostServicesDefaultservice extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostServicesDefaultserviceUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostServicesDefaultserviceNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostServicesDefaultserviceInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostServicesDefaultservice extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostServicesDefaultserviceUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostServicesDefaultserviceNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostServicesDefaultserviceInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceInternalServerErrorException($response);
         }
     }
 

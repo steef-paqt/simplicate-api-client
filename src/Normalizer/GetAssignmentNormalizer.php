@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetAssignmentNormalizer implements DenormalizerInterface, NormalizerInterf
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetAssignment::class;
+        return $type === \Paqtcom\Simplicate\Model\GetAssignment::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetAssignment::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetAssignment::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetAssignmentNormalizer implements DenormalizerInterface, NormalizerInterf
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetAssignment();
+        $object = new \Paqtcom\Simplicate\Model\GetAssignment();
         if (\array_key_exists('hours_total', $data) && \is_int($data['hours_total'])) {
             $data['hours_total'] = (float) $data['hours_total'];
         }
@@ -78,21 +78,21 @@ class GetAssignmentNormalizer implements DenormalizerInterface, NormalizerInterf
             $object->setSpread($values);
         }
         if (\array_key_exists('status', $data)) {
-            $object->setStatus($this->denormalizer->denormalize($data['status'], \Steefdw\Simplicate\Model\GetAssignmentStatus::class, 'json', $context));
+            $object->setStatus($this->denormalizer->denormalize($data['status'], \Paqtcom\Simplicate\Model\GetAssignmentStatus::class, 'json', $context));
         }
         if (\array_key_exists('project', $data)) {
-            $object->setProject($this->denormalizer->denormalize($data['project'], \Steefdw\Simplicate\Model\GetProjectSimple::class, 'json', $context));
+            $object->setProject($this->denormalizer->denormalize($data['project'], \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context));
         }
         if (\array_key_exists('projectservice', $data)) {
-            $object->setProjectservice($this->denormalizer->denormalize($data['projectservice'], \Steefdw\Simplicate\Model\GetProjectServiceSimple::class, 'json', $context));
+            $object->setProjectservice($this->denormalizer->denormalize($data['projectservice'], \Paqtcom\Simplicate\Model\GetProjectServiceSimple::class, 'json', $context));
         }
         if (\array_key_exists('projecthourstype', $data)) {
-            $object->setProjecthourstype($this->denormalizer->denormalize($data['projecthourstype'], \Steefdw\Simplicate\Model\GetProjectServiceHoursType::class, 'json', $context));
+            $object->setProjecthourstype($this->denormalizer->denormalize($data['projecthourstype'], \Paqtcom\Simplicate\Model\GetProjectServiceHoursType::class, 'json', $context));
         }
         if (\array_key_exists('employees', $data)) {
             $values_1 = [];
             foreach ($data['employees'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Steefdw\Simplicate\Model\GetEmployeeSimple::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context);
             }
             $object->setEmployees($values_1);
         }
@@ -198,6 +198,6 @@ class GetAssignmentNormalizer implements DenormalizerInterface, NormalizerInterf
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetAssignment::class => false];
+        return [\Paqtcom\Simplicate\Model\GetAssignment::class => false];
     }
 }

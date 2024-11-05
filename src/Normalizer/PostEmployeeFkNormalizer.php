@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class PostEmployeeFkNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\PostEmployeeFk::class;
+        return $type === \Paqtcom\Simplicate\Model\PostEmployeeFk::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\PostEmployeeFk::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostEmployeeFk::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class PostEmployeeFkNormalizer implements DenormalizerInterface, NormalizerInter
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\PostEmployeeFk();
+        $object = new \Paqtcom\Simplicate\Model\PostEmployeeFk();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -68,6 +68,6 @@ class PostEmployeeFkNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\PostEmployeeFk::class => false];
+        return [\Paqtcom\Simplicate\Model\PostEmployeeFk::class => false];
     }
 }

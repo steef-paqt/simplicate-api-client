@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetSalesSalescustomfieldgroup extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetSalesSalescustomfieldgroup extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldgroupUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldgroupNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldgroupInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultCustomFieldGroups
+     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultCustomFieldGroups::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldgroupUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldgroupNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSalescustomfieldgroupInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupInternalServerErrorException($response);
         }
     }
 

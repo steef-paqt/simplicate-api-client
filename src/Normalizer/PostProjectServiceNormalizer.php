@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class PostProjectServiceNormalizer implements DenormalizerInterface, NormalizerI
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\PostProjectService::class;
+        return $type === \Paqtcom\Simplicate\Model\PostProjectService::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\PostProjectService::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostProjectService::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class PostProjectServiceNormalizer implements DenormalizerInterface, NormalizerI
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\PostProjectService();
+        $object = new \Paqtcom\Simplicate\Model\PostProjectService();
         if (\array_key_exists('amount', $data) && \is_int($data['amount'])) {
             $data['amount'] = (float) $data['amount'];
         }
@@ -82,7 +82,7 @@ class PostProjectServiceNormalizer implements DenormalizerInterface, NormalizerI
         if (\array_key_exists('hour_types', $data)) {
             $values = [];
             foreach ($data['hour_types'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\PostProjectServiceHoursType::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\PostProjectServiceHoursType::class, 'json', $context);
             }
             $object->setHourTypes($values);
         }
@@ -178,6 +178,6 @@ class PostProjectServiceNormalizer implements DenormalizerInterface, NormalizerI
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\PostProjectService::class => false];
+        return [\Paqtcom\Simplicate\Model\PostProjectService::class => false];
     }
 }

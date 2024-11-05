@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCustomFieldsTypeById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetCustomFieldsTypeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCustomFieldsTypeByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCustomFieldsTypeByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCustomFieldsTypeByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultCustomFieldType
+     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldType
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultCustomFieldType::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomFieldType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCustomFieldsTypeByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCustomFieldsTypeByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCustomFieldsTypeByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeByIdInternalServerErrorException($response);
         }
     }
 

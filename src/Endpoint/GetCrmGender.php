@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmGender extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetCrmGender extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmGenderUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmGenderNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmGenderInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultGenders
+     * @return null|\Paqtcom\Simplicate\Model\RestResultGenders
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultGenders::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultGenders::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmGenderUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmGenderUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmGenderNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmGenderNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmGenderInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmGenderInternalServerErrorException($response);
         }
     }
 

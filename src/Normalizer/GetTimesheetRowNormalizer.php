@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetTimesheetRowNormalizer implements DenormalizerInterface, NormalizerInte
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetTimesheetRow::class;
+        return $type === \Paqtcom\Simplicate\Model\GetTimesheetRow::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetTimesheetRow::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetTimesheetRow::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetTimesheetRowNormalizer implements DenormalizerInterface, NormalizerInte
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetTimesheetRow();
+        $object = new \Paqtcom\Simplicate\Model\GetTimesheetRow();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -53,19 +53,19 @@ class GetTimesheetRowNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setOrder($data['order']);
         }
         if (\array_key_exists('project', $data)) {
-            $object->setProject($this->denormalizer->denormalize($data['project'], \Steefdw\Simplicate\Model\GetTimesheetRowProject::class, 'json', $context));
+            $object->setProject($this->denormalizer->denormalize($data['project'], \Paqtcom\Simplicate\Model\GetTimesheetRowProject::class, 'json', $context));
         }
         if (\array_key_exists('project_service', $data)) {
-            $object->setProjectService($this->denormalizer->denormalize($data['project_service'], \Steefdw\Simplicate\Model\GetTimesheetRowProjectService::class, 'json', $context));
+            $object->setProjectService($this->denormalizer->denormalize($data['project_service'], \Paqtcom\Simplicate\Model\GetTimesheetRowProjectService::class, 'json', $context));
         }
         if (\array_key_exists('itemtype', $data)) {
-            $object->setItemtype($this->denormalizer->denormalize($data['itemtype'], \Steefdw\Simplicate\Model\GetTimesheetRowItemtype::class, 'json', $context));
+            $object->setItemtype($this->denormalizer->denormalize($data['itemtype'], \Paqtcom\Simplicate\Model\GetTimesheetRowItemtype::class, 'json', $context));
         }
         if (\array_key_exists('person', $data)) {
-            $object->setPerson($this->denormalizer->denormalize($data['person'], \Steefdw\Simplicate\Model\GetTimesheetRowPersonRelation::class, 'json', $context));
+            $object->setPerson($this->denormalizer->denormalize($data['person'], \Paqtcom\Simplicate\Model\GetTimesheetRowPersonRelation::class, 'json', $context));
         }
         if (\array_key_exists('organization', $data)) {
-            $object->setOrganization($this->denormalizer->denormalize($data['organization'], \Steefdw\Simplicate\Model\GetTimesheetRowOrganizationRelation::class, 'json', $context));
+            $object->setOrganization($this->denormalizer->denormalize($data['organization'], \Paqtcom\Simplicate\Model\GetTimesheetRowOrganizationRelation::class, 'json', $context));
         }
         if (\array_key_exists('employee_id', $data)) {
             $object->setEmployeeId($data['employee_id']);
@@ -146,6 +146,6 @@ class GetTimesheetRowNormalizer implements DenormalizerInterface, NormalizerInte
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetTimesheetRow::class => false];
+        return [\Paqtcom\Simplicate\Model\GetTimesheetRow::class => false];
     }
 }

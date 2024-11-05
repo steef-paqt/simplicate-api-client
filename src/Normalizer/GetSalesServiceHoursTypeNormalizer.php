@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetSalesServiceHoursTypeNormalizer implements DenormalizerInterface, Norma
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetSalesServiceHoursType::class;
+        return $type === \Paqtcom\Simplicate\Model\GetSalesServiceHoursType::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetSalesServiceHoursType::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetSalesServiceHoursType::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetSalesServiceHoursTypeNormalizer implements DenormalizerInterface, Norma
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetSalesServiceHoursType();
+        $object = new \Paqtcom\Simplicate\Model\GetSalesServiceHoursType();
         if (\array_key_exists('budgeted_amount', $data) && \is_int($data['budgeted_amount'])) {
             $data['budgeted_amount'] = (float) $data['budgeted_amount'];
         }
@@ -56,7 +56,7 @@ class GetSalesServiceHoursTypeNormalizer implements DenormalizerInterface, Norma
             $object->setId($data['id']);
         }
         if (\array_key_exists('hourstype', $data)) {
-            $object->setHourstype($this->denormalizer->denormalize($data['hourstype'], \Steefdw\Simplicate\Model\GetHoursType::class, 'json', $context));
+            $object->setHourstype($this->denormalizer->denormalize($data['hourstype'], \Paqtcom\Simplicate\Model\GetHoursType::class, 'json', $context));
         }
         if (\array_key_exists('budgeted_amount', $data)) {
             $object->setBudgetedAmount($data['budgeted_amount']);
@@ -98,6 +98,6 @@ class GetSalesServiceHoursTypeNormalizer implements DenormalizerInterface, Norma
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetSalesServiceHoursType::class => false];
+        return [\Paqtcom\Simplicate\Model\GetSalesServiceHoursType::class => false];
     }
 }

@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutServicesDefaultserviceById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\PostDefaultService $body default service object that needs to be updated
+     * @param \Paqtcom\Simplicate\Model\PostDefaultService $body default service object that needs to be updated
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PostDefaultService $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostDefaultService $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PutServicesDefaultserviceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutServicesDefaultserviceByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutServicesDefaultserviceByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutServicesDefaultserviceByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutServicesDefaultserviceByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PutServicesDefaultserviceById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutServicesDefaultserviceByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutServicesDefaultserviceByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutServicesDefaultserviceByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutServicesDefaultserviceByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdInternalServerErrorException($response);
         }
     }
 

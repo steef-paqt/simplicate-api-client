@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostProjectsDocument extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostDocument $body Document object containing data
+     * @param \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostDocument $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostDocument $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostProjectsDocument extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostProjectsDocumentBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PostProjectsDocumentUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostProjectsDocumentInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostProjectsDocumentBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostProjectsDocumentUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostProjectsDocumentInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostProjectsDocument extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostProjectsDocumentBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostProjectsDocumentBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostProjectsDocumentUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostProjectsDocumentUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostProjectsDocumentInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostProjectsDocumentInternalServerErrorException($response);
         }
     }
 

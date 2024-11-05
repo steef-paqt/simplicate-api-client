@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class RestResultJournalNormalizer implements DenormalizerInterface, NormalizerIn
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\RestResultJournal::class;
+        return $type === \Paqtcom\Simplicate\Model\RestResultJournal::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\RestResultJournal::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\RestResultJournal::class;
     }
 
     /**
@@ -42,15 +42,15 @@ class RestResultJournalNormalizer implements DenormalizerInterface, NormalizerIn
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\RestResultJournal();
+        $object = new \Paqtcom\Simplicate\Model\RestResultJournal();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
         if (\array_key_exists('data', $data)) {
-            $object->setData($this->denormalizer->denormalize($data['data'], \Steefdw\Simplicate\Model\Journal::class, 'json', $context));
+            $object->setData($this->denormalizer->denormalize($data['data'], \Paqtcom\Simplicate\Model\Journal::class, 'json', $context));
         }
         if (\array_key_exists('metadata', $data)) {
-            $object->setMetadata($this->denormalizer->denormalize($data['metadata'], \Steefdw\Simplicate\Model\MetaData::class, 'json', $context));
+            $object->setMetadata($this->denormalizer->denormalize($data['metadata'], \Paqtcom\Simplicate\Model\MetaData::class, 'json', $context));
         }
         if (\array_key_exists('errors', $data)) {
             $values = [];
@@ -102,6 +102,6 @@ class RestResultJournalNormalizer implements DenormalizerInterface, NormalizerIn
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\RestResultJournal::class => false];
+        return [\Paqtcom\Simplicate\Model\RestResultJournal::class => false];
     }
 }

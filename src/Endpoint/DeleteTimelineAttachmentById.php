@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteTimelineAttachmentById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteTimelineAttachmentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteTimelineAttachmentByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteTimelineAttachmentByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteTimelineAttachmentByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteTimelineAttachmentById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteTimelineAttachmentByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteTimelineAttachmentByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteTimelineAttachmentByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdInternalServerErrorException($response);
         }
     }
 

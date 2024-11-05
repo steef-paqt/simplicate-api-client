@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteCustomFieldsGroupById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteCustomFieldsGroupById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteCustomFieldsGroupByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteCustomFieldsGroupByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteCustomFieldsGroupByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteCustomFieldsGroupById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteCustomFieldsGroupByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteCustomFieldsGroupByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteCustomFieldsGroupByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdInternalServerErrorException($response);
         }
     }
 

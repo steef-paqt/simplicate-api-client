@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetProjectsDocumenttypeById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetProjectsDocumenttypeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsDocumenttypeByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsDocumenttypeByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsDocumenttypeByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsDocumenttypeByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumenttypeByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumenttypeByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumenttypeByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumenttypeByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultDocumentType
+     * @return null|\Paqtcom\Simplicate\Model\RestResultDocumentType
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultDocumentType::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocumentType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsDocumenttypeByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsDocumenttypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsDocumenttypeByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsDocumenttypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsDocumenttypeByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsDocumenttypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsDocumenttypeByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsDocumenttypeByIdInternalServerErrorException($response);
         }
     }
 

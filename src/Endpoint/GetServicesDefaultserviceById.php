@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetServicesDefaultserviceById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetServicesDefaultserviceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetServicesDefaultserviceByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetServicesDefaultserviceByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetServicesDefaultserviceByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetServicesDefaultserviceByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultDefaultService
+     * @return null|\Paqtcom\Simplicate\Model\RestResultDefaultService
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultDefaultService::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDefaultService::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetServicesDefaultserviceByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetServicesDefaultserviceByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetServicesDefaultserviceByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetServicesDefaultserviceByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdInternalServerErrorException($response);
         }
     }
 

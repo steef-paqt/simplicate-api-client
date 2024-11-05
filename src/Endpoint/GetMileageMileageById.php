@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetMileageMileageById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetMileageMileageById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetMileageMileageByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetMileageMileageByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetMileageMileageByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetMileageMileageByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetMileageMileageByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetMileageMileageByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetMileageMileageByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetMileageMileageByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultMileage
+     * @return null|\Paqtcom\Simplicate\Model\RestResultMileage
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultMileage::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultMileage::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetMileageMileageByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetMileageMileageByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetMileageMileageByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetMileageMileageByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetMileageMileageByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetMileageMileageByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetMileageMileageByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetMileageMileageByIdInternalServerErrorException($response);
         }
     }
 

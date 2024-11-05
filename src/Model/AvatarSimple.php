@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Model;
+namespace Paqtcom\Simplicate\Model;
 
 class AvatarSimple
 {

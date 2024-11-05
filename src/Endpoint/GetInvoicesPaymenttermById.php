@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetInvoicesPaymenttermById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetInvoicesPaymenttermById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesPaymenttermByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesPaymenttermByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesPaymenttermByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesPaymenttermByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultPaymentTerm
+     * @return null|\Paqtcom\Simplicate\Model\RestResultPaymentTerm
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultPaymentTerm::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultPaymentTerm::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesPaymenttermByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesPaymenttermByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesPaymenttermByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesPaymenttermByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdInternalServerErrorException($response);
         }
     }
 

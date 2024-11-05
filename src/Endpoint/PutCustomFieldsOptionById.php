@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutCustomFieldsOptionById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data
+     * @param \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\CustomFieldOption $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\CustomFieldOption $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PutCustomFieldsOptionById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutCustomFieldsOptionByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutCustomFieldsOptionByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutCustomFieldsOptionByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutCustomFieldsOptionByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PutCustomFieldsOptionById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutCustomFieldsOptionByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutCustomFieldsOptionByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutCustomFieldsOptionByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutCustomFieldsOptionByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdInternalServerErrorException($response);
         }
     }
 

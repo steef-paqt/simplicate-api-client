@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetInvoicesProposition extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetInvoicesProposition extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesPropositionUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesPropositionNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesPropositionInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPropositionUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPropositionNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPropositionInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultPropositions
+     * @return null|\Paqtcom\Simplicate\Model\RestResultPropositions
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultPropositions::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultPropositions::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesPropositionUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPropositionUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesPropositionNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPropositionNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesPropositionInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPropositionInternalServerErrorException($response);
         }
     }
 

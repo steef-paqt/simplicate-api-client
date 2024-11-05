@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class AssignmentBudgetInfoNormalizer implements DenormalizerInterface, Normalize
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\AssignmentBudgetInfo::class;
+        return $type === \Paqtcom\Simplicate\Model\AssignmentBudgetInfo::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\AssignmentBudgetInfo::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\AssignmentBudgetInfo::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class AssignmentBudgetInfoNormalizer implements DenormalizerInterface, Normalize
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\AssignmentBudgetInfo();
+        $object = new \Paqtcom\Simplicate\Model\AssignmentBudgetInfo();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,22 +50,22 @@ class AssignmentBudgetInfoNormalizer implements DenormalizerInterface, Normalize
             $object->setId($data['id']);
         }
         if (\array_key_exists('assignmentsPlanned', $data)) {
-            $object->setAssignmentsPlanned($this->denormalizer->denormalize($data['assignmentsPlanned'], \Steefdw\Simplicate\Model\AssignmentBudgetInfoFuturePast::class, 'json', $context));
+            $object->setAssignmentsPlanned($this->denormalizer->denormalize($data['assignmentsPlanned'], \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast::class, 'json', $context));
         }
         if (\array_key_exists('assignmentsUnplanned', $data)) {
             $object->setAssignmentsUnplanned($data['assignmentsUnplanned']);
         }
         if (\array_key_exists('assignmentsHoursWritten', $data)) {
-            $object->setAssignmentsHoursWritten($this->denormalizer->denormalize($data['assignmentsHoursWritten'], \Steefdw\Simplicate\Model\AssignmentBudgetInfoFuturePast::class, 'json', $context));
+            $object->setAssignmentsHoursWritten($this->denormalizer->denormalize($data['assignmentsHoursWritten'], \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast::class, 'json', $context));
         }
         if (\array_key_exists('itemtypesHoursWritten', $data)) {
-            $object->setItemtypesHoursWritten($this->denormalizer->denormalize($data['itemtypesHoursWritten'], \Steefdw\Simplicate\Model\AssignmentBudgetInfoFuturePast::class, 'json', $context));
+            $object->setItemtypesHoursWritten($this->denormalizer->denormalize($data['itemtypesHoursWritten'], \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast::class, 'json', $context));
         }
         if (\array_key_exists('assignmentsHoursCorrections', $data)) {
-            $object->setAssignmentsHoursCorrections($this->denormalizer->denormalize($data['assignmentsHoursCorrections'], \Steefdw\Simplicate\Model\AssignmentBudgetInfoFuturePast::class, 'json', $context));
+            $object->setAssignmentsHoursCorrections($this->denormalizer->denormalize($data['assignmentsHoursCorrections'], \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast::class, 'json', $context));
         }
         if (\array_key_exists('itemtypesHoursCorrections', $data)) {
-            $object->setItemtypesHoursCorrections($this->denormalizer->denormalize($data['itemtypesHoursCorrections'], \Steefdw\Simplicate\Model\AssignmentBudgetInfoFuturePast::class, 'json', $context));
+            $object->setItemtypesHoursCorrections($this->denormalizer->denormalize($data['itemtypesHoursCorrections'], \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast::class, 'json', $context));
         }
 
         return $object;
@@ -104,6 +104,6 @@ class AssignmentBudgetInfoNormalizer implements DenormalizerInterface, Normalize
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\AssignmentBudgetInfo::class => false];
+        return [\Paqtcom\Simplicate\Model\AssignmentBudgetInfo::class => false];
     }
 }

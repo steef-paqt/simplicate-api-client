@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetInvoicesPayment extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetInvoicesPayment extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesPaymentUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesPaymentNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesPaymentInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymentUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymentNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymentInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultPayments
+     * @return null|\Paqtcom\Simplicate\Model\RestResultPayments
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultPayments::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultPayments::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesPaymentUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymentUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesPaymentNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymentNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesPaymentInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymentInternalServerErrorException($response);
         }
     }
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Runtime\Normalizer;
+namespace Paqtcom\Simplicate\Runtime\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;

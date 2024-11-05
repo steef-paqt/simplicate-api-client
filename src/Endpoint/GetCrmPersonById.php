@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmPersonById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetCrmPersonById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmPersonByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmPersonByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmPersonByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmPersonByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersonByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersonByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersonByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersonByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultPerson
+     * @return null|\Paqtcom\Simplicate\Model\RestResultPerson
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultPerson::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultPerson::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmPersonByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmPersonByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmPersonByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmPersonByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmPersonByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmPersonByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmPersonByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmPersonByIdInternalServerErrorException($response);
         }
     }
 

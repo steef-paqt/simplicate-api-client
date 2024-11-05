@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class SalesNormalizer implements DenormalizerInterface, NormalizerInterface, Den
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\Sales::class;
+        return $type === \Paqtcom\Simplicate\Model\Sales::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\Sales::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Sales::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class SalesNormalizer implements DenormalizerInterface, NormalizerInterface, Den
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\Sales();
+        $object = new \Paqtcom\Simplicate\Model\Sales();
         if (\array_key_exists('expected_revenue', $data) && \is_int($data['expected_revenue'])) {
             $data['expected_revenue'] = (float) $data['expected_revenue'];
         }
@@ -62,10 +62,10 @@ class SalesNormalizer implements DenormalizerInterface, NormalizerInterface, Den
             $object->setContactId($data['contact_id']);
         }
         if (\array_key_exists('reason', $data)) {
-            $object->setReason($this->denormalizer->denormalize($data['reason'], \Steefdw\Simplicate\Model\SalesReason::class, 'json', $context));
+            $object->setReason($this->denormalizer->denormalize($data['reason'], \Paqtcom\Simplicate\Model\SalesReason::class, 'json', $context));
         }
         if (\array_key_exists('contact', $data)) {
-            $object->setContact($this->denormalizer->denormalize($data['contact'], \Steefdw\Simplicate\Model\ContactPerson::class, 'json', $context));
+            $object->setContact($this->denormalizer->denormalize($data['contact'], \Paqtcom\Simplicate\Model\ContactPerson::class, 'json', $context));
         }
         if (\array_key_exists('subject', $data)) {
             $object->setSubject($data['subject']);
@@ -86,7 +86,7 @@ class SalesNormalizer implements DenormalizerInterface, NormalizerInterface, Den
             $object->setChanceToScore($data['chance_to_score']);
         }
         if (\array_key_exists('lost_to_competitor', $data)) {
-            $object->setLostToCompetitor($this->denormalizer->denormalize($data['lost_to_competitor'], \Steefdw\Simplicate\Model\LostToCompetitor::class, 'json', $context));
+            $object->setLostToCompetitor($this->denormalizer->denormalize($data['lost_to_competitor'], \Paqtcom\Simplicate\Model\LostToCompetitor::class, 'json', $context));
         }
 
         return $object;
@@ -143,6 +143,6 @@ class SalesNormalizer implements DenormalizerInterface, NormalizerInterface, Den
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\Sales::class => false];
+        return [\Paqtcom\Simplicate\Model\Sales::class => false];
     }
 }

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetSharedItem extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetSharedItem extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetSharedItemUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetSharedItemNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetSharedItemInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetSharedItemUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetSharedItemNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetSharedItemInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultSharedItems
+     * @return null|\Paqtcom\Simplicate\Model\RestResultSharedItems
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultSharedItems::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultSharedItems::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSharedItemUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSharedItemUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSharedItemNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSharedItemNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSharedItemInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSharedItemInternalServerErrorException($response);
         }
     }
 

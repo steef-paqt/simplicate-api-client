@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class RestResultTaskNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\RestResultTask::class;
+        return $type === \Paqtcom\Simplicate\Model\RestResultTask::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\RestResultTask::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\RestResultTask::class;
     }
 
     /**
@@ -42,15 +42,15 @@ class RestResultTaskNormalizer implements DenormalizerInterface, NormalizerInter
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\RestResultTask();
+        $object = new \Paqtcom\Simplicate\Model\RestResultTask();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
         if (\array_key_exists('data', $data)) {
-            $object->setData($this->denormalizer->denormalize($data['data'], \Steefdw\Simplicate\Model\Task::class, 'json', $context));
+            $object->setData($this->denormalizer->denormalize($data['data'], \Paqtcom\Simplicate\Model\Task::class, 'json', $context));
         }
         if (\array_key_exists('metadata', $data)) {
-            $object->setMetadata($this->denormalizer->denormalize($data['metadata'], \Steefdw\Simplicate\Model\MetaData::class, 'json', $context));
+            $object->setMetadata($this->denormalizer->denormalize($data['metadata'], \Paqtcom\Simplicate\Model\MetaData::class, 'json', $context));
         }
         if (\array_key_exists('errors', $data)) {
             $values = [];
@@ -102,6 +102,6 @@ class RestResultTaskNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\RestResultTask::class => false];
+        return [\Paqtcom\Simplicate\Model\RestResultTask::class => false];
     }
 }

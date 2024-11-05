@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class RecurrenceNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\Recurrence::class;
+        return $type === \Paqtcom\Simplicate\Model\Recurrence::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\Recurrence::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Recurrence::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class RecurrenceNormalizer implements DenormalizerInterface, NormalizerInterface
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\Recurrence();
+        $object = new \Paqtcom\Simplicate\Model\Recurrence();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,7 +50,7 @@ class RecurrenceNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setId($data['id']);
         }
         if (\array_key_exists('rrule', $data)) {
-            $object->setRrule($this->denormalizer->denormalize($data['rrule'], \Steefdw\Simplicate\Model\Rrule::class, 'json', $context));
+            $object->setRrule($this->denormalizer->denormalize($data['rrule'], \Paqtcom\Simplicate\Model\Rrule::class, 'json', $context));
         }
         if (\array_key_exists('update', $data)) {
             $object->setUpdate($data['update']);
@@ -80,6 +80,6 @@ class RecurrenceNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\Recurrence::class => false];
+        return [\Paqtcom\Simplicate\Model\Recurrence::class => false];
     }
 }

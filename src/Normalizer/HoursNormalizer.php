@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class HoursNormalizer implements DenormalizerInterface, NormalizerInterface, Den
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\Hours::class;
+        return $type === \Paqtcom\Simplicate\Model\Hours::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\Hours::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Hours::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class HoursNormalizer implements DenormalizerInterface, NormalizerInterface, Den
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\Hours();
+        $object = new \Paqtcom\Simplicate\Model\Hours();
         if (\array_key_exists('hours', $data) && \is_int($data['hours'])) {
             $data['hours'] = (float) $data['hours'];
         }
@@ -68,7 +68,7 @@ class HoursNormalizer implements DenormalizerInterface, NormalizerInterface, Den
             $object->setIsRecurring($data['is_recurring']);
         }
         if (\array_key_exists('recurrence', $data)) {
-            $object->setRecurrence($this->denormalizer->denormalize($data['recurrence'], \Steefdw\Simplicate\Model\Recurrence::class, 'json', $context));
+            $object->setRecurrence($this->denormalizer->denormalize($data['recurrence'], \Paqtcom\Simplicate\Model\Recurrence::class, 'json', $context));
         }
         if (\array_key_exists('is_external', $data)) {
             $object->setIsExternal($data['is_external']);
@@ -80,7 +80,7 @@ class HoursNormalizer implements DenormalizerInterface, NormalizerInterface, Den
             $object->setNote($data['note']);
         }
         if (\array_key_exists('address', $data)) {
-            $object->setAddress($this->denormalizer->denormalize($data['address'], \Steefdw\Simplicate\Model\Address::class, 'json', $context));
+            $object->setAddress($this->denormalizer->denormalize($data['address'], \Paqtcom\Simplicate\Model\Address::class, 'json', $context));
         }
         if (\array_key_exists('assignment_id', $data)) {
             $object->setAssignmentId($data['assignment_id']);
@@ -149,6 +149,6 @@ class HoursNormalizer implements DenormalizerInterface, NormalizerInterface, Den
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\Hours::class => false];
+        return [\Paqtcom\Simplicate\Model\Hours::class => false];
     }
 }

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteHrmDocumentById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteHrmDocumentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteHrmDocumentByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteHrmDocumentByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteHrmDocumentByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHrmDocumentByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHrmDocumentByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHrmDocumentByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteHrmDocumentById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHrmDocumentByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHrmDocumentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHrmDocumentByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHrmDocumentByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHrmDocumentByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHrmDocumentByIdInternalServerErrorException($response);
         }
     }
 

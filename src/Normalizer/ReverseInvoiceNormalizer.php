@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class ReverseInvoiceNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\ReverseInvoice::class;
+        return $type === \Paqtcom\Simplicate\Model\ReverseInvoice::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\ReverseInvoice::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\ReverseInvoice::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class ReverseInvoiceNormalizer implements DenormalizerInterface, NormalizerInter
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\ReverseInvoice();
+        $object = new \Paqtcom\Simplicate\Model\ReverseInvoice();
         if (\array_key_exists('price', $data) && \is_int($data['price'])) {
             $data['price'] = (float) $data['price'];
         }
@@ -65,10 +65,10 @@ class ReverseInvoiceNormalizer implements DenormalizerInterface, NormalizerInter
             $object->setPrice($data['price']);
         }
         if (\array_key_exists('project', $data)) {
-            $object->setProject($this->denormalizer->denormalize($data['project'], \Steefdw\Simplicate\Model\GetProjectSimple::class, 'json', $context));
+            $object->setProject($this->denormalizer->denormalize($data['project'], \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context));
         }
         if (\array_key_exists('invoice', $data)) {
-            $object->setInvoice($this->denormalizer->denormalize($data['invoice'], \Steefdw\Simplicate\Model\GetInvoiceSimple::class, 'json', $context));
+            $object->setInvoice($this->denormalizer->denormalize($data['invoice'], \Paqtcom\Simplicate\Model\GetInvoiceSimple::class, 'json', $context));
         }
 
         return $object;
@@ -107,6 +107,6 @@ class ReverseInvoiceNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\ReverseInvoice::class => false];
+        return [\Paqtcom\Simplicate\Model\ReverseInvoice::class => false];
     }
 }

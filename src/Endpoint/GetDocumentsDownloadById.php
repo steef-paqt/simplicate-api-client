@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetDocumentsDownloadById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,10 +40,10 @@ class GetDocumentsDownloadById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDownloadByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDownloadByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDownloadByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDownloadByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,16 +53,16 @@ class GetDocumentsDownloadById extends BaseEndpoint
             return json_decode($body);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDownloadByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDownloadByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDownloadByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDownloadByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdInternalServerErrorException($response);
         }
     }
 

@@ -1,5 +1,5 @@
 {
-    "name": "steefdw/simplicate-api-client",
+    "name": "paqtcom/simplicate-api-client",
     "description": "Simplicate API client",
     "require-dev": {
         "phpmd/phpmd": "^2.15",
@@ -10,7 +10,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Steefdw\\Simplicate\\": "src/"
+            "Paqtcom\\Simplicate\\": "src/"
         }
     },
     "authors": [

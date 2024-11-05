@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostHoursTimesheetrow extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostTimesheetRow $body Description of timesheetrow that is submitted.
+     * @param \Paqtcom\Simplicate\Model\PostTimesheetRow $body Description of timesheetrow that is submitted.
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostTimesheetRow $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostTimesheetRow $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostHoursTimesheetrow extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostHoursTimesheetrowBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PostHoursTimesheetrowUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostHoursTimesheetrowInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostHoursTimesheetrow extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHoursTimesheetrowBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHoursTimesheetrowUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHoursTimesheetrowInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowInternalServerErrorException($response);
         }
     }
 

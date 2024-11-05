@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetSalesSaleById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetSalesSaleById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSaleByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSaleByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSaleByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesSaleByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSaleByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSaleByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSaleByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesSaleByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultSale
+     * @return null|\Paqtcom\Simplicate\Model\RestResultSale
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultSale::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultSale::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSaleByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSaleByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSaleByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSaleByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSaleByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSaleByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesSaleByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesSaleByIdInternalServerErrorException($response);
         }
     }
 

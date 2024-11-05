@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Exception;
+namespace Paqtcom\Simplicate\Exception;
 
 class GetCrmDocumentByIdUnprocessableEntityException extends UnprocessableEntityException
 {

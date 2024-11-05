@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteSalesServiceById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteSalesServiceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteSalesServiceByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteSalesServiceByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteSalesServiceByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteSalesServiceById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSalesServiceByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSalesServiceByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSalesServiceByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdInternalServerErrorException($response);
         }
     }
 

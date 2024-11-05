@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class OrganizationNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\Organization::class;
+        return $type === \Paqtcom\Simplicate\Model\Organization::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\Organization::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Organization::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class OrganizationNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\Organization();
+        $object = new \Paqtcom\Simplicate\Model\Organization();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -74,10 +74,10 @@ class OrganizationNormalizer implements DenormalizerInterface, NormalizerInterfa
             $object->setHasDifferentPostalAddress($data['has_different_postal_address']);
         }
         if (\array_key_exists('industry', $data)) {
-            $object->setIndustry($this->denormalizer->denormalize($data['industry'], \Steefdw\Simplicate\Model\Industry::class, 'json', $context));
+            $object->setIndustry($this->denormalizer->denormalize($data['industry'], \Paqtcom\Simplicate\Model\Industry::class, 'json', $context));
         }
         if (\array_key_exists('organizationsize', $data)) {
-            $object->setOrganizationsize($this->denormalizer->denormalize($data['organizationsize'], \Steefdw\Simplicate\Model\OrganizationSize::class, 'json', $context));
+            $object->setOrganizationsize($this->denormalizer->denormalize($data['organizationsize'], \Paqtcom\Simplicate\Model\OrganizationSize::class, 'json', $context));
         }
         if (\array_key_exists('invoice_receiver', $data)) {
             $object->setInvoiceReceiver($data['invoice_receiver']);
@@ -158,6 +158,6 @@ class OrganizationNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\Organization::class => false];
+        return [\Paqtcom\Simplicate\Model\Organization::class => false];
     }
 }

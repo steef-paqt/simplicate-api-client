@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetProjectServiceCostTypeNormalizer implements DenormalizerInterface, Norm
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetProjectServiceCostType::class;
+        return $type === \Paqtcom\Simplicate\Model\GetProjectServiceCostType::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetProjectServiceCostType::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetProjectServiceCostType::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetProjectServiceCostTypeNormalizer implements DenormalizerInterface, Norm
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetProjectServiceCostType();
+        $object = new \Paqtcom\Simplicate\Model\GetProjectServiceCostType();
         if (\array_key_exists('budgeted_amount', $data) && \is_int($data['budgeted_amount'])) {
             $data['budgeted_amount'] = (float) $data['budgeted_amount'];
         }
@@ -65,7 +65,7 @@ class GetProjectServiceCostTypeNormalizer implements DenormalizerInterface, Norm
             $object->setId($data['id']);
         }
         if (\array_key_exists('costtype', $data)) {
-            $object->setCosttype($this->denormalizer->denormalize($data['costtype'], \Steefdw\Simplicate\Model\GetPurchaseType::class, 'json', $context));
+            $object->setCosttype($this->denormalizer->denormalize($data['costtype'], \Paqtcom\Simplicate\Model\GetPurchaseType::class, 'json', $context));
         }
         if (\array_key_exists('budgeted_amount', $data)) {
             $object->setBudgetedAmount($data['budgeted_amount']);
@@ -116,6 +116,6 @@ class GetProjectServiceCostTypeNormalizer implements DenormalizerInterface, Norm
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetProjectServiceCostType::class => false];
+        return [\Paqtcom\Simplicate\Model\GetProjectServiceCostType::class => false];
     }
 }

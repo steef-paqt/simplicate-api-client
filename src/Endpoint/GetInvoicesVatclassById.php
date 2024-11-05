@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetInvoicesVatclassById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetInvoicesVatclassById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesVatclassByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesVatclassByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesVatclassByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesVatclassByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesVatclassByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesVatclassByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesVatclassByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesVatclassByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultVatClass
+     * @return null|\Paqtcom\Simplicate\Model\RestResultVatClass
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultVatClass::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultVatClass::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesVatclassByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesVatclassByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesVatclassByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesVatclassByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesVatclassByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesVatclassByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesVatclassByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesVatclassByIdInternalServerErrorException($response);
         }
     }
 

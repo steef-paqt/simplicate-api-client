@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetInvoicesRemindertemplateById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetInvoicesRemindertemplateById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesRemindertemplateByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesRemindertemplateByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesRemindertemplateByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetInvoicesRemindertemplateByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultReminderTemplate
+     * @return null|\Paqtcom\Simplicate\Model\RestResultReminderTemplate
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultReminderTemplate::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultReminderTemplate::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesRemindertemplateByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesRemindertemplateByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesRemindertemplateByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetInvoicesRemindertemplateByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateByIdInternalServerErrorException($response);
         }
     }
 

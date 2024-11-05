@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetDocumentsDocumentById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetDocumentsDocumentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDocumentByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDocumentByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDocumentByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDocumentByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumentByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumentByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumentByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumentByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultDocument
+     * @return null|\Paqtcom\Simplicate\Model\RestResultDocument
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultDocument::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocument::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDocumentByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDocumentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDocumentByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDocumentByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDocumentByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDocumentByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDocumentByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDocumentByIdInternalServerErrorException($response);
         }
     }
 

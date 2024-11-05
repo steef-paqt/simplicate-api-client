@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetProjectsProject extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetProjectsProject extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultProjects
+     * @return null|\Paqtcom\Simplicate\Model\RestResultProjects
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultProjects::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultProjects::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectInternalServerErrorException($response);
         }
     }
 

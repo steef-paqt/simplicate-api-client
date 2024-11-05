@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetDocumentsDocumenttypeById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetDocumentsDocumenttypeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDocumenttypeByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDocumenttypeByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDocumenttypeByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDocumenttypeByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultDocumentType
+     * @return null|\Paqtcom\Simplicate\Model\RestResultDocumentType
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultDocumentType::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocumentType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDocumenttypeByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDocumenttypeByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDocumenttypeByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDocumenttypeByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeByIdInternalServerErrorException($response);
         }
     }
 

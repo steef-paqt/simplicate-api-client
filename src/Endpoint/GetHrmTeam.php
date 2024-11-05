@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHrmTeam extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetHrmTeam extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHrmTeamUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmTeamNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmTeamInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultTeams
+     * @return null|\Paqtcom\Simplicate\Model\RestResultTeams
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultTeams::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultTeams::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmTeamUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmTeamUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmTeamNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmTeamNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmTeamInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmTeamInternalServerErrorException($response);
         }
     }
 

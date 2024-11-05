@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHoursApprovalstatusById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetHoursApprovalstatusById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHoursApprovalstatusByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursApprovalstatusByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursApprovalstatusByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursApprovalstatusByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultApprovalStatus
+     * @return null|\Paqtcom\Simplicate\Model\RestResultApprovalStatus
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultApprovalStatus::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultApprovalStatus::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursApprovalstatusByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursApprovalstatusByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursApprovalstatusByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursApprovalstatusByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdInternalServerErrorException($response);
         }
     }
 

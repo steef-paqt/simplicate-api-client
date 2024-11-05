@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostCrmMergeorganization extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostMerger $body Merge object containing the source id and target id
+     * @param \Paqtcom\Simplicate\Model\PostMerger $body Merge object containing the source id and target id
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostMerger $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostMerger $body)
     {
         $this->body = $body;
     }
@@ -41,27 +41,27 @@ class PostCrmMergeorganization extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostCrmMergeorganizationBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PostCrmMergeorganizationUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostCrmMergeorganizationInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\ResultMergerMerge
+     * @return null|\Paqtcom\Simplicate\Model\ResultMergerMerge
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\ResultMergerMerge::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\ResultMergerMerge::class, 'json');
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostCrmMergeorganizationBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostCrmMergeorganizationUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostCrmMergeorganizationInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationInternalServerErrorException($response);
         }
     }
 

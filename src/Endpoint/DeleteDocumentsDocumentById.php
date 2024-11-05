@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteDocumentsDocumentById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteDocumentsDocumentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteDocumentsDocumentByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteDocumentsDocumentByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteDocumentsDocumentByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteDocumentsDocumentByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteDocumentsDocumentByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteDocumentsDocumentByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteDocumentsDocumentById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteDocumentsDocumentByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteDocumentsDocumentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteDocumentsDocumentByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteDocumentsDocumentByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteDocumentsDocumentByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteDocumentsDocumentByIdInternalServerErrorException($response);
         }
     }
 

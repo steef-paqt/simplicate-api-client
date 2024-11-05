@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutHrmTimetableById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PutTimetable $body Timetable object that needs to be updated
+     * @param \Paqtcom\Simplicate\Model\PutTimetable $body Timetable object that needs to be updated
      */
-    public function __construct(\Steefdw\Simplicate\Model\PutTimetable $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PutTimetable $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PutHrmTimetableById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutHrmTimetableByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutHrmTimetableByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutHrmTimetableByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PutHrmTimetableById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHrmTimetableByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHrmTimetableByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHrmTimetableByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdInternalServerErrorException($response);
         }
     }
 

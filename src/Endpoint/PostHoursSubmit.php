@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostHoursSubmit extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\Submit $body Data that is needed to submit hours
+     * @param \Paqtcom\Simplicate\Model\Submit $body Data that is needed to submit hours
      */
-    public function __construct(\Steefdw\Simplicate\Model\Submit $body)
+    public function __construct(\Paqtcom\Simplicate\Model\Submit $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostHoursSubmit extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostHoursSubmitUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostHoursSubmitNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostHoursSubmitInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostHoursSubmitUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostHoursSubmitNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostHoursSubmitInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostHoursSubmit extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHoursSubmitUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHoursSubmitUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHoursSubmitNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHoursSubmitNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHoursSubmitInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHoursSubmitInternalServerErrorException($response);
         }
     }
 

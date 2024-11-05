@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteMileageMileageById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteMileageMileageById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteMileageMileageByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteMileageMileageByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteMileageMileageByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteMileageMileageByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteMileageMileageByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteMileageMileageByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteMileageMileageById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteMileageMileageByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteMileageMileageByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteMileageMileageByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteMileageMileageByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteMileageMileageByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteMileageMileageByIdInternalServerErrorException($response);
         }
     }
 

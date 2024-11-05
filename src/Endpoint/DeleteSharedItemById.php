@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteSharedItemById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteSharedItemById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteSharedItemByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteSharedItemByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteSharedItemByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteSharedItemById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSharedItemByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSharedItemByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSharedItemByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdInternalServerErrorException($response);
         }
     }
 

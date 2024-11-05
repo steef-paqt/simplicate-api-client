@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetBasicPersonSimpleNormalizer implements DenormalizerInterface, Normalize
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetBasicPersonSimple::class;
+        return $type === \Paqtcom\Simplicate\Model\GetBasicPersonSimple::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetBasicPersonSimple::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetBasicPersonSimple::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetBasicPersonSimpleNormalizer implements DenormalizerInterface, Normalize
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetBasicPersonSimple();
+        $object = new \Paqtcom\Simplicate\Model\GetBasicPersonSimple();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -56,7 +56,7 @@ class GetBasicPersonSimpleNormalizer implements DenormalizerInterface, Normalize
             $object->setGender($data['gender']);
         }
         if (\array_key_exists('address', $data)) {
-            $object->setAddress($this->denormalizer->denormalize($data['address'], \Steefdw\Simplicate\Model\GetAddress::class, 'json', $context));
+            $object->setAddress($this->denormalizer->denormalize($data['address'], \Paqtcom\Simplicate\Model\GetAddress::class, 'json', $context));
         }
         if (\array_key_exists('email', $data)) {
             $object->setEmail($data['email']);
@@ -134,6 +134,6 @@ class GetBasicPersonSimpleNormalizer implements DenormalizerInterface, Normalize
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetBasicPersonSimple::class => false];
+        return [\Paqtcom\Simplicate\Model\GetBasicPersonSimple::class => false];
     }
 }

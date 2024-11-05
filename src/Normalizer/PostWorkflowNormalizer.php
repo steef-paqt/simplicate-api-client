@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class PostWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\PostWorkflow::class;
+        return $type === \Paqtcom\Simplicate\Model\PostWorkflow::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\PostWorkflow::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostWorkflow::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class PostWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\PostWorkflow();
+        $object = new \Paqtcom\Simplicate\Model\PostWorkflow();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,26 +50,26 @@ class PostWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfa
             $object->setDefaultworkflowId($data['defaultworkflow_id']);
         }
         if (\array_key_exists('created_by', $data)) {
-            $object->setCreatedBy($this->denormalizer->denormalize($data['created_by'], \Steefdw\Simplicate\Model\CreatedBy::class, 'json', $context));
+            $object->setCreatedBy($this->denormalizer->denormalize($data['created_by'], \Paqtcom\Simplicate\Model\CreatedBy::class, 'json', $context));
         }
         if (\array_key_exists('linked_to', $data)) {
             $values = [];
             foreach ($data['linked_to'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\LinkedTo::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\LinkedTo::class, 'json', $context);
             }
             $object->setLinkedTo($values);
         }
         if (\array_key_exists('attachments', $data)) {
             $values_1 = [];
             foreach ($data['attachments'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Steefdw\Simplicate\Model\PostDocument::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\PostDocument::class, 'json', $context);
             }
             $object->setAttachments($values_1);
         }
         if (\array_key_exists('comments', $data)) {
             $values_2 = [];
             foreach ($data['comments'] as $value_2) {
-                $values_2[] = $this->denormalizer->denormalize($value_2, \Steefdw\Simplicate\Model\Comment::class, 'json', $context);
+                $values_2[] = $this->denormalizer->denormalize($value_2, \Paqtcom\Simplicate\Model\Comment::class, 'json', $context);
             }
             $object->setComments($values_2);
         }
@@ -152,6 +152,6 @@ class PostWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\PostWorkflow::class => false];
+        return [\Paqtcom\Simplicate\Model\PostWorkflow::class => false];
     }
 }

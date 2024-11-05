@@ -12,14 +12,14 @@ Add this in your composer.json:
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:steefdw/simplicate-api-client.git"
+            "url": "git@github.com:steef-paqt/simplicate-api-client.git"
         }
     ],
 ```
 
 And run in your terminal:
 ```
-composer require steefdw/simplicate-api-client
+composer require paqtcom/simplicate-api-client
 ```
 
 ## Example usage:
@@ -35,10 +35,10 @@ $plugins = [
     new \Http\Client\Common\Plugin\AddPathPlugin($uri),
 ];
 $httpClient = new \Http\Client\Common\PluginClient($httpClient, $plugins);
-$client = \Steefdw\TempoApi\Client::create($httpClient);
+$client = \Paqtcom\Simplicate\Client::create($httpClient);
 
 // now you can run commands like:
-$client->getCrmOrganization();      // Steefdw\Simplicate\Model\RestResultOrganizations
+$client->getCrmOrganization();      // Paqtcom\Simplicate\Model\RestResultOrganizations
 ```
 
 ## Extra features on top of JanePHP generated code:

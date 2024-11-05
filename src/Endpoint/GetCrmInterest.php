@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmInterest extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetCrmInterest extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmInterestUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmInterestNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmInterestInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultInterests
+     * @return null|\Paqtcom\Simplicate\Model\RestResultInterests
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultInterests::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultInterests::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmInterestUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmInterestUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmInterestNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmInterestNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmInterestInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmInterestInternalServerErrorException($response);
         }
     }
 

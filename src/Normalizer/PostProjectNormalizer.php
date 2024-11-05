@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class PostProjectNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\PostProject::class;
+        return $type === \Paqtcom\Simplicate\Model\PostProject::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\PostProject::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostProject::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class PostProjectNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\PostProject();
+        $object = new \Paqtcom\Simplicate\Model\PostProject();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -53,7 +53,7 @@ class PostProjectNormalizer implements DenormalizerInterface, NormalizerInterfac
             $object->setProjectStatusId($data['project_status_id']);
         }
         if (\array_key_exists('separate_invoice_recipient', $data)) {
-            $object->setSeparateInvoiceRecipient($this->denormalizer->denormalize($data['separate_invoice_recipient'], \Steefdw\Simplicate\Model\PostSeparateInvoiceRecipient::class, 'json', $context));
+            $object->setSeparateInvoiceRecipient($this->denormalizer->denormalize($data['separate_invoice_recipient'], \Paqtcom\Simplicate\Model\PostSeparateInvoiceRecipient::class, 'json', $context));
         }
         if (\array_key_exists('divergent_payment_term_id', $data)) {
             $object->setDivergentPaymentTermId($data['divergent_payment_term_id']);
@@ -61,14 +61,14 @@ class PostProjectNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (\array_key_exists('teams', $data)) {
             $values = [];
             foreach ($data['teams'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\PostTeam::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\PostTeam::class, 'json', $context);
             }
             $object->setTeams($values);
         }
         if (\array_key_exists('custom_fields', $data)) {
             $values_1 = [];
             foreach ($data['custom_fields'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Steefdw\Simplicate\Model\PostCustomFieldValue::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\PostCustomFieldValue::class, 'json', $context);
             }
             $object->setCustomFields($values_1);
         }
@@ -186,6 +186,6 @@ class PostProjectNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\PostProject::class => false];
+        return [\Paqtcom\Simplicate\Model\PostProject::class => false];
     }
 }

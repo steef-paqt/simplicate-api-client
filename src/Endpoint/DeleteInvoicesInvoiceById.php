@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteInvoicesInvoiceById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteInvoicesInvoiceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteInvoicesInvoiceByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteInvoicesInvoiceByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteInvoicesInvoiceByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteInvoicesInvoiceById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteInvoicesInvoiceByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteInvoicesInvoiceByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteInvoicesInvoiceByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdInternalServerErrorException($response);
         }
     }
 

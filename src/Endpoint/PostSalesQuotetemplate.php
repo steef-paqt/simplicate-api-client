@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostSalesQuotetemplate extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data
+     * @param \Paqtcom\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostQuoteTemplate $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostQuoteTemplate $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostSalesQuotetemplate extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostSalesQuotetemplateBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PostSalesQuotetemplateUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostSalesQuotetemplateInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostSalesQuotetemplate extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSalesQuotetemplateBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSalesQuotetemplateUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSalesQuotetemplateInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateInternalServerErrorException($response);
         }
     }
 

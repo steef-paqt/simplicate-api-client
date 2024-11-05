@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostTimelineAttachment extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
-    public function __construct(\Steefdw\Simplicate\Model\PostAttachment $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostAttachment $body)
     {
         $this->body = $body;
     }
@@ -38,9 +38,9 @@ class PostTimelineAttachment extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostTimelineAttachmentUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostTimelineAttachmentNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostTimelineAttachmentInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostTimelineAttachmentUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostTimelineAttachmentNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostTimelineAttachmentInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -50,13 +50,13 @@ class PostTimelineAttachment extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostTimelineAttachmentUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostTimelineAttachmentUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostTimelineAttachmentNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostTimelineAttachmentNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostTimelineAttachmentInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostTimelineAttachmentInternalServerErrorException($response);
         }
     }
 

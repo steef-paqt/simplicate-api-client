@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetProjectsProjectcustomfieldgroup extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetProjectsProjectcustomfieldgroup extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectcustomfieldgroupUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectcustomfieldgroupNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectcustomfieldgroupInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldgroupUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldgroupNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldgroupInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultCustomFieldGroups
+     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultCustomFieldGroups::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectcustomfieldgroupUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldgroupUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectcustomfieldgroupNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldgroupNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectcustomfieldgroupInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldgroupInternalServerErrorException($response);
         }
     }
 

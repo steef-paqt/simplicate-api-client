@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostHoursApproval extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostApproval $body Approval object that needs to be added
+     * @param \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be added
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostApproval $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostApproval $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostHoursApproval extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostHoursApprovalUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostHoursApprovalNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostHoursApprovalInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostHoursApprovalUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostHoursApprovalNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostHoursApprovalInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostHoursApproval extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHoursApprovalUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHoursApprovalUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHoursApprovalNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHoursApprovalNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHoursApprovalInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHoursApprovalInternalServerErrorException($response);
         }
     }
 

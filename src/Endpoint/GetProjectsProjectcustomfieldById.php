@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetProjectsProjectcustomfieldById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetProjectsProjectcustomfieldById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectcustomfieldByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectcustomfieldByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultCustomField
+     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomField
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultCustomField::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomField::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectcustomfieldByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectcustomfieldByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdInternalServerErrorException($response);
         }
     }
 

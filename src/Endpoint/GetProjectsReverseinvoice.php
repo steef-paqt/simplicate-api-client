@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetProjectsReverseinvoice extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetProjectsReverseinvoice extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsReverseinvoiceUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsReverseinvoiceNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsReverseinvoiceInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultReverseInvoices
+     * @return null|\Paqtcom\Simplicate\Model\RestResultReverseInvoices
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultReverseInvoices::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultReverseInvoices::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsReverseinvoiceUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsReverseinvoiceNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsReverseinvoiceInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceInternalServerErrorException($response);
         }
     }
 

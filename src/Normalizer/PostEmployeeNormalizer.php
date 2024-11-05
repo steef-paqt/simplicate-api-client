@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class PostEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\PostEmployee::class;
+        return $type === \Paqtcom\Simplicate\Model\PostEmployee::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\PostEmployee::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostEmployee::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class PostEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\PostEmployee();
+        $object = new \Paqtcom\Simplicate\Model\PostEmployee();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,15 +50,15 @@ class PostEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfa
             $object->setPersonId($data['person_id']);
         }
         if (\array_key_exists('supervisor', $data)) {
-            $object->setSupervisor($this->denormalizer->denormalize($data['supervisor'], \Steefdw\Simplicate\Model\PostEmployeeFk::class, 'json', $context));
+            $object->setSupervisor($this->denormalizer->denormalize($data['supervisor'], \Paqtcom\Simplicate\Model\PostEmployeeFk::class, 'json', $context));
         }
         if (\array_key_exists('status', $data)) {
-            $object->setStatus($this->denormalizer->denormalize($data['status'], \Steefdw\Simplicate\Model\PostEmployeeStatusFk::class, 'json', $context));
+            $object->setStatus($this->denormalizer->denormalize($data['status'], \Paqtcom\Simplicate\Model\PostEmployeeStatusFk::class, 'json', $context));
         }
         if (\array_key_exists('custom_fields', $data)) {
             $values = [];
             foreach ($data['custom_fields'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\PostCustomFieldValue::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\PostCustomFieldValue::class, 'json', $context);
             }
             $object->setCustomFields($values);
         }
@@ -94,6 +94,6 @@ class PostEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\PostEmployee::class => false];
+        return [\Paqtcom\Simplicate\Model\PostEmployee::class => false];
     }
 }

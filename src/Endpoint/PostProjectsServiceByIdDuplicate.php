@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostProjectsServiceByIdDuplicate extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -42,10 +42,10 @@ class PostProjectsServiceByIdDuplicate extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostProjectsServiceByIdDuplicateBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PostProjectsServiceByIdDuplicateUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostProjectsServiceByIdDuplicateNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostProjectsServiceByIdDuplicateInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PostProjectsServiceByIdDuplicate extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostProjectsServiceByIdDuplicateBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostProjectsServiceByIdDuplicateUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostProjectsServiceByIdDuplicateNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostProjectsServiceByIdDuplicateInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateInternalServerErrorException($response);
         }
     }
 

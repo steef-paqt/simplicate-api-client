@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class IsSatisfiedNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\IsSatisfied::class;
+        return $type === \Paqtcom\Simplicate\Model\IsSatisfied::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\IsSatisfied::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\IsSatisfied::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class IsSatisfiedNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\IsSatisfied();
+        $object = new \Paqtcom\Simplicate\Model\IsSatisfied();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,7 +50,7 @@ class IsSatisfiedNormalizer implements DenormalizerInterface, NormalizerInterfac
             $object->setValue($data['value']);
         }
         if (\array_key_exists('reason', $data)) {
-            $object->setReason($this->denormalizer->denormalize($data['reason'], \Steefdw\Simplicate\Model\IsSatisfiedReason::class, 'json', $context));
+            $object->setReason($this->denormalizer->denormalize($data['reason'], \Paqtcom\Simplicate\Model\IsSatisfiedReason::class, 'json', $context));
         }
 
         return $object;
@@ -74,6 +74,6 @@ class IsSatisfiedNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\IsSatisfied::class => false];
+        return [\Paqtcom\Simplicate\Model\IsSatisfied::class => false];
     }
 }

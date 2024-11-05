@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHrmDocumenttype extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetHrmDocumenttype extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHrmDocumenttypeUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmDocumenttypeNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmDocumenttypeInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumenttypeUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumenttypeNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumenttypeInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultDocumentTypes
+     * @return null|\Paqtcom\Simplicate\Model\RestResultDocumentTypes
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultDocumentTypes::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmDocumenttypeUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmDocumenttypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmDocumenttypeNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmDocumenttypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmDocumenttypeInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmDocumenttypeInternalServerErrorException($response);
         }
     }
 

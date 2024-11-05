@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class ExpenseNormalizer implements DenormalizerInterface, NormalizerInterface, D
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\Expense::class;
+        return $type === \Paqtcom\Simplicate\Model\Expense::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\Expense::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Expense::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class ExpenseNormalizer implements DenormalizerInterface, NormalizerInterface, D
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\Expense();
+        $object = new \Paqtcom\Simplicate\Model\Expense();
         if (\array_key_exists('amount', $data) && \is_int($data['amount'])) {
             $data['amount'] = (float) $data['amount'];
         }
@@ -68,16 +68,16 @@ class ExpenseNormalizer implements DenormalizerInterface, NormalizerInterface, D
             $object->setId($data['id']);
         }
         if (\array_key_exists('project', $data)) {
-            $object->setProject($this->denormalizer->denormalize($data['project'], \Steefdw\Simplicate\Model\GetProjectSimple::class, 'json', $context));
+            $object->setProject($this->denormalizer->denormalize($data['project'], \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context));
         }
         if (\array_key_exists('service_id', $data)) {
             $object->setServiceId($data['service_id']);
         }
         if (\array_key_exists('costtype', $data)) {
-            $object->setCosttype($this->denormalizer->denormalize($data['costtype'], \Steefdw\Simplicate\Model\GetProjectServiceCostType::class, 'json', $context));
+            $object->setCosttype($this->denormalizer->denormalize($data['costtype'], \Paqtcom\Simplicate\Model\GetProjectServiceCostType::class, 'json', $context));
         }
         if (\array_key_exists('default_costtype', $data)) {
-            $object->setDefaultCosttype($this->denormalizer->denormalize($data['default_costtype'], \Steefdw\Simplicate\Model\GetPurchaseType::class, 'json', $context));
+            $object->setDefaultCosttype($this->denormalizer->denormalize($data['default_costtype'], \Paqtcom\Simplicate\Model\GetPurchaseType::class, 'json', $context));
         }
         if (\array_key_exists('amount', $data)) {
             $object->setAmount($data['amount']);
@@ -101,16 +101,16 @@ class ExpenseNormalizer implements DenormalizerInterface, NormalizerInterface, D
             $object->setIsBillable($data['is_billable']);
         }
         if (\array_key_exists('approval_status', $data)) {
-            $object->setApprovalStatus($this->denormalizer->denormalize($data['approval_status'], \Steefdw\Simplicate\Model\ApprovalStatus::class, 'json', $context));
+            $object->setApprovalStatus($this->denormalizer->denormalize($data['approval_status'], \Paqtcom\Simplicate\Model\ApprovalStatus::class, 'json', $context));
         }
         if (\array_key_exists('invoice_status', $data)) {
             $object->setInvoiceStatus($data['invoice_status']);
         }
         if (\array_key_exists('invoice', $data)) {
-            $object->setInvoice($this->denormalizer->denormalize($data['invoice'], \Steefdw\Simplicate\Model\GetInvoice::class, 'json', $context));
+            $object->setInvoice($this->denormalizer->denormalize($data['invoice'], \Paqtcom\Simplicate\Model\GetInvoice::class, 'json', $context));
         }
         if (\array_key_exists('employee', $data)) {
-            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Steefdw\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
         }
         if (\array_key_exists('date', $data)) {
             $object->setDate($data['date']);
@@ -127,7 +127,7 @@ class ExpenseNormalizer implements DenormalizerInterface, NormalizerInterface, D
         if (\array_key_exists('attachments', $data)) {
             $values = [];
             foreach ($data['attachments'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\ExpenseAttachment::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\ExpenseAttachment::class, 'json', $context);
             }
             $object->setAttachments($values);
         }
@@ -214,6 +214,6 @@ class ExpenseNormalizer implements DenormalizerInterface, NormalizerInterface, D
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\Expense::class => false];
+        return [\Paqtcom\Simplicate\Model\Expense::class => false];
     }
 }

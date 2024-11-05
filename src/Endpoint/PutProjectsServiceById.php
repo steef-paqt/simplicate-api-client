@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutProjectsServiceById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\PutProjectService $body Service object that needs to be updated
+     * @param \Paqtcom\Simplicate\Model\PutProjectService $body Service object that needs to be updated
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PutProjectService $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PutProjectService $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PutProjectsServiceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutProjectsServiceByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutProjectsServiceByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutProjectsServiceByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutProjectsServiceByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutProjectsServiceByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutProjectsServiceByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutProjectsServiceByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutProjectsServiceByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PutProjectsServiceById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutProjectsServiceByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutProjectsServiceByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutProjectsServiceByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutProjectsServiceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutProjectsServiceByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutProjectsServiceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutProjectsServiceByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutProjectsServiceByIdInternalServerErrorException($response);
         }
     }
 

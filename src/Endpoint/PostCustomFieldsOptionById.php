@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostCustomFieldsOptionById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data
+     * @param \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data
      */
-    public function __construct(\Steefdw\Simplicate\Model\CustomFieldOption $body)
+    public function __construct(\Paqtcom\Simplicate\Model\CustomFieldOption $body)
     {
         $this->body = $body;
     }
@@ -41,10 +41,10 @@ class PostCustomFieldsOptionById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostCustomFieldsOptionByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PostCustomFieldsOptionByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostCustomFieldsOptionByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostCustomFieldsOptionByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsOptionByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsOptionByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsOptionByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsOptionByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -54,16 +54,16 @@ class PostCustomFieldsOptionById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostCustomFieldsOptionByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostCustomFieldsOptionByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostCustomFieldsOptionByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostCustomFieldsOptionByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostCustomFieldsOptionByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostCustomFieldsOptionByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostCustomFieldsOptionByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostCustomFieldsOptionByIdInternalServerErrorException($response);
         }
     }
 

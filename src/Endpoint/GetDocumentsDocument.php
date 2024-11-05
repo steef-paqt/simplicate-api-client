@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetDocumentsDocument extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetDocumentsDocument extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDocumentUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDocumentNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetDocumentsDocumentInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumentUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumentNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumentInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultDocuments
+     * @return null|\Paqtcom\Simplicate\Model\RestResultDocuments
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultDocuments::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocuments::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDocumentUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDocumentUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDocumentNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDocumentNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetDocumentsDocumentInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDocumentInternalServerErrorException($response);
         }
     }
 

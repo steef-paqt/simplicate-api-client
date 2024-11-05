@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutMileageMileageById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\PutMileage $body Mileage object that needs to be updated
+     * @param \Paqtcom\Simplicate\Model\PutMileage $body Mileage object that needs to be updated
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PutMileage $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PutMileage $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PutMileageMileageById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutMileageMileageByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutMileageMileageByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutMileageMileageByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutMileageMileageByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutMileageMileageByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutMileageMileageByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutMileageMileageByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutMileageMileageByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PutMileageMileageById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutMileageMileageByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutMileageMileageByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutMileageMileageByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutMileageMileageByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutMileageMileageByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutMileageMileageByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutMileageMileageByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutMileageMileageByIdInternalServerErrorException($response);
         }
     }
 

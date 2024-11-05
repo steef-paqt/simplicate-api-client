@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostHoursLeave extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostLeave $body leave object containing data
+     * @param \Paqtcom\Simplicate\Model\PostLeave $body leave object containing data
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostLeave $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostLeave $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostHoursLeave extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostHoursLeaveBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PostHoursLeaveUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostHoursLeaveInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostHoursLeaveBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostHoursLeaveUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostHoursLeaveInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -56,13 +56,13 @@ class PostHoursLeave extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHoursLeaveBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHoursLeaveBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHoursLeaveUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHoursLeaveUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostHoursLeaveInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostHoursLeaveInternalServerErrorException($response);
         }
     }
 

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteProjectsProjectById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteProjectsProjectById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteProjectsProjectByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteProjectsProjectByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteProjectsProjectByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsProjectByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsProjectByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsProjectByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteProjectsProjectById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteProjectsProjectByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteProjectsProjectByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteProjectsProjectByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteProjectsProjectByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteProjectsProjectByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteProjectsProjectByIdInternalServerErrorException($response);
         }
     }
 

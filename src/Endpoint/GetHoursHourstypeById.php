@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHoursHourstypeById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetHoursHourstypeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHoursHourstypeByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursHourstypeByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursHourstypeByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursHourstypeByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursHourstypeByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursHourstypeByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursHourstypeByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursHourstypeByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultHourType
+     * @return null|\Paqtcom\Simplicate\Model\RestResultHourType
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultHourType::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultHourType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursHourstypeByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursHourstypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursHourstypeByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursHourstypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursHourstypeByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursHourstypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursHourstypeByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursHourstypeByIdInternalServerErrorException($response);
         }
     }
 

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHrmAbsence extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetHrmAbsence extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHrmAbsenceUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmAbsenceNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmAbsenceInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsenceUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsenceNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsenceInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultAbsenceMultiple
+     * @return null|\Paqtcom\Simplicate\Model\RestResultAbsenceMultiple
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultAbsenceMultiple::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultAbsenceMultiple::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmAbsenceUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmAbsenceUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmAbsenceNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmAbsenceNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmAbsenceInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmAbsenceInternalServerErrorException($response);
         }
     }
 

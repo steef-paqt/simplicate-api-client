@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Runtime\Client;
+namespace Paqtcom\Simplicate\Runtime\Client;
 
 use Jane\Component\OpenApiRuntime\Client\Plugin\AuthenticationRegistry;
 use Psr\Http\Client\ClientInterface;

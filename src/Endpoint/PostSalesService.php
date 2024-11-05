@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostSalesService extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostSalesService $body template object that needs to be added
+     * @param \Paqtcom\Simplicate\Model\PostSalesService $body template object that needs to be added
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostSalesService $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostSalesService $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostSalesService extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostSalesServiceUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostSalesServiceNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostSalesServiceInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostSalesService extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSalesServiceUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSalesServiceUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSalesServiceNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSalesServiceNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSalesServiceInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSalesServiceInternalServerErrorException($response);
         }
     }
 

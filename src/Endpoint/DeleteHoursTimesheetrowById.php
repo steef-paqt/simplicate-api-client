@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteHoursTimesheetrowById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,10 +40,10 @@ class DeleteHoursTimesheetrowById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteHoursTimesheetrowByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\DeleteHoursTimesheetrowByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteHoursTimesheetrowByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteHoursTimesheetrowByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,16 +53,16 @@ class DeleteHoursTimesheetrowById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHoursTimesheetrowByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHoursTimesheetrowByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHoursTimesheetrowByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHoursTimesheetrowByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdInternalServerErrorException($response);
         }
     }
 

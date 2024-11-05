@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmOrganizationcustomfield extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetCrmOrganizationcustomfield extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmOrganizationcustomfieldUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmOrganizationcustomfieldNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmOrganizationcustomfieldInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultCustomFields
+     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFields
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultCustomFields::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomFields::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmOrganizationcustomfieldUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmOrganizationcustomfieldNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmOrganizationcustomfieldInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldInternalServerErrorException($response);
         }
     }
 

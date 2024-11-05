@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetProjectsProjectfilter extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,9 +58,9 @@ class GetProjectsProjectfilter extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectfilterUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectfilterNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsProjectfilterInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -70,13 +70,13 @@ class GetProjectsProjectfilter extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectfilterUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectfilterNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsProjectfilterInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterInternalServerErrorException($response);
         }
     }
 

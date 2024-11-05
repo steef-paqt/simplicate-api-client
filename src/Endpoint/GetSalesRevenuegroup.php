@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetSalesRevenuegroup extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetSalesRevenuegroup extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetSalesRevenuegroupUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesRevenuegroupNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesRevenuegroupInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultRevenueGroups
+     * @return null|\Paqtcom\Simplicate\Model\RestResultRevenueGroups
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultRevenueGroups::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultRevenueGroups::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesRevenuegroupUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesRevenuegroupNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesRevenuegroupInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupInternalServerErrorException($response);
         }
     }
 

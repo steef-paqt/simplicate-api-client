@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class PurchaseNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\Purchase::class;
+        return $type === \Paqtcom\Simplicate\Model\Purchase::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\Purchase::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Purchase::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class PurchaseNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\Purchase();
+        $object = new \Paqtcom\Simplicate\Model\Purchase();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,10 +50,10 @@ class PurchaseNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setId($data['id']);
         }
         if (\array_key_exists('organization', $data)) {
-            $object->setOrganization($this->denormalizer->denormalize($data['organization'], \Steefdw\Simplicate\Model\GetOrganizationSimple::class, 'json', $context));
+            $object->setOrganization($this->denormalizer->denormalize($data['organization'], \Paqtcom\Simplicate\Model\GetOrganizationSimple::class, 'json', $context));
         }
         if (\array_key_exists('person', $data)) {
-            $object->setPerson($this->denormalizer->denormalize($data['person'], \Steefdw\Simplicate\Model\GetPersonSimple::class, 'json', $context));
+            $object->setPerson($this->denormalizer->denormalize($data['person'], \Paqtcom\Simplicate\Model\GetPersonSimple::class, 'json', $context));
         }
         if (\array_key_exists('supplier', $data)) {
             $object->setSupplier($data['supplier']);
@@ -67,7 +67,7 @@ class PurchaseNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (\array_key_exists('projects', $data)) {
             $values = [];
             foreach ($data['projects'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\GetProjectSimple::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context);
             }
             $object->setProjects($values);
         }
@@ -112,6 +112,6 @@ class PurchaseNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\Purchase::class => false];
+        return [\Paqtcom\Simplicate\Model\Purchase::class => false];
     }
 }

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetOrganizationDebtorSimpleNormalizer implements DenormalizerInterface, No
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetOrganizationDebtorSimple::class;
+        return $type === \Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetOrganizationDebtorSimple::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple::class;
     }
 
     /**
@@ -42,12 +42,12 @@ class GetOrganizationDebtorSimpleNormalizer implements DenormalizerInterface, No
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetOrganizationDebtorSimple();
+        $object = new \Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
         if (\array_key_exists('relation_type', $data)) {
-            $object->setRelationType($this->denormalizer->denormalize($data['relation_type'], \Steefdw\Simplicate\Model\RelationType::class, 'json', $context));
+            $object->setRelationType($this->denormalizer->denormalize($data['relation_type'], \Paqtcom\Simplicate\Model\RelationType::class, 'json', $context));
         }
         if (\array_key_exists('id', $data)) {
             $object->setId($data['id']);
@@ -86,6 +86,6 @@ class GetOrganizationDebtorSimpleNormalizer implements DenormalizerInterface, No
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetOrganizationDebtorSimple::class => false];
+        return [\Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple::class => false];
     }
 }

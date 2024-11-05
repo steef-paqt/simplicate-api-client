@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class CustomFieldGroupNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\CustomFieldGroup::class;
+        return $type === \Paqtcom\Simplicate\Model\CustomFieldGroup::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\CustomFieldGroup::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\CustomFieldGroup::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class CustomFieldGroupNormalizer implements DenormalizerInterface, NormalizerInt
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\CustomFieldGroup();
+        $object = new \Paqtcom\Simplicate\Model\CustomFieldGroup();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -56,7 +56,7 @@ class CustomFieldGroupNormalizer implements DenormalizerInterface, NormalizerInt
             $object->setPosition($data['position']);
         }
         if (\array_key_exists('model', $data)) {
-            $object->setModel($this->denormalizer->denormalize($data['model'], \Steefdw\Simplicate\Model\CustomFieldModel::class, 'json', $context));
+            $object->setModel($this->denormalizer->denormalize($data['model'], \Paqtcom\Simplicate\Model\CustomFieldModel::class, 'json', $context));
         }
         if (\array_key_exists('type', $data)) {
             $object->setType($data['type']);
@@ -92,6 +92,6 @@ class CustomFieldGroupNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\CustomFieldGroup::class => false];
+        return [\Paqtcom\Simplicate\Model\CustomFieldGroup::class => false];
     }
 }

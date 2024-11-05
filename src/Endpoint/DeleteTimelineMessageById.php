@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteTimelineMessageById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteTimelineMessageById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteTimelineMessageByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteTimelineMessageByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteTimelineMessageByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteTimelineMessageById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteTimelineMessageByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteTimelineMessageByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteTimelineMessageByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdInternalServerErrorException($response);
         }
     }
 

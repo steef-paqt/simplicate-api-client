@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class RestResultMyOrganizationProfilesNormalizer implements DenormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\RestResultMyOrganizationProfiles::class;
+        return $type === \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\RestResultMyOrganizationProfiles::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles::class;
     }
 
     /**
@@ -42,19 +42,19 @@ class RestResultMyOrganizationProfilesNormalizer implements DenormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\RestResultMyOrganizationProfiles();
+        $object = new \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
         if (\array_key_exists('data', $data)) {
             $values = [];
             foreach ($data['data'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\MyOrganizationProfile::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\MyOrganizationProfile::class, 'json', $context);
             }
             $object->setData($values);
         }
         if (\array_key_exists('metadata', $data)) {
-            $object->setMetadata($this->denormalizer->denormalize($data['metadata'], \Steefdw\Simplicate\Model\MetaData::class, 'json', $context));
+            $object->setMetadata($this->denormalizer->denormalize($data['metadata'], \Paqtcom\Simplicate\Model\MetaData::class, 'json', $context));
         }
         if (\array_key_exists('errors', $data)) {
             $values_1 = [];
@@ -110,6 +110,6 @@ class RestResultMyOrganizationProfilesNormalizer implements DenormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\RestResultMyOrganizationProfiles::class => false];
+        return [\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles::class => false];
     }
 }

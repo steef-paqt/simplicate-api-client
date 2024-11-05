@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmInterestById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetCrmInterestById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmInterestByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmInterestByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmInterestByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmInterestByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultInterest
+     * @return null|\Paqtcom\Simplicate\Model\RestResultInterest
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultInterest::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultInterest::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmInterestByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmInterestByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmInterestByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmInterestByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmInterestByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmInterestByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmInterestByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmInterestByIdInternalServerErrorException($response);
         }
     }
 

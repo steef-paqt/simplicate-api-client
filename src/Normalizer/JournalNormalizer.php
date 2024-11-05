@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class JournalNormalizer implements DenormalizerInterface, NormalizerInterface, D
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\Journal::class;
+        return $type === \Paqtcom\Simplicate\Model\Journal::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\Journal::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Journal::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class JournalNormalizer implements DenormalizerInterface, NormalizerInterface, D
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\Journal();
+        $object = new \Paqtcom\Simplicate\Model\Journal();
         if (\array_key_exists('amount_excl', $data) && \is_int($data['amount_excl'])) {
             $data['amount_excl'] = (float) $data['amount_excl'];
         }
@@ -80,19 +80,19 @@ class JournalNormalizer implements DenormalizerInterface, NormalizerInterface, D
             $object->setAutocollect($data['autocollect']);
         }
         if (\array_key_exists('revenuegroup', $data)) {
-            $object->setRevenuegroup($this->denormalizer->denormalize($data['revenuegroup'], \Steefdw\Simplicate\Model\RevenueGroup::class, 'json', $context));
+            $object->setRevenuegroup($this->denormalizer->denormalize($data['revenuegroup'], \Paqtcom\Simplicate\Model\RevenueGroup::class, 'json', $context));
         }
         if (\array_key_exists('journal_lines', $data)) {
             $values = [];
             foreach ($data['journal_lines'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\JournalLine::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\JournalLine::class, 'json', $context);
             }
             $object->setJournalLines($values);
         }
         if (\array_key_exists('vat', $data)) {
             $values_1 = [];
             foreach ($data['vat'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Steefdw\Simplicate\Model\JournalVat::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\JournalVat::class, 'json', $context);
             }
             $object->setVat($values_1);
         }
@@ -156,6 +156,6 @@ class JournalNormalizer implements DenormalizerInterface, NormalizerInterface, D
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\Journal::class => false];
+        return [\Paqtcom\Simplicate\Model\Journal::class => false];
     }
 }

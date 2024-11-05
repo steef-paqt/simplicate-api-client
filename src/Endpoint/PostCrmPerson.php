@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostCrmPerson extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostPerson $body Person object that needs to be added
+     * @param \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostPerson $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostPerson $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostCrmPerson extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostCrmPersonUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostCrmPersonNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostCrmPersonInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostCrmPersonUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostCrmPersonNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostCrmPersonInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostCrmPerson extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostCrmPersonUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostCrmPersonUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostCrmPersonNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostCrmPersonNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostCrmPersonInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostCrmPersonInternalServerErrorException($response);
         }
     }
 

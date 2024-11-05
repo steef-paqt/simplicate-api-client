@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutHoursHourById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\PostHours $body Hours object that needs to be updated
+     * @param \Paqtcom\Simplicate\Model\PostHours $body Hours object that needs to be updated
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PostHours $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostHours $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PutHoursHourById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutHoursHourByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutHoursHourByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutHoursHourByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutHoursHourByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutHoursHourByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutHoursHourByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutHoursHourByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutHoursHourByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PutHoursHourById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHoursHourByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHoursHourByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHoursHourByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHoursHourByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHoursHourByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHoursHourByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHoursHourByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHoursHourByIdInternalServerErrorException($response);
         }
     }
 

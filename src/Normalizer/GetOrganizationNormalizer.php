@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetOrganizationNormalizer implements DenormalizerInterface, NormalizerInte
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetOrganization::class;
+        return $type === \Paqtcom\Simplicate\Model\GetOrganization::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetOrganization::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetOrganization::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetOrganizationNormalizer implements DenormalizerInterface, NormalizerInte
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetOrganization();
+        $object = new \Paqtcom\Simplicate\Model\GetOrganization();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,54 +50,54 @@ class GetOrganizationNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setId($data['id']);
         }
         if (\array_key_exists('visiting_address', $data)) {
-            $object->setVisitingAddress($this->denormalizer->denormalize($data['visiting_address'], \Steefdw\Simplicate\Model\GetAddress::class, 'json', $context));
+            $object->setVisitingAddress($this->denormalizer->denormalize($data['visiting_address'], \Paqtcom\Simplicate\Model\GetAddress::class, 'json', $context));
         }
         if (\array_key_exists('postal_address', $data)) {
-            $object->setPostalAddress($this->denormalizer->denormalize($data['postal_address'], \Steefdw\Simplicate\Model\GetAddress::class, 'json', $context));
+            $object->setPostalAddress($this->denormalizer->denormalize($data['postal_address'], \Paqtcom\Simplicate\Model\GetAddress::class, 'json', $context));
         }
         if (\array_key_exists('relation_type', $data)) {
-            $object->setRelationType($this->denormalizer->denormalize($data['relation_type'], \Steefdw\Simplicate\Model\RelationType::class, 'json', $context));
+            $object->setRelationType($this->denormalizer->denormalize($data['relation_type'], \Paqtcom\Simplicate\Model\RelationType::class, 'json', $context));
         }
         if (\array_key_exists('relation_manager', $data)) {
-            $object->setRelationManager($this->denormalizer->denormalize($data['relation_manager'], \Steefdw\Simplicate\Model\Employee::class, 'json', $context));
+            $object->setRelationManager($this->denormalizer->denormalize($data['relation_manager'], \Paqtcom\Simplicate\Model\Employee::class, 'json', $context));
         }
         if (\array_key_exists('customer_group', $data)) {
-            $object->setCustomerGroup($this->denormalizer->denormalize($data['customer_group'], \Steefdw\Simplicate\Model\CustomerGroup::class, 'json', $context));
+            $object->setCustomerGroup($this->denormalizer->denormalize($data['customer_group'], \Paqtcom\Simplicate\Model\CustomerGroup::class, 'json', $context));
         }
         if (\array_key_exists('teams', $data)) {
             $values = [];
             foreach ($data['teams'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\GetTeamSimple::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\GetTeamSimple::class, 'json', $context);
             }
             $object->setTeams($values);
         }
         if (\array_key_exists('debtor', $data)) {
-            $object->setDebtor($this->denormalizer->denormalize($data['debtor'], \Steefdw\Simplicate\Model\GetDebtor::class, 'json', $context));
+            $object->setDebtor($this->denormalizer->denormalize($data['debtor'], \Paqtcom\Simplicate\Model\GetDebtor::class, 'json', $context));
         }
         if (\array_key_exists('organizationsize', $data)) {
-            $object->setOrganizationsize($this->denormalizer->denormalize($data['organizationsize'], \Steefdw\Simplicate\Model\OrganizationSize::class, 'json', $context));
+            $object->setOrganizationsize($this->denormalizer->denormalize($data['organizationsize'], \Paqtcom\Simplicate\Model\OrganizationSize::class, 'json', $context));
         }
         if (\array_key_exists('linked_persons_contacts', $data)) {
             $values_1 = [];
             foreach ($data['linked_persons_contacts'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Steefdw\Simplicate\Model\ContactPerson::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\ContactPerson::class, 'json', $context);
             }
             $object->setLinkedPersonsContacts($values_1);
         }
         if (\array_key_exists('interests', $data)) {
             $values_2 = [];
             foreach ($data['interests'] as $value_2) {
-                $values_2[] = $this->denormalizer->denormalize($value_2, \Steefdw\Simplicate\Model\Interest::class, 'json', $context);
+                $values_2[] = $this->denormalizer->denormalize($value_2, \Paqtcom\Simplicate\Model\Interest::class, 'json', $context);
             }
             $object->setInterests($values_2);
         }
         if (\array_key_exists('accountancy', $data)) {
-            $object->setAccountancy($this->denormalizer->denormalize($data['accountancy'], \Steefdw\Simplicate\Model\Accountancy::class, 'json', $context));
+            $object->setAccountancy($this->denormalizer->denormalize($data['accountancy'], \Paqtcom\Simplicate\Model\Accountancy::class, 'json', $context));
         }
         if (\array_key_exists('custom_fields', $data)) {
             $values_3 = [];
             foreach ($data['custom_fields'] as $value_3) {
-                $values_3[] = $this->denormalizer->denormalize($value_3, \Steefdw\Simplicate\Model\GetCustomField::class, 'json', $context);
+                $values_3[] = $this->denormalizer->denormalize($value_3, \Paqtcom\Simplicate\Model\GetCustomField::class, 'json', $context);
             }
             $object->setCustomFields($values_3);
         }
@@ -113,7 +113,7 @@ class GetOrganizationNormalizer implements DenormalizerInterface, NormalizerInte
         if (\array_key_exists('sbi_codes', $data)) {
             $values_4 = [];
             foreach ($data['sbi_codes'] as $value_4) {
-                $values_4[] = $this->denormalizer->denormalize($value_4, \Steefdw\Simplicate\Model\SbiCode::class, 'json', $context);
+                $values_4[] = $this->denormalizer->denormalize($value_4, \Paqtcom\Simplicate\Model\SbiCode::class, 'json', $context);
             }
             $object->setSbiCodes($values_4);
         }
@@ -148,7 +148,7 @@ class GetOrganizationNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setHasDifferentPostalAddress($data['has_different_postal_address']);
         }
         if (\array_key_exists('industry', $data)) {
-            $object->setIndustry($this->denormalizer->denormalize($data['industry'], \Steefdw\Simplicate\Model\Industry::class, 'json', $context));
+            $object->setIndustry($this->denormalizer->denormalize($data['industry'], \Paqtcom\Simplicate\Model\Industry::class, 'json', $context));
         }
         if (\array_key_exists('invoice_receiver', $data)) {
             $object->setInvoiceReceiver($data['invoice_receiver']);
@@ -300,6 +300,6 @@ class GetOrganizationNormalizer implements DenormalizerInterface, NormalizerInte
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetOrganization::class => false];
+        return [\Paqtcom\Simplicate\Model\GetOrganization::class => false];
     }
 }

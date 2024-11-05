@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetProjectsPurchase extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetProjectsPurchase extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsPurchaseUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsPurchaseNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsPurchaseInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchaseUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchaseNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchaseInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultPurchases
+     * @return null|\Paqtcom\Simplicate\Model\RestResultPurchases
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultPurchases::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultPurchases::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsPurchaseUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsPurchaseUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsPurchaseNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsPurchaseNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsPurchaseInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsPurchaseInternalServerErrorException($response);
         }
     }
 

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteProjectsDocumentById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteProjectsDocumentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteProjectsDocumentByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteProjectsDocumentByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteProjectsDocumentByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsDocumentByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsDocumentByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsDocumentByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteProjectsDocumentById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteProjectsDocumentByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteProjectsDocumentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteProjectsDocumentByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteProjectsDocumentByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteProjectsDocumentByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteProjectsDocumentByIdInternalServerErrorException($response);
         }
     }
 

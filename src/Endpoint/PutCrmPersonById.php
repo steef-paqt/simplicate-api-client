@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutCrmPersonById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\PostPerson $body Person object that needs to be added
+     * @param \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PostPerson $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostPerson $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PutCrmPersonById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutCrmPersonByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutCrmPersonByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutCrmPersonByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutCrmPersonByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutCrmPersonByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutCrmPersonByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutCrmPersonByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutCrmPersonByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PutCrmPersonById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutCrmPersonByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutCrmPersonByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutCrmPersonByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutCrmPersonByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutCrmPersonByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutCrmPersonByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutCrmPersonByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutCrmPersonByIdInternalServerErrorException($response);
         }
     }
 

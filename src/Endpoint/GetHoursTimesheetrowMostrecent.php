@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHoursTimesheetrowMostrecent extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,31 +58,31 @@ class GetHoursTimesheetrowMostrecent extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHoursTimesheetrowMostrecentBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursTimesheetrowMostrecentUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursTimesheetrowMostrecentNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursTimesheetrowMostrecentInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultDateTimeRange
+     * @return null|\Paqtcom\Simplicate\Model\RestResultDateTimeRange
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultDateTimeRange::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDateTimeRange::class, 'json');
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursTimesheetrowMostrecentBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursTimesheetrowMostrecentUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursTimesheetrowMostrecentNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursTimesheetrowMostrecentInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentInternalServerErrorException($response);
         }
     }
 

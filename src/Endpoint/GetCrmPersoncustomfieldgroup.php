@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmPersoncustomfieldgroup extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetCrmPersoncustomfieldgroup extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmPersoncustomfieldgroupUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmPersoncustomfieldgroupNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmPersoncustomfieldgroupInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultCustomFieldGroups
+     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultCustomFieldGroups::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmPersoncustomfieldgroupUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmPersoncustomfieldgroupNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmPersoncustomfieldgroupInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupInternalServerErrorException($response);
         }
     }
 

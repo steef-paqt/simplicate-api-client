@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetDefaultServiceNormalizer implements DenormalizerInterface, NormalizerIn
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetDefaultService::class;
+        return $type === \Paqtcom\Simplicate\Model\GetDefaultService::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetDefaultService::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetDefaultService::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetDefaultServiceNormalizer implements DenormalizerInterface, NormalizerIn
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetDefaultService();
+        $object = new \Paqtcom\Simplicate\Model\GetDefaultService();
         if (\array_key_exists('price', $data) && \is_int($data['price'])) {
             $data['price'] = (float) $data['price'];
         }
@@ -53,10 +53,10 @@ class GetDefaultServiceNormalizer implements DenormalizerInterface, NormalizerIn
             $object->setId($data['id']);
         }
         if (\array_key_exists('vat_class', $data)) {
-            $object->setVatClass($this->denormalizer->denormalize($data['vat_class'], \Steefdw\Simplicate\Model\VatClass::class, 'json', $context));
+            $object->setVatClass($this->denormalizer->denormalize($data['vat_class'], \Paqtcom\Simplicate\Model\VatClass::class, 'json', $context));
         }
         if (\array_key_exists('revenue_group', $data)) {
-            $object->setRevenueGroup($this->denormalizer->denormalize($data['revenue_group'], \Steefdw\Simplicate\Model\RevenueGroup::class, 'json', $context));
+            $object->setRevenueGroup($this->denormalizer->denormalize($data['revenue_group'], \Paqtcom\Simplicate\Model\RevenueGroup::class, 'json', $context));
         }
         if (\array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
@@ -125,6 +125,6 @@ class GetDefaultServiceNormalizer implements DenormalizerInterface, NormalizerIn
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetDefaultService::class => false];
+        return [\Paqtcom\Simplicate\Model\GetDefaultService::class => false];
     }
 }

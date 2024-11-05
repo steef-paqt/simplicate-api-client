@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteSalesQuoteById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteSalesQuoteById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteSalesQuoteByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteSalesQuoteByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteSalesQuoteByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuoteByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuoteByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuoteByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteSalesQuoteById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSalesQuoteByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSalesQuoteByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSalesQuoteByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSalesQuoteByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSalesQuoteByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSalesQuoteByIdInternalServerErrorException($response);
         }
     }
 

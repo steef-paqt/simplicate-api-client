@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostTimersTimer extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostTimer $body Timer object that needs to be added
+     * @param \Paqtcom\Simplicate\Model\PostTimer $body Timer object that needs to be added
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostTimer $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostTimer $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostTimersTimer extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostTimersTimerUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostTimersTimerNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostTimersTimerInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostTimersTimerUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostTimersTimerNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostTimersTimerInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostTimersTimer extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostTimersTimerUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostTimersTimerUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostTimersTimerNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostTimersTimerNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostTimersTimerInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostTimersTimerInternalServerErrorException($response);
         }
     }
 

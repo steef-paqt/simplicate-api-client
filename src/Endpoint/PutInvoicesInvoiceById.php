@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutInvoicesInvoiceById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\Invoice $body template object that needs to be updated
+     * @param \Paqtcom\Simplicate\Model\Invoice $body template object that needs to be updated
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\Invoice $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\Invoice $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PutInvoicesInvoiceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutInvoicesInvoiceByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutInvoicesInvoiceByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutInvoicesInvoiceByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutInvoicesInvoiceByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutInvoicesInvoiceByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutInvoicesInvoiceByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutInvoicesInvoiceByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutInvoicesInvoiceByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PutInvoicesInvoiceById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutInvoicesInvoiceByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutInvoicesInvoiceByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutInvoicesInvoiceByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutInvoicesInvoiceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutInvoicesInvoiceByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutInvoicesInvoiceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutInvoicesInvoiceByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutInvoicesInvoiceByIdInternalServerErrorException($response);
         }
     }
 

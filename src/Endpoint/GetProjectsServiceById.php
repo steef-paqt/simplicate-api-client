@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetProjectsServiceById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetProjectsServiceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsServiceByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsServiceByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsServiceByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetProjectsServiceByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultProjectService
+     * @return null|\Paqtcom\Simplicate\Model\RestResultProjectService
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultProjectService::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultProjectService::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsServiceByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsServiceByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsServiceByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetProjectsServiceByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdInternalServerErrorException($response);
         }
     }
 

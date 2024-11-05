@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutHrmEmployeeById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PutEmployee $body Employee object that needs to be updated
+     * @param \Paqtcom\Simplicate\Model\PutEmployee $body Employee object that needs to be updated
      */
-    public function __construct(\Steefdw\Simplicate\Model\PutEmployee $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PutEmployee $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PutHrmEmployeeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutHrmEmployeeByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutHrmEmployeeByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutHrmEmployeeByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutHrmEmployeeByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutHrmEmployeeByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutHrmEmployeeByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PutHrmEmployeeById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHrmEmployeeByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHrmEmployeeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHrmEmployeeByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHrmEmployeeByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutHrmEmployeeByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutHrmEmployeeByIdInternalServerErrorException($response);
         }
     }
 

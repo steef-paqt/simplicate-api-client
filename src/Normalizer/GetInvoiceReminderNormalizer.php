@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetInvoiceReminderNormalizer implements DenormalizerInterface, NormalizerI
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetInvoiceReminder::class;
+        return $type === \Paqtcom\Simplicate\Model\GetInvoiceReminder::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetInvoiceReminder::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetInvoiceReminder::class;
     }
 
     /**
@@ -42,12 +42,12 @@ class GetInvoiceReminderNormalizer implements DenormalizerInterface, NormalizerI
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetInvoiceReminder();
+        $object = new \Paqtcom\Simplicate\Model\GetInvoiceReminder();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
         if (\array_key_exists('set', $data)) {
-            $object->setSet($this->denormalizer->denormalize($data['set'], \Steefdw\Simplicate\Model\ReminderSet::class, 'json', $context));
+            $object->setSet($this->denormalizer->denormalize($data['set'], \Paqtcom\Simplicate\Model\ReminderSet::class, 'json', $context));
         }
         if (\array_key_exists('status', $data)) {
             $object->setStatus($data['status']);
@@ -86,6 +86,6 @@ class GetInvoiceReminderNormalizer implements DenormalizerInterface, NormalizerI
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetInvoiceReminder::class => false];
+        return [\Paqtcom\Simplicate\Model\GetInvoiceReminder::class => false];
     }
 }

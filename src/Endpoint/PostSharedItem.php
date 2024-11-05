@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostSharedItem extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostSharedItem $body Item object that needs to be added
+     * @param \Paqtcom\Simplicate\Model\PostSharedItem $body Item object that needs to be added
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostSharedItem $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostSharedItem $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PostSharedItem extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostSharedItemUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostSharedItemNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostSharedItemInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostSharedItemUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostSharedItemNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostSharedItemInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PostSharedItem extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSharedItemUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSharedItemUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSharedItemNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSharedItemNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostSharedItemInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostSharedItemInternalServerErrorException($response);
         }
     }
 

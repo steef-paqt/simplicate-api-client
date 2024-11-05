@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHoursSubmission extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetHoursSubmission extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHoursSubmissionUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursSubmissionNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursSubmissionInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursSubmissionUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursSubmissionNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursSubmissionInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultHoursSubmissions
+     * @return null|\Paqtcom\Simplicate\Model\RestResultHoursSubmissions
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultHoursSubmissions::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultHoursSubmissions::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursSubmissionUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursSubmissionUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursSubmissionNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursSubmissionNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursSubmissionInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursSubmissionInternalServerErrorException($response);
         }
     }
 

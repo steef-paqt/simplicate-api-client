@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetTimelineMessagetypeById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetTimelineMessagetypeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetTimelineMessagetypeByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetTimelineMessagetypeByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetTimelineMessagetypeByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetTimelineMessagetypeByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultTimelineMessageType
+     * @return null|\Paqtcom\Simplicate\Model\RestResultTimelineMessageType
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultTimelineMessageType::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultTimelineMessageType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetTimelineMessagetypeByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetTimelineMessagetypeByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetTimelineMessagetypeByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetTimelineMessagetypeByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeByIdInternalServerErrorException($response);
         }
     }
 

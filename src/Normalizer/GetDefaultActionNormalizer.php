@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetDefaultActionNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetDefaultAction::class;
+        return $type === \Paqtcom\Simplicate\Model\GetDefaultAction::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetDefaultAction::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetDefaultAction::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetDefaultActionNormalizer implements DenormalizerInterface, NormalizerInt
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetDefaultAction();
+        $object = new \Paqtcom\Simplicate\Model\GetDefaultAction();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,10 +50,10 @@ class GetDefaultActionNormalizer implements DenormalizerInterface, NormalizerInt
             $object->setId($data['id']);
         }
         if (\array_key_exists('task', $data)) {
-            $object->setTask($this->denormalizer->denormalize($data['task'], \Steefdw\Simplicate\Model\GetSimpleDefaultTask::class, 'json', $context));
+            $object->setTask($this->denormalizer->denormalize($data['task'], \Paqtcom\Simplicate\Model\GetSimpleDefaultTask::class, 'json', $context));
         }
         if (\array_key_exists('to_task', $data)) {
-            $object->setToTask($this->denormalizer->denormalize($data['to_task'], \Steefdw\Simplicate\Model\GetSimpleDefaultTask::class, 'json', $context));
+            $object->setToTask($this->denormalizer->denormalize($data['to_task'], \Paqtcom\Simplicate\Model\GetSimpleDefaultTask::class, 'json', $context));
         }
         if (\array_key_exists('name', $data)) {
             $object->setName($data['name']);
@@ -98,6 +98,6 @@ class GetDefaultActionNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetDefaultAction::class => false];
+        return [\Paqtcom\Simplicate\Model\GetDefaultAction::class => false];
     }
 }

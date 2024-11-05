@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutInvoicesDocument extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PutDocument $body Document object containing data
+     * @param \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data
      */
-    public function __construct(\Steefdw\Simplicate\Model\PutDocument $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PutDocument $body)
     {
         $this->body = $body;
     }
@@ -41,9 +41,9 @@ class PutInvoicesDocument extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutInvoicesDocumentBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutInvoicesDocumentUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutInvoicesDocumentInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutInvoicesDocumentBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutInvoicesDocumentUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutInvoicesDocumentInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -53,13 +53,13 @@ class PutInvoicesDocument extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutInvoicesDocumentBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutInvoicesDocumentBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutInvoicesDocumentUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutInvoicesDocumentUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutInvoicesDocumentInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutInvoicesDocumentInternalServerErrorException($response);
         }
     }
 

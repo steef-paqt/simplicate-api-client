@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostUploadChunked extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
-     * @param \Steefdw\Simplicate\Model\PostChunked $body Data required to initialize an upload
+     * @param \Paqtcom\Simplicate\Model\PostChunked $body Data required to initialize an upload
      */
-    public function __construct(\Steefdw\Simplicate\Model\PostChunked $body)
+    public function __construct(\Paqtcom\Simplicate\Model\PostChunked $body)
     {
         $this->body = $body;
     }
@@ -41,10 +41,10 @@ class PostUploadChunked extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostUploadChunkedBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PostUploadChunkedUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostUploadChunkedNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostUploadChunkedInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostUploadChunkedBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostUploadChunkedUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostUploadChunkedNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostUploadChunkedInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -54,16 +54,16 @@ class PostUploadChunked extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostUploadChunkedBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostUploadChunkedBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostUploadChunkedUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostUploadChunkedUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostUploadChunkedNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostUploadChunkedNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostUploadChunkedInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostUploadChunkedInternalServerErrorException($response);
         }
     }
 

@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutProjectsAssignmentstatusById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\AssignmentStatus $body Project assignment POST body
+     * @param \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\AssignmentStatus $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\AssignmentStatus $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PutProjectsAssignmentstatusById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutProjectsAssignmentstatusByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PutProjectsAssignmentstatusByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutProjectsAssignmentstatusByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutProjectsAssignmentstatusByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PutProjectsAssignmentstatusById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutProjectsAssignmentstatusByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutProjectsAssignmentstatusByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutProjectsAssignmentstatusByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutProjectsAssignmentstatusByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdInternalServerErrorException($response);
         }
     }
 

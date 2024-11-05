@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class ExternalItemMetadataNormalizer implements DenormalizerInterface, Normalize
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\ExternalItemMetadata::class;
+        return $type === \Paqtcom\Simplicate\Model\ExternalItemMetadata::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\ExternalItemMetadata::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\ExternalItemMetadata::class;
     }
 
     /**
@@ -42,12 +42,12 @@ class ExternalItemMetadataNormalizer implements DenormalizerInterface, Normalize
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\ExternalItemMetadata();
+        $object = new \Paqtcom\Simplicate\Model\ExternalItemMetadata();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
         if (\array_key_exists('configuration', $data)) {
-            $object->setConfiguration($this->denormalizer->denormalize($data['configuration'], \Steefdw\Simplicate\Model\ExternalItemMetadataConfiguration::class, 'json', $context));
+            $object->setConfiguration($this->denormalizer->denormalize($data['configuration'], \Paqtcom\Simplicate\Model\ExternalItemMetadataConfiguration::class, 'json', $context));
         }
         if (\array_key_exists('count', $data)) {
             $object->setCount($data['count']);
@@ -110,6 +110,6 @@ class ExternalItemMetadataNormalizer implements DenormalizerInterface, Normalize
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\ExternalItemMetadata::class => false];
+        return [\Paqtcom\Simplicate\Model\ExternalItemMetadata::class => false];
     }
 }

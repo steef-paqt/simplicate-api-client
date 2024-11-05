@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmCountry extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetCrmCountry extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmCountryUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmCountryNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmCountryInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmCountryUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmCountryNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmCountryInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultCountries
+     * @return null|\Paqtcom\Simplicate\Model\RestResultCountries
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultCountries::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCountries::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmCountryUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmCountryUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmCountryNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmCountryNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmCountryInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmCountryInternalServerErrorException($response);
         }
     }
 

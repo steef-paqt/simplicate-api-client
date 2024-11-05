@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmPersoncustomfieldById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetCrmPersoncustomfieldById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmPersoncustomfieldByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmPersoncustomfieldByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmPersoncustomfieldByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmPersoncustomfieldByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultCustomField
+     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomField
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultCustomField::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomField::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmPersoncustomfieldByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmPersoncustomfieldByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmPersoncustomfieldByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmPersoncustomfieldByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldByIdInternalServerErrorException($response);
         }
     }
 

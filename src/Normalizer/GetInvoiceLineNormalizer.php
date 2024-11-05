@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetInvoiceLineNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetInvoiceLine::class;
+        return $type === \Paqtcom\Simplicate\Model\GetInvoiceLine::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetInvoiceLine::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetInvoiceLine::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetInvoiceLineNormalizer implements DenormalizerInterface, NormalizerInter
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetInvoiceLine();
+        $object = new \Paqtcom\Simplicate\Model\GetInvoiceLine();
         if (\array_key_exists('total_vat', $data) && \is_int($data['total_vat'])) {
             $data['total_vat'] = (float) $data['total_vat'];
         }
@@ -59,13 +59,13 @@ class GetInvoiceLineNormalizer implements DenormalizerInterface, NormalizerInter
             $object->setId($data['id']);
         }
         if (\array_key_exists('revenue_group', $data)) {
-            $object->setRevenueGroup($this->denormalizer->denormalize($data['revenue_group'], \Steefdw\Simplicate\Model\RevenueGroup::class, 'json', $context));
+            $object->setRevenueGroup($this->denormalizer->denormalize($data['revenue_group'], \Paqtcom\Simplicate\Model\RevenueGroup::class, 'json', $context));
         }
         if (\array_key_exists('default_service_id', $data)) {
             $object->setDefaultServiceId($data['default_service_id']);
         }
         if (\array_key_exists('vat_class', $data)) {
-            $object->setVatClass($this->denormalizer->denormalize($data['vat_class'], \Steefdw\Simplicate\Model\VatClass::class, 'json', $context));
+            $object->setVatClass($this->denormalizer->denormalize($data['vat_class'], \Paqtcom\Simplicate\Model\VatClass::class, 'json', $context));
         }
         if (\array_key_exists('total_vat', $data)) {
             $object->setTotalVat($data['total_vat']);
@@ -143,6 +143,6 @@ class GetInvoiceLineNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetInvoiceLine::class => false];
+        return [\Paqtcom\Simplicate\Model\GetInvoiceLine::class => false];
     }
 }

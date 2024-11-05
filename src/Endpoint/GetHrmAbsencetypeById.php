@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHrmAbsencetypeById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetHrmAbsencetypeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHrmAbsencetypeByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmAbsencetypeByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmAbsencetypeByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetHrmAbsencetypeByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultAbsenceType
+     * @return null|\Paqtcom\Simplicate\Model\RestResultAbsenceType
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultAbsenceType::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultAbsenceType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmAbsencetypeByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmAbsencetypeByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmAbsencetypeByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHrmAbsencetypeByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdInternalServerErrorException($response);
         }
     }
 

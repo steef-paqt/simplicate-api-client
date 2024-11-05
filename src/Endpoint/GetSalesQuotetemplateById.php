@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetSalesQuotetemplateById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetSalesQuotetemplateById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetSalesQuotetemplateByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesQuotetemplateByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesQuotetemplateByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesQuotetemplateByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotetemplateByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotetemplateByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotetemplateByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotetemplateByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultQuoteTemplate
+     * @return null|\Paqtcom\Simplicate\Model\RestResultQuoteTemplate
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultQuoteTemplate::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultQuoteTemplate::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesQuotetemplateByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesQuotetemplateByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesQuotetemplateByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesQuotetemplateByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesQuotetemplateByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesQuotetemplateByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesQuotetemplateByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesQuotetemplateByIdInternalServerErrorException($response);
         }
     }
 

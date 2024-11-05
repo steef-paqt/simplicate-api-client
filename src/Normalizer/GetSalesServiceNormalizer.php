@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class GetSalesServiceNormalizer implements DenormalizerInterface, NormalizerInte
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\GetSalesService::class;
+        return $type === \Paqtcom\Simplicate\Model\GetSalesService::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\GetSalesService::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetSalesService::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class GetSalesServiceNormalizer implements DenormalizerInterface, NormalizerInte
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\GetSalesService();
+        $object = new \Paqtcom\Simplicate\Model\GetSalesService();
         if (\array_key_exists('amount', $data) && \is_int($data['amount'])) {
             $data['amount'] = (float) $data['amount'];
         }
@@ -61,14 +61,14 @@ class GetSalesServiceNormalizer implements DenormalizerInterface, NormalizerInte
         if (\array_key_exists('hour_types', $data)) {
             $values = [];
             foreach ($data['hour_types'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\GetSalesServiceHoursType::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\GetSalesServiceHoursType::class, 'json', $context);
             }
             $object->setHourTypes($values);
         }
         if (\array_key_exists('cost_types', $data)) {
             $values_1 = [];
             foreach ($data['cost_types'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Steefdw\Simplicate\Model\GetSalesServiceCostType::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\GetSalesServiceCostType::class, 'json', $context);
             }
             $object->setCostTypes($values_1);
         }
@@ -79,19 +79,19 @@ class GetSalesServiceNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setTrackCost($data['track_cost']);
         }
         if (\array_key_exists('vat_class', $data)) {
-            $object->setVatClass($this->denormalizer->denormalize($data['vat_class'], \Steefdw\Simplicate\Model\VatClass::class, 'json', $context));
+            $object->setVatClass($this->denormalizer->denormalize($data['vat_class'], \Paqtcom\Simplicate\Model\VatClass::class, 'json', $context));
         }
         if (\array_key_exists('created_at', $data)) {
             $values_2 = [];
             foreach ($data['created_at'] as $value_2) {
-                $values_2[] = $this->denormalizer->denormalize($value_2, \Steefdw\Simplicate\Model\GetSalesServiceHoursType::class, 'json', $context);
+                $values_2[] = $this->denormalizer->denormalize($value_2, \Paqtcom\Simplicate\Model\GetSalesServiceHoursType::class, 'json', $context);
             }
             $object->setCreatedAt($values_2);
         }
         if (\array_key_exists('updated_at', $data)) {
             $values_3 = [];
             foreach ($data['updated_at'] as $value_3) {
-                $values_3[] = $this->denormalizer->denormalize($value_3, \Steefdw\Simplicate\Model\GetSalesServiceHoursType::class, 'json', $context);
+                $values_3[] = $this->denormalizer->denormalize($value_3, \Paqtcom\Simplicate\Model\GetSalesServiceHoursType::class, 'json', $context);
             }
             $object->setUpdatedAt($values_3);
         }
@@ -220,6 +220,6 @@ class GetSalesServiceNormalizer implements DenormalizerInterface, NormalizerInte
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\GetSalesService::class => false];
+        return [\Paqtcom\Simplicate\Model\GetSalesService::class => false];
     }
 }

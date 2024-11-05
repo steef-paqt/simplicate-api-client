@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteSalesQuotetemplateById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteSalesQuotetemplateById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteSalesQuotetemplateByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteSalesQuotetemplateByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteSalesQuotetemplateByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteSalesQuotetemplateById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSalesQuotetemplateByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSalesQuotetemplateByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteSalesQuotetemplateByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdInternalServerErrorException($response);
         }
     }
 

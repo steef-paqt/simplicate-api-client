@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class AttachmentNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\Attachment::class;
+        return $type === \Paqtcom\Simplicate\Model\Attachment::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\Attachment::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Attachment::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class AttachmentNormalizer implements DenormalizerInterface, NormalizerInterface
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\Attachment();
+        $object = new \Paqtcom\Simplicate\Model\Attachment();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -50,7 +50,7 @@ class AttachmentNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setId($data['id']);
         }
         if (\array_key_exists('attachment_type', $data)) {
-            $object->setAttachmentType($this->denormalizer->denormalize($data['attachment_type'], \Steefdw\Simplicate\Model\AttachmentType::class, 'json', $context));
+            $object->setAttachmentType($this->denormalizer->denormalize($data['attachment_type'], \Paqtcom\Simplicate\Model\AttachmentType::class, 'json', $context));
         }
         if (\array_key_exists('title', $data)) {
             $object->setTitle($data['title']);
@@ -92,6 +92,6 @@ class AttachmentNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\Attachment::class => false];
+        return [\Paqtcom\Simplicate\Model\Attachment::class => false];
     }
 }

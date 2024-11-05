@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class UserNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\User::class;
+        return $type === \Paqtcom\Simplicate\Model\User::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\User::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\User::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class UserNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\User();
+        $object = new \Paqtcom\Simplicate\Model\User();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -95,10 +95,10 @@ class UserNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
             $object->setKeyIdentifier($data['key_identifier']);
         }
         if (\array_key_exists('timezone', $data)) {
-            $object->setTimezone($this->denormalizer->denormalize($data['timezone'], \Steefdw\Simplicate\Model\Timezone::class, 'json', $context));
+            $object->setTimezone($this->denormalizer->denormalize($data['timezone'], \Paqtcom\Simplicate\Model\Timezone::class, 'json', $context));
         }
         if (\array_key_exists('country', $data)) {
-            $object->setCountry($this->denormalizer->denormalize($data['country'], \Steefdw\Simplicate\Model\Country::class, 'json', $context));
+            $object->setCountry($this->denormalizer->denormalize($data['country'], \Paqtcom\Simplicate\Model\Country::class, 'json', $context));
         }
         if (\array_key_exists('hours_view_mode', $data)) {
             $object->setHoursViewMode($data['hours_view_mode']);
@@ -112,7 +112,7 @@ class UserNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
         if (\array_key_exists('rights', $data)) {
             $values = [];
             foreach ($data['rights'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\Right::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\Right::class, 'json', $context);
             }
             $object->setRights($values);
         }
@@ -202,6 +202,6 @@ class UserNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\User::class => false];
+        return [\Paqtcom\Simplicate\Model\User::class => false];
     }
 }

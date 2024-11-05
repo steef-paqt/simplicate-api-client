@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class BudgetNormalizer implements DenormalizerInterface, NormalizerInterface, De
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\Budget::class;
+        return $type === \Paqtcom\Simplicate\Model\Budget::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\Budget::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Budget::class;
     }
 
     /**
@@ -42,18 +42,18 @@ class BudgetNormalizer implements DenormalizerInterface, NormalizerInterface, De
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\Budget();
+        $object = new \Paqtcom\Simplicate\Model\Budget();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
         if (\array_key_exists('hours', $data)) {
-            $object->setHours($this->denormalizer->denormalize($data['hours'], \Steefdw\Simplicate\Model\BudgetHours::class, 'json', $context));
+            $object->setHours($this->denormalizer->denormalize($data['hours'], \Paqtcom\Simplicate\Model\BudgetHours::class, 'json', $context));
         }
         if (\array_key_exists('costs', $data)) {
-            $object->setCosts($this->denormalizer->denormalize($data['costs'], \Steefdw\Simplicate\Model\BudgetCosts::class, 'json', $context));
+            $object->setCosts($this->denormalizer->denormalize($data['costs'], \Paqtcom\Simplicate\Model\BudgetCosts::class, 'json', $context));
         }
         if (\array_key_exists('total', $data)) {
-            $object->setTotal($this->denormalizer->denormalize($data['total'], \Steefdw\Simplicate\Model\BudgetTotal::class, 'json', $context));
+            $object->setTotal($this->denormalizer->denormalize($data['total'], \Paqtcom\Simplicate\Model\BudgetTotal::class, 'json', $context));
         }
 
         return $object;
@@ -80,6 +80,6 @@ class BudgetNormalizer implements DenormalizerInterface, NormalizerInterface, De
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\Budget::class => false];
+        return [\Paqtcom\Simplicate\Model\Budget::class => false];
     }
 }

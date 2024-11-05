@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHoursEmployeeexpenseById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetHoursEmployeeexpenseById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursEmployeeexpenseByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursEmployeeexpenseByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultEmployeeExpense
+     * @return null|\Paqtcom\Simplicate\Model\RestResultEmployeeExpense
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultEmployeeExpense::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultEmployeeExpense::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursEmployeeexpenseByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursEmployeeexpenseByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdInternalServerErrorException($response);
         }
     }
 

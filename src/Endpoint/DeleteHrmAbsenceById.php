@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteHrmAbsenceById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteHrmAbsenceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteHrmAbsenceByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteHrmAbsenceByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteHrmAbsenceByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteHrmAbsenceById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHrmAbsenceByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHrmAbsenceByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteHrmAbsenceByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdInternalServerErrorException($response);
         }
     }
 

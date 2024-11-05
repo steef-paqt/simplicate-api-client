@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteTimersTimerById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteTimersTimerById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteTimersTimerByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteTimersTimerByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteTimersTimerByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteTimersTimerById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteTimersTimerByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteTimersTimerByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteTimersTimerByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdInternalServerErrorException($response);
         }
     }
 

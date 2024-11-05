@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PostCustomFieldsGroupById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values
+     * @param \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\CustomFieldGroup $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\CustomFieldGroup $body)
     {
         $this->body = $body;
     }
@@ -42,10 +42,10 @@ class PostCustomFieldsGroupById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PostCustomFieldsGroupByIdBadRequestException
-     * @throws \Steefdw\Simplicate\Exception\PostCustomFieldsGroupByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PostCustomFieldsGroupByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PostCustomFieldsGroupByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsGroupByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsGroupByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsGroupByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsGroupByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -55,16 +55,16 @@ class PostCustomFieldsGroupById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostCustomFieldsGroupByIdBadRequestException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostCustomFieldsGroupByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostCustomFieldsGroupByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostCustomFieldsGroupByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostCustomFieldsGroupByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostCustomFieldsGroupByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PostCustomFieldsGroupByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PostCustomFieldsGroupByIdInternalServerErrorException($response);
         }
     }
 

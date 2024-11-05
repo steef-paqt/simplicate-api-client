@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCostsCoststypeById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetCostsCoststypeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCostsCoststypeByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCostsCoststypeByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCostsCoststypeByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetCostsCoststypeByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultHourType
+     * @return null|\Paqtcom\Simplicate\Model\RestResultHourType
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultHourType::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultHourType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCostsCoststypeByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCostsCoststypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCostsCoststypeByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCostsCoststypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCostsCoststypeByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCostsCoststypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCostsCoststypeByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCostsCoststypeByIdInternalServerErrorException($response);
         }
     }
 

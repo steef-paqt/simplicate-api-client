@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class ExpenseAttachmentNormalizer implements DenormalizerInterface, NormalizerIn
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\ExpenseAttachment::class;
+        return $type === \Paqtcom\Simplicate\Model\ExpenseAttachment::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\ExpenseAttachment::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\ExpenseAttachment::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class ExpenseAttachmentNormalizer implements DenormalizerInterface, NormalizerIn
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\ExpenseAttachment();
+        $object = new \Paqtcom\Simplicate\Model\ExpenseAttachment();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -74,6 +74,6 @@ class ExpenseAttachmentNormalizer implements DenormalizerInterface, NormalizerIn
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\ExpenseAttachment::class => false];
+        return [\Paqtcom\Simplicate\Model\ExpenseAttachment::class => false];
     }
 }

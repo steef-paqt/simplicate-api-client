@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class RestBatchValidationErrorNormalizer implements DenormalizerInterface, Norma
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\RestBatchValidationError::class;
+        return $type === \Paqtcom\Simplicate\Model\RestBatchValidationError::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\RestBatchValidationError::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\RestBatchValidationError::class;
     }
 
     /**
@@ -42,12 +42,12 @@ class RestBatchValidationErrorNormalizer implements DenormalizerInterface, Norma
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\RestBatchValidationError();
+        $object = new \Paqtcom\Simplicate\Model\RestBatchValidationError();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
         if (\array_key_exists('error', $data)) {
-            $object->setError($this->denormalizer->denormalize($data['error'], \Steefdw\Simplicate\Model\RestError::class, 'json', $context));
+            $object->setError($this->denormalizer->denormalize($data['error'], \Paqtcom\Simplicate\Model\RestError::class, 'json', $context));
         }
         if (\array_key_exists('submitted_data', $data)) {
             $object->setSubmittedData($data['submitted_data']);
@@ -74,6 +74,6 @@ class RestBatchValidationErrorNormalizer implements DenormalizerInterface, Norma
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\RestBatchValidationError::class => false];
+        return [\Paqtcom\Simplicate\Model\RestBatchValidationError::class => false];
     }
 }

@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class PutSharedItemById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Steefdw\Simplicate\Model\PostSharedItem $body Shared item object that with the data that needs to be updated
+     * @param \Paqtcom\Simplicate\Model\PostSharedItem $body Shared item object that with the data that needs to be updated
      */
-    public function __construct(protected string $id, \Steefdw\Simplicate\Model\PostSharedItem $body)
+    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostSharedItem $body)
     {
         $this->body = $body;
     }
@@ -42,9 +42,9 @@ class PutSharedItemById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\PutSharedItemByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\PutSharedItemByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\PutSharedItemByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutSharedItemByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutSharedItemByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutSharedItemByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -54,13 +54,13 @@ class PutSharedItemById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutSharedItemByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutSharedItemByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutSharedItemByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutSharedItemByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\PutSharedItemByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\PutSharedItemByIdInternalServerErrorException($response);
         }
     }
 

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetSalesConverttoprojectById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,31 +40,31 @@ class GetSalesConverttoprojectById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetSalesConverttoprojectByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesConverttoprojectByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesConverttoprojectByIdUnprocessableEntityException
-     * @throws \Steefdw\Simplicate\Exception\GetSalesConverttoprojectByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdUnprocessableEntityException
+     * @throws \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultSale
+     * @return null|\Paqtcom\Simplicate\Model\RestResultSale
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultSale::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultSale::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesConverttoprojectByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesConverttoprojectByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesConverttoprojectByIdUnprocessableEntityException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetSalesConverttoprojectByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdInternalServerErrorException($response);
         }
     }
 

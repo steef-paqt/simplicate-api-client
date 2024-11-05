@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmDocumenttype extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetCrmDocumenttype extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmDocumenttypeUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmDocumenttypeNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmDocumenttypeInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumenttypeUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumenttypeNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumenttypeInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultDocumentTypes
+     * @return null|\Paqtcom\Simplicate\Model\RestResultDocumentTypes
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultDocumentTypes::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmDocumenttypeUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmDocumenttypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmDocumenttypeNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmDocumenttypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmDocumenttypeInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmDocumenttypeInternalServerErrorException($response);
         }
     }
 

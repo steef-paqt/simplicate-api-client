@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCustomFieldsOption extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetCustomFieldsOption extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCustomFieldsOptionUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCustomFieldsOptionNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCustomFieldsOptionInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsOptionUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsOptionNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsOptionInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultCustomFieldOptions
+     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldOptions
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultCustomFieldOptions::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomFieldOptions::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCustomFieldsOptionUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCustomFieldsOptionUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCustomFieldsOptionNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCustomFieldsOptionNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCustomFieldsOptionInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCustomFieldsOptionInternalServerErrorException($response);
         }
     }
 

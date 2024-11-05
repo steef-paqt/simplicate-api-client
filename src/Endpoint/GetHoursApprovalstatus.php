@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetHoursApprovalstatus extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetHoursApprovalstatus extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetHoursApprovalstatusUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursApprovalstatusNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetHoursApprovalstatusInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultApprovalStatusList
+     * @return null|\Paqtcom\Simplicate\Model\RestResultApprovalStatusList
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultApprovalStatusList::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultApprovalStatusList::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursApprovalstatusUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursApprovalstatusNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetHoursApprovalstatusInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusInternalServerErrorException($response);
         }
     }
 

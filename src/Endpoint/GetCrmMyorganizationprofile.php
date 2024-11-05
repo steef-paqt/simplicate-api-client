@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class GetCrmMyorganizationprofile extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -58,27 +58,27 @@ class GetCrmMyorganizationprofile extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\GetCrmMyorganizationprofileUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmMyorganizationprofileNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\GetCrmMyorganizationprofileInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileInternalServerErrorException
      *
-     * @return null|\Steefdw\Simplicate\Model\RestResultMyOrganizationProfiles
+     * @return null|\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Steefdw\Simplicate\Model\RestResultMyOrganizationProfiles::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles::class, 'json');
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmMyorganizationprofileUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmMyorganizationprofileNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\GetCrmMyorganizationprofileInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileInternalServerErrorException($response);
         }
     }
 

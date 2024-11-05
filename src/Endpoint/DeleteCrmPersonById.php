@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Endpoint;
+namespace Paqtcom\Simplicate\Endpoint;
 
-use Steefdw\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 
 class DeleteCrmPersonById extends BaseEndpoint
 {
-    use \Steefdw\Simplicate\Runtime\Client\EndpointTrait;
+    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -40,9 +40,9 @@ class DeleteCrmPersonById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Steefdw\Simplicate\Exception\DeleteCrmPersonByIdUnauthorizedException
-     * @throws \Steefdw\Simplicate\Exception\DeleteCrmPersonByIdNotFoundException
-     * @throws \Steefdw\Simplicate\Exception\DeleteCrmPersonByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdInternalServerErrorException
      */
     protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
     {
@@ -52,13 +52,13 @@ class DeleteCrmPersonById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteCrmPersonByIdUnauthorizedException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteCrmPersonByIdNotFoundException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Steefdw\Simplicate\Exception\DeleteCrmPersonByIdInternalServerErrorException($response);
+            throw new \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdInternalServerErrorException($response);
         }
     }
 

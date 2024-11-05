@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Steefdw\Simplicate\Normalizer;
+namespace Paqtcom\Simplicate\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
-use Steefdw\Simplicate\Runtime\Normalizer\CheckArray;
-use Steefdw\Simplicate\Runtime\Normalizer\ValidatorTrait;
+use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
+use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -23,12 +23,12 @@ class OrganizationContactNormalizer implements DenormalizerInterface, Normalizer
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Steefdw\Simplicate\Model\OrganizationContact::class;
+        return $type === \Paqtcom\Simplicate\Model\OrganizationContact::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Steefdw\Simplicate\Model\OrganizationContact::class;
+        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\OrganizationContact::class;
     }
 
     /**
@@ -42,7 +42,7 @@ class OrganizationContactNormalizer implements DenormalizerInterface, Normalizer
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Steefdw\Simplicate\Model\OrganizationContact();
+        $object = new \Paqtcom\Simplicate\Model\OrganizationContact();
         if (null === $data || false === \is_array($data)) {
             return $object;
         }
@@ -73,7 +73,7 @@ class OrganizationContactNormalizer implements DenormalizerInterface, Normalizer
         if (\array_key_exists('interests', $data)) {
             $values = [];
             foreach ($data['interests'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Steefdw\Simplicate\Model\Interest::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\Interest::class, 'json', $context);
             }
             $object->setInterests($values);
         }
@@ -124,6 +124,6 @@ class OrganizationContactNormalizer implements DenormalizerInterface, Normalizer
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Steefdw\Simplicate\Model\OrganizationContact::class => false];
+        return [\Paqtcom\Simplicate\Model\OrganizationContact::class => false];
     }
 }
