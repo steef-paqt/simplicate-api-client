@@ -4,17 +4,25 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateBadRequestException;
+use Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateNotFoundException;
+use Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostDuplicateSales;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostSalesSalesByIdDuplicate extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Paqtcom\Simplicate\Model\PostDuplicateSales $body Optional parameters to overwrite
+     * @param PostDuplicateSales $body Optional parameters to overwrite
      */
-    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostDuplicateSales $body)
+    public function __construct(protected string $id, PostDuplicateSales $body)
     {
         $this->body = $body;
     }
@@ -29,7 +37,7 @@ class PostSalesSalesByIdDuplicate extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/sales/sales/{id}/duplicate');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -42,12 +50,12 @@ class PostSalesSalesByIdDuplicate extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateInternalServerErrorException
+     * @throws PostSalesSalesByIdDuplicateBadRequestException
+     * @throws PostSalesSalesByIdDuplicateUnauthorizedException
+     * @throws PostSalesSalesByIdDuplicateNotFoundException
+     * @throws PostSalesSalesByIdDuplicateInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -55,16 +63,16 @@ class PostSalesSalesByIdDuplicate extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateBadRequestException($response);
+            throw new PostSalesSalesByIdDuplicateBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateUnauthorizedException($response);
+            throw new PostSalesSalesByIdDuplicateUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateNotFoundException($response);
+            throw new PostSalesSalesByIdDuplicateNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateInternalServerErrorException($response);
+            throw new PostSalesSalesByIdDuplicateInternalServerErrorException($response);
         }
     }
 

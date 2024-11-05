@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Setting;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class SettingNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class SettingNormalizer implements DenormalizerInterface, NormalizerInterface, D
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\Setting::class;
+        return $type === Setting::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Setting::class;
+        return is_object($data) && $data::class === Setting::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,14 +43,14 @@ class SettingNormalizer implements DenormalizerInterface, NormalizerInterface, D
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\Setting();
-        if (null === $data || false === \is_array($data)) {
+        $object = new Setting();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('module', $data)) {
+        if (array_key_exists('module', $data)) {
             $object->setModule($data['module']);
         }
-        if (\array_key_exists('settings', $data)) {
+        if (array_key_exists('settings', $data)) {
             $values = [];
             foreach ($data['settings'] as $value) {
                 $values[] = $value;
@@ -57,7 +61,7 @@ class SettingNormalizer implements DenormalizerInterface, NormalizerInterface, D
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('module') && null !== $object->getModule()) {
@@ -76,6 +80,6 @@ class SettingNormalizer implements DenormalizerInterface, NormalizerInterface, D
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\Setting::class => false];
+        return [Setting::class => false];
     }
 }

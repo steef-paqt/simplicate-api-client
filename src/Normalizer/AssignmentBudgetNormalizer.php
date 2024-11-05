@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\AssignmentBudget;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class AssignmentBudgetNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class AssignmentBudgetNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\AssignmentBudget::class;
+        return $type === AssignmentBudget::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\AssignmentBudget::class;
+        return is_object($data) && $data::class === AssignmentBudget::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,39 +43,39 @@ class AssignmentBudgetNormalizer implements DenormalizerInterface, NormalizerInt
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\AssignmentBudget();
-        if (null === $data || false === \is_array($data)) {
+        $object = new AssignmentBudget();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('assignment_id', $data)) {
+        if (array_key_exists('assignment_id', $data)) {
             $object->setAssignmentId($data['assignment_id']);
         }
-        if (\array_key_exists('range_start', $data)) {
+        if (array_key_exists('range_start', $data)) {
             $object->setRangeStart($data['range_start']);
         }
-        if (\array_key_exists('budget_range_start', $data)) {
+        if (array_key_exists('budget_range_start', $data)) {
             $object->setBudgetRangeStart($data['budget_range_start']);
         }
-        if (\array_key_exists('range_end', $data)) {
+        if (array_key_exists('range_end', $data)) {
             $object->setRangeEnd($data['range_end']);
         }
-        if (\array_key_exists('budget_range_end', $data)) {
+        if (array_key_exists('budget_range_end', $data)) {
             $object->setBudgetRangeEnd($data['budget_range_end']);
         }
-        if (\array_key_exists('planned_amount', $data)) {
+        if (array_key_exists('planned_amount', $data)) {
             $object->setPlannedAmount($data['planned_amount']);
         }
-        if (\array_key_exists('spent_amount', $data)) {
+        if (array_key_exists('spent_amount', $data)) {
             $object->setSpentAmount($data['spent_amount']);
         }
-        if (\array_key_exists('hours_type', $data)) {
+        if (array_key_exists('hours_type', $data)) {
             $object->setHoursType($data['hours_type']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('assignmentId') && null !== $object->getAssignmentId()) {
@@ -104,6 +108,6 @@ class AssignmentBudgetNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\AssignmentBudget::class => false];
+        return [AssignmentBudget::class => false];
     }
 }

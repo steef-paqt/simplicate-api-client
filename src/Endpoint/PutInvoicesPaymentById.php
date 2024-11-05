@@ -4,17 +4,25 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdBadRequestException;
+use Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\Payment;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutInvoicesPaymentById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Paqtcom\Simplicate\Model\Payment $body Payment object that needs to be updated
+     * @param Payment $body Payment object that needs to be updated
      */
-    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\Payment $body)
+    public function __construct(protected string $id, Payment $body)
     {
         $this->body = $body;
     }
@@ -29,7 +37,7 @@ class PutInvoicesPaymentById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/invoices/payment/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -42,12 +50,12 @@ class PutInvoicesPaymentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdInternalServerErrorException
+     * @throws PutInvoicesPaymentByIdBadRequestException
+     * @throws PutInvoicesPaymentByIdUnauthorizedException
+     * @throws PutInvoicesPaymentByIdNotFoundException
+     * @throws PutInvoicesPaymentByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -55,16 +63,16 @@ class PutInvoicesPaymentById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdBadRequestException($response);
+            throw new PutInvoicesPaymentByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdUnauthorizedException($response);
+            throw new PutInvoicesPaymentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdNotFoundException($response);
+            throw new PutInvoicesPaymentByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdInternalServerErrorException($response);
+            throw new PutInvoicesPaymentByIdInternalServerErrorException($response);
         }
     }
 

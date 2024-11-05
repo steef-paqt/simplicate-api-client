@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\ServiceGroup;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class ServiceGroupNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class ServiceGroupNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\ServiceGroup::class;
+        return $type === ServiceGroup::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\ServiceGroup::class;
+        return is_object($data) && $data::class === ServiceGroup::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,18 +43,18 @@ class ServiceGroupNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\ServiceGroup();
-        if (null === $data || false === \is_array($data)) {
+        $object = new ServiceGroup();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('label', $data)) {
+        if (array_key_exists('label', $data)) {
             $object->setLabel($data['label']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('label') && null !== $object->getLabel()) {
@@ -62,6 +66,6 @@ class ServiceGroupNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\ServiceGroup::class => false];
+        return [ServiceGroup::class => false];
     }
 }

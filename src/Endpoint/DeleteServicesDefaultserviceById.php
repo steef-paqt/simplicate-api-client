@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteServicesDefaultserviceById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteServicesDefaultserviceById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/services/defaultservice/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteServicesDefaultserviceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdInternalServerErrorException
+     * @throws DeleteServicesDefaultserviceByIdUnauthorizedException
+     * @throws DeleteServicesDefaultserviceByIdNotFoundException
+     * @throws DeleteServicesDefaultserviceByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteServicesDefaultserviceById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdUnauthorizedException($response);
+            throw new DeleteServicesDefaultserviceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdNotFoundException($response);
+            throw new DeleteServicesDefaultserviceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdInternalServerErrorException($response);
+            throw new DeleteServicesDefaultserviceByIdInternalServerErrorException($response);
         }
     }
 

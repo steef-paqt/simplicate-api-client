@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetNotFoundException;
+use Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetUnprocessableEntityException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetProjectsProjectByIdPlanningBudget extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -32,7 +40,7 @@ class GetProjectsProjectByIdPlanningBudget extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/projects/project/{id}/planningBudget');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetProjectsProjectByIdPlanningBudget extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['by', 'until_date']);
@@ -57,12 +65,12 @@ class GetProjectsProjectByIdPlanningBudget extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetInternalServerErrorException
+     * @throws GetProjectsProjectByIdPlanningBudgetUnauthorizedException
+     * @throws GetProjectsProjectByIdPlanningBudgetNotFoundException
+     * @throws GetProjectsProjectByIdPlanningBudgetUnprocessableEntityException
+     * @throws GetProjectsProjectByIdPlanningBudgetInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -70,16 +78,16 @@ class GetProjectsProjectByIdPlanningBudget extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetUnauthorizedException($response);
+            throw new GetProjectsProjectByIdPlanningBudgetUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetNotFoundException($response);
+            throw new GetProjectsProjectByIdPlanningBudgetNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetUnprocessableEntityException($response);
+            throw new GetProjectsProjectByIdPlanningBudgetUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetInternalServerErrorException($response);
+            throw new GetProjectsProjectByIdPlanningBudgetInternalServerErrorException($response);
         }
     }
 

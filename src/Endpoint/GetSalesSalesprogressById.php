@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultSalesProgress;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesSalesprogressById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetSalesSalesprogressById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/sales/salesprogress/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetSalesSalesprogressById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultSalesProgress
+     * @return null|RestResultSalesProgress
+     *@throws GetSalesSalesprogressByIdNotFoundException
+     * @throws GetSalesSalesprogressByIdUnprocessableEntityException
+     * @throws GetSalesSalesprogressByIdInternalServerErrorException
+     * @throws GetSalesSalesprogressByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultSalesProgress::class, 'json');
+            return $serializer->deserialize($body, RestResultSalesProgress::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdUnauthorizedException($response);
+            throw new GetSalesSalesprogressByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdNotFoundException($response);
+            throw new GetSalesSalesprogressByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdUnprocessableEntityException($response);
+            throw new GetSalesSalesprogressByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdInternalServerErrorException($response);
+            throw new GetSalesSalesprogressByIdInternalServerErrorException($response);
         }
     }
 

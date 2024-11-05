@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteSalesDocumentById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteSalesDocumentById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/sales/document/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteSalesDocumentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdInternalServerErrorException
+     * @throws DeleteSalesDocumentByIdUnauthorizedException
+     * @throws DeleteSalesDocumentByIdNotFoundException
+     * @throws DeleteSalesDocumentByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteSalesDocumentById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdUnauthorizedException($response);
+            throw new DeleteSalesDocumentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdNotFoundException($response);
+            throw new DeleteSalesDocumentByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdInternalServerErrorException($response);
+            throw new DeleteSalesDocumentByIdInternalServerErrorException($response);
         }
     }
 

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\ReminderTemplate;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class ReminderTemplateNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class ReminderTemplateNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\ReminderTemplate::class;
+        return $type === ReminderTemplate::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\ReminderTemplate::class;
+        return is_object($data) && $data::class === ReminderTemplate::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,30 +43,30 @@ class ReminderTemplateNormalizer implements DenormalizerInterface, NormalizerInt
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\ReminderTemplate();
-        if (null === $data || false === \is_array($data)) {
+        $object = new ReminderTemplate();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('label', $data)) {
+        if (array_key_exists('label', $data)) {
             $object->setLabel($data['label']);
         }
-        if (\array_key_exists('subject', $data)) {
+        if (array_key_exists('subject', $data)) {
             $object->setSubject($data['subject']);
         }
-        if (\array_key_exists('body', $data)) {
+        if (array_key_exists('body', $data)) {
             $object->setBody($data['body']);
         }
-        if (\array_key_exists('attach_invoice', $data)) {
+        if (array_key_exists('attach_invoice', $data)) {
             $object->setAttachInvoice($data['attach_invoice']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -86,6 +90,6 @@ class ReminderTemplateNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\ReminderTemplate::class => false];
+        return [ReminderTemplate::class => false];
     }
 }

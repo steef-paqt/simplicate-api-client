@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCrmGenderByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCrmGenderByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCrmGenderByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetCrmGenderByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultGender;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCrmGenderById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetCrmGenderById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/crm/gender/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetCrmGenderById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultGender
+     * @return null|RestResultGender
+     *@throws GetCrmGenderByIdNotFoundException
+     * @throws GetCrmGenderByIdUnprocessableEntityException
+     * @throws GetCrmGenderByIdInternalServerErrorException
+     * @throws GetCrmGenderByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultGender::class, 'json');
+            return $serializer->deserialize($body, RestResultGender::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmGenderByIdUnauthorizedException($response);
+            throw new GetCrmGenderByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmGenderByIdNotFoundException($response);
+            throw new GetCrmGenderByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmGenderByIdUnprocessableEntityException($response);
+            throw new GetCrmGenderByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmGenderByIdInternalServerErrorException($response);
+            throw new GetCrmGenderByIdInternalServerErrorException($response);
         }
     }
 

@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostMileageMileageInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostMileageMileageNotFoundException;
+use Paqtcom\Simplicate\Exception\PostMileageMileageUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostMileage;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostMileageMileage extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostMileage $body Mileage object that needs to be added
+     * @param PostMileage $body Mileage object that needs to be added
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostMileage $body)
+    public function __construct(PostMileage $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostMileageMileage extends BaseEndpoint
         return '/mileage/mileage';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostMileageMileage extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostMileageMileageUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostMileageMileageNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostMileageMileageInternalServerErrorException
+     * @throws PostMileageMileageUnauthorizedException
+     * @throws PostMileageMileageNotFoundException
+     * @throws PostMileageMileageInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostMileageMileage extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostMileageMileageUnauthorizedException($response);
+            throw new PostMileageMileageUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostMileageMileageNotFoundException($response);
+            throw new PostMileageMileageNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostMileageMileageInternalServerErrorException($response);
+            throw new PostMileageMileageInternalServerErrorException($response);
         }
     }
 

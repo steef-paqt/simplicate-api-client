@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostHrmLeaveBadRequestException;
+use Paqtcom\Simplicate\Exception\PostHrmLeaveInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostHrmLeaveUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostLeave;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostHrmLeave extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data
+     * @param PostLeave $body Leave object containing data
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostLeave $body)
+    public function __construct(PostLeave $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostHrmLeave extends BaseEndpoint
         return '/hrm/leave';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostHrmLeave extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostHrmLeaveBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostHrmLeaveUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostHrmLeaveInternalServerErrorException
+     * @throws PostHrmLeaveBadRequestException
+     * @throws PostHrmLeaveUnauthorizedException
+     * @throws PostHrmLeaveInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostHrmLeave extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHrmLeaveBadRequestException($response);
+            throw new PostHrmLeaveBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHrmLeaveUnauthorizedException($response);
+            throw new PostHrmLeaveUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHrmLeaveInternalServerErrorException($response);
+            throw new PostHrmLeaveInternalServerErrorException($response);
         }
     }
 

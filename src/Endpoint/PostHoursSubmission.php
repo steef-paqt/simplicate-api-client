@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostHoursSubmissionInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostHoursSubmissionNotFoundException;
+use Paqtcom\Simplicate\Exception\PostHoursSubmissionUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostSubmission;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostHoursSubmission extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostSubmission $body Description of hours that need to be submitted.
+     * @param PostSubmission $body Description of hours that need to be submitted.
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostSubmission $body)
+    public function __construct(PostSubmission $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostHoursSubmission extends BaseEndpoint
         return '/hours/submission';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostHoursSubmission extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursSubmissionUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursSubmissionNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursSubmissionInternalServerErrorException
+     * @throws PostHoursSubmissionUnauthorizedException
+     * @throws PostHoursSubmissionNotFoundException
+     * @throws PostHoursSubmissionInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostHoursSubmission extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursSubmissionUnauthorizedException($response);
+            throw new PostHoursSubmissionUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursSubmissionNotFoundException($response);
+            throw new PostHoursSubmissionNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursSubmissionInternalServerErrorException($response);
+            throw new PostHoursSubmissionInternalServerErrorException($response);
         }
     }
 

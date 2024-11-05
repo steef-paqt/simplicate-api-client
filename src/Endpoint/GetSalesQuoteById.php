@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesQuoteByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesQuoteByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSalesQuoteByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetSalesQuoteByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultQuote;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesQuoteById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetSalesQuoteById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/sales/quote/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetSalesQuoteById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesQuoteByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesQuoteByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesQuoteByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesQuoteByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultQuote
+     * @return null|RestResultQuote
+     *@throws GetSalesQuoteByIdNotFoundException
+     * @throws GetSalesQuoteByIdUnprocessableEntityException
+     * @throws GetSalesQuoteByIdInternalServerErrorException
+     * @throws GetSalesQuoteByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultQuote::class, 'json');
+            return $serializer->deserialize($body, RestResultQuote::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesQuoteByIdUnauthorizedException($response);
+            throw new GetSalesQuoteByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesQuoteByIdNotFoundException($response);
+            throw new GetSalesQuoteByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesQuoteByIdUnprocessableEntityException($response);
+            throw new GetSalesQuoteByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesQuoteByIdInternalServerErrorException($response);
+            throw new GetSalesQuoteByIdInternalServerErrorException($response);
         }
     }
 

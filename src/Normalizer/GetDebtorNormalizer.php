@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetDebtor;
+use Paqtcom\Simplicate\Model\GetPaymentTerm;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class GetDebtorNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class GetDebtorNormalizer implements DenormalizerInterface, NormalizerInterface,
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetDebtor::class;
+        return $type === GetDebtor::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetDebtor::class;
+        return is_object($data) && $data::class === GetDebtor::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,70 +44,70 @@ class GetDebtorNormalizer implements DenormalizerInterface, NormalizerInterface,
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetDebtor();
-        if (null === $data || false === \is_array($data)) {
+        $object = new GetDebtor();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('payment_term', $data)) {
-            $object->setPaymentTerm($this->denormalizer->denormalize($data['payment_term'], \Paqtcom\Simplicate\Model\GetPaymentTerm::class, 'json', $context));
+        if (array_key_exists('payment_term', $data)) {
+            $object->setPaymentTerm($this->denormalizer->denormalize($data['payment_term'], GetPaymentTerm::class, 'json', $context));
         }
-        if (\array_key_exists('provision_method', $data)) {
+        if (array_key_exists('provision_method', $data)) {
             $object->setProvisionMethod($data['provision_method']);
         }
-        if (\array_key_exists('send_invoice_email_to_contact', $data)) {
+        if (array_key_exists('send_invoice_email_to_contact', $data)) {
             $object->setSendInvoiceEmailToContact($data['send_invoice_email_to_contact']);
         }
-        if (\array_key_exists('provision_contactperson_id', $data)) {
+        if (array_key_exists('provision_contactperson_id', $data)) {
             $object->setProvisionContactpersonId($data['provision_contactperson_id']);
         }
-        if (\array_key_exists('send_invoice_email_to_project_contact', $data)) {
+        if (array_key_exists('send_invoice_email_to_project_contact', $data)) {
             $object->setSendInvoiceEmailToProjectContact($data['send_invoice_email_to_project_contact']);
         }
-        if (\array_key_exists('send_invoice_email_to_fixed_email', $data)) {
+        if (array_key_exists('send_invoice_email_to_fixed_email', $data)) {
             $object->setSendInvoiceEmailToFixedEmail($data['send_invoice_email_to_fixed_email']);
         }
-        if (\array_key_exists('send_email_email', $data)) {
+        if (array_key_exists('send_email_email', $data)) {
             $object->setSendEmailEmail($data['send_email_email']);
         }
-        if (\array_key_exists('send_invoice_email_to_cc', $data)) {
+        if (array_key_exists('send_invoice_email_to_cc', $data)) {
             $object->setSendInvoiceEmailToCc($data['send_invoice_email_to_cc']);
         }
-        if (\array_key_exists('cc', $data)) {
+        if (array_key_exists('cc', $data)) {
             $values = [];
             foreach ($data['cc'] as $value) {
                 $values[] = $value;
             }
             $object->setCc($values);
         }
-        if (\array_key_exists('attention_to', $data)) {
+        if (array_key_exists('attention_to', $data)) {
             $object->setAttentionTo($data['attention_to']);
         }
-        if (\array_key_exists('attention_to_person_id', $data)) {
+        if (array_key_exists('attention_to_person_id', $data)) {
             $object->setAttentionToPersonId($data['attention_to_person_id']);
         }
-        if (\array_key_exists('attention_to_fixed', $data)) {
+        if (array_key_exists('attention_to_fixed', $data)) {
             $object->setAttentionToFixed($data['attention_to_fixed']);
         }
-        if (\array_key_exists('autocollect', $data)) {
+        if (array_key_exists('autocollect', $data)) {
             $object->setAutocollect($data['autocollect']);
         }
-        if (\array_key_exists('reminders', $data)) {
+        if (array_key_exists('reminders', $data)) {
             $object->setReminders($data['reminders']);
         }
-        if (\array_key_exists('send_email_type', $data)) {
+        if (array_key_exists('send_email_type', $data)) {
             $object->setSendEmailType($data['send_email_type']);
         }
-        if (\array_key_exists('autosend_subscription_invoice', $data)) {
+        if (array_key_exists('autosend_subscription_invoice', $data)) {
             $object->setAutosendSubscriptionInvoice($data['autosend_subscription_invoice']);
         }
-        if (\array_key_exists('invoicetemplate_id', $data)) {
+        if (array_key_exists('invoicetemplate_id', $data)) {
             $object->setInvoicetemplateId($data['invoicetemplate_id']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('paymentTerm') && null !== $object->getPaymentTerm()) {
@@ -166,6 +171,6 @@ class GetDebtorNormalizer implements DenormalizerInterface, NormalizerInterface,
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetDebtor::class => false];
+        return [GetDebtor::class => false];
     }
 }

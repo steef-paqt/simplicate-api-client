@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PostAddress;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class PostAddressNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class PostAddressNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PostAddress::class;
+        return $type === PostAddress::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostAddress::class;
+        return is_object($data) && $data::class === PostAddress::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,39 +43,39 @@ class PostAddressNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PostAddress();
-        if (null === $data || false === \is_array($data)) {
+        $object = new PostAddress();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('type', $data)) {
+        if (array_key_exists('type', $data)) {
             $object->setType($data['type']);
         }
-        if (\array_key_exists('line_1', $data)) {
+        if (array_key_exists('line_1', $data)) {
             $object->setLine1($data['line_1']);
         }
-        if (\array_key_exists('line_2', $data)) {
+        if (array_key_exists('line_2', $data)) {
             $object->setLine2($data['line_2']);
         }
-        if (\array_key_exists('postal_code', $data)) {
+        if (array_key_exists('postal_code', $data)) {
             $object->setPostalCode($data['postal_code']);
         }
-        if (\array_key_exists('province', $data)) {
+        if (array_key_exists('province', $data)) {
             $object->setProvince($data['province']);
         }
-        if (\array_key_exists('locality', $data)) {
+        if (array_key_exists('locality', $data)) {
             $object->setLocality($data['locality']);
         }
-        if (\array_key_exists('country_code', $data)) {
+        if (array_key_exists('country_code', $data)) {
             $object->setCountryCode($data['country_code']);
         }
-        if (\array_key_exists('country_id', $data)) {
+        if (array_key_exists('country_id', $data)) {
             $object->setCountryId($data['country_id']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('type') && null !== $object->getType()) {
@@ -104,6 +108,6 @@ class PostAddressNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PostAddress::class => false];
+        return [PostAddress::class => false];
     }
 }

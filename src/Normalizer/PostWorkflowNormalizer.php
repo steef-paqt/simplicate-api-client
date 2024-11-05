@@ -4,7 +4,13 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Comment;
+use Paqtcom\Simplicate\Model\CreatedBy;
+use Paqtcom\Simplicate\Model\LinkedTo;
+use Paqtcom\Simplicate\Model\PostDocument;
+use Paqtcom\Simplicate\Model\PostWorkflow;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +19,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class PostWorkflowNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +31,12 @@ class PostWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PostWorkflow::class;
+        return $type === PostWorkflow::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostWorkflow::class;
+        return is_object($data) && $data::class === PostWorkflow::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,60 +47,60 @@ class PostWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PostWorkflow();
-        if (null === $data || false === \is_array($data)) {
+        $object = new PostWorkflow();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('defaultworkflow_id', $data)) {
+        if (array_key_exists('defaultworkflow_id', $data)) {
             $object->setDefaultworkflowId($data['defaultworkflow_id']);
         }
-        if (\array_key_exists('created_by', $data)) {
-            $object->setCreatedBy($this->denormalizer->denormalize($data['created_by'], \Paqtcom\Simplicate\Model\CreatedBy::class, 'json', $context));
+        if (array_key_exists('created_by', $data)) {
+            $object->setCreatedBy($this->denormalizer->denormalize($data['created_by'], CreatedBy::class, 'json', $context));
         }
-        if (\array_key_exists('linked_to', $data)) {
+        if (array_key_exists('linked_to', $data)) {
             $values = [];
             foreach ($data['linked_to'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\LinkedTo::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, LinkedTo::class, 'json', $context);
             }
             $object->setLinkedTo($values);
         }
-        if (\array_key_exists('attachments', $data)) {
+        if (array_key_exists('attachments', $data)) {
             $values_1 = [];
             foreach ($data['attachments'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\PostDocument::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, PostDocument::class, 'json', $context);
             }
             $object->setAttachments($values_1);
         }
-        if (\array_key_exists('comments', $data)) {
+        if (array_key_exists('comments', $data)) {
             $values_2 = [];
             foreach ($data['comments'] as $value_2) {
-                $values_2[] = $this->denormalizer->denormalize($value_2, \Paqtcom\Simplicate\Model\Comment::class, 'json', $context);
+                $values_2[] = $this->denormalizer->denormalize($value_2, Comment::class, 'json', $context);
             }
             $object->setComments($values_2);
         }
-        if (\array_key_exists('destination_employee_id', $data)) {
+        if (array_key_exists('destination_employee_id', $data)) {
             $object->setDestinationEmployeeId($data['destination_employee_id']);
         }
-        if (\array_key_exists('transfer_to_employee_id', $data)) {
+        if (array_key_exists('transfer_to_employee_id', $data)) {
             $object->setTransferToEmployeeId($data['transfer_to_employee_id']);
         }
-        if (\array_key_exists('transfer_to_message', $data)) {
+        if (array_key_exists('transfer_to_message', $data)) {
             $object->setTransferToMessage($data['transfer_to_message']);
         }
-        if (\array_key_exists('title', $data)) {
+        if (array_key_exists('title', $data)) {
             $object->setTitle($data['title']);
         }
-        if (\array_key_exists('description', $data)) {
+        if (array_key_exists('description', $data)) {
             $object->setDescription($data['description']);
         }
-        if (\array_key_exists('deadline_date', $data)) {
+        if (array_key_exists('deadline_date', $data)) {
             $object->setDeadlineDate($data['deadline_date']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('defaultworkflowId') && null !== $object->getDefaultworkflowId()) {
@@ -146,6 +154,6 @@ class PostWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PostWorkflow::class => false];
+        return [PostWorkflow::class => false];
     }
 }

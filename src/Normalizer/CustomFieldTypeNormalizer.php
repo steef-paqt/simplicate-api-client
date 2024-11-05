@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\CustomFieldType;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class CustomFieldTypeNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class CustomFieldTypeNormalizer implements DenormalizerInterface, NormalizerInte
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\CustomFieldType::class;
+        return $type === CustomFieldType::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\CustomFieldType::class;
+        return is_object($data) && $data::class === CustomFieldType::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,39 +43,39 @@ class CustomFieldTypeNormalizer implements DenormalizerInterface, NormalizerInte
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\CustomFieldType();
-        if (null === $data || false === \is_array($data)) {
+        $object = new CustomFieldType();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('type', $data)) {
+        if (array_key_exists('type', $data)) {
             $object->setType($data['type']);
         }
-        if (\array_key_exists('name', $data)) {
+        if (array_key_exists('name', $data)) {
             $object->setName($data['name']);
         }
-        if (\array_key_exists('position', $data)) {
+        if (array_key_exists('position', $data)) {
             $object->setPosition($data['position']);
         }
-        if (\array_key_exists('is_mandatory_configurable', $data)) {
+        if (array_key_exists('is_mandatory_configurable', $data)) {
             $object->setIsMandatoryConfigurable($data['is_mandatory_configurable']);
         }
-        if (\array_key_exists('is_searchable_configurable', $data)) {
+        if (array_key_exists('is_searchable_configurable', $data)) {
             $object->setIsSearchableConfigurable($data['is_searchable_configurable']);
         }
-        if (\array_key_exists('is_filterable_configurable', $data)) {
+        if (array_key_exists('is_filterable_configurable', $data)) {
             $object->setIsFilterableConfigurable($data['is_filterable_configurable']);
         }
-        if (\array_key_exists('is_collective_mutatable_configurable', $data)) {
+        if (array_key_exists('is_collective_mutatable_configurable', $data)) {
             $object->setIsCollectiveMutatableConfigurable($data['is_collective_mutatable_configurable']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -104,6 +108,6 @@ class CustomFieldTypeNormalizer implements DenormalizerInterface, NormalizerInte
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\CustomFieldType::class => false];
+        return [CustomFieldType::class => false];
     }
 }

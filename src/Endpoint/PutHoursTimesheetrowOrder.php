@@ -4,11 +4,18 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderBadRequestException;
+use Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderNotFoundException;
+use Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutHoursTimesheetrowOrder extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $body List of external ids for timesheetrows that need to be ordered.
@@ -28,7 +35,7 @@ class PutHoursTimesheetrowOrder extends BaseEndpoint
         return '/hours/timesheetrow/order';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], $this->body];
     }
@@ -41,12 +48,12 @@ class PutHoursTimesheetrowOrder extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderInternalServerErrorException
+     * @throws PutHoursTimesheetrowOrderBadRequestException
+     * @throws PutHoursTimesheetrowOrderUnauthorizedException
+     * @throws PutHoursTimesheetrowOrderNotFoundException
+     * @throws PutHoursTimesheetrowOrderInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -54,16 +61,16 @@ class PutHoursTimesheetrowOrder extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderBadRequestException($response);
+            throw new PutHoursTimesheetrowOrderBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderUnauthorizedException($response);
+            throw new PutHoursTimesheetrowOrderUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderNotFoundException($response);
+            throw new PutHoursTimesheetrowOrderNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderInternalServerErrorException($response);
+            throw new PutHoursTimesheetrowOrderInternalServerErrorException($response);
         }
     }
 

@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteInvoicesInvoiceById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteInvoicesInvoiceById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/invoices/invoice/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteInvoicesInvoiceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdInternalServerErrorException
+     * @throws DeleteInvoicesInvoiceByIdUnauthorizedException
+     * @throws DeleteInvoicesInvoiceByIdNotFoundException
+     * @throws DeleteInvoicesInvoiceByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteInvoicesInvoiceById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdUnauthorizedException($response);
+            throw new DeleteInvoicesInvoiceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdNotFoundException($response);
+            throw new DeleteInvoicesInvoiceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdInternalServerErrorException($response);
+            throw new DeleteInvoicesInvoiceByIdInternalServerErrorException($response);
         }
     }
 

@@ -4,7 +4,12 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetEmployeeSimple;
+use Paqtcom\Simplicate\Model\GetOrganizationSimple;
+use Paqtcom\Simplicate\Model\GetPersonSimple;
+use Paqtcom\Simplicate\Model\GetProjectSimple;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +18,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class GetProjectSimpleNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +30,12 @@ class GetProjectSimpleNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetProjectSimple::class;
+        return $type === GetProjectSimple::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetProjectSimple::class;
+        return is_object($data) && $data::class === GetProjectSimple::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,39 +46,39 @@ class GetProjectSimpleNormalizer implements DenormalizerInterface, NormalizerInt
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetProjectSimple();
-        if (null === $data || false === \is_array($data)) {
+        $object = new GetProjectSimple();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('name', $data)) {
+        if (array_key_exists('name', $data)) {
             $object->setName($data['name']);
         }
-        if (\array_key_exists('project_number', $data)) {
+        if (array_key_exists('project_number', $data)) {
             $object->setProjectNumber($data['project_number']);
         }
-        if (\array_key_exists('organization', $data)) {
-            $object->setOrganization($this->denormalizer->denormalize($data['organization'], \Paqtcom\Simplicate\Model\GetOrganizationSimple::class, 'json', $context));
+        if (array_key_exists('organization', $data)) {
+            $object->setOrganization($this->denormalizer->denormalize($data['organization'], GetOrganizationSimple::class, 'json', $context));
         }
-        if (\array_key_exists('person', $data)) {
-            $object->setPerson($this->denormalizer->denormalize($data['person'], \Paqtcom\Simplicate\Model\GetPersonSimple::class, 'json', $context));
+        if (array_key_exists('person', $data)) {
+            $object->setPerson($this->denormalizer->denormalize($data['person'], GetPersonSimple::class, 'json', $context));
         }
-        if (\array_key_exists('project_manager', $data)) {
-            $object->setProjectManager($this->denormalizer->denormalize($data['project_manager'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+        if (array_key_exists('project_manager', $data)) {
+            $object->setProjectManager($this->denormalizer->denormalize($data['project_manager'], GetEmployeeSimple::class, 'json', $context));
         }
-        if (\array_key_exists('separate_invoice_recipient', $data)) {
+        if (array_key_exists('separate_invoice_recipient', $data)) {
             $object->setSeparateInvoiceRecipient($data['separate_invoice_recipient']);
         }
-        if (\array_key_exists('has_register_mileage_enabled', $data)) {
+        if (array_key_exists('has_register_mileage_enabled', $data)) {
             $object->setHasRegisterMileageEnabled($data['has_register_mileage_enabled']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -104,6 +111,6 @@ class GetProjectSimpleNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetProjectSimple::class => false];
+        return [GetProjectSimple::class => false];
     }
 }

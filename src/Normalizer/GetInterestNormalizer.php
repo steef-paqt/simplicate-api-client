@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetInterest;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class GetInterestNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class GetInterestNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetInterest::class;
+        return $type === GetInterest::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetInterest::class;
+        return is_object($data) && $data::class === GetInterest::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,36 +43,36 @@ class GetInterestNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetInterest();
-        if (null === $data || false === \is_array($data)) {
+        $object = new GetInterest();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('value', $data)) {
+        if (array_key_exists('value', $data)) {
             $object->setValue($data['value']);
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('name', $data)) {
+        if (array_key_exists('name', $data)) {
             $object->setName($data['name']);
         }
-        if (\array_key_exists('api_name', $data)) {
+        if (array_key_exists('api_name', $data)) {
             $object->setApiName($data['api_name']);
         }
-        if (\array_key_exists('organization', $data)) {
+        if (array_key_exists('organization', $data)) {
             $object->setOrganization($data['organization']);
         }
-        if (\array_key_exists('person', $data)) {
+        if (array_key_exists('person', $data)) {
             $object->setPerson($data['person']);
         }
-        if (\array_key_exists('contact', $data)) {
+        if (array_key_exists('contact', $data)) {
             $object->setContact($data['contact']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('value') && null !== $object->getValue()) {
@@ -98,6 +102,6 @@ class GetInterestNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetInterest::class => false];
+        return [GetInterest::class => false];
     }
 }

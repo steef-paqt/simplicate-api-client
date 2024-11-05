@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Workflow;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class WorkflowNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class WorkflowNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\Workflow::class;
+        return $type === Workflow::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Workflow::class;
+        return is_object($data) && $data::class === Workflow::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,24 +43,24 @@ class WorkflowNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\Workflow();
-        if (null === $data || false === \is_array($data)) {
+        $object = new Workflow();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('title', $data)) {
+        if (array_key_exists('title', $data)) {
             $object->setTitle($data['title']);
         }
-        if (\array_key_exists('description', $data)) {
+        if (array_key_exists('description', $data)) {
             $object->setDescription($data['description']);
         }
-        if (\array_key_exists('deadline_date', $data)) {
+        if (array_key_exists('deadline_date', $data)) {
             $object->setDeadlineDate($data['deadline_date']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('title') && null !== $object->getTitle()) {
@@ -74,6 +78,6 @@ class WorkflowNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\Workflow::class => false];
+        return [Workflow::class => false];
     }
 }

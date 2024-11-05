@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteCrmDocumentById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteCrmDocumentById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/crm/document/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteCrmDocumentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdInternalServerErrorException
+     * @throws DeleteCrmDocumentByIdUnauthorizedException
+     * @throws DeleteCrmDocumentByIdNotFoundException
+     * @throws DeleteCrmDocumentByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteCrmDocumentById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdUnauthorizedException($response);
+            throw new DeleteCrmDocumentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdNotFoundException($response);
+            throw new DeleteCrmDocumentByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdInternalServerErrorException($response);
+            throw new DeleteCrmDocumentByIdInternalServerErrorException($response);
         }
     }
 

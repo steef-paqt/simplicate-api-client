@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultCustomFieldGroups;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesSalescustomfieldgroup extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetSalesSalescustomfieldgroup extends BaseEndpoint
         return '/sales/salescustomfieldgroups';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetSalesSalescustomfieldgroup extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetSalesSalescustomfieldgroup extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups
+     * @return null|RestResultCustomFieldGroups
+     *@throws GetSalesSalescustomfieldgroupNotFoundException
+     * @throws GetSalesSalescustomfieldgroupInternalServerErrorException
+     * @throws GetSalesSalescustomfieldgroupUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class, 'json');
+            return $serializer->deserialize($body, RestResultCustomFieldGroups::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupUnauthorizedException($response);
+            throw new GetSalesSalescustomfieldgroupUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupNotFoundException($response);
+            throw new GetSalesSalescustomfieldgroupNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupInternalServerErrorException($response);
+            throw new GetSalesSalescustomfieldgroupInternalServerErrorException($response);
         }
     }
 

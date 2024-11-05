@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetProjectsAssignmentstatusById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -33,7 +41,7 @@ class GetProjectsAssignmentstatusById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/projects/assignmentstatus/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -43,7 +51,7 @@ class GetProjectsAssignmentstatusById extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -58,28 +66,26 @@ class GetProjectsAssignmentstatusById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus
+     * @return null|RestResultProjectAssignmentStatus
+     *@throws GetProjectsAssignmentstatusByIdNotFoundException
+     * @throws GetProjectsAssignmentstatusByIdInternalServerErrorException
+     * @throws GetProjectsAssignmentstatusByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus::class, 'json');
+            return $serializer->deserialize($body, RestResultProjectAssignmentStatus::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdUnauthorizedException($response);
+            throw new GetProjectsAssignmentstatusByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdNotFoundException($response);
+            throw new GetProjectsAssignmentstatusByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdInternalServerErrorException($response);
+            throw new GetProjectsAssignmentstatusByIdInternalServerErrorException($response);
         }
     }
 

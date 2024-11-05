@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteHoursApprovalById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteHoursApprovalById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hours/approval/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteHoursApprovalById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdInternalServerErrorException
+     * @throws DeleteHoursApprovalByIdUnauthorizedException
+     * @throws DeleteHoursApprovalByIdNotFoundException
+     * @throws DeleteHoursApprovalByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteHoursApprovalById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdUnauthorizedException($response);
+            throw new DeleteHoursApprovalByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdNotFoundException($response);
+            throw new DeleteHoursApprovalByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdInternalServerErrorException($response);
+            throw new DeleteHoursApprovalByIdInternalServerErrorException($response);
         }
     }
 

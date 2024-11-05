@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple;
+use Paqtcom\Simplicate\Model\RelationType;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class GetOrganizationDebtorSimpleNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class GetOrganizationDebtorSimpleNormalizer implements DenormalizerInterface, No
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple::class;
+        return $type === GetOrganizationDebtorSimple::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple::class;
+        return is_object($data) && $data::class === GetOrganizationDebtorSimple::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,27 +44,27 @@ class GetOrganizationDebtorSimpleNormalizer implements DenormalizerInterface, No
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple();
-        if (null === $data || false === \is_array($data)) {
+        $object = new GetOrganizationDebtorSimple();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('relation_type', $data)) {
-            $object->setRelationType($this->denormalizer->denormalize($data['relation_type'], \Paqtcom\Simplicate\Model\RelationType::class, 'json', $context));
+        if (array_key_exists('relation_type', $data)) {
+            $object->setRelationType($this->denormalizer->denormalize($data['relation_type'], RelationType::class, 'json', $context));
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('name', $data)) {
+        if (array_key_exists('name', $data)) {
             $object->setName($data['name']);
         }
-        if (\array_key_exists('relation_number', $data)) {
+        if (array_key_exists('relation_number', $data)) {
             $object->setRelationNumber($data['relation_number']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('relationType') && null !== $object->getRelationType()) {
@@ -80,6 +85,6 @@ class GetOrganizationDebtorSimpleNormalizer implements DenormalizerInterface, No
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple::class => false];
+        return [GetOrganizationDebtorSimple::class => false];
     }
 }

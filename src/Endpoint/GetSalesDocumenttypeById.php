@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultDocumentType;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesDocumenttypeById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetSalesDocumenttypeById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/sales/documenttype/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetSalesDocumenttypeById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultDocumentType
+     * @return null|RestResultDocumentType
+     *@throws GetSalesDocumenttypeByIdNotFoundException
+     * @throws GetSalesDocumenttypeByIdUnprocessableEntityException
+     * @throws GetSalesDocumenttypeByIdInternalServerErrorException
+     * @throws GetSalesDocumenttypeByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocumentType::class, 'json');
+            return $serializer->deserialize($body, RestResultDocumentType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdUnauthorizedException($response);
+            throw new GetSalesDocumenttypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdNotFoundException($response);
+            throw new GetSalesDocumenttypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdUnprocessableEntityException($response);
+            throw new GetSalesDocumenttypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdInternalServerErrorException($response);
+            throw new GetSalesDocumenttypeByIdInternalServerErrorException($response);
         }
     }
 

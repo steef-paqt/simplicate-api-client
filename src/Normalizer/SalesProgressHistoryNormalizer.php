@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\SalesProgress;
+use Paqtcom\Simplicate\Model\SalesProgressHistory;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class SalesProgressHistoryNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class SalesProgressHistoryNormalizer implements DenormalizerInterface, Normalize
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\SalesProgressHistory::class;
+        return $type === SalesProgressHistory::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\SalesProgressHistory::class;
+        return is_object($data) && $data::class === SalesProgressHistory::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,39 +44,39 @@ class SalesProgressHistoryNormalizer implements DenormalizerInterface, Normalize
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\SalesProgressHistory();
-        if (null === $data || false === \is_array($data)) {
+        $object = new SalesProgressHistory();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('sales', $data)) {
+        if (array_key_exists('sales', $data)) {
             $object->setSales($data['sales']);
         }
-        if (\array_key_exists('sales_id', $data)) {
+        if (array_key_exists('sales_id', $data)) {
             $object->setSalesId($data['sales_id']);
         }
-        if (\array_key_exists('from_sales_progress', $data)) {
-            $object->setFromSalesProgress($this->denormalizer->denormalize($data['from_sales_progress'], \Paqtcom\Simplicate\Model\SalesProgress::class, 'json', $context));
+        if (array_key_exists('from_sales_progress', $data)) {
+            $object->setFromSalesProgress($this->denormalizer->denormalize($data['from_sales_progress'], SalesProgress::class, 'json', $context));
         }
-        if (\array_key_exists('from_sales_progress_id', $data)) {
+        if (array_key_exists('from_sales_progress_id', $data)) {
             $object->setFromSalesProgressId($data['from_sales_progress_id']);
         }
-        if (\array_key_exists('to_sales_progress', $data)) {
-            $object->setToSalesProgress($this->denormalizer->denormalize($data['to_sales_progress'], \Paqtcom\Simplicate\Model\SalesProgress::class, 'json', $context));
+        if (array_key_exists('to_sales_progress', $data)) {
+            $object->setToSalesProgress($this->denormalizer->denormalize($data['to_sales_progress'], SalesProgress::class, 'json', $context));
         }
-        if (\array_key_exists('to_sales_progress_id', $data)) {
+        if (array_key_exists('to_sales_progress_id', $data)) {
             $object->setToSalesProgressId($data['to_sales_progress_id']);
         }
-        if (\array_key_exists('date', $data)) {
+        if (array_key_exists('date', $data)) {
             $object->setDate($data['date']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -104,6 +109,6 @@ class SalesProgressHistoryNormalizer implements DenormalizerInterface, Normalize
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\SalesProgressHistory::class => false];
+        return [SalesProgressHistory::class => false];
     }
 }

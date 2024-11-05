@@ -4,11 +4,20 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentBadRequestException;
+use Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultDateTimeRange;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHoursTimesheetrowMostrecent extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +41,7 @@ class GetHoursTimesheetrowMostrecent extends BaseEndpoint
         return '/hours/timesheetrow/mostrecent';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +51,7 @@ class GetHoursTimesheetrowMostrecent extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['q[before_date]', 'q[employee_id]', 'q[type]']);
@@ -57,32 +66,30 @@ class GetHoursTimesheetrowMostrecent extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultDateTimeRange
+     * @return null|RestResultDateTimeRange
+     *@throws GetHoursTimesheetrowMostrecentUnauthorizedException
+     * @throws GetHoursTimesheetrowMostrecentNotFoundException
+     * @throws GetHoursTimesheetrowMostrecentInternalServerErrorException
+     * @throws GetHoursTimesheetrowMostrecentBadRequestException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDateTimeRange::class, 'json');
+            return $serializer->deserialize($body, RestResultDateTimeRange::class, 'json');
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentBadRequestException($response);
+            throw new GetHoursTimesheetrowMostrecentBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentUnauthorizedException($response);
+            throw new GetHoursTimesheetrowMostrecentUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentNotFoundException($response);
+            throw new GetHoursTimesheetrowMostrecentNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentInternalServerErrorException($response);
+            throw new GetHoursTimesheetrowMostrecentInternalServerErrorException($response);
         }
     }
 

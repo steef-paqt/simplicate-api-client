@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeNotFoundException;
+use Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultPurchaseTypes;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetProjectsPurchasetype extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetProjectsPurchasetype extends BaseEndpoint
         return '/projects/purchasetype';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetProjectsPurchasetype extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetProjectsPurchasetype extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultPurchaseTypes
+     * @return null|RestResultPurchaseTypes
+     *@throws GetProjectsPurchasetypeNotFoundException
+     * @throws GetProjectsPurchasetypeInternalServerErrorException
+     * @throws GetProjectsPurchasetypeUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultPurchaseTypes::class, 'json');
+            return $serializer->deserialize($body, RestResultPurchaseTypes::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeUnauthorizedException($response);
+            throw new GetProjectsPurchasetypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeNotFoundException($response);
+            throw new GetProjectsPurchasetypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeInternalServerErrorException($response);
+            throw new GetProjectsPurchasetypeInternalServerErrorException($response);
         }
     }
 

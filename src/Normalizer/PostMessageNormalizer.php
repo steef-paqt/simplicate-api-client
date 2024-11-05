@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\ContentField;
+use Paqtcom\Simplicate\Model\PostMessage;
+use Paqtcom\Simplicate\Model\PostMessageLinkedTo;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +17,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class PostMessageNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +29,12 @@ class PostMessageNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PostMessage::class;
+        return $type === PostMessage::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostMessage::class;
+        return is_object($data) && $data::class === PostMessage::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,40 +45,40 @@ class PostMessageNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PostMessage();
-        if (null === $data || false === \is_array($data)) {
+        $object = new PostMessage();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('messagetype_id', $data)) {
+        if (array_key_exists('messagetype_id', $data)) {
             $object->setMessagetypeId($data['messagetype_id']);
         }
-        if (\array_key_exists('linked_to', $data)) {
-            $object->setLinkedTo($this->denormalizer->denormalize($data['linked_to'], \Paqtcom\Simplicate\Model\PostMessageLinkedTo::class, 'json', $context));
+        if (array_key_exists('linked_to', $data)) {
+            $object->setLinkedTo($this->denormalizer->denormalize($data['linked_to'], PostMessageLinkedTo::class, 'json', $context));
         }
-        if (\array_key_exists('created_by_id', $data)) {
+        if (array_key_exists('created_by_id', $data)) {
             $object->setCreatedById($data['created_by_id']);
         }
-        if (\array_key_exists('title', $data)) {
+        if (array_key_exists('title', $data)) {
             $object->setTitle($data['title']);
         }
-        if (\array_key_exists('content_fields', $data)) {
+        if (array_key_exists('content_fields', $data)) {
             $values = [];
             foreach ($data['content_fields'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\ContentField::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, ContentField::class, 'json', $context);
             }
             $object->setContentFields($values);
         }
-        if (\array_key_exists('content', $data)) {
+        if (array_key_exists('content', $data)) {
             $object->setContent($data['content']);
         }
-        if (\array_key_exists('display_date', $data)) {
+        if (array_key_exists('display_date', $data)) {
             $object->setDisplayDate($data['display_date']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('messagetypeId') && null !== $object->getMessagetypeId()) {
@@ -106,6 +112,6 @@ class PostMessageNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PostMessage::class => false];
+        return [PostMessage::class => false];
     }
 }

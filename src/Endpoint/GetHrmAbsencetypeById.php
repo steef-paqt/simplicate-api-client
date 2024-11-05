@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultAbsenceType;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHrmAbsencetypeById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetHrmAbsencetypeById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hrm/absencetype/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetHrmAbsencetypeById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultAbsenceType
+     * @return null|RestResultAbsenceType
+     *@throws GetHrmAbsencetypeByIdNotFoundException
+     * @throws GetHrmAbsencetypeByIdUnprocessableEntityException
+     * @throws GetHrmAbsencetypeByIdInternalServerErrorException
+     * @throws GetHrmAbsencetypeByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultAbsenceType::class, 'json');
+            return $serializer->deserialize($body, RestResultAbsenceType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdUnauthorizedException($response);
+            throw new GetHrmAbsencetypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdNotFoundException($response);
+            throw new GetHrmAbsencetypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdUnprocessableEntityException($response);
+            throw new GetHrmAbsencetypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdInternalServerErrorException($response);
+            throw new GetHrmAbsencetypeByIdInternalServerErrorException($response);
         }
     }
 

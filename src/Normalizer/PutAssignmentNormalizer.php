@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PostEmployeeFk;
+use Paqtcom\Simplicate\Model\PutAssignment;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class PutAssignmentNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class PutAssignmentNormalizer implements DenormalizerInterface, NormalizerInterf
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PutAssignment::class;
+        return $type === PutAssignment::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PutAssignment::class;
+        return is_object($data) && $data::class === PutAssignment::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,43 +44,43 @@ class PutAssignmentNormalizer implements DenormalizerInterface, NormalizerInterf
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PutAssignment();
-        if (null === $data || false === \is_array($data)) {
+        $object = new PutAssignment();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('employees', $data)) {
+        if (array_key_exists('employees', $data)) {
             $values = [];
             foreach ($data['employees'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\PostEmployeeFk::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, PostEmployeeFk::class, 'json', $context);
             }
             $object->setEmployees($values);
         }
-        if (\array_key_exists('status_id', $data)) {
+        if (array_key_exists('status_id', $data)) {
             $object->setStatusId($data['status_id']);
         }
-        if (\array_key_exists('name', $data)) {
+        if (array_key_exists('name', $data)) {
             $object->setName($data['name']);
         }
-        if (\array_key_exists('use_spread', $data)) {
+        if (array_key_exists('use_spread', $data)) {
             $object->setUseSpread($data['use_spread']);
         }
-        if (\array_key_exists('hours_type', $data)) {
+        if (array_key_exists('hours_type', $data)) {
             $object->setHoursType($data['hours_type']);
         }
-        if (\array_key_exists('description', $data)) {
+        if (array_key_exists('description', $data)) {
             $object->setDescription($data['description']);
         }
-        if (\array_key_exists('created_at', $data)) {
+        if (array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
         }
-        if (\array_key_exists('updated_at', $data)) {
+        if (array_key_exists('updated_at', $data)) {
             $object->setUpdatedAt($data['updated_at']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('employees') && null !== $object->getEmployees()) {
@@ -112,6 +117,6 @@ class PutAssignmentNormalizer implements DenormalizerInterface, NormalizerInterf
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PutAssignment::class => false];
+        return [PutAssignment::class => false];
     }
 }

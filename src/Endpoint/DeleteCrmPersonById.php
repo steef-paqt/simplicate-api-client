@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteCrmPersonById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteCrmPersonById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/crm/person/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteCrmPersonById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdInternalServerErrorException
+     * @throws DeleteCrmPersonByIdUnauthorizedException
+     * @throws DeleteCrmPersonByIdNotFoundException
+     * @throws DeleteCrmPersonByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteCrmPersonById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdUnauthorizedException($response);
+            throw new DeleteCrmPersonByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdNotFoundException($response);
+            throw new DeleteCrmPersonByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdInternalServerErrorException($response);
+            throw new DeleteCrmPersonByIdInternalServerErrorException($response);
         }
     }
 

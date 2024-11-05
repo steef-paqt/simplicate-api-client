@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCrmIndustryInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCrmIndustryNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCrmIndustryUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultIndustries;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCrmIndustry extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetCrmIndustry extends BaseEndpoint
         return '/crm/industry';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetCrmIndustry extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetCrmIndustry extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultIndustries
+     * @return null|RestResultIndustries
+     *@throws GetCrmIndustryNotFoundException
+     * @throws GetCrmIndustryInternalServerErrorException
+     * @throws GetCrmIndustryUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultIndustries::class, 'json');
+            return $serializer->deserialize($body, RestResultIndustries::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmIndustryUnauthorizedException($response);
+            throw new GetCrmIndustryUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmIndustryNotFoundException($response);
+            throw new GetCrmIndustryNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmIndustryInternalServerErrorException($response);
+            throw new GetCrmIndustryInternalServerErrorException($response);
         }
     }
 

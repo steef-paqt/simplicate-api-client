@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetEmployeeSimple;
+use Paqtcom\Simplicate\Model\GetReviewByWeekDetails;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class GetReviewByWeekDetailsNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +29,12 @@ class GetReviewByWeekDetailsNormalizer implements DenormalizerInterface, Normali
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetReviewByWeekDetails::class;
+        return $type === GetReviewByWeekDetails::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetReviewByWeekDetails::class;
+        return is_object($data) && $data::class === GetReviewByWeekDetails::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,105 +45,105 @@ class GetReviewByWeekDetailsNormalizer implements DenormalizerInterface, Normali
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetReviewByWeekDetails();
-        if (\array_key_exists('raster_hours', $data) && \is_int($data['raster_hours'])) {
+        $object = new GetReviewByWeekDetails();
+        if (array_key_exists('raster_hours', $data) && is_int($data['raster_hours'])) {
             $data['raster_hours'] = (float) $data['raster_hours'];
         }
-        if (\array_key_exists('written_hours', $data) && \is_int($data['written_hours'])) {
+        if (array_key_exists('written_hours', $data) && is_int($data['written_hours'])) {
             $data['written_hours'] = (float) $data['written_hours'];
         }
-        if (\array_key_exists('overtime', $data) && \is_int($data['overtime'])) {
+        if (array_key_exists('overtime', $data) && is_int($data['overtime'])) {
             $data['overtime'] = (float) $data['overtime'];
         }
-        if (\array_key_exists('leave', $data) && \is_int($data['leave'])) {
+        if (array_key_exists('leave', $data) && is_int($data['leave'])) {
             $data['leave'] = (float) $data['leave'];
         }
-        if (\array_key_exists('absence', $data) && \is_int($data['absence'])) {
+        if (array_key_exists('absence', $data) && is_int($data['absence'])) {
             $data['absence'] = (float) $data['absence'];
         }
-        if (\array_key_exists('mileage', $data) && \is_int($data['mileage'])) {
+        if (array_key_exists('mileage', $data) && is_int($data['mileage'])) {
             $data['mileage'] = (float) $data['mileage'];
         }
-        if (\array_key_exists('costs', $data) && \is_int($data['costs'])) {
+        if (array_key_exists('costs', $data) && is_int($data['costs'])) {
             $data['costs'] = (float) $data['costs'];
         }
-        if (\array_key_exists('declarability', $data) && \is_int($data['declarability'])) {
+        if (array_key_exists('declarability', $data) && is_int($data['declarability'])) {
             $data['declarability'] = (float) $data['declarability'];
         }
-        if (\array_key_exists('productivity', $data) && \is_int($data['productivity'])) {
+        if (array_key_exists('productivity', $data) && is_int($data['productivity'])) {
             $data['productivity'] = (float) $data['productivity'];
         }
-        if (\array_key_exists('productivity_target', $data) && \is_int($data['productivity_target'])) {
+        if (array_key_exists('productivity_target', $data) && is_int($data['productivity_target'])) {
             $data['productivity_target'] = (float) $data['productivity_target'];
         }
-        if (\array_key_exists('productivity_value', $data) && \is_int($data['productivity_value'])) {
+        if (array_key_exists('productivity_value', $data) && is_int($data['productivity_value'])) {
             $data['productivity_value'] = (float) $data['productivity_value'];
         }
-        if (\array_key_exists('productivity_value_target', $data) && \is_int($data['productivity_value_target'])) {
+        if (array_key_exists('productivity_value_target', $data) && is_int($data['productivity_value_target'])) {
             $data['productivity_value_target'] = (float) $data['productivity_value_target'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('employee', $data)) {
-            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+        if (array_key_exists('employee', $data)) {
+            $object->setEmployee($this->denormalizer->denormalize($data['employee'], GetEmployeeSimple::class, 'json', $context));
         }
-        if (\array_key_exists('start_date', $data)) {
+        if (array_key_exists('start_date', $data)) {
             $object->setStartDate($data['start_date']);
         }
-        if (\array_key_exists('end_date', $data)) {
+        if (array_key_exists('end_date', $data)) {
             $object->setEndDate($data['end_date']);
         }
-        if (\array_key_exists('status_id', $data)) {
+        if (array_key_exists('status_id', $data)) {
             $object->setStatusId($data['status_id']);
         }
-        if (\array_key_exists('status_category', $data)) {
+        if (array_key_exists('status_category', $data)) {
             $object->setStatusCategory($data['status_category']);
         }
-        if (\array_key_exists('status_label', $data)) {
+        if (array_key_exists('status_label', $data)) {
             $object->setStatusLabel($data['status_label']);
         }
-        if (\array_key_exists('raster_hours', $data)) {
+        if (array_key_exists('raster_hours', $data)) {
             $object->setRasterHours($data['raster_hours']);
         }
-        if (\array_key_exists('written_hours', $data)) {
+        if (array_key_exists('written_hours', $data)) {
             $object->setWrittenHours($data['written_hours']);
         }
-        if (\array_key_exists('overtime', $data)) {
+        if (array_key_exists('overtime', $data)) {
             $object->setOvertime($data['overtime']);
         }
-        if (\array_key_exists('leave', $data)) {
+        if (array_key_exists('leave', $data)) {
             $object->setLeave($data['leave']);
         }
-        if (\array_key_exists('absence', $data)) {
+        if (array_key_exists('absence', $data)) {
             $object->setAbsence($data['absence']);
         }
-        if (\array_key_exists('mileage', $data)) {
+        if (array_key_exists('mileage', $data)) {
             $object->setMileage($data['mileage']);
         }
-        if (\array_key_exists('costs', $data)) {
+        if (array_key_exists('costs', $data)) {
             $object->setCosts($data['costs']);
         }
-        if (\array_key_exists('declarability', $data)) {
+        if (array_key_exists('declarability', $data)) {
             $object->setDeclarability($data['declarability']);
         }
-        if (\array_key_exists('productivity', $data)) {
+        if (array_key_exists('productivity', $data)) {
             $object->setProductivity($data['productivity']);
         }
-        if (\array_key_exists('productivity_target', $data)) {
+        if (array_key_exists('productivity_target', $data)) {
             $object->setProductivityTarget($data['productivity_target']);
         }
-        if (\array_key_exists('productivity_value', $data)) {
+        if (array_key_exists('productivity_value', $data)) {
             $object->setProductivityValue($data['productivity_value']);
         }
-        if (\array_key_exists('productivity_value_target', $data)) {
+        if (array_key_exists('productivity_value_target', $data)) {
             $object->setProductivityValueTarget($data['productivity_value_target']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('employee') && null !== $object->getEmployee()) {
@@ -200,6 +206,6 @@ class GetReviewByWeekDetailsNormalizer implements DenormalizerInterface, Normali
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetReviewByWeekDetails::class => false];
+        return [GetReviewByWeekDetails::class => false];
     }
 }

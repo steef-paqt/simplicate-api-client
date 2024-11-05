@@ -4,11 +4,18 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetProjectsProjectfilterInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetProjectsProjectfilterNotFoundException;
+use Paqtcom\Simplicate\Exception\GetProjectsProjectfilterUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetProjectsProjectfilter extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +39,7 @@ class GetProjectsProjectfilter extends BaseEndpoint
         return '/projects/projectfilters';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +49,7 @@ class GetProjectsProjectfilter extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -58,11 +65,11 @@ class GetProjectsProjectfilter extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterInternalServerErrorException
+     * @throws GetProjectsProjectfilterUnauthorizedException
+     * @throws GetProjectsProjectfilterNotFoundException
+     * @throws GetProjectsProjectfilterInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -70,13 +77,13 @@ class GetProjectsProjectfilter extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterUnauthorizedException($response);
+            throw new GetProjectsProjectfilterUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterNotFoundException($response);
+            throw new GetProjectsProjectfilterNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterInternalServerErrorException($response);
+            throw new GetProjectsProjectfilterInternalServerErrorException($response);
         }
     }
 

@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetInvoicesVatclassInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetInvoicesVatclassNotFoundException;
+use Paqtcom\Simplicate\Exception\GetInvoicesVatclassUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultVatClasses;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetInvoicesVatclass extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetInvoicesVatclass extends BaseEndpoint
         return '/invoices/vatclass';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetInvoicesVatclass extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetInvoicesVatclass extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesVatclassUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesVatclassNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesVatclassInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultVatClasses
+     * @return null|RestResultVatClasses
+     *@throws GetInvoicesVatclassNotFoundException
+     * @throws GetInvoicesVatclassInternalServerErrorException
+     * @throws GetInvoicesVatclassUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultVatClasses::class, 'json');
+            return $serializer->deserialize($body, RestResultVatClasses::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesVatclassUnauthorizedException($response);
+            throw new GetInvoicesVatclassUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesVatclassNotFoundException($response);
+            throw new GetInvoicesVatclassNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesVatclassInternalServerErrorException($response);
+            throw new GetInvoicesVatclassInternalServerErrorException($response);
         }
     }
 

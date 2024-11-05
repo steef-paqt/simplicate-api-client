@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultCustomFieldGroup;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHrmEmployeecustomfieldgroupById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetHrmEmployeecustomfieldgroupById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hrm/employeecustomfieldgroups/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetHrmEmployeecustomfieldgroupById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup
+     * @return null|RestResultCustomFieldGroup
+     *@throws GetHrmEmployeecustomfieldgroupByIdNotFoundException
+     * @throws GetHrmEmployeecustomfieldgroupByIdUnprocessableEntityException
+     * @throws GetHrmEmployeecustomfieldgroupByIdInternalServerErrorException
+     * @throws GetHrmEmployeecustomfieldgroupByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class, 'json');
+            return $serializer->deserialize($body, RestResultCustomFieldGroup::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdUnauthorizedException($response);
+            throw new GetHrmEmployeecustomfieldgroupByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdNotFoundException($response);
+            throw new GetHrmEmployeecustomfieldgroupByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdUnprocessableEntityException($response);
+            throw new GetHrmEmployeecustomfieldgroupByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdInternalServerErrorException($response);
+            throw new GetHrmEmployeecustomfieldgroupByIdInternalServerErrorException($response);
         }
     }
 

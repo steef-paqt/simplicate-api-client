@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostHoursLeaveBadRequestException;
+use Paqtcom\Simplicate\Exception\PostHoursLeaveInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostHoursLeaveUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostLeave;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostHoursLeave extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostLeave $body leave object containing data
+     * @param PostLeave $body leave object containing data
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostLeave $body)
+    public function __construct(PostLeave $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostHoursLeave extends BaseEndpoint
         return '/hours/leave';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostHoursLeave extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursLeaveBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursLeaveUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursLeaveInternalServerErrorException
+     * @throws PostHoursLeaveBadRequestException
+     * @throws PostHoursLeaveUnauthorizedException
+     * @throws PostHoursLeaveInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -56,13 +63,13 @@ class PostHoursLeave extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursLeaveBadRequestException($response);
+            throw new PostHoursLeaveBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursLeaveUnauthorizedException($response);
+            throw new PostHoursLeaveUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursLeaveInternalServerErrorException($response);
+            throw new PostHoursLeaveInternalServerErrorException($response);
         }
     }
 

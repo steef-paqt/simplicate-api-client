@@ -4,13 +4,20 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostTimelineAttachmentInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostTimelineAttachmentNotFoundException;
+use Paqtcom\Simplicate\Exception\PostTimelineAttachmentUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostAttachment;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostTimelineAttachment extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
-    public function __construct(\Paqtcom\Simplicate\Model\PostAttachment $body)
+    public function __construct(PostAttachment $body)
     {
         $this->body = $body;
     }
@@ -25,7 +32,7 @@ class PostTimelineAttachment extends BaseEndpoint
         return '/timeline/attachment';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -38,11 +45,11 @@ class PostTimelineAttachment extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostTimelineAttachmentUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostTimelineAttachmentNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostTimelineAttachmentInternalServerErrorException
+     * @throws PostTimelineAttachmentUnauthorizedException
+     * @throws PostTimelineAttachmentNotFoundException
+     * @throws PostTimelineAttachmentInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -50,13 +57,13 @@ class PostTimelineAttachment extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostTimelineAttachmentUnauthorizedException($response);
+            throw new PostTimelineAttachmentUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostTimelineAttachmentNotFoundException($response);
+            throw new PostTimelineAttachmentNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostTimelineAttachmentInternalServerErrorException($response);
+            throw new PostTimelineAttachmentInternalServerErrorException($response);
         }
     }
 

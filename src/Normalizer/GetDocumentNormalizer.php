@@ -4,7 +4,12 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\DocumentTypeSimple;
+use Paqtcom\Simplicate\Model\GetDocument;
+use Paqtcom\Simplicate\Model\GetEmployeeSimple;
+use Paqtcom\Simplicate\Model\LinkedToEntity;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +18,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class GetDocumentNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +30,12 @@ class GetDocumentNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetDocument::class;
+        return $type === GetDocument::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetDocument::class;
+        return is_object($data) && $data::class === GetDocument::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,46 +46,46 @@ class GetDocumentNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetDocument();
-        if (null === $data || false === \is_array($data)) {
+        $object = new GetDocument();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('download_url', $data)) {
+        if (array_key_exists('download_url', $data)) {
             $object->setDownloadUrl($data['download_url']);
         }
-        if (\array_key_exists('document_type', $data)) {
-            $object->setDocumentType($this->denormalizer->denormalize($data['document_type'], \Paqtcom\Simplicate\Model\DocumentTypeSimple::class, 'json', $context));
+        if (array_key_exists('document_type', $data)) {
+            $object->setDocumentType($this->denormalizer->denormalize($data['document_type'], DocumentTypeSimple::class, 'json', $context));
         }
-        if (\array_key_exists('linked_to', $data)) {
+        if (array_key_exists('linked_to', $data)) {
             $values = [];
             foreach ($data['linked_to'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\LinkedToEntity::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, LinkedToEntity::class, 'json', $context);
             }
             $object->setLinkedTo($values);
         }
-        if (\array_key_exists('created_by', $data)) {
-            $object->setCreatedBy($this->denormalizer->denormalize($data['created_by'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+        if (array_key_exists('created_by', $data)) {
+            $object->setCreatedBy($this->denormalizer->denormalize($data['created_by'], GetEmployeeSimple::class, 'json', $context));
         }
-        if (\array_key_exists('created_at', $data)) {
+        if (array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
         }
-        if (\array_key_exists('updated_at', $data)) {
+        if (array_key_exists('updated_at', $data)) {
             $object->setUpdatedAt($data['updated_at']);
         }
-        if (\array_key_exists('title', $data)) {
+        if (array_key_exists('title', $data)) {
             $object->setTitle($data['title']);
         }
-        if (\array_key_exists('description', $data)) {
+        if (array_key_exists('description', $data)) {
             $object->setDescription($data['description']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -118,6 +125,6 @@ class GetDocumentNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetDocument::class => false];
+        return [GetDocument::class => false];
     }
 }

@@ -4,16 +4,24 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostUploadChunkedBadRequestException;
+use Paqtcom\Simplicate\Exception\PostUploadChunkedInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostUploadChunkedNotFoundException;
+use Paqtcom\Simplicate\Exception\PostUploadChunkedUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostChunked;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostUploadChunked extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostChunked $body Data required to initialize an upload
+     * @param PostChunked $body Data required to initialize an upload
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostChunked $body)
+    public function __construct(PostChunked $body)
     {
         $this->body = $body;
     }
@@ -28,7 +36,7 @@ class PostUploadChunked extends BaseEndpoint
         return '/upload/chunked';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,12 +49,12 @@ class PostUploadChunked extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostUploadChunkedBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostUploadChunkedUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostUploadChunkedNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostUploadChunkedInternalServerErrorException
+     * @throws PostUploadChunkedBadRequestException
+     * @throws PostUploadChunkedUnauthorizedException
+     * @throws PostUploadChunkedNotFoundException
+     * @throws PostUploadChunkedInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -54,16 +62,16 @@ class PostUploadChunked extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostUploadChunkedBadRequestException($response);
+            throw new PostUploadChunkedBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostUploadChunkedUnauthorizedException($response);
+            throw new PostUploadChunkedUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostUploadChunkedNotFoundException($response);
+            throw new PostUploadChunkedNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostUploadChunkedInternalServerErrorException($response);
+            throw new PostUploadChunkedInternalServerErrorException($response);
         }
     }
 

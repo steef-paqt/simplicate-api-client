@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PutDocument;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class PutDocumentNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class PutDocumentNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PutDocument::class;
+        return $type === PutDocument::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PutDocument::class;
+        return is_object($data) && $data::class === PutDocument::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,27 +43,27 @@ class PutDocumentNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PutDocument();
-        if (null === $data || false === \is_array($data)) {
+        $object = new PutDocument();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('document_type_id', $data)) {
+        if (array_key_exists('document_type_id', $data)) {
             $object->setDocumentTypeId($data['document_type_id']);
         }
-        if (\array_key_exists('upload_queue_id', $data)) {
+        if (array_key_exists('upload_queue_id', $data)) {
             $object->setUploadQueueId($data['upload_queue_id']);
         }
-        if (\array_key_exists('title', $data)) {
+        if (array_key_exists('title', $data)) {
             $object->setTitle($data['title']);
         }
-        if (\array_key_exists('description', $data)) {
+        if (array_key_exists('description', $data)) {
             $object->setDescription($data['description']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('documentTypeId') && null !== $object->getDocumentTypeId()) {
@@ -80,6 +84,6 @@ class PutDocumentNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PutDocument::class => false];
+        return [PutDocument::class => false];
     }
 }

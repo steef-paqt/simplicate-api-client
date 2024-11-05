@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostProjectsServiceInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostProjectsServiceNotFoundException;
+use Paqtcom\Simplicate\Exception\PostProjectsServiceUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostProjectService;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostProjectsService extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostProjectService $body template object that needs to be added
+     * @param PostProjectService $body template object that needs to be added
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostProjectService $body)
+    public function __construct(PostProjectService $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostProjectsService extends BaseEndpoint
         return '/projects/service';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostProjectsService extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceInternalServerErrorException
+     * @throws PostProjectsServiceUnauthorizedException
+     * @throws PostProjectsServiceNotFoundException
+     * @throws PostProjectsServiceInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostProjectsService extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostProjectsServiceUnauthorizedException($response);
+            throw new PostProjectsServiceUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostProjectsServiceNotFoundException($response);
+            throw new PostProjectsServiceNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostProjectsServiceInternalServerErrorException($response);
+            throw new PostProjectsServiceInternalServerErrorException($response);
         }
     }
 

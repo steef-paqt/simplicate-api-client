@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetLeaveType;
+use Paqtcom\Simplicate\Model\VatClass;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class GetLeaveTypeNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +29,12 @@ class GetLeaveTypeNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetLeaveType::class;
+        return $type === GetLeaveType::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetLeaveType::class;
+        return is_object($data) && $data::class === GetLeaveType::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,45 +45,45 @@ class GetLeaveTypeNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetLeaveType();
-        if (\array_key_exists('billable', $data) && \is_int($data['billable'])) {
+        $object = new GetLeaveType();
+        if (array_key_exists('billable', $data) && is_int($data['billable'])) {
             $data['billable'] = (float) $data['billable'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('has_workflow', $data)) {
+        if (array_key_exists('has_workflow', $data)) {
             $object->setHasWorkflow($data['has_workflow']);
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('type', $data)) {
+        if (array_key_exists('type', $data)) {
             $object->setType($data['type']);
         }
-        if (\array_key_exists('billable', $data)) {
+        if (array_key_exists('billable', $data)) {
             $object->setBillable($data['billable']);
         }
-        if (\array_key_exists('vatclass', $data)) {
-            $object->setVatclass($this->denormalizer->denormalize($data['vatclass'], \Paqtcom\Simplicate\Model\VatClass::class, 'json', $context));
+        if (array_key_exists('vatclass', $data)) {
+            $object->setVatclass($this->denormalizer->denormalize($data['vatclass'], VatClass::class, 'json', $context));
         }
-        if (\array_key_exists('label', $data)) {
+        if (array_key_exists('label', $data)) {
             $object->setLabel($data['label']);
         }
-        if (\array_key_exists('tariff', $data)) {
+        if (array_key_exists('tariff', $data)) {
             $object->setTariff($data['tariff']);
         }
-        if (\array_key_exists('blocked', $data)) {
+        if (array_key_exists('blocked', $data)) {
             $object->setBlocked($data['blocked']);
         }
-        if (\array_key_exists('color', $data)) {
+        if (array_key_exists('color', $data)) {
             $object->setColor($data['color']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('hasWorkflow') && null !== $object->getHasWorkflow()) {
@@ -113,6 +119,6 @@ class GetLeaveTypeNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetLeaveType::class => false];
+        return [GetLeaveType::class => false];
     }
 }

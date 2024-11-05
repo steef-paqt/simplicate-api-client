@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHrmContractInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHrmContractNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHrmContractUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultContracts;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHrmContract extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetHrmContract extends BaseEndpoint
         return '/hrm/contract';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetHrmContract extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetHrmContract extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmContractUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmContractNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmContractInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultContracts
+     * @return null|RestResultContracts
+     *@throws GetHrmContractNotFoundException
+     * @throws GetHrmContractInternalServerErrorException
+     * @throws GetHrmContractUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultContracts::class, 'json');
+            return $serializer->deserialize($body, RestResultContracts::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmContractUnauthorizedException($response);
+            throw new GetHrmContractUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmContractNotFoundException($response);
+            throw new GetHrmContractNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmContractInternalServerErrorException($response);
+            throw new GetHrmContractInternalServerErrorException($response);
         }
     }
 

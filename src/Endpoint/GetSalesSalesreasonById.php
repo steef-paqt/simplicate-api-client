@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdBadRequestException;
+use Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultSalesReason;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesSalesreasonById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetSalesSalesreasonById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/sales/salesreason/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetSalesSalesreasonById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultSalesReason
+     * @return null|RestResultSalesReason
+     *@throws GetSalesSalesreasonByIdUnauthorizedException
+     * @throws GetSalesSalesreasonByIdUnprocessableEntityException
+     * @throws GetSalesSalesreasonByIdInternalServerErrorException
+     * @throws GetSalesSalesreasonByIdBadRequestException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultSalesReason::class, 'json');
+            return $serializer->deserialize($body, RestResultSalesReason::class, 'json');
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdBadRequestException($response);
+            throw new GetSalesSalesreasonByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdUnauthorizedException($response);
+            throw new GetSalesSalesreasonByIdUnauthorizedException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdUnprocessableEntityException($response);
+            throw new GetSalesSalesreasonByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdInternalServerErrorException($response);
+            throw new GetSalesSalesreasonByIdInternalServerErrorException($response);
         }
     }
 

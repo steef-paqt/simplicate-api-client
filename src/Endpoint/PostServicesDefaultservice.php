@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostServicesDefaultserviceInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostServicesDefaultserviceNotFoundException;
+use Paqtcom\Simplicate\Exception\PostServicesDefaultserviceUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostDefaultService;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostServicesDefaultservice extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostDefaultService $body Default service object that needs to be added
+     * @param PostDefaultService $body Default service object that needs to be added
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostDefaultService $body)
+    public function __construct(PostDefaultService $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostServicesDefaultservice extends BaseEndpoint
         return '/services/defaultservice';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostServicesDefaultservice extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceInternalServerErrorException
+     * @throws PostServicesDefaultserviceUnauthorizedException
+     * @throws PostServicesDefaultserviceNotFoundException
+     * @throws PostServicesDefaultserviceInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostServicesDefaultservice extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceUnauthorizedException($response);
+            throw new PostServicesDefaultserviceUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceNotFoundException($response);
+            throw new PostServicesDefaultserviceNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceInternalServerErrorException($response);
+            throw new PostServicesDefaultserviceInternalServerErrorException($response);
         }
     }
 

@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutHrmTimetableByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutHrmTimetableByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\PutHrmTimetableByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\PutTimetable;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutHrmTimetableById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PutTimetable $body Timetable object that needs to be updated
+     * @param PutTimetable $body Timetable object that needs to be updated
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PutTimetable $body)
+    public function __construct(PutTimetable $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PutHrmTimetableById extends BaseEndpoint
         return '/hrm/timetable/{id}';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PutHrmTimetableById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdInternalServerErrorException
+     * @throws PutHrmTimetableByIdUnauthorizedException
+     * @throws PutHrmTimetableByIdNotFoundException
+     * @throws PutHrmTimetableByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PutHrmTimetableById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdUnauthorizedException($response);
+            throw new PutHrmTimetableByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdNotFoundException($response);
+            throw new PutHrmTimetableByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdInternalServerErrorException($response);
+            throw new PutHrmTimetableByIdInternalServerErrorException($response);
         }
     }
 

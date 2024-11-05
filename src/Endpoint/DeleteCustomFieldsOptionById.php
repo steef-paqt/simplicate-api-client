@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteCustomFieldsOptionByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteCustomFieldsOptionByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteCustomFieldsOptionByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteCustomFieldsOptionById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteCustomFieldsOptionById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/customfields/option/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteCustomFieldsOptionById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsOptionByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsOptionByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsOptionByIdInternalServerErrorException
+     * @throws DeleteCustomFieldsOptionByIdUnauthorizedException
+     * @throws DeleteCustomFieldsOptionByIdNotFoundException
+     * @throws DeleteCustomFieldsOptionByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteCustomFieldsOptionById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCustomFieldsOptionByIdUnauthorizedException($response);
+            throw new DeleteCustomFieldsOptionByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCustomFieldsOptionByIdNotFoundException($response);
+            throw new DeleteCustomFieldsOptionByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCustomFieldsOptionByIdInternalServerErrorException($response);
+            throw new DeleteCustomFieldsOptionByIdInternalServerErrorException($response);
         }
     }
 

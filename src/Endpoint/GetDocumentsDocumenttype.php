@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeNotFoundException;
+use Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultDocumentTypes;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetDocumentsDocumenttype extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetDocumentsDocumenttype extends BaseEndpoint
         return '/documents/documenttype';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetDocumentsDocumenttype extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetDocumentsDocumenttype extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultDocumentTypes
+     * @return null|RestResultDocumentTypes
+     *@throws GetDocumentsDocumenttypeNotFoundException
+     * @throws GetDocumentsDocumenttypeInternalServerErrorException
+     * @throws GetDocumentsDocumenttypeUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class, 'json');
+            return $serializer->deserialize($body, RestResultDocumentTypes::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeUnauthorizedException($response);
+            throw new GetDocumentsDocumenttypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeNotFoundException($response);
+            throw new GetDocumentsDocumenttypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeInternalServerErrorException($response);
+            throw new GetDocumentsDocumenttypeInternalServerErrorException($response);
         }
     }
 

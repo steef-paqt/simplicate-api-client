@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHrmTeamInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHrmTeamNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHrmTeamUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultTeams;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHrmTeam extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetHrmTeam extends BaseEndpoint
         return '/hrm/team';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetHrmTeam extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetHrmTeam extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultTeams
+     * @return null|RestResultTeams
+     *@throws GetHrmTeamNotFoundException
+     * @throws GetHrmTeamInternalServerErrorException
+     * @throws GetHrmTeamUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultTeams::class, 'json');
+            return $serializer->deserialize($body, RestResultTeams::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmTeamUnauthorizedException($response);
+            throw new GetHrmTeamUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmTeamNotFoundException($response);
+            throw new GetHrmTeamNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmTeamInternalServerErrorException($response);
+            throw new GetHrmTeamInternalServerErrorException($response);
         }
     }
 

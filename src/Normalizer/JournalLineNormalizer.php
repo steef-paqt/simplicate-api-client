@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\JournalLine;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class JournalLineNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class JournalLineNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\JournalLine::class;
+        return $type === JournalLine::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\JournalLine::class;
+        return is_object($data) && $data::class === JournalLine::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,39 +44,39 @@ class JournalLineNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\JournalLine();
-        if (\array_key_exists('vat_percentage', $data) && \is_int($data['vat_percentage'])) {
+        $object = new JournalLine();
+        if (array_key_exists('vat_percentage', $data) && is_int($data['vat_percentage'])) {
             $data['vat_percentage'] = (float) $data['vat_percentage'];
         }
-        if (\array_key_exists('amount', $data) && \is_int($data['amount'])) {
+        if (array_key_exists('amount', $data) && is_int($data['amount'])) {
             $data['amount'] = (float) $data['amount'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('vat_id', $data)) {
+        if (array_key_exists('vat_id', $data)) {
             $object->setVatId($data['vat_id']);
         }
-        if (\array_key_exists('vat_included', $data)) {
+        if (array_key_exists('vat_included', $data)) {
             $object->setVatIncluded($data['vat_included']);
         }
-        if (\array_key_exists('vat_percentage', $data)) {
+        if (array_key_exists('vat_percentage', $data)) {
             $object->setVatPercentage($data['vat_percentage']);
         }
-        if (\array_key_exists('amount', $data)) {
+        if (array_key_exists('amount', $data)) {
             $object->setAmount($data['amount']);
         }
-        if (\array_key_exists('quantity', $data)) {
+        if (array_key_exists('quantity', $data)) {
             $object->setQuantity($data['quantity']);
         }
-        if (\array_key_exists('description', $data)) {
+        if (array_key_exists('description', $data)) {
             $object->setDescription($data['description']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('vatId') && null !== $object->getVatId()) {
@@ -98,6 +103,6 @@ class JournalLineNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\JournalLine::class => false];
+        return [JournalLine::class => false];
     }
 }

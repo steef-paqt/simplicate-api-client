@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesRevenuegroupInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesRevenuegroupNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSalesRevenuegroupUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultRevenueGroups;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesRevenuegroup extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetSalesRevenuegroup extends BaseEndpoint
         return '/sales/revenuegroup';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetSalesRevenuegroup extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetSalesRevenuegroup extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultRevenueGroups
+     * @return null|RestResultRevenueGroups
+     *@throws GetSalesRevenuegroupNotFoundException
+     * @throws GetSalesRevenuegroupInternalServerErrorException
+     * @throws GetSalesRevenuegroupUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultRevenueGroups::class, 'json');
+            return $serializer->deserialize($body, RestResultRevenueGroups::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupUnauthorizedException($response);
+            throw new GetSalesRevenuegroupUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupNotFoundException($response);
+            throw new GetSalesRevenuegroupNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupInternalServerErrorException($response);
+            throw new GetSalesRevenuegroupInternalServerErrorException($response);
         }
     }
 

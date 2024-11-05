@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostSalesSaleInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostSalesSaleNotFoundException;
+use Paqtcom\Simplicate\Exception\PostSalesSaleUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostSales;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostSalesSale extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostSales $body Sales object that needs to be added
+     * @param PostSales $body Sales object that needs to be added
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostSales $body)
+    public function __construct(PostSales $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostSalesSale extends BaseEndpoint
         return '/sales/sales';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostSalesSale extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostSalesSaleUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostSalesSaleNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostSalesSaleInternalServerErrorException
+     * @throws PostSalesSaleUnauthorizedException
+     * @throws PostSalesSaleNotFoundException
+     * @throws PostSalesSaleInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostSalesSale extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostSalesSaleUnauthorizedException($response);
+            throw new PostSalesSaleUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostSalesSaleNotFoundException($response);
+            throw new PostSalesSaleNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostSalesSaleInternalServerErrorException($response);
+            throw new PostSalesSaleInternalServerErrorException($response);
         }
     }
 

@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultCustomFieldGroup;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCrmPersoncustomfieldgroupById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetCrmPersoncustomfieldgroupById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/crm/personcustomfieldgroups/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetCrmPersoncustomfieldgroupById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup
+     * @return null|RestResultCustomFieldGroup
+     *@throws GetCrmPersoncustomfieldgroupByIdNotFoundException
+     * @throws GetCrmPersoncustomfieldgroupByIdUnprocessableEntityException
+     * @throws GetCrmPersoncustomfieldgroupByIdInternalServerErrorException
+     * @throws GetCrmPersoncustomfieldgroupByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class, 'json');
+            return $serializer->deserialize($body, RestResultCustomFieldGroup::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdUnauthorizedException($response);
+            throw new GetCrmPersoncustomfieldgroupByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdNotFoundException($response);
+            throw new GetCrmPersoncustomfieldgroupByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdUnprocessableEntityException($response);
+            throw new GetCrmPersoncustomfieldgroupByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdInternalServerErrorException($response);
+            throw new GetCrmPersoncustomfieldgroupByIdInternalServerErrorException($response);
         }
     }
 

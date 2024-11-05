@@ -4,7 +4,20 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Address;
+use Paqtcom\Simplicate\Model\Correction;
+use Paqtcom\Simplicate\Model\GetApprovalStatus;
+use Paqtcom\Simplicate\Model\GetCustomField;
+use Paqtcom\Simplicate\Model\GetEmployeeSimple;
+use Paqtcom\Simplicate\Model\GetHours;
+use Paqtcom\Simplicate\Model\GetHoursHoursProjectService;
+use Paqtcom\Simplicate\Model\GetMileageSimple;
+use Paqtcom\Simplicate\Model\GetProjectSimple;
+use Paqtcom\Simplicate\Model\IsSatisfied;
+use Paqtcom\Simplicate\Model\LeaveStatus;
+use Paqtcom\Simplicate\Model\Recurrence;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +26,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class GetHoursNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +39,12 @@ class GetHoursNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetHours::class;
+        return $type === GetHours::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetHours::class;
+        return is_object($data) && $data::class === GetHours::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,136 +55,136 @@ class GetHoursNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetHours();
-        if (\array_key_exists('tariff', $data) && \is_int($data['tariff'])) {
+        $object = new GetHours();
+        if (array_key_exists('tariff', $data) && is_int($data['tariff'])) {
             $data['tariff'] = (float) $data['tariff'];
         }
-        if (\array_key_exists('hours', $data) && \is_int($data['hours'])) {
+        if (array_key_exists('hours', $data) && is_int($data['hours'])) {
             $data['hours'] = (float) $data['hours'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('employee', $data)) {
-            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+        if (array_key_exists('employee', $data)) {
+            $object->setEmployee($this->denormalizer->denormalize($data['employee'], GetEmployeeSimple::class, 'json', $context));
         }
-        if (\array_key_exists('project', $data)) {
-            $object->setProject($this->denormalizer->denormalize($data['project'], \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context));
+        if (array_key_exists('project', $data)) {
+            $object->setProject($this->denormalizer->denormalize($data['project'], GetProjectSimple::class, 'json', $context));
         }
-        if (\array_key_exists('projectservice', $data)) {
-            $object->setProjectservice($this->denormalizer->denormalize($data['projectservice'], \Paqtcom\Simplicate\Model\GetHoursHoursProjectService::class, 'json', $context));
+        if (array_key_exists('projectservice', $data)) {
+            $object->setProjectservice($this->denormalizer->denormalize($data['projectservice'], GetHoursHoursProjectService::class, 'json', $context));
         }
-        if (\array_key_exists('type', $data)) {
+        if (array_key_exists('type', $data)) {
             $object->setType($data['type']);
         }
-        if (\array_key_exists('approvalstatus', $data)) {
-            $object->setApprovalstatus($this->denormalizer->denormalize($data['approvalstatus'], \Paqtcom\Simplicate\Model\GetApprovalStatus::class, 'json', $context));
+        if (array_key_exists('approvalstatus', $data)) {
+            $object->setApprovalstatus($this->denormalizer->denormalize($data['approvalstatus'], GetApprovalStatus::class, 'json', $context));
         }
-        if (\array_key_exists('invoice_status', $data)) {
+        if (array_key_exists('invoice_status', $data)) {
             $object->setInvoiceStatus($data['invoice_status']);
         }
-        if (\array_key_exists('invoice_id', $data)) {
+        if (array_key_exists('invoice_id', $data)) {
             $object->setInvoiceId($data['invoice_id']);
         }
-        if (\array_key_exists('invoiceline_id', $data)) {
+        if (array_key_exists('invoiceline_id', $data)) {
             $object->setInvoicelineId($data['invoiceline_id']);
         }
-        if (\array_key_exists('tariff', $data)) {
+        if (array_key_exists('tariff', $data)) {
             $object->setTariff($data['tariff']);
         }
-        if (\array_key_exists('custom_fields', $data)) {
+        if (array_key_exists('custom_fields', $data)) {
             $values = [];
             foreach ($data['custom_fields'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\GetCustomField::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, GetCustomField::class, 'json', $context);
             }
             $object->setCustomFields($values);
         }
-        if (\array_key_exists('created_at', $data)) {
+        if (array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
         }
-        if (\array_key_exists('updated_at', $data)) {
+        if (array_key_exists('updated_at', $data)) {
             $object->setUpdatedAt($data['updated_at']);
         }
-        if (\array_key_exists('locked', $data)) {
+        if (array_key_exists('locked', $data)) {
             $object->setLocked($data['locked']);
         }
-        if (\array_key_exists('is_editable', $data)) {
-            $object->setIsEditable($this->denormalizer->denormalize($data['is_editable'], \Paqtcom\Simplicate\Model\IsSatisfied::class, 'json', $context));
+        if (array_key_exists('is_editable', $data)) {
+            $object->setIsEditable($this->denormalizer->denormalize($data['is_editable'], IsSatisfied::class, 'json', $context));
         }
-        if (\array_key_exists('is_deletable', $data)) {
-            $object->setIsDeletable($this->denormalizer->denormalize($data['is_deletable'], \Paqtcom\Simplicate\Model\IsSatisfied::class, 'json', $context));
+        if (array_key_exists('is_deletable', $data)) {
+            $object->setIsDeletable($this->denormalizer->denormalize($data['is_deletable'], IsSatisfied::class, 'json', $context));
         }
-        if (\array_key_exists('leave_status', $data)) {
-            $object->setLeaveStatus($this->denormalizer->denormalize($data['leave_status'], \Paqtcom\Simplicate\Model\LeaveStatus::class, 'json', $context));
+        if (array_key_exists('leave_status', $data)) {
+            $object->setLeaveStatus($this->denormalizer->denormalize($data['leave_status'], LeaveStatus::class, 'json', $context));
         }
-        if (\array_key_exists('leave_id', $data)) {
+        if (array_key_exists('leave_id', $data)) {
             $object->setLeaveId($data['leave_id']);
         }
-        if (\array_key_exists('absence_id', $data)) {
+        if (array_key_exists('absence_id', $data)) {
             $object->setAbsenceId($data['absence_id']);
         }
-        if (\array_key_exists('status', $data)) {
+        if (array_key_exists('status', $data)) {
             $object->setStatus($data['status']);
         }
-        if (\array_key_exists('corrections', $data)) {
-            $object->setCorrections($this->denormalizer->denormalize($data['corrections'], \Paqtcom\Simplicate\Model\Correction::class, 'json', $context));
+        if (array_key_exists('corrections', $data)) {
+            $object->setCorrections($this->denormalizer->denormalize($data['corrections'], Correction::class, 'json', $context));
         }
-        if (\array_key_exists('mileage', $data)) {
-            $object->setMileage($this->denormalizer->denormalize($data['mileage'], \Paqtcom\Simplicate\Model\GetMileageSimple::class, 'json', $context));
+        if (array_key_exists('mileage', $data)) {
+            $object->setMileage($this->denormalizer->denormalize($data['mileage'], GetMileageSimple::class, 'json', $context));
         }
-        if (\array_key_exists('is_productive', $data)) {
+        if (array_key_exists('is_productive', $data)) {
             $object->setIsProductive($data['is_productive']);
         }
-        if (\array_key_exists('hours', $data)) {
+        if (array_key_exists('hours', $data)) {
             $object->setHours($data['hours']);
         }
-        if (\array_key_exists('duration_in_minutes', $data)) {
+        if (array_key_exists('duration_in_minutes', $data)) {
             $object->setDurationInMinutes($data['duration_in_minutes']);
         }
-        if (\array_key_exists('start_date', $data)) {
+        if (array_key_exists('start_date', $data)) {
             $object->setStartDate($data['start_date']);
         }
-        if (\array_key_exists('end_date', $data)) {
+        if (array_key_exists('end_date', $data)) {
             $object->setEndDate($data['end_date']);
         }
-        if (\array_key_exists('is_time_defined', $data)) {
+        if (array_key_exists('is_time_defined', $data)) {
             $object->setIsTimeDefined($data['is_time_defined']);
         }
-        if (\array_key_exists('is_recurring', $data)) {
+        if (array_key_exists('is_recurring', $data)) {
             $object->setIsRecurring($data['is_recurring']);
         }
-        if (\array_key_exists('recurrence', $data)) {
-            $object->setRecurrence($this->denormalizer->denormalize($data['recurrence'], \Paqtcom\Simplicate\Model\Recurrence::class, 'json', $context));
+        if (array_key_exists('recurrence', $data)) {
+            $object->setRecurrence($this->denormalizer->denormalize($data['recurrence'], Recurrence::class, 'json', $context));
         }
-        if (\array_key_exists('is_external', $data)) {
+        if (array_key_exists('is_external', $data)) {
             $object->setIsExternal($data['is_external']);
         }
-        if (\array_key_exists('billable', $data)) {
+        if (array_key_exists('billable', $data)) {
             $object->setBillable($data['billable']);
         }
-        if (\array_key_exists('note', $data)) {
+        if (array_key_exists('note', $data)) {
             $object->setNote($data['note']);
         }
-        if (\array_key_exists('address', $data)) {
-            $object->setAddress($this->denormalizer->denormalize($data['address'], \Paqtcom\Simplicate\Model\Address::class, 'json', $context));
+        if (array_key_exists('address', $data)) {
+            $object->setAddress($this->denormalizer->denormalize($data['address'], Address::class, 'json', $context));
         }
-        if (\array_key_exists('assignment_id', $data)) {
+        if (array_key_exists('assignment_id', $data)) {
             $object->setAssignmentId($data['assignment_id']);
         }
-        if (\array_key_exists('should_sync_to_cronofy', $data)) {
+        if (array_key_exists('should_sync_to_cronofy', $data)) {
             $object->setShouldSyncToCronofy($data['should_sync_to_cronofy']);
         }
-        if (\array_key_exists('source', $data)) {
+        if (array_key_exists('source', $data)) {
             $object->setSource($data['source']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -292,6 +308,6 @@ class GetHoursNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetHours::class => false];
+        return [GetHours::class => false];
     }
 }

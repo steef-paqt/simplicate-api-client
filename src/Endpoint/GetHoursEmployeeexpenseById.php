@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultEmployeeExpense;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHoursEmployeeexpenseById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetHoursEmployeeexpenseById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hours/employeeexpense/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetHoursEmployeeexpenseById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultEmployeeExpense
+     * @return null|RestResultEmployeeExpense
+     *@throws GetHoursEmployeeexpenseByIdNotFoundException
+     * @throws GetHoursEmployeeexpenseByIdUnprocessableEntityException
+     * @throws GetHoursEmployeeexpenseByIdInternalServerErrorException
+     * @throws GetHoursEmployeeexpenseByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultEmployeeExpense::class, 'json');
+            return $serializer->deserialize($body, RestResultEmployeeExpense::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnauthorizedException($response);
+            throw new GetHoursEmployeeexpenseByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdNotFoundException($response);
+            throw new GetHoursEmployeeexpenseByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnprocessableEntityException($response);
+            throw new GetHoursEmployeeexpenseByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdInternalServerErrorException($response);
+            throw new GetHoursEmployeeexpenseByIdInternalServerErrorException($response);
         }
     }
 

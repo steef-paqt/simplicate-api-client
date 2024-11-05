@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultPaymentTerm;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetInvoicesPaymenttermById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetInvoicesPaymenttermById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/invoices/paymentterm/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetInvoicesPaymenttermById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultPaymentTerm
+     * @return null|RestResultPaymentTerm
+     *@throws GetInvoicesPaymenttermByIdNotFoundException
+     * @throws GetInvoicesPaymenttermByIdUnprocessableEntityException
+     * @throws GetInvoicesPaymenttermByIdInternalServerErrorException
+     * @throws GetInvoicesPaymenttermByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultPaymentTerm::class, 'json');
+            return $serializer->deserialize($body, RestResultPaymentTerm::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdUnauthorizedException($response);
+            throw new GetInvoicesPaymenttermByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdNotFoundException($response);
+            throw new GetInvoicesPaymenttermByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdUnprocessableEntityException($response);
+            throw new GetInvoicesPaymenttermByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdInternalServerErrorException($response);
+            throw new GetInvoicesPaymenttermByIdInternalServerErrorException($response);
         }
     }
 

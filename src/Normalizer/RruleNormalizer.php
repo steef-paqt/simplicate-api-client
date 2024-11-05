@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Rrule;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class RruleNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class RruleNormalizer implements DenormalizerInterface, NormalizerInterface, Den
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\Rrule::class;
+        return $type === Rrule::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Rrule::class;
+        return is_object($data) && $data::class === Rrule::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,39 +43,39 @@ class RruleNormalizer implements DenormalizerInterface, NormalizerInterface, Den
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\Rrule();
-        if (null === $data || false === \is_array($data)) {
+        $object = new Rrule();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('dtstart', $data)) {
+        if (array_key_exists('dtstart', $data)) {
             $object->setDtstart($data['dtstart']);
         }
-        if (\array_key_exists('freq', $data)) {
+        if (array_key_exists('freq', $data)) {
             $object->setFreq($data['freq']);
         }
-        if (\array_key_exists('until', $data)) {
+        if (array_key_exists('until', $data)) {
             $object->setUntil($data['until']);
         }
-        if (\array_key_exists('count', $data)) {
+        if (array_key_exists('count', $data)) {
             $object->setCount($data['count']);
         }
-        if (\array_key_exists('interval', $data)) {
+        if (array_key_exists('interval', $data)) {
             $object->setInterval($data['interval']);
         }
-        if (\array_key_exists('wkst', $data)) {
+        if (array_key_exists('wkst', $data)) {
             $object->setWkst($data['wkst']);
         }
-        if (\array_key_exists('byday', $data)) {
+        if (array_key_exists('byday', $data)) {
             $object->setByday($data['byday']);
         }
-        if (\array_key_exists('bysetpos', $data)) {
+        if (array_key_exists('bysetpos', $data)) {
             $object->setBysetpos($data['bysetpos']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('dtstart') && null !== $object->getDtstart()) {
@@ -104,6 +108,6 @@ class RruleNormalizer implements DenormalizerInterface, NormalizerInterface, Den
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\Rrule::class => false];
+        return [Rrule::class => false];
     }
 }

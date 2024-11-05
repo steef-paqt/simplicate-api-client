@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetTimelineMessageByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetTimelineMessageByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetTimelineMessageByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetTimelineMessageByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultTimelineMessage;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetTimelineMessageById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetTimelineMessageById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/timeline/message/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetTimelineMessageById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultTimelineMessage
+     * @return null|RestResultTimelineMessage
+     *@throws GetTimelineMessageByIdNotFoundException
+     * @throws GetTimelineMessageByIdUnprocessableEntityException
+     * @throws GetTimelineMessageByIdInternalServerErrorException
+     * @throws GetTimelineMessageByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultTimelineMessage::class, 'json');
+            return $serializer->deserialize($body, RestResultTimelineMessage::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdUnauthorizedException($response);
+            throw new GetTimelineMessageByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdNotFoundException($response);
+            throw new GetTimelineMessageByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdUnprocessableEntityException($response);
+            throw new GetTimelineMessageByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdInternalServerErrorException($response);
+            throw new GetTimelineMessageByIdInternalServerErrorException($response);
         }
     }
 

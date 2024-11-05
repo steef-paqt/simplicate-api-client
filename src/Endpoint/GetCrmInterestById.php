@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCrmInterestByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCrmInterestByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCrmInterestByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetCrmInterestByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultInterest;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCrmInterestById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetCrmInterestById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/crm/interests/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetCrmInterestById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultInterest
+     * @return null|RestResultInterest
+     *@throws GetCrmInterestByIdNotFoundException
+     * @throws GetCrmInterestByIdUnprocessableEntityException
+     * @throws GetCrmInterestByIdInternalServerErrorException
+     * @throws GetCrmInterestByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultInterest::class, 'json');
+            return $serializer->deserialize($body, RestResultInterest::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmInterestByIdUnauthorizedException($response);
+            throw new GetCrmInterestByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmInterestByIdNotFoundException($response);
+            throw new GetCrmInterestByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmInterestByIdUnprocessableEntityException($response);
+            throw new GetCrmInterestByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmInterestByIdInternalServerErrorException($response);
+            throw new GetCrmInterestByIdInternalServerErrorException($response);
         }
     }
 

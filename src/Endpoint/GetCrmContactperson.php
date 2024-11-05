@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCrmContactpersonInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCrmContactpersonNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCrmContactpersonUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultContactPersons;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCrmContactperson extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -33,7 +41,7 @@ class GetCrmContactperson extends BaseEndpoint
         return '/crm/contactperson';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -43,7 +51,7 @@ class GetCrmContactperson extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort', 'select']);
@@ -59,28 +67,26 @@ class GetCrmContactperson extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmContactpersonUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmContactpersonNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmContactpersonInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultContactPersons
+     * @return null|RestResultContactPersons
+     *@throws GetCrmContactpersonNotFoundException
+     * @throws GetCrmContactpersonInternalServerErrorException
+     * @throws GetCrmContactpersonUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultContactPersons::class, 'json');
+            return $serializer->deserialize($body, RestResultContactPersons::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmContactpersonUnauthorizedException($response);
+            throw new GetCrmContactpersonUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmContactpersonNotFoundException($response);
+            throw new GetCrmContactpersonNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmContactpersonInternalServerErrorException($response);
+            throw new GetCrmContactpersonInternalServerErrorException($response);
         }
     }
 

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\QuotePortalLabel;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class QuotePortalLabelNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class QuotePortalLabelNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\QuotePortalLabel::class;
+        return $type === QuotePortalLabel::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\QuotePortalLabel::class;
+        return is_object($data) && $data::class === QuotePortalLabel::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,30 +43,30 @@ class QuotePortalLabelNormalizer implements DenormalizerInterface, NormalizerInt
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\QuotePortalLabel();
-        if (null === $data || false === \is_array($data)) {
+        $object = new QuotePortalLabel();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('quote_template_id', $data)) {
+        if (array_key_exists('quote_template_id', $data)) {
             $object->setQuoteTemplateId($data['quote_template_id']);
         }
-        if (\array_key_exists('label', $data)) {
+        if (array_key_exists('label', $data)) {
             $object->setLabel($data['label']);
         }
-        if (\array_key_exists('value', $data)) {
+        if (array_key_exists('value', $data)) {
             $object->setValue($data['value']);
         }
-        if (\array_key_exists('fallback_value', $data)) {
+        if (array_key_exists('fallback_value', $data)) {
             $object->setFallbackValue($data['fallback_value']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -86,6 +90,6 @@ class QuotePortalLabelNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\QuotePortalLabel::class => false];
+        return [QuotePortalLabel::class => false];
     }
 }

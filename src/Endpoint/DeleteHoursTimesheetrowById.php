@@ -4,11 +4,18 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdBadRequestException;
+use Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteHoursTimesheetrowById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +34,7 @@ class DeleteHoursTimesheetrowById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hours/timesheetrow/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,12 +47,12 @@ class DeleteHoursTimesheetrowById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdInternalServerErrorException
+     * @throws DeleteHoursTimesheetrowByIdBadRequestException
+     * @throws DeleteHoursTimesheetrowByIdUnauthorizedException
+     * @throws DeleteHoursTimesheetrowByIdNotFoundException
+     * @throws DeleteHoursTimesheetrowByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,16 +60,16 @@ class DeleteHoursTimesheetrowById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdBadRequestException($response);
+            throw new DeleteHoursTimesheetrowByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdUnauthorizedException($response);
+            throw new DeleteHoursTimesheetrowByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdNotFoundException($response);
+            throw new DeleteHoursTimesheetrowByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdInternalServerErrorException($response);
+            throw new DeleteHoursTimesheetrowByIdInternalServerErrorException($response);
         }
     }
 

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PurchaseType;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class PurchaseTypeNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class PurchaseTypeNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PurchaseType::class;
+        return $type === PurchaseType::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PurchaseType::class;
+        return is_object($data) && $data::class === PurchaseType::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,36 +44,36 @@ class PurchaseTypeNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PurchaseType();
-        if (\array_key_exists('tariff', $data) && \is_int($data['tariff'])) {
+        $object = new PurchaseType();
+        if (array_key_exists('tariff', $data) && is_int($data['tariff'])) {
             $data['tariff'] = (float) $data['tariff'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('label', $data)) {
+        if (array_key_exists('label', $data)) {
             $object->setLabel($data['label']);
         }
-        if (\array_key_exists('blocked', $data)) {
+        if (array_key_exists('blocked', $data)) {
             $object->setBlocked($data['blocked']);
         }
-        if (\array_key_exists('tariff', $data)) {
+        if (array_key_exists('tariff', $data)) {
             $object->setTariff($data['tariff']);
         }
-        if (\array_key_exists('is_unit_tariff', $data)) {
+        if (array_key_exists('is_unit_tariff', $data)) {
             $object->setIsUnitTariff($data['is_unit_tariff']);
         }
-        if (\array_key_exists('unit_name', $data)) {
+        if (array_key_exists('unit_name', $data)) {
             $object->setUnitName($data['unit_name']);
         }
-        if (\array_key_exists('is_attachment_allowed', $data)) {
+        if (array_key_exists('is_attachment_allowed', $data)) {
             $object->setIsAttachmentAllowed($data['is_attachment_allowed']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('label') && null !== $object->getLabel()) {
@@ -95,6 +100,6 @@ class PurchaseTypeNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PurchaseType::class => false];
+        return [PurchaseType::class => false];
     }
 }

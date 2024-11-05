@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostSalesQuotetemplateBadRequestException;
+use Paqtcom\Simplicate\Exception\PostSalesQuotetemplateInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostSalesQuotetemplateUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostQuoteTemplate;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostSalesQuotetemplate extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data
+     * @param PostQuoteTemplate $body Quote template object containing data
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostQuoteTemplate $body)
+    public function __construct(PostQuoteTemplate $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostSalesQuotetemplate extends BaseEndpoint
         return '/sales/quotetemplate';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostSalesQuotetemplate extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateInternalServerErrorException
+     * @throws PostSalesQuotetemplateBadRequestException
+     * @throws PostSalesQuotetemplateUnauthorizedException
+     * @throws PostSalesQuotetemplateInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostSalesQuotetemplate extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateBadRequestException($response);
+            throw new PostSalesQuotetemplateBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateUnauthorizedException($response);
+            throw new PostSalesQuotetemplateUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateInternalServerErrorException($response);
+            throw new PostSalesQuotetemplateInternalServerErrorException($response);
         }
     }
 

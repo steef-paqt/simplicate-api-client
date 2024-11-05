@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\IsSatisfiedReason;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class IsSatisfiedReasonNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class IsSatisfiedReasonNormalizer implements DenormalizerInterface, NormalizerIn
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\IsSatisfiedReason::class;
+        return $type === IsSatisfiedReason::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\IsSatisfiedReason::class;
+        return is_object($data) && $data::class === IsSatisfiedReason::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,21 +43,21 @@ class IsSatisfiedReasonNormalizer implements DenormalizerInterface, NormalizerIn
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\IsSatisfiedReason();
-        if (null === $data || false === \is_array($data)) {
+        $object = new IsSatisfiedReason();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('message', $data)) {
+        if (array_key_exists('message', $data)) {
             $object->setMessage($data['message']);
         }
-        if (\array_key_exists('translated_message', $data)) {
+        if (array_key_exists('translated_message', $data)) {
             $object->setTranslatedMessage($data['translated_message']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('message') && null !== $object->getMessage()) {
@@ -68,6 +72,6 @@ class IsSatisfiedReasonNormalizer implements DenormalizerInterface, NormalizerIn
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\IsSatisfiedReason::class => false];
+        return [IsSatisfiedReason::class => false];
     }
 }

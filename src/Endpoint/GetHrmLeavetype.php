@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHrmLeavetypeInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHrmLeavetypeNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHrmLeavetypeUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultLeaveTypes;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHrmLeavetype extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetHrmLeavetype extends BaseEndpoint
         return '/hrm/leavetype';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetHrmLeavetype extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetHrmLeavetype extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultLeaveTypes
+     * @return null|RestResultLeaveTypes
+     *@throws GetHrmLeavetypeNotFoundException
+     * @throws GetHrmLeavetypeInternalServerErrorException
+     * @throws GetHrmLeavetypeUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultLeaveTypes::class, 'json');
+            return $serializer->deserialize($body, RestResultLeaveTypes::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmLeavetypeUnauthorizedException($response);
+            throw new GetHrmLeavetypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmLeavetypeNotFoundException($response);
+            throw new GetHrmLeavetypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmLeavetypeInternalServerErrorException($response);
+            throw new GetHrmLeavetypeInternalServerErrorException($response);
         }
     }
 

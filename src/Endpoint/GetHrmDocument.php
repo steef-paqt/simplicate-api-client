@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHrmDocumentInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHrmDocumentNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHrmDocumentUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultDocuments;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHrmDocument extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetHrmDocument extends BaseEndpoint
         return '/hrm/document';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetHrmDocument extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetHrmDocument extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultDocuments
+     * @return null|RestResultDocuments
+     *@throws GetHrmDocumentNotFoundException
+     * @throws GetHrmDocumentInternalServerErrorException
+     * @throws GetHrmDocumentUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocuments::class, 'json');
+            return $serializer->deserialize($body, RestResultDocuments::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmDocumentUnauthorizedException($response);
+            throw new GetHrmDocumentUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmDocumentNotFoundException($response);
+            throw new GetHrmDocumentNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmDocumentInternalServerErrorException($response);
+            throw new GetHrmDocumentInternalServerErrorException($response);
         }
     }
 

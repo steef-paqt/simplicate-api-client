@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetDefaultService;
+use Paqtcom\Simplicate\Model\RevenueGroup;
+use Paqtcom\Simplicate\Model\VatClass;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +17,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class GetDefaultServiceNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +30,12 @@ class GetDefaultServiceNormalizer implements DenormalizerInterface, NormalizerIn
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetDefaultService::class;
+        return $type === GetDefaultService::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetDefaultService::class;
+        return is_object($data) && $data::class === GetDefaultService::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,48 +46,48 @@ class GetDefaultServiceNormalizer implements DenormalizerInterface, NormalizerIn
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetDefaultService();
-        if (\array_key_exists('price', $data) && \is_int($data['price'])) {
+        $object = new GetDefaultService();
+        if (array_key_exists('price', $data) && is_int($data['price'])) {
             $data['price'] = (float) $data['price'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('vat_class', $data)) {
-            $object->setVatClass($this->denormalizer->denormalize($data['vat_class'], \Paqtcom\Simplicate\Model\VatClass::class, 'json', $context));
+        if (array_key_exists('vat_class', $data)) {
+            $object->setVatClass($this->denormalizer->denormalize($data['vat_class'], VatClass::class, 'json', $context));
         }
-        if (\array_key_exists('revenue_group', $data)) {
-            $object->setRevenueGroup($this->denormalizer->denormalize($data['revenue_group'], \Paqtcom\Simplicate\Model\RevenueGroup::class, 'json', $context));
+        if (array_key_exists('revenue_group', $data)) {
+            $object->setRevenueGroup($this->denormalizer->denormalize($data['revenue_group'], RevenueGroup::class, 'json', $context));
         }
-        if (\array_key_exists('created_at', $data)) {
+        if (array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
         }
-        if (\array_key_exists('updated_at', $data)) {
+        if (array_key_exists('updated_at', $data)) {
             $object->setUpdatedAt($data['updated_at']);
         }
-        if (\array_key_exists('modified', $data)) {
+        if (array_key_exists('modified', $data)) {
             $object->setModified($data['modified']);
         }
-        if (\array_key_exists('my_organization_profile_id', $data)) {
+        if (array_key_exists('my_organization_profile_id', $data)) {
             $object->setMyOrganizationProfileId($data['my_organization_profile_id']);
         }
-        if (\array_key_exists('name', $data)) {
+        if (array_key_exists('name', $data)) {
             $object->setName($data['name']);
         }
-        if (\array_key_exists('price_editable', $data)) {
+        if (array_key_exists('price_editable', $data)) {
             $object->setPriceEditable($data['price_editable']);
         }
-        if (\array_key_exists('price', $data)) {
+        if (array_key_exists('price', $data)) {
             $object->setPrice($data['price']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -119,6 +126,6 @@ class GetDefaultServiceNormalizer implements DenormalizerInterface, NormalizerIn
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetDefaultService::class => false];
+        return [GetDefaultService::class => false];
     }
 }

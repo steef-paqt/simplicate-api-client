@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteSalesServiceById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteSalesServiceById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/sales/service/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteSalesServiceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdInternalServerErrorException
+     * @throws DeleteSalesServiceByIdUnauthorizedException
+     * @throws DeleteSalesServiceByIdNotFoundException
+     * @throws DeleteSalesServiceByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteSalesServiceById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdUnauthorizedException($response);
+            throw new DeleteSalesServiceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdNotFoundException($response);
+            throw new DeleteSalesServiceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdInternalServerErrorException($response);
+            throw new DeleteSalesServiceByIdInternalServerErrorException($response);
         }
     }
 

@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostHoursApprovalInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostHoursApprovalNotFoundException;
+use Paqtcom\Simplicate\Exception\PostHoursApprovalUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostApproval;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostHoursApproval extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be added
+     * @param PostApproval $body Approval object that needs to be added
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostApproval $body)
+    public function __construct(PostApproval $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostHoursApproval extends BaseEndpoint
         return '/hours/approval';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostHoursApproval extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursApprovalUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursApprovalNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursApprovalInternalServerErrorException
+     * @throws PostHoursApprovalUnauthorizedException
+     * @throws PostHoursApprovalNotFoundException
+     * @throws PostHoursApprovalInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostHoursApproval extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursApprovalUnauthorizedException($response);
+            throw new PostHoursApprovalUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursApprovalNotFoundException($response);
+            throw new PostHoursApprovalNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursApprovalInternalServerErrorException($response);
+            throw new PostHoursApprovalInternalServerErrorException($response);
         }
     }
 

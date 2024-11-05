@@ -4,17 +4,25 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdBadRequestException;
+use Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\AssignmentStatus;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutProjectsAssignmentstatusById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body
+     * @param AssignmentStatus $body Project assignment POST body
      */
-    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\AssignmentStatus $body)
+    public function __construct(protected string $id, AssignmentStatus $body)
     {
         $this->body = $body;
     }
@@ -29,7 +37,7 @@ class PutProjectsAssignmentstatusById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/projects/assignmentstatus/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -42,12 +50,12 @@ class PutProjectsAssignmentstatusById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdInternalServerErrorException
+     * @throws PutProjectsAssignmentstatusByIdBadRequestException
+     * @throws PutProjectsAssignmentstatusByIdUnauthorizedException
+     * @throws PutProjectsAssignmentstatusByIdNotFoundException
+     * @throws PutProjectsAssignmentstatusByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -55,16 +63,16 @@ class PutProjectsAssignmentstatusById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdBadRequestException($response);
+            throw new PutProjectsAssignmentstatusByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdUnauthorizedException($response);
+            throw new PutProjectsAssignmentstatusByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdNotFoundException($response);
+            throw new PutProjectsAssignmentstatusByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdInternalServerErrorException($response);
+            throw new PutProjectsAssignmentstatusByIdInternalServerErrorException($response);
         }
     }
 

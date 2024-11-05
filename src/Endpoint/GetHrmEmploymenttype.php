@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultEmploymentTypes;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHrmEmploymenttype extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetHrmEmploymenttype extends BaseEndpoint
         return '/hrm/employmenttype';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetHrmEmploymenttype extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetHrmEmploymenttype extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultEmploymentTypes
+     * @return null|RestResultEmploymentTypes
+     *@throws GetHrmEmploymenttypeNotFoundException
+     * @throws GetHrmEmploymenttypeInternalServerErrorException
+     * @throws GetHrmEmploymenttypeUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultEmploymentTypes::class, 'json');
+            return $serializer->deserialize($body, RestResultEmploymentTypes::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeUnauthorizedException($response);
+            throw new GetHrmEmploymenttypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeNotFoundException($response);
+            throw new GetHrmEmploymenttypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeInternalServerErrorException($response);
+            throw new GetHrmEmploymenttypeInternalServerErrorException($response);
         }
     }
 

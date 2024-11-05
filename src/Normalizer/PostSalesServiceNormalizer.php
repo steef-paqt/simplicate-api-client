@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PostSalesService;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class PostSalesServiceNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class PostSalesServiceNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PostSalesService::class;
+        return $type === PostSalesService::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostSalesService::class;
+        return is_object($data) && $data::class === PostSalesService::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,63 +44,63 @@ class PostSalesServiceNormalizer implements DenormalizerInterface, NormalizerInt
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PostSalesService();
-        if (\array_key_exists('amount', $data) && \is_int($data['amount'])) {
+        $object = new PostSalesService();
+        if (array_key_exists('amount', $data) && is_int($data['amount'])) {
             $data['amount'] = (float) $data['amount'];
         }
-        if (\array_key_exists('price', $data) && \is_int($data['price'])) {
+        if (array_key_exists('price', $data) && is_int($data['price'])) {
             $data['price'] = (float) $data['price'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('revenue_group_id', $data)) {
+        if (array_key_exists('revenue_group_id', $data)) {
             $object->setRevenueGroupId($data['revenue_group_id']);
         }
-        if (\array_key_exists('sales_id', $data)) {
+        if (array_key_exists('sales_id', $data)) {
             $object->setSalesId($data['sales_id']);
         }
-        if (\array_key_exists('default_service_id', $data)) {
+        if (array_key_exists('default_service_id', $data)) {
             $object->setDefaultServiceId($data['default_service_id']);
         }
-        if (\array_key_exists('name', $data)) {
+        if (array_key_exists('name', $data)) {
             $object->setName($data['name']);
         }
-        if (\array_key_exists('invoice_method', $data)) {
+        if (array_key_exists('invoice_method', $data)) {
             $object->setInvoiceMethod($data['invoice_method']);
         }
-        if (\array_key_exists('amount', $data)) {
+        if (array_key_exists('amount', $data)) {
             $object->setAmount($data['amount']);
         }
-        if (\array_key_exists('price', $data)) {
+        if (array_key_exists('price', $data)) {
             $object->setPrice($data['price']);
         }
-        if (\array_key_exists('show_itemtype', $data)) {
+        if (array_key_exists('show_itemtype', $data)) {
             $object->setShowItemtype($data['show_itemtype']);
         }
-        if (\array_key_exists('total', $data)) {
+        if (array_key_exists('total', $data)) {
             $object->setTotal($data['total']);
         }
-        if (\array_key_exists('position', $data)) {
+        if (array_key_exists('position', $data)) {
             $object->setPosition($data['position']);
         }
-        if (\array_key_exists('subscription_cycle', $data)) {
+        if (array_key_exists('subscription_cycle', $data)) {
             $object->setSubscriptionCycle($data['subscription_cycle']);
         }
-        if (\array_key_exists('explanation', $data)) {
+        if (array_key_exists('explanation', $data)) {
             $object->setExplanation($data['explanation']);
         }
-        if (\array_key_exists('track_hours', $data)) {
+        if (array_key_exists('track_hours', $data)) {
             $object->setTrackHours($data['track_hours']);
         }
-        if (\array_key_exists('track_cost', $data)) {
+        if (array_key_exists('track_cost', $data)) {
             $object->setTrackCost($data['track_cost']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('revenueGroupId') && null !== $object->getRevenueGroupId()) {
@@ -146,6 +151,6 @@ class PostSalesServiceNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PostSalesService::class => false];
+        return [PostSalesService::class => false];
     }
 }

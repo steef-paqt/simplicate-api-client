@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Avatar;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class AvatarNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class AvatarNormalizer implements DenormalizerInterface, NormalizerInterface, De
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\Avatar::class;
+        return $type === Avatar::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Avatar::class;
+        return is_object($data) && $data::class === Avatar::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,27 +43,27 @@ class AvatarNormalizer implements DenormalizerInterface, NormalizerInterface, De
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\Avatar();
-        if (null === $data || false === \is_array($data)) {
+        $object = new Avatar();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('url_small', $data)) {
+        if (array_key_exists('url_small', $data)) {
             $object->setUrlSmall($data['url_small']);
         }
-        if (\array_key_exists('url_large', $data)) {
+        if (array_key_exists('url_large', $data)) {
             $object->setUrlLarge($data['url_large']);
         }
-        if (\array_key_exists('initials', $data)) {
+        if (array_key_exists('initials', $data)) {
             $object->setInitials($data['initials']);
         }
-        if (\array_key_exists('color', $data)) {
+        if (array_key_exists('color', $data)) {
             $object->setColor($data['color']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('urlSmall') && null !== $object->getUrlSmall()) {
@@ -80,6 +84,6 @@ class AvatarNormalizer implements DenormalizerInterface, NormalizerInterface, De
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\Avatar::class => false];
+        return [Avatar::class => false];
     }
 }

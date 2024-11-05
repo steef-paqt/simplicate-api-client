@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceNotFoundException;
+use Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultReverseInvoices;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetProjectsReverseinvoice extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetProjectsReverseinvoice extends BaseEndpoint
         return '/projects/reverseinvoice';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetProjectsReverseinvoice extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetProjectsReverseinvoice extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultReverseInvoices
+     * @return null|RestResultReverseInvoices
+     *@throws GetProjectsReverseinvoiceNotFoundException
+     * @throws GetProjectsReverseinvoiceInternalServerErrorException
+     * @throws GetProjectsReverseinvoiceUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultReverseInvoices::class, 'json');
+            return $serializer->deserialize($body, RestResultReverseInvoices::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceUnauthorizedException($response);
+            throw new GetProjectsReverseinvoiceUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceNotFoundException($response);
+            throw new GetProjectsReverseinvoiceNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceInternalServerErrorException($response);
+            throw new GetProjectsReverseinvoiceInternalServerErrorException($response);
         }
     }
 

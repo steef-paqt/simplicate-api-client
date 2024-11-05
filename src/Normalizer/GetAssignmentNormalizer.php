@@ -4,7 +4,14 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetAssignment;
+use Paqtcom\Simplicate\Model\GetAssignmentStatus;
+use Paqtcom\Simplicate\Model\GetEmployeeSimple;
+use Paqtcom\Simplicate\Model\GetProjectServiceHoursType;
+use Paqtcom\Simplicate\Model\GetProjectServiceSimple;
+use Paqtcom\Simplicate\Model\GetProjectSimple;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +20,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class GetAssignmentNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +33,12 @@ class GetAssignmentNormalizer implements DenormalizerInterface, NormalizerInterf
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetAssignment::class;
+        return $type === GetAssignment::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetAssignment::class;
+        return is_object($data) && $data::class === GetAssignment::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,86 +49,86 @@ class GetAssignmentNormalizer implements DenormalizerInterface, NormalizerInterf
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetAssignment();
-        if (\array_key_exists('hours_total', $data) && \is_int($data['hours_total'])) {
+        $object = new GetAssignment();
+        if (array_key_exists('hours_total', $data) && is_int($data['hours_total'])) {
             $data['hours_total'] = (float) $data['hours_total'];
         }
-        if (\array_key_exists('hours', $data) && \is_int($data['hours'])) {
+        if (array_key_exists('hours', $data) && is_int($data['hours'])) {
             $data['hours'] = (float) $data['hours'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('start_date', $data)) {
+        if (array_key_exists('start_date', $data)) {
             $object->setStartDate($data['start_date']);
         }
-        if (\array_key_exists('end_date', $data)) {
+        if (array_key_exists('end_date', $data)) {
             $object->setEndDate($data['end_date']);
         }
-        if (\array_key_exists('hours_total', $data)) {
+        if (array_key_exists('hours_total', $data)) {
             $object->setHoursTotal($data['hours_total']);
         }
-        if (\array_key_exists('hours', $data)) {
+        if (array_key_exists('hours', $data)) {
             $object->setHours($data['hours']);
         }
-        if (\array_key_exists('hours_type', $data)) {
+        if (array_key_exists('hours_type', $data)) {
             $object->setHoursType($data['hours_type']);
         }
-        if (\array_key_exists('spread', $data)) {
+        if (array_key_exists('spread', $data)) {
             $values = [];
             foreach ($data['spread'] as $value) {
                 $values[] = $value;
             }
             $object->setSpread($values);
         }
-        if (\array_key_exists('status', $data)) {
-            $object->setStatus($this->denormalizer->denormalize($data['status'], \Paqtcom\Simplicate\Model\GetAssignmentStatus::class, 'json', $context));
+        if (array_key_exists('status', $data)) {
+            $object->setStatus($this->denormalizer->denormalize($data['status'], GetAssignmentStatus::class, 'json', $context));
         }
-        if (\array_key_exists('project', $data)) {
-            $object->setProject($this->denormalizer->denormalize($data['project'], \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context));
+        if (array_key_exists('project', $data)) {
+            $object->setProject($this->denormalizer->denormalize($data['project'], GetProjectSimple::class, 'json', $context));
         }
-        if (\array_key_exists('projectservice', $data)) {
-            $object->setProjectservice($this->denormalizer->denormalize($data['projectservice'], \Paqtcom\Simplicate\Model\GetProjectServiceSimple::class, 'json', $context));
+        if (array_key_exists('projectservice', $data)) {
+            $object->setProjectservice($this->denormalizer->denormalize($data['projectservice'], GetProjectServiceSimple::class, 'json', $context));
         }
-        if (\array_key_exists('projecthourstype', $data)) {
-            $object->setProjecthourstype($this->denormalizer->denormalize($data['projecthourstype'], \Paqtcom\Simplicate\Model\GetProjectServiceHoursType::class, 'json', $context));
+        if (array_key_exists('projecthourstype', $data)) {
+            $object->setProjecthourstype($this->denormalizer->denormalize($data['projecthourstype'], GetProjectServiceHoursType::class, 'json', $context));
         }
-        if (\array_key_exists('employees', $data)) {
+        if (array_key_exists('employees', $data)) {
             $values_1 = [];
             foreach ($data['employees'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, GetEmployeeSimple::class, 'json', $context);
             }
             $object->setEmployees($values_1);
         }
-        if (\array_key_exists('spent_amount', $data)) {
+        if (array_key_exists('spent_amount', $data)) {
             $object->setSpentAmount($data['spent_amount']);
         }
-        if (\array_key_exists('is_planned', $data)) {
+        if (array_key_exists('is_planned', $data)) {
             $object->setIsPlanned($data['is_planned']);
         }
-        if (\array_key_exists('name', $data)) {
+        if (array_key_exists('name', $data)) {
             $object->setName($data['name']);
         }
-        if (\array_key_exists('use_spread', $data)) {
+        if (array_key_exists('use_spread', $data)) {
             $object->setUseSpread($data['use_spread']);
         }
-        if (\array_key_exists('description', $data)) {
+        if (array_key_exists('description', $data)) {
             $object->setDescription($data['description']);
         }
-        if (\array_key_exists('created_at', $data)) {
+        if (array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
         }
-        if (\array_key_exists('updated_at', $data)) {
+        if (array_key_exists('updated_at', $data)) {
             $object->setUpdatedAt($data['updated_at']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -192,6 +202,6 @@ class GetAssignmentNormalizer implements DenormalizerInterface, NormalizerInterf
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetAssignment::class => false];
+        return [GetAssignment::class => false];
     }
 }

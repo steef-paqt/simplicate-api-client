@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultPurchaseType;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetProjectsPurchasetypeById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetProjectsPurchasetypeById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/projects/purchasetype/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetProjectsPurchasetypeById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultPurchaseType
+     * @return null|RestResultPurchaseType
+     *@throws GetProjectsPurchasetypeByIdNotFoundException
+     * @throws GetProjectsPurchasetypeByIdUnprocessableEntityException
+     * @throws GetProjectsPurchasetypeByIdInternalServerErrorException
+     * @throws GetProjectsPurchasetypeByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultPurchaseType::class, 'json');
+            return $serializer->deserialize($body, RestResultPurchaseType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdUnauthorizedException($response);
+            throw new GetProjectsPurchasetypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdNotFoundException($response);
+            throw new GetProjectsPurchasetypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdUnprocessableEntityException($response);
+            throw new GetProjectsPurchasetypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdInternalServerErrorException($response);
+            throw new GetProjectsPurchasetypeByIdInternalServerErrorException($response);
         }
     }
 

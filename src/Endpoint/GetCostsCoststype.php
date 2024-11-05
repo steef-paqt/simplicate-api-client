@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCostsCoststypeInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCostsCoststypeNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCostsCoststypeUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultHourTypes;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCostsCoststype extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetCostsCoststype extends BaseEndpoint
         return '/costs/coststype';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetCostsCoststype extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetCostsCoststype extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultHourTypes
+     * @return null|RestResultHourTypes
+     *@throws GetCostsCoststypeNotFoundException
+     * @throws GetCostsCoststypeInternalServerErrorException
+     * @throws GetCostsCoststypeUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultHourTypes::class, 'json');
+            return $serializer->deserialize($body, RestResultHourTypes::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCostsCoststypeUnauthorizedException($response);
+            throw new GetCostsCoststypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCostsCoststypeNotFoundException($response);
+            throw new GetCostsCoststypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCostsCoststypeInternalServerErrorException($response);
+            throw new GetCostsCoststypeInternalServerErrorException($response);
         }
     }
 

@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostCrmDocumentBadRequestException;
+use Paqtcom\Simplicate\Exception\PostCrmDocumentInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostCrmDocumentUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostDocument;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostCrmDocument extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data
+     * @param PostDocument $body Document object containing data
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostDocument $body)
+    public function __construct(PostDocument $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostCrmDocument extends BaseEndpoint
         return '/crm/document';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostCrmDocument extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostCrmDocumentBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostCrmDocumentUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostCrmDocumentInternalServerErrorException
+     * @throws PostCrmDocumentBadRequestException
+     * @throws PostCrmDocumentUnauthorizedException
+     * @throws PostCrmDocumentInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostCrmDocument extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostCrmDocumentBadRequestException($response);
+            throw new PostCrmDocumentBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostCrmDocumentUnauthorizedException($response);
+            throw new PostCrmDocumentUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostCrmDocumentInternalServerErrorException($response);
+            throw new PostCrmDocumentInternalServerErrorException($response);
         }
     }
 

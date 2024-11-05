@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesSaleByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesSaleByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSalesSaleByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetSalesSaleByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultSale;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesSaleById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetSalesSaleById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/sales/sales/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetSalesSaleById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSaleByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSaleByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSaleByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSaleByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultSale
+     * @return null|RestResultSale
+     *@throws GetSalesSaleByIdNotFoundException
+     * @throws GetSalesSaleByIdUnprocessableEntityException
+     * @throws GetSalesSaleByIdInternalServerErrorException
+     * @throws GetSalesSaleByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultSale::class, 'json');
+            return $serializer->deserialize($body, RestResultSale::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSaleByIdUnauthorizedException($response);
+            throw new GetSalesSaleByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSaleByIdNotFoundException($response);
+            throw new GetSalesSaleByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSaleByIdUnprocessableEntityException($response);
+            throw new GetSalesSaleByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSaleByIdInternalServerErrorException($response);
+            throw new GetSalesSaleByIdInternalServerErrorException($response);
         }
     }
 

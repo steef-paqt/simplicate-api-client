@@ -4,11 +4,18 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateBadRequestException;
+use Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateNotFoundException;
+use Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostProjectsServiceByIdDuplicate extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -29,7 +36,7 @@ class PostProjectsServiceByIdDuplicate extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/projects/service/{id}/duplicate');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], $this->body];
     }
@@ -42,12 +49,12 @@ class PostProjectsServiceByIdDuplicate extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateInternalServerErrorException
+     * @throws PostProjectsServiceByIdDuplicateBadRequestException
+     * @throws PostProjectsServiceByIdDuplicateUnauthorizedException
+     * @throws PostProjectsServiceByIdDuplicateNotFoundException
+     * @throws PostProjectsServiceByIdDuplicateInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -55,16 +62,16 @@ class PostProjectsServiceByIdDuplicate extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateBadRequestException($response);
+            throw new PostProjectsServiceByIdDuplicateBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateUnauthorizedException($response);
+            throw new PostProjectsServiceByIdDuplicateUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateNotFoundException($response);
+            throw new PostProjectsServiceByIdDuplicateNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateInternalServerErrorException($response);
+            throw new PostProjectsServiceByIdDuplicateInternalServerErrorException($response);
         }
     }
 

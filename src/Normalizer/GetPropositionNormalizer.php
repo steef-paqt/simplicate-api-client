@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetProjectSimple;
+use Paqtcom\Simplicate\Model\GetProposition;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class GetPropositionNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +29,12 @@ class GetPropositionNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetProposition::class;
+        return $type === GetProposition::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetProposition::class;
+        return is_object($data) && $data::class === GetProposition::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,72 +45,72 @@ class GetPropositionNormalizer implements DenormalizerInterface, NormalizerInter
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetProposition();
-        if (\array_key_exists('total_hours', $data) && \is_int($data['total_hours'])) {
+        $object = new GetProposition();
+        if (array_key_exists('total_hours', $data) && is_int($data['total_hours'])) {
             $data['total_hours'] = (float) $data['total_hours'];
         }
-        if (\array_key_exists('total_mileage', $data) && \is_int($data['total_mileage'])) {
+        if (array_key_exists('total_mileage', $data) && is_int($data['total_mileage'])) {
             $data['total_mileage'] = (float) $data['total_mileage'];
         }
-        if (\array_key_exists('total_fixed', $data) && \is_int($data['total_fixed'])) {
+        if (array_key_exists('total_fixed', $data) && is_int($data['total_fixed'])) {
             $data['total_fixed'] = (float) $data['total_fixed'];
         }
-        if (\array_key_exists('total_terms', $data) && \is_int($data['total_terms'])) {
+        if (array_key_exists('total_terms', $data) && is_int($data['total_terms'])) {
             $data['total_terms'] = (float) $data['total_terms'];
         }
-        if (\array_key_exists('total_purchase', $data) && \is_int($data['total_purchase'])) {
+        if (array_key_exists('total_purchase', $data) && is_int($data['total_purchase'])) {
             $data['total_purchase'] = (float) $data['total_purchase'];
         }
-        if (\array_key_exists('total_advance_deposit', $data) && \is_int($data['total_advance_deposit'])) {
+        if (array_key_exists('total_advance_deposit', $data) && is_int($data['total_advance_deposit'])) {
             $data['total_advance_deposit'] = (float) $data['total_advance_deposit'];
         }
-        if (\array_key_exists('total_future', $data) && \is_int($data['total_future'])) {
+        if (array_key_exists('total_future', $data) && is_int($data['total_future'])) {
             $data['total_future'] = (float) $data['total_future'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('total_hours', $data)) {
+        if (array_key_exists('total_hours', $data)) {
             $object->setTotalHours($data['total_hours']);
         }
-        if (\array_key_exists('total_mileage', $data)) {
+        if (array_key_exists('total_mileage', $data)) {
             $object->setTotalMileage($data['total_mileage']);
         }
-        if (\array_key_exists('total_fixed', $data)) {
+        if (array_key_exists('total_fixed', $data)) {
             $object->setTotalFixed($data['total_fixed']);
         }
-        if (\array_key_exists('total_terms', $data)) {
+        if (array_key_exists('total_terms', $data)) {
             $object->setTotalTerms($data['total_terms']);
         }
-        if (\array_key_exists('total_purchase', $data)) {
+        if (array_key_exists('total_purchase', $data)) {
             $object->setTotalPurchase($data['total_purchase']);
         }
-        if (\array_key_exists('total_advance_deposit', $data)) {
+        if (array_key_exists('total_advance_deposit', $data)) {
             $object->setTotalAdvanceDeposit($data['total_advance_deposit']);
         }
-        if (\array_key_exists('total_future', $data)) {
+        if (array_key_exists('total_future', $data)) {
             $object->setTotalFuture($data['total_future']);
         }
-        if (\array_key_exists('simplicate_url', $data)) {
+        if (array_key_exists('simplicate_url', $data)) {
             $object->setSimplicateUrl($data['simplicate_url']);
         }
-        if (\array_key_exists('project', $data)) {
-            $object->setProject($this->denormalizer->denormalize($data['project'], \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context));
+        if (array_key_exists('project', $data)) {
+            $object->setProject($this->denormalizer->denormalize($data['project'], GetProjectSimple::class, 'json', $context));
         }
-        if (\array_key_exists('created_at', $data)) {
+        if (array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
         }
-        if (\array_key_exists('updated_at', $data)) {
+        if (array_key_exists('updated_at', $data)) {
             $object->setUpdatedAt($data['updated_at']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -149,6 +155,6 @@ class GetPropositionNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetProposition::class => false];
+        return [GetProposition::class => false];
     }
 }

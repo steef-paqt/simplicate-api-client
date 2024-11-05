@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetProjectsProjectstatusInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetProjectsProjectstatusNotFoundException;
+use Paqtcom\Simplicate\Exception\GetProjectsProjectstatusUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultProjectStatusses;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetProjectsProjectstatus extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetProjectsProjectstatus extends BaseEndpoint
         return '/projects/projectstatus';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetProjectsProjectstatus extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetProjectsProjectstatus extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultProjectStatusses
+     * @return null|RestResultProjectStatusses
+     *@throws GetProjectsProjectstatusNotFoundException
+     * @throws GetProjectsProjectstatusInternalServerErrorException
+     * @throws GetProjectsProjectstatusUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultProjectStatusses::class, 'json');
+            return $serializer->deserialize($body, RestResultProjectStatusses::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusUnauthorizedException($response);
+            throw new GetProjectsProjectstatusUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusNotFoundException($response);
+            throw new GetProjectsProjectstatusNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusInternalServerErrorException($response);
+            throw new GetProjectsProjectstatusInternalServerErrorException($response);
         }
     }
 

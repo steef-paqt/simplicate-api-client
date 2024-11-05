@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PostInvoice;
+use Paqtcom\Simplicate\Model\PostInvoiceLine;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class PostInvoiceNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class PostInvoiceNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PostInvoice::class;
+        return $type === PostInvoice::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostInvoice::class;
+        return is_object($data) && $data::class === PostInvoice::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,52 +44,52 @@ class PostInvoiceNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PostInvoice();
-        if (null === $data || false === \is_array($data)) {
+        $object = new PostInvoice();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('payment_term_id', $data)) {
+        if (array_key_exists('payment_term_id', $data)) {
             $object->setPaymentTermId($data['payment_term_id']);
         }
-        if (\array_key_exists('invoice_lines', $data)) {
+        if (array_key_exists('invoice_lines', $data)) {
             $values = [];
             foreach ($data['invoice_lines'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\PostInvoiceLine::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, PostInvoiceLine::class, 'json', $context);
             }
             $object->setInvoiceLines($values);
         }
-        if (\array_key_exists('status_id', $data)) {
+        if (array_key_exists('status_id', $data)) {
             $object->setStatusId($data['status_id']);
         }
-        if (\array_key_exists('my_organization_profile_id', $data)) {
+        if (array_key_exists('my_organization_profile_id', $data)) {
             $object->setMyOrganizationProfileId($data['my_organization_profile_id']);
         }
-        if (\array_key_exists('organization_id', $data)) {
+        if (array_key_exists('organization_id', $data)) {
             $object->setOrganizationId($data['organization_id']);
         }
-        if (\array_key_exists('person_id', $data)) {
+        if (array_key_exists('person_id', $data)) {
             $object->setPersonId($data['person_id']);
         }
-        if (\array_key_exists('date', $data)) {
+        if (array_key_exists('date', $data)) {
             $object->setDate($data['date']);
         }
-        if (\array_key_exists('subject', $data)) {
+        if (array_key_exists('subject', $data)) {
             $object->setSubject($data['subject']);
         }
-        if (\array_key_exists('reference', $data)) {
+        if (array_key_exists('reference', $data)) {
             $object->setReference($data['reference']);
         }
-        if (\array_key_exists('project_id', $data)) {
+        if (array_key_exists('project_id', $data)) {
             $object->setProjectId($data['project_id']);
         }
-        if (\array_key_exists('comments', $data)) {
+        if (array_key_exists('comments', $data)) {
             $object->setComments($data['comments']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('paymentTermId') && null !== $object->getPaymentTermId()) {
@@ -130,6 +135,6 @@ class PostInvoiceNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PostInvoice::class => false];
+        return [PostInvoice::class => false];
     }
 }

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\TimesheetRow;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class TimesheetRowNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class TimesheetRowNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\TimesheetRow::class;
+        return $type === TimesheetRow::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\TimesheetRow::class;
+        return is_object($data) && $data::class === TimesheetRow::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,36 +43,36 @@ class TimesheetRowNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\TimesheetRow();
-        if (null === $data || false === \is_array($data)) {
+        $object = new TimesheetRow();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('employee_id', $data)) {
+        if (array_key_exists('employee_id', $data)) {
             $object->setEmployeeId($data['employee_id']);
         }
-        if (\array_key_exists('start_date', $data)) {
+        if (array_key_exists('start_date', $data)) {
             $object->setStartDate($data['start_date']);
         }
-        if (\array_key_exists('end_date', $data)) {
+        if (array_key_exists('end_date', $data)) {
             $object->setEndDate($data['end_date']);
         }
-        if (\array_key_exists('project_id', $data)) {
+        if (array_key_exists('project_id', $data)) {
             $object->setProjectId($data['project_id']);
         }
-        if (\array_key_exists('project_service_id', $data)) {
+        if (array_key_exists('project_service_id', $data)) {
             $object->setProjectServiceId($data['project_service_id']);
         }
-        if (\array_key_exists('itemtype_id', $data)) {
+        if (array_key_exists('itemtype_id', $data)) {
             $object->setItemtypeId($data['itemtype_id']);
         }
-        if (\array_key_exists('type', $data)) {
+        if (array_key_exists('type', $data)) {
             $object->setType($data['type']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('employeeId') && null !== $object->getEmployeeId()) {
@@ -98,6 +102,6 @@ class TimesheetRowNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\TimesheetRow::class => false];
+        return [TimesheetRow::class => false];
     }
 }

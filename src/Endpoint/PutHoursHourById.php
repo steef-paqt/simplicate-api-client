@@ -4,17 +4,25 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutHoursHourByIdBadRequestException;
+use Paqtcom\Simplicate\Exception\PutHoursHourByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutHoursHourByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\PutHoursHourByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostHours;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutHoursHourById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Paqtcom\Simplicate\Model\PostHours $body Hours object that needs to be updated
+     * @param PostHours $body Hours object that needs to be updated
      */
-    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostHours $body)
+    public function __construct(protected string $id, PostHours $body)
     {
         $this->body = $body;
     }
@@ -29,7 +37,7 @@ class PutHoursHourById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hours/hours/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -42,12 +50,12 @@ class PutHoursHourById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutHoursHourByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutHoursHourByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutHoursHourByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutHoursHourByIdInternalServerErrorException
+     * @throws PutHoursHourByIdBadRequestException
+     * @throws PutHoursHourByIdUnauthorizedException
+     * @throws PutHoursHourByIdNotFoundException
+     * @throws PutHoursHourByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -55,16 +63,16 @@ class PutHoursHourById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHoursHourByIdBadRequestException($response);
+            throw new PutHoursHourByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHoursHourByIdUnauthorizedException($response);
+            throw new PutHoursHourByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHoursHourByIdNotFoundException($response);
+            throw new PutHoursHourByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHoursHourByIdInternalServerErrorException($response);
+            throw new PutHoursHourByIdInternalServerErrorException($response);
         }
     }
 

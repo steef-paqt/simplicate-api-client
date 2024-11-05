@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCostsExpenseByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCostsExpenseByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCostsExpenseByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetCostsExpenseByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultEmployeeExpense;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCostsExpenseById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetCostsExpenseById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/costs/expense/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetCostsExpenseById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCostsExpenseByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCostsExpenseByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCostsExpenseByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetCostsExpenseByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultEmployeeExpense
+     * @return null|RestResultEmployeeExpense
+     *@throws GetCostsExpenseByIdNotFoundException
+     * @throws GetCostsExpenseByIdUnprocessableEntityException
+     * @throws GetCostsExpenseByIdInternalServerErrorException
+     * @throws GetCostsExpenseByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultEmployeeExpense::class, 'json');
+            return $serializer->deserialize($body, RestResultEmployeeExpense::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCostsExpenseByIdUnauthorizedException($response);
+            throw new GetCostsExpenseByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCostsExpenseByIdNotFoundException($response);
+            throw new GetCostsExpenseByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCostsExpenseByIdUnprocessableEntityException($response);
+            throw new GetCostsExpenseByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCostsExpenseByIdInternalServerErrorException($response);
+            throw new GetCostsExpenseByIdInternalServerErrorException($response);
         }
     }
 

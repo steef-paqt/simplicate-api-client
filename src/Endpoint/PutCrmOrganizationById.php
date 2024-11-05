@@ -4,17 +4,25 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdBadRequestException;
+use Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostOrganization;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutCrmOrganizationById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Paqtcom\Simplicate\Model\PostOrganization $body Organization object containing data that with the new values
+     * @param PostOrganization $body Organization object containing data that with the new values
      */
-    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostOrganization $body)
+    public function __construct(protected string $id, PostOrganization $body)
     {
         $this->body = $body;
     }
@@ -29,7 +37,7 @@ class PutCrmOrganizationById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/crm/organization/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -42,12 +50,12 @@ class PutCrmOrganizationById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdInternalServerErrorException
+     * @throws PutCrmOrganizationByIdBadRequestException
+     * @throws PutCrmOrganizationByIdUnauthorizedException
+     * @throws PutCrmOrganizationByIdNotFoundException
+     * @throws PutCrmOrganizationByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -55,16 +63,16 @@ class PutCrmOrganizationById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdBadRequestException($response);
+            throw new PutCrmOrganizationByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdUnauthorizedException($response);
+            throw new PutCrmOrganizationByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdNotFoundException($response);
+            throw new PutCrmOrganizationByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdInternalServerErrorException($response);
+            throw new PutCrmOrganizationByIdInternalServerErrorException($response);
         }
     }
 

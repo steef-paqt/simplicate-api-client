@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHrmAbsenceInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHrmAbsenceNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHrmAbsenceUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultAbsenceMultiple;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHrmAbsence extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetHrmAbsence extends BaseEndpoint
         return '/hrm/absence';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetHrmAbsence extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetHrmAbsence extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsenceUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsenceNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsenceInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultAbsenceMultiple
+     * @return null|RestResultAbsenceMultiple
+     *@throws GetHrmAbsenceNotFoundException
+     * @throws GetHrmAbsenceInternalServerErrorException
+     * @throws GetHrmAbsenceUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultAbsenceMultiple::class, 'json');
+            return $serializer->deserialize($body, RestResultAbsenceMultiple::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmAbsenceUnauthorizedException($response);
+            throw new GetHrmAbsenceUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmAbsenceNotFoundException($response);
+            throw new GetHrmAbsenceNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmAbsenceInternalServerErrorException($response);
+            throw new GetHrmAbsenceInternalServerErrorException($response);
         }
     }
 

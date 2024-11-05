@@ -4,16 +4,24 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostCrmMergeorganizationBadRequestException;
+use Paqtcom\Simplicate\Exception\PostCrmMergeorganizationInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostCrmMergeorganizationUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostMerger;
+use Paqtcom\Simplicate\Model\ResultMergerMerge;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostCrmMergeorganization extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostMerger $body Merge object containing the source id and target id
+     * @param PostMerger $body Merge object containing the source id and target id
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostMerger $body)
+    public function __construct(PostMerger $body)
     {
         $this->body = $body;
     }
@@ -28,7 +36,7 @@ class PostCrmMergeorganization extends BaseEndpoint
         return '/crm/mergeorganization';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -40,28 +48,26 @@ class PostCrmMergeorganization extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\ResultMergerMerge
+     * @return null|ResultMergerMerge
+     *@throws PostCrmMergeorganizationUnauthorizedException
+     * @throws PostCrmMergeorganizationInternalServerErrorException
+     * @throws PostCrmMergeorganizationBadRequestException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\ResultMergerMerge::class, 'json');
+            return $serializer->deserialize($body, ResultMergerMerge::class, 'json');
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationBadRequestException($response);
+            throw new PostCrmMergeorganizationBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationUnauthorizedException($response);
+            throw new PostCrmMergeorganizationUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationInternalServerErrorException($response);
+            throw new PostCrmMergeorganizationInternalServerErrorException($response);
         }
     }
 

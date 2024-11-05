@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteSalesQuotetemplateById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteSalesQuotetemplateById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/sales/quotetemplate/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteSalesQuotetemplateById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdInternalServerErrorException
+     * @throws DeleteSalesQuotetemplateByIdUnauthorizedException
+     * @throws DeleteSalesQuotetemplateByIdNotFoundException
+     * @throws DeleteSalesQuotetemplateByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteSalesQuotetemplateById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdUnauthorizedException($response);
+            throw new DeleteSalesQuotetemplateByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdNotFoundException($response);
+            throw new DeleteSalesQuotetemplateByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdInternalServerErrorException($response);
+            throw new DeleteSalesQuotetemplateByIdInternalServerErrorException($response);
         }
     }
 

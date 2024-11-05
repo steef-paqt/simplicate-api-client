@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\RecentSalesQuote;
+use Paqtcom\Simplicate\Model\RecentSalesQuoteStatus;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class RecentSalesQuoteNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class RecentSalesQuoteNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\RecentSalesQuote::class;
+        return $type === RecentSalesQuote::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\RecentSalesQuote::class;
+        return is_object($data) && $data::class === RecentSalesQuote::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,21 +44,21 @@ class RecentSalesQuoteNormalizer implements DenormalizerInterface, NormalizerInt
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\RecentSalesQuote();
-        if (null === $data || false === \is_array($data)) {
+        $object = new RecentSalesQuote();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('quote_number', $data)) {
+        if (array_key_exists('quote_number', $data)) {
             $object->setQuoteNumber($data['quote_number']);
         }
-        if (\array_key_exists('status', $data)) {
-            $object->setStatus($this->denormalizer->denormalize($data['status'], \Paqtcom\Simplicate\Model\RecentSalesQuoteStatus::class, 'json', $context));
+        if (array_key_exists('status', $data)) {
+            $object->setStatus($this->denormalizer->denormalize($data['status'], RecentSalesQuoteStatus::class, 'json', $context));
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('quoteNumber') && null !== $object->getQuoteNumber()) {
@@ -68,6 +73,6 @@ class RecentSalesQuoteNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\RecentSalesQuote::class => false];
+        return [RecentSalesQuote::class => false];
     }
 }

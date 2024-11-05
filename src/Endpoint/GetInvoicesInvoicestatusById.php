@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultInvoiceStatus;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetInvoicesInvoicestatusById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetInvoicesInvoicestatusById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/invoices/invoicestatus/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetInvoicesInvoicestatusById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultInvoiceStatus
+     * @return null|RestResultInvoiceStatus
+     *@throws GetInvoicesInvoicestatusByIdNotFoundException
+     * @throws GetInvoicesInvoicestatusByIdUnprocessableEntityException
+     * @throws GetInvoicesInvoicestatusByIdInternalServerErrorException
+     * @throws GetInvoicesInvoicestatusByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultInvoiceStatus::class, 'json');
+            return $serializer->deserialize($body, RestResultInvoiceStatus::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdUnauthorizedException($response);
+            throw new GetInvoicesInvoicestatusByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdNotFoundException($response);
+            throw new GetInvoicesInvoicestatusByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdUnprocessableEntityException($response);
+            throw new GetInvoicesInvoicestatusByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdInternalServerErrorException($response);
+            throw new GetInvoicesInvoicestatusByIdInternalServerErrorException($response);
         }
     }
 

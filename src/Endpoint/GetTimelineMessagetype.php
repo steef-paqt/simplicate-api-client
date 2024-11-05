@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetTimelineMessagetypeInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetTimelineMessagetypeNotFoundException;
+use Paqtcom\Simplicate\Exception\GetTimelineMessagetypeUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetTimelineMessagetype extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetTimelineMessagetype extends BaseEndpoint
         return '/timeline/messagetype';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetTimelineMessagetype extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetTimelineMessagetype extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes
+     * @return null|RestResultTimelineMessageTypes
+     *@throws GetTimelineMessagetypeNotFoundException
+     * @throws GetTimelineMessagetypeInternalServerErrorException
+     * @throws GetTimelineMessagetypeUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes::class, 'json');
+            return $serializer->deserialize($body, RestResultTimelineMessageTypes::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeUnauthorizedException($response);
+            throw new GetTimelineMessagetypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeNotFoundException($response);
+            throw new GetTimelineMessagetypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeInternalServerErrorException($response);
+            throw new GetTimelineMessagetypeInternalServerErrorException($response);
         }
     }
 

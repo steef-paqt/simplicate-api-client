@@ -4,7 +4,12 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Journal;
+use Paqtcom\Simplicate\Model\JournalLine;
+use Paqtcom\Simplicate\Model\JournalVat;
+use Paqtcom\Simplicate\Model\RevenueGroup;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +18,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class JournalNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +31,12 @@ class JournalNormalizer implements DenormalizerInterface, NormalizerInterface, D
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\Journal::class;
+        return $type === Journal::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Journal::class;
+        return is_object($data) && $data::class === Journal::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,57 +47,57 @@ class JournalNormalizer implements DenormalizerInterface, NormalizerInterface, D
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\Journal();
-        if (\array_key_exists('amount_excl', $data) && \is_int($data['amount_excl'])) {
+        $object = new Journal();
+        if (array_key_exists('amount_excl', $data) && is_int($data['amount_excl'])) {
             $data['amount_excl'] = (float) $data['amount_excl'];
         }
-        if (\array_key_exists('amount_incl', $data) && \is_int($data['amount_incl'])) {
+        if (array_key_exists('amount_incl', $data) && is_int($data['amount_incl'])) {
             $data['amount_incl'] = (float) $data['amount_incl'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('journalize_date', $data)) {
+        if (array_key_exists('journalize_date', $data)) {
             $object->setJournalizeDate($data['journalize_date']);
         }
-        if (\array_key_exists('invoice_date', $data)) {
+        if (array_key_exists('invoice_date', $data)) {
             $object->setInvoiceDate($data['invoice_date']);
         }
-        if (\array_key_exists('invoice_number', $data)) {
+        if (array_key_exists('invoice_number', $data)) {
             $object->setInvoiceNumber($data['invoice_number']);
         }
-        if (\array_key_exists('due_date', $data)) {
+        if (array_key_exists('due_date', $data)) {
             $object->setDueDate($data['due_date']);
         }
-        if (\array_key_exists('subject', $data)) {
+        if (array_key_exists('subject', $data)) {
             $object->setSubject($data['subject']);
         }
-        if (\array_key_exists('relation_id', $data)) {
+        if (array_key_exists('relation_id', $data)) {
             $object->setRelationId($data['relation_id']);
         }
-        if (\array_key_exists('amount_excl', $data)) {
+        if (array_key_exists('amount_excl', $data)) {
             $object->setAmountExcl($data['amount_excl']);
         }
-        if (\array_key_exists('amount_incl', $data)) {
+        if (array_key_exists('amount_incl', $data)) {
             $object->setAmountIncl($data['amount_incl']);
         }
-        if (\array_key_exists('autocollect', $data)) {
+        if (array_key_exists('autocollect', $data)) {
             $object->setAutocollect($data['autocollect']);
         }
-        if (\array_key_exists('revenuegroup', $data)) {
-            $object->setRevenuegroup($this->denormalizer->denormalize($data['revenuegroup'], \Paqtcom\Simplicate\Model\RevenueGroup::class, 'json', $context));
+        if (array_key_exists('revenuegroup', $data)) {
+            $object->setRevenuegroup($this->denormalizer->denormalize($data['revenuegroup'], RevenueGroup::class, 'json', $context));
         }
-        if (\array_key_exists('journal_lines', $data)) {
+        if (array_key_exists('journal_lines', $data)) {
             $values = [];
             foreach ($data['journal_lines'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\JournalLine::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, JournalLine::class, 'json', $context);
             }
             $object->setJournalLines($values);
         }
-        if (\array_key_exists('vat', $data)) {
+        if (array_key_exists('vat', $data)) {
             $values_1 = [];
             foreach ($data['vat'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\JournalVat::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, JournalVat::class, 'json', $context);
             }
             $object->setVat($values_1);
         }
@@ -97,7 +105,7 @@ class JournalNormalizer implements DenormalizerInterface, NormalizerInterface, D
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('journalizeDate') && null !== $object->getJournalizeDate()) {
@@ -150,6 +158,6 @@ class JournalNormalizer implements DenormalizerInterface, NormalizerInterface, D
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\Journal::class => false];
+        return [Journal::class => false];
     }
 }

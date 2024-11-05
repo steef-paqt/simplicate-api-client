@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PostMileage;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class PostMileageNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class PostMileageNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PostMileage::class;
+        return $type === PostMileage::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostMileage::class;
+        return is_object($data) && $data::class === PostMileage::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,42 +44,42 @@ class PostMileageNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PostMileage();
-        if (\array_key_exists('mileage', $data) && \is_int($data['mileage'])) {
+        $object = new PostMileage();
+        if (array_key_exists('mileage', $data) && is_int($data['mileage'])) {
             $data['mileage'] = (float) $data['mileage'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('employee_id', $data)) {
+        if (array_key_exists('employee_id', $data)) {
             $object->setEmployeeId($data['employee_id']);
         }
-        if (\array_key_exists('project_id', $data)) {
+        if (array_key_exists('project_id', $data)) {
             $object->setProjectId($data['project_id']);
         }
-        if (\array_key_exists('approvalstatus_id', $data)) {
+        if (array_key_exists('approvalstatus_id', $data)) {
             $object->setApprovalstatusId($data['approvalstatus_id']);
         }
-        if (\array_key_exists('mileage', $data)) {
+        if (array_key_exists('mileage', $data)) {
             $object->setMileage($data['mileage']);
         }
-        if (\array_key_exists('related_hours_id', $data)) {
+        if (array_key_exists('related_hours_id', $data)) {
             $object->setRelatedHoursId($data['related_hours_id']);
         }
-        if (\array_key_exists('source', $data)) {
+        if (array_key_exists('source', $data)) {
             $object->setSource($data['source']);
         }
-        if (\array_key_exists('note', $data)) {
+        if (array_key_exists('note', $data)) {
             $object->setNote($data['note']);
         }
-        if (\array_key_exists('start_date', $data)) {
+        if (array_key_exists('start_date', $data)) {
             $object->setStartDate($data['start_date']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('employeeId') && null !== $object->getEmployeeId()) {
@@ -107,6 +112,6 @@ class PostMileageNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PostMileage::class => false];
+        return [PostMileage::class => false];
     }
 }

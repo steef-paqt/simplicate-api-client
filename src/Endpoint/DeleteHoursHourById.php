@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteHoursHourByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteHoursHourByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteHoursHourByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteHoursHourById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteHoursHourById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hours/hours/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteHoursHourById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdInternalServerErrorException
+     * @throws DeleteHoursHourByIdUnauthorizedException
+     * @throws DeleteHoursHourByIdNotFoundException
+     * @throws DeleteHoursHourByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteHoursHourById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdUnauthorizedException($response);
+            throw new DeleteHoursHourByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdNotFoundException($response);
+            throw new DeleteHoursHourByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdInternalServerErrorException($response);
+            throw new DeleteHoursHourByIdInternalServerErrorException($response);
         }
     }
 

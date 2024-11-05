@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHrmDocumentByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHrmDocumentByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHrmDocumentByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetHrmDocumentByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultDocument;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHrmDocumentById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetHrmDocumentById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hrm/document/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetHrmDocumentById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultDocument
+     * @return null|RestResultDocument
+     *@throws GetHrmDocumentByIdNotFoundException
+     * @throws GetHrmDocumentByIdUnprocessableEntityException
+     * @throws GetHrmDocumentByIdInternalServerErrorException
+     * @throws GetHrmDocumentByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocument::class, 'json');
+            return $serializer->deserialize($body, RestResultDocument::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdUnauthorizedException($response);
+            throw new GetHrmDocumentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdNotFoundException($response);
+            throw new GetHrmDocumentByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdUnprocessableEntityException($response);
+            throw new GetHrmDocumentByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdInternalServerErrorException($response);
+            throw new GetHrmDocumentByIdInternalServerErrorException($response);
         }
     }
 

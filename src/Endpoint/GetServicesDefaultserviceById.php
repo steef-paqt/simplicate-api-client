@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultDefaultService;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetServicesDefaultserviceById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetServicesDefaultserviceById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/services/defaultservice/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetServicesDefaultserviceById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultDefaultService
+     * @return null|RestResultDefaultService
+     *@throws GetServicesDefaultserviceByIdNotFoundException
+     * @throws GetServicesDefaultserviceByIdUnprocessableEntityException
+     * @throws GetServicesDefaultserviceByIdInternalServerErrorException
+     * @throws GetServicesDefaultserviceByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDefaultService::class, 'json');
+            return $serializer->deserialize($body, RestResultDefaultService::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdUnauthorizedException($response);
+            throw new GetServicesDefaultserviceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdNotFoundException($response);
+            throw new GetServicesDefaultserviceByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdUnprocessableEntityException($response);
+            throw new GetServicesDefaultserviceByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdInternalServerErrorException($response);
+            throw new GetServicesDefaultserviceByIdInternalServerErrorException($response);
         }
     }
 

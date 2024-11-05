@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostCrmOrganizationBadRequestException;
+use Paqtcom\Simplicate\Exception\PostCrmOrganizationInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostCrmOrganizationUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostOrganization;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostCrmOrganization extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostOrganization $body Organization object containing data
+     * @param PostOrganization $body Organization object containing data
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostOrganization $body)
+    public function __construct(PostOrganization $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostCrmOrganization extends BaseEndpoint
         return '/crm/organization';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostCrmOrganization extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostCrmOrganizationBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostCrmOrganizationUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostCrmOrganizationInternalServerErrorException
+     * @throws PostCrmOrganizationBadRequestException
+     * @throws PostCrmOrganizationUnauthorizedException
+     * @throws PostCrmOrganizationInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostCrmOrganization extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostCrmOrganizationBadRequestException($response);
+            throw new PostCrmOrganizationBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostCrmOrganizationUnauthorizedException($response);
+            throw new PostCrmOrganizationUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostCrmOrganizationInternalServerErrorException($response);
+            throw new PostCrmOrganizationInternalServerErrorException($response);
         }
     }
 

@@ -4,7 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetInvoice;
+use Paqtcom\Simplicate\Model\GetInvoiceLine;
+use Paqtcom\Simplicate\Model\GetInvoiceReminder;
+use Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple;
+use Paqtcom\Simplicate\Model\GetOrganizationSimple;
+use Paqtcom\Simplicate\Model\GetPersonSimple;
+use Paqtcom\Simplicate\Model\GetProjectSimple;
+use Paqtcom\Simplicate\Model\PaymentTerm;
+use Paqtcom\Simplicate\Model\SubscriptionCycle;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +23,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class GetInvoiceNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +36,12 @@ class GetInvoiceNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetInvoice::class;
+        return $type === GetInvoice::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetInvoice::class;
+        return is_object($data) && $data::class === GetInvoice::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,125 +52,125 @@ class GetInvoiceNormalizer implements DenormalizerInterface, NormalizerInterface
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetInvoice();
-        if (\array_key_exists('total_excluding_vat', $data) && \is_int($data['total_excluding_vat'])) {
+        $object = new GetInvoice();
+        if (array_key_exists('total_excluding_vat', $data) && is_int($data['total_excluding_vat'])) {
             $data['total_excluding_vat'] = (float) $data['total_excluding_vat'];
         }
-        if (\array_key_exists('total_vat', $data) && \is_int($data['total_vat'])) {
+        if (array_key_exists('total_vat', $data) && is_int($data['total_vat'])) {
             $data['total_vat'] = (float) $data['total_vat'];
         }
-        if (\array_key_exists('total_including_vat', $data) && \is_int($data['total_including_vat'])) {
+        if (array_key_exists('total_including_vat', $data) && is_int($data['total_including_vat'])) {
             $data['total_including_vat'] = (float) $data['total_including_vat'];
         }
-        if (\array_key_exists('total_outstanding', $data) && \is_int($data['total_outstanding'])) {
+        if (array_key_exists('total_outstanding', $data) && is_int($data['total_outstanding'])) {
             $data['total_outstanding'] = (float) $data['total_outstanding'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('contact_id', $data)) {
+        if (array_key_exists('contact_id', $data)) {
             $object->setContactId($data['contact_id']);
         }
-        if (\array_key_exists('payment_term', $data)) {
-            $object->setPaymentTerm($this->denormalizer->denormalize($data['payment_term'], \Paqtcom\Simplicate\Model\PaymentTerm::class, 'json', $context));
+        if (array_key_exists('payment_term', $data)) {
+            $object->setPaymentTerm($this->denormalizer->denormalize($data['payment_term'], PaymentTerm::class, 'json', $context));
         }
-        if (\array_key_exists('invoice_lines', $data)) {
+        if (array_key_exists('invoice_lines', $data)) {
             $values = [];
             foreach ($data['invoice_lines'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\GetInvoiceLine::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, GetInvoiceLine::class, 'json', $context);
             }
             $object->setInvoiceLines($values);
         }
-        if (\array_key_exists('invoice_number', $data)) {
+        if (array_key_exists('invoice_number', $data)) {
             $object->setInvoiceNumber($data['invoice_number']);
         }
-        if (\array_key_exists('status', $data)) {
+        if (array_key_exists('status', $data)) {
             $object->setStatus($data['status']);
         }
-        if (\array_key_exists('total_excluding_vat', $data)) {
+        if (array_key_exists('total_excluding_vat', $data)) {
             $object->setTotalExcludingVat($data['total_excluding_vat']);
         }
-        if (\array_key_exists('total_vat', $data)) {
+        if (array_key_exists('total_vat', $data)) {
             $object->setTotalVat($data['total_vat']);
         }
-        if (\array_key_exists('total_including_vat', $data)) {
+        if (array_key_exists('total_including_vat', $data)) {
             $object->setTotalIncludingVat($data['total_including_vat']);
         }
-        if (\array_key_exists('total_outstanding', $data)) {
+        if (array_key_exists('total_outstanding', $data)) {
             $object->setTotalOutstanding($data['total_outstanding']);
         }
-        if (\array_key_exists('organization', $data)) {
-            $object->setOrganization($this->denormalizer->denormalize($data['organization'], \Paqtcom\Simplicate\Model\GetOrganizationSimple::class, 'json', $context));
+        if (array_key_exists('organization', $data)) {
+            $object->setOrganization($this->denormalizer->denormalize($data['organization'], GetOrganizationSimple::class, 'json', $context));
         }
-        if (\array_key_exists('person', $data)) {
-            $object->setPerson($this->denormalizer->denormalize($data['person'], \Paqtcom\Simplicate\Model\GetPersonSimple::class, 'json', $context));
+        if (array_key_exists('person', $data)) {
+            $object->setPerson($this->denormalizer->denormalize($data['person'], GetPersonSimple::class, 'json', $context));
         }
-        if (\array_key_exists('my_organization_profile', $data)) {
-            $object->setMyOrganizationProfile($this->denormalizer->denormalize($data['my_organization_profile'], \Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple::class, 'json', $context));
+        if (array_key_exists('my_organization_profile', $data)) {
+            $object->setMyOrganizationProfile($this->denormalizer->denormalize($data['my_organization_profile'], GetMyOrganizationProfileSimple::class, 'json', $context));
         }
-        if (\array_key_exists('subscription_cycle', $data)) {
-            $object->setSubscriptionCycle($this->denormalizer->denormalize($data['subscription_cycle'], \Paqtcom\Simplicate\Model\SubscriptionCycle::class, 'json', $context));
+        if (array_key_exists('subscription_cycle', $data)) {
+            $object->setSubscriptionCycle($this->denormalizer->denormalize($data['subscription_cycle'], SubscriptionCycle::class, 'json', $context));
         }
-        if (\array_key_exists('project', $data)) {
-            $object->setProject($this->denormalizer->denormalize($data['project'], \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context));
+        if (array_key_exists('project', $data)) {
+            $object->setProject($this->denormalizer->denormalize($data['project'], GetProjectSimple::class, 'json', $context));
         }
-        if (\array_key_exists('projects', $data)) {
+        if (array_key_exists('projects', $data)) {
             $values_1 = [];
             foreach ($data['projects'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, GetProjectSimple::class, 'json', $context);
             }
             $object->setProjects($values_1);
         }
-        if (\array_key_exists('sending_method', $data)) {
+        if (array_key_exists('sending_method', $data)) {
             $object->setSendingMethod($data['sending_method']);
         }
-        if (\array_key_exists('created_at', $data)) {
+        if (array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
         }
-        if (\array_key_exists('updated_at', $data)) {
+        if (array_key_exists('updated_at', $data)) {
             $object->setUpdatedAt($data['updated_at']);
         }
-        if (\array_key_exists('simplicate_url', $data)) {
+        if (array_key_exists('simplicate_url', $data)) {
             $object->setSimplicateUrl($data['simplicate_url']);
         }
-        if (\array_key_exists('reminder', $data)) {
-            $object->setReminder($this->denormalizer->denormalize($data['reminder'], \Paqtcom\Simplicate\Model\GetInvoiceReminder::class, 'json', $context));
+        if (array_key_exists('reminder', $data)) {
+            $object->setReminder($this->denormalizer->denormalize($data['reminder'], GetInvoiceReminder::class, 'json', $context));
         }
-        if (\array_key_exists('composition_type', $data)) {
+        if (array_key_exists('composition_type', $data)) {
             $object->setCompositionType($data['composition_type']);
         }
-        if (\array_key_exists('my_organization_profile_id', $data)) {
+        if (array_key_exists('my_organization_profile_id', $data)) {
             $object->setMyOrganizationProfileId($data['my_organization_profile_id']);
         }
-        if (\array_key_exists('organization_id', $data)) {
+        if (array_key_exists('organization_id', $data)) {
             $object->setOrganizationId($data['organization_id']);
         }
-        if (\array_key_exists('person_id', $data)) {
+        if (array_key_exists('person_id', $data)) {
             $object->setPersonId($data['person_id']);
         }
-        if (\array_key_exists('date', $data)) {
+        if (array_key_exists('date', $data)) {
             $object->setDate($data['date']);
         }
-        if (\array_key_exists('subject', $data)) {
+        if (array_key_exists('subject', $data)) {
             $object->setSubject($data['subject']);
         }
-        if (\array_key_exists('reference', $data)) {
+        if (array_key_exists('reference', $data)) {
             $object->setReference($data['reference']);
         }
-        if (\array_key_exists('project_id', $data)) {
+        if (array_key_exists('project_id', $data)) {
             $object->setProjectId($data['project_id']);
         }
-        if (\array_key_exists('comments', $data)) {
+        if (array_key_exists('comments', $data)) {
             $object->setComments($data['comments']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -264,6 +277,6 @@ class GetInvoiceNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetInvoice::class => false];
+        return [GetInvoice::class => false];
     }
 }

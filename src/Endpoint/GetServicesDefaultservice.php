@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetServicesDefaultserviceInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetServicesDefaultserviceNotFoundException;
+use Paqtcom\Simplicate\Exception\GetServicesDefaultserviceUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultDefaultServices;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetServicesDefaultservice extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetServicesDefaultservice extends BaseEndpoint
         return '/services/defaultservice';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetServicesDefaultservice extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetServicesDefaultservice extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultDefaultServices
+     * @return null|RestResultDefaultServices
+     *@throws GetServicesDefaultserviceNotFoundException
+     * @throws GetServicesDefaultserviceInternalServerErrorException
+     * @throws GetServicesDefaultserviceUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDefaultServices::class, 'json');
+            return $serializer->deserialize($body, RestResultDefaultServices::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceUnauthorizedException($response);
+            throw new GetServicesDefaultserviceUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceNotFoundException($response);
+            throw new GetServicesDefaultserviceNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceInternalServerErrorException($response);
+            throw new GetServicesDefaultserviceInternalServerErrorException($response);
         }
     }
 

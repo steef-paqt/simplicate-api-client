@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultSale;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesConverttoprojectById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetSalesConverttoprojectById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/sales/converttoproject/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetSalesConverttoprojectById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultSale
+     * @return null|RestResultSale
+     *@throws GetSalesConverttoprojectByIdNotFoundException
+     * @throws GetSalesConverttoprojectByIdUnprocessableEntityException
+     * @throws GetSalesConverttoprojectByIdInternalServerErrorException
+     * @throws GetSalesConverttoprojectByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultSale::class, 'json');
+            return $serializer->deserialize($body, RestResultSale::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdUnauthorizedException($response);
+            throw new GetSalesConverttoprojectByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdNotFoundException($response);
+            throw new GetSalesConverttoprojectByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdUnprocessableEntityException($response);
+            throw new GetSalesConverttoprojectByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdInternalServerErrorException($response);
+            throw new GetSalesConverttoprojectByIdInternalServerErrorException($response);
         }
     }
 

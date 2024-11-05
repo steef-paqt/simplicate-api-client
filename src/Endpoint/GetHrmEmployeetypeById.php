@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultEmployeeType;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHrmEmployeetypeById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetHrmEmployeetypeById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hrm/employeetype/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetHrmEmployeetypeById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultEmployeeType
+     * @return null|RestResultEmployeeType
+     *@throws GetHrmEmployeetypeByIdNotFoundException
+     * @throws GetHrmEmployeetypeByIdUnprocessableEntityException
+     * @throws GetHrmEmployeetypeByIdInternalServerErrorException
+     * @throws GetHrmEmployeetypeByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultEmployeeType::class, 'json');
+            return $serializer->deserialize($body, RestResultEmployeeType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdUnauthorizedException($response);
+            throw new GetHrmEmployeetypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdNotFoundException($response);
+            throw new GetHrmEmployeetypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdUnprocessableEntityException($response);
+            throw new GetHrmEmployeetypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdInternalServerErrorException($response);
+            throw new GetHrmEmployeetypeByIdInternalServerErrorException($response);
         }
     }
 

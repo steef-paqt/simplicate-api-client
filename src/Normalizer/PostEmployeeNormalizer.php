@@ -4,7 +4,12 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PostCustomFieldValue;
+use Paqtcom\Simplicate\Model\PostEmployee;
+use Paqtcom\Simplicate\Model\PostEmployeeFk;
+use Paqtcom\Simplicate\Model\PostEmployeeStatusFk;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +18,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class PostEmployeeNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +30,12 @@ class PostEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PostEmployee::class;
+        return $type === PostEmployee::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostEmployee::class;
+        return is_object($data) && $data::class === PostEmployee::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,23 +46,23 @@ class PostEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PostEmployee();
-        if (null === $data || false === \is_array($data)) {
+        $object = new PostEmployee();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('person_id', $data)) {
+        if (array_key_exists('person_id', $data)) {
             $object->setPersonId($data['person_id']);
         }
-        if (\array_key_exists('supervisor', $data)) {
-            $object->setSupervisor($this->denormalizer->denormalize($data['supervisor'], \Paqtcom\Simplicate\Model\PostEmployeeFk::class, 'json', $context));
+        if (array_key_exists('supervisor', $data)) {
+            $object->setSupervisor($this->denormalizer->denormalize($data['supervisor'], PostEmployeeFk::class, 'json', $context));
         }
-        if (\array_key_exists('status', $data)) {
-            $object->setStatus($this->denormalizer->denormalize($data['status'], \Paqtcom\Simplicate\Model\PostEmployeeStatusFk::class, 'json', $context));
+        if (array_key_exists('status', $data)) {
+            $object->setStatus($this->denormalizer->denormalize($data['status'], PostEmployeeStatusFk::class, 'json', $context));
         }
-        if (\array_key_exists('custom_fields', $data)) {
+        if (array_key_exists('custom_fields', $data)) {
             $values = [];
             foreach ($data['custom_fields'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\PostCustomFieldValue::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, PostCustomFieldValue::class, 'json', $context);
             }
             $object->setCustomFields($values);
         }
@@ -63,7 +70,7 @@ class PostEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfa
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('personId') && null !== $object->getPersonId()) {
@@ -88,6 +95,6 @@ class PostEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PostEmployee::class => false];
+        return [PostEmployee::class => false];
     }
 }

@@ -4,7 +4,12 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetQuote;
+use Paqtcom\Simplicate\Model\QuoteSalesService;
+use Paqtcom\Simplicate\Model\QuoteStatus;
+use Paqtcom\Simplicate\Model\QuoteTemplate;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +18,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class GetQuoteNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +30,12 @@ class GetQuoteNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetQuote::class;
+        return $type === GetQuote::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetQuote::class;
+        return is_object($data) && $data::class === GetQuote::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,103 +46,103 @@ class GetQuoteNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetQuote();
-        if (null === $data || false === \is_array($data)) {
+        $object = new GetQuote();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('quotetemplate', $data)) {
-            $object->setQuotetemplate($this->denormalizer->denormalize($data['quotetemplate'], \Paqtcom\Simplicate\Model\QuoteTemplate::class, 'json', $context));
+        if (array_key_exists('quotetemplate', $data)) {
+            $object->setQuotetemplate($this->denormalizer->denormalize($data['quotetemplate'], QuoteTemplate::class, 'json', $context));
         }
-        if (\array_key_exists('send_type', $data)) {
+        if (array_key_exists('send_type', $data)) {
             $object->setSendType($data['send_type']);
         }
-        if (\array_key_exists('quote_number', $data)) {
+        if (array_key_exists('quote_number', $data)) {
             $object->setQuoteNumber($data['quote_number']);
         }
-        if (\array_key_exists('quote_date', $data)) {
+        if (array_key_exists('quote_date', $data)) {
             $object->setQuoteDate($data['quote_date']);
         }
-        if (\array_key_exists('quotestatus', $data)) {
-            $object->setQuotestatus($this->denormalizer->denormalize($data['quotestatus'], \Paqtcom\Simplicate\Model\QuoteStatus::class, 'json', $context));
+        if (array_key_exists('quotestatus', $data)) {
+            $object->setQuotestatus($this->denormalizer->denormalize($data['quotestatus'], QuoteStatus::class, 'json', $context));
         }
-        if (\array_key_exists('json', $data)) {
+        if (array_key_exists('json', $data)) {
             $object->setJson($data['json']);
         }
-        if (\array_key_exists('services', $data)) {
+        if (array_key_exists('services', $data)) {
             $values = [];
             foreach ($data['services'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\QuoteSalesService::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, QuoteSalesService::class, 'json', $context);
             }
             $object->setServices($values);
         }
-        if (\array_key_exists('total_excl', $data)) {
+        if (array_key_exists('total_excl', $data)) {
             $object->setTotalExcl($data['total_excl']);
         }
-        if (\array_key_exists('total_incl', $data)) {
+        if (array_key_exists('total_incl', $data)) {
             $object->setTotalIncl($data['total_incl']);
         }
-        if (\array_key_exists('total_vat', $data)) {
+        if (array_key_exists('total_vat', $data)) {
             $object->setTotalVat($data['total_vat']);
         }
-        if (\array_key_exists('vat', $data)) {
+        if (array_key_exists('vat', $data)) {
             $object->setVat($data['vat']);
         }
-        if (\array_key_exists('grand_totals', $data)) {
+        if (array_key_exists('grand_totals', $data)) {
             $object->setGrandTotals($data['grand_totals']);
         }
-        if (\array_key_exists('receivers', $data)) {
+        if (array_key_exists('receivers', $data)) {
             $object->setReceivers($data['receivers']);
         }
-        if (\array_key_exists('valid_days', $data)) {
+        if (array_key_exists('valid_days', $data)) {
             $object->setValidDays($data['valid_days']);
         }
-        if (\array_key_exists('payment_term', $data)) {
+        if (array_key_exists('payment_term', $data)) {
             $object->setPaymentTerm($data['payment_term']);
         }
-        if (\array_key_exists('download_url', $data)) {
+        if (array_key_exists('download_url', $data)) {
             $object->setDownloadUrl($data['download_url']);
         }
-        if (\array_key_exists('is_sepa_authorization', $data)) {
+        if (array_key_exists('is_sepa_authorization', $data)) {
             $object->setIsSepaAuthorization($data['is_sepa_authorization']);
         }
-        if (\array_key_exists('is_outdated', $data)) {
+        if (array_key_exists('is_outdated', $data)) {
             $object->setIsOutdated($data['is_outdated']);
         }
-        if (\array_key_exists('is_blocked', $data)) {
+        if (array_key_exists('is_blocked', $data)) {
             $object->setIsBlocked($data['is_blocked']);
         }
-        if (\array_key_exists('created_by', $data)) {
+        if (array_key_exists('created_by', $data)) {
             $object->setCreatedBy($data['created_by']);
         }
-        if (\array_key_exists('last_updated_approval_status', $data)) {
+        if (array_key_exists('last_updated_approval_status', $data)) {
             $object->setLastUpdatedApprovalStatus($data['last_updated_approval_status']);
         }
-        if (\array_key_exists('sent_at', $data)) {
+        if (array_key_exists('sent_at', $data)) {
             $object->setSentAt($data['sent_at']);
         }
-        if (\array_key_exists('created_at', $data)) {
+        if (array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
         }
-        if (\array_key_exists('updated_at', $data)) {
+        if (array_key_exists('updated_at', $data)) {
             $object->setUpdatedAt($data['updated_at']);
         }
-        if (\array_key_exists('sales_id', $data)) {
+        if (array_key_exists('sales_id', $data)) {
             $object->setSalesId($data['sales_id']);
         }
-        if (\array_key_exists('quote_subject', $data)) {
+        if (array_key_exists('quote_subject', $data)) {
             $object->setQuoteSubject($data['quote_subject']);
         }
-        if (\array_key_exists('customer_reference', $data)) {
+        if (array_key_exists('customer_reference', $data)) {
             $object->setCustomerReference($data['customer_reference']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -232,6 +239,6 @@ class GetQuoteNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetQuote::class => false];
+        return [GetQuote::class => false];
     }
 }

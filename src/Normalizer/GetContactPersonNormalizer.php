@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetContactPerson;
+use Paqtcom\Simplicate\Model\GetOrganizationSimple;
+use Paqtcom\Simplicate\Model\GetPersonSimple;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +17,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class GetContactPersonNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +29,12 @@ class GetContactPersonNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetContactPerson::class;
+        return $type === GetContactPerson::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetContactPerson::class;
+        return is_object($data) && $data::class === GetContactPerson::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,48 +45,48 @@ class GetContactPersonNormalizer implements DenormalizerInterface, NormalizerInt
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetContactPerson();
-        if (null === $data || false === \is_array($data)) {
+        $object = new GetContactPerson();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('organization', $data)) {
-            $object->setOrganization($this->denormalizer->denormalize($data['organization'], \Paqtcom\Simplicate\Model\GetOrganizationSimple::class, 'json', $context));
+        if (array_key_exists('organization', $data)) {
+            $object->setOrganization($this->denormalizer->denormalize($data['organization'], GetOrganizationSimple::class, 'json', $context));
         }
-        if (\array_key_exists('person', $data)) {
-            $object->setPerson($this->denormalizer->denormalize($data['person'], \Paqtcom\Simplicate\Model\GetPersonSimple::class, 'json', $context));
+        if (array_key_exists('person', $data)) {
+            $object->setPerson($this->denormalizer->denormalize($data['person'], GetPersonSimple::class, 'json', $context));
         }
-        if (\array_key_exists('created_at', $data)) {
+        if (array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
         }
-        if (\array_key_exists('updated_at', $data)) {
+        if (array_key_exists('updated_at', $data)) {
             $object->setUpdatedAt($data['updated_at']);
         }
-        if (\array_key_exists('is_active', $data)) {
+        if (array_key_exists('is_active', $data)) {
             $object->setIsActive($data['is_active']);
         }
-        if (\array_key_exists('work_function', $data)) {
+        if (array_key_exists('work_function', $data)) {
             $object->setWorkFunction($data['work_function']);
         }
-        if (\array_key_exists('work_email', $data)) {
+        if (array_key_exists('work_email', $data)) {
             $object->setWorkEmail($data['work_email']);
         }
-        if (\array_key_exists('work_phone', $data)) {
+        if (array_key_exists('work_phone', $data)) {
             $object->setWorkPhone($data['work_phone']);
         }
-        if (\array_key_exists('work_mobile', $data)) {
+        if (array_key_exists('work_mobile', $data)) {
             $object->setWorkMobile($data['work_mobile']);
         }
-        if (\array_key_exists('person_id', $data)) {
+        if (array_key_exists('person_id', $data)) {
             $object->setPersonId($data['person_id']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -122,6 +128,6 @@ class GetContactPersonNormalizer implements DenormalizerInterface, NormalizerInt
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetContactPerson::class => false];
+        return [GetContactPerson::class => false];
     }
 }

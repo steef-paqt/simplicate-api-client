@@ -4,17 +4,25 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutUploadChunkedByIdBadRequestException;
+use Paqtcom\Simplicate\Exception\PutUploadChunkedByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutUploadChunkedByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\PutUploadChunkedByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\PutChunked;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutUploadChunkedById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Paqtcom\Simplicate\Model\PutChunked $body Next chunk for an chunked_upload
+     * @param PutChunked $body Next chunk for an chunked_upload
      */
-    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PutChunked $body)
+    public function __construct(protected string $id, PutChunked $body)
     {
         $this->body = $body;
     }
@@ -29,7 +37,7 @@ class PutUploadChunkedById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/upload/chunked/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -42,12 +50,12 @@ class PutUploadChunkedById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutUploadChunkedByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutUploadChunkedByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutUploadChunkedByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutUploadChunkedByIdInternalServerErrorException
+     * @throws PutUploadChunkedByIdBadRequestException
+     * @throws PutUploadChunkedByIdUnauthorizedException
+     * @throws PutUploadChunkedByIdNotFoundException
+     * @throws PutUploadChunkedByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -55,16 +63,16 @@ class PutUploadChunkedById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutUploadChunkedByIdBadRequestException($response);
+            throw new PutUploadChunkedByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutUploadChunkedByIdUnauthorizedException($response);
+            throw new PutUploadChunkedByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutUploadChunkedByIdNotFoundException($response);
+            throw new PutUploadChunkedByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutUploadChunkedByIdInternalServerErrorException($response);
+            throw new PutUploadChunkedByIdInternalServerErrorException($response);
         }
     }
 

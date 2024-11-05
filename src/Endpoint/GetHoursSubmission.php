@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHoursSubmissionInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHoursSubmissionNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHoursSubmissionUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultHoursSubmissions;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHoursSubmission extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetHoursSubmission extends BaseEndpoint
         return '/hours/submission';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetHoursSubmission extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['q[start_date]', 'q[end_date]', 'q[employee_id]']);
@@ -57,28 +65,26 @@ class GetHoursSubmission extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursSubmissionUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursSubmissionNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursSubmissionInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultHoursSubmissions
+     * @return null|RestResultHoursSubmissions
+     *@throws GetHoursSubmissionNotFoundException
+     * @throws GetHoursSubmissionInternalServerErrorException
+     * @throws GetHoursSubmissionUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultHoursSubmissions::class, 'json');
+            return $serializer->deserialize($body, RestResultHoursSubmissions::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursSubmissionUnauthorizedException($response);
+            throw new GetHoursSubmissionUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursSubmissionNotFoundException($response);
+            throw new GetHoursSubmissionNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursSubmissionInternalServerErrorException($response);
+            throw new GetHoursSubmissionInternalServerErrorException($response);
         }
     }
 

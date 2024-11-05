@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteCustomFieldsGroupById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteCustomFieldsGroupById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/customfields/group/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteCustomFieldsGroupById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdInternalServerErrorException
+     * @throws DeleteCustomFieldsGroupByIdUnauthorizedException
+     * @throws DeleteCustomFieldsGroupByIdNotFoundException
+     * @throws DeleteCustomFieldsGroupByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteCustomFieldsGroupById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdUnauthorizedException($response);
+            throw new DeleteCustomFieldsGroupByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdNotFoundException($response);
+            throw new DeleteCustomFieldsGroupByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdInternalServerErrorException($response);
+            throw new DeleteCustomFieldsGroupByIdInternalServerErrorException($response);
         }
     }
 

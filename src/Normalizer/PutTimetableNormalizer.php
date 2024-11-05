@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PutTimetable;
+use Paqtcom\Simplicate\Model\TimetableWeek;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class PutTimetableNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class PutTimetableNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PutTimetable::class;
+        return $type === PutTimetable::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PutTimetable::class;
+        return is_object($data) && $data::class === PutTimetable::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,39 +44,39 @@ class PutTimetableNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PutTimetable();
-        if (null === $data || false === \is_array($data)) {
+        $object = new PutTimetable();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('employee_id', $data)) {
+        if (array_key_exists('employee_id', $data)) {
             $object->setEmployeeId($data['employee_id']);
         }
-        if (\array_key_exists('start_date', $data)) {
+        if (array_key_exists('start_date', $data)) {
             $object->setStartDate($data['start_date']);
         }
-        if (\array_key_exists('has_odd_weeks', $data)) {
+        if (array_key_exists('has_odd_weeks', $data)) {
             $object->setHasOddWeeks($data['has_odd_weeks']);
         }
-        if (\array_key_exists('even_week', $data)) {
-            $object->setEvenWeek($this->denormalizer->denormalize($data['even_week'], \Paqtcom\Simplicate\Model\TimetableWeek::class, 'json', $context));
+        if (array_key_exists('even_week', $data)) {
+            $object->setEvenWeek($this->denormalizer->denormalize($data['even_week'], TimetableWeek::class, 'json', $context));
         }
-        if (\array_key_exists('odd_week', $data)) {
-            $object->setOddWeek($this->denormalizer->denormalize($data['odd_week'], \Paqtcom\Simplicate\Model\TimetableWeek::class, 'json', $context));
+        if (array_key_exists('odd_week', $data)) {
+            $object->setOddWeek($this->denormalizer->denormalize($data['odd_week'], TimetableWeek::class, 'json', $context));
         }
-        if (\array_key_exists('end_date', $data)) {
+        if (array_key_exists('end_date', $data)) {
             $object->setEndDate($data['end_date']);
         }
-        if (\array_key_exists('productivity_target', $data)) {
+        if (array_key_exists('productivity_target', $data)) {
             $object->setProductivityTarget($data['productivity_target']);
         }
-        if (\array_key_exists('should_write_hours', $data)) {
+        if (array_key_exists('should_write_hours', $data)) {
             $object->setShouldWriteHours($data['should_write_hours']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('employeeId') && null !== $object->getEmployeeId()) {
@@ -104,6 +109,6 @@ class PutTimetableNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PutTimetable::class => false];
+        return [PutTimetable::class => false];
     }
 }

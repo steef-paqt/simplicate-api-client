@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\EmailAttachment;
+use Paqtcom\Simplicate\Model\EmailMessage;
+use Paqtcom\Simplicate\Model\LinkedToEntity;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +17,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class EmailMessageNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +29,12 @@ class EmailMessageNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\EmailMessage::class;
+        return $type === EmailMessage::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\EmailMessage::class;
+        return is_object($data) && $data::class === EmailMessage::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,60 +45,60 @@ class EmailMessageNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\EmailMessage();
-        if (null === $data || false === \is_array($data)) {
+        $object = new EmailMessage();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('created_at', $data)) {
+        if (array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
         }
-        if (\array_key_exists('updated_at', $data)) {
+        if (array_key_exists('updated_at', $data)) {
             $object->setUpdatedAt($data['updated_at']);
         }
-        if (\array_key_exists('sent_at', $data)) {
+        if (array_key_exists('sent_at', $data)) {
             $object->setSentAt($data['sent_at']);
         }
-        if (\array_key_exists('received_at', $data)) {
+        if (array_key_exists('received_at', $data)) {
             $object->setReceivedAt($data['received_at']);
         }
-        if (\array_key_exists('sender', $data)) {
+        if (array_key_exists('sender', $data)) {
             $object->setSender($data['sender']);
         }
-        if (\array_key_exists('recipients', $data)) {
+        if (array_key_exists('recipients', $data)) {
             $object->setRecipients($data['recipients']);
         }
-        if (\array_key_exists('cc_recipients', $data)) {
+        if (array_key_exists('cc_recipients', $data)) {
             $object->setCcRecipients($data['cc_recipients']);
         }
-        if (\array_key_exists('bcc_recipients', $data)) {
+        if (array_key_exists('bcc_recipients', $data)) {
             $object->setBccRecipients($data['bcc_recipients']);
         }
-        if (\array_key_exists('subject', $data)) {
+        if (array_key_exists('subject', $data)) {
             $object->setSubject($data['subject']);
         }
-        if (\array_key_exists('html_message', $data)) {
+        if (array_key_exists('html_message', $data)) {
             $object->setHtmlMessage($data['html_message']);
         }
-        if (\array_key_exists('html_body', $data)) {
+        if (array_key_exists('html_body', $data)) {
             $object->setHtmlBody($data['html_body']);
         }
-        if (\array_key_exists('plain_text', $data)) {
+        if (array_key_exists('plain_text', $data)) {
             $object->setPlainText($data['plain_text']);
         }
-        if (\array_key_exists('attachments', $data)) {
+        if (array_key_exists('attachments', $data)) {
             $values = [];
             foreach ($data['attachments'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\EmailAttachment::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, EmailAttachment::class, 'json', $context);
             }
             $object->setAttachments($values);
         }
-        if (\array_key_exists('linked_to', $data)) {
+        if (array_key_exists('linked_to', $data)) {
             $values_1 = [];
             foreach ($data['linked_to'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\LinkedToEntity::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, LinkedToEntity::class, 'json', $context);
             }
             $object->setLinkedTo($values_1);
         }
@@ -100,7 +106,7 @@ class EmailMessageNormalizer implements DenormalizerInterface, NormalizerInterfa
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -162,6 +168,6 @@ class EmailMessageNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\EmailMessage::class => false];
+        return [EmailMessage::class => false];
     }
 }

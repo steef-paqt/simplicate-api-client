@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultCustomFields;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCrmPersoncustomfield extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetCrmPersoncustomfield extends BaseEndpoint
         return '/crm/personcustomfields';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetCrmPersoncustomfield extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetCrmPersoncustomfield extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFields
+     * @return null|RestResultCustomFields
+     *@throws GetCrmPersoncustomfieldNotFoundException
+     * @throws GetCrmPersoncustomfieldInternalServerErrorException
+     * @throws GetCrmPersoncustomfieldUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomFields::class, 'json');
+            return $serializer->deserialize($body, RestResultCustomFields::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldUnauthorizedException($response);
+            throw new GetCrmPersoncustomfieldUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldNotFoundException($response);
+            throw new GetCrmPersoncustomfieldNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldInternalServerErrorException($response);
+            throw new GetCrmPersoncustomfieldInternalServerErrorException($response);
         }
     }
 

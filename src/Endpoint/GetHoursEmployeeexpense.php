@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHoursEmployeeexpense extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetHoursEmployeeexpense extends BaseEndpoint
         return '/hours/employeeexpenses';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetHoursEmployeeexpense extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetHoursEmployeeexpense extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList
+     * @return null|RestResultEmployeeExpenseList
+     *@throws GetHoursEmployeeexpenseNotFoundException
+     * @throws GetHoursEmployeeexpenseInternalServerErrorException
+     * @throws GetHoursEmployeeexpenseUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList::class, 'json');
+            return $serializer->deserialize($body, RestResultEmployeeExpenseList::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseUnauthorizedException($response);
+            throw new GetHoursEmployeeexpenseUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseNotFoundException($response);
+            throw new GetHoursEmployeeexpenseNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseInternalServerErrorException($response);
+            throw new GetHoursEmployeeexpenseInternalServerErrorException($response);
         }
     }
 

@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\TimetableWeek;
+use Paqtcom\Simplicate\Model\TimetableWeekDay;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class TimetableWeekNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class TimetableWeekNormalizer implements DenormalizerInterface, NormalizerInterf
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\TimetableWeek::class;
+        return $type === TimetableWeek::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\TimetableWeek::class;
+        return is_object($data) && $data::class === TimetableWeek::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,36 +44,36 @@ class TimetableWeekNormalizer implements DenormalizerInterface, NormalizerInterf
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\TimetableWeek();
-        if (null === $data || false === \is_array($data)) {
+        $object = new TimetableWeek();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('day_1', $data)) {
-            $object->setDay1($this->denormalizer->denormalize($data['day_1'], \Paqtcom\Simplicate\Model\TimetableWeekDay::class, 'json', $context));
+        if (array_key_exists('day_1', $data)) {
+            $object->setDay1($this->denormalizer->denormalize($data['day_1'], TimetableWeekDay::class, 'json', $context));
         }
-        if (\array_key_exists('day_2', $data)) {
-            $object->setDay2($this->denormalizer->denormalize($data['day_2'], \Paqtcom\Simplicate\Model\TimetableWeekDay::class, 'json', $context));
+        if (array_key_exists('day_2', $data)) {
+            $object->setDay2($this->denormalizer->denormalize($data['day_2'], TimetableWeekDay::class, 'json', $context));
         }
-        if (\array_key_exists('day_3', $data)) {
-            $object->setDay3($this->denormalizer->denormalize($data['day_3'], \Paqtcom\Simplicate\Model\TimetableWeekDay::class, 'json', $context));
+        if (array_key_exists('day_3', $data)) {
+            $object->setDay3($this->denormalizer->denormalize($data['day_3'], TimetableWeekDay::class, 'json', $context));
         }
-        if (\array_key_exists('day_4', $data)) {
-            $object->setDay4($this->denormalizer->denormalize($data['day_4'], \Paqtcom\Simplicate\Model\TimetableWeekDay::class, 'json', $context));
+        if (array_key_exists('day_4', $data)) {
+            $object->setDay4($this->denormalizer->denormalize($data['day_4'], TimetableWeekDay::class, 'json', $context));
         }
-        if (\array_key_exists('day_5', $data)) {
-            $object->setDay5($this->denormalizer->denormalize($data['day_5'], \Paqtcom\Simplicate\Model\TimetableWeekDay::class, 'json', $context));
+        if (array_key_exists('day_5', $data)) {
+            $object->setDay5($this->denormalizer->denormalize($data['day_5'], TimetableWeekDay::class, 'json', $context));
         }
-        if (\array_key_exists('day_6', $data)) {
-            $object->setDay6($this->denormalizer->denormalize($data['day_6'], \Paqtcom\Simplicate\Model\TimetableWeekDay::class, 'json', $context));
+        if (array_key_exists('day_6', $data)) {
+            $object->setDay6($this->denormalizer->denormalize($data['day_6'], TimetableWeekDay::class, 'json', $context));
         }
-        if (\array_key_exists('day_7', $data)) {
-            $object->setDay7($this->denormalizer->denormalize($data['day_7'], \Paqtcom\Simplicate\Model\TimetableWeekDay::class, 'json', $context));
+        if (array_key_exists('day_7', $data)) {
+            $object->setDay7($this->denormalizer->denormalize($data['day_7'], TimetableWeekDay::class, 'json', $context));
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('day1') && null !== $object->getDay1()) {
@@ -98,6 +103,6 @@ class TimetableWeekNormalizer implements DenormalizerInterface, NormalizerInterf
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\TimetableWeek::class => false];
+        return [TimetableWeek::class => false];
     }
 }

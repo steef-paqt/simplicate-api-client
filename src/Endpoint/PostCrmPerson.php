@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostCrmPersonInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostCrmPersonNotFoundException;
+use Paqtcom\Simplicate\Exception\PostCrmPersonUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostPerson;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostCrmPerson extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added
+     * @param PostPerson $body Person object that needs to be added
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostPerson $body)
+    public function __construct(PostPerson $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostCrmPerson extends BaseEndpoint
         return '/crm/person';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostCrmPerson extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostCrmPersonUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostCrmPersonNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostCrmPersonInternalServerErrorException
+     * @throws PostCrmPersonUnauthorizedException
+     * @throws PostCrmPersonNotFoundException
+     * @throws PostCrmPersonInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostCrmPerson extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostCrmPersonUnauthorizedException($response);
+            throw new PostCrmPersonUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostCrmPersonNotFoundException($response);
+            throw new PostCrmPersonNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostCrmPersonInternalServerErrorException($response);
+            throw new PostCrmPersonInternalServerErrorException($response);
         }
     }
 

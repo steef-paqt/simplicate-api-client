@@ -4,11 +4,18 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultReverseInvoice;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetProjectsReverseinvoiceById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +34,7 @@ class GetProjectsReverseinvoiceById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/projects/reverseinvoice/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,28 +46,26 @@ class GetProjectsReverseinvoiceById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultReverseInvoice
+     * @return null|RestResultReverseInvoice
+     *@throws GetProjectsReverseinvoiceByIdNotFoundException
+     * @throws GetProjectsReverseinvoiceByIdInternalServerErrorException
+     * @throws GetProjectsReverseinvoiceByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultReverseInvoice::class, 'json');
+            return $serializer->deserialize($body, RestResultReverseInvoice::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceByIdUnauthorizedException($response);
+            throw new GetProjectsReverseinvoiceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceByIdNotFoundException($response);
+            throw new GetProjectsReverseinvoiceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceByIdInternalServerErrorException($response);
+            throw new GetProjectsReverseinvoiceByIdInternalServerErrorException($response);
         }
     }
 

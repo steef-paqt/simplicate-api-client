@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Correction;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class CorrectionNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class CorrectionNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\Correction::class;
+        return $type === Correction::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Correction::class;
+        return is_object($data) && $data::class === Correction::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,30 +44,30 @@ class CorrectionNormalizer implements DenormalizerInterface, NormalizerInterface
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\Correction();
-        if (\array_key_exists('amount', $data) && \is_int($data['amount'])) {
+        $object = new Correction();
+        if (array_key_exists('amount', $data) && is_int($data['amount'])) {
             $data['amount'] = (float) $data['amount'];
         }
-        if (\array_key_exists('value', $data) && \is_int($data['value'])) {
+        if (array_key_exists('value', $data) && is_int($data['value'])) {
             $data['value'] = (float) $data['value'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('amount', $data)) {
+        if (array_key_exists('amount', $data)) {
             $object->setAmount($data['amount']);
         }
-        if (\array_key_exists('value', $data)) {
+        if (array_key_exists('value', $data)) {
             $object->setValue($data['value']);
         }
-        if (\array_key_exists('last_correction_date', $data)) {
+        if (array_key_exists('last_correction_date', $data)) {
             $object->setLastCorrectionDate($data['last_correction_date']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('amount') && null !== $object->getAmount()) {
@@ -80,6 +85,6 @@ class CorrectionNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\Correction::class => false];
+        return [Correction::class => false];
     }
 }

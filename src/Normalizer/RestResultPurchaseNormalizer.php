@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\MetaData;
+use Paqtcom\Simplicate\Model\Purchase;
+use Paqtcom\Simplicate\Model\RestResultPurchase;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +17,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class RestResultPurchaseNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +29,12 @@ class RestResultPurchaseNormalizer implements DenormalizerInterface, NormalizerI
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\RestResultPurchase::class;
+        return $type === RestResultPurchase::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\RestResultPurchase::class;
+        return is_object($data) && $data::class === RestResultPurchase::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,24 +45,24 @@ class RestResultPurchaseNormalizer implements DenormalizerInterface, NormalizerI
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\RestResultPurchase();
-        if (null === $data || false === \is_array($data)) {
+        $object = new RestResultPurchase();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('data', $data) && $data['data'] !== null) {
-            $object->setData($this->denormalizer->denormalize($data['data'], \Paqtcom\Simplicate\Model\Purchase::class, 'json', $context));
+        if (array_key_exists('data', $data) && $data['data'] !== null) {
+            $object->setData($this->denormalizer->denormalize($data['data'], Purchase::class, 'json', $context));
         }
-        if (\array_key_exists('metadata', $data)) {
-            $object->setMetadata($this->denormalizer->denormalize($data['metadata'], \Paqtcom\Simplicate\Model\MetaData::class, 'json', $context));
+        if (array_key_exists('metadata', $data)) {
+            $object->setMetadata($this->denormalizer->denormalize($data['metadata'], MetaData::class, 'json', $context));
         }
-        if (\array_key_exists('errors', $data) && is_iterable($data['errors'])) {
+        if (array_key_exists('errors', $data) && is_iterable($data['errors'])) {
             $values = [];
             foreach ($data['errors'] as $value) {
                 $values[] = $value;
             }
             $object->setErrors($values);
         }
-        if (\array_key_exists('debug', $data) && is_iterable($data['debug'])) {
+        if (array_key_exists('debug', $data) && is_iterable($data['debug'])) {
             $values_1 = [];
             foreach ($data['debug'] as $value_1) {
                 $values_1[] = $value_1;
@@ -67,7 +73,7 @@ class RestResultPurchaseNormalizer implements DenormalizerInterface, NormalizerI
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('data') && null !== $object->getData()) {
@@ -96,6 +102,6 @@ class RestResultPurchaseNormalizer implements DenormalizerInterface, NormalizerI
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\RestResultPurchase::class => false];
+        return [RestResultPurchase::class => false];
     }
 }

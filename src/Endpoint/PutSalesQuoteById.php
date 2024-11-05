@@ -4,17 +4,24 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutSalesQuoteByIdBadRequestException;
+use Paqtcom\Simplicate\Exception\PutSalesQuoteByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutSalesQuoteByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostQuote;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutSalesQuoteById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Paqtcom\Simplicate\Model\PostQuote $body Quote template object containing data
+     * @param PostQuote $body Quote template object containing data
      */
-    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostQuote $body)
+    public function __construct(protected string $id, PostQuote $body)
     {
         $this->body = $body;
     }
@@ -29,7 +36,7 @@ class PutSalesQuoteById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/sales/quote/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -42,11 +49,11 @@ class PutSalesQuoteById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutSalesQuoteByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutSalesQuoteByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutSalesQuoteByIdInternalServerErrorException
+     * @throws PutSalesQuoteByIdBadRequestException
+     * @throws PutSalesQuoteByIdUnauthorizedException
+     * @throws PutSalesQuoteByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -54,13 +61,13 @@ class PutSalesQuoteById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutSalesQuoteByIdBadRequestException($response);
+            throw new PutSalesQuoteByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutSalesQuoteByIdUnauthorizedException($response);
+            throw new PutSalesQuoteByIdUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutSalesQuoteByIdInternalServerErrorException($response);
+            throw new PutSalesQuoteByIdInternalServerErrorException($response);
         }
     }
 

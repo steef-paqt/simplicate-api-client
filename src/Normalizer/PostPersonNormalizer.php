@@ -4,7 +4,16 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PersonMailingList;
+use Paqtcom\Simplicate\Model\PostAddress;
+use Paqtcom\Simplicate\Model\PostContactOrganizationFk;
+use Paqtcom\Simplicate\Model\PostCustomFieldValue;
+use Paqtcom\Simplicate\Model\PostInterest;
+use Paqtcom\Simplicate\Model\PostPerson;
+use Paqtcom\Simplicate\Model\PostTeam;
+use Paqtcom\Simplicate\Model\RelationType;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +22,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class PostPersonNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +34,12 @@ class PostPersonNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PostPerson::class;
+        return $type === PostPerson::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostPerson::class;
+        return is_object($data) && $data::class === PostPerson::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,119 +50,119 @@ class PostPersonNormalizer implements DenormalizerInterface, NormalizerInterface
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PostPerson();
-        if (null === $data || false === \is_array($data)) {
+        $object = new PostPerson();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('interests', $data)) {
+        if (array_key_exists('interests', $data)) {
             $values = [];
             foreach ($data['interests'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\PostInterest::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, PostInterest::class, 'json', $context);
             }
             $object->setInterests($values);
         }
-        if (\array_key_exists('address', $data)) {
-            $object->setAddress($this->denormalizer->denormalize($data['address'], \Paqtcom\Simplicate\Model\PostAddress::class, 'json', $context));
+        if (array_key_exists('address', $data)) {
+            $object->setAddress($this->denormalizer->denormalize($data['address'], PostAddress::class, 'json', $context));
         }
-        if (\array_key_exists('linked_as_contact_to_organization', $data)) {
+        if (array_key_exists('linked_as_contact_to_organization', $data)) {
             $values_1 = [];
             foreach ($data['linked_as_contact_to_organization'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\PostContactOrganizationFk::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, PostContactOrganizationFk::class, 'json', $context);
             }
             $object->setLinkedAsContactToOrganization($values_1);
         }
-        if (\array_key_exists('gender_id', $data)) {
+        if (array_key_exists('gender_id', $data)) {
             $object->setGenderId($data['gender_id']);
         }
-        if (\array_key_exists('teams', $data)) {
+        if (array_key_exists('teams', $data)) {
             $values_2 = [];
             foreach ($data['teams'] as $value_2) {
-                $values_2[] = $this->denormalizer->denormalize($value_2, \Paqtcom\Simplicate\Model\PostTeam::class, 'json', $context);
+                $values_2[] = $this->denormalizer->denormalize($value_2, PostTeam::class, 'json', $context);
             }
             $object->setTeams($values_2);
         }
-        if (\array_key_exists('custom_fields', $data)) {
+        if (array_key_exists('custom_fields', $data)) {
             $values_3 = [];
             foreach ($data['custom_fields'] as $value_3) {
-                $values_3[] = $this->denormalizer->denormalize($value_3, \Paqtcom\Simplicate\Model\PostCustomFieldValue::class, 'json', $context);
+                $values_3[] = $this->denormalizer->denormalize($value_3, PostCustomFieldValue::class, 'json', $context);
             }
             $object->setCustomFields($values_3);
         }
-        if (\array_key_exists('relation_type', $data)) {
-            $object->setRelationType($this->denormalizer->denormalize($data['relation_type'], \Paqtcom\Simplicate\Model\RelationType::class, 'json', $context));
+        if (array_key_exists('relation_type', $data)) {
+            $object->setRelationType($this->denormalizer->denormalize($data['relation_type'], RelationType::class, 'json', $context));
         }
-        if (\array_key_exists('gender', $data)) {
+        if (array_key_exists('gender', $data)) {
             $object->setGender($data['gender']);
         }
-        if (\array_key_exists('initials', $data)) {
+        if (array_key_exists('initials', $data)) {
             $object->setInitials($data['initials']);
         }
-        if (\array_key_exists('first_name', $data)) {
+        if (array_key_exists('first_name', $data)) {
             $object->setFirstName($data['first_name']);
         }
-        if (\array_key_exists('family_name_prefix', $data)) {
+        if (array_key_exists('family_name_prefix', $data)) {
             $object->setFamilyNamePrefix($data['family_name_prefix']);
         }
-        if (\array_key_exists('family_name', $data)) {
+        if (array_key_exists('family_name', $data)) {
             $object->setFamilyName($data['family_name']);
         }
-        if (\array_key_exists('full_name', $data)) {
+        if (array_key_exists('full_name', $data)) {
             $object->setFullName($data['full_name']);
         }
-        if (\array_key_exists('date_of_birth', $data)) {
+        if (array_key_exists('date_of_birth', $data)) {
             $object->setDateOfBirth($data['date_of_birth']);
         }
-        if (\array_key_exists('note', $data)) {
+        if (array_key_exists('note', $data)) {
             $object->setNote($data['note']);
         }
-        if (\array_key_exists('email', $data)) {
+        if (array_key_exists('email', $data)) {
             $object->setEmail($data['email']);
         }
-        if (\array_key_exists('phone', $data)) {
+        if (array_key_exists('phone', $data)) {
             $object->setPhone($data['phone']);
         }
-        if (\array_key_exists('website_url', $data)) {
+        if (array_key_exists('website_url', $data)) {
             $object->setWebsiteUrl($data['website_url']);
         }
-        if (\array_key_exists('twitter_url', $data)) {
+        if (array_key_exists('twitter_url', $data)) {
             $object->setTwitterUrl($data['twitter_url']);
         }
-        if (\array_key_exists('linkedin_url', $data)) {
+        if (array_key_exists('linkedin_url', $data)) {
             $object->setLinkedinUrl($data['linkedin_url']);
         }
-        if (\array_key_exists('facebook_url', $data)) {
+        if (array_key_exists('facebook_url', $data)) {
             $object->setFacebookUrl($data['facebook_url']);
         }
-        if (\array_key_exists('relation_number', $data)) {
+        if (array_key_exists('relation_number', $data)) {
             $object->setRelationNumber($data['relation_number']);
         }
-        if (\array_key_exists('bank_account', $data)) {
+        if (array_key_exists('bank_account', $data)) {
             $object->setBankAccount($data['bank_account']);
         }
-        if (\array_key_exists('bank_bic', $data)) {
+        if (array_key_exists('bank_bic', $data)) {
             $object->setBankBic($data['bank_bic']);
         }
-        if (\array_key_exists('invoice_receiver', $data)) {
+        if (array_key_exists('invoice_receiver', $data)) {
             $object->setInvoiceReceiver($data['invoice_receiver']);
         }
-        if (\array_key_exists('mailing_list_email', $data)) {
+        if (array_key_exists('mailing_list_email', $data)) {
             $object->setMailingListEmail($data['mailing_list_email']);
         }
-        if (\array_key_exists('mailing_lists', $data)) {
+        if (array_key_exists('mailing_lists', $data)) {
             $values_4 = [];
             foreach ($data['mailing_lists'] as $value_4) {
-                $values_4[] = $this->denormalizer->denormalize($value_4, \Paqtcom\Simplicate\Model\PersonMailingList::class, 'json', $context);
+                $values_4[] = $this->denormalizer->denormalize($value_4, PersonMailingList::class, 'json', $context);
             }
             $object->setMailingLists($values_4);
         }
-        if (\array_key_exists('is_active', $data)) {
+        if (array_key_exists('is_active', $data)) {
             $object->setIsActive($data['is_active']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('interests') && null !== $object->getInterests()) {
@@ -264,6 +275,6 @@ class PostPersonNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PostPerson::class => false];
+        return [PostPerson::class => false];
     }
 }

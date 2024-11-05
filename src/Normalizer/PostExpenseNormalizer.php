@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PostExpense;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class PostExpenseNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class PostExpenseNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PostExpense::class;
+        return $type === PostExpense::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostExpense::class;
+        return is_object($data) && $data::class === PostExpense::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,36 +44,36 @@ class PostExpenseNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PostExpense();
-        if (\array_key_exists('amount', $data) && \is_int($data['amount'])) {
+        $object = new PostExpense();
+        if (array_key_exists('amount', $data) && is_int($data['amount'])) {
             $data['amount'] = (float) $data['amount'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('project_id', $data)) {
+        if (array_key_exists('project_id', $data)) {
             $object->setProjectId($data['project_id']);
         }
-        if (\array_key_exists('service_id', $data)) {
+        if (array_key_exists('service_id', $data)) {
             $object->setServiceId($data['service_id']);
         }
-        if (\array_key_exists('costtype_id', $data)) {
+        if (array_key_exists('costtype_id', $data)) {
             $object->setCosttypeId($data['costtype_id']);
         }
-        if (\array_key_exists('amount', $data)) {
+        if (array_key_exists('amount', $data)) {
             $object->setAmount($data['amount']);
         }
-        if (\array_key_exists('employee_id', $data)) {
+        if (array_key_exists('employee_id', $data)) {
             $object->setEmployeeId($data['employee_id']);
         }
-        if (\array_key_exists('date', $data)) {
+        if (array_key_exists('date', $data)) {
             $object->setDate($data['date']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('projectId') && null !== $object->getProjectId()) {
@@ -95,6 +100,6 @@ class PostExpenseNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PostExpense::class => false];
+        return [PostExpense::class => false];
     }
 }

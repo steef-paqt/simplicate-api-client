@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostInvoicesInvoiceInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostInvoicesInvoiceNotFoundException;
+use Paqtcom\Simplicate\Exception\PostInvoicesInvoiceUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostInvoice;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostInvoicesInvoice extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostInvoice $body Invoice object that needs to be added
+     * @param PostInvoice $body Invoice object that needs to be added
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostInvoice $body)
+    public function __construct(PostInvoice $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostInvoicesInvoice extends BaseEndpoint
         return '/invoices/invoice';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostInvoicesInvoice extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostInvoicesInvoiceUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostInvoicesInvoiceNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostInvoicesInvoiceInternalServerErrorException
+     * @throws PostInvoicesInvoiceUnauthorizedException
+     * @throws PostInvoicesInvoiceNotFoundException
+     * @throws PostInvoicesInvoiceInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostInvoicesInvoice extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostInvoicesInvoiceUnauthorizedException($response);
+            throw new PostInvoicesInvoiceUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostInvoicesInvoiceNotFoundException($response);
+            throw new PostInvoicesInvoiceNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostInvoicesInvoiceInternalServerErrorException($response);
+            throw new PostInvoicesInvoiceInternalServerErrorException($response);
         }
     }
 

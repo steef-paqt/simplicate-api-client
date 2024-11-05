@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultProjectStatus;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetProjectsProjectstatusById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetProjectsProjectstatusById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/projects/projectstatus/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetProjectsProjectstatusById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultProjectStatus
+     * @return null|RestResultProjectStatus
+     *@throws GetProjectsProjectstatusByIdNotFoundException
+     * @throws GetProjectsProjectstatusByIdUnprocessableEntityException
+     * @throws GetProjectsProjectstatusByIdInternalServerErrorException
+     * @throws GetProjectsProjectstatusByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultProjectStatus::class, 'json');
+            return $serializer->deserialize($body, RestResultProjectStatus::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdUnauthorizedException($response);
+            throw new GetProjectsProjectstatusByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdNotFoundException($response);
+            throw new GetProjectsProjectstatusByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdUnprocessableEntityException($response);
+            throw new GetProjectsProjectstatusByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdInternalServerErrorException($response);
+            throw new GetProjectsProjectstatusByIdInternalServerErrorException($response);
         }
     }
 

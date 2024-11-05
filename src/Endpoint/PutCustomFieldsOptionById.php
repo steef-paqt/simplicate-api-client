@@ -4,17 +4,25 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdBadRequestException;
+use Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\CustomFieldOption;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutCustomFieldsOptionById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data
+     * @param CustomFieldOption $body CustomFieldOption object containing data
      */
-    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\CustomFieldOption $body)
+    public function __construct(protected string $id, CustomFieldOption $body)
     {
         $this->body = $body;
     }
@@ -29,7 +37,7 @@ class PutCustomFieldsOptionById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/customfields/option/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -42,12 +50,12 @@ class PutCustomFieldsOptionById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdInternalServerErrorException
+     * @throws PutCustomFieldsOptionByIdBadRequestException
+     * @throws PutCustomFieldsOptionByIdUnauthorizedException
+     * @throws PutCustomFieldsOptionByIdNotFoundException
+     * @throws PutCustomFieldsOptionByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -55,16 +63,16 @@ class PutCustomFieldsOptionById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdBadRequestException($response);
+            throw new PutCustomFieldsOptionByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdUnauthorizedException($response);
+            throw new PutCustomFieldsOptionByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdNotFoundException($response);
+            throw new PutCustomFieldsOptionByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdInternalServerErrorException($response);
+            throw new PutCustomFieldsOptionByIdInternalServerErrorException($response);
         }
     }
 

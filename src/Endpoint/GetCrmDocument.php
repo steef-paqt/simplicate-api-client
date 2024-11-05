@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCrmDocumentInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCrmDocumentNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCrmDocumentUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultDocuments;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCrmDocument extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetCrmDocument extends BaseEndpoint
         return '/crm/document';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetCrmDocument extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetCrmDocument extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumentUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumentNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumentInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultDocuments
+     * @return null|RestResultDocuments
+     *@throws GetCrmDocumentNotFoundException
+     * @throws GetCrmDocumentInternalServerErrorException
+     * @throws GetCrmDocumentUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocuments::class, 'json');
+            return $serializer->deserialize($body, RestResultDocuments::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmDocumentUnauthorizedException($response);
+            throw new GetCrmDocumentUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmDocumentNotFoundException($response);
+            throw new GetCrmDocumentNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmDocumentInternalServerErrorException($response);
+            throw new GetCrmDocumentInternalServerErrorException($response);
         }
     }
 

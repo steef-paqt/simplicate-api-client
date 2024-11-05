@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesSalesstatusInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesSalesstatusNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSalesSalesstatusUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultSalesStatusses;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesSalesstatus extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetSalesSalesstatus extends BaseEndpoint
         return '/sales/salesstatus';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetSalesSalesstatus extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetSalesSalesstatus extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesstatusUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesstatusNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesstatusInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultSalesStatusses
+     * @return null|RestResultSalesStatusses
+     *@throws GetSalesSalesstatusNotFoundException
+     * @throws GetSalesSalesstatusInternalServerErrorException
+     * @throws GetSalesSalesstatusUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultSalesStatusses::class, 'json');
+            return $serializer->deserialize($body, RestResultSalesStatusses::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesstatusUnauthorizedException($response);
+            throw new GetSalesSalesstatusUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesstatusNotFoundException($response);
+            throw new GetSalesSalesstatusNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesstatusInternalServerErrorException($response);
+            throw new GetSalesSalesstatusInternalServerErrorException($response);
         }
     }
 

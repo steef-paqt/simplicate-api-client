@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Industry;
+use Paqtcom\Simplicate\Model\Organization;
+use Paqtcom\Simplicate\Model\OrganizationSize;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +17,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class OrganizationNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +29,12 @@ class OrganizationNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\Organization::class;
+        return $type === Organization::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Organization::class;
+        return is_object($data) && $data::class === Organization::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,63 +45,63 @@ class OrganizationNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\Organization();
-        if (null === $data || false === \is_array($data)) {
+        $object = new Organization();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('name', $data)) {
+        if (array_key_exists('name', $data)) {
             $object->setName($data['name']);
         }
-        if (\array_key_exists('coc_code', $data)) {
+        if (array_key_exists('coc_code', $data)) {
             $object->setCocCode($data['coc_code']);
         }
-        if (\array_key_exists('vat_number', $data)) {
+        if (array_key_exists('vat_number', $data)) {
             $object->setVatNumber($data['vat_number']);
         }
-        if (\array_key_exists('email', $data)) {
+        if (array_key_exists('email', $data)) {
             $object->setEmail($data['email']);
         }
-        if (\array_key_exists('phone', $data)) {
+        if (array_key_exists('phone', $data)) {
             $object->setPhone($data['phone']);
         }
-        if (\array_key_exists('url', $data)) {
+        if (array_key_exists('url', $data)) {
             $object->setUrl($data['url']);
         }
-        if (\array_key_exists('note', $data)) {
+        if (array_key_exists('note', $data)) {
             $object->setNote($data['note']);
         }
-        if (\array_key_exists('linkedin_url', $data)) {
+        if (array_key_exists('linkedin_url', $data)) {
             $object->setLinkedinUrl($data['linkedin_url']);
         }
-        if (\array_key_exists('has_different_postal_address', $data)) {
+        if (array_key_exists('has_different_postal_address', $data)) {
             $object->setHasDifferentPostalAddress($data['has_different_postal_address']);
         }
-        if (\array_key_exists('industry', $data)) {
-            $object->setIndustry($this->denormalizer->denormalize($data['industry'], \Paqtcom\Simplicate\Model\Industry::class, 'json', $context));
+        if (array_key_exists('industry', $data)) {
+            $object->setIndustry($this->denormalizer->denormalize($data['industry'], Industry::class, 'json', $context));
         }
-        if (\array_key_exists('organizationsize', $data)) {
-            $object->setOrganizationsize($this->denormalizer->denormalize($data['organizationsize'], \Paqtcom\Simplicate\Model\OrganizationSize::class, 'json', $context));
+        if (array_key_exists('organizationsize', $data)) {
+            $object->setOrganizationsize($this->denormalizer->denormalize($data['organizationsize'], OrganizationSize::class, 'json', $context));
         }
-        if (\array_key_exists('invoice_receiver', $data)) {
+        if (array_key_exists('invoice_receiver', $data)) {
             $object->setInvoiceReceiver($data['invoice_receiver']);
         }
-        if (\array_key_exists('allow_autocollect', $data)) {
+        if (array_key_exists('allow_autocollect', $data)) {
             $object->setAllowAutocollect($data['allow_autocollect']);
         }
-        if (\array_key_exists('bank_account', $data)) {
+        if (array_key_exists('bank_account', $data)) {
             $object->setBankAccount($data['bank_account']);
         }
-        if (\array_key_exists('bank_bic', $data)) {
+        if (array_key_exists('bank_bic', $data)) {
             $object->setBankBic($data['bank_bic']);
         }
-        if (\array_key_exists('relation_number', $data)) {
+        if (array_key_exists('relation_number', $data)) {
             $object->setRelationNumber($data['relation_number']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('name') && null !== $object->getName()) {
@@ -152,6 +158,6 @@ class OrganizationNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\Organization::class => false];
+        return [Organization::class => false];
     }
 }

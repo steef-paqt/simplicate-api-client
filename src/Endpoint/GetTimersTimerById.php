@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetTimersTimerByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetTimersTimerByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetTimersTimerByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetTimersTimerByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultTimer;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetTimersTimerById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetTimersTimerById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/timers/timer/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetTimersTimerById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetTimersTimerByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetTimersTimerByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetTimersTimerByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetTimersTimerByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultTimer
+     * @return null|RestResultTimer
+     *@throws GetTimersTimerByIdNotFoundException
+     * @throws GetTimersTimerByIdUnprocessableEntityException
+     * @throws GetTimersTimerByIdInternalServerErrorException
+     * @throws GetTimersTimerByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultTimer::class, 'json');
+            return $serializer->deserialize($body, RestResultTimer::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetTimersTimerByIdUnauthorizedException($response);
+            throw new GetTimersTimerByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetTimersTimerByIdNotFoundException($response);
+            throw new GetTimersTimerByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetTimersTimerByIdUnprocessableEntityException($response);
+            throw new GetTimersTimerByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetTimersTimerByIdInternalServerErrorException($response);
+            throw new GetTimersTimerByIdInternalServerErrorException($response);
         }
     }
 

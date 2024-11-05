@@ -4,17 +4,25 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdBadRequestException;
+use Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostAbsence;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutHoursAbsenceById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Paqtcom\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values
+     * @param PostAbsence $body Absence object containing data that with the new values
      */
-    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostAbsence $body)
+    public function __construct(protected string $id, PostAbsence $body)
     {
         $this->body = $body;
     }
@@ -29,7 +37,7 @@ class PutHoursAbsenceById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hours/absence/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -42,12 +50,12 @@ class PutHoursAbsenceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdInternalServerErrorException
+     * @throws PutHoursAbsenceByIdBadRequestException
+     * @throws PutHoursAbsenceByIdUnauthorizedException
+     * @throws PutHoursAbsenceByIdNotFoundException
+     * @throws PutHoursAbsenceByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -55,16 +63,16 @@ class PutHoursAbsenceById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdBadRequestException($response);
+            throw new PutHoursAbsenceByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdUnauthorizedException($response);
+            throw new PutHoursAbsenceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdNotFoundException($response);
+            throw new PutHoursAbsenceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdInternalServerErrorException($response);
+            throw new PutHoursAbsenceByIdInternalServerErrorException($response);
         }
     }
 

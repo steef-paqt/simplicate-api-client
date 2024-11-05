@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteHrmAbsenceById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteHrmAbsenceById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hrm/absence/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteHrmAbsenceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdInternalServerErrorException
+     * @throws DeleteHrmAbsenceByIdUnauthorizedException
+     * @throws DeleteHrmAbsenceByIdNotFoundException
+     * @throws DeleteHrmAbsenceByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteHrmAbsenceById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdUnauthorizedException($response);
+            throw new DeleteHrmAbsenceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdNotFoundException($response);
+            throw new DeleteHrmAbsenceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdInternalServerErrorException($response);
+            throw new DeleteHrmAbsenceByIdInternalServerErrorException($response);
         }
     }
 

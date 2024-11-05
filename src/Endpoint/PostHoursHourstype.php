@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostHoursHourstypeInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostHoursHourstypeNotFoundException;
+use Paqtcom\Simplicate\Exception\PostHoursHourstypeUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostHoursType;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostHoursHourstype extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostHoursType $body Hour type object that needs to be added
+     * @param PostHoursType $body Hour type object that needs to be added
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostHoursType $body)
+    public function __construct(PostHoursType $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostHoursHourstype extends BaseEndpoint
         return '/hours/hourstype';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostHoursHourstype extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursHourstypeUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursHourstypeNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursHourstypeInternalServerErrorException
+     * @throws PostHoursHourstypeUnauthorizedException
+     * @throws PostHoursHourstypeNotFoundException
+     * @throws PostHoursHourstypeInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostHoursHourstype extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursHourstypeUnauthorizedException($response);
+            throw new PostHoursHourstypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursHourstypeNotFoundException($response);
+            throw new PostHoursHourstypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursHourstypeInternalServerErrorException($response);
+            throw new PostHoursHourstypeInternalServerErrorException($response);
         }
     }
 

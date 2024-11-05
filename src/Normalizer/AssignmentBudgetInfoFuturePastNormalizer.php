@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class AssignmentBudgetInfoFuturePastNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class AssignmentBudgetInfoFuturePastNormalizer implements DenormalizerInterface,
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast::class;
+        return $type === AssignmentBudgetInfoFuturePast::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast::class;
+        return is_object($data) && $data::class === AssignmentBudgetInfoFuturePast::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,21 +43,21 @@ class AssignmentBudgetInfoFuturePastNormalizer implements DenormalizerInterface,
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast();
-        if (null === $data || false === \is_array($data)) {
+        $object = new AssignmentBudgetInfoFuturePast();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('past', $data)) {
+        if (array_key_exists('past', $data)) {
             $object->setPast($data['past']);
         }
-        if (\array_key_exists('future', $data)) {
+        if (array_key_exists('future', $data)) {
             $object->setFuture($data['future']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('past') && null !== $object->getPast()) {
@@ -68,6 +72,6 @@ class AssignmentBudgetInfoFuturePastNormalizer implements DenormalizerInterface,
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast::class => false];
+        return [AssignmentBudgetInfoFuturePast::class => false];
     }
 }

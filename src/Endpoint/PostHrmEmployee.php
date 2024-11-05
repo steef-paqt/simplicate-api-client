@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostHrmEmployeeInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostHrmEmployeeNotFoundException;
+use Paqtcom\Simplicate\Exception\PostHrmEmployeeUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostEmployee;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostHrmEmployee extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostEmployee $body Employee object that needs to be added
+     * @param PostEmployee $body Employee object that needs to be added
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostEmployee $body)
+    public function __construct(PostEmployee $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostHrmEmployee extends BaseEndpoint
         return '/hrm/employee';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostHrmEmployee extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostHrmEmployeeUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostHrmEmployeeNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostHrmEmployeeInternalServerErrorException
+     * @throws PostHrmEmployeeUnauthorizedException
+     * @throws PostHrmEmployeeNotFoundException
+     * @throws PostHrmEmployeeInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostHrmEmployee extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHrmEmployeeUnauthorizedException($response);
+            throw new PostHrmEmployeeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHrmEmployeeNotFoundException($response);
+            throw new PostHrmEmployeeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHrmEmployeeInternalServerErrorException($response);
+            throw new PostHrmEmployeeInternalServerErrorException($response);
         }
     }
 

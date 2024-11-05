@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdBadRequestException;
+use Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultOrganization;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCrmOrganizationById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetCrmOrganizationById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/crm/organization/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetCrmOrganizationById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultOrganization
+     * @return null|RestResultOrganization
+     *@throws GetCrmOrganizationByIdUnauthorizedException
+     * @throws GetCrmOrganizationByIdUnprocessableEntityException
+     * @throws GetCrmOrganizationByIdInternalServerErrorException
+     * @throws GetCrmOrganizationByIdBadRequestException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultOrganization::class, 'json');
+            return $serializer->deserialize($body, RestResultOrganization::class, 'json');
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdBadRequestException($response);
+            throw new GetCrmOrganizationByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdUnauthorizedException($response);
+            throw new GetCrmOrganizationByIdUnauthorizedException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdUnprocessableEntityException($response);
+            throw new GetCrmOrganizationByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdInternalServerErrorException($response);
+            throw new GetCrmOrganizationByIdInternalServerErrorException($response);
         }
     }
 

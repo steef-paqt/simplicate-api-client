@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCrmRelationtypeInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCrmRelationtypeNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCrmRelationtypeUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultRelationTypes;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCrmRelationtype extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetCrmRelationtype extends BaseEndpoint
         return '/crm/relationtype';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetCrmRelationtype extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetCrmRelationtype extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmRelationtypeUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmRelationtypeNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmRelationtypeInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultRelationTypes
+     * @return null|RestResultRelationTypes
+     *@throws GetCrmRelationtypeNotFoundException
+     * @throws GetCrmRelationtypeInternalServerErrorException
+     * @throws GetCrmRelationtypeUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultRelationTypes::class, 'json');
+            return $serializer->deserialize($body, RestResultRelationTypes::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmRelationtypeUnauthorizedException($response);
+            throw new GetCrmRelationtypeUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmRelationtypeNotFoundException($response);
+            throw new GetCrmRelationtypeNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmRelationtypeInternalServerErrorException($response);
+            throw new GetCrmRelationtypeInternalServerErrorException($response);
         }
     }
 

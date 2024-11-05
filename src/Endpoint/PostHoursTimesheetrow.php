@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostHoursTimesheetrowBadRequestException;
+use Paqtcom\Simplicate\Exception\PostHoursTimesheetrowInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostHoursTimesheetrowUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostTimesheetRow;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostHoursTimesheetrow extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostTimesheetRow $body Description of timesheetrow that is submitted.
+     * @param PostTimesheetRow $body Description of timesheetrow that is submitted.
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostTimesheetRow $body)
+    public function __construct(PostTimesheetRow $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostHoursTimesheetrow extends BaseEndpoint
         return '/hours/timesheetrow';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostHoursTimesheetrow extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowInternalServerErrorException
+     * @throws PostHoursTimesheetrowBadRequestException
+     * @throws PostHoursTimesheetrowUnauthorizedException
+     * @throws PostHoursTimesheetrowInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostHoursTimesheetrow extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowBadRequestException($response);
+            throw new PostHoursTimesheetrowBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowUnauthorizedException($response);
+            throw new PostHoursTimesheetrowUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowInternalServerErrorException($response);
+            throw new PostHoursTimesheetrowInternalServerErrorException($response);
         }
     }
 

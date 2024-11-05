@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetPurchaseType;
+use Paqtcom\Simplicate\Model\GetServiceCostType;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class GetServiceCostTypeNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +29,12 @@ class GetServiceCostTypeNormalizer implements DenormalizerInterface, NormalizerI
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetServiceCostType::class;
+        return $type === GetServiceCostType::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetServiceCostType::class;
+        return is_object($data) && $data::class === GetServiceCostType::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,45 +45,45 @@ class GetServiceCostTypeNormalizer implements DenormalizerInterface, NormalizerI
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetServiceCostType();
-        if (\array_key_exists('budgeted_amount', $data) && \is_int($data['budgeted_amount'])) {
+        $object = new GetServiceCostType();
+        if (array_key_exists('budgeted_amount', $data) && is_int($data['budgeted_amount'])) {
             $data['budgeted_amount'] = (float) $data['budgeted_amount'];
         }
-        if (\array_key_exists('tariff', $data) && \is_int($data['tariff'])) {
+        if (array_key_exists('tariff', $data) && is_int($data['tariff'])) {
             $data['tariff'] = (float) $data['tariff'];
         }
-        if (\array_key_exists('purchase_margin', $data) && \is_int($data['purchase_margin'])) {
+        if (array_key_exists('purchase_margin', $data) && is_int($data['purchase_margin'])) {
             $data['purchase_margin'] = (float) $data['purchase_margin'];
         }
-        if (\array_key_exists('purchase_tariff', $data) && \is_int($data['purchase_tariff'])) {
+        if (array_key_exists('purchase_tariff', $data) && is_int($data['purchase_tariff'])) {
             $data['purchase_tariff'] = (float) $data['purchase_tariff'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('costtype', $data)) {
-            $object->setCosttype($this->denormalizer->denormalize($data['costtype'], \Paqtcom\Simplicate\Model\GetPurchaseType::class, 'json', $context));
+        if (array_key_exists('costtype', $data)) {
+            $object->setCosttype($this->denormalizer->denormalize($data['costtype'], GetPurchaseType::class, 'json', $context));
         }
-        if (\array_key_exists('budgeted_amount', $data)) {
+        if (array_key_exists('budgeted_amount', $data)) {
             $object->setBudgetedAmount($data['budgeted_amount']);
         }
-        if (\array_key_exists('tariff', $data)) {
+        if (array_key_exists('tariff', $data)) {
             $object->setTariff($data['tariff']);
         }
-        if (\array_key_exists('purchase_margin', $data)) {
+        if (array_key_exists('purchase_margin', $data)) {
             $object->setPurchaseMargin($data['purchase_margin']);
         }
-        if (\array_key_exists('purchase_tariff', $data)) {
+        if (array_key_exists('purchase_tariff', $data)) {
             $object->setPurchaseTariff($data['purchase_tariff']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -104,6 +110,6 @@ class GetServiceCostTypeNormalizer implements DenormalizerInterface, NormalizerI
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetServiceCostType::class => false];
+        return [GetServiceCostType::class => false];
     }
 }

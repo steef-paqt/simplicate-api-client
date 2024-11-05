@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\ProjectServiceHoursType;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class ProjectServiceHoursTypeNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class ProjectServiceHoursTypeNormalizer implements DenormalizerInterface, Normal
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\ProjectServiceHoursType::class;
+        return $type === ProjectServiceHoursType::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\ProjectServiceHoursType::class;
+        return is_object($data) && $data::class === ProjectServiceHoursType::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,30 +44,30 @@ class ProjectServiceHoursTypeNormalizer implements DenormalizerInterface, Normal
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\ProjectServiceHoursType();
-        if (\array_key_exists('budgeted_amount', $data) && \is_int($data['budgeted_amount'])) {
+        $object = new ProjectServiceHoursType();
+        if (array_key_exists('budgeted_amount', $data) && is_int($data['budgeted_amount'])) {
             $data['budgeted_amount'] = (float) $data['budgeted_amount'];
         }
-        if (\array_key_exists('tariff', $data) && \is_int($data['tariff'])) {
+        if (array_key_exists('tariff', $data) && is_int($data['tariff'])) {
             $data['tariff'] = (float) $data['tariff'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('budgeted_amount', $data)) {
+        if (array_key_exists('budgeted_amount', $data)) {
             $object->setBudgetedAmount($data['budgeted_amount']);
         }
-        if (\array_key_exists('tariff', $data)) {
+        if (array_key_exists('tariff', $data)) {
             $object->setTariff($data['tariff']);
         }
-        if (\array_key_exists('billable', $data)) {
+        if (array_key_exists('billable', $data)) {
             $object->setBillable($data['billable']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('budgetedAmount') && null !== $object->getBudgetedAmount()) {
@@ -80,6 +85,6 @@ class ProjectServiceHoursTypeNormalizer implements DenormalizerInterface, Normal
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\ProjectServiceHoursType::class => false];
+        return [ProjectServiceHoursType::class => false];
     }
 }

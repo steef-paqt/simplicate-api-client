@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PostDuplicateSales;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class PostDuplicateSalesNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class PostDuplicateSalesNormalizer implements DenormalizerInterface, NormalizerI
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PostDuplicateSales::class;
+        return $type === PostDuplicateSales::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostDuplicateSales::class;
+        return is_object($data) && $data::class === PostDuplicateSales::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,42 +43,42 @@ class PostDuplicateSalesNormalizer implements DenormalizerInterface, NormalizerI
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PostDuplicateSales();
-        if (null === $data || false === \is_array($data)) {
+        $object = new PostDuplicateSales();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('is_new_subject', $data)) {
+        if (array_key_exists('is_new_subject', $data)) {
             $object->setIsNewSubject($data['is_new_subject']);
         }
-        if (\array_key_exists('subject', $data)) {
+        if (array_key_exists('subject', $data)) {
             $object->setSubject($data['subject']);
         }
-        if (\array_key_exists('is_new_responsible_employee', $data)) {
+        if (array_key_exists('is_new_responsible_employee', $data)) {
             $object->setIsNewResponsibleEmployee($data['is_new_responsible_employee']);
         }
-        if (\array_key_exists('responsible_employee_id', $data)) {
+        if (array_key_exists('responsible_employee_id', $data)) {
             $object->setResponsibleEmployeeId($data['responsible_employee_id']);
         }
-        if (\array_key_exists('is_new_organization_or_person', $data)) {
+        if (array_key_exists('is_new_organization_or_person', $data)) {
             $object->setIsNewOrganizationOrPerson($data['is_new_organization_or_person']);
         }
-        if (\array_key_exists('organization_id', $data)) {
+        if (array_key_exists('organization_id', $data)) {
             $object->setOrganizationId($data['organization_id']);
         }
-        if (\array_key_exists('person_id', $data)) {
+        if (array_key_exists('person_id', $data)) {
             $object->setPersonId($data['person_id']);
         }
-        if (\array_key_exists('start_date', $data)) {
+        if (array_key_exists('start_date', $data)) {
             $object->setStartDate($data['start_date']);
         }
-        if (\array_key_exists('end_date', $data)) {
+        if (array_key_exists('end_date', $data)) {
             $object->setEndDate($data['end_date']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('isNewSubject') && null !== $object->getIsNewSubject()) {
@@ -110,6 +114,6 @@ class PostDuplicateSalesNormalizer implements DenormalizerInterface, NormalizerI
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PostDuplicateSales::class => false];
+        return [PostDuplicateSales::class => false];
     }
 }

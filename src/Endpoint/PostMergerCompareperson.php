@@ -4,16 +4,24 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostMergerComparepersonBadRequestException;
+use Paqtcom\Simplicate\Exception\PostMergerComparepersonInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostMergerComparepersonUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostMergerCompare;
+use Paqtcom\Simplicate\Model\RestResultMergerCompare;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostMergerCompareperson extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostMergerCompare $body Compare objects containing the source id and target id
+     * @param PostMergerCompare $body Compare objects containing the source id and target id
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostMergerCompare $body)
+    public function __construct(PostMergerCompare $body)
     {
         $this->body = $body;
     }
@@ -28,7 +36,7 @@ class PostMergerCompareperson extends BaseEndpoint
         return '/merger/compareperson';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -40,28 +48,26 @@ class PostMergerCompareperson extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\PostMergerComparepersonBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostMergerComparepersonUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostMergerComparepersonInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultMergerCompare
+     * @return null|RestResultMergerCompare
+     *@throws PostMergerComparepersonUnauthorizedException
+     * @throws PostMergerComparepersonInternalServerErrorException
+     * @throws PostMergerComparepersonBadRequestException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultMergerCompare::class, 'json');
+            return $serializer->deserialize($body, RestResultMergerCompare::class, 'json');
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostMergerComparepersonBadRequestException($response);
+            throw new PostMergerComparepersonBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostMergerComparepersonUnauthorizedException($response);
+            throw new PostMergerComparepersonUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostMergerComparepersonInternalServerErrorException($response);
+            throw new PostMergerComparepersonInternalServerErrorException($response);
         }
     }
 

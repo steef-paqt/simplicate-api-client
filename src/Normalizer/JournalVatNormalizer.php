@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\JournalVat;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class JournalVatNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class JournalVatNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\JournalVat::class;
+        return $type === JournalVat::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\JournalVat::class;
+        return is_object($data) && $data::class === JournalVat::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,30 +44,30 @@ class JournalVatNormalizer implements DenormalizerInterface, NormalizerInterface
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\JournalVat();
-        if (\array_key_exists('amount_vat', $data) && \is_int($data['amount_vat'])) {
+        $object = new JournalVat();
+        if (array_key_exists('amount_vat', $data) && is_int($data['amount_vat'])) {
             $data['amount_vat'] = (float) $data['amount_vat'];
         }
-        if (\array_key_exists('amount_excl', $data) && \is_int($data['amount_excl'])) {
+        if (array_key_exists('amount_excl', $data) && is_int($data['amount_excl'])) {
             $data['amount_excl'] = (float) $data['amount_excl'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('vat_id', $data)) {
+        if (array_key_exists('vat_id', $data)) {
             $object->setVatId($data['vat_id']);
         }
-        if (\array_key_exists('amount_vat', $data)) {
+        if (array_key_exists('amount_vat', $data)) {
             $object->setAmountVat($data['amount_vat']);
         }
-        if (\array_key_exists('amount_excl', $data)) {
+        if (array_key_exists('amount_excl', $data)) {
             $object->setAmountExcl($data['amount_excl']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('vatId') && null !== $object->getVatId()) {
@@ -80,6 +85,6 @@ class JournalVatNormalizer implements DenormalizerInterface, NormalizerInterface
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\JournalVat::class => false];
+        return [JournalVat::class => false];
     }
 }

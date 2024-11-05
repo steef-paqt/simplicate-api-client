@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteTimelineMessageById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteTimelineMessageById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/timeline/message/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteTimelineMessageById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdInternalServerErrorException
+     * @throws DeleteTimelineMessageByIdUnauthorizedException
+     * @throws DeleteTimelineMessageByIdNotFoundException
+     * @throws DeleteTimelineMessageByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteTimelineMessageById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdUnauthorizedException($response);
+            throw new DeleteTimelineMessageByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdNotFoundException($response);
+            throw new DeleteTimelineMessageByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdInternalServerErrorException($response);
+            throw new DeleteTimelineMessageByIdInternalServerErrorException($response);
         }
     }
 

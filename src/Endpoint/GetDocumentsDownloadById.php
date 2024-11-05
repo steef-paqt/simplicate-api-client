@@ -4,11 +4,18 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdUnprocessableEntityException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetDocumentsDownloadById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +34,7 @@ class GetDocumentsDownloadById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/documents/download/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,12 +47,12 @@ class GetDocumentsDownloadById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdInternalServerErrorException
+     * @throws GetDocumentsDownloadByIdUnauthorizedException
+     * @throws GetDocumentsDownloadByIdNotFoundException
+     * @throws GetDocumentsDownloadByIdUnprocessableEntityException
+     * @throws GetDocumentsDownloadByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
@@ -53,16 +60,16 @@ class GetDocumentsDownloadById extends BaseEndpoint
             return json_decode($body);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdUnauthorizedException($response);
+            throw new GetDocumentsDownloadByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdNotFoundException($response);
+            throw new GetDocumentsDownloadByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdUnprocessableEntityException($response);
+            throw new GetDocumentsDownloadByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdInternalServerErrorException($response);
+            throw new GetDocumentsDownloadByIdInternalServerErrorException($response);
         }
     }
 

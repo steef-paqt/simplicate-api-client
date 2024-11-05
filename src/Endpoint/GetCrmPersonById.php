@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCrmPersonByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCrmPersonByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCrmPersonByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetCrmPersonByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultPerson;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCrmPersonById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetCrmPersonById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/crm/person/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetCrmPersonById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersonByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersonByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersonByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmPersonByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultPerson
+     * @return null|RestResultPerson
+     *@throws GetCrmPersonByIdNotFoundException
+     * @throws GetCrmPersonByIdUnprocessableEntityException
+     * @throws GetCrmPersonByIdInternalServerErrorException
+     * @throws GetCrmPersonByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultPerson::class, 'json');
+            return $serializer->deserialize($body, RestResultPerson::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmPersonByIdUnauthorizedException($response);
+            throw new GetCrmPersonByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmPersonByIdNotFoundException($response);
+            throw new GetCrmPersonByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmPersonByIdUnprocessableEntityException($response);
+            throw new GetCrmPersonByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmPersonByIdInternalServerErrorException($response);
+            throw new GetCrmPersonByIdInternalServerErrorException($response);
         }
     }
 

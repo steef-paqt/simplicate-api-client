@@ -4,7 +4,15 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\ContactPerson;
+use Paqtcom\Simplicate\Model\LostToCompetitor;
+use Paqtcom\Simplicate\Model\PostCustomFieldValue;
+use Paqtcom\Simplicate\Model\PostSales;
+use Paqtcom\Simplicate\Model\PostSeparateInvoiceRecipient;
+use Paqtcom\Simplicate\Model\PostTeam;
+use Paqtcom\Simplicate\Model\SalesReason;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +21,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class PostSalesNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +34,12 @@ class PostSalesNormalizer implements DenormalizerInterface, NormalizerInterface,
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PostSales::class;
+        return $type === PostSales::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostSales::class;
+        return is_object($data) && $data::class === PostSales::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,86 +50,86 @@ class PostSalesNormalizer implements DenormalizerInterface, NormalizerInterface,
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PostSales();
-        if (\array_key_exists('expected_revenue', $data) && \is_int($data['expected_revenue'])) {
+        $object = new PostSales();
+        if (array_key_exists('expected_revenue', $data) && is_int($data['expected_revenue'])) {
             $data['expected_revenue'] = (float) $data['expected_revenue'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('responsible_employee_id', $data)) {
+        if (array_key_exists('responsible_employee_id', $data)) {
             $object->setResponsibleEmployeeId($data['responsible_employee_id']);
         }
-        if (\array_key_exists('progress_id', $data)) {
+        if (array_key_exists('progress_id', $data)) {
             $object->setProgressId($data['progress_id']);
         }
-        if (\array_key_exists('source_id', $data)) {
+        if (array_key_exists('source_id', $data)) {
             $object->setSourceId($data['source_id']);
         }
-        if (\array_key_exists('status_id', $data)) {
+        if (array_key_exists('status_id', $data)) {
             $object->setStatusId($data['status_id']);
         }
-        if (\array_key_exists('teams', $data)) {
+        if (array_key_exists('teams', $data)) {
             $values = [];
             foreach ($data['teams'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\PostTeam::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, PostTeam::class, 'json', $context);
             }
             $object->setTeams($values);
         }
-        if (\array_key_exists('separate_invoice_recipient', $data)) {
-            $object->setSeparateInvoiceRecipient($this->denormalizer->denormalize($data['separate_invoice_recipient'], \Paqtcom\Simplicate\Model\PostSeparateInvoiceRecipient::class, 'json', $context));
+        if (array_key_exists('separate_invoice_recipient', $data)) {
+            $object->setSeparateInvoiceRecipient($this->denormalizer->denormalize($data['separate_invoice_recipient'], PostSeparateInvoiceRecipient::class, 'json', $context));
         }
-        if (\array_key_exists('custom_fields', $data)) {
+        if (array_key_exists('custom_fields', $data)) {
             $values_1 = [];
             foreach ($data['custom_fields'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\PostCustomFieldValue::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, PostCustomFieldValue::class, 'json', $context);
             }
             $object->setCustomFields($values_1);
         }
-        if (\array_key_exists('my_organization_profile_id', $data)) {
+        if (array_key_exists('my_organization_profile_id', $data)) {
             $object->setMyOrganizationProfileId($data['my_organization_profile_id']);
         }
-        if (\array_key_exists('organization_id', $data)) {
+        if (array_key_exists('organization_id', $data)) {
             $object->setOrganizationId($data['organization_id']);
         }
-        if (\array_key_exists('person_id', $data)) {
+        if (array_key_exists('person_id', $data)) {
             $object->setPersonId($data['person_id']);
         }
-        if (\array_key_exists('contact_id', $data)) {
+        if (array_key_exists('contact_id', $data)) {
             $object->setContactId($data['contact_id']);
         }
-        if (\array_key_exists('reason', $data)) {
-            $object->setReason($this->denormalizer->denormalize($data['reason'], \Paqtcom\Simplicate\Model\SalesReason::class, 'json', $context));
+        if (array_key_exists('reason', $data)) {
+            $object->setReason($this->denormalizer->denormalize($data['reason'], SalesReason::class, 'json', $context));
         }
-        if (\array_key_exists('contact', $data)) {
-            $object->setContact($this->denormalizer->denormalize($data['contact'], \Paqtcom\Simplicate\Model\ContactPerson::class, 'json', $context));
+        if (array_key_exists('contact', $data)) {
+            $object->setContact($this->denormalizer->denormalize($data['contact'], ContactPerson::class, 'json', $context));
         }
-        if (\array_key_exists('subject', $data)) {
+        if (array_key_exists('subject', $data)) {
             $object->setSubject($data['subject']);
         }
-        if (\array_key_exists('start_date', $data)) {
+        if (array_key_exists('start_date', $data)) {
             $object->setStartDate($data['start_date']);
         }
-        if (\array_key_exists('expected_closing_date', $data)) {
+        if (array_key_exists('expected_closing_date', $data)) {
             $object->setExpectedClosingDate($data['expected_closing_date']);
         }
-        if (\array_key_exists('expected_revenue', $data)) {
+        if (array_key_exists('expected_revenue', $data)) {
             $object->setExpectedRevenue($data['expected_revenue']);
         }
-        if (\array_key_exists('note', $data)) {
+        if (array_key_exists('note', $data)) {
             $object->setNote($data['note']);
         }
-        if (\array_key_exists('chance_to_score', $data)) {
+        if (array_key_exists('chance_to_score', $data)) {
             $object->setChanceToScore($data['chance_to_score']);
         }
-        if (\array_key_exists('lost_to_competitor', $data)) {
-            $object->setLostToCompetitor($this->denormalizer->denormalize($data['lost_to_competitor'], \Paqtcom\Simplicate\Model\LostToCompetitor::class, 'json', $context));
+        if (array_key_exists('lost_to_competitor', $data)) {
+            $object->setLostToCompetitor($this->denormalizer->denormalize($data['lost_to_competitor'], LostToCompetitor::class, 'json', $context));
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('responsibleEmployeeId') && null !== $object->getResponsibleEmployeeId()) {
@@ -195,6 +206,6 @@ class PostSalesNormalizer implements DenormalizerInterface, NormalizerInterface,
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PostSales::class => false];
+        return [PostSales::class => false];
     }
 }

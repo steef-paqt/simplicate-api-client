@@ -4,11 +4,18 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetProjectsAssignmentByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetProjectsAssignmentByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetProjectsAssignmentByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultProjectAssignment;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetProjectsAssignmentById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +34,7 @@ class GetProjectsAssignmentById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/projects/assignment/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,28 +46,26 @@ class GetProjectsAssignmentById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultProjectAssignment
+     * @return null|RestResultProjectAssignment
+     *@throws GetProjectsAssignmentByIdNotFoundException
+     * @throws GetProjectsAssignmentByIdInternalServerErrorException
+     * @throws GetProjectsAssignmentByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultProjectAssignment::class, 'json');
+            return $serializer->deserialize($body, RestResultProjectAssignment::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsAssignmentByIdUnauthorizedException($response);
+            throw new GetProjectsAssignmentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsAssignmentByIdNotFoundException($response);
+            throw new GetProjectsAssignmentByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsAssignmentByIdInternalServerErrorException($response);
+            throw new GetProjectsAssignmentByIdInternalServerErrorException($response);
         }
     }
 

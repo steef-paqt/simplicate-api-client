@@ -4,7 +4,14 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Avatar;
+use Paqtcom\Simplicate\Model\EmployeeStatus;
+use Paqtcom\Simplicate\Model\GetCustomField;
+use Paqtcom\Simplicate\Model\GetEmployee;
+use Paqtcom\Simplicate\Model\GetEmployeeSimple;
+use Paqtcom\Simplicate\Model\Team;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +20,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class GetEmployeeNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +33,12 @@ class GetEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetEmployee::class;
+        return $type === GetEmployee::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetEmployee::class;
+        return is_object($data) && $data::class === GetEmployee::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,95 +49,95 @@ class GetEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetEmployee();
-        if (\array_key_exists('hourly_sales_tariff', $data) && \is_int($data['hourly_sales_tariff'])) {
+        $object = new GetEmployee();
+        if (array_key_exists('hourly_sales_tariff', $data) && is_int($data['hourly_sales_tariff'])) {
             $data['hourly_sales_tariff'] = (float) $data['hourly_sales_tariff'];
         }
-        if (\array_key_exists('hourly_cost_tariff', $data) && \is_int($data['hourly_cost_tariff'])) {
+        if (array_key_exists('hourly_cost_tariff', $data) && is_int($data['hourly_cost_tariff'])) {
             $data['hourly_cost_tariff'] = (float) $data['hourly_cost_tariff'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('is_user', $data)) {
+        if (array_key_exists('is_user', $data)) {
             $object->setIsUser($data['is_user']);
         }
-        if (\array_key_exists('teams', $data)) {
+        if (array_key_exists('teams', $data)) {
             $values = [];
             foreach ($data['teams'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\Team::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, Team::class, 'json', $context);
             }
             $object->setTeams($values);
         }
-        if (\array_key_exists('supervisor', $data)) {
-            $object->setSupervisor($this->denormalizer->denormalize($data['supervisor'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+        if (array_key_exists('supervisor', $data)) {
+            $object->setSupervisor($this->denormalizer->denormalize($data['supervisor'], GetEmployeeSimple::class, 'json', $context));
         }
-        if (\array_key_exists('status', $data)) {
-            $object->setStatus($this->denormalizer->denormalize($data['status'], \Paqtcom\Simplicate\Model\EmployeeStatus::class, 'json', $context));
+        if (array_key_exists('status', $data)) {
+            $object->setStatus($this->denormalizer->denormalize($data['status'], EmployeeStatus::class, 'json', $context));
         }
-        if (\array_key_exists('custom_fields', $data)) {
+        if (array_key_exists('custom_fields', $data)) {
             $values_1 = [];
             foreach ($data['custom_fields'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\GetCustomField::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, GetCustomField::class, 'json', $context);
             }
             $object->setCustomFields($values_1);
         }
-        if (\array_key_exists('person_id', $data)) {
+        if (array_key_exists('person_id', $data)) {
             $object->setPersonId($data['person_id']);
         }
-        if (\array_key_exists('name', $data)) {
+        if (array_key_exists('name', $data)) {
             $object->setName($data['name']);
         }
-        if (\array_key_exists('bank_account', $data)) {
+        if (array_key_exists('bank_account', $data)) {
             $object->setBankAccount($data['bank_account']);
         }
-        if (\array_key_exists('function', $data)) {
+        if (array_key_exists('function', $data)) {
             $object->setFunction($data['function']);
         }
-        if (\array_key_exists('type', $data)) {
+        if (array_key_exists('type', $data)) {
             $object->setType($data['type']);
         }
-        if (\array_key_exists('employment_status', $data)) {
+        if (array_key_exists('employment_status', $data)) {
             $object->setEmploymentStatus($data['employment_status']);
         }
-        if (\array_key_exists('civil_status', $data)) {
+        if (array_key_exists('civil_status', $data)) {
             $object->setCivilStatus($data['civil_status']);
         }
-        if (\array_key_exists('work_phone', $data)) {
+        if (array_key_exists('work_phone', $data)) {
             $object->setWorkPhone($data['work_phone']);
         }
-        if (\array_key_exists('work_mobile', $data)) {
+        if (array_key_exists('work_mobile', $data)) {
             $object->setWorkMobile($data['work_mobile']);
         }
-        if (\array_key_exists('work_email', $data)) {
+        if (array_key_exists('work_email', $data)) {
             $object->setWorkEmail($data['work_email']);
         }
-        if (\array_key_exists('hourly_sales_tariff', $data)) {
+        if (array_key_exists('hourly_sales_tariff', $data)) {
             $object->setHourlySalesTariff($data['hourly_sales_tariff']);
         }
-        if (\array_key_exists('hourly_cost_tariff', $data)) {
+        if (array_key_exists('hourly_cost_tariff', $data)) {
             $object->setHourlyCostTariff($data['hourly_cost_tariff']);
         }
-        if (\array_key_exists('avatar', $data)) {
-            $object->setAvatar($this->denormalizer->denormalize($data['avatar'], \Paqtcom\Simplicate\Model\Avatar::class, 'json', $context));
+        if (array_key_exists('avatar', $data)) {
+            $object->setAvatar($this->denormalizer->denormalize($data['avatar'], Avatar::class, 'json', $context));
         }
-        if (\array_key_exists('created_at', $data)) {
+        if (array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
         }
-        if (\array_key_exists('updated_at', $data)) {
+        if (array_key_exists('updated_at', $data)) {
             $object->setUpdatedAt($data['updated_at']);
         }
-        if (\array_key_exists('simplicate_url', $data)) {
+        if (array_key_exists('simplicate_url', $data)) {
             $object->setSimplicateUrl($data['simplicate_url']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -210,6 +220,6 @@ class GetEmployeeNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetEmployee::class => false];
+        return [GetEmployee::class => false];
     }
 }

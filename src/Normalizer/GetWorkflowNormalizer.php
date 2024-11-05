@@ -4,7 +4,16 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Comment;
+use Paqtcom\Simplicate\Model\CreatedBy;
+use Paqtcom\Simplicate\Model\CurrentTask;
+use Paqtcom\Simplicate\Model\GetDefaultAction;
+use Paqtcom\Simplicate\Model\GetDocument;
+use Paqtcom\Simplicate\Model\GetSimpleDefaultWorkflow;
+use Paqtcom\Simplicate\Model\GetWorkflow;
+use Paqtcom\Simplicate\Model\LinkedTo;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +22,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class GetWorkflowNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +34,12 @@ class GetWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetWorkflow::class;
+        return $type === GetWorkflow::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetWorkflow::class;
+        return is_object($data) && $data::class === GetWorkflow::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,73 +50,73 @@ class GetWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetWorkflow();
-        if (null === $data || false === \is_array($data)) {
+        $object = new GetWorkflow();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('defaultworkflow', $data)) {
-            $object->setDefaultworkflow($this->denormalizer->denormalize($data['defaultworkflow'], \Paqtcom\Simplicate\Model\GetSimpleDefaultWorkflow::class, 'json', $context));
+        if (array_key_exists('defaultworkflow', $data)) {
+            $object->setDefaultworkflow($this->denormalizer->denormalize($data['defaultworkflow'], GetSimpleDefaultWorkflow::class, 'json', $context));
         }
-        if (\array_key_exists('current_task', $data)) {
-            $object->setCurrentTask($this->denormalizer->denormalize($data['current_task'], \Paqtcom\Simplicate\Model\CurrentTask::class, 'json', $context));
+        if (array_key_exists('current_task', $data)) {
+            $object->setCurrentTask($this->denormalizer->denormalize($data['current_task'], CurrentTask::class, 'json', $context));
         }
-        if (\array_key_exists('actions', $data)) {
+        if (array_key_exists('actions', $data)) {
             $values = [];
             foreach ($data['actions'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\GetDefaultAction::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, GetDefaultAction::class, 'json', $context);
             }
             $object->setActions($values);
         }
-        if (\array_key_exists('linked_to', $data)) {
+        if (array_key_exists('linked_to', $data)) {
             $values_1 = [];
             foreach ($data['linked_to'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, \Paqtcom\Simplicate\Model\LinkedTo::class, 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, LinkedTo::class, 'json', $context);
             }
             $object->setLinkedTo($values_1);
         }
-        if (\array_key_exists('filename', $data)) {
+        if (array_key_exists('filename', $data)) {
             $object->setFilename($data['filename']);
         }
-        if (\array_key_exists('attachments', $data)) {
+        if (array_key_exists('attachments', $data)) {
             $values_2 = [];
             foreach ($data['attachments'] as $value_2) {
-                $values_2[] = $this->denormalizer->denormalize($value_2, \Paqtcom\Simplicate\Model\GetDocument::class, 'json', $context);
+                $values_2[] = $this->denormalizer->denormalize($value_2, GetDocument::class, 'json', $context);
             }
             $object->setAttachments($values_2);
         }
-        if (\array_key_exists('comments', $data)) {
+        if (array_key_exists('comments', $data)) {
             $values_3 = [];
             foreach ($data['comments'] as $value_3) {
-                $values_3[] = $this->denormalizer->denormalize($value_3, \Paqtcom\Simplicate\Model\Comment::class, 'json', $context);
+                $values_3[] = $this->denormalizer->denormalize($value_3, Comment::class, 'json', $context);
             }
             $object->setComments($values_3);
         }
-        if (\array_key_exists('created_by', $data)) {
-            $object->setCreatedBy($this->denormalizer->denormalize($data['created_by'], \Paqtcom\Simplicate\Model\CreatedBy::class, 'json', $context));
+        if (array_key_exists('created_by', $data)) {
+            $object->setCreatedBy($this->denormalizer->denormalize($data['created_by'], CreatedBy::class, 'json', $context));
         }
-        if (\array_key_exists('created_at', $data)) {
+        if (array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
         }
-        if (\array_key_exists('updated_at', $data)) {
+        if (array_key_exists('updated_at', $data)) {
             $object->setUpdatedAt($data['updated_at']);
         }
-        if (\array_key_exists('title', $data)) {
+        if (array_key_exists('title', $data)) {
             $object->setTitle($data['title']);
         }
-        if (\array_key_exists('description', $data)) {
+        if (array_key_exists('description', $data)) {
             $object->setDescription($data['description']);
         }
-        if (\array_key_exists('deadline_date', $data)) {
+        if (array_key_exists('deadline_date', $data)) {
             $object->setDeadlineDate($data['deadline_date']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -172,6 +183,6 @@ class GetWorkflowNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetWorkflow::class => false];
+        return [GetWorkflow::class => false];
     }
 }

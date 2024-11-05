@@ -4,17 +4,25 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutCrmPersonByIdBadRequestException;
+use Paqtcom\Simplicate\Exception\PutCrmPersonByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutCrmPersonByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\PutCrmPersonByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostPerson;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutCrmPersonById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added
+     * @param PostPerson $body Person object that needs to be added
      */
-    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostPerson $body)
+    public function __construct(protected string $id, PostPerson $body)
     {
         $this->body = $body;
     }
@@ -29,7 +37,7 @@ class PutCrmPersonById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/crm/person/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -42,12 +50,12 @@ class PutCrmPersonById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutCrmPersonByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutCrmPersonByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutCrmPersonByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutCrmPersonByIdInternalServerErrorException
+     * @throws PutCrmPersonByIdBadRequestException
+     * @throws PutCrmPersonByIdUnauthorizedException
+     * @throws PutCrmPersonByIdNotFoundException
+     * @throws PutCrmPersonByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -55,16 +63,16 @@ class PutCrmPersonById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutCrmPersonByIdBadRequestException($response);
+            throw new PutCrmPersonByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutCrmPersonByIdUnauthorizedException($response);
+            throw new PutCrmPersonByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutCrmPersonByIdNotFoundException($response);
+            throw new PutCrmPersonByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutCrmPersonByIdInternalServerErrorException($response);
+            throw new PutCrmPersonByIdInternalServerErrorException($response);
         }
     }
 

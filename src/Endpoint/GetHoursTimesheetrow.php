@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHoursTimesheetrowBadRequestException;
+use Paqtcom\Simplicate\Exception\GetHoursTimesheetrowInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHoursTimesheetrowUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHoursTimesheetrow extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetHoursTimesheetrow extends BaseEndpoint
         return '/hours/timesheetrow';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetHoursTimesheetrow extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['q[start_date]', 'q[end_date]', 'q[employee_id]']);
@@ -57,28 +65,26 @@ class GetHoursTimesheetrow extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows
+     * @return null|RestResultHoursTimesheetRows
+     *@throws GetHoursTimesheetrowUnauthorizedException
+     * @throws GetHoursTimesheetrowInternalServerErrorException
+     * @throws GetHoursTimesheetrowBadRequestException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows::class, 'json');
+            return $serializer->deserialize($body, RestResultHoursTimesheetRows::class, 'json');
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowBadRequestException($response);
+            throw new GetHoursTimesheetrowBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowUnauthorizedException($response);
+            throw new GetHoursTimesheetrowUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowInternalServerErrorException($response);
+            throw new GetHoursTimesheetrowInternalServerErrorException($response);
         }
     }
 

@@ -4,11 +4,18 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesSalesfilterInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesSalesfilterNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSalesSalesfilterUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesSalesfilter extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +39,7 @@ class GetSalesSalesfilter extends BaseEndpoint
         return '/sales/salesfilters';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +49,7 @@ class GetSalesSalesfilter extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -58,11 +65,11 @@ class GetSalesSalesfilter extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterInternalServerErrorException
+     * @throws GetSalesSalesfilterUnauthorizedException
+     * @throws GetSalesSalesfilterNotFoundException
+     * @throws GetSalesSalesfilterInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -70,13 +77,13 @@ class GetSalesSalesfilter extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesfilterUnauthorizedException($response);
+            throw new GetSalesSalesfilterUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesfilterNotFoundException($response);
+            throw new GetSalesSalesfilterNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalesfilterInternalServerErrorException($response);
+            throw new GetSalesSalesfilterInternalServerErrorException($response);
         }
     }
 

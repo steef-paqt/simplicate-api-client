@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHoursApprovalInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHoursApprovalNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHoursApprovalUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultApprovals;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHoursApproval extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetHoursApproval extends BaseEndpoint
         return '/hours/approval';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetHoursApproval extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetHoursApproval extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultApprovals
+     * @return null|RestResultApprovals
+     *@throws GetHoursApprovalNotFoundException
+     * @throws GetHoursApprovalInternalServerErrorException
+     * @throws GetHoursApprovalUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultApprovals::class, 'json');
+            return $serializer->deserialize($body, RestResultApprovals::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursApprovalUnauthorizedException($response);
+            throw new GetHoursApprovalUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursApprovalNotFoundException($response);
+            throw new GetHoursApprovalNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursApprovalInternalServerErrorException($response);
+            throw new GetHoursApprovalInternalServerErrorException($response);
         }
     }
 

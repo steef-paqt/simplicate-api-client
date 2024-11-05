@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetInvoiceSimple;
+use Paqtcom\Simplicate\Model\GetProjectSimple;
+use Paqtcom\Simplicate\Model\ReverseInvoice;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +17,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class ReverseInvoiceNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +30,12 @@ class ReverseInvoiceNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\ReverseInvoice::class;
+        return $type === ReverseInvoice::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\ReverseInvoice::class;
+        return is_object($data) && $data::class === ReverseInvoice::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,39 +46,39 @@ class ReverseInvoiceNormalizer implements DenormalizerInterface, NormalizerInter
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\ReverseInvoice();
-        if (\array_key_exists('price', $data) && \is_int($data['price'])) {
+        $object = new ReverseInvoice();
+        if (array_key_exists('price', $data) && is_int($data['price'])) {
             $data['price'] = (float) $data['price'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('status', $data)) {
+        if (array_key_exists('status', $data)) {
             $object->setStatus($data['status']);
         }
-        if (\array_key_exists('date', $data)) {
+        if (array_key_exists('date', $data)) {
             $object->setDate($data['date']);
         }
-        if (\array_key_exists('invoice_number', $data)) {
+        if (array_key_exists('invoice_number', $data)) {
             $object->setInvoiceNumber($data['invoice_number']);
         }
-        if (\array_key_exists('price', $data)) {
+        if (array_key_exists('price', $data)) {
             $object->setPrice($data['price']);
         }
-        if (\array_key_exists('project', $data)) {
-            $object->setProject($this->denormalizer->denormalize($data['project'], \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context));
+        if (array_key_exists('project', $data)) {
+            $object->setProject($this->denormalizer->denormalize($data['project'], GetProjectSimple::class, 'json', $context));
         }
-        if (\array_key_exists('invoice', $data)) {
-            $object->setInvoice($this->denormalizer->denormalize($data['invoice'], \Paqtcom\Simplicate\Model\GetInvoiceSimple::class, 'json', $context));
+        if (array_key_exists('invoice', $data)) {
+            $object->setInvoice($this->denormalizer->denormalize($data['invoice'], GetInvoiceSimple::class, 'json', $context));
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -101,6 +108,6 @@ class ReverseInvoiceNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\ReverseInvoice::class => false];
+        return [ReverseInvoice::class => false];
     }
 }

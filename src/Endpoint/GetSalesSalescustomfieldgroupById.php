@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultCustomFieldGroup;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesSalescustomfieldgroupById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetSalesSalescustomfieldgroupById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/sales/salescustomfieldgroups/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetSalesSalescustomfieldgroupById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup
+     * @return null|RestResultCustomFieldGroup
+     *@throws GetSalesSalescustomfieldgroupByIdNotFoundException
+     * @throws GetSalesSalescustomfieldgroupByIdUnprocessableEntityException
+     * @throws GetSalesSalescustomfieldgroupByIdInternalServerErrorException
+     * @throws GetSalesSalescustomfieldgroupByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class, 'json');
+            return $serializer->deserialize($body, RestResultCustomFieldGroup::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnauthorizedException($response);
+            throw new GetSalesSalescustomfieldgroupByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdNotFoundException($response);
+            throw new GetSalesSalescustomfieldgroupByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnprocessableEntityException($response);
+            throw new GetSalesSalescustomfieldgroupByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdInternalServerErrorException($response);
+            throw new GetSalesSalescustomfieldgroupByIdInternalServerErrorException($response);
         }
     }
 

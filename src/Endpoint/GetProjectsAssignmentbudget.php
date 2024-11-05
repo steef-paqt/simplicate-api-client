@@ -4,11 +4,20 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetNotFoundException;
+use Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetPaymentRequiredException;
+use Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetProjectsAssignmentbudget extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -35,7 +44,7 @@ class GetProjectsAssignmentbudget extends BaseEndpoint
         return '/projects/assignmentbudget';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -45,7 +54,7 @@ class GetProjectsAssignmentbudget extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['q[range_start]', 'q[employee_id]', 'q[assignment_id]', 'offset', 'limit', 'sort']);
@@ -63,32 +72,30 @@ class GetProjectsAssignmentbudget extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetPaymentRequiredException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget
+     * @return null|RestResultProjectAssignmentbudget
+     *@throws GetProjectsAssignmentbudgetPaymentRequiredException
+     * @throws GetProjectsAssignmentbudgetNotFoundException
+     * @throws GetProjectsAssignmentbudgetInternalServerErrorException
+     * @throws GetProjectsAssignmentbudgetUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget::class, 'json');
+            return $serializer->deserialize($body, RestResultProjectAssignmentbudget::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetUnauthorizedException($response);
+            throw new GetProjectsAssignmentbudgetUnauthorizedException($response);
         }
         if (402 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetPaymentRequiredException($response);
+            throw new GetProjectsAssignmentbudgetPaymentRequiredException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetNotFoundException($response);
+            throw new GetProjectsAssignmentbudgetNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetInternalServerErrorException($response);
+            throw new GetProjectsAssignmentbudgetInternalServerErrorException($response);
         }
     }
 

@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCrmMyorganizationprofile extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetCrmMyorganizationprofile extends BaseEndpoint
         return '/crm/myorganizationprofile';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetCrmMyorganizationprofile extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetCrmMyorganizationprofile extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles
+     * @return null|RestResultMyOrganizationProfiles
+     *@throws GetCrmMyorganizationprofileNotFoundException
+     * @throws GetCrmMyorganizationprofileInternalServerErrorException
+     * @throws GetCrmMyorganizationprofileUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles::class, 'json');
+            return $serializer->deserialize($body, RestResultMyOrganizationProfiles::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileUnauthorizedException($response);
+            throw new GetCrmMyorganizationprofileUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileNotFoundException($response);
+            throw new GetCrmMyorganizationprofileNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileInternalServerErrorException($response);
+            throw new GetCrmMyorganizationprofileInternalServerErrorException($response);
         }
     }
 

@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostInvoicesPaymentInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostInvoicesPaymentNotFoundException;
+use Paqtcom\Simplicate\Exception\PostInvoicesPaymentUnauthorizedException;
+use Paqtcom\Simplicate\Model\Payment;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostInvoicesPayment extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\Payment $body Payment object that needs to be added
+     * @param Payment $body Payment object that needs to be added
      */
-    public function __construct(\Paqtcom\Simplicate\Model\Payment $body)
+    public function __construct(Payment $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostInvoicesPayment extends BaseEndpoint
         return '/invoices/payment';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostInvoicesPayment extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostInvoicesPaymentUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostInvoicesPaymentNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostInvoicesPaymentInternalServerErrorException
+     * @throws PostInvoicesPaymentUnauthorizedException
+     * @throws PostInvoicesPaymentNotFoundException
+     * @throws PostInvoicesPaymentInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PostInvoicesPayment extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostInvoicesPaymentUnauthorizedException($response);
+            throw new PostInvoicesPaymentUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostInvoicesPaymentNotFoundException($response);
+            throw new PostInvoicesPaymentNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostInvoicesPaymentInternalServerErrorException($response);
+            throw new PostInvoicesPaymentInternalServerErrorException($response);
         }
     }
 

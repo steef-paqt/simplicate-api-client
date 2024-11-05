@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\CustomField;
+use Paqtcom\Simplicate\Model\CustomFieldGroup;
+use Paqtcom\Simplicate\Model\CustomFieldOption;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +17,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class CustomFieldNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +29,12 @@ class CustomFieldNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\CustomField::class;
+        return $type === CustomField::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\CustomField::class;
+        return is_object($data) && $data::class === CustomField::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,47 +45,47 @@ class CustomFieldNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\CustomField();
-        if (null === $data || false === \is_array($data)) {
+        $object = new CustomField();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('name', $data)) {
+        if (array_key_exists('name', $data)) {
             $object->setName($data['name']);
         }
-        if (\array_key_exists('label', $data)) {
+        if (array_key_exists('label', $data)) {
             $object->setLabel($data['label']);
         }
-        if (\array_key_exists('value', $data)) {
+        if (array_key_exists('value', $data)) {
             $object->setValue($data['value']);
         }
-        if (\array_key_exists('type', $data)) {
+        if (array_key_exists('type', $data)) {
             $object->setType($data['type']);
         }
-        if (\array_key_exists('render_type', $data)) {
+        if (array_key_exists('render_type', $data)) {
             $object->setRenderType($data['render_type']);
         }
-        if (\array_key_exists('position', $data)) {
+        if (array_key_exists('position', $data)) {
             $object->setPosition($data['position']);
         }
-        if (\array_key_exists('filterable', $data)) {
+        if (array_key_exists('filterable', $data)) {
             $object->setFilterable($data['filterable']);
         }
-        if (\array_key_exists('searchable', $data)) {
+        if (array_key_exists('searchable', $data)) {
             $object->setSearchable($data['searchable']);
         }
-        if (\array_key_exists('mandatory', $data)) {
+        if (array_key_exists('mandatory', $data)) {
             $object->setMandatory($data['mandatory']);
         }
-        if (\array_key_exists('value_type', $data)) {
+        if (array_key_exists('value_type', $data)) {
             $object->setValueType($data['value_type']);
         }
-        if (\array_key_exists('custom_field_group', $data)) {
-            $object->setCustomFieldGroup($this->denormalizer->denormalize($data['custom_field_group'], \Paqtcom\Simplicate\Model\CustomFieldGroup::class, 'json', $context));
+        if (array_key_exists('custom_field_group', $data)) {
+            $object->setCustomFieldGroup($this->denormalizer->denormalize($data['custom_field_group'], CustomFieldGroup::class, 'json', $context));
         }
-        if (\array_key_exists('options', $data)) {
+        if (array_key_exists('options', $data)) {
             $values = [];
             foreach ($data['options'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\CustomFieldOption::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, CustomFieldOption::class, 'json', $context);
             }
             $object->setOptions($values);
         }
@@ -87,7 +93,7 @@ class CustomFieldNormalizer implements DenormalizerInterface, NormalizerInterfac
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('name') && null !== $object->getName()) {
@@ -136,6 +142,6 @@ class CustomFieldNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\CustomField::class => false];
+        return [CustomField::class => false];
     }
 }

@@ -4,7 +4,12 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Country;
+use Paqtcom\Simplicate\Model\Right;
+use Paqtcom\Simplicate\Model\Timezone;
+use Paqtcom\Simplicate\Model\User;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +18,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class UserNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +30,12 @@ class UserNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\User::class;
+        return $type === User::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\User::class;
+        return is_object($data) && $data::class === User::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,77 +46,77 @@ class UserNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\User();
-        if (null === $data || false === \is_array($data)) {
+        $object = new User();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('username', $data)) {
+        if (array_key_exists('username', $data)) {
             $object->setUsername($data['username']);
         }
-        if (\array_key_exists('email', $data)) {
+        if (array_key_exists('email', $data)) {
             $object->setEmail($data['email']);
         }
-        if (\array_key_exists('gender', $data)) {
+        if (array_key_exists('gender', $data)) {
             $object->setGender($data['gender']);
         }
-        if (\array_key_exists('initials', $data)) {
+        if (array_key_exists('initials', $data)) {
             $object->setInitials($data['initials']);
         }
-        if (\array_key_exists('first_name', $data)) {
+        if (array_key_exists('first_name', $data)) {
             $object->setFirstName($data['first_name']);
         }
-        if (\array_key_exists('family_name_prefix', $data)) {
+        if (array_key_exists('family_name_prefix', $data)) {
             $object->setFamilyNamePrefix($data['family_name_prefix']);
         }
-        if (\array_key_exists('family_name', $data)) {
+        if (array_key_exists('family_name', $data)) {
             $object->setFamilyName($data['family_name']);
         }
-        if (\array_key_exists('birthdate', $data)) {
+        if (array_key_exists('birthdate', $data)) {
             $object->setBirthdate($data['birthdate']);
         }
-        if (\array_key_exists('is_authy_enabled', $data)) {
+        if (array_key_exists('is_authy_enabled', $data)) {
             $object->setIsAuthyEnabled($data['is_authy_enabled']);
         }
-        if (\array_key_exists('is_employee', $data)) {
+        if (array_key_exists('is_employee', $data)) {
             $object->setIsEmployee($data['is_employee']);
         }
-        if (\array_key_exists('is_light_user', $data)) {
+        if (array_key_exists('is_light_user', $data)) {
             $object->setIsLightUser($data['is_light_user']);
         }
-        if (\array_key_exists('employee_id', $data)) {
+        if (array_key_exists('employee_id', $data)) {
             $object->setEmployeeId($data['employee_id']);
         }
-        if (\array_key_exists('person_id', $data)) {
+        if (array_key_exists('person_id', $data)) {
             $object->setPersonId($data['person_id']);
         }
-        if (\array_key_exists('is_blocked', $data)) {
+        if (array_key_exists('is_blocked', $data)) {
             $object->setIsBlocked($data['is_blocked']);
         }
-        if (\array_key_exists('is_lock_nav', $data)) {
+        if (array_key_exists('is_lock_nav', $data)) {
             $object->setIsLockNav($data['is_lock_nav']);
         }
-        if (\array_key_exists('key_identifier', $data)) {
+        if (array_key_exists('key_identifier', $data)) {
             $object->setKeyIdentifier($data['key_identifier']);
         }
-        if (\array_key_exists('timezone', $data)) {
-            $object->setTimezone($this->denormalizer->denormalize($data['timezone'], \Paqtcom\Simplicate\Model\Timezone::class, 'json', $context));
+        if (array_key_exists('timezone', $data)) {
+            $object->setTimezone($this->denormalizer->denormalize($data['timezone'], Timezone::class, 'json', $context));
         }
-        if (\array_key_exists('country', $data)) {
-            $object->setCountry($this->denormalizer->denormalize($data['country'], \Paqtcom\Simplicate\Model\Country::class, 'json', $context));
+        if (array_key_exists('country', $data)) {
+            $object->setCountry($this->denormalizer->denormalize($data['country'], Country::class, 'json', $context));
         }
-        if (\array_key_exists('hours_view_mode', $data)) {
+        if (array_key_exists('hours_view_mode', $data)) {
             $object->setHoursViewMode($data['hours_view_mode']);
         }
-        if (\array_key_exists('is_account_owner', $data)) {
+        if (array_key_exists('is_account_owner', $data)) {
             $object->setIsAccountOwner($data['is_account_owner']);
         }
-        if (\array_key_exists('has_external_agenda_integration', $data)) {
+        if (array_key_exists('has_external_agenda_integration', $data)) {
             $object->setHasExternalAgendaIntegration($data['has_external_agenda_integration']);
         }
-        if (\array_key_exists('rights', $data)) {
+        if (array_key_exists('rights', $data)) {
             $values = [];
             foreach ($data['rights'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\Right::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, Right::class, 'json', $context);
             }
             $object->setRights($values);
         }
@@ -117,7 +124,7 @@ class UserNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('username') && null !== $object->getUsername()) {
@@ -196,6 +203,6 @@ class UserNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\User::class => false];
+        return [User::class => false];
     }
 }

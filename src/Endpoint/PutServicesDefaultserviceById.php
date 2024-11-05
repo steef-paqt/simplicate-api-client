@@ -4,17 +4,25 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdBadRequestException;
+use Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostDefaultService;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutServicesDefaultserviceById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Paqtcom\Simplicate\Model\PostDefaultService $body default service object that needs to be updated
+     * @param PostDefaultService $body default service object that needs to be updated
      */
-    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PostDefaultService $body)
+    public function __construct(protected string $id, PostDefaultService $body)
     {
         $this->body = $body;
     }
@@ -29,7 +37,7 @@ class PutServicesDefaultserviceById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/services/defaultservice/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -42,12 +50,12 @@ class PutServicesDefaultserviceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdInternalServerErrorException
+     * @throws PutServicesDefaultserviceByIdBadRequestException
+     * @throws PutServicesDefaultserviceByIdUnauthorizedException
+     * @throws PutServicesDefaultserviceByIdNotFoundException
+     * @throws PutServicesDefaultserviceByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -55,16 +63,16 @@ class PutServicesDefaultserviceById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdBadRequestException($response);
+            throw new PutServicesDefaultserviceByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdUnauthorizedException($response);
+            throw new PutServicesDefaultserviceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdNotFoundException($response);
+            throw new PutServicesDefaultserviceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdInternalServerErrorException($response);
+            throw new PutServicesDefaultserviceByIdInternalServerErrorException($response);
         }
     }
 

@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteProjectsServiceByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteProjectsServiceByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteProjectsServiceByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteProjectsServiceById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteProjectsServiceById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/projects/service/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteProjectsServiceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsServiceByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsServiceByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsServiceByIdInternalServerErrorException
+     * @throws DeleteProjectsServiceByIdUnauthorizedException
+     * @throws DeleteProjectsServiceByIdNotFoundException
+     * @throws DeleteProjectsServiceByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteProjectsServiceById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteProjectsServiceByIdUnauthorizedException($response);
+            throw new DeleteProjectsServiceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteProjectsServiceByIdNotFoundException($response);
+            throw new DeleteProjectsServiceByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteProjectsServiceByIdInternalServerErrorException($response);
+            throw new DeleteProjectsServiceByIdInternalServerErrorException($response);
         }
     }
 

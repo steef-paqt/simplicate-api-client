@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultDocumentType;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetInvoicesDocumenttypeById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetInvoicesDocumenttypeById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/invoices/documenttype/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetInvoicesDocumenttypeById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultDocumentType
+     * @return null|RestResultDocumentType
+     *@throws GetInvoicesDocumenttypeByIdNotFoundException
+     * @throws GetInvoicesDocumenttypeByIdUnprocessableEntityException
+     * @throws GetInvoicesDocumenttypeByIdInternalServerErrorException
+     * @throws GetInvoicesDocumenttypeByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocumentType::class, 'json');
+            return $serializer->deserialize($body, RestResultDocumentType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnauthorizedException($response);
+            throw new GetInvoicesDocumenttypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdNotFoundException($response);
+            throw new GetInvoicesDocumenttypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnprocessableEntityException($response);
+            throw new GetInvoicesDocumenttypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdInternalServerErrorException($response);
+            throw new GetInvoicesDocumenttypeByIdInternalServerErrorException($response);
         }
     }
 

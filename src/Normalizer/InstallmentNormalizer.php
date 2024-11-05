@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Installment;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class InstallmentNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class InstallmentNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\Installment::class;
+        return $type === Installment::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Installment::class;
+        return is_object($data) && $data::class === Installment::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,48 +44,48 @@ class InstallmentNormalizer implements DenormalizerInterface, NormalizerInterfac
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\Installment();
-        if (\array_key_exists('percentage', $data) && \is_int($data['percentage'])) {
+        $object = new Installment();
+        if (array_key_exists('percentage', $data) && is_int($data['percentage'])) {
             $data['percentage'] = (float) $data['percentage'];
         }
-        if (\array_key_exists('price', $data) && \is_int($data['price'])) {
+        if (array_key_exists('price', $data) && is_int($data['price'])) {
             $data['price'] = (float) $data['price'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('name', $data)) {
+        if (array_key_exists('name', $data)) {
             $object->setName($data['name']);
         }
-        if (\array_key_exists('percentage', $data)) {
+        if (array_key_exists('percentage', $data)) {
             $object->setPercentage($data['percentage']);
         }
-        if (\array_key_exists('price', $data)) {
+        if (array_key_exists('price', $data)) {
             $object->setPrice($data['price']);
         }
-        if (\array_key_exists('order', $data)) {
+        if (array_key_exists('order', $data)) {
             $object->setOrder($data['order']);
         }
-        if (\array_key_exists('expiration_date', $data)) {
+        if (array_key_exists('expiration_date', $data)) {
             $object->setExpirationDate($data['expiration_date']);
         }
-        if (\array_key_exists('status', $data)) {
+        if (array_key_exists('status', $data)) {
             $object->setStatus($data['status']);
         }
-        if (\array_key_exists('invoiced_date', $data)) {
+        if (array_key_exists('invoiced_date', $data)) {
             $object->setInvoicedDate($data['invoiced_date']);
         }
-        if (\array_key_exists('invoice_id', $data)) {
+        if (array_key_exists('invoice_id', $data)) {
             $object->setInvoiceId($data['invoice_id']);
         }
-        if (\array_key_exists('invoice_line_id', $data)) {
+        if (array_key_exists('invoice_line_id', $data)) {
             $object->setInvoiceLineId($data['invoice_line_id']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('name') && null !== $object->getName()) {
@@ -116,6 +121,6 @@ class InstallmentNormalizer implements DenormalizerInterface, NormalizerInterfac
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\Installment::class => false];
+        return [Installment::class => false];
     }
 }

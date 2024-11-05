@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetInvoiceReminder;
+use Paqtcom\Simplicate\Model\ReminderSet;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class GetInvoiceReminderNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class GetInvoiceReminderNormalizer implements DenormalizerInterface, NormalizerI
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetInvoiceReminder::class;
+        return $type === GetInvoiceReminder::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetInvoiceReminder::class;
+        return is_object($data) && $data::class === GetInvoiceReminder::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,27 +44,27 @@ class GetInvoiceReminderNormalizer implements DenormalizerInterface, NormalizerI
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetInvoiceReminder();
-        if (null === $data || false === \is_array($data)) {
+        $object = new GetInvoiceReminder();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('set', $data)) {
-            $object->setSet($this->denormalizer->denormalize($data['set'], \Paqtcom\Simplicate\Model\ReminderSet::class, 'json', $context));
+        if (array_key_exists('set', $data)) {
+            $object->setSet($this->denormalizer->denormalize($data['set'], ReminderSet::class, 'json', $context));
         }
-        if (\array_key_exists('status', $data)) {
+        if (array_key_exists('status', $data)) {
             $object->setStatus($data['status']);
         }
-        if (\array_key_exists('paused', $data)) {
+        if (array_key_exists('paused', $data)) {
             $object->setPaused($data['paused']);
         }
-        if (\array_key_exists('next_action', $data)) {
+        if (array_key_exists('next_action', $data)) {
             $object->setNextAction($data['next_action']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('set') && null !== $object->getSet()) {
@@ -80,6 +85,6 @@ class GetInvoiceReminderNormalizer implements DenormalizerInterface, NormalizerI
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetInvoiceReminder::class => false];
+        return [GetInvoiceReminder::class => false];
     }
 }

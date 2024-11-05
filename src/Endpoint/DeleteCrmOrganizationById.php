@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteCrmOrganizationById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteCrmOrganizationById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/crm/organization/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteCrmOrganizationById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdInternalServerErrorException
+     * @throws DeleteCrmOrganizationByIdUnauthorizedException
+     * @throws DeleteCrmOrganizationByIdNotFoundException
+     * @throws DeleteCrmOrganizationByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteCrmOrganizationById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdUnauthorizedException($response);
+            throw new DeleteCrmOrganizationByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdNotFoundException($response);
+            throw new DeleteCrmOrganizationByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdInternalServerErrorException($response);
+            throw new DeleteCrmOrganizationByIdInternalServerErrorException($response);
         }
     }
 

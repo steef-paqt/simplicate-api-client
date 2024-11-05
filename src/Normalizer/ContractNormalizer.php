@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Contract;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class ContractNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class ContractNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\Contract::class;
+        return $type === Contract::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Contract::class;
+        return is_object($data) && $data::class === Contract::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,42 +44,42 @@ class ContractNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\Contract();
-        if (\array_key_exists('salary_fulltime', $data) && \is_int($data['salary_fulltime'])) {
+        $object = new Contract();
+        if (array_key_exists('salary_fulltime', $data) && is_int($data['salary_fulltime'])) {
             $data['salary_fulltime'] = (float) $data['salary_fulltime'];
         }
-        if (\array_key_exists('parttime_percentage', $data) && \is_int($data['parttime_percentage'])) {
+        if (array_key_exists('parttime_percentage', $data) && is_int($data['parttime_percentage'])) {
             $data['parttime_percentage'] = (float) $data['parttime_percentage'];
         }
-        if (\array_key_exists('days_off', $data) && \is_int($data['days_off'])) {
+        if (array_key_exists('days_off', $data) && is_int($data['days_off'])) {
             $data['days_off'] = (float) $data['days_off'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('start_date', $data)) {
+        if (array_key_exists('start_date', $data)) {
             $object->setStartDate($data['start_date']);
         }
-        if (\array_key_exists('end_date', $data)) {
+        if (array_key_exists('end_date', $data)) {
             $object->setEndDate($data['end_date']);
         }
-        if (\array_key_exists('salary_fulltime', $data)) {
+        if (array_key_exists('salary_fulltime', $data)) {
             $object->setSalaryFulltime($data['salary_fulltime']);
         }
-        if (\array_key_exists('parttime_percentage', $data)) {
+        if (array_key_exists('parttime_percentage', $data)) {
             $object->setParttimePercentage($data['parttime_percentage']);
         }
-        if (\array_key_exists('days_off', $data)) {
+        if (array_key_exists('days_off', $data)) {
             $object->setDaysOff($data['days_off']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -101,6 +106,6 @@ class ContractNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\Contract::class => false];
+        return [Contract::class => false];
     }
 }

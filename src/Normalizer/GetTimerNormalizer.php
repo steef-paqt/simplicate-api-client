@@ -4,7 +4,14 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetEmployeeSimple;
+use Paqtcom\Simplicate\Model\GetHoursSimple;
+use Paqtcom\Simplicate\Model\GetHoursType;
+use Paqtcom\Simplicate\Model\GetProjectServiceSimple;
+use Paqtcom\Simplicate\Model\GetProjectSimple;
+use Paqtcom\Simplicate\Model\GetTimer;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +20,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class GetTimerNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +32,12 @@ class GetTimerNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetTimer::class;
+        return $type === GetTimer::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetTimer::class;
+        return is_object($data) && $data::class === GetTimer::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,54 +48,54 @@ class GetTimerNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetTimer();
-        if (null === $data || false === \is_array($data)) {
+        $object = new GetTimer();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('seconds_spent', $data)) {
+        if (array_key_exists('seconds_spent', $data)) {
             $object->setSecondsSpent($data['seconds_spent']);
         }
-        if (\array_key_exists('min_seconds_step', $data)) {
+        if (array_key_exists('min_seconds_step', $data)) {
             $object->setMinSecondsStep($data['min_seconds_step']);
         }
-        if (\array_key_exists('employee', $data)) {
-            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+        if (array_key_exists('employee', $data)) {
+            $object->setEmployee($this->denormalizer->denormalize($data['employee'], GetEmployeeSimple::class, 'json', $context));
         }
-        if (\array_key_exists('project', $data)) {
-            $object->setProject($this->denormalizer->denormalize($data['project'], \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context));
+        if (array_key_exists('project', $data)) {
+            $object->setProject($this->denormalizer->denormalize($data['project'], GetProjectSimple::class, 'json', $context));
         }
-        if (\array_key_exists('projectservice', $data)) {
-            $object->setProjectservice($this->denormalizer->denormalize($data['projectservice'], \Paqtcom\Simplicate\Model\GetProjectServiceSimple::class, 'json', $context));
+        if (array_key_exists('projectservice', $data)) {
+            $object->setProjectservice($this->denormalizer->denormalize($data['projectservice'], GetProjectServiceSimple::class, 'json', $context));
         }
-        if (\array_key_exists('hourstype', $data)) {
-            $object->setHourstype($this->denormalizer->denormalize($data['hourstype'], \Paqtcom\Simplicate\Model\GetHoursType::class, 'json', $context));
+        if (array_key_exists('hourstype', $data)) {
+            $object->setHourstype($this->denormalizer->denormalize($data['hourstype'], GetHoursType::class, 'json', $context));
         }
-        if (\array_key_exists('related_hours', $data)) {
-            $object->setRelatedHours($this->denormalizer->denormalize($data['related_hours'], \Paqtcom\Simplicate\Model\GetHoursSimple::class, 'json', $context));
+        if (array_key_exists('related_hours', $data)) {
+            $object->setRelatedHours($this->denormalizer->denormalize($data['related_hours'], GetHoursSimple::class, 'json', $context));
         }
-        if (\array_key_exists('created_at', $data)) {
+        if (array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
         }
-        if (\array_key_exists('updated_at', $data)) {
+        if (array_key_exists('updated_at', $data)) {
             $object->setUpdatedAt($data['updated_at']);
         }
-        if (\array_key_exists('state', $data)) {
+        if (array_key_exists('state', $data)) {
             $object->setState($data['state']);
         }
-        if (\array_key_exists('description', $data)) {
+        if (array_key_exists('description', $data)) {
             $object->setDescription($data['description']);
         }
-        if (\array_key_exists('metadata', $data)) {
+        if (array_key_exists('metadata', $data)) {
             $object->setMetadata($data['metadata']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -134,6 +143,6 @@ class GetTimerNormalizer implements DenormalizerInterface, NormalizerInterface, 
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetTimer::class => false];
+        return [GetTimer::class => false];
     }
 }

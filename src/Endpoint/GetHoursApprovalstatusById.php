@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultApprovalStatus;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHoursApprovalstatusById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetHoursApprovalstatusById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hours/approvalstatus/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetHoursApprovalstatusById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultApprovalStatus
+     * @return null|RestResultApprovalStatus
+     *@throws GetHoursApprovalstatusByIdNotFoundException
+     * @throws GetHoursApprovalstatusByIdUnprocessableEntityException
+     * @throws GetHoursApprovalstatusByIdInternalServerErrorException
+     * @throws GetHoursApprovalstatusByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultApprovalStatus::class, 'json');
+            return $serializer->deserialize($body, RestResultApprovalStatus::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdUnauthorizedException($response);
+            throw new GetHoursApprovalstatusByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdNotFoundException($response);
+            throw new GetHoursApprovalstatusByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdUnprocessableEntityException($response);
+            throw new GetHoursApprovalstatusByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdInternalServerErrorException($response);
+            throw new GetHoursApprovalstatusByIdInternalServerErrorException($response);
         }
     }
 

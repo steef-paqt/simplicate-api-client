@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Address;
+use Paqtcom\Simplicate\Model\Hours;
+use Paqtcom\Simplicate\Model\Recurrence;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +17,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class HoursNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +30,12 @@ class HoursNormalizer implements DenormalizerInterface, NormalizerInterface, Den
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\Hours::class;
+        return $type === Hours::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Hours::class;
+        return is_object($data) && $data::class === Hours::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,60 +46,60 @@ class HoursNormalizer implements DenormalizerInterface, NormalizerInterface, Den
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\Hours();
-        if (\array_key_exists('hours', $data) && \is_int($data['hours'])) {
+        $object = new Hours();
+        if (array_key_exists('hours', $data) && is_int($data['hours'])) {
             $data['hours'] = (float) $data['hours'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('hours', $data)) {
+        if (array_key_exists('hours', $data)) {
             $object->setHours($data['hours']);
         }
-        if (\array_key_exists('duration_in_minutes', $data)) {
+        if (array_key_exists('duration_in_minutes', $data)) {
             $object->setDurationInMinutes($data['duration_in_minutes']);
         }
-        if (\array_key_exists('start_date', $data)) {
+        if (array_key_exists('start_date', $data)) {
             $object->setStartDate($data['start_date']);
         }
-        if (\array_key_exists('end_date', $data)) {
+        if (array_key_exists('end_date', $data)) {
             $object->setEndDate($data['end_date']);
         }
-        if (\array_key_exists('is_time_defined', $data)) {
+        if (array_key_exists('is_time_defined', $data)) {
             $object->setIsTimeDefined($data['is_time_defined']);
         }
-        if (\array_key_exists('is_recurring', $data)) {
+        if (array_key_exists('is_recurring', $data)) {
             $object->setIsRecurring($data['is_recurring']);
         }
-        if (\array_key_exists('recurrence', $data)) {
-            $object->setRecurrence($this->denormalizer->denormalize($data['recurrence'], \Paqtcom\Simplicate\Model\Recurrence::class, 'json', $context));
+        if (array_key_exists('recurrence', $data)) {
+            $object->setRecurrence($this->denormalizer->denormalize($data['recurrence'], Recurrence::class, 'json', $context));
         }
-        if (\array_key_exists('is_external', $data)) {
+        if (array_key_exists('is_external', $data)) {
             $object->setIsExternal($data['is_external']);
         }
-        if (\array_key_exists('billable', $data)) {
+        if (array_key_exists('billable', $data)) {
             $object->setBillable($data['billable']);
         }
-        if (\array_key_exists('note', $data)) {
+        if (array_key_exists('note', $data)) {
             $object->setNote($data['note']);
         }
-        if (\array_key_exists('address', $data)) {
-            $object->setAddress($this->denormalizer->denormalize($data['address'], \Paqtcom\Simplicate\Model\Address::class, 'json', $context));
+        if (array_key_exists('address', $data)) {
+            $object->setAddress($this->denormalizer->denormalize($data['address'], Address::class, 'json', $context));
         }
-        if (\array_key_exists('assignment_id', $data)) {
+        if (array_key_exists('assignment_id', $data)) {
             $object->setAssignmentId($data['assignment_id']);
         }
-        if (\array_key_exists('should_sync_to_cronofy', $data)) {
+        if (array_key_exists('should_sync_to_cronofy', $data)) {
             $object->setShouldSyncToCronofy($data['should_sync_to_cronofy']);
         }
-        if (\array_key_exists('source', $data)) {
+        if (array_key_exists('source', $data)) {
             $object->setSource($data['source']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('hours') && null !== $object->getHours()) {
@@ -143,6 +150,6 @@ class HoursNormalizer implements DenormalizerInterface, NormalizerInterface, Den
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\Hours::class => false];
+        return [Hours::class => false];
     }
 }

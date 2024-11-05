@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetMileageMileageInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetMileageMileageNotFoundException;
+use Paqtcom\Simplicate\Exception\GetMileageMileageUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultMileageList;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetMileageMileage extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetMileageMileage extends BaseEndpoint
         return '/mileage/mileage';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetMileageMileage extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetMileageMileage extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetMileageMileageUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetMileageMileageNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetMileageMileageInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultMileageList
+     * @return null|RestResultMileageList
+     *@throws GetMileageMileageNotFoundException
+     * @throws GetMileageMileageInternalServerErrorException
+     * @throws GetMileageMileageUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultMileageList::class, 'json');
+            return $serializer->deserialize($body, RestResultMileageList::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetMileageMileageUnauthorizedException($response);
+            throw new GetMileageMileageUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetMileageMileageNotFoundException($response);
+            throw new GetMileageMileageNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetMileageMileageInternalServerErrorException($response);
+            throw new GetMileageMileageInternalServerErrorException($response);
         }
     }
 

@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetInvoicesPaymentInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetInvoicesPaymentNotFoundException;
+use Paqtcom\Simplicate\Exception\GetInvoicesPaymentUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultPayments;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetInvoicesPayment extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetInvoicesPayment extends BaseEndpoint
         return '/invoices/payment';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetInvoicesPayment extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetInvoicesPayment extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymentUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymentNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymentInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultPayments
+     * @return null|RestResultPayments
+     *@throws GetInvoicesPaymentNotFoundException
+     * @throws GetInvoicesPaymentInternalServerErrorException
+     * @throws GetInvoicesPaymentUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultPayments::class, 'json');
+            return $serializer->deserialize($body, RestResultPayments::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymentUnauthorizedException($response);
+            throw new GetInvoicesPaymentUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymentNotFoundException($response);
+            throw new GetInvoicesPaymentNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesPaymentInternalServerErrorException($response);
+            throw new GetInvoicesPaymentInternalServerErrorException($response);
         }
     }
 

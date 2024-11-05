@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultRelationType;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCrmRelationtypeById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetCrmRelationtypeById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/crm/relationtype/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetCrmRelationtypeById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultRelationType
+     * @return null|RestResultRelationType
+     *@throws GetCrmRelationtypeByIdNotFoundException
+     * @throws GetCrmRelationtypeByIdUnprocessableEntityException
+     * @throws GetCrmRelationtypeByIdInternalServerErrorException
+     * @throws GetCrmRelationtypeByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultRelationType::class, 'json');
+            return $serializer->deserialize($body, RestResultRelationType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdUnauthorizedException($response);
+            throw new GetCrmRelationtypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdNotFoundException($response);
+            throw new GetCrmRelationtypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdUnprocessableEntityException($response);
+            throw new GetCrmRelationtypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdInternalServerErrorException($response);
+            throw new GetCrmRelationtypeByIdInternalServerErrorException($response);
         }
     }
 

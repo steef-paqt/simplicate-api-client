@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHrmTeamByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHrmTeamByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHrmTeamByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetHrmTeamByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultTeam;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHrmTeamById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetHrmTeamById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hrm/team/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetHrmTeamById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultTeam
+     * @return null|RestResultTeam
+     *@throws GetHrmTeamByIdNotFoundException
+     * @throws GetHrmTeamByIdUnprocessableEntityException
+     * @throws GetHrmTeamByIdInternalServerErrorException
+     * @throws GetHrmTeamByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultTeam::class, 'json');
+            return $serializer->deserialize($body, RestResultTeam::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmTeamByIdUnauthorizedException($response);
+            throw new GetHrmTeamByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmTeamByIdNotFoundException($response);
+            throw new GetHrmTeamByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmTeamByIdUnprocessableEntityException($response);
+            throw new GetHrmTeamByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmTeamByIdInternalServerErrorException($response);
+            throw new GetHrmTeamByIdInternalServerErrorException($response);
         }
     }
 

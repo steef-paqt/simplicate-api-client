@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetInvoiceLine;
+use Paqtcom\Simplicate\Model\RevenueGroup;
+use Paqtcom\Simplicate\Model\VatClass;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +17,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class GetInvoiceLineNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +30,12 @@ class GetInvoiceLineNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetInvoiceLine::class;
+        return $type === GetInvoiceLine::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetInvoiceLine::class;
+        return is_object($data) && $data::class === GetInvoiceLine::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,60 +46,60 @@ class GetInvoiceLineNormalizer implements DenormalizerInterface, NormalizerInter
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetInvoiceLine();
-        if (\array_key_exists('total_vat', $data) && \is_int($data['total_vat'])) {
+        $object = new GetInvoiceLine();
+        if (array_key_exists('total_vat', $data) && is_int($data['total_vat'])) {
             $data['total_vat'] = (float) $data['total_vat'];
         }
-        if (\array_key_exists('amount', $data) && \is_int($data['amount'])) {
+        if (array_key_exists('amount', $data) && is_int($data['amount'])) {
             $data['amount'] = (float) $data['amount'];
         }
-        if (\array_key_exists('price', $data) && \is_int($data['price'])) {
+        if (array_key_exists('price', $data) && is_int($data['price'])) {
             $data['price'] = (float) $data['price'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('revenue_group', $data)) {
-            $object->setRevenueGroup($this->denormalizer->denormalize($data['revenue_group'], \Paqtcom\Simplicate\Model\RevenueGroup::class, 'json', $context));
+        if (array_key_exists('revenue_group', $data)) {
+            $object->setRevenueGroup($this->denormalizer->denormalize($data['revenue_group'], RevenueGroup::class, 'json', $context));
         }
-        if (\array_key_exists('default_service_id', $data)) {
+        if (array_key_exists('default_service_id', $data)) {
             $object->setDefaultServiceId($data['default_service_id']);
         }
-        if (\array_key_exists('vat_class', $data)) {
-            $object->setVatClass($this->denormalizer->denormalize($data['vat_class'], \Paqtcom\Simplicate\Model\VatClass::class, 'json', $context));
+        if (array_key_exists('vat_class', $data)) {
+            $object->setVatClass($this->denormalizer->denormalize($data['vat_class'], VatClass::class, 'json', $context));
         }
-        if (\array_key_exists('total_vat', $data)) {
+        if (array_key_exists('total_vat', $data)) {
             $object->setTotalVat($data['total_vat']);
         }
-        if (\array_key_exists('service_id', $data)) {
+        if (array_key_exists('service_id', $data)) {
             $object->setServiceId($data['service_id']);
         }
-        if (\array_key_exists('created_at', $data)) {
+        if (array_key_exists('created_at', $data)) {
             $object->setCreatedAt($data['created_at']);
         }
-        if (\array_key_exists('updated_at', $data)) {
+        if (array_key_exists('updated_at', $data)) {
             $object->setUpdatedAt($data['updated_at']);
         }
-        if (\array_key_exists('date', $data)) {
+        if (array_key_exists('date', $data)) {
             $object->setDate($data['date']);
         }
-        if (\array_key_exists('description', $data)) {
+        if (array_key_exists('description', $data)) {
             $object->setDescription($data['description']);
         }
-        if (\array_key_exists('amount', $data)) {
+        if (array_key_exists('amount', $data)) {
             $object->setAmount($data['amount']);
         }
-        if (\array_key_exists('price', $data)) {
+        if (array_key_exists('price', $data)) {
             $object->setPrice($data['price']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -137,6 +144,6 @@ class GetInvoiceLineNormalizer implements DenormalizerInterface, NormalizerInter
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetInvoiceLine::class => false];
+        return [GetInvoiceLine::class => false];
     }
 }

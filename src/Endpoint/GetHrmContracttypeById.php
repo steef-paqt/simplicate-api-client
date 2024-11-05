@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultContractType;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHrmContracttypeById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetHrmContracttypeById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hrm/contracttype/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetHrmContracttypeById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultContractType
+     * @return null|RestResultContractType
+     *@throws GetHrmContracttypeByIdNotFoundException
+     * @throws GetHrmContracttypeByIdUnprocessableEntityException
+     * @throws GetHrmContracttypeByIdInternalServerErrorException
+     * @throws GetHrmContracttypeByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultContractType::class, 'json');
+            return $serializer->deserialize($body, RestResultContractType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdUnauthorizedException($response);
+            throw new GetHrmContracttypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdNotFoundException($response);
+            throw new GetHrmContracttypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdUnprocessableEntityException($response);
+            throw new GetHrmContracttypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdInternalServerErrorException($response);
+            throw new GetHrmContracttypeByIdInternalServerErrorException($response);
         }
     }
 

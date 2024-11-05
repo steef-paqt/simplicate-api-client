@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetProjectsServiceByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetProjectsServiceByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetProjectsServiceByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetProjectsServiceByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultProjectService;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetProjectsServiceById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetProjectsServiceById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/projects/service/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetProjectsServiceById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultProjectService
+     * @return null|RestResultProjectService
+     *@throws GetProjectsServiceByIdNotFoundException
+     * @throws GetProjectsServiceByIdUnprocessableEntityException
+     * @throws GetProjectsServiceByIdInternalServerErrorException
+     * @throws GetProjectsServiceByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultProjectService::class, 'json');
+            return $serializer->deserialize($body, RestResultProjectService::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdUnauthorizedException($response);
+            throw new GetProjectsServiceByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdNotFoundException($response);
+            throw new GetProjectsServiceByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdUnprocessableEntityException($response);
+            throw new GetProjectsServiceByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdInternalServerErrorException($response);
+            throw new GetProjectsServiceByIdInternalServerErrorException($response);
         }
     }
 

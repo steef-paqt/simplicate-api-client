@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetDocumentType;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class GetDocumentTypeNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class GetDocumentTypeNormalizer implements DenormalizerInterface, NormalizerInte
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\GetDocumentType::class;
+        return $type === GetDocumentType::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\GetDocumentType::class;
+        return is_object($data) && $data::class === GetDocumentType::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,60 +43,60 @@ class GetDocumentTypeNormalizer implements DenormalizerInterface, NormalizerInte
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\GetDocumentType();
-        if (null === $data || false === \is_array($data)) {
+        $object = new GetDocumentType();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('label', $data)) {
+        if (array_key_exists('label', $data)) {
             $object->setLabel($data['label']);
         }
-        if (\array_key_exists('description', $data)) {
+        if (array_key_exists('description', $data)) {
             $object->setDescription($data['description']);
         }
-        if (\array_key_exists('can_have_attachment', $data)) {
+        if (array_key_exists('can_have_attachment', $data)) {
             $object->setCanHaveAttachment($data['can_have_attachment']);
         }
-        if (\array_key_exists('is_for_crm', $data)) {
+        if (array_key_exists('is_for_crm', $data)) {
             $object->setIsForCrm($data['is_for_crm']);
         }
-        if (\array_key_exists('is_for_contact', $data)) {
+        if (array_key_exists('is_for_contact', $data)) {
             $object->setIsForContact($data['is_for_contact']);
         }
-        if (\array_key_exists('is_for_sale', $data)) {
+        if (array_key_exists('is_for_sale', $data)) {
             $object->setIsForSale($data['is_for_sale']);
         }
-        if (\array_key_exists('is_for_debtor', $data)) {
+        if (array_key_exists('is_for_debtor', $data)) {
             $object->setIsForDebtor($data['is_for_debtor']);
         }
-        if (\array_key_exists('is_for_project', $data)) {
+        if (array_key_exists('is_for_project', $data)) {
             $object->setIsForProject($data['is_for_project']);
         }
-        if (\array_key_exists('is_for_subscription', $data)) {
+        if (array_key_exists('is_for_subscription', $data)) {
             $object->setIsForSubscription($data['is_for_subscription']);
         }
-        if (\array_key_exists('is_for_employee', $data)) {
+        if (array_key_exists('is_for_employee', $data)) {
             $object->setIsForEmployee($data['is_for_employee']);
         }
-        if (\array_key_exists('is_for_invoice', $data)) {
+        if (array_key_exists('is_for_invoice', $data)) {
             $object->setIsForInvoice($data['is_for_invoice']);
         }
-        if (\array_key_exists('is_for_myorganizationprofile', $data)) {
+        if (array_key_exists('is_for_myorganizationprofile', $data)) {
             $object->setIsForMyorganizationprofile($data['is_for_myorganizationprofile']);
         }
-        if (\array_key_exists('is_blocked', $data)) {
+        if (array_key_exists('is_blocked', $data)) {
             $object->setIsBlocked($data['is_blocked']);
         }
-        if (\array_key_exists('is_visible_on_all', $data)) {
+        if (array_key_exists('is_visible_on_all', $data)) {
             $object->setIsVisibleOnAll($data['is_visible_on_all']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -146,6 +150,6 @@ class GetDocumentTypeNormalizer implements DenormalizerInterface, NormalizerInte
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\GetDocumentType::class => false];
+        return [GetDocumentType::class => false];
     }
 }

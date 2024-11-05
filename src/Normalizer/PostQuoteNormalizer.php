@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PostQuote;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class PostQuoteNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class PostQuoteNormalizer implements DenormalizerInterface, NormalizerInterface,
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PostQuote::class;
+        return $type === PostQuote::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostQuote::class;
+        return is_object($data) && $data::class === PostQuote::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,33 +43,33 @@ class PostQuoteNormalizer implements DenormalizerInterface, NormalizerInterface,
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PostQuote();
-        if (null === $data || false === \is_array($data)) {
+        $object = new PostQuote();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('quotetemplate_id', $data)) {
+        if (array_key_exists('quotetemplate_id', $data)) {
             $object->setQuotetemplateId($data['quotetemplate_id']);
         }
-        if (\array_key_exists('sales_id', $data)) {
+        if (array_key_exists('sales_id', $data)) {
             $object->setSalesId($data['sales_id']);
         }
-        if (\array_key_exists('quote_subject', $data)) {
+        if (array_key_exists('quote_subject', $data)) {
             $object->setQuoteSubject($data['quote_subject']);
         }
-        if (\array_key_exists('json', $data)) {
+        if (array_key_exists('json', $data)) {
             $object->setJson($data['json']);
         }
-        if (\array_key_exists('customer_reference', $data)) {
+        if (array_key_exists('customer_reference', $data)) {
             $object->setCustomerReference($data['customer_reference']);
         }
-        if (\array_key_exists('is_blocked', $data)) {
+        if (array_key_exists('is_blocked', $data)) {
             $object->setIsBlocked($data['is_blocked']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('quotetemplateId') && null !== $object->getQuotetemplateId()) {
@@ -92,6 +96,6 @@ class PostQuoteNormalizer implements DenormalizerInterface, NormalizerInterface,
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PostQuote::class => false];
+        return [PostQuote::class => false];
     }
 }

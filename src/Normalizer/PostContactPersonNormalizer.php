@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PostContactPerson;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class PostContactPersonNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class PostContactPersonNormalizer implements DenormalizerInterface, NormalizerIn
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PostContactPerson::class;
+        return $type === PostContactPerson::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostContactPerson::class;
+        return is_object($data) && $data::class === PostContactPerson::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,36 +43,36 @@ class PostContactPersonNormalizer implements DenormalizerInterface, NormalizerIn
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PostContactPerson();
-        if (null === $data || false === \is_array($data)) {
+        $object = new PostContactPerson();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('organization_id', $data)) {
+        if (array_key_exists('organization_id', $data)) {
             $object->setOrganizationId($data['organization_id']);
         }
-        if (\array_key_exists('person_id', $data)) {
+        if (array_key_exists('person_id', $data)) {
             $object->setPersonId($data['person_id']);
         }
-        if (\array_key_exists('is_active', $data)) {
+        if (array_key_exists('is_active', $data)) {
             $object->setIsActive($data['is_active']);
         }
-        if (\array_key_exists('work_function', $data)) {
+        if (array_key_exists('work_function', $data)) {
             $object->setWorkFunction($data['work_function']);
         }
-        if (\array_key_exists('work_email', $data)) {
+        if (array_key_exists('work_email', $data)) {
             $object->setWorkEmail($data['work_email']);
         }
-        if (\array_key_exists('work_phone', $data)) {
+        if (array_key_exists('work_phone', $data)) {
             $object->setWorkPhone($data['work_phone']);
         }
-        if (\array_key_exists('work_mobile', $data)) {
+        if (array_key_exists('work_mobile', $data)) {
             $object->setWorkMobile($data['work_mobile']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('organizationId') && null !== $object->getOrganizationId()) {
@@ -98,6 +102,6 @@ class PostContactPersonNormalizer implements DenormalizerInterface, NormalizerIn
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PostContactPerson::class => false];
+        return [PostContactPerson::class => false];
     }
 }

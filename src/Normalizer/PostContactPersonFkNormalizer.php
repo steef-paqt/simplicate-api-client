@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\PostContactPersonFk;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class PostContactPersonFkNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class PostContactPersonFkNormalizer implements DenormalizerInterface, Normalizer
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\PostContactPersonFk::class;
+        return $type === PostContactPersonFk::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\PostContactPersonFk::class;
+        return is_object($data) && $data::class === PostContactPersonFk::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,27 +43,27 @@ class PostContactPersonFkNormalizer implements DenormalizerInterface, Normalizer
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\PostContactPersonFk();
-        if (null === $data || false === \is_array($data)) {
+        $object = new PostContactPersonFk();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('person_id', $data)) {
+        if (array_key_exists('person_id', $data)) {
             $object->setPersonId($data['person_id']);
         }
-        if (\array_key_exists('work_function', $data)) {
+        if (array_key_exists('work_function', $data)) {
             $object->setWorkFunction($data['work_function']);
         }
-        if (\array_key_exists('work_email', $data)) {
+        if (array_key_exists('work_email', $data)) {
             $object->setWorkEmail($data['work_email']);
         }
-        if (\array_key_exists('work_mobile', $data)) {
+        if (array_key_exists('work_mobile', $data)) {
             $object->setWorkMobile($data['work_mobile']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('personId') && null !== $object->getPersonId()) {
@@ -80,6 +84,6 @@ class PostContactPersonFkNormalizer implements DenormalizerInterface, Normalizer
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\PostContactPersonFk::class => false];
+        return [PostContactPersonFk::class => false];
     }
 }

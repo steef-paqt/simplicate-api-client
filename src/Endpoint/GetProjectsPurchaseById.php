@@ -4,11 +4,18 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetProjectsPurchaseByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetProjectsPurchaseByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetProjectsPurchaseByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultPurchase;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetProjectsPurchaseById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +34,7 @@ class GetProjectsPurchaseById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/projects/purchase/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,28 +46,26 @@ class GetProjectsPurchaseById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchaseByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchaseByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchaseByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultPurchase
+     * @return null|RestResultPurchase
+     *@throws GetProjectsPurchaseByIdNotFoundException
+     * @throws GetProjectsPurchaseByIdInternalServerErrorException
+     * @throws GetProjectsPurchaseByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultPurchase::class, 'json');
+            return $serializer->deserialize($body, RestResultPurchase::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsPurchaseByIdUnauthorizedException($response);
+            throw new GetProjectsPurchaseByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsPurchaseByIdNotFoundException($response);
+            throw new GetProjectsPurchaseByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsPurchaseByIdInternalServerErrorException($response);
+            throw new GetProjectsPurchaseByIdInternalServerErrorException($response);
         }
     }
 

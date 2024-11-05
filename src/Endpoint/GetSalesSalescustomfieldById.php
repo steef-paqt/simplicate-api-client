@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultCustomField;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesSalescustomfieldById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetSalesSalescustomfieldById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/sales/salescustomfields/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetSalesSalescustomfieldById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomField
+     * @return null|RestResultCustomField
+     *@throws GetSalesSalescustomfieldByIdNotFoundException
+     * @throws GetSalesSalescustomfieldByIdUnprocessableEntityException
+     * @throws GetSalesSalescustomfieldByIdInternalServerErrorException
+     * @throws GetSalesSalescustomfieldByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomField::class, 'json');
+            return $serializer->deserialize($body, RestResultCustomField::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdUnauthorizedException($response);
+            throw new GetSalesSalescustomfieldByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdNotFoundException($response);
+            throw new GetSalesSalescustomfieldByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdUnprocessableEntityException($response);
+            throw new GetSalesSalescustomfieldByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdInternalServerErrorException($response);
+            throw new GetSalesSalescustomfieldByIdInternalServerErrorException($response);
         }
     }
 

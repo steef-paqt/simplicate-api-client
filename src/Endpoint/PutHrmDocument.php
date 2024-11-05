@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutHrmDocumentBadRequestException;
+use Paqtcom\Simplicate\Exception\PutHrmDocumentInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutHrmDocumentUnauthorizedException;
+use Paqtcom\Simplicate\Model\PutDocument;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutHrmDocument extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data
+     * @param PutDocument $body Document object containing data
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PutDocument $body)
+    public function __construct(PutDocument $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PutHrmDocument extends BaseEndpoint
         return '/hrm/document';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PutHrmDocument extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutHrmDocumentBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutHrmDocumentUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutHrmDocumentInternalServerErrorException
+     * @throws PutHrmDocumentBadRequestException
+     * @throws PutHrmDocumentUnauthorizedException
+     * @throws PutHrmDocumentInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PutHrmDocument extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHrmDocumentBadRequestException($response);
+            throw new PutHrmDocumentBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHrmDocumentUnauthorizedException($response);
+            throw new PutHrmDocumentUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutHrmDocumentInternalServerErrorException($response);
+            throw new PutHrmDocumentInternalServerErrorException($response);
         }
     }
 

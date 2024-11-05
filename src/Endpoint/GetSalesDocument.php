@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesDocumentInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesDocumentNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSalesDocumentUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultDocuments;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesDocument extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetSalesDocument extends BaseEndpoint
         return '/sales/document';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetSalesDocument extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetSalesDocument extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumentUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumentNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumentInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultDocuments
+     * @return null|RestResultDocuments
+     *@throws GetSalesDocumentNotFoundException
+     * @throws GetSalesDocumentInternalServerErrorException
+     * @throws GetSalesDocumentUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultDocuments::class, 'json');
+            return $serializer->deserialize($body, RestResultDocuments::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesDocumentUnauthorizedException($response);
+            throw new GetSalesDocumentUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesDocumentNotFoundException($response);
+            throw new GetSalesDocumentNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesDocumentInternalServerErrorException($response);
+            throw new GetSalesDocumentInternalServerErrorException($response);
         }
     }
 

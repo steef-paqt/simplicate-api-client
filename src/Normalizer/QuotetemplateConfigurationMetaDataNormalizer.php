@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\QuotetemplateConfigurationMetaData;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class QuotetemplateConfigurationMetaDataNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +27,12 @@ class QuotetemplateConfigurationMetaDataNormalizer implements DenormalizerInterf
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\QuotetemplateConfigurationMetaData::class;
+        return $type === QuotetemplateConfigurationMetaData::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\QuotetemplateConfigurationMetaData::class;
+        return is_object($data) && $data::class === QuotetemplateConfigurationMetaData::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,45 +43,45 @@ class QuotetemplateConfigurationMetaDataNormalizer implements DenormalizerInterf
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\QuotetemplateConfigurationMetaData();
-        if (null === $data || false === \is_array($data)) {
+        $object = new QuotetemplateConfigurationMetaData();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('default_view_and_sign_button_text', $data)) {
+        if (array_key_exists('default_view_and_sign_button_text', $data)) {
             $object->setDefaultViewAndSignButtonText($data['default_view_and_sign_button_text']);
         }
-        if (\array_key_exists('default_view_and_sign_button_bg_color', $data)) {
+        if (array_key_exists('default_view_and_sign_button_bg_color', $data)) {
             $object->setDefaultViewAndSignButtonBgColor($data['default_view_and_sign_button_bg_color']);
         }
-        if (\array_key_exists('default_view_and_sign_button_text_color', $data)) {
+        if (array_key_exists('default_view_and_sign_button_text_color', $data)) {
             $object->setDefaultViewAndSignButtonTextColor($data['default_view_and_sign_button_text_color']);
         }
-        if (\array_key_exists('count', $data)) {
+        if (array_key_exists('count', $data)) {
             $object->setCount($data['count']);
         }
-        if (\array_key_exists('total_count', $data)) {
+        if (array_key_exists('total_count', $data)) {
             $object->setTotalCount($data['total_count']);
         }
-        if (\array_key_exists('offset', $data)) {
+        if (array_key_exists('offset', $data)) {
             $object->setOffset($data['offset']);
         }
-        if (\array_key_exists('limit', $data)) {
+        if (array_key_exists('limit', $data)) {
             $object->setLimit($data['limit']);
         }
-        if (\array_key_exists('upper_limit', $data)) {
+        if (array_key_exists('upper_limit', $data)) {
             $object->setUpperLimit($data['upper_limit']);
         }
-        if (\array_key_exists('nocleanup', $data)) {
+        if (array_key_exists('nocleanup', $data)) {
             $object->setNocleanup($data['nocleanup']);
         }
-        if (\array_key_exists('checksum', $data)) {
+        if (array_key_exists('checksum', $data)) {
             $object->setChecksum($data['checksum']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('defaultViewAndSignButtonText') && null !== $object->getDefaultViewAndSignButtonText()) {
@@ -116,6 +120,6 @@ class QuotetemplateConfigurationMetaDataNormalizer implements DenormalizerInterf
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\QuotetemplateConfigurationMetaData::class => false];
+        return [QuotetemplateConfigurationMetaData::class => false];
     }
 }

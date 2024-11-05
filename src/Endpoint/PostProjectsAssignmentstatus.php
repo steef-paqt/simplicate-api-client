@@ -4,16 +4,24 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusBadRequestException;
+use Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusNotFoundException;
+use Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusUnauthorizedException;
+use Paqtcom\Simplicate\Model\AssignmentStatus;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostProjectsAssignmentstatus extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body
+     * @param AssignmentStatus $body Project assignment POST body
      */
-    public function __construct(\Paqtcom\Simplicate\Model\AssignmentStatus $body)
+    public function __construct(AssignmentStatus $body)
     {
         $this->body = $body;
     }
@@ -28,7 +36,7 @@ class PostProjectsAssignmentstatus extends BaseEndpoint
         return '/projects/assignmentstatus';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,12 +49,12 @@ class PostProjectsAssignmentstatus extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusInternalServerErrorException
+     * @throws PostProjectsAssignmentstatusBadRequestException
+     * @throws PostProjectsAssignmentstatusUnauthorizedException
+     * @throws PostProjectsAssignmentstatusNotFoundException
+     * @throws PostProjectsAssignmentstatusInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -54,16 +62,16 @@ class PostProjectsAssignmentstatus extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusBadRequestException($response);
+            throw new PostProjectsAssignmentstatusBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusUnauthorizedException($response);
+            throw new PostProjectsAssignmentstatusUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusNotFoundException($response);
+            throw new PostProjectsAssignmentstatusNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusInternalServerErrorException($response);
+            throw new PostProjectsAssignmentstatusInternalServerErrorException($response);
         }
     }
 

@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutSharedItemByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutSharedItemByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\PutSharedItemByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutSharedItemById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -29,7 +35,7 @@ class PutSharedItemById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/shared/item/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -42,11 +48,11 @@ class PutSharedItemById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutSharedItemByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutSharedItemByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutSharedItemByIdInternalServerErrorException
+     * @throws PutSharedItemByIdUnauthorizedException
+     * @throws PutSharedItemByIdNotFoundException
+     * @throws PutSharedItemByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -54,13 +60,13 @@ class PutSharedItemById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutSharedItemByIdUnauthorizedException($response);
+            throw new PutSharedItemByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutSharedItemByIdNotFoundException($response);
+            throw new PutSharedItemByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutSharedItemByIdInternalServerErrorException($response);
+            throw new PutSharedItemByIdInternalServerErrorException($response);
         }
     }
 

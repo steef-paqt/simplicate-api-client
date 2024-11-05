@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteTimersTimerById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteTimersTimerById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/timers/timer/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteTimersTimerById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdInternalServerErrorException
+     * @throws DeleteTimersTimerByIdUnauthorizedException
+     * @throws DeleteTimersTimerByIdNotFoundException
+     * @throws DeleteTimersTimerByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteTimersTimerById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdUnauthorizedException($response);
+            throw new DeleteTimersTimerByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdNotFoundException($response);
+            throw new DeleteTimersTimerByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdInternalServerErrorException($response);
+            throw new DeleteTimersTimerByIdInternalServerErrorException($response);
         }
     }
 

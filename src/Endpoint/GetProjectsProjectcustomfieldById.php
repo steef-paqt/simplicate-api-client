@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultCustomField;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetProjectsProjectcustomfieldById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetProjectsProjectcustomfieldById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/projects/projectcustomfields/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetProjectsProjectcustomfieldById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultCustomField
+     * @return null|RestResultCustomField
+     *@throws GetProjectsProjectcustomfieldByIdNotFoundException
+     * @throws GetProjectsProjectcustomfieldByIdUnprocessableEntityException
+     * @throws GetProjectsProjectcustomfieldByIdInternalServerErrorException
+     * @throws GetProjectsProjectcustomfieldByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomField::class, 'json');
+            return $serializer->deserialize($body, RestResultCustomField::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnauthorizedException($response);
+            throw new GetProjectsProjectcustomfieldByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdNotFoundException($response);
+            throw new GetProjectsProjectcustomfieldByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnprocessableEntityException($response);
+            throw new GetProjectsProjectcustomfieldByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdInternalServerErrorException($response);
+            throw new GetProjectsProjectcustomfieldByIdInternalServerErrorException($response);
         }
     }
 

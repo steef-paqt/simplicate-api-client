@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateNotFoundException;
+use Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultReminderTemplates;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetInvoicesRemindertemplate extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetInvoicesRemindertemplate extends BaseEndpoint
         return '/invoices/remindertemplate';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetInvoicesRemindertemplate extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetInvoicesRemindertemplate extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultReminderTemplates
+     * @return null|RestResultReminderTemplates
+     *@throws GetInvoicesRemindertemplateNotFoundException
+     * @throws GetInvoicesRemindertemplateInternalServerErrorException
+     * @throws GetInvoicesRemindertemplateUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultReminderTemplates::class, 'json');
+            return $serializer->deserialize($body, RestResultReminderTemplates::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateUnauthorizedException($response);
+            throw new GetInvoicesRemindertemplateUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateNotFoundException($response);
+            throw new GetInvoicesRemindertemplateNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateInternalServerErrorException($response);
+            throw new GetInvoicesRemindertemplateInternalServerErrorException($response);
         }
     }
 

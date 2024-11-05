@@ -4,9 +4,15 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldUnauthorizedException;
 use Paqtcom\Simplicate\Model\RestResultCustomFields;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesSalescustomfield extends BaseEndpoint
 {
@@ -34,7 +40,7 @@ class GetSalesSalescustomfield extends BaseEndpoint
         return '/sales/salescustomfields';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -44,7 +50,7 @@ class GetSalesSalescustomfield extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -60,13 +66,13 @@ class GetSalesSalescustomfield extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCustomFields
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldInternalServerErrorException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldUnauthorizedException
+     * @throws GetSalesSalescustomfieldNotFoundException
+     * @throws GetSalesSalescustomfieldInternalServerErrorException
+     * @throws GetSalesSalescustomfieldUnauthorizedException
      */
     protected function transformResponseBody(
-        \Psr\Http\Message\ResponseInterface $response,
-        \Symfony\Component\Serializer\SerializerInterface $serializer,
+        ResponseInterface $response,
+        SerializerInterface $serializer,
         ?string $contentType = null
     ): ?RestResultCustomFields {
         $status = $response->getStatusCode();
@@ -75,13 +81,13 @@ class GetSalesSalescustomfield extends BaseEndpoint
             return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultCustomFields::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldUnauthorizedException($response);
+            throw new GetSalesSalescustomfieldUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldNotFoundException($response);
+            throw new GetSalesSalescustomfieldNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldInternalServerErrorException($response);
+            throw new GetSalesSalescustomfieldInternalServerErrorException($response);
         }
 
         return null;

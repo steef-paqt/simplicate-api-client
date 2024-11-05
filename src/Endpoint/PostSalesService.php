@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostSalesServiceInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostSalesServiceNotFoundException;
+use Paqtcom\Simplicate\Exception\PostSalesServiceUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostSalesService extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostSalesService $body template object that needs to be added
@@ -28,7 +34,7 @@ class PostSalesService extends BaseEndpoint
         return '/sales/service';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +47,11 @@ class PostSalesService extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceInternalServerErrorException
+     * @throws PostSalesServiceUnauthorizedException
+     * @throws PostSalesServiceNotFoundException
+     * @throws PostSalesServiceInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +59,13 @@ class PostSalesService extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostSalesServiceUnauthorizedException($response);
+            throw new PostSalesServiceUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostSalesServiceNotFoundException($response);
+            throw new PostSalesServiceNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostSalesServiceInternalServerErrorException($response);
+            throw new PostSalesServiceInternalServerErrorException($response);
         }
     }
 

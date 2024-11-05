@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PostHoursAbsenceBadRequestException;
+use Paqtcom\Simplicate\Exception\PostHoursAbsenceInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PostHoursAbsenceUnauthorizedException;
+use Paqtcom\Simplicate\Model\PostAbsence;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PostHoursAbsence extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PostAbsence $body absence object containing data
+     * @param PostAbsence $body absence object containing data
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PostAbsence $body)
+    public function __construct(PostAbsence $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PostHoursAbsence extends BaseEndpoint
         return '/hours/absence';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PostHoursAbsence extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursAbsenceBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursAbsenceUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostHoursAbsenceInternalServerErrorException
+     * @throws PostHoursAbsenceBadRequestException
+     * @throws PostHoursAbsenceUnauthorizedException
+     * @throws PostHoursAbsenceInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -56,13 +63,13 @@ class PostHoursAbsence extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursAbsenceBadRequestException($response);
+            throw new PostHoursAbsenceBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursAbsenceUnauthorizedException($response);
+            throw new PostHoursAbsenceUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PostHoursAbsenceInternalServerErrorException($response);
+            throw new PostHoursAbsenceInternalServerErrorException($response);
         }
     }
 

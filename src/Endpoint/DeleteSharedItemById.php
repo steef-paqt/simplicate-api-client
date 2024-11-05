@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteSharedItemByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteSharedItemByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteSharedItemByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteSharedItemById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteSharedItemById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/shared/item/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteSharedItemById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdInternalServerErrorException
+     * @throws DeleteSharedItemByIdUnauthorizedException
+     * @throws DeleteSharedItemByIdNotFoundException
+     * @throws DeleteSharedItemByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteSharedItemById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdUnauthorizedException($response);
+            throw new DeleteSharedItemByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdNotFoundException($response);
+            throw new DeleteSharedItemByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdInternalServerErrorException($response);
+            throw new DeleteSharedItemByIdInternalServerErrorException($response);
         }
     }
 

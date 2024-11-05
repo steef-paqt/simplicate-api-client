@@ -4,7 +4,16 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\ApprovalStatus;
+use Paqtcom\Simplicate\Model\Expense;
+use Paqtcom\Simplicate\Model\ExpenseAttachment;
+use Paqtcom\Simplicate\Model\GetEmployeeSimple;
+use Paqtcom\Simplicate\Model\GetInvoice;
+use Paqtcom\Simplicate\Model\GetProjectServiceCostType;
+use Paqtcom\Simplicate\Model\GetProjectSimple;
+use Paqtcom\Simplicate\Model\GetPurchaseType;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +22,9 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
+use function is_int;
 
 class ExpenseNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +35,12 @@ class ExpenseNormalizer implements DenormalizerInterface, NormalizerInterface, D
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\Expense::class;
+        return $type === Expense::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\Expense::class;
+        return is_object($data) && $data::class === Expense::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,92 +51,92 @@ class ExpenseNormalizer implements DenormalizerInterface, NormalizerInterface, D
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\Expense();
-        if (\array_key_exists('amount', $data) && \is_int($data['amount'])) {
+        $object = new Expense();
+        if (array_key_exists('amount', $data) && is_int($data['amount'])) {
             $data['amount'] = (float) $data['amount'];
         }
-        if (\array_key_exists('purchase_price_unit', $data) && \is_int($data['purchase_price_unit'])) {
+        if (array_key_exists('purchase_price_unit', $data) && is_int($data['purchase_price_unit'])) {
             $data['purchase_price_unit'] = (float) $data['purchase_price_unit'];
         }
-        if (\array_key_exists('tariff', $data) && \is_int($data['tariff'])) {
+        if (array_key_exists('tariff', $data) && is_int($data['tariff'])) {
             $data['tariff'] = (float) $data['tariff'];
         }
-        if (\array_key_exists('purchase_price_total', $data) && \is_int($data['purchase_price_total'])) {
+        if (array_key_exists('purchase_price_total', $data) && is_int($data['purchase_price_total'])) {
             $data['purchase_price_total'] = (float) $data['purchase_price_total'];
         }
-        if (\array_key_exists('purchase_margin', $data) && \is_int($data['purchase_margin'])) {
+        if (array_key_exists('purchase_margin', $data) && is_int($data['purchase_margin'])) {
             $data['purchase_margin'] = (float) $data['purchase_margin'];
         }
-        if (\array_key_exists('total_price', $data) && \is_int($data['total_price'])) {
+        if (array_key_exists('total_price', $data) && is_int($data['total_price'])) {
             $data['total_price'] = (float) $data['total_price'];
         }
-        if (null === $data || false === \is_array($data)) {
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('project', $data)) {
-            $object->setProject($this->denormalizer->denormalize($data['project'], \Paqtcom\Simplicate\Model\GetProjectSimple::class, 'json', $context));
+        if (array_key_exists('project', $data)) {
+            $object->setProject($this->denormalizer->denormalize($data['project'], GetProjectSimple::class, 'json', $context));
         }
-        if (\array_key_exists('service_id', $data)) {
+        if (array_key_exists('service_id', $data)) {
             $object->setServiceId($data['service_id']);
         }
-        if (\array_key_exists('costtype', $data)) {
-            $object->setCosttype($this->denormalizer->denormalize($data['costtype'], \Paqtcom\Simplicate\Model\GetProjectServiceCostType::class, 'json', $context));
+        if (array_key_exists('costtype', $data)) {
+            $object->setCosttype($this->denormalizer->denormalize($data['costtype'], GetProjectServiceCostType::class, 'json', $context));
         }
-        if (\array_key_exists('default_costtype', $data)) {
-            $object->setDefaultCosttype($this->denormalizer->denormalize($data['default_costtype'], \Paqtcom\Simplicate\Model\GetPurchaseType::class, 'json', $context));
+        if (array_key_exists('default_costtype', $data)) {
+            $object->setDefaultCosttype($this->denormalizer->denormalize($data['default_costtype'], GetPurchaseType::class, 'json', $context));
         }
-        if (\array_key_exists('amount', $data)) {
+        if (array_key_exists('amount', $data)) {
             $object->setAmount($data['amount']);
         }
-        if (\array_key_exists('purchase_price_unit', $data)) {
+        if (array_key_exists('purchase_price_unit', $data)) {
             $object->setPurchasePriceUnit($data['purchase_price_unit']);
         }
-        if (\array_key_exists('tariff', $data)) {
+        if (array_key_exists('tariff', $data)) {
             $object->setTariff($data['tariff']);
         }
-        if (\array_key_exists('purchase_price_total', $data)) {
+        if (array_key_exists('purchase_price_total', $data)) {
             $object->setPurchasePriceTotal($data['purchase_price_total']);
         }
-        if (\array_key_exists('purchase_margin', $data)) {
+        if (array_key_exists('purchase_margin', $data)) {
             $object->setPurchaseMargin($data['purchase_margin']);
         }
-        if (\array_key_exists('total_price', $data)) {
+        if (array_key_exists('total_price', $data)) {
             $object->setTotalPrice($data['total_price']);
         }
-        if (\array_key_exists('is_billable', $data)) {
+        if (array_key_exists('is_billable', $data)) {
             $object->setIsBillable($data['is_billable']);
         }
-        if (\array_key_exists('approval_status', $data)) {
-            $object->setApprovalStatus($this->denormalizer->denormalize($data['approval_status'], \Paqtcom\Simplicate\Model\ApprovalStatus::class, 'json', $context));
+        if (array_key_exists('approval_status', $data)) {
+            $object->setApprovalStatus($this->denormalizer->denormalize($data['approval_status'], ApprovalStatus::class, 'json', $context));
         }
-        if (\array_key_exists('invoice_status', $data)) {
+        if (array_key_exists('invoice_status', $data)) {
             $object->setInvoiceStatus($data['invoice_status']);
         }
-        if (\array_key_exists('invoice', $data)) {
-            $object->setInvoice($this->denormalizer->denormalize($data['invoice'], \Paqtcom\Simplicate\Model\GetInvoice::class, 'json', $context));
+        if (array_key_exists('invoice', $data)) {
+            $object->setInvoice($this->denormalizer->denormalize($data['invoice'], GetInvoice::class, 'json', $context));
         }
-        if (\array_key_exists('employee', $data)) {
-            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+        if (array_key_exists('employee', $data)) {
+            $object->setEmployee($this->denormalizer->denormalize($data['employee'], GetEmployeeSimple::class, 'json', $context));
         }
-        if (\array_key_exists('date', $data)) {
+        if (array_key_exists('date', $data)) {
             $object->setDate($data['date']);
         }
-        if (\array_key_exists('note', $data)) {
+        if (array_key_exists('note', $data)) {
             $object->setNote($data['note']);
         }
-        if (\array_key_exists('service_purchase_start_date', $data)) {
+        if (array_key_exists('service_purchase_start_date', $data)) {
             $object->setServicePurchaseStartDate($data['service_purchase_start_date']);
         }
-        if (\array_key_exists('service_purchase_end_date', $data)) {
+        if (array_key_exists('service_purchase_end_date', $data)) {
             $object->setServicePurchaseEndDate($data['service_purchase_end_date']);
         }
-        if (\array_key_exists('attachments', $data)) {
+        if (array_key_exists('attachments', $data)) {
             $values = [];
             foreach ($data['attachments'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\ExpenseAttachment::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, ExpenseAttachment::class, 'json', $context);
             }
             $object->setAttachments($values);
         }
@@ -132,7 +144,7 @@ class ExpenseNormalizer implements DenormalizerInterface, NormalizerInterface, D
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -208,6 +220,6 @@ class ExpenseNormalizer implements DenormalizerInterface, NormalizerInterface, D
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\Expense::class => false];
+        return [Expense::class => false];
     }
 }

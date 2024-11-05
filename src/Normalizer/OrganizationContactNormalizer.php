@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\Interest;
+use Paqtcom\Simplicate\Model\OrganizationContact;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class OrganizationContactNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class OrganizationContactNormalizer implements DenormalizerInterface, Normalizer
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\OrganizationContact::class;
+        return $type === OrganizationContact::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\OrganizationContact::class;
+        return is_object($data) && $data::class === OrganizationContact::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,38 +44,38 @@ class OrganizationContactNormalizer implements DenormalizerInterface, Normalizer
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\OrganizationContact();
-        if (null === $data || false === \is_array($data)) {
+        $object = new OrganizationContact();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('organization_id', $data)) {
+        if (array_key_exists('organization_id', $data)) {
             $object->setOrganizationId($data['organization_id']);
         }
-        if (\array_key_exists('name', $data)) {
+        if (array_key_exists('name', $data)) {
             $object->setName($data['name']);
         }
-        if (\array_key_exists('is_active', $data)) {
+        if (array_key_exists('is_active', $data)) {
             $object->setIsActive($data['is_active']);
         }
-        if (\array_key_exists('work_function', $data)) {
+        if (array_key_exists('work_function', $data)) {
             $object->setWorkFunction($data['work_function']);
         }
-        if (\array_key_exists('work_email', $data)) {
+        if (array_key_exists('work_email', $data)) {
             $object->setWorkEmail($data['work_email']);
         }
-        if (\array_key_exists('work_phone', $data)) {
+        if (array_key_exists('work_phone', $data)) {
             $object->setWorkPhone($data['work_phone']);
         }
-        if (\array_key_exists('work_mobile', $data)) {
+        if (array_key_exists('work_mobile', $data)) {
             $object->setWorkMobile($data['work_mobile']);
         }
-        if (\array_key_exists('interests', $data)) {
+        if (array_key_exists('interests', $data)) {
             $values = [];
             foreach ($data['interests'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, \Paqtcom\Simplicate\Model\Interest::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, Interest::class, 'json', $context);
             }
             $object->setInterests($values);
         }
@@ -78,7 +83,7 @@ class OrganizationContactNormalizer implements DenormalizerInterface, Normalizer
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -118,6 +123,6 @@ class OrganizationContactNormalizer implements DenormalizerInterface, Normalizer
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\OrganizationContact::class => false];
+        return [OrganizationContact::class => false];
     }
 }

@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Normalizer;
 
+use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\CalendarItem;
+use Paqtcom\Simplicate\Model\GetEmployeeSimple;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -13,6 +16,8 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use function array_key_exists;
+use function is_array;
 
 class CalendarItemNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
@@ -23,12 +28,12 @@ class CalendarItemNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === \Paqtcom\Simplicate\Model\CalendarItem::class;
+        return $type === CalendarItem::class;
     }
 
     public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && $data::class === \Paqtcom\Simplicate\Model\CalendarItem::class;
+        return is_object($data) && $data::class === CalendarItem::class;
     }
 
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -39,66 +44,66 @@ class CalendarItemNormalizer implements DenormalizerInterface, NormalizerInterfa
         if (isset($data['$recursiveRef'])) {
             return new Reference($data['$recursiveRef'], $context['document-origin']);
         }
-        $object = new \Paqtcom\Simplicate\Model\CalendarItem();
-        if (null === $data || false === \is_array($data)) {
+        $object = new CalendarItem();
+        if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (\array_key_exists('id', $data)) {
+        if (array_key_exists('id', $data)) {
             $object->setId($data['id']);
         }
-        if (\array_key_exists('employee', $data)) {
-            $object->setEmployee($this->denormalizer->denormalize($data['employee'], \Paqtcom\Simplicate\Model\GetEmployeeSimple::class, 'json', $context));
+        if (array_key_exists('employee', $data)) {
+            $object->setEmployee($this->denormalizer->denormalize($data['employee'], GetEmployeeSimple::class, 'json', $context));
         }
-        if (\array_key_exists('hours', $data)) {
+        if (array_key_exists('hours', $data)) {
             $object->setHours($data['hours']);
         }
-        if (\array_key_exists('start_date', $data)) {
+        if (array_key_exists('start_date', $data)) {
             $object->setStartDate($data['start_date']);
         }
-        if (\array_key_exists('end_date', $data)) {
+        if (array_key_exists('end_date', $data)) {
             $object->setEndDate($data['end_date']);
         }
-        if (\array_key_exists('description', $data)) {
+        if (array_key_exists('description', $data)) {
             $object->setDescription($data['description']);
         }
-        if (\array_key_exists('summary', $data)) {
+        if (array_key_exists('summary', $data)) {
             $object->setSummary($data['summary']);
         }
-        if (\array_key_exists('location', $data)) {
+        if (array_key_exists('location', $data)) {
             $object->setLocation($data['location']);
         }
-        if (\array_key_exists('deleted', $data)) {
+        if (array_key_exists('deleted', $data)) {
             $object->setDeleted($data['deleted']);
         }
-        if (\array_key_exists('status', $data)) {
+        if (array_key_exists('status', $data)) {
             $object->setStatus($data['status']);
         }
-        if (\array_key_exists('is_recurring', $data)) {
+        if (array_key_exists('is_recurring', $data)) {
             $object->setIsRecurring($data['is_recurring']);
         }
-        if (\array_key_exists('is_read_only', $data)) {
+        if (array_key_exists('is_read_only', $data)) {
             $object->setIsReadOnly($data['is_read_only']);
         }
-        if (\array_key_exists('is_time_defined', $data)) {
+        if (array_key_exists('is_time_defined', $data)) {
             $object->setIsTimeDefined($data['is_time_defined']);
         }
-        if (\array_key_exists('organizer_email', $data)) {
+        if (array_key_exists('organizer_email', $data)) {
             $object->setOrganizerEmail($data['organizer_email']);
         }
-        if (\array_key_exists('private', $data)) {
+        if (array_key_exists('private', $data)) {
             $object->setPrivate($data['private']);
         }
-        if (\array_key_exists('obfuscate', $data)) {
+        if (array_key_exists('obfuscate', $data)) {
             $object->setObfuscate($data['obfuscate']);
         }
-        if (\array_key_exists('hours_id', $data)) {
+        if (array_key_exists('hours_id', $data)) {
             $object->setHoursId($data['hours_id']);
         }
 
         return $object;
     }
 
-    public function normalize($object, $format = null, array $context = []): float|int|bool|\ArrayObject|array|string|null
+    public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
@@ -158,6 +163,6 @@ class CalendarItemNormalizer implements DenormalizerInterface, NormalizerInterfa
 
     public function getSupportedTypes(?string $format = null): array
     {
-        return [\Paqtcom\Simplicate\Model\CalendarItem::class => false];
+        return [CalendarItem::class => false];
     }
 }

@@ -4,16 +4,23 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutInvoicesDocumentBadRequestException;
+use Paqtcom\Simplicate\Exception\PutInvoicesDocumentInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutInvoicesDocumentUnauthorizedException;
+use Paqtcom\Simplicate\Model\PutDocument;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutInvoicesDocument extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
-     * @param \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data
+     * @param PutDocument $body Document object containing data
      */
-    public function __construct(\Paqtcom\Simplicate\Model\PutDocument $body)
+    public function __construct(PutDocument $body)
     {
         $this->body = $body;
     }
@@ -28,7 +35,7 @@ class PutInvoicesDocument extends BaseEndpoint
         return '/invoices/document';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -41,11 +48,11 @@ class PutInvoicesDocument extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutInvoicesDocumentBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutInvoicesDocumentUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutInvoicesDocumentInternalServerErrorException
+     * @throws PutInvoicesDocumentBadRequestException
+     * @throws PutInvoicesDocumentUnauthorizedException
+     * @throws PutInvoicesDocumentInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -53,13 +60,13 @@ class PutInvoicesDocument extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutInvoicesDocumentBadRequestException($response);
+            throw new PutInvoicesDocumentBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutInvoicesDocumentUnauthorizedException($response);
+            throw new PutInvoicesDocumentUnauthorizedException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutInvoicesDocumentInternalServerErrorException($response);
+            throw new PutInvoicesDocumentInternalServerErrorException($response);
         }
     }
 

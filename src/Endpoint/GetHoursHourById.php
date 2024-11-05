@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHoursHourByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHoursHourByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHoursHourByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetHoursHourByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultHour;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHoursHourById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetHoursHourById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hours/hours/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetHoursHourById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursHourByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursHourByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursHourByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetHoursHourByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultHour
+     * @return null|RestResultHour
+     *@throws GetHoursHourByIdNotFoundException
+     * @throws GetHoursHourByIdUnprocessableEntityException
+     * @throws GetHoursHourByIdInternalServerErrorException
+     * @throws GetHoursHourByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultHour::class, 'json');
+            return $serializer->deserialize($body, RestResultHour::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursHourByIdUnauthorizedException($response);
+            throw new GetHoursHourByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursHourByIdNotFoundException($response);
+            throw new GetHoursHourByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursHourByIdUnprocessableEntityException($response);
+            throw new GetHoursHourByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHoursHourByIdInternalServerErrorException($response);
+            throw new GetHoursHourByIdInternalServerErrorException($response);
         }
     }
 

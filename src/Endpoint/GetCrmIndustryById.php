@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCrmIndustryByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCrmIndustryByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCrmIndustryByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetCrmIndustryByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultIndustry;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCrmIndustryById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetCrmIndustryById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/crm/industry/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetCrmIndustryById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultIndustry
+     * @return null|RestResultIndustry
+     *@throws GetCrmIndustryByIdNotFoundException
+     * @throws GetCrmIndustryByIdUnprocessableEntityException
+     * @throws GetCrmIndustryByIdInternalServerErrorException
+     * @throws GetCrmIndustryByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultIndustry::class, 'json');
+            return $serializer->deserialize($body, RestResultIndustry::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdUnauthorizedException($response);
+            throw new GetCrmIndustryByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdNotFoundException($response);
+            throw new GetCrmIndustryByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdUnprocessableEntityException($response);
+            throw new GetCrmIndustryByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdInternalServerErrorException($response);
+            throw new GetCrmIndustryByIdInternalServerErrorException($response);
         }
     }
 

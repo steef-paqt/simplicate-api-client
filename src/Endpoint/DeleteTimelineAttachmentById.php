@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdUnauthorizedException;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DeleteTimelineAttachmentById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +33,7 @@ class DeleteTimelineAttachmentById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/timeline/attachment/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -40,11 +46,11 @@ class DeleteTimelineAttachmentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdInternalServerErrorException
+     * @throws DeleteTimelineAttachmentByIdUnauthorizedException
+     * @throws DeleteTimelineAttachmentByIdNotFoundException
+     * @throws DeleteTimelineAttachmentByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -52,13 +58,13 @@ class DeleteTimelineAttachmentById extends BaseEndpoint
             return null;
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdUnauthorizedException($response);
+            throw new DeleteTimelineAttachmentByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdNotFoundException($response);
+            throw new DeleteTimelineAttachmentByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdInternalServerErrorException($response);
+            throw new DeleteTimelineAttachmentByIdInternalServerErrorException($response);
         }
     }
 

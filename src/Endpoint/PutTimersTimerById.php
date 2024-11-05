@@ -4,17 +4,25 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\PutTimersTimerByIdBadRequestException;
+use Paqtcom\Simplicate\Exception\PutTimersTimerByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\PutTimersTimerByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\PutTimersTimerByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\PutTimer;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class PutTimersTimerById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
-     * @param \Paqtcom\Simplicate\Model\PutTimer $body Timer object that needs to be updated
+     * @param PutTimer $body Timer object that needs to be updated
      */
-    public function __construct(protected string $id, \Paqtcom\Simplicate\Model\PutTimer $body)
+    public function __construct(protected string $id, PutTimer $body)
     {
         $this->body = $body;
     }
@@ -29,7 +37,7 @@ class PutTimersTimerById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/timers/timer/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return $this->getSerializedBody($serializer);
     }
@@ -42,12 +50,12 @@ class PutTimersTimerById extends BaseEndpoint
     /**
      * {@inheritdoc}
      *
-     * @throws \Paqtcom\Simplicate\Exception\PutTimersTimerByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutTimersTimerByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutTimersTimerByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutTimersTimerByIdInternalServerErrorException
+     * @throws PutTimersTimerByIdBadRequestException
+     * @throws PutTimersTimerByIdUnauthorizedException
+     * @throws PutTimersTimerByIdNotFoundException
+     * @throws PutTimersTimerByIdInternalServerErrorException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $response->getBody();
@@ -55,16 +63,16 @@ class PutTimersTimerById extends BaseEndpoint
             return null;
         }
         if (400 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutTimersTimerByIdBadRequestException($response);
+            throw new PutTimersTimerByIdBadRequestException($response);
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutTimersTimerByIdUnauthorizedException($response);
+            throw new PutTimersTimerByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutTimersTimerByIdNotFoundException($response);
+            throw new PutTimersTimerByIdNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\PutTimersTimerByIdInternalServerErrorException($response);
+            throw new PutTimersTimerByIdInternalServerErrorException($response);
         }
     }
 

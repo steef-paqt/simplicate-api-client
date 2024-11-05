@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetCrmGenderInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetCrmGenderNotFoundException;
+use Paqtcom\Simplicate\Exception\GetCrmGenderUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestResultGenders;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetCrmGender extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param array $queryParameters {
@@ -32,7 +40,7 @@ class GetCrmGender extends BaseEndpoint
         return '/crm/gender';
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -42,7 +50,7 @@ class GetCrmGender extends BaseEndpoint
         return ['Accept' => ['application/json']];
     }
 
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['offset', 'limit', 'sort']);
@@ -57,28 +65,26 @@ class GetCrmGender extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultGenders
+     * @return null|RestResultGenders
+     *@throws GetCrmGenderNotFoundException
+     * @throws GetCrmGenderInternalServerErrorException
+     * @throws GetCrmGenderUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultGenders::class, 'json');
+            return $serializer->deserialize($body, RestResultGenders::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmGenderUnauthorizedException($response);
+            throw new GetCrmGenderUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmGenderNotFoundException($response);
+            throw new GetCrmGenderNotFoundException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetCrmGenderInternalServerErrorException($response);
+            throw new GetCrmGenderInternalServerErrorException($response);
         }
     }
 

@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSharedItemByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSharedItemByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSharedItemByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetSharedItemByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultSharedItem;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSharedItemById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetSharedItemById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/shared/item/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetSharedItemById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSharedItemByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSharedItemByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSharedItemByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetSharedItemByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultSharedItem
+     * @return null|RestResultSharedItem
+     *@throws GetSharedItemByIdNotFoundException
+     * @throws GetSharedItemByIdUnprocessableEntityException
+     * @throws GetSharedItemByIdInternalServerErrorException
+     * @throws GetSharedItemByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultSharedItem::class, 'json');
+            return $serializer->deserialize($body, RestResultSharedItem::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSharedItemByIdUnauthorizedException($response);
+            throw new GetSharedItemByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSharedItemByIdNotFoundException($response);
+            throw new GetSharedItemByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSharedItemByIdUnprocessableEntityException($response);
+            throw new GetSharedItemByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSharedItemByIdInternalServerErrorException($response);
+            throw new GetSharedItemByIdInternalServerErrorException($response);
         }
     }
 

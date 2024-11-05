@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultLeaveType;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetHrmLeavetypeById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetHrmLeavetypeById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/hrm/leavetype/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetHrmLeavetypeById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultLeaveType
+     * @return null|RestResultLeaveType
+     *@throws GetHrmLeavetypeByIdNotFoundException
+     * @throws GetHrmLeavetypeByIdUnprocessableEntityException
+     * @throws GetHrmLeavetypeByIdInternalServerErrorException
+     * @throws GetHrmLeavetypeByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultLeaveType::class, 'json');
+            return $serializer->deserialize($body, RestResultLeaveType::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdUnauthorizedException($response);
+            throw new GetHrmLeavetypeByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdNotFoundException($response);
+            throw new GetHrmLeavetypeByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdUnprocessableEntityException($response);
+            throw new GetHrmLeavetypeByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdInternalServerErrorException($response);
+            throw new GetHrmLeavetypeByIdInternalServerErrorException($response);
         }
     }
 

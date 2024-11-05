@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Endpoint;
 
+use Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdInternalServerErrorException;
+use Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdNotFoundException;
+use Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdUnauthorizedException;
+use Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdUnprocessableEntityException;
+use Paqtcom\Simplicate\Model\RestResultRevenueGroup;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
+use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class GetSalesRevenuegroupById extends BaseEndpoint
 {
-    use \Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
+    use EndpointTrait;
 
     /**
      * @param string $id The template's id
@@ -27,7 +35,7 @@ class GetSalesRevenuegroupById extends BaseEndpoint
         return str_replace(['{id}'], [$this->id], '/sales/revenuegroup/{id}');
     }
 
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(SerializerInterface $serializer, $streamFactory = null): array
     {
         return [[], null];
     }
@@ -39,32 +47,30 @@ class GetSalesRevenuegroupById extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     *
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdUnprocessableEntityException
-     * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdInternalServerErrorException
-     *
-     * @return null|\Paqtcom\Simplicate\Model\RestResultRevenueGroup
+     * @return null|RestResultRevenueGroup
+     *@throws GetSalesRevenuegroupByIdNotFoundException
+     * @throws GetSalesRevenuegroupByIdUnprocessableEntityException
+     * @throws GetSalesRevenuegroupByIdInternalServerErrorException
+     * @throws GetSalesRevenuegroupByIdUnauthorizedException
      */
-    protected function transformResponseBody(\Psr\Http\Message\ResponseInterface $response, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestResultRevenueGroup::class, 'json');
+            return $serializer->deserialize($body, RestResultRevenueGroup::class, 'json');
         }
         if (401 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdUnauthorizedException($response);
+            throw new GetSalesRevenuegroupByIdUnauthorizedException($response);
         }
         if (404 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdNotFoundException($response);
+            throw new GetSalesRevenuegroupByIdNotFoundException($response);
         }
         if (422 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdUnprocessableEntityException($response);
+            throw new GetSalesRevenuegroupByIdUnprocessableEntityException($response);
         }
         if (500 === $status) {
-            throw new \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdInternalServerErrorException($response);
+            throw new GetSalesRevenuegroupByIdInternalServerErrorException($response);
         }
     }
 
