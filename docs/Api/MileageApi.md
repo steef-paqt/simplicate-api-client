@@ -2,21 +2,22 @@
 
 All URIs are relative to *http://localhost/api/v2*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**mileageMileageGet**](MileageApi.md#mileageMileageGet) | **GET** /mileage/mileage | Fetches all mileages
-[**mileageMileageIdDelete**](MileageApi.md#mileageMileageIdDelete) | **DELETE** /mileage/mileage/{id} | Deletes the mileage registration with the given mileage id
-[**mileageMileageIdGet**](MileageApi.md#mileageMileageIdGet) | **GET** /mileage/mileage/{id} | Fetches a single mileage by mileage id
-[**mileageMileageIdPut**](MileageApi.md#mileageMileageIdPut) | **PUT** /mileage/mileage/{id} | Updates a mileage registration for the given mileage id
-[**mileageMileagePost**](MileageApi.md#mileageMileagePost) | **POST** /mileage/mileage | Add a new mileage registration
-
+ Method                                                             | HTTP request                     | Description                                                
+--------------------------------------------------------------------|----------------------------------|------------------------------------------------------------
+ [**mileageMileageGet**](MileageApi.md#mileageMileageGet)           | **GET** /mileage/mileage         | Fetches all mileages                                       
+ [**mileageMileageIdDelete**](MileageApi.md#mileageMileageIdDelete) | **DELETE** /mileage/mileage/{id} | Deletes the mileage registration with the given mileage id 
+ [**mileageMileageIdGet**](MileageApi.md#mileageMileageIdGet)       | **GET** /mileage/mileage/{id}    | Fetches a single mileage by mileage id                     
+ [**mileageMileageIdPut**](MileageApi.md#mileageMileageIdPut)       | **PUT** /mileage/mileage/{id}    | Updates a mileage registration for the given mileage id    
+ [**mileageMileagePost**](MileageApi.md#mileageMileagePost)         | **POST** /mileage/mileage        | Add a new mileage registration                             
 
 # **mileageMileageGet**
+
 > \Swagger\Client\Model\RestResultMileageList mileageMileageGet($offset, $limit, $sort)
 
 Fetches all mileages
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -41,11 +42,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -57,17 +58,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **mileageMileageIdDelete**
+
 > mileageMileageIdDelete($id)
 
 Deletes the mileage registration with the given mileage id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -89,9 +92,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -103,17 +106,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **mileageMileageIdGet**
+
 > \Swagger\Client\Model\RestResultMileage mileageMileageIdGet($id)
 
 Fetches a single mileage by mileage id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -136,9 +141,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -150,17 +155,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **mileageMileageIdPut**
+
 > mileageMileageIdPut($id, $body)
 
 Updates a mileage registration for the given mileage id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -183,10 +190,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
- **body** | [**\Swagger\Client\Model\PutMileage**](../Model/PutMileage.md)| Mileage object that needs to be updated |
+ Name     | Type                                                           | Description                             | Notes 
+----------|----------------------------------------------------------------|-----------------------------------------|-------
+ **id**   | **string**                                                     | The template&#39;s id                   |
+ **body** | [**\Swagger\Client\Model\PutMileage**](../Model/PutMileage.md) | Mileage object that needs to be updated |
 
 ### Return type
 
@@ -198,17 +205,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **mileageMileagePost**
+
 > mileageMileagePost($body)
 
 Add a new mileage registration
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -230,9 +239,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\PostMileage**](../Model/PostMileage.md)| Mileage object that needs to be added |
+ Name     | Type                                                             | Description                           | Notes 
+----------|------------------------------------------------------------------|---------------------------------------|-------
+ **body** | [**\Swagger\Client\Model\PostMileage**](../Model/PostMileage.md) | Mileage object that needs to be added |
 
 ### Return type
 
@@ -244,8 +253,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

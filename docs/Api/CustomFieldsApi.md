@@ -2,30 +2,31 @@
 
 All URIs are relative to *http://localhost/api/v2*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**customfieldsGroupGet**](CustomFieldsApi.md#customfieldsGroupGet) | **GET** /customfields/group | Fetches all custom field groups
-[**customfieldsGroupIdDelete**](CustomFieldsApi.md#customfieldsGroupIdDelete) | **DELETE** /customfields/group/{id} | Deletes the customfield group for the given id
-[**customfieldsGroupIdGet**](CustomFieldsApi.md#customfieldsGroupIdGet) | **GET** /customfields/group/{id} | Fetches single custom field group
-[**customfieldsGroupIdPost**](CustomFieldsApi.md#customfieldsGroupIdPost) | **POST** /customfields/group/{id} | Updates an group for the given id
-[**customfieldsGroupIdPut**](CustomFieldsApi.md#customfieldsGroupIdPut) | **PUT** /customfields/group/{id} | Updates an group for the given id
-[**customfieldsModelGet**](CustomFieldsApi.md#customfieldsModelGet) | **GET** /customfields/model | Fetches all custom field models
-[**customfieldsModelIdGet**](CustomFieldsApi.md#customfieldsModelIdGet) | **GET** /customfields/model/{id} | Fetches all custom field models
-[**customfieldsOptionGet**](CustomFieldsApi.md#customfieldsOptionGet) | **GET** /customfields/option | Fetches all custom field options
-[**customfieldsOptionIdDelete**](CustomFieldsApi.md#customfieldsOptionIdDelete) | **DELETE** /customfields/option/{id} | Deletes the customfield option for the given id
-[**customfieldsOptionIdGet**](CustomFieldsApi.md#customfieldsOptionIdGet) | **GET** /customfields/option/{id} | Fetches single custom field option
-[**customfieldsOptionIdPost**](CustomFieldsApi.md#customfieldsOptionIdPost) | **POST** /customfields/option/{id} | Creates an option
-[**customfieldsOptionIdPut**](CustomFieldsApi.md#customfieldsOptionIdPut) | **PUT** /customfields/option/{id} | Updates an option
-[**customfieldsTypeGet**](CustomFieldsApi.md#customfieldsTypeGet) | **GET** /customfields/type | Fetches all custom field types
-[**customfieldsTypeIdGet**](CustomFieldsApi.md#customfieldsTypeIdGet) | **GET** /customfields/type/{id} | Fetches single custom field type
-
+ Method                                                                          | HTTP request                         | Description                                     
+---------------------------------------------------------------------------------|--------------------------------------|-------------------------------------------------
+ [**customfieldsGroupGet**](CustomFieldsApi.md#customfieldsGroupGet)             | **GET** /customfields/group          | Fetches all custom field groups                 
+ [**customfieldsGroupIdDelete**](CustomFieldsApi.md#customfieldsGroupIdDelete)   | **DELETE** /customfields/group/{id}  | Deletes the customfield group for the given id  
+ [**customfieldsGroupIdGet**](CustomFieldsApi.md#customfieldsGroupIdGet)         | **GET** /customfields/group/{id}     | Fetches single custom field group               
+ [**customfieldsGroupIdPost**](CustomFieldsApi.md#customfieldsGroupIdPost)       | **POST** /customfields/group/{id}    | Updates an group for the given id               
+ [**customfieldsGroupIdPut**](CustomFieldsApi.md#customfieldsGroupIdPut)         | **PUT** /customfields/group/{id}     | Updates an group for the given id               
+ [**customfieldsModelGet**](CustomFieldsApi.md#customfieldsModelGet)             | **GET** /customfields/model          | Fetches all custom field models                 
+ [**customfieldsModelIdGet**](CustomFieldsApi.md#customfieldsModelIdGet)         | **GET** /customfields/model/{id}     | Fetches all custom field models                 
+ [**customfieldsOptionGet**](CustomFieldsApi.md#customfieldsOptionGet)           | **GET** /customfields/option         | Fetches all custom field options                
+ [**customfieldsOptionIdDelete**](CustomFieldsApi.md#customfieldsOptionIdDelete) | **DELETE** /customfields/option/{id} | Deletes the customfield option for the given id 
+ [**customfieldsOptionIdGet**](CustomFieldsApi.md#customfieldsOptionIdGet)       | **GET** /customfields/option/{id}    | Fetches single custom field option              
+ [**customfieldsOptionIdPost**](CustomFieldsApi.md#customfieldsOptionIdPost)     | **POST** /customfields/option/{id}   | Creates an option                               
+ [**customfieldsOptionIdPut**](CustomFieldsApi.md#customfieldsOptionIdPut)       | **PUT** /customfields/option/{id}    | Updates an option                               
+ [**customfieldsTypeGet**](CustomFieldsApi.md#customfieldsTypeGet)               | **GET** /customfields/type           | Fetches all custom field types                  
+ [**customfieldsTypeIdGet**](CustomFieldsApi.md#customfieldsTypeIdGet)           | **GET** /customfields/type/{id}      | Fetches single custom field type                
 
 # **customfieldsGroupGet**
+
 > \Swagger\Client\Model\RestResultCustomFieldGroups customfieldsGroupGet($offset, $limit, $sort)
 
 Fetches all custom field groups
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -50,11 +51,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -66,17 +67,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customfieldsGroupIdDelete**
+
 > customfieldsGroupIdDelete($id)
 
 Deletes the customfield group for the given id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -98,9 +101,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -112,17 +115,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customfieldsGroupIdGet**
+
 > \Swagger\Client\Model\RestResultCustomFieldGroup customfieldsGroupIdGet($offset, $limit, $sort)
 
 Fetches single custom field group
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -147,11 +152,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -163,17 +168,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customfieldsGroupIdPost**
+
 > customfieldsGroupIdPost($id, $body)
 
 Updates an group for the given id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -196,10 +203,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
- **body** | [**\Swagger\Client\Model\CustomFieldGroup**](../Model/CustomFieldGroup.md)| Organization object containing data that with the new values |
+ Name     | Type                                                                       | Description                                                  | Notes 
+----------|----------------------------------------------------------------------------|--------------------------------------------------------------|-------
+ **id**   | **string**                                                                 | The template&#39;s id                                        |
+ **body** | [**\Swagger\Client\Model\CustomFieldGroup**](../Model/CustomFieldGroup.md) | Organization object containing data that with the new values |
 
 ### Return type
 
@@ -211,17 +218,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customfieldsGroupIdPut**
+
 > customfieldsGroupIdPut($id, $body)
 
 Updates an group for the given id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -244,10 +253,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
- **body** | [**\Swagger\Client\Model\CustomFieldGroup**](../Model/CustomFieldGroup.md)| Organization object containing data that with the new values |
+ Name     | Type                                                                       | Description                                                  | Notes 
+----------|----------------------------------------------------------------------------|--------------------------------------------------------------|-------
+ **id**   | **string**                                                                 | The template&#39;s id                                        |
+ **body** | [**\Swagger\Client\Model\CustomFieldGroup**](../Model/CustomFieldGroup.md) | Organization object containing data that with the new values |
 
 ### Return type
 
@@ -259,17 +268,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customfieldsModelGet**
+
 > \Swagger\Client\Model\RestResultCustomFieldModels customfieldsModelGet($offset, $limit, $sort)
 
 Fetches all custom field models
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -294,11 +305,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -310,17 +321,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customfieldsModelIdGet**
+
 > \Swagger\Client\Model\RestResultCustomFieldModel customfieldsModelIdGet($offset, $limit, $sort)
 
 Fetches all custom field models
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -345,11 +358,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -361,17 +374,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customfieldsOptionGet**
+
 > \Swagger\Client\Model\RestResultCustomFieldOptions customfieldsOptionGet($offset, $limit, $sort)
 
 Fetches all custom field options
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -396,11 +411,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -412,17 +427,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customfieldsOptionIdDelete**
+
 > customfieldsOptionIdDelete($id)
 
 Deletes the customfield option for the given id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -444,9 +461,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -458,17 +475,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customfieldsOptionIdGet**
+
 > \Swagger\Client\Model\RestResultCustomFieldOption customfieldsOptionIdGet($id, $offset, $limit, $sort)
 
 Fetches single custom field option
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -494,12 +513,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **id**     | **string** | The template&#39;s id            |
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -511,17 +530,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customfieldsOptionIdPost**
+
 > customfieldsOptionIdPost($body)
 
 Creates an option
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -543,9 +564,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\CustomFieldOption**](../Model/CustomFieldOption.md)| CustomFieldOption object containing data |
+ Name     | Type                                                                         | Description                              | Notes 
+----------|------------------------------------------------------------------------------|------------------------------------------|-------
+ **body** | [**\Swagger\Client\Model\CustomFieldOption**](../Model/CustomFieldOption.md) | CustomFieldOption object containing data |
 
 ### Return type
 
@@ -557,17 +578,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customfieldsOptionIdPut**
+
 > customfieldsOptionIdPut($id, $body)
 
 Updates an option
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -590,10 +613,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
- **body** | [**\Swagger\Client\Model\CustomFieldOption**](../Model/CustomFieldOption.md)| CustomFieldOption object containing data |
+ Name     | Type                                                                         | Description                              | Notes 
+----------|------------------------------------------------------------------------------|------------------------------------------|-------
+ **id**   | **string**                                                                   | The template&#39;s id                    |
+ **body** | [**\Swagger\Client\Model\CustomFieldOption**](../Model/CustomFieldOption.md) | CustomFieldOption object containing data |
 
 ### Return type
 
@@ -605,17 +628,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customfieldsTypeGet**
+
 > \Swagger\Client\Model\RestResultCustomFieldTypes customfieldsTypeGet($offset, $limit, $sort)
 
 Fetches all custom field types
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -640,11 +665,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -656,17 +681,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customfieldsTypeIdGet**
+
 > \Swagger\Client\Model\RestResultCustomFieldType customfieldsTypeIdGet($offset, $limit, $sort)
 
 Fetches single custom field type
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -691,11 +718,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -707,8 +734,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

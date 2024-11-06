@@ -1,11 +1,12 @@
 # EmailAttachment
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] 
-**file_path** | **string** |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+ Name          | Type       | Description | Notes      
+---------------|------------|-------------|------------
+ **id**        | **string** |             | [optional] 
+ **file_path** | **string** |             | [optional] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

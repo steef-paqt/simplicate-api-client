@@ -2,61 +2,62 @@
 
 All URIs are relative to *http://localhost/api/v2*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**projectsAssignmentGet**](ProjectsApi.md#projectsAssignmentGet) | **GET** /projects/assignment | Fetches all available assignments for projects
-[**projectsAssignmentIdGet**](ProjectsApi.md#projectsAssignmentIdGet) | **GET** /projects/assignment/{id} | Fetches all a single assignment by its id
-[**projectsAssignmentIdPut**](ProjectsApi.md#projectsAssignmentIdPut) | **PUT** /projects/assignment/{id} | Updates a project assignment for the given id
-[**projectsAssignmentPost**](ProjectsApi.md#projectsAssignmentPost) | **POST** /projects/assignment | Creates a new project assignment
-[**projectsAssignmentbudgetGet**](ProjectsApi.md#projectsAssignmentbudgetGet) | **GET** /projects/assignmentbudget | Get budget information (planned amount, spent amount etc.) of assignment within given date range
-[**projectsAssignmentstatusGet**](ProjectsApi.md#projectsAssignmentstatusGet) | **GET** /projects/assignmentstatus | Fetches all available assignment statuses for projects
-[**projectsAssignmentstatusIdGet**](ProjectsApi.md#projectsAssignmentstatusIdGet) | **GET** /projects/assignmentstatus/{id} | Fetches a single assignment status by its id
-[**projectsAssignmentstatusIdPut**](ProjectsApi.md#projectsAssignmentstatusIdPut) | **PUT** /projects/assignmentstatus/{id} | Updates a project assignment status for the given id
-[**projectsAssignmentstatusPost**](ProjectsApi.md#projectsAssignmentstatusPost) | **POST** /projects/assignmentstatus | Creates a new project assignment status
-[**projectsDocumentGet**](ProjectsApi.md#projectsDocumentGet) | **GET** /projects/document | Fetches all available documents for projects
-[**projectsDocumentIdDelete**](ProjectsApi.md#projectsDocumentIdDelete) | **DELETE** /projects/document/{id} | Deletes the document with the given id
-[**projectsDocumentIdGet**](ProjectsApi.md#projectsDocumentIdGet) | **GET** /projects/document/{id} | Fetches a single document for projects by its id
-[**projectsDocumentPost**](ProjectsApi.md#projectsDocumentPost) | **POST** /projects/document | create a document
-[**projectsDocumentPut**](ProjectsApi.md#projectsDocumentPut) | **PUT** /projects/document | update a document
-[**projectsDocumenttypeGet**](ProjectsApi.md#projectsDocumenttypeGet) | **GET** /projects/documenttype | Fetches all available document types for Projects
-[**projectsDocumenttypeIdGet**](ProjectsApi.md#projectsDocumenttypeIdGet) | **GET** /projects/documenttype/{id} | Fetches a single document type for Projects by its id
-[**projectsProjectGet**](ProjectsApi.md#projectsProjectGet) | **GET** /projects/project | Fetches all projects
-[**projectsProjectIdDelete**](ProjectsApi.md#projectsProjectIdDelete) | **DELETE** /projects/project/{id} | Deletes the project with the given id
-[**projectsProjectIdGet**](ProjectsApi.md#projectsProjectIdGet) | **GET** /projects/project/{id} | Fetches a single project by id
-[**projectsProjectIdPlanningBudgetGet**](ProjectsApi.md#projectsProjectIdPlanningBudgetGet) | **GET** /projects/project/{id}/planningBudget | Fetches the assignment budget info of a project
-[**projectsProjectIdPut**](ProjectsApi.md#projectsProjectIdPut) | **PUT** /projects/project/{id} | Updates a project for the given id
-[**projectsProjectPost**](ProjectsApi.md#projectsProjectPost) | **POST** /projects/project | Add a new project
-[**projectsProjectcustomfieldgroupsGet**](ProjectsApi.md#projectsProjectcustomfieldgroupsGet) | **GET** /projects/projectcustomfieldgroups | Fetches all custom field groups available for projects
-[**projectsProjectcustomfieldgroupsIdGet**](ProjectsApi.md#projectsProjectcustomfieldgroupsIdGet) | **GET** /projects/projectcustomfieldgroups/{id} | Fetches a single custom field group available for project
-[**projectsProjectcustomfieldsGet**](ProjectsApi.md#projectsProjectcustomfieldsGet) | **GET** /projects/projectcustomfields | Fetches all custom fields available for projects
-[**projectsProjectcustomfieldsIdGet**](ProjectsApi.md#projectsProjectcustomfieldsIdGet) | **GET** /projects/projectcustomfields/{id} | Fetches a single custom field available for projects
-[**projectsProjectemployeePost**](ProjectsApi.md#projectsProjectemployeePost) | **POST** projects/projectemployee | Add an employee to a project
-[**projectsProjectemployeeProjectEmployeeIdDelete**](ProjectsApi.md#projectsProjectemployeeProjectEmployeeIdDelete) | **DELETE** projects/projectemployee/{project_employee_id} | Remove an employee from a project
-[**projectsProjectfiltersGet**](ProjectsApi.md#projectsProjectfiltersGet) | **GET** /projects/projectfilters | Fetches all filters available for projects
-[**projectsProjectfiltersIdGet**](ProjectsApi.md#projectsProjectfiltersIdGet) | **GET** /projects/projectfilters/{id} | Fetches a single filter available for projects
-[**projectsProjectstatusGet**](ProjectsApi.md#projectsProjectstatusGet) | **GET** /projects/projectstatus | Fetches all projects statusses
-[**projectsProjectstatusIdGet**](ProjectsApi.md#projectsProjectstatusIdGet) | **GET** /projects/projectstatus/{id} | Fetches a single projects status by id
-[**projectsPurchaseGet**](ProjectsApi.md#projectsPurchaseGet) | **GET** /projects/purchase | Fetches all project purchase records
-[**projectsPurchaseIdGet**](ProjectsApi.md#projectsPurchaseIdGet) | **GET** /projects/purchase/{id} | Fetches a single project purchase record
-[**projectsPurchasetypeGet**](ProjectsApi.md#projectsPurchasetypeGet) | **GET** /projects/purchasetype | Fetches all purchase types
-[**projectsPurchasetypeIdGet**](ProjectsApi.md#projectsPurchasetypeIdGet) | **GET** /projects/purchasetype/{id} | Fetches a single purchase type by id
-[**projectsReverseinvoiceGet**](ProjectsApi.md#projectsReverseinvoiceGet) | **GET** /projects/reverseinvoice | Fetches all reverse invoice records
-[**projectsReverseinvoiceIdGet**](ProjectsApi.md#projectsReverseinvoiceIdGet) | **GET** /projects/reverseinvoice/{id} | Fetches a single project reverse invoice
-[**projectsServiceGet**](ProjectsApi.md#projectsServiceGet) | **GET** /projects/service | Fetches all services
-[**projectsServiceIdDelete**](ProjectsApi.md#projectsServiceIdDelete) | **DELETE** /projects/service/{id} | Deletes the service with the given id
-[**projectsServiceIdDuplicatePost**](ProjectsApi.md#projectsServiceIdDuplicatePost) | **POST** /projects/service/{id}/duplicate | Duplicates a service on base of the id
-[**projectsServiceIdGet**](ProjectsApi.md#projectsServiceIdGet) | **GET** /projects/service/{id} | Fetches a single service by id
-[**projectsServiceIdPlanningBudgetGet**](ProjectsApi.md#projectsServiceIdPlanningBudgetGet) | **GET** /projects/service/{id}/planningBudget | Fetches the assignment budget info of a project service
-[**projectsServiceIdPut**](ProjectsApi.md#projectsServiceIdPut) | **PUT** /projects/service/{id} | Updates a service for the given id
-[**projectsServicePost**](ProjectsApi.md#projectsServicePost) | **POST** /projects/service | Add a new service
-
+ Method                                                                                                              | HTTP request                                              | Description                                                                                      
+---------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|--------------------------------------------------------------------------------------------------
+ [**projectsAssignmentGet**](ProjectsApi.md#projectsAssignmentGet)                                                   | **GET** /projects/assignment                              | Fetches all available assignments for projects                                                   
+ [**projectsAssignmentIdGet**](ProjectsApi.md#projectsAssignmentIdGet)                                               | **GET** /projects/assignment/{id}                         | Fetches all a single assignment by its id                                                        
+ [**projectsAssignmentIdPut**](ProjectsApi.md#projectsAssignmentIdPut)                                               | **PUT** /projects/assignment/{id}                         | Updates a project assignment for the given id                                                    
+ [**projectsAssignmentPost**](ProjectsApi.md#projectsAssignmentPost)                                                 | **POST** /projects/assignment                             | Creates a new project assignment                                                                 
+ [**projectsAssignmentbudgetGet**](ProjectsApi.md#projectsAssignmentbudgetGet)                                       | **GET** /projects/assignmentbudget                        | Get budget information (planned amount, spent amount etc.) of assignment within given date range 
+ [**projectsAssignmentstatusGet**](ProjectsApi.md#projectsAssignmentstatusGet)                                       | **GET** /projects/assignmentstatus                        | Fetches all available assignment statuses for projects                                           
+ [**projectsAssignmentstatusIdGet**](ProjectsApi.md#projectsAssignmentstatusIdGet)                                   | **GET** /projects/assignmentstatus/{id}                   | Fetches a single assignment status by its id                                                     
+ [**projectsAssignmentstatusIdPut**](ProjectsApi.md#projectsAssignmentstatusIdPut)                                   | **PUT** /projects/assignmentstatus/{id}                   | Updates a project assignment status for the given id                                             
+ [**projectsAssignmentstatusPost**](ProjectsApi.md#projectsAssignmentstatusPost)                                     | **POST** /projects/assignmentstatus                       | Creates a new project assignment status                                                          
+ [**projectsDocumentGet**](ProjectsApi.md#projectsDocumentGet)                                                       | **GET** /projects/document                                | Fetches all available documents for projects                                                     
+ [**projectsDocumentIdDelete**](ProjectsApi.md#projectsDocumentIdDelete)                                             | **DELETE** /projects/document/{id}                        | Deletes the document with the given id                                                           
+ [**projectsDocumentIdGet**](ProjectsApi.md#projectsDocumentIdGet)                                                   | **GET** /projects/document/{id}                           | Fetches a single document for projects by its id                                                 
+ [**projectsDocumentPost**](ProjectsApi.md#projectsDocumentPost)                                                     | **POST** /projects/document                               | create a document                                                                                
+ [**projectsDocumentPut**](ProjectsApi.md#projectsDocumentPut)                                                       | **PUT** /projects/document                                | update a document                                                                                
+ [**projectsDocumenttypeGet**](ProjectsApi.md#projectsDocumenttypeGet)                                               | **GET** /projects/documenttype                            | Fetches all available document types for Projects                                                
+ [**projectsDocumenttypeIdGet**](ProjectsApi.md#projectsDocumenttypeIdGet)                                           | **GET** /projects/documenttype/{id}                       | Fetches a single document type for Projects by its id                                            
+ [**projectsProjectGet**](ProjectsApi.md#projectsProjectGet)                                                         | **GET** /projects/project                                 | Fetches all projects                                                                             
+ [**projectsProjectIdDelete**](ProjectsApi.md#projectsProjectIdDelete)                                               | **DELETE** /projects/project/{id}                         | Deletes the project with the given id                                                            
+ [**projectsProjectIdGet**](ProjectsApi.md#projectsProjectIdGet)                                                     | **GET** /projects/project/{id}                            | Fetches a single project by id                                                                   
+ [**projectsProjectIdPlanningBudgetGet**](ProjectsApi.md#projectsProjectIdPlanningBudgetGet)                         | **GET** /projects/project/{id}/planningBudget             | Fetches the assignment budget info of a project                                                  
+ [**projectsProjectIdPut**](ProjectsApi.md#projectsProjectIdPut)                                                     | **PUT** /projects/project/{id}                            | Updates a project for the given id                                                               
+ [**projectsProjectPost**](ProjectsApi.md#projectsProjectPost)                                                       | **POST** /projects/project                                | Add a new project                                                                                
+ [**projectsProjectcustomfieldgroupsGet**](ProjectsApi.md#projectsProjectcustomfieldgroupsGet)                       | **GET** /projects/projectcustomfieldgroups                | Fetches all custom field groups available for projects                                           
+ [**projectsProjectcustomfieldgroupsIdGet**](ProjectsApi.md#projectsProjectcustomfieldgroupsIdGet)                   | **GET** /projects/projectcustomfieldgroups/{id}           | Fetches a single custom field group available for project                                        
+ [**projectsProjectcustomfieldsGet**](ProjectsApi.md#projectsProjectcustomfieldsGet)                                 | **GET** /projects/projectcustomfields                     | Fetches all custom fields available for projects                                                 
+ [**projectsProjectcustomfieldsIdGet**](ProjectsApi.md#projectsProjectcustomfieldsIdGet)                             | **GET** /projects/projectcustomfields/{id}                | Fetches a single custom field available for projects                                             
+ [**projectsProjectemployeePost**](ProjectsApi.md#projectsProjectemployeePost)                                       | **POST** projects/projectemployee                         | Add an employee to a project                                                                     
+ [**projectsProjectemployeeProjectEmployeeIdDelete**](ProjectsApi.md#projectsProjectemployeeProjectEmployeeIdDelete) | **DELETE** projects/projectemployee/{project_employee_id} | Remove an employee from a project                                                                
+ [**projectsProjectfiltersGet**](ProjectsApi.md#projectsProjectfiltersGet)                                           | **GET** /projects/projectfilters                          | Fetches all filters available for projects                                                       
+ [**projectsProjectfiltersIdGet**](ProjectsApi.md#projectsProjectfiltersIdGet)                                       | **GET** /projects/projectfilters/{id}                     | Fetches a single filter available for projects                                                   
+ [**projectsProjectstatusGet**](ProjectsApi.md#projectsProjectstatusGet)                                             | **GET** /projects/projectstatus                           | Fetches all projects statusses                                                                   
+ [**projectsProjectstatusIdGet**](ProjectsApi.md#projectsProjectstatusIdGet)                                         | **GET** /projects/projectstatus/{id}                      | Fetches a single projects status by id                                                           
+ [**projectsPurchaseGet**](ProjectsApi.md#projectsPurchaseGet)                                                       | **GET** /projects/purchase                                | Fetches all project purchase records                                                             
+ [**projectsPurchaseIdGet**](ProjectsApi.md#projectsPurchaseIdGet)                                                   | **GET** /projects/purchase/{id}                           | Fetches a single project purchase record                                                         
+ [**projectsPurchasetypeGet**](ProjectsApi.md#projectsPurchasetypeGet)                                               | **GET** /projects/purchasetype                            | Fetches all purchase types                                                                       
+ [**projectsPurchasetypeIdGet**](ProjectsApi.md#projectsPurchasetypeIdGet)                                           | **GET** /projects/purchasetype/{id}                       | Fetches a single purchase type by id                                                             
+ [**projectsReverseinvoiceGet**](ProjectsApi.md#projectsReverseinvoiceGet)                                           | **GET** /projects/reverseinvoice                          | Fetches all reverse invoice records                                                              
+ [**projectsReverseinvoiceIdGet**](ProjectsApi.md#projectsReverseinvoiceIdGet)                                       | **GET** /projects/reverseinvoice/{id}                     | Fetches a single project reverse invoice                                                         
+ [**projectsServiceGet**](ProjectsApi.md#projectsServiceGet)                                                         | **GET** /projects/service                                 | Fetches all services                                                                             
+ [**projectsServiceIdDelete**](ProjectsApi.md#projectsServiceIdDelete)                                               | **DELETE** /projects/service/{id}                         | Deletes the service with the given id                                                            
+ [**projectsServiceIdDuplicatePost**](ProjectsApi.md#projectsServiceIdDuplicatePost)                                 | **POST** /projects/service/{id}/duplicate                 | Duplicates a service on base of the id                                                           
+ [**projectsServiceIdGet**](ProjectsApi.md#projectsServiceIdGet)                                                     | **GET** /projects/service/{id}                            | Fetches a single service by id                                                                   
+ [**projectsServiceIdPlanningBudgetGet**](ProjectsApi.md#projectsServiceIdPlanningBudgetGet)                         | **GET** /projects/service/{id}/planningBudget             | Fetches the assignment budget info of a project service                                          
+ [**projectsServiceIdPut**](ProjectsApi.md#projectsServiceIdPut)                                                     | **PUT** /projects/service/{id}                            | Updates a service for the given id                                                               
+ [**projectsServicePost**](ProjectsApi.md#projectsServicePost)                                                       | **POST** /projects/service                                | Add a new service                                                                                
 
 # **projectsAssignmentGet**
+
 > \Swagger\Client\Model\RestResultProjectAssignments projectsAssignmentGet($offset, $limit, $sort)
 
 Fetches all available assignments for projects
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -81,11 +82,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -97,17 +98,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsAssignmentIdGet**
+
 > \Swagger\Client\Model\RestResultProjectAssignment projectsAssignmentIdGet($id)
 
 Fetches all a single assignment by its id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -130,9 +133,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -144,17 +147,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsAssignmentIdPut**
+
 > projectsAssignmentIdPut($id, $body)
 
 Updates a project assignment for the given id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -177,10 +182,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
- **body** | [**\Swagger\Client\Model\PutAssignment**](../Model/PutAssignment.md)| Project assignment PUT body |
+ Name     | Type                                                                 | Description                 | Notes 
+----------|----------------------------------------------------------------------|-----------------------------|-------
+ **id**   | **string**                                                           | The template&#39;s id       |
+ **body** | [**\Swagger\Client\Model\PutAssignment**](../Model/PutAssignment.md) | Project assignment PUT body |
 
 ### Return type
 
@@ -192,17 +197,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsAssignmentPost**
+
 > projectsAssignmentPost($body)
 
 Creates a new project assignment
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -224,9 +231,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\PostAssignment**](../Model/PostAssignment.md)| Project assignment POST body |
+ Name     | Type                                                                   | Description                  | Notes 
+----------|------------------------------------------------------------------------|------------------------------|-------
+ **body** | [**\Swagger\Client\Model\PostAssignment**](../Model/PostAssignment.md) | Project assignment POST body |
 
 ### Return type
 
@@ -238,17 +245,20 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsAssignmentbudgetGet**
-> \Swagger\Client\Model\RestResultProjectAssignmentbudget projectsAssignmentbudgetGet($q_range_start, $q_employee_id, $q_assignment_id, $offset, $limit, $sort)
+
+> \Swagger\Client\Model\RestResultProjectAssignmentbudget projectsAssignmentbudgetGet($q_range_start, $q_employee_id,
+> $q_assignment_id, $offset, $limit, $sort)
 
 Get budget information (planned amount, spent amount etc.) of assignment within given date range
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -276,14 +286,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **q_range_start** | **string**|  |
- **q_employee_id** | **string**|  |
- **q_assignment_id** | **string**|  |
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name                | Type       | Description                      | Notes                     
+---------------------|------------|----------------------------------|---------------------------
+ **q_range_start**   | **string** |                                  |
+ **q_employee_id**   | **string** |                                  |
+ **q_assignment_id** | **string** |                                  |
+ **offset**          | **int**    | The offset to search from        | [optional]                
+ **limit**           | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**            | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -295,17 +305,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsAssignmentstatusGet**
+
 > \Swagger\Client\Model\RestResultProjectAssignmentStatuses projectsAssignmentstatusGet($offset, $limit, $sort)
 
 Fetches all available assignment statuses for projects
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -330,11 +342,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -346,17 +358,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsAssignmentstatusIdGet**
+
 > \Swagger\Client\Model\RestResultProjectAssignmentStatus projectsAssignmentstatusIdGet($id, $offset, $limit, $sort)
 
 Fetches a single assignment status by its id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -382,12 +396,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **id**     | **string** | The template&#39;s id            |
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -399,17 +413,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsAssignmentstatusIdPut**
+
 > projectsAssignmentstatusIdPut($id, $body)
 
 Updates a project assignment status for the given id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -432,10 +448,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
- **body** | [**\Swagger\Client\Model\AssignmentStatus**](../Model/AssignmentStatus.md)| Project assignment POST body |
+ Name     | Type                                                                       | Description                  | Notes 
+----------|----------------------------------------------------------------------------|------------------------------|-------
+ **id**   | **string**                                                                 | The template&#39;s id        |
+ **body** | [**\Swagger\Client\Model\AssignmentStatus**](../Model/AssignmentStatus.md) | Project assignment POST body |
 
 ### Return type
 
@@ -447,17 +463,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsAssignmentstatusPost**
+
 > projectsAssignmentstatusPost($body)
 
 Creates a new project assignment status
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -479,9 +497,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\AssignmentStatus**](../Model/AssignmentStatus.md)| Project assignment POST body |
+ Name     | Type                                                                       | Description                  | Notes 
+----------|----------------------------------------------------------------------------|------------------------------|-------
+ **body** | [**\Swagger\Client\Model\AssignmentStatus**](../Model/AssignmentStatus.md) | Project assignment POST body |
 
 ### Return type
 
@@ -493,17 +511,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsDocumentGet**
+
 > \Swagger\Client\Model\RestResultDocuments projectsDocumentGet($offset, $limit, $sort)
 
 Fetches all available documents for projects
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -528,11 +548,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -544,17 +564,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsDocumentIdDelete**
+
 > projectsDocumentIdDelete($id)
 
 Deletes the document with the given id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -576,9 +598,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -590,17 +612,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsDocumentIdGet**
+
 > \Swagger\Client\Model\RestResultDocument projectsDocumentIdGet($id)
 
 Fetches a single document for projects by its id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -623,9 +647,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -637,17 +661,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsDocumentPost**
+
 > projectsDocumentPost($body)
 
 create a document
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -669,9 +695,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\PostDocument**](../Model/PostDocument.md)| Document object containing data |
+ Name     | Type                                                               | Description                     | Notes 
+----------|--------------------------------------------------------------------|---------------------------------|-------
+ **body** | [**\Swagger\Client\Model\PostDocument**](../Model/PostDocument.md) | Document object containing data |
 
 ### Return type
 
@@ -683,17 +709,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsDocumentPut**
+
 > projectsDocumentPut($body)
 
 update a document
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -715,9 +743,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\PutDocument**](../Model/PutDocument.md)| Document object containing data |
+ Name     | Type                                                             | Description                     | Notes 
+----------|------------------------------------------------------------------|---------------------------------|-------
+ **body** | [**\Swagger\Client\Model\PutDocument**](../Model/PutDocument.md) | Document object containing data |
 
 ### Return type
 
@@ -729,17 +757,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsDocumenttypeGet**
+
 > \Swagger\Client\Model\RestResultDocumentTypes projectsDocumenttypeGet($offset, $limit, $sort)
 
 Fetches all available document types for Projects
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -764,11 +794,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -780,17 +810,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsDocumenttypeIdGet**
+
 > \Swagger\Client\Model\RestResultDocumentType projectsDocumenttypeIdGet($id)
 
 Fetches a single document type for Projects by its id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -813,9 +845,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -827,17 +859,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectGet**
+
 > \Swagger\Client\Model\RestResultProjects projectsProjectGet($offset, $limit, $sort)
 
 Fetches all projects
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -862,11 +896,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -878,17 +912,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectIdDelete**
+
 > projectsProjectIdDelete($id)
 
 Deletes the project with the given id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -910,9 +946,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -924,17 +960,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectIdGet**
+
 > \Swagger\Client\Model\RestResultProject projectsProjectIdGet($id)
 
 Fetches a single project by id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -957,9 +995,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -971,17 +1009,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectIdPlanningBudgetGet**
+
 > \Swagger\Client\Model\RestResult projectsProjectIdPlanningBudgetGet($id, $by, $until_date)
 
 Fetches the assignment budget info of a project
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1006,11 +1046,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
- **by** | **string**|  | [optional]
- **until_date** | **string**| Y-m-d | [optional]
+ Name           | Type       | Description           | Notes      
+----------------|------------|-----------------------|------------
+ **id**         | **string** | The template&#39;s id |
+ **by**         | **string** |                       | [optional] 
+ **until_date** | **string** | Y-m-d                 | [optional] 
 
 ### Return type
 
@@ -1022,17 +1062,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectIdPut**
+
 > projectsProjectIdPut($id, $body)
 
 Updates a project for the given id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1055,10 +1097,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
- **body** | [**\Swagger\Client\Model\PostProject**](../Model/PostProject.md)| project object that needs to be updated |
+ Name     | Type                                                             | Description                             | Notes 
+----------|------------------------------------------------------------------|-----------------------------------------|-------
+ **id**   | **string**                                                       | The template&#39;s id                   |
+ **body** | [**\Swagger\Client\Model\PostProject**](../Model/PostProject.md) | project object that needs to be updated |
 
 ### Return type
 
@@ -1070,17 +1112,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectPost**
+
 > projectsProjectPost($body)
 
 Add a new project
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1102,9 +1146,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\PostProject**](../Model/PostProject.md)| Project object that needs to be added |
+ Name     | Type                                                             | Description                           | Notes 
+----------|------------------------------------------------------------------|---------------------------------------|-------
+ **body** | [**\Swagger\Client\Model\PostProject**](../Model/PostProject.md) | Project object that needs to be added |
 
 ### Return type
 
@@ -1116,17 +1160,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectcustomfieldgroupsGet**
+
 > \Swagger\Client\Model\RestResultCustomFieldGroups projectsProjectcustomfieldgroupsGet($offset, $limit, $sort)
 
 Fetches all custom field groups available for projects
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1151,11 +1197,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -1167,17 +1213,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectcustomfieldgroupsIdGet**
+
 > \Swagger\Client\Model\RestResultCustomFieldGroup projectsProjectcustomfieldgroupsIdGet($id)
 
 Fetches a single custom field group available for project
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1200,9 +1248,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -1214,17 +1262,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectcustomfieldsGet**
+
 > \Swagger\Client\Model\RestResultCustomFields projectsProjectcustomfieldsGet($offset, $limit, $sort)
 
 Fetches all custom fields available for projects
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1249,11 +1299,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -1265,17 +1315,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectcustomfieldsIdGet**
+
 > \Swagger\Client\Model\RestResultCustomField projectsProjectcustomfieldsIdGet($id)
 
 Fetches a single custom field available for projects
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1298,9 +1350,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -1312,17 +1364,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectemployeePost**
+
 > projectsProjectemployeePost($body)
 
 Add an employee to a project
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1344,9 +1398,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body**](../Model/Body.md)| Body for adding an employee to a project |
+ Name     | Type                                               | Description                              | Notes 
+----------|----------------------------------------------------|------------------------------------------|-------
+ **body** | [**\Swagger\Client\Model\Body**](../Model/Body.md) | Body for adding an employee to a project |
 
 ### Return type
 
@@ -1358,17 +1412,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectemployeeProjectEmployeeIdDelete**
+
 > projectsProjectemployeeProjectEmployeeIdDelete()
 
 Remove an employee from a project
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1388,6 +1444,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -1400,17 +1457,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectfiltersGet**
+
 > \Swagger\Client\Model\RestResultFilters projectsProjectfiltersGet($offset, $limit, $sort)
 
 Fetches all filters available for projects
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1435,11 +1494,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -1451,17 +1510,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectfiltersIdGet**
+
 > \Swagger\Client\Model\RestResultFilter projectsProjectfiltersIdGet($id)
 
 Fetches a single filter available for projects
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1484,9 +1545,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -1498,17 +1559,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectstatusGet**
+
 > \Swagger\Client\Model\RestResultProjectStatusses projectsProjectstatusGet($offset, $limit, $sort)
 
 Fetches all projects statusses
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1533,11 +1596,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -1549,17 +1612,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsProjectstatusIdGet**
+
 > \Swagger\Client\Model\RestResultProjectStatus projectsProjectstatusIdGet($id)
 
 Fetches a single projects status by id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1582,9 +1647,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -1596,17 +1661,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsPurchaseGet**
+
 > \Swagger\Client\Model\RestResultPurchases projectsPurchaseGet($offset, $limit, $sort)
 
 Fetches all project purchase records
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1631,11 +1698,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -1647,17 +1714,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsPurchaseIdGet**
+
 > \Swagger\Client\Model\RestResultPurchase projectsPurchaseIdGet($id)
 
 Fetches a single project purchase record
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1680,9 +1749,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -1694,17 +1763,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsPurchasetypeGet**
+
 > \Swagger\Client\Model\RestResultPurchaseTypes projectsPurchasetypeGet($offset, $limit, $sort)
 
 Fetches all purchase types
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1729,11 +1800,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -1745,17 +1816,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsPurchasetypeIdGet**
+
 > \Swagger\Client\Model\RestResultPurchaseType projectsPurchasetypeIdGet($id)
 
 Fetches a single purchase type by id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1778,9 +1851,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -1792,17 +1865,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsReverseinvoiceGet**
+
 > \Swagger\Client\Model\RestResultReverseInvoices projectsReverseinvoiceGet($offset, $limit, $sort)
 
 Fetches all reverse invoice records
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1827,11 +1902,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -1843,17 +1918,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsReverseinvoiceIdGet**
+
 > \Swagger\Client\Model\RestResultReverseInvoice projectsReverseinvoiceIdGet($id)
 
 Fetches a single project reverse invoice
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1876,9 +1953,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -1890,17 +1967,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsServiceGet**
+
 > \Swagger\Client\Model\RestResultProjectServices projectsServiceGet($offset, $limit, $sort)
 
 Fetches all services
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1925,11 +2004,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -1941,17 +2020,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsServiceIdDelete**
+
 > projectsServiceIdDelete($id)
 
 Deletes the service with the given id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -1973,9 +2054,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -1987,17 +2068,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsServiceIdDuplicatePost**
+
 > projectsServiceIdDuplicatePost($id, $body)
 
 Duplicates a service on base of the id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -2020,10 +2103,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
- **body** | [**\Swagger\Client\Model\DuplicateProjectService**](../Model/DuplicateProjectService.md)| Optional parameters to overwrite | [optional]
+ Name     | Type                                                                                     | Description                      | Notes      
+----------|------------------------------------------------------------------------------------------|----------------------------------|------------
+ **id**   | **string**                                                                               | The template&#39;s id            |
+ **body** | [**\Swagger\Client\Model\DuplicateProjectService**](../Model/DuplicateProjectService.md) | Optional parameters to overwrite | [optional] 
 
 ### Return type
 
@@ -2035,17 +2118,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsServiceIdGet**
+
 > \Swagger\Client\Model\RestResultProjectService projectsServiceIdGet($id)
 
 Fetches a single service by id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -2068,9 +2153,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -2082,17 +2167,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsServiceIdPlanningBudgetGet**
+
 > \Swagger\Client\Model\RestResult projectsServiceIdPlanningBudgetGet($id, $by, $until_date)
 
 Fetches the assignment budget info of a project service
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -2117,11 +2204,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
- **by** | **string**|  | [optional]
- **until_date** | **string**| Y-m-d | [optional]
+ Name           | Type       | Description           | Notes      
+----------------|------------|-----------------------|------------
+ **id**         | **string** | The template&#39;s id |
+ **by**         | **string** |                       | [optional] 
+ **until_date** | **string** | Y-m-d                 | [optional] 
 
 ### Return type
 
@@ -2133,17 +2220,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsServiceIdPut**
+
 > projectsServiceIdPut($id, $body)
 
 Updates a service for the given id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -2166,10 +2255,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
- **body** | [**\Swagger\Client\Model\PutProjectService**](../Model/PutProjectService.md)| Service object that needs to be updated |
+ Name     | Type                                                                         | Description                             | Notes 
+----------|------------------------------------------------------------------------------|-----------------------------------------|-------
+ **id**   | **string**                                                                   | The template&#39;s id                   |
+ **body** | [**\Swagger\Client\Model\PutProjectService**](../Model/PutProjectService.md) | Service object that needs to be updated |
 
 ### Return type
 
@@ -2181,17 +2270,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsServicePost**
+
 > projectsServicePost($body)
 
 Add a new service
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -2213,9 +2304,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\PostProjectService**](../Model/PostProjectService.md)| template object that needs to be added |
+ Name     | Type                                                                           | Description                            | Notes 
+----------|--------------------------------------------------------------------------------|----------------------------------------|-------
+ **body** | [**\Swagger\Client\Model\PostProjectService**](../Model/PostProjectService.md) | template object that needs to be added |
 
 ### Return type
 
@@ -2227,8 +2318,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

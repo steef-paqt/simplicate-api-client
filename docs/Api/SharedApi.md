@@ -2,21 +2,22 @@
 
 All URIs are relative to *http://localhost/api/v2*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**sharedItemGet**](SharedApi.md#sharedItemGet) | **GET** /shared/item | Fetches all shared items
-[**sharedItemIdDelete**](SharedApi.md#sharedItemIdDelete) | **DELETE** /shared/item/{id} | Deletes the shared item with the given id
-[**sharedItemIdGet**](SharedApi.md#sharedItemIdGet) | **GET** /shared/item/{id} | Fetches a single shared item  by id
-[**sharedItemIdPut**](SharedApi.md#sharedItemIdPut) | **PUT** /shared/item/{id} | Updates an existing shared item
-[**sharedItemPost**](SharedApi.md#sharedItemPost) | **POST** /shared/item | Add a new shared item
-
+ Method                                                    | HTTP request                 | Description                               
+-----------------------------------------------------------|------------------------------|-------------------------------------------
+ [**sharedItemGet**](SharedApi.md#sharedItemGet)           | **GET** /shared/item         | Fetches all shared items                  
+ [**sharedItemIdDelete**](SharedApi.md#sharedItemIdDelete) | **DELETE** /shared/item/{id} | Deletes the shared item with the given id 
+ [**sharedItemIdGet**](SharedApi.md#sharedItemIdGet)       | **GET** /shared/item/{id}    | Fetches a single shared item  by id       
+ [**sharedItemIdPut**](SharedApi.md#sharedItemIdPut)       | **PUT** /shared/item/{id}    | Updates an existing shared item           
+ [**sharedItemPost**](SharedApi.md#sharedItemPost)         | **POST** /shared/item        | Add a new shared item                     
 
 # **sharedItemGet**
+
 > \Swagger\Client\Model\RestResultSharedItems sharedItemGet($offset, $limit, $sort)
 
 Fetches all shared items
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -41,11 +42,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -57,17 +58,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sharedItemIdDelete**
+
 > sharedItemIdDelete($id)
 
 Deletes the shared item with the given id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -89,9 +92,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -103,17 +106,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sharedItemIdGet**
+
 > \Swagger\Client\Model\RestResultSharedItem sharedItemIdGet($id)
 
-Fetches a single shared item  by id
+Fetches a single shared item by id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -136,9 +141,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -150,17 +155,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sharedItemIdPut**
+
 > sharedItemIdPut($id, $body)
 
 Updates an existing shared item
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -183,10 +190,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
- **body** | [**\Swagger\Client\Model\PostSharedItem**](../Model/PostSharedItem.md)| Shared item object that with the data that needs to be updated |
+ Name     | Type                                                                   | Description                                                    | Notes 
+----------|------------------------------------------------------------------------|----------------------------------------------------------------|-------
+ **id**   | **string**                                                             | The template&#39;s id                                          |
+ **body** | [**\Swagger\Client\Model\PostSharedItem**](../Model/PostSharedItem.md) | Shared item object that with the data that needs to be updated |
 
 ### Return type
 
@@ -198,17 +205,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sharedItemPost**
+
 > sharedItemPost($body)
 
 Add a new shared item
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -230,9 +239,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\PostSharedItem**](../Model/PostSharedItem.md)| Item object that needs to be added |
+ Name     | Type                                                                   | Description                        | Notes 
+----------|------------------------------------------------------------------------|------------------------------------|-------
+ **body** | [**\Swagger\Client\Model\PostSharedItem**](../Model/PostSharedItem.md) | Item object that needs to be added |
 
 ### Return type
 
@@ -244,8 +253,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

@@ -2,24 +2,25 @@
 
 All URIs are relative to *http://localhost/api/v2*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**timelineAttachmentIdDelete**](TimelineApi.md#timelineAttachmentIdDelete) | **DELETE** /timeline/attachment/{id} | Deletes the timeline message attachment for the given id
-[**timelineAttachmentPost**](TimelineApi.md#timelineAttachmentPost) | **POST** /timeline/attachment | Creates a new timeline message attachment - which is the link between /timeline/message and /documents/document
-[**timelineMessageGet**](TimelineApi.md#timelineMessageGet) | **GET** /timeline/message | Fetches all messages
-[**timelineMessageIdDelete**](TimelineApi.md#timelineMessageIdDelete) | **DELETE** /timeline/message/{id} | Deletes the timeline message for the given id
-[**timelineMessageIdGet**](TimelineApi.md#timelineMessageIdGet) | **GET** /timeline/message/{id} | Fetches a single time line message by id
-[**timelineMessagePost**](TimelineApi.md#timelineMessagePost) | **POST** /timeline/message | Add a new timeline message
-[**timelineMessagetypeGet**](TimelineApi.md#timelineMessagetypeGet) | **GET** /timeline/messagetype | Fetches all message types
-[**timelineMessagetypeIdGet**](TimelineApi.md#timelineMessagetypeIdGet) | **GET** /timeline/messagetype/{id} | Fetches a single timeline message type by id
-
+ Method                                                                      | HTTP request                         | Description                                                                                                     
+-----------------------------------------------------------------------------|--------------------------------------|-----------------------------------------------------------------------------------------------------------------
+ [**timelineAttachmentIdDelete**](TimelineApi.md#timelineAttachmentIdDelete) | **DELETE** /timeline/attachment/{id} | Deletes the timeline message attachment for the given id                                                        
+ [**timelineAttachmentPost**](TimelineApi.md#timelineAttachmentPost)         | **POST** /timeline/attachment        | Creates a new timeline message attachment - which is the link between /timeline/message and /documents/document 
+ [**timelineMessageGet**](TimelineApi.md#timelineMessageGet)                 | **GET** /timeline/message            | Fetches all messages                                                                                            
+ [**timelineMessageIdDelete**](TimelineApi.md#timelineMessageIdDelete)       | **DELETE** /timeline/message/{id}    | Deletes the timeline message for the given id                                                                   
+ [**timelineMessageIdGet**](TimelineApi.md#timelineMessageIdGet)             | **GET** /timeline/message/{id}       | Fetches a single time line message by id                                                                        
+ [**timelineMessagePost**](TimelineApi.md#timelineMessagePost)               | **POST** /timeline/message           | Add a new timeline message                                                                                      
+ [**timelineMessagetypeGet**](TimelineApi.md#timelineMessagetypeGet)         | **GET** /timeline/messagetype        | Fetches all message types                                                                                       
+ [**timelineMessagetypeIdGet**](TimelineApi.md#timelineMessagetypeIdGet)     | **GET** /timeline/messagetype/{id}   | Fetches a single timeline message type by id                                                                    
 
 # **timelineAttachmentIdDelete**
+
 > timelineAttachmentIdDelete($id)
 
 Deletes the timeline message attachment for the given id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -41,9 +42,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -55,17 +56,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **timelineAttachmentPost**
+
 > timelineAttachmentPost($body)
 
 Creates a new timeline message attachment - which is the link between /timeline/message and /documents/document
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -87,9 +90,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\PostAttachment**](../Model/PostAttachment.md)|  |
+ Name     | Type                                                                   | Description | Notes 
+----------|------------------------------------------------------------------------|-------------|-------
+ **body** | [**\Swagger\Client\Model\PostAttachment**](../Model/PostAttachment.md) |             |
 
 ### Return type
 
@@ -101,17 +104,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **timelineMessageGet**
+
 > \Swagger\Client\Model\RestResultTimelineMessages timelineMessageGet($offset, $limit, $sort)
 
 Fetches all messages
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -136,11 +141,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -152,17 +157,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **timelineMessageIdDelete**
+
 > timelineMessageIdDelete($id)
 
 Deletes the timeline message for the given id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -184,9 +191,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -198,17 +205,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **timelineMessageIdGet**
+
 > \Swagger\Client\Model\RestResultTimelineMessage timelineMessageIdGet($id)
 
 Fetches a single time line message by id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -231,9 +240,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -245,17 +254,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **timelineMessagePost**
+
 > timelineMessagePost($body)
 
 Add a new timeline message
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -277,9 +288,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\PostMessage**](../Model/PostMessage.md)| Timeline message that needs to be added |
+ Name     | Type                                                             | Description                             | Notes 
+----------|------------------------------------------------------------------|-----------------------------------------|-------
+ **body** | [**\Swagger\Client\Model\PostMessage**](../Model/PostMessage.md) | Timeline message that needs to be added |
 
 ### Return type
 
@@ -291,17 +302,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **timelineMessagetypeGet**
+
 > \Swagger\Client\Model\RestResultTimelineMessageTypes timelineMessagetypeGet($offset, $limit, $sort)
 
 Fetches all message types
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -326,11 +339,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -342,17 +355,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **timelineMessagetypeIdGet**
+
 > \Swagger\Client\Model\RestResultTimelineMessageType timelineMessagetypeIdGet($id)
 
 Fetches a single timeline message type by id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -375,9 +390,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -389,8 +404,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

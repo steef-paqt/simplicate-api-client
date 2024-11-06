@@ -2,20 +2,21 @@
 
 All URIs are relative to *http://localhost/api/v2*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**costsCoststypeGet**](CostsApi.md#costsCoststypeGet) | **GET** /costs/coststype | Fetches all cost types
-[**costsCoststypeIdGet**](CostsApi.md#costsCoststypeIdGet) | **GET** /costs/coststype/{id} | Fetches a single cost type by cost type id
-[**costsExpenseGet**](CostsApi.md#costsExpenseGet) | **GET** /costs/expense | Fetches the expenses of employees
-[**costsExpenseIdGet**](CostsApi.md#costsExpenseIdGet) | **GET** /costs/expense/{id} | Fetches a single expense for an employee
-
+ Method                                                     | HTTP request                  | Description                                
+------------------------------------------------------------|-------------------------------|--------------------------------------------
+ [**costsCoststypeGet**](CostsApi.md#costsCoststypeGet)     | **GET** /costs/coststype      | Fetches all cost types                     
+ [**costsCoststypeIdGet**](CostsApi.md#costsCoststypeIdGet) | **GET** /costs/coststype/{id} | Fetches a single cost type by cost type id 
+ [**costsExpenseGet**](CostsApi.md#costsExpenseGet)         | **GET** /costs/expense        | Fetches the expenses of employees          
+ [**costsExpenseIdGet**](CostsApi.md#costsExpenseIdGet)     | **GET** /costs/expense/{id}   | Fetches a single expense for an employee   
 
 # **costsCoststypeGet**
+
 > \Swagger\Client\Model\RestResultHourTypes costsCoststypeGet($offset, $limit, $sort)
 
 Fetches all cost types
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -40,11 +41,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -56,17 +57,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **costsCoststypeIdGet**
+
 > \Swagger\Client\Model\RestResultHourType costsCoststypeIdGet($id)
 
 Fetches a single cost type by cost type id
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -89,9 +92,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -103,17 +106,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **costsExpenseGet**
+
 > \Swagger\Client\Model\RestResultEmployeeExpenseList costsExpenseGet($offset, $limit, $sort)
 
 Fetches the expenses of employees
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -138,11 +143,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| The offset to search from | [optional]
- **limit** | **int**| The limit of max allowed results | [optional] [default to 5]
- **sort** | **string**| Sort the result by column name | [optional]
+ Name       | Type       | Description                      | Notes                     
+------------|------------|----------------------------------|---------------------------
+ **offset** | **int**    | The offset to search from        | [optional]                
+ **limit**  | **int**    | The limit of max allowed results | [optional] [default to 5] 
+ **sort**   | **string** | Sort the result by column name   | [optional]                
 
 ### Return type
 
@@ -154,17 +159,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **costsExpenseIdGet**
+
 > \Swagger\Client\Model\RestResultEmployeeExpense costsExpenseIdGet($id)
 
 Fetches a single expense for an employee
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -187,9 +194,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The template&#39;s id |
+ Name   | Type       | Description           | Notes 
+--------|------------|-----------------------|-------
+ **id** | **string** | The template&#39;s id |
 
 ### Return type
 
@@ -201,8 +208,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
