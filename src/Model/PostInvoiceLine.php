@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostInvoiceLine
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostInvoiceLine Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostInvoiceLine implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -62,7 +63,7 @@ class PostInvoiceLine implements ModelInterface, ArrayAccess
         'date' => 'string',
         'description' => 'string',
         'amount' => 'float',
-        'price' => 'float'
+        'price' => 'float',
     ];
 
     /**
@@ -76,7 +77,7 @@ class PostInvoiceLine implements ModelInterface, ArrayAccess
         'date' => null,
         'description' => null,
         'amount' => 'float',
-        'price' => 'float'
+        'price' => 'float',
     ];
 
     /**
@@ -111,7 +112,7 @@ class PostInvoiceLine implements ModelInterface, ArrayAccess
         'date' => 'date',
         'description' => 'description',
         'amount' => 'amount',
-        'price' => 'price'
+        'price' => 'price',
     ];
 
     /**
@@ -125,7 +126,7 @@ class PostInvoiceLine implements ModelInterface, ArrayAccess
         'date' => 'setDate',
         'description' => 'setDescription',
         'amount' => 'setAmount',
-        'price' => 'setPrice'
+        'price' => 'setPrice',
     ];
 
     /**
@@ -139,7 +140,7 @@ class PostInvoiceLine implements ModelInterface, ArrayAccess
         'date' => 'getDate',
         'description' => 'getDescription',
         'amount' => 'getAmount',
-        'price' => 'getPrice'
+        'price' => 'getPrice',
     ];
 
     /**
@@ -182,10 +183,6 @@ class PostInvoiceLine implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -232,7 +229,6 @@ class PostInvoiceLine implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets vat_class_id
@@ -377,6 +373,7 @@ class PostInvoiceLine implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -451,5 +448,3 @@ class PostInvoiceLine implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

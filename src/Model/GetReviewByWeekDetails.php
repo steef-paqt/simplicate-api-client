@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetReviewByWeekDetails
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetReviewByWeekDetails Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -74,7 +75,7 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
         'productivity' => 'float',
         'productivity_target' => 'float',
         'productivity_value' => 'float',
-        'productivity_value_target' => 'float'
+        'productivity_value_target' => 'float',
     ];
 
     /**
@@ -100,7 +101,7 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
         'productivity' => 'float',
         'productivity_target' => 'float',
         'productivity_value' => 'float',
-        'productivity_value_target' => 'float'
+        'productivity_value_target' => 'float',
     ];
 
     /**
@@ -147,7 +148,7 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
         'productivity' => 'productivity',
         'productivity_target' => 'productivity_target',
         'productivity_value' => 'productivity_value',
-        'productivity_value_target' => 'productivity_value_target'
+        'productivity_value_target' => 'productivity_value_target',
     ];
 
     /**
@@ -173,7 +174,7 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
         'productivity' => 'setProductivity',
         'productivity_target' => 'setProductivityTarget',
         'productivity_value' => 'setProductivityValue',
-        'productivity_value_target' => 'setProductivityValueTarget'
+        'productivity_value_target' => 'setProductivityValueTarget',
     ];
 
     /**
@@ -199,7 +200,7 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
         'productivity' => 'getProductivity',
         'productivity_target' => 'getProductivityTarget',
         'productivity_value' => 'getProductivityValue',
-        'productivity_value_target' => 'getProductivityValueTarget'
+        'productivity_value_target' => 'getProductivityValueTarget',
     ];
 
     /**
@@ -242,10 +243,6 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -304,7 +301,6 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets employee
@@ -737,6 +733,7 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -811,5 +808,3 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

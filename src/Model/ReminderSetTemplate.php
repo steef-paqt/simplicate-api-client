@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ReminderSetTemplate
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * ReminderSetTemplate Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class ReminderSetTemplate implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
         'id' => 'string',
         'label' => 'string',
         'send_after' => 'int',
-        'position' => 'int'
+        'position' => 'int',
     ];
 
     /**
@@ -72,7 +73,7 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
         'id' => null,
         'label' => null,
         'send_after' => null,
-        'position' => null
+        'position' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
         'id' => 'id',
         'label' => 'label',
         'send_after' => 'send_after',
-        'position' => 'position'
+        'position' => 'position',
     ];
 
     /**
@@ -117,7 +118,7 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'label' => 'setLabel',
         'send_after' => 'setSendAfter',
-        'position' => 'setPosition'
+        'position' => 'setPosition',
     ];
 
     /**
@@ -129,7 +130,7 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'label' => 'getLabel',
         'send_after' => 'getSendAfter',
-        'position' => 'getPosition'
+        'position' => 'getPosition',
     ];
 
     /**
@@ -172,10 +173,6 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -317,6 +313,7 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

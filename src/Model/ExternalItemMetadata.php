@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ExternalItemMetadata
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * ExternalItemMetadata Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class ExternalItemMetadata implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -64,7 +65,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
         'limit' => 'int',
         'upper_limit' => 'int',
         'nocleanup' => 'bool',
-        'checksum' => 'string'
+        'checksum' => 'string',
     ];
 
     /**
@@ -80,7 +81,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
         'limit' => null,
         'upper_limit' => null,
         'nocleanup' => null,
-        'checksum' => null
+        'checksum' => null,
     ];
 
     /**
@@ -117,7 +118,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
         'limit' => 'limit',
         'upper_limit' => 'upper_limit',
         'nocleanup' => 'nocleanup',
-        'checksum' => 'checksum'
+        'checksum' => 'checksum',
     ];
 
     /**
@@ -133,7 +134,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
         'limit' => 'setLimit',
         'upper_limit' => 'setUpperLimit',
         'nocleanup' => 'setNocleanup',
-        'checksum' => 'setChecksum'
+        'checksum' => 'setChecksum',
     ];
 
     /**
@@ -149,7 +150,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
         'limit' => 'getLimit',
         'upper_limit' => 'getUpperLimit',
         'nocleanup' => 'getNocleanup',
-        'checksum' => 'getChecksum'
+        'checksum' => 'getChecksum',
     ];
 
     /**
@@ -192,10 +193,6 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -245,7 +242,6 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets configuration
      *
@@ -283,7 +279,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
     /**
      * Sets count
      *
-     * @param int $count 
+     * @param int $count
      *
      * @return $this
      */
@@ -307,7 +303,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
     /**
      * Sets total_count
      *
-     * @param int $total_count 
+     * @param int $total_count
      *
      * @return $this
      */
@@ -331,7 +327,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
     /**
      * Sets offset
      *
-     * @param int $offset 
+     * @param int $offset
      *
      * @return $this
      */
@@ -355,7 +351,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
     /**
      * Sets limit
      *
-     * @param int $limit 
+     * @param int $limit
      *
      * @return $this
      */
@@ -379,7 +375,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
     /**
      * Sets upper_limit
      *
-     * @param int $upper_limit 
+     * @param int $upper_limit
      *
      * @return $this
      */
@@ -403,7 +399,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
     /**
      * Sets nocleanup
      *
-     * @param bool $nocleanup 
+     * @param bool $nocleanup
      *
      * @return $this
      */
@@ -427,7 +423,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
     /**
      * Sets checksum
      *
-     * @param string $checksum 
+     * @param string $checksum
      *
      * @return $this
      */
@@ -437,6 +433,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -511,5 +508,3 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetCivilStatus
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetCivilStatus Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetCivilStatus implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'blocked' => 'bool',
         'id' => 'string',
-        'label' => 'string'
+        'label' => 'string',
     ];
 
     /**
@@ -70,7 +71,7 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'blocked' => null,
         'id' => null,
-        'label' => null
+        'label' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'blocked' => 'blocked',
         'id' => 'id',
-        'label' => 'label'
+        'label' => 'label',
     ];
 
     /**
@@ -113,7 +114,7 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
     protected static $setters = [
         'blocked' => 'setBlocked',
         'id' => 'setId',
-        'label' => 'setLabel'
+        'label' => 'setLabel',
     ];
 
     /**
@@ -124,7 +125,7 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
     protected static $getters = [
         'blocked' => 'getBlocked',
         'id' => 'getId',
-        'label' => 'getLabel'
+        'label' => 'getLabel',
     ];
 
     /**
@@ -168,10 +169,6 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets blocked
@@ -287,6 +283,7 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

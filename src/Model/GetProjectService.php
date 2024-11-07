@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetProjectService
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetProjectService Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetProjectService implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -87,7 +88,7 @@ class GetProjectService implements ModelInterface, ArrayAccess
         'amount' => 'float',
         'price' => 'float',
         'track_hours' => 'bool',
-        'track_cost' => 'bool'
+        'track_cost' => 'bool',
     ];
 
     /**
@@ -126,7 +127,7 @@ class GetProjectService implements ModelInterface, ArrayAccess
         'amount' => 'float',
         'price' => 'float',
         'track_hours' => null,
-        'track_cost' => null
+        'track_cost' => null,
     ];
 
     /**
@@ -186,7 +187,7 @@ class GetProjectService implements ModelInterface, ArrayAccess
         'amount' => 'amount',
         'price' => 'price',
         'track_hours' => 'track_hours',
-        'track_cost' => 'track_cost'
+        'track_cost' => 'track_cost',
     ];
 
     /**
@@ -225,7 +226,7 @@ class GetProjectService implements ModelInterface, ArrayAccess
         'amount' => 'setAmount',
         'price' => 'setPrice',
         'track_hours' => 'setTrackHours',
-        'track_cost' => 'setTrackCost'
+        'track_cost' => 'setTrackCost',
     ];
 
     /**
@@ -264,7 +265,7 @@ class GetProjectService implements ModelInterface, ArrayAccess
         'amount' => 'getAmount',
         'price' => 'getPrice',
         'track_hours' => 'getTrackHours',
-        'track_cost' => 'getTrackCost'
+        'track_cost' => 'getTrackCost',
     ];
 
     /**
@@ -308,16 +309,14 @@ class GetProjectService implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const SUBSCRIPTION_CYCLE_MONTH = 'Month';
-    const SUBSCRIPTION_CYCLE_QUARTER = 'Quarter';
-    const SUBSCRIPTION_CYCLE_HALF_A_YEAR = 'Half_a_year';
-    const SUBSCRIPTION_CYCLE_YEAR = 'Year';
-    const INVOICE_METHOD_HOURS = 'Hours';
-    const INVOICE_METHOD_FIXED_FEE = 'FixedFee';
-    const INVOICE_METHOD_SUBSCRIPTION = 'Subscription';
-    
+    public const SUBSCRIPTION_CYCLE_MONTH = 'Month';
+    public const SUBSCRIPTION_CYCLE_QUARTER = 'Quarter';
+    public const SUBSCRIPTION_CYCLE_HALF_A_YEAR = 'Half_a_year';
+    public const SUBSCRIPTION_CYCLE_YEAR = 'Year';
+    public const INVOICE_METHOD_HOURS = 'Hours';
+    public const INVOICE_METHOD_FIXED_FEE = 'FixedFee';
+    public const INVOICE_METHOD_SUBSCRIPTION = 'Subscription';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -332,7 +331,7 @@ class GetProjectService implements ModelInterface, ArrayAccess
             self::SUBSCRIPTION_CYCLE_YEAR,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      *
@@ -346,7 +345,6 @@ class GetProjectService implements ModelInterface, ArrayAccess
             self::INVOICE_METHOD_SUBSCRIPTION,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -434,7 +432,6 @@ class GetProjectService implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets project_id
@@ -1197,6 +1194,7 @@ class GetProjectService implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -1271,5 +1269,3 @@ class GetProjectService implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

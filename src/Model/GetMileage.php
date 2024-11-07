@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetMileage
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetMileage Class Doc Comment
@@ -244,9 +245,9 @@ class GetMileage implements ModelInterface, ArrayAccess
     const SOURCE_SCHEDULE = 'schedule';
     const SOURCE_TIMER = 'timer';
     const SOURCE_TIMESHEET = 'timesheet';
-    
 
-    
+
+
     /**
      * Gets allowable values of the enum
      *
@@ -260,7 +261,7 @@ class GetMileage implements ModelInterface, ArrayAccess
             self::INVOICE_STATUS_INDIRECTLY,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      *
@@ -274,7 +275,7 @@ class GetMileage implements ModelInterface, ArrayAccess
             self::SOURCE_TIMESHEET,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -849,5 +850,3 @@ class GetMileage implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostPurchaseType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostPurchaseType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostPurchaseType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -62,7 +63,7 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
         'tariff' => 'float',
         'is_unit_tariff' => 'bool',
         'unit_name' => 'string',
-        'is_attachment_allowed' => 'bool'
+        'is_attachment_allowed' => 'bool',
     ];
 
     /**
@@ -76,7 +77,7 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
         'tariff' => 'float',
         'is_unit_tariff' => null,
         'unit_name' => null,
-        'is_attachment_allowed' => null
+        'is_attachment_allowed' => null,
     ];
 
     /**
@@ -111,7 +112,7 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
         'tariff' => 'tariff',
         'is_unit_tariff' => 'is_unit_tariff',
         'unit_name' => 'unit_name',
-        'is_attachment_allowed' => 'is_attachment_allowed'
+        'is_attachment_allowed' => 'is_attachment_allowed',
     ];
 
     /**
@@ -125,7 +126,7 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
         'tariff' => 'setTariff',
         'is_unit_tariff' => 'setIsUnitTariff',
         'unit_name' => 'setUnitName',
-        'is_attachment_allowed' => 'setIsAttachmentAllowed'
+        'is_attachment_allowed' => 'setIsAttachmentAllowed',
     ];
 
     /**
@@ -139,7 +140,7 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
         'tariff' => 'getTariff',
         'is_unit_tariff' => 'getIsUnitTariff',
         'unit_name' => 'getUnitName',
-        'is_attachment_allowed' => 'getIsAttachmentAllowed'
+        'is_attachment_allowed' => 'getIsAttachmentAllowed',
     ];
 
     /**
@@ -182,10 +183,6 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -232,7 +229,6 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets label
@@ -377,6 +373,7 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -451,5 +448,3 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

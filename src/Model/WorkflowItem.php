@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WorkflowItem
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * WorkflowItem Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class WorkflowItem implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -57,7 +58,7 @@ class WorkflowItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'subject' => 'string'
+        'subject' => 'string',
     ];
 
     /**
@@ -66,7 +67,7 @@ class WorkflowItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'subject' => null
+        'subject' => null,
     ];
 
     /**
@@ -96,7 +97,7 @@ class WorkflowItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'subject' => 'subject'
+        'subject' => 'subject',
     ];
 
     /**
@@ -105,7 +106,7 @@ class WorkflowItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'subject' => 'setSubject'
+        'subject' => 'setSubject',
     ];
 
     /**
@@ -114,7 +115,7 @@ class WorkflowItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'subject' => 'getSubject'
+        'subject' => 'getSubject',
     ];
 
     /**
@@ -158,10 +159,6 @@ class WorkflowItem implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -203,7 +200,6 @@ class WorkflowItem implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets subject
      *
@@ -227,6 +223,7 @@ class WorkflowItem implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -301,5 +298,3 @@ class WorkflowItem implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

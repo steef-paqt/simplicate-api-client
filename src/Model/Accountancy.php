@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Accountancy
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Accountancy Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Accountancy implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class Accountancy implements ModelInterface, ArrayAccess
         'vat_number_fe' => 'string',
         'tax_unit_vat_role' => 'string',
         'is_tax_unit_vpb' => 'bool',
-        'tax_unit_vpb_role' => 'string'
+        'tax_unit_vpb_role' => 'string',
     ];
 
     /**
@@ -74,7 +75,7 @@ class Accountancy implements ModelInterface, ArrayAccess
         'vat_number_fe' => null,
         'tax_unit_vat_role' => null,
         'is_tax_unit_vpb' => null,
-        'tax_unit_vpb_role' => null
+        'tax_unit_vpb_role' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class Accountancy implements ModelInterface, ArrayAccess
         'vat_number_fe' => 'vat_number_fe',
         'tax_unit_vat_role' => 'tax_unit_vat_role',
         'is_tax_unit_vpb' => 'is_tax_unit_vpb',
-        'tax_unit_vpb_role' => 'tax_unit_vpb_role'
+        'tax_unit_vpb_role' => 'tax_unit_vpb_role',
     ];
 
     /**
@@ -121,7 +122,7 @@ class Accountancy implements ModelInterface, ArrayAccess
         'vat_number_fe' => 'setVatNumberFe',
         'tax_unit_vat_role' => 'setTaxUnitVatRole',
         'is_tax_unit_vpb' => 'setIsTaxUnitVpb',
-        'tax_unit_vpb_role' => 'setTaxUnitVpbRole'
+        'tax_unit_vpb_role' => 'setTaxUnitVpbRole',
     ];
 
     /**
@@ -134,7 +135,7 @@ class Accountancy implements ModelInterface, ArrayAccess
         'vat_number_fe' => 'getVatNumberFe',
         'tax_unit_vat_role' => 'getTaxUnitVatRole',
         'is_tax_unit_vpb' => 'getIsTaxUnitVpb',
-        'tax_unit_vpb_role' => 'getTaxUnitVpbRole'
+        'tax_unit_vpb_role' => 'getTaxUnitVpbRole',
     ];
 
     /**
@@ -178,15 +179,13 @@ class Accountancy implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const TAX_UNIT_VAT_ROLE_MOTHER = 'mother';
-    const TAX_UNIT_VAT_ROLE_DAUGHTER = 'daughter';
-    const TAX_UNIT_VAT_ROLE_PARTICIPATION = 'participation';
-    const TAX_UNIT_VPB_ROLE_MOTHER = 'mother';
-    const TAX_UNIT_VPB_ROLE_DAUGHTER = 'daughter';
-    const TAX_UNIT_VPB_ROLE_PARTICIPATION = 'participation';
-    
+    public const TAX_UNIT_VAT_ROLE_MOTHER = 'mother';
+    public const TAX_UNIT_VAT_ROLE_DAUGHTER = 'daughter';
+    public const TAX_UNIT_VAT_ROLE_PARTICIPATION = 'participation';
+    public const TAX_UNIT_VPB_ROLE_MOTHER = 'mother';
+    public const TAX_UNIT_VPB_ROLE_DAUGHTER = 'daughter';
+    public const TAX_UNIT_VPB_ROLE_PARTICIPATION = 'participation';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -200,7 +199,7 @@ class Accountancy implements ModelInterface, ArrayAccess
             self::TAX_UNIT_VAT_ROLE_PARTICIPATION,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      *
@@ -214,7 +213,6 @@ class Accountancy implements ModelInterface, ArrayAccess
             self::TAX_UNIT_VPB_ROLE_PARTICIPATION,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -276,7 +274,6 @@ class Accountancy implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets is_tax_unit_vat
@@ -415,6 +412,7 @@ class Accountancy implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -489,5 +487,3 @@ class Accountancy implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

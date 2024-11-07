@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetAbsence
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetAbsence Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetAbsence implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -66,7 +67,7 @@ class GetAbsence implements ModelInterface, ArrayAccess
         'year' => 'int',
         'start_date' => 'string',
         'end_date' => 'string',
-        'description' => 'string'
+        'description' => 'string',
     ];
 
     /**
@@ -84,7 +85,7 @@ class GetAbsence implements ModelInterface, ArrayAccess
         'year' => null,
         'start_date' => null,
         'end_date' => null,
-        'description' => null
+        'description' => null,
     ];
 
     /**
@@ -123,7 +124,7 @@ class GetAbsence implements ModelInterface, ArrayAccess
         'year' => 'year',
         'start_date' => 'start_date',
         'end_date' => 'end_date',
-        'description' => 'description'
+        'description' => 'description',
     ];
 
     /**
@@ -141,7 +142,7 @@ class GetAbsence implements ModelInterface, ArrayAccess
         'year' => 'setYear',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
     ];
 
     /**
@@ -159,7 +160,7 @@ class GetAbsence implements ModelInterface, ArrayAccess
         'year' => 'getYear',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
     ];
 
     /**
@@ -202,10 +203,6 @@ class GetAbsence implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -256,7 +253,6 @@ class GetAbsence implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -497,6 +493,7 @@ class GetAbsence implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -571,5 +568,3 @@ class GetAbsence implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

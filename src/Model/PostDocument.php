@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostDocument
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostDocument Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostDocument implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class PostDocument implements ModelInterface, ArrayAccess
         'document_type_id' => 'string',
         'upload_queue_id' => 'string',
         'title' => 'string',
-        'description' => 'string'
+        'description' => 'string',
     ];
 
     /**
@@ -74,7 +75,7 @@ class PostDocument implements ModelInterface, ArrayAccess
         'document_type_id' => null,
         'upload_queue_id' => null,
         'title' => null,
-        'description' => null
+        'description' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class PostDocument implements ModelInterface, ArrayAccess
         'document_type_id' => 'document_type_id',
         'upload_queue_id' => 'upload_queue_id',
         'title' => 'title',
-        'description' => 'description'
+        'description' => 'description',
     ];
 
     /**
@@ -121,7 +122,7 @@ class PostDocument implements ModelInterface, ArrayAccess
         'document_type_id' => 'setDocumentTypeId',
         'upload_queue_id' => 'setUploadQueueId',
         'title' => 'setTitle',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
     ];
 
     /**
@@ -134,7 +135,7 @@ class PostDocument implements ModelInterface, ArrayAccess
         'document_type_id' => 'getDocumentTypeId',
         'upload_queue_id' => 'getUploadQueueId',
         'title' => 'getTitle',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
     ];
 
     /**
@@ -177,10 +178,6 @@ class PostDocument implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class PostDocument implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets linked_to
@@ -347,6 +343,7 @@ class PostDocument implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class PostDocument implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

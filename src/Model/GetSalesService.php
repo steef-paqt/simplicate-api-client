@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetSalesService
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetSalesService Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetSalesService implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -76,7 +77,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
         'total' => 'string',
         'position' => 'int',
         'explanation' => 'string',
-        'track_hours' => 'bool'
+        'track_hours' => 'bool',
     ];
 
     /**
@@ -104,7 +105,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
         'total' => null,
         'position' => null,
         'explanation' => null,
-        'track_hours' => null
+        'track_hours' => null,
     ];
 
     /**
@@ -153,7 +154,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
         'total' => 'total',
         'position' => 'position',
         'explanation' => 'explanation',
-        'track_hours' => 'track_hours'
+        'track_hours' => 'track_hours',
     ];
 
     /**
@@ -181,7 +182,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
         'total' => 'setTotal',
         'position' => 'setPosition',
         'explanation' => 'setExplanation',
-        'track_hours' => 'setTrackHours'
+        'track_hours' => 'setTrackHours',
     ];
 
     /**
@@ -209,7 +210,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
         'total' => 'getTotal',
         'position' => 'getPosition',
         'explanation' => 'getExplanation',
-        'track_hours' => 'getTrackHours'
+        'track_hours' => 'getTrackHours',
     ];
 
     /**
@@ -253,14 +254,12 @@ class GetSalesService implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const SUBSCRIPTION_CYCLE_MONTH = 'Month';
-    const SUBSCRIPTION_CYCLE_QUARTER = 'Quarter';
-    const SUBSCRIPTION_CYCLE_HALF_A_YEAR = 'Half_a_year';
-    const SUBSCRIPTION_CYCLE_YEAR = 'Year';
-    const INVOICE_METHOD_FIXED_FEE = 'FixedFee';
-    
+    public const SUBSCRIPTION_CYCLE_MONTH = 'Month';
+    public const SUBSCRIPTION_CYCLE_QUARTER = 'Quarter';
+    public const SUBSCRIPTION_CYCLE_HALF_A_YEAR = 'Half_a_year';
+    public const SUBSCRIPTION_CYCLE_YEAR = 'Year';
+    public const INVOICE_METHOD_FIXED_FEE = 'FixedFee';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -275,7 +274,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
             self::SUBSCRIPTION_CYCLE_YEAR,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      *
@@ -287,7 +286,6 @@ class GetSalesService implements ModelInterface, ArrayAccess
             self::INVOICE_METHOD_FIXED_FEE,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -364,7 +362,6 @@ class GetSalesService implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -863,6 +860,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -937,5 +935,3 @@ class GetSalesService implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetDocument
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetDocument Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetDocument implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -65,7 +66,7 @@ class GetDocument implements ModelInterface, ArrayAccess
         'created_at' => 'string',
         'updated_at' => 'string',
         'title' => 'string',
-        'description' => 'string'
+        'description' => 'string',
     ];
 
     /**
@@ -82,7 +83,7 @@ class GetDocument implements ModelInterface, ArrayAccess
         'created_at' => null,
         'updated_at' => null,
         'title' => null,
-        'description' => null
+        'description' => null,
     ];
 
     /**
@@ -120,7 +121,7 @@ class GetDocument implements ModelInterface, ArrayAccess
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
         'title' => 'title',
-        'description' => 'description'
+        'description' => 'description',
     ];
 
     /**
@@ -137,7 +138,7 @@ class GetDocument implements ModelInterface, ArrayAccess
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
         'title' => 'setTitle',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
     ];
 
     /**
@@ -154,7 +155,7 @@ class GetDocument implements ModelInterface, ArrayAccess
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
         'title' => 'getTitle',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
     ];
 
     /**
@@ -197,10 +198,6 @@ class GetDocument implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -250,7 +247,6 @@ class GetDocument implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -467,6 +463,7 @@ class GetDocument implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -541,5 +538,3 @@ class GetDocument implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

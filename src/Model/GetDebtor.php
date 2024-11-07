@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetDebtor
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetDebtor Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetDebtor implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -73,7 +74,7 @@ class GetDebtor implements ModelInterface, ArrayAccess
         'reminders' => 'bool',
         'send_email_type' => 'string',
         'autosend_subscription_invoice' => 'bool',
-        'invoicetemplate_id' => 'string'
+        'invoicetemplate_id' => 'string',
     ];
 
     /**
@@ -98,7 +99,7 @@ class GetDebtor implements ModelInterface, ArrayAccess
         'reminders' => null,
         'send_email_type' => null,
         'autosend_subscription_invoice' => null,
-        'invoicetemplate_id' => null
+        'invoicetemplate_id' => null,
     ];
 
     /**
@@ -144,7 +145,7 @@ class GetDebtor implements ModelInterface, ArrayAccess
         'reminders' => 'reminders',
         'send_email_type' => 'send_email_type',
         'autosend_subscription_invoice' => 'autosend_subscription_invoice',
-        'invoicetemplate_id' => 'invoicetemplate_id'
+        'invoicetemplate_id' => 'invoicetemplate_id',
     ];
 
     /**
@@ -169,7 +170,7 @@ class GetDebtor implements ModelInterface, ArrayAccess
         'reminders' => 'setReminders',
         'send_email_type' => 'setSendEmailType',
         'autosend_subscription_invoice' => 'setAutosendSubscriptionInvoice',
-        'invoicetemplate_id' => 'setInvoicetemplateId'
+        'invoicetemplate_id' => 'setInvoicetemplateId',
     ];
 
     /**
@@ -194,7 +195,7 @@ class GetDebtor implements ModelInterface, ArrayAccess
         'reminders' => 'getReminders',
         'send_email_type' => 'getSendEmailType',
         'autosend_subscription_invoice' => 'getAutosendSubscriptionInvoice',
-        'invoicetemplate_id' => 'getInvoicetemplateId'
+        'invoicetemplate_id' => 'getInvoicetemplateId',
     ];
 
     /**
@@ -238,16 +239,14 @@ class GetDebtor implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const PROVISION_METHOD_POST = 'post';
-    const PROVISION_METHOD_EMAIL = 'email';
-    const ATTENTION_TO_NONE = 'none';
-    const ATTENTION_TO_CONTACT = 'contact';
-    const ATTENTION_TO_CREDITOR = 'creditor';
-    const SEND_EMAIL_TYPE_FIXED = 'fixed';
-    const SEND_EMAIL_TYPE_CONTACT = 'contact';
-    
+    public const PROVISION_METHOD_POST = 'post';
+    public const PROVISION_METHOD_EMAIL = 'email';
+    public const ATTENTION_TO_NONE = 'none';
+    public const ATTENTION_TO_CONTACT = 'contact';
+    public const ATTENTION_TO_CREDITOR = 'creditor';
+    public const SEND_EMAIL_TYPE_FIXED = 'fixed';
+    public const SEND_EMAIL_TYPE_CONTACT = 'contact';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -260,7 +259,7 @@ class GetDebtor implements ModelInterface, ArrayAccess
             self::PROVISION_METHOD_EMAIL,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      *
@@ -274,7 +273,7 @@ class GetDebtor implements ModelInterface, ArrayAccess
             self::ATTENTION_TO_CREDITOR,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      *
@@ -287,7 +286,6 @@ class GetDebtor implements ModelInterface, ArrayAccess
             self::SEND_EMAIL_TYPE_CONTACT,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -369,7 +367,6 @@ class GetDebtor implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets payment_term
@@ -805,6 +802,7 @@ class GetDebtor implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -879,5 +877,3 @@ class GetDebtor implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

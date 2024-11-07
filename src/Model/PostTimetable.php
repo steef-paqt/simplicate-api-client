@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostTimetable
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostTimetable Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostTimetable implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -64,7 +65,7 @@ class PostTimetable implements ModelInterface, ArrayAccess
         'odd_week' => '\Swagger\Client\Model\TimetableWeek',
         'end_date' => 'string',
         'productivity_target' => 'int',
-        'should_write_hours' => 'bool'
+        'should_write_hours' => 'bool',
     ];
 
     /**
@@ -80,7 +81,7 @@ class PostTimetable implements ModelInterface, ArrayAccess
         'odd_week' => null,
         'end_date' => null,
         'productivity_target' => null,
-        'should_write_hours' => null
+        'should_write_hours' => null,
     ];
 
     /**
@@ -117,7 +118,7 @@ class PostTimetable implements ModelInterface, ArrayAccess
         'odd_week' => 'odd_week',
         'end_date' => 'end_date',
         'productivity_target' => 'productivity_target',
-        'should_write_hours' => 'should_write_hours'
+        'should_write_hours' => 'should_write_hours',
     ];
 
     /**
@@ -133,7 +134,7 @@ class PostTimetable implements ModelInterface, ArrayAccess
         'odd_week' => 'setOddWeek',
         'end_date' => 'setEndDate',
         'productivity_target' => 'setProductivityTarget',
-        'should_write_hours' => 'setShouldWriteHours'
+        'should_write_hours' => 'setShouldWriteHours',
     ];
 
     /**
@@ -149,7 +150,7 @@ class PostTimetable implements ModelInterface, ArrayAccess
         'odd_week' => 'getOddWeek',
         'end_date' => 'getEndDate',
         'productivity_target' => 'getProductivityTarget',
-        'should_write_hours' => 'getShouldWriteHours'
+        'should_write_hours' => 'getShouldWriteHours',
     ];
 
     /**
@@ -192,10 +193,6 @@ class PostTimetable implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -244,7 +241,6 @@ class PostTimetable implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets employee_id
@@ -437,6 +433,7 @@ class PostTimetable implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -511,5 +508,3 @@ class PostTimetable implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

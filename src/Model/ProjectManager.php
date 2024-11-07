@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ProjectManager
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * ProjectManager Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class ProjectManager implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class ProjectManager implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'person_id' => 'string',
-        'name' => 'string'
+        'name' => 'string',
     ];
 
     /**
@@ -70,7 +71,7 @@ class ProjectManager implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
         'person_id' => null,
-        'name' => null
+        'name' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class ProjectManager implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'person_id' => 'person_id',
-        'name' => 'name'
+        'name' => 'name',
     ];
 
     /**
@@ -113,7 +114,7 @@ class ProjectManager implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'person_id' => 'setPersonId',
-        'name' => 'setName'
+        'name' => 'setName',
     ];
 
     /**
@@ -124,7 +125,7 @@ class ProjectManager implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'person_id' => 'getPersonId',
-        'name' => 'getName'
+        'name' => 'getName',
     ];
 
     /**
@@ -168,10 +169,6 @@ class ProjectManager implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class ProjectManager implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -287,6 +283,7 @@ class ProjectManager implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class ProjectManager implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

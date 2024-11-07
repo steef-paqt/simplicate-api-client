@@ -1,4 +1,5 @@
 <?php
+
 /**
  * RestBatchValidationError
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * RestBatchValidationError Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class RestBatchValidationError implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'error' => '\Swagger\Client\Model\RestError',
-        'submitted_data' => 'object'
+        'submitted_data' => 'object',
     ];
 
     /**
@@ -68,7 +69,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'error' => null,
-        'submitted_data' => null
+        'submitted_data' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'error' => 'error',
-        'submitted_data' => 'submitted_data'
+        'submitted_data' => 'submitted_data',
     ];
 
     /**
@@ -109,7 +110,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'error' => 'setError',
-        'submitted_data' => 'setSubmittedData'
+        'submitted_data' => 'setSubmittedData',
     ];
 
     /**
@@ -119,7 +120,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'error' => 'getError',
-        'submitted_data' => 'getSubmittedData'
+        'submitted_data' => 'getSubmittedData',
     ];
 
     /**
@@ -163,10 +164,6 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets error
@@ -257,6 +253,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

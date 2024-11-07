@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Quote
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Quote Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Quote implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class Quote implements ModelInterface, ArrayAccess
         'quote_subject' => 'string',
         'json' => 'string',
         'customer_reference' => 'string',
-        'is_blocked' => 'int'
+        'is_blocked' => 'int',
     ];
 
     /**
@@ -74,7 +75,7 @@ class Quote implements ModelInterface, ArrayAccess
         'quote_subject' => null,
         'json' => null,
         'customer_reference' => null,
-        'is_blocked' => null
+        'is_blocked' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class Quote implements ModelInterface, ArrayAccess
         'quote_subject' => 'quote_subject',
         'json' => 'json',
         'customer_reference' => 'customer_reference',
-        'is_blocked' => 'is_blocked'
+        'is_blocked' => 'is_blocked',
     ];
 
     /**
@@ -121,7 +122,7 @@ class Quote implements ModelInterface, ArrayAccess
         'quote_subject' => 'setQuoteSubject',
         'json' => 'setJson',
         'customer_reference' => 'setCustomerReference',
-        'is_blocked' => 'setIsBlocked'
+        'is_blocked' => 'setIsBlocked',
     ];
 
     /**
@@ -134,7 +135,7 @@ class Quote implements ModelInterface, ArrayAccess
         'quote_subject' => 'getQuoteSubject',
         'json' => 'getJson',
         'customer_reference' => 'getCustomerReference',
-        'is_blocked' => 'getIsBlocked'
+        'is_blocked' => 'getIsBlocked',
     ];
 
     /**
@@ -177,10 +178,6 @@ class Quote implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class Quote implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets sales_id
@@ -347,6 +343,7 @@ class Quote implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class Quote implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

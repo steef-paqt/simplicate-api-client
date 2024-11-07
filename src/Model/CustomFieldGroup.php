@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CustomFieldGroup
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * CustomFieldGroup Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class CustomFieldGroup implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
         'name' => 'string',
         'position' => 'string',
         'model' => '\Swagger\Client\Model\CustomFieldModel',
-        'type' => 'string'
+        'type' => 'string',
     ];
 
     /**
@@ -74,7 +75,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
         'name' => null,
         'position' => null,
         'model' => null,
-        'type' => null
+        'type' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
         'name' => 'name',
         'position' => 'position',
         'model' => 'model',
-        'type' => 'type'
+        'type' => 'type',
     ];
 
     /**
@@ -121,7 +122,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'position' => 'setPosition',
         'model' => 'setModel',
-        'type' => 'setType'
+        'type' => 'setType',
     ];
 
     /**
@@ -134,7 +135,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'position' => 'getPosition',
         'model' => 'getModel',
-        'type' => 'getType'
+        'type' => 'getType',
     ];
 
     /**
@@ -177,10 +178,6 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -347,6 +343,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

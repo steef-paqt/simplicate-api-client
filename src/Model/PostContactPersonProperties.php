@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostContactPersonProperties
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostContactPersonProperties Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostContactPersonProperties implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'work_function' => 'string',
         'work_email' => 'string',
-        'work_mobile' => 'string'
+        'work_mobile' => 'string',
     ];
 
     /**
@@ -70,7 +71,7 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'work_function' => null,
         'work_email' => null,
-        'work_mobile' => null
+        'work_mobile' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'work_function' => 'work_function',
         'work_email' => 'work_email',
-        'work_mobile' => 'work_mobile'
+        'work_mobile' => 'work_mobile',
     ];
 
     /**
@@ -113,7 +114,7 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
     protected static $setters = [
         'work_function' => 'setWorkFunction',
         'work_email' => 'setWorkEmail',
-        'work_mobile' => 'setWorkMobile'
+        'work_mobile' => 'setWorkMobile',
     ];
 
     /**
@@ -124,7 +125,7 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
     protected static $getters = [
         'work_function' => 'getWorkFunction',
         'work_email' => 'getWorkEmail',
-        'work_mobile' => 'getWorkMobile'
+        'work_mobile' => 'getWorkMobile',
     ];
 
     /**
@@ -168,10 +169,6 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets work_function
@@ -287,6 +283,7 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

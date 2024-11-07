@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostAbsence
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostAbsence Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostAbsence implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -63,7 +64,7 @@ class PostAbsence implements ModelInterface, ArrayAccess
         'description' => 'string',
         'employee_id' => 'string',
         'absence_type_id' => 'string',
-        'is_time_defined' => 'bool'
+        'is_time_defined' => 'bool',
     ];
 
     /**
@@ -78,7 +79,7 @@ class PostAbsence implements ModelInterface, ArrayAccess
         'description' => null,
         'employee_id' => null,
         'absence_type_id' => null,
-        'is_time_defined' => null
+        'is_time_defined' => null,
     ];
 
     /**
@@ -114,7 +115,7 @@ class PostAbsence implements ModelInterface, ArrayAccess
         'description' => 'description',
         'employee_id' => 'employee_id',
         'absence_type_id' => 'absence_type_id',
-        'is_time_defined' => 'is_time_defined'
+        'is_time_defined' => 'is_time_defined',
     ];
 
     /**
@@ -129,7 +130,7 @@ class PostAbsence implements ModelInterface, ArrayAccess
         'description' => 'setDescription',
         'employee_id' => 'setEmployeeId',
         'absence_type_id' => 'setAbsenceTypeId',
-        'is_time_defined' => 'setIsTimeDefined'
+        'is_time_defined' => 'setIsTimeDefined',
     ];
 
     /**
@@ -144,7 +145,7 @@ class PostAbsence implements ModelInterface, ArrayAccess
         'description' => 'getDescription',
         'employee_id' => 'getEmployeeId',
         'absence_type_id' => 'getAbsenceTypeId',
-        'is_time_defined' => 'getIsTimeDefined'
+        'is_time_defined' => 'getIsTimeDefined',
     ];
 
     /**
@@ -187,10 +188,6 @@ class PostAbsence implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -238,7 +235,6 @@ class PostAbsence implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets start_date
@@ -407,6 +403,7 @@ class PostAbsence implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -481,5 +478,3 @@ class PostAbsence implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

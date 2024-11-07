@@ -1,4 +1,5 @@
 <?php
+
 /**
  * MyOrganizationProfile
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * MyOrganizationProfile Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class MyOrganizationProfile implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -63,7 +64,7 @@ class MyOrganizationProfile implements ModelInterface, ArrayAccess
         'coc_code' => 'string',
         'vat_number' => 'string',
         'bank_account' => 'string',
-        'blocked' => 'bool'
+        'blocked' => 'bool',
     ];
 
     /**
@@ -78,7 +79,7 @@ class MyOrganizationProfile implements ModelInterface, ArrayAccess
         'coc_code' => null,
         'vat_number' => null,
         'bank_account' => null,
-        'blocked' => null
+        'blocked' => null,
     ];
 
     /**
@@ -114,7 +115,7 @@ class MyOrganizationProfile implements ModelInterface, ArrayAccess
         'coc_code' => 'coc_code',
         'vat_number' => 'vat_number',
         'bank_account' => 'bank_account',
-        'blocked' => 'blocked'
+        'blocked' => 'blocked',
     ];
 
     /**
@@ -129,7 +130,7 @@ class MyOrganizationProfile implements ModelInterface, ArrayAccess
         'coc_code' => 'setCocCode',
         'vat_number' => 'setVatNumber',
         'bank_account' => 'setBankAccount',
-        'blocked' => 'setBlocked'
+        'blocked' => 'setBlocked',
     ];
 
     /**
@@ -144,7 +145,7 @@ class MyOrganizationProfile implements ModelInterface, ArrayAccess
         'coc_code' => 'getCocCode',
         'vat_number' => 'getVatNumber',
         'bank_account' => 'getBankAccount',
-        'blocked' => 'getBlocked'
+        'blocked' => 'getBlocked',
     ];
 
     /**
@@ -187,10 +188,6 @@ class MyOrganizationProfile implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -238,7 +235,6 @@ class MyOrganizationProfile implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -407,6 +403,7 @@ class MyOrganizationProfile implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -481,5 +478,3 @@ class MyOrganizationProfile implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

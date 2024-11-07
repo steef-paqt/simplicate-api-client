@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AssignmentBudgetInfoFuturePast
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * AssignmentBudgetInfoFuturePast Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'past' => 'string',
-        'future' => 'string'
+        'future' => 'string',
     ];
 
     /**
@@ -68,7 +69,7 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'past' => null,
-        'future' => null
+        'future' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'past' => 'past',
-        'future' => 'future'
+        'future' => 'future',
     ];
 
     /**
@@ -109,7 +110,7 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'past' => 'setPast',
-        'future' => 'setFuture'
+        'future' => 'setFuture',
     ];
 
     /**
@@ -119,7 +120,7 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'past' => 'getPast',
-        'future' => 'getFuture'
+        'future' => 'getFuture',
     ];
 
     /**
@@ -163,10 +164,6 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets past
@@ -257,6 +253,7 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostContactPersonFk
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostContactPersonFk Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostContactPersonFk implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
         'person_id' => 'string',
         'work_function' => 'string',
         'work_email' => 'string',
-        'work_mobile' => 'string'
+        'work_mobile' => 'string',
     ];
 
     /**
@@ -72,7 +73,7 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
         'person_id' => null,
         'work_function' => null,
         'work_email' => null,
-        'work_mobile' => null
+        'work_mobile' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
         'person_id' => 'person_id',
         'work_function' => 'work_function',
         'work_email' => 'work_email',
-        'work_mobile' => 'work_mobile'
+        'work_mobile' => 'work_mobile',
     ];
 
     /**
@@ -117,7 +118,7 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
         'person_id' => 'setPersonId',
         'work_function' => 'setWorkFunction',
         'work_email' => 'setWorkEmail',
-        'work_mobile' => 'setWorkMobile'
+        'work_mobile' => 'setWorkMobile',
     ];
 
     /**
@@ -129,7 +130,7 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
         'person_id' => 'getPersonId',
         'work_function' => 'getWorkFunction',
         'work_email' => 'getWorkEmail',
-        'work_mobile' => 'getWorkMobile'
+        'work_mobile' => 'getWorkMobile',
     ];
 
     /**
@@ -172,10 +173,6 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets person_id
@@ -317,6 +313,7 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * LeaveBalance
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * LeaveBalance Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class LeaveBalance implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -62,7 +63,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
         'first_change' => 'string',
         'last_change' => 'float',
         'year' => 'int',
-        'leavetype' => '\Swagger\Client\Model\HrmGetLeaveType'
+        'leavetype' => '\Swagger\Client\Model\HrmGetLeaveType',
     ];
 
     /**
@@ -76,7 +77,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
         'first_change' => null,
         'last_change' => 'float',
         'year' => null,
-        'leavetype' => null
+        'leavetype' => null,
     ];
 
     /**
@@ -111,7 +112,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
         'first_change' => 'first_change',
         'last_change' => 'last_change',
         'year' => 'year',
-        'leavetype' => 'leavetype'
+        'leavetype' => 'leavetype',
     ];
 
     /**
@@ -125,7 +126,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
         'first_change' => 'setFirstChange',
         'last_change' => 'setLastChange',
         'year' => 'setYear',
-        'leavetype' => 'setLeavetype'
+        'leavetype' => 'setLeavetype',
     ];
 
     /**
@@ -139,7 +140,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
         'first_change' => 'getFirstChange',
         'last_change' => 'getLastChange',
         'year' => 'getYear',
-        'leavetype' => 'getLeavetype'
+        'leavetype' => 'getLeavetype',
     ];
 
     /**
@@ -182,10 +183,6 @@ class LeaveBalance implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -232,7 +229,6 @@ class LeaveBalance implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets employee
@@ -377,6 +373,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -451,5 +448,3 @@ class LeaveBalance implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

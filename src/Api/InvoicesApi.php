@@ -1,4 +1,5 @@
 <?php
+
 /**
  * InvoicesApi
  * PHP version 5
@@ -103,6 +104,7 @@ class InvoicesApi
     public function invoicesDocumentGet($offset = null, $limit = '5', $sort = null)
     {
         list($response) = $this->invoicesDocumentGetWithHttpInfo($offset, $limit, $sort);
+
         return $response;
     }
 
@@ -165,9 +167,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -239,7 +240,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -271,7 +272,6 @@ class InvoicesApi
      */
     protected function invoicesDocumentGetRequest($offset = null, $limit = '5', $sort = null)
     {
-
         $resourcePath = '/invoices/document';
         $formParams = [];
         $queryParams = [];
@@ -292,7 +292,6 @@ class InvoicesApi
             $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
-
         // body params
         $_tempBody = null;
 
@@ -311,14 +310,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -328,21 +327,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -356,6 +352,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -425,7 +422,6 @@ class InvoicesApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
@@ -515,7 +511,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -543,14 +538,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -560,21 +555,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -588,6 +580,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -610,6 +603,7 @@ class InvoicesApi
     public function invoicesDocumentIdGet($id)
     {
         list($response) = $this->invoicesDocumentIdGetWithHttpInfo($id);
+
         return $response;
     }
 
@@ -670,9 +664,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -740,7 +733,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -784,7 +777,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -812,14 +804,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -829,21 +821,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -857,6 +846,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -926,7 +916,6 @@ class InvoicesApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
@@ -1016,8 +1005,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // body params
         $_tempBody = null;
         if (isset($body)) {
@@ -1039,14 +1026,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -1056,21 +1043,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1084,6 +1068,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1153,7 +1138,6 @@ class InvoicesApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
@@ -1243,8 +1227,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // body params
         $_tempBody = null;
         if (isset($body)) {
@@ -1266,14 +1248,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -1283,21 +1265,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1311,6 +1290,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1335,6 +1315,7 @@ class InvoicesApi
     public function invoicesDocumenttypeGet($offset = null, $limit = '5', $sort = null)
     {
         list($response) = $this->invoicesDocumenttypeGetWithHttpInfo($offset, $limit, $sort);
+
         return $response;
     }
 
@@ -1397,9 +1378,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1471,7 +1451,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1503,7 +1483,6 @@ class InvoicesApi
      */
     protected function invoicesDocumenttypeGetRequest($offset = null, $limit = '5', $sort = null)
     {
-
         $resourcePath = '/invoices/documenttype';
         $formParams = [];
         $queryParams = [];
@@ -1524,7 +1503,6 @@ class InvoicesApi
             $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
-
         // body params
         $_tempBody = null;
 
@@ -1543,14 +1521,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -1560,21 +1538,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1588,6 +1563,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1610,6 +1586,7 @@ class InvoicesApi
     public function invoicesDocumenttypeIdGet($id)
     {
         list($response) = $this->invoicesDocumenttypeIdGetWithHttpInfo($id);
+
         return $response;
     }
 
@@ -1670,9 +1647,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1740,7 +1716,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1784,7 +1760,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -1812,14 +1787,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -1829,21 +1804,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1857,6 +1829,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1881,6 +1854,7 @@ class InvoicesApi
     public function invoicesInvoiceGet($offset = null, $limit = '5', $sort = null)
     {
         list($response) = $this->invoicesInvoiceGetWithHttpInfo($offset, $limit, $sort);
+
         return $response;
     }
 
@@ -1943,9 +1917,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -2017,7 +1990,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2049,7 +2022,6 @@ class InvoicesApi
      */
     protected function invoicesInvoiceGetRequest($offset = null, $limit = '5', $sort = null)
     {
-
         $resourcePath = '/invoices/invoice';
         $formParams = [];
         $queryParams = [];
@@ -2070,7 +2042,6 @@ class InvoicesApi
             $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
-
         // body params
         $_tempBody = null;
 
@@ -2089,14 +2060,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -2106,21 +2077,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2134,6 +2102,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2203,7 +2172,6 @@ class InvoicesApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
@@ -2293,7 +2261,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -2321,14 +2288,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -2338,21 +2305,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2366,6 +2330,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2388,6 +2353,7 @@ class InvoicesApi
     public function invoicesInvoiceIdGet($id)
     {
         list($response) = $this->invoicesInvoiceIdGetWithHttpInfo($id);
+
         return $response;
     }
 
@@ -2448,9 +2414,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -2518,7 +2483,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2562,7 +2527,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -2590,14 +2554,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -2607,21 +2571,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2635,6 +2596,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2706,7 +2668,6 @@ class InvoicesApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
@@ -2805,7 +2766,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -2836,14 +2796,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -2853,21 +2813,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2881,6 +2838,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2950,7 +2908,6 @@ class InvoicesApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
@@ -3040,8 +2997,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // body params
         $_tempBody = null;
         if (isset($body)) {
@@ -3063,14 +3018,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -3080,21 +3035,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3108,6 +3060,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3132,6 +3085,7 @@ class InvoicesApi
     public function invoicesInvoicestatusGet($offset = null, $limit = '5', $sort = null)
     {
         list($response) = $this->invoicesInvoicestatusGetWithHttpInfo($offset, $limit, $sort);
+
         return $response;
     }
 
@@ -3194,9 +3148,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -3268,7 +3221,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3300,7 +3253,6 @@ class InvoicesApi
      */
     protected function invoicesInvoicestatusGetRequest($offset = null, $limit = '5', $sort = null)
     {
-
         $resourcePath = '/invoices/invoicestatus';
         $formParams = [];
         $queryParams = [];
@@ -3321,7 +3273,6 @@ class InvoicesApi
             $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
-
         // body params
         $_tempBody = null;
 
@@ -3340,14 +3291,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -3357,21 +3308,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3385,6 +3333,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3407,6 +3356,7 @@ class InvoicesApi
     public function invoicesInvoicestatusIdGet($id)
     {
         list($response) = $this->invoicesInvoicestatusIdGetWithHttpInfo($id);
+
         return $response;
     }
 
@@ -3467,9 +3417,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -3537,7 +3486,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3581,7 +3530,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -3609,14 +3557,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -3626,21 +3574,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3654,6 +3599,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3678,6 +3624,7 @@ class InvoicesApi
     public function invoicesPaymentGet($offset = null, $limit = '5', $sort = null)
     {
         list($response) = $this->invoicesPaymentGetWithHttpInfo($offset, $limit, $sort);
+
         return $response;
     }
 
@@ -3740,9 +3687,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -3814,7 +3760,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3846,7 +3792,6 @@ class InvoicesApi
      */
     protected function invoicesPaymentGetRequest($offset = null, $limit = '5', $sort = null)
     {
-
         $resourcePath = '/invoices/payment';
         $formParams = [];
         $queryParams = [];
@@ -3867,7 +3812,6 @@ class InvoicesApi
             $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
-
         // body params
         $_tempBody = null;
 
@@ -3886,14 +3830,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -3903,21 +3847,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3931,6 +3872,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3953,6 +3895,7 @@ class InvoicesApi
     public function invoicesPaymentIdGet($id)
     {
         list($response) = $this->invoicesPaymentIdGetWithHttpInfo($id);
+
         return $response;
     }
 
@@ -4013,9 +3956,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -4083,7 +4025,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4127,7 +4069,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -4155,14 +4096,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -4172,21 +4113,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -4200,6 +4138,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4271,7 +4210,6 @@ class InvoicesApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
@@ -4370,7 +4308,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -4401,14 +4338,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -4418,21 +4355,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -4446,6 +4380,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4515,7 +4450,6 @@ class InvoicesApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
@@ -4605,8 +4539,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // body params
         $_tempBody = null;
         if (isset($body)) {
@@ -4628,14 +4560,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -4645,21 +4577,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -4673,6 +4602,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4697,6 +4627,7 @@ class InvoicesApi
     public function invoicesPaymenttermGet($offset = null, $limit = '5', $sort = null)
     {
         list($response) = $this->invoicesPaymenttermGetWithHttpInfo($offset, $limit, $sort);
+
         return $response;
     }
 
@@ -4759,9 +4690,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -4833,7 +4763,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4865,7 +4795,6 @@ class InvoicesApi
      */
     protected function invoicesPaymenttermGetRequest($offset = null, $limit = '5', $sort = null)
     {
-
         $resourcePath = '/invoices/paymentterm';
         $formParams = [];
         $queryParams = [];
@@ -4886,7 +4815,6 @@ class InvoicesApi
             $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
-
         // body params
         $_tempBody = null;
 
@@ -4905,14 +4833,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -4922,21 +4850,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -4950,6 +4875,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4972,6 +4898,7 @@ class InvoicesApi
     public function invoicesPaymenttermIdGet($id)
     {
         list($response) = $this->invoicesPaymenttermIdGetWithHttpInfo($id);
+
         return $response;
     }
 
@@ -5032,9 +4959,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -5102,7 +5028,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5146,7 +5072,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -5174,14 +5099,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -5191,21 +5116,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -5219,6 +5141,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -5243,6 +5166,7 @@ class InvoicesApi
     public function invoicesPropositionGet($offset = null, $limit = '5', $sort = null)
     {
         list($response) = $this->invoicesPropositionGetWithHttpInfo($offset, $limit, $sort);
+
         return $response;
     }
 
@@ -5305,9 +5229,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -5379,7 +5302,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5411,7 +5334,6 @@ class InvoicesApi
      */
     protected function invoicesPropositionGetRequest($offset = null, $limit = '5', $sort = null)
     {
-
         $resourcePath = '/invoices/proposition';
         $formParams = [];
         $queryParams = [];
@@ -5432,7 +5354,6 @@ class InvoicesApi
             $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
-
         // body params
         $_tempBody = null;
 
@@ -5451,14 +5372,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -5468,21 +5389,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -5496,6 +5414,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -5520,6 +5439,7 @@ class InvoicesApi
     public function invoicesRemindersetGet($offset = null, $limit = '5', $sort = null)
     {
         list($response) = $this->invoicesRemindersetGetWithHttpInfo($offset, $limit, $sort);
+
         return $response;
     }
 
@@ -5582,9 +5502,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -5656,7 +5575,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5688,7 +5607,6 @@ class InvoicesApi
      */
     protected function invoicesRemindersetGetRequest($offset = null, $limit = '5', $sort = null)
     {
-
         $resourcePath = '/invoices/reminderset';
         $formParams = [];
         $queryParams = [];
@@ -5709,7 +5627,6 @@ class InvoicesApi
             $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
-
         // body params
         $_tempBody = null;
 
@@ -5728,14 +5645,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -5745,21 +5662,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -5773,6 +5687,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -5795,6 +5710,7 @@ class InvoicesApi
     public function invoicesRemindersetIdGet($id)
     {
         list($response) = $this->invoicesRemindersetIdGetWithHttpInfo($id);
+
         return $response;
     }
 
@@ -5855,9 +5771,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -5925,7 +5840,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5969,7 +5884,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -5997,14 +5911,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -6014,21 +5928,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -6042,6 +5953,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -6066,6 +5978,7 @@ class InvoicesApi
     public function invoicesRemindertemplateGet($offset = null, $limit = '5', $sort = null)
     {
         list($response) = $this->invoicesRemindertemplateGetWithHttpInfo($offset, $limit, $sort);
+
         return $response;
     }
 
@@ -6128,9 +6041,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -6202,7 +6114,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -6234,7 +6146,6 @@ class InvoicesApi
      */
     protected function invoicesRemindertemplateGetRequest($offset = null, $limit = '5', $sort = null)
     {
-
         $resourcePath = '/invoices/remindertemplate';
         $formParams = [];
         $queryParams = [];
@@ -6255,7 +6166,6 @@ class InvoicesApi
             $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
-
         // body params
         $_tempBody = null;
 
@@ -6274,14 +6184,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -6291,21 +6201,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -6319,6 +6226,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -6341,6 +6249,7 @@ class InvoicesApi
     public function invoicesRemindertemplateIdGet($id)
     {
         list($response) = $this->invoicesRemindertemplateIdGetWithHttpInfo($id);
+
         return $response;
     }
 
@@ -6401,9 +6310,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -6471,7 +6379,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -6515,7 +6423,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -6543,14 +6450,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -6560,21 +6467,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -6588,6 +6492,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -6612,6 +6517,7 @@ class InvoicesApi
     public function invoicesVatclassGet($offset = null, $limit = '5', $sort = null)
     {
         list($response) = $this->invoicesVatclassGetWithHttpInfo($offset, $limit, $sort);
+
         return $response;
     }
 
@@ -6674,9 +6580,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -6748,7 +6653,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -6780,7 +6685,6 @@ class InvoicesApi
      */
     protected function invoicesVatclassGetRequest($offset = null, $limit = '5', $sort = null)
     {
-
         $resourcePath = '/invoices/vatclass';
         $formParams = [];
         $queryParams = [];
@@ -6801,7 +6705,6 @@ class InvoicesApi
             $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
-
         // body params
         $_tempBody = null;
 
@@ -6820,14 +6723,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -6837,21 +6740,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -6865,6 +6765,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -6887,6 +6788,7 @@ class InvoicesApi
     public function invoicesVatclassIdGet($id)
     {
         list($response) = $this->invoicesVatclassIdGetWithHttpInfo($id);
+
         return $response;
     }
 
@@ -6947,9 +6849,8 @@ class InvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -7017,7 +6918,7 @@ class InvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -7061,7 +6962,6 @@ class InvoicesApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -7089,14 +6989,14 @@ class InvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -7106,21 +7006,18 @@ class InvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -7134,6 +7031,7 @@ class InvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

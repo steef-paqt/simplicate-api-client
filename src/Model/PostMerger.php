@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostMerger
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostMerger Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostMerger implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class PostMerger implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'source_id' => 'string',
-        'target_id' => 'string'
+        'target_id' => 'string',
     ];
 
     /**
@@ -68,7 +69,7 @@ class PostMerger implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'source_id' => null,
-        'target_id' => null
+        'target_id' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class PostMerger implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'source_id' => 'source_id',
-        'target_id' => 'target_id'
+        'target_id' => 'target_id',
     ];
 
     /**
@@ -109,7 +110,7 @@ class PostMerger implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'source_id' => 'setSourceId',
-        'target_id' => 'setTargetId'
+        'target_id' => 'setTargetId',
     ];
 
     /**
@@ -119,7 +120,7 @@ class PostMerger implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'source_id' => 'getSourceId',
-        'target_id' => 'getTargetId'
+        'target_id' => 'getTargetId',
     ];
 
     /**
@@ -163,10 +164,6 @@ class PostMerger implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class PostMerger implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets source_id
@@ -257,6 +253,7 @@ class PostMerger implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class PostMerger implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

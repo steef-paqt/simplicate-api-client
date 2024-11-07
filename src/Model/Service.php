@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Service
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Service Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Service implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -64,7 +65,7 @@ class Service implements ModelInterface, ArrayAccess
         'amount' => 'float',
         'price' => 'float',
         'track_hours' => 'bool',
-        'track_cost' => 'bool'
+        'track_cost' => 'bool',
     ];
 
     /**
@@ -80,7 +81,7 @@ class Service implements ModelInterface, ArrayAccess
         'amount' => 'float',
         'price' => 'float',
         'track_hours' => null,
-        'track_cost' => null
+        'track_cost' => null,
     ];
 
     /**
@@ -117,7 +118,7 @@ class Service implements ModelInterface, ArrayAccess
         'amount' => 'amount',
         'price' => 'price',
         'track_hours' => 'track_hours',
-        'track_cost' => 'track_cost'
+        'track_cost' => 'track_cost',
     ];
 
     /**
@@ -133,7 +134,7 @@ class Service implements ModelInterface, ArrayAccess
         'amount' => 'setAmount',
         'price' => 'setPrice',
         'track_hours' => 'setTrackHours',
-        'track_cost' => 'setTrackCost'
+        'track_cost' => 'setTrackCost',
     ];
 
     /**
@@ -149,7 +150,7 @@ class Service implements ModelInterface, ArrayAccess
         'amount' => 'getAmount',
         'price' => 'getPrice',
         'track_hours' => 'getTrackHours',
-        'track_cost' => 'getTrackCost'
+        'track_cost' => 'getTrackCost',
     ];
 
     /**
@@ -193,12 +194,10 @@ class Service implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const INVOICE_METHOD_HOURS = 'Hours';
-    const INVOICE_METHOD_FIXED_FEE = 'FixedFee';
-    const INVOICE_METHOD_SUBSCRIPTION = 'Subscription';
-    
+    public const INVOICE_METHOD_HOURS = 'Hours';
+    public const INVOICE_METHOD_FIXED_FEE = 'FixedFee';
+    public const INVOICE_METHOD_SUBSCRIPTION = 'Subscription';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -212,7 +211,6 @@ class Service implements ModelInterface, ArrayAccess
             self::INVOICE_METHOD_SUBSCRIPTION,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -269,7 +267,6 @@ class Service implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets default_service_id
@@ -471,6 +468,7 @@ class Service implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -545,5 +543,3 @@ class Service implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

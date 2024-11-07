@@ -1,4 +1,5 @@
 <?php
+
 /**
  * EmailMessage
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * EmailMessage Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EmailMessage implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -71,7 +72,7 @@ class EmailMessage implements ModelInterface, ArrayAccess
         'html_body' => 'string',
         'plain_text' => 'string',
         'attachments' => '\Swagger\Client\Model\EmailAttachment[]',
-        'linked_to' => '\Swagger\Client\Model\LinkedToEntity[]'
+        'linked_to' => '\Swagger\Client\Model\LinkedToEntity[]',
     ];
 
     /**
@@ -94,7 +95,7 @@ class EmailMessage implements ModelInterface, ArrayAccess
         'html_body' => null,
         'plain_text' => null,
         'attachments' => null,
-        'linked_to' => null
+        'linked_to' => null,
     ];
 
     /**
@@ -138,7 +139,7 @@ class EmailMessage implements ModelInterface, ArrayAccess
         'html_body' => 'html_body',
         'plain_text' => 'plain_text',
         'attachments' => 'attachments',
-        'linked_to' => 'linked_to'
+        'linked_to' => 'linked_to',
     ];
 
     /**
@@ -161,7 +162,7 @@ class EmailMessage implements ModelInterface, ArrayAccess
         'html_body' => 'setHtmlBody',
         'plain_text' => 'setPlainText',
         'attachments' => 'setAttachments',
-        'linked_to' => 'setLinkedTo'
+        'linked_to' => 'setLinkedTo',
     ];
 
     /**
@@ -184,7 +185,7 @@ class EmailMessage implements ModelInterface, ArrayAccess
         'html_body' => 'getHtmlBody',
         'plain_text' => 'getPlainText',
         'attachments' => 'getAttachments',
-        'linked_to' => 'getLinkedTo'
+        'linked_to' => 'getLinkedTo',
     ];
 
     /**
@@ -227,10 +228,6 @@ class EmailMessage implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -286,7 +283,6 @@ class EmailMessage implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -637,7 +633,7 @@ class EmailMessage implements ModelInterface, ArrayAccess
     /**
      * Sets linked_to
      *
-     * @param \Swagger\Client\Model\LinkedToEntity[] $linked_to 
+     * @param \Swagger\Client\Model\LinkedToEntity[] $linked_to
      *
      * @return $this
      */
@@ -647,6 +643,7 @@ class EmailMessage implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -721,5 +718,3 @@ class EmailMessage implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

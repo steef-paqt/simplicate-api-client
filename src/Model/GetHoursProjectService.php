@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetHoursProjectService
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetHoursProjectService Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetHoursProjectService implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -62,7 +63,7 @@ class GetHoursProjectService implements ModelInterface, ArrayAccess
         'start_date' => 'string',
         'until_date' => 'string',
         'purchase_start_date' => 'string',
-        'purchase_end_date' => 'string'
+        'purchase_end_date' => 'string',
     ];
 
     /**
@@ -76,7 +77,7 @@ class GetHoursProjectService implements ModelInterface, ArrayAccess
         'start_date' => null,
         'until_date' => null,
         'purchase_start_date' => null,
-        'purchase_end_date' => null
+        'purchase_end_date' => null,
     ];
 
     /**
@@ -111,7 +112,7 @@ class GetHoursProjectService implements ModelInterface, ArrayAccess
         'start_date' => 'start_date',
         'until_date' => 'until_date',
         'purchase_start_date' => 'purchase_start_date',
-        'purchase_end_date' => 'purchase_end_date'
+        'purchase_end_date' => 'purchase_end_date',
     ];
 
     /**
@@ -125,7 +126,7 @@ class GetHoursProjectService implements ModelInterface, ArrayAccess
         'start_date' => 'setStartDate',
         'until_date' => 'setUntilDate',
         'purchase_start_date' => 'setPurchaseStartDate',
-        'purchase_end_date' => 'setPurchaseEndDate'
+        'purchase_end_date' => 'setPurchaseEndDate',
     ];
 
     /**
@@ -139,7 +140,7 @@ class GetHoursProjectService implements ModelInterface, ArrayAccess
         'start_date' => 'getStartDate',
         'until_date' => 'getUntilDate',
         'purchase_start_date' => 'getPurchaseStartDate',
-        'purchase_end_date' => 'getPurchaseEndDate'
+        'purchase_end_date' => 'getPurchaseEndDate',
     ];
 
     /**
@@ -182,10 +183,6 @@ class GetHoursProjectService implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -232,7 +229,6 @@ class GetHoursProjectService implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -377,6 +373,7 @@ class GetHoursProjectService implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -451,5 +448,3 @@ class GetHoursProjectService implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

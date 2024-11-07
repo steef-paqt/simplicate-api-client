@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Expense
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Expense Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Expense implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -77,7 +78,7 @@ class Expense implements ModelInterface, ArrayAccess
         'note' => 'string',
         'service_purchase_start_date' => 'string',
         'service_purchase_end_date' => 'string',
-        'attachments' => '\Swagger\Client\Model\ExpenseAttachment[]'
+        'attachments' => '\Swagger\Client\Model\ExpenseAttachment[]',
     ];
 
     /**
@@ -106,7 +107,7 @@ class Expense implements ModelInterface, ArrayAccess
         'note' => null,
         'service_purchase_start_date' => null,
         'service_purchase_end_date' => null,
-        'attachments' => null
+        'attachments' => null,
     ];
 
     /**
@@ -156,7 +157,7 @@ class Expense implements ModelInterface, ArrayAccess
         'note' => 'note',
         'service_purchase_start_date' => 'service_purchase_start_date',
         'service_purchase_end_date' => 'service_purchase_end_date',
-        'attachments' => 'attachments'
+        'attachments' => 'attachments',
     ];
 
     /**
@@ -185,7 +186,7 @@ class Expense implements ModelInterface, ArrayAccess
         'note' => 'setNote',
         'service_purchase_start_date' => 'setServicePurchaseStartDate',
         'service_purchase_end_date' => 'setServicePurchaseEndDate',
-        'attachments' => 'setAttachments'
+        'attachments' => 'setAttachments',
     ];
 
     /**
@@ -214,7 +215,7 @@ class Expense implements ModelInterface, ArrayAccess
         'note' => 'getNote',
         'service_purchase_start_date' => 'getServicePurchaseStartDate',
         'service_purchase_end_date' => 'getServicePurchaseEndDate',
-        'attachments' => 'getAttachments'
+        'attachments' => 'getAttachments',
     ];
 
     /**
@@ -258,12 +259,10 @@ class Expense implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const INVOICE_STATUS_OPEN = 'open';
-    const INVOICE_STATUS_INVOICED = 'invoiced';
-    const INVOICE_STATUS_FLUSHED = 'flushed';
-    
+    public const INVOICE_STATUS_OPEN = 'open';
+    public const INVOICE_STATUS_INVOICED = 'invoiced';
+    public const INVOICE_STATUS_FLUSHED = 'flushed';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -277,7 +276,6 @@ class Expense implements ModelInterface, ArrayAccess
             self::INVOICE_STATUS_FLUSHED,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -347,7 +345,6 @@ class Expense implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -861,6 +858,7 @@ class Expense implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -935,5 +933,3 @@ class Expense implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

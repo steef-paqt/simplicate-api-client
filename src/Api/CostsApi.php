@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CostsApi
  * PHP version 5
@@ -103,6 +104,7 @@ class CostsApi
     public function costsCoststypeGet($offset = null, $limit = '5', $sort = null)
     {
         list($response) = $this->costsCoststypeGetWithHttpInfo($offset, $limit, $sort);
+
         return $response;
     }
 
@@ -165,9 +167,8 @@ class CostsApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -239,7 +240,7 @@ class CostsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -271,7 +272,6 @@ class CostsApi
      */
     protected function costsCoststypeGetRequest($offset = null, $limit = '5', $sort = null)
     {
-
         $resourcePath = '/costs/coststype';
         $formParams = [];
         $queryParams = [];
@@ -292,7 +292,6 @@ class CostsApi
             $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
-
         // body params
         $_tempBody = null;
 
@@ -311,14 +310,14 @@ class CostsApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -328,21 +327,18 @@ class CostsApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -356,6 +352,7 @@ class CostsApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -378,6 +375,7 @@ class CostsApi
     public function costsCoststypeIdGet($id)
     {
         list($response) = $this->costsCoststypeIdGetWithHttpInfo($id);
+
         return $response;
     }
 
@@ -438,9 +436,8 @@ class CostsApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -508,7 +505,7 @@ class CostsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -552,7 +549,6 @@ class CostsApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -580,14 +576,14 @@ class CostsApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -597,21 +593,18 @@ class CostsApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -625,6 +618,7 @@ class CostsApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -649,6 +643,7 @@ class CostsApi
     public function costsExpenseGet($offset = null, $limit = '5', $sort = null)
     {
         list($response) = $this->costsExpenseGetWithHttpInfo($offset, $limit, $sort);
+
         return $response;
     }
 
@@ -711,9 +706,8 @@ class CostsApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -785,7 +779,7 @@ class CostsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -817,7 +811,6 @@ class CostsApi
      */
     protected function costsExpenseGetRequest($offset = null, $limit = '5', $sort = null)
     {
-
         $resourcePath = '/costs/expense';
         $formParams = [];
         $queryParams = [];
@@ -838,7 +831,6 @@ class CostsApi
             $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
-
         // body params
         $_tempBody = null;
 
@@ -857,14 +849,14 @@ class CostsApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -874,21 +866,18 @@ class CostsApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -902,6 +891,7 @@ class CostsApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -924,6 +914,7 @@ class CostsApi
     public function costsExpenseIdGet($id)
     {
         list($response) = $this->costsExpenseIdGetWithHttpInfo($id);
+
         return $response;
     }
 
@@ -984,9 +975,8 @@ class CostsApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
             ];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1054,7 +1044,7 @@ class CostsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1098,7 +1088,6 @@ class CostsApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -1126,14 +1115,14 @@ class CostsApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -1143,21 +1132,18 @@ class CostsApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1171,6 +1157,7 @@ class CostsApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

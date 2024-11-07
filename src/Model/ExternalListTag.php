@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ExternalListTag
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * ExternalListTag Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class ExternalListTag implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class ExternalListTag implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'name' => 'string'
+        'name' => 'string',
     ];
 
     /**
@@ -68,7 +69,7 @@ class ExternalListTag implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-        'name' => null
+        'name' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class ExternalListTag implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'name' => 'name'
+        'name' => 'name',
     ];
 
     /**
@@ -109,7 +110,7 @@ class ExternalListTag implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'name' => 'setName'
+        'name' => 'setName',
     ];
 
     /**
@@ -119,7 +120,7 @@ class ExternalListTag implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'name' => 'getName'
+        'name' => 'getName',
     ];
 
     /**
@@ -163,10 +164,6 @@ class ExternalListTag implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class ExternalListTag implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -257,6 +253,7 @@ class ExternalListTag implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class ExternalListTag implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

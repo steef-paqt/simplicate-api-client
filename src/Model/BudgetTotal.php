@@ -1,4 +1,5 @@
 <?php
+
 /**
  * BudgetTotal
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * BudgetTotal Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class BudgetTotal implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class BudgetTotal implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'value_budget' => 'float',
         'value_spent' => 'float',
-        'value_invoiced' => 'float'
+        'value_invoiced' => 'float',
     ];
 
     /**
@@ -70,7 +71,7 @@ class BudgetTotal implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'value_budget' => 'float',
         'value_spent' => 'float',
-        'value_invoiced' => 'float'
+        'value_invoiced' => 'float',
     ];
 
     /**
@@ -102,7 +103,7 @@ class BudgetTotal implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'value_budget' => 'value_budget',
         'value_spent' => 'value_spent',
-        'value_invoiced' => 'value_invoiced'
+        'value_invoiced' => 'value_invoiced',
     ];
 
     /**
@@ -113,7 +114,7 @@ class BudgetTotal implements ModelInterface, ArrayAccess
     protected static $setters = [
         'value_budget' => 'setValueBudget',
         'value_spent' => 'setValueSpent',
-        'value_invoiced' => 'setValueInvoiced'
+        'value_invoiced' => 'setValueInvoiced',
     ];
 
     /**
@@ -124,7 +125,7 @@ class BudgetTotal implements ModelInterface, ArrayAccess
     protected static $getters = [
         'value_budget' => 'getValueBudget',
         'value_spent' => 'getValueSpent',
-        'value_invoiced' => 'getValueInvoiced'
+        'value_invoiced' => 'getValueInvoiced',
     ];
 
     /**
@@ -168,10 +169,6 @@ class BudgetTotal implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class BudgetTotal implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets value_budget
@@ -287,6 +283,7 @@ class BudgetTotal implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class BudgetTotal implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

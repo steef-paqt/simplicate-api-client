@@ -1,4 +1,5 @@
 <?php
+
 /**
  * UploadApi
  * PHP version 5
@@ -150,7 +151,6 @@ class UploadApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
@@ -249,7 +249,6 @@ class UploadApi
         $httpBody = '';
         $multipart = false;
 
-
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -280,14 +279,14 @@ class UploadApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -297,21 +296,18 @@ class UploadApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -325,6 +321,7 @@ class UploadApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -394,7 +391,6 @@ class UploadApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
-
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
@@ -484,8 +480,6 @@ class UploadApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // body params
         $_tempBody = null;
         if (isset($body)) {
@@ -507,14 +501,14 @@ class UploadApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
+
+            if ($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
+                if (is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -524,21 +518,18 @@ class UploadApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
                     ];
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -552,6 +543,7 @@ class UploadApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

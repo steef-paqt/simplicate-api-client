@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Message Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Message implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class Message implements ModelInterface, ArrayAccess
         'title' => 'string',
         'content_fields' => '\Swagger\Client\Model\ContentField[]',
         'content' => 'string',
-        'display_date' => 'string'
+        'display_date' => 'string',
     ];
 
     /**
@@ -72,7 +73,7 @@ class Message implements ModelInterface, ArrayAccess
         'title' => null,
         'content_fields' => null,
         'content' => null,
-        'display_date' => null
+        'display_date' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class Message implements ModelInterface, ArrayAccess
         'title' => 'title',
         'content_fields' => 'content_fields',
         'content' => 'content',
-        'display_date' => 'display_date'
+        'display_date' => 'display_date',
     ];
 
     /**
@@ -117,7 +118,7 @@ class Message implements ModelInterface, ArrayAccess
         'title' => 'setTitle',
         'content_fields' => 'setContentFields',
         'content' => 'setContent',
-        'display_date' => 'setDisplayDate'
+        'display_date' => 'setDisplayDate',
     ];
 
     /**
@@ -129,7 +130,7 @@ class Message implements ModelInterface, ArrayAccess
         'title' => 'getTitle',
         'content_fields' => 'getContentFields',
         'content' => 'getContent',
-        'display_date' => 'getDisplayDate'
+        'display_date' => 'getDisplayDate',
     ];
 
     /**
@@ -172,10 +173,6 @@ class Message implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class Message implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets title
@@ -317,6 +313,7 @@ class Message implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class Message implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

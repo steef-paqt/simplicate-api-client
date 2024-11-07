@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Installment
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Installment Class Doc Comment
@@ -201,9 +202,9 @@ class Installment implements ModelInterface, ArrayAccess
     const STATUS_OPEN = 'open';
     const STATUS_FLUSHED = 'flushed';
     const STATUS_INVOICED = 'invoiced';
-    
 
-    
+
+
     /**
      * Gets allowable values of the enum
      *
@@ -217,7 +218,7 @@ class Installment implements ModelInterface, ArrayAccess
             self::STATUS_INVOICED,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -575,5 +576,3 @@ class Installment implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

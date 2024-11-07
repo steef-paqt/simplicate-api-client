@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetContactPerson
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetContactPerson Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetContactPerson implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -67,7 +68,7 @@ class GetContactPerson implements ModelInterface, ArrayAccess
         'work_email' => 'string',
         'work_phone' => 'string',
         'work_mobile' => 'string',
-        'person_id' => 'string'
+        'person_id' => 'string',
     ];
 
     /**
@@ -86,7 +87,7 @@ class GetContactPerson implements ModelInterface, ArrayAccess
         'work_email' => null,
         'work_phone' => null,
         'work_mobile' => null,
-        'person_id' => null
+        'person_id' => null,
     ];
 
     /**
@@ -126,7 +127,7 @@ class GetContactPerson implements ModelInterface, ArrayAccess
         'work_email' => 'work_email',
         'work_phone' => 'work_phone',
         'work_mobile' => 'work_mobile',
-        'person_id' => 'person_id'
+        'person_id' => 'person_id',
     ];
 
     /**
@@ -145,7 +146,7 @@ class GetContactPerson implements ModelInterface, ArrayAccess
         'work_email' => 'setWorkEmail',
         'work_phone' => 'setWorkPhone',
         'work_mobile' => 'setWorkMobile',
-        'person_id' => 'setPersonId'
+        'person_id' => 'setPersonId',
     ];
 
     /**
@@ -164,7 +165,7 @@ class GetContactPerson implements ModelInterface, ArrayAccess
         'work_email' => 'getWorkEmail',
         'work_phone' => 'getWorkPhone',
         'work_mobile' => 'getWorkMobile',
-        'person_id' => 'getPersonId'
+        'person_id' => 'getPersonId',
     ];
 
     /**
@@ -207,10 +208,6 @@ class GetContactPerson implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -262,7 +259,6 @@ class GetContactPerson implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -527,6 +523,7 @@ class GetContactPerson implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -601,5 +598,3 @@ class GetContactPerson implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

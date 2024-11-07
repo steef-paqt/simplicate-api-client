@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Journal
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Journal Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Journal implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -68,7 +69,7 @@ class Journal implements ModelInterface, ArrayAccess
         'autocollect' => 'bool',
         'revenuegroup' => '\Swagger\Client\Model\RevenueGroup',
         'journal_lines' => '\Swagger\Client\Model\JournalLine[]',
-        'vat' => '\Swagger\Client\Model\JournalVat[]'
+        'vat' => '\Swagger\Client\Model\JournalVat[]',
     ];
 
     /**
@@ -88,7 +89,7 @@ class Journal implements ModelInterface, ArrayAccess
         'autocollect' => null,
         'revenuegroup' => null,
         'journal_lines' => null,
-        'vat' => null
+        'vat' => null,
     ];
 
     /**
@@ -129,7 +130,7 @@ class Journal implements ModelInterface, ArrayAccess
         'autocollect' => 'autocollect',
         'revenuegroup' => 'revenuegroup',
         'journal_lines' => 'journal_lines',
-        'vat' => 'vat'
+        'vat' => 'vat',
     ];
 
     /**
@@ -149,7 +150,7 @@ class Journal implements ModelInterface, ArrayAccess
         'autocollect' => 'setAutocollect',
         'revenuegroup' => 'setRevenuegroup',
         'journal_lines' => 'setJournalLines',
-        'vat' => 'setVat'
+        'vat' => 'setVat',
     ];
 
     /**
@@ -169,7 +170,7 @@ class Journal implements ModelInterface, ArrayAccess
         'autocollect' => 'getAutocollect',
         'revenuegroup' => 'getRevenuegroup',
         'journal_lines' => 'getJournalLines',
-        'vat' => 'getVat'
+        'vat' => 'getVat',
     ];
 
     /**
@@ -212,10 +213,6 @@ class Journal implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -268,7 +265,6 @@ class Journal implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets journalize_date
@@ -557,6 +553,7 @@ class Journal implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -631,5 +628,3 @@ class Journal implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

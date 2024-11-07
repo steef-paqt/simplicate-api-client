@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostQuote
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostQuote Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostQuote implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -62,7 +63,7 @@ class PostQuote implements ModelInterface, ArrayAccess
         'quote_subject' => 'string',
         'json' => 'string',
         'customer_reference' => 'string',
-        'is_blocked' => 'int'
+        'is_blocked' => 'int',
     ];
 
     /**
@@ -76,7 +77,7 @@ class PostQuote implements ModelInterface, ArrayAccess
         'quote_subject' => null,
         'json' => null,
         'customer_reference' => null,
-        'is_blocked' => null
+        'is_blocked' => null,
     ];
 
     /**
@@ -111,7 +112,7 @@ class PostQuote implements ModelInterface, ArrayAccess
         'quote_subject' => 'quote_subject',
         'json' => 'json',
         'customer_reference' => 'customer_reference',
-        'is_blocked' => 'is_blocked'
+        'is_blocked' => 'is_blocked',
     ];
 
     /**
@@ -125,7 +126,7 @@ class PostQuote implements ModelInterface, ArrayAccess
         'quote_subject' => 'setQuoteSubject',
         'json' => 'setJson',
         'customer_reference' => 'setCustomerReference',
-        'is_blocked' => 'setIsBlocked'
+        'is_blocked' => 'setIsBlocked',
     ];
 
     /**
@@ -139,7 +140,7 @@ class PostQuote implements ModelInterface, ArrayAccess
         'quote_subject' => 'getQuoteSubject',
         'json' => 'getJson',
         'customer_reference' => 'getCustomerReference',
-        'is_blocked' => 'getIsBlocked'
+        'is_blocked' => 'getIsBlocked',
     ];
 
     /**
@@ -182,10 +183,6 @@ class PostQuote implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -232,7 +229,6 @@ class PostQuote implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets quotetemplate_id
@@ -377,6 +373,7 @@ class PostQuote implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -451,5 +448,3 @@ class PostQuote implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

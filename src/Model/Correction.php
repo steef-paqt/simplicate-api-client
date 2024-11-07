@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Correction
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Correction Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Correction implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class Correction implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'amount' => 'float',
         'value' => 'float',
-        'last_correction_date' => 'string'
+        'last_correction_date' => 'string',
     ];
 
     /**
@@ -70,7 +71,7 @@ class Correction implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'amount' => 'float',
         'value' => 'float',
-        'last_correction_date' => null
+        'last_correction_date' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class Correction implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'amount' => 'amount',
         'value' => 'value',
-        'last_correction_date' => 'last_correction_date'
+        'last_correction_date' => 'last_correction_date',
     ];
 
     /**
@@ -113,7 +114,7 @@ class Correction implements ModelInterface, ArrayAccess
     protected static $setters = [
         'amount' => 'setAmount',
         'value' => 'setValue',
-        'last_correction_date' => 'setLastCorrectionDate'
+        'last_correction_date' => 'setLastCorrectionDate',
     ];
 
     /**
@@ -124,7 +125,7 @@ class Correction implements ModelInterface, ArrayAccess
     protected static $getters = [
         'amount' => 'getAmount',
         'value' => 'getValue',
-        'last_correction_date' => 'getLastCorrectionDate'
+        'last_correction_date' => 'getLastCorrectionDate',
     ];
 
     /**
@@ -168,10 +169,6 @@ class Correction implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class Correction implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets amount
@@ -287,6 +283,7 @@ class Correction implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class Correction implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

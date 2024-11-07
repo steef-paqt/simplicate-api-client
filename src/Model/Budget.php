@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Budget
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Budget Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Budget implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class Budget implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'hours' => '\Swagger\Client\Model\BudgetHours',
         'costs' => '\Swagger\Client\Model\BudgetCosts',
-        'total' => '\Swagger\Client\Model\BudgetTotal'
+        'total' => '\Swagger\Client\Model\BudgetTotal',
     ];
 
     /**
@@ -70,7 +71,7 @@ class Budget implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'hours' => null,
         'costs' => null,
-        'total' => null
+        'total' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class Budget implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'hours' => 'hours',
         'costs' => 'costs',
-        'total' => 'total'
+        'total' => 'total',
     ];
 
     /**
@@ -113,7 +114,7 @@ class Budget implements ModelInterface, ArrayAccess
     protected static $setters = [
         'hours' => 'setHours',
         'costs' => 'setCosts',
-        'total' => 'setTotal'
+        'total' => 'setTotal',
     ];
 
     /**
@@ -124,7 +125,7 @@ class Budget implements ModelInterface, ArrayAccess
     protected static $getters = [
         'hours' => 'getHours',
         'costs' => 'getCosts',
-        'total' => 'getTotal'
+        'total' => 'getTotal',
     ];
 
     /**
@@ -168,10 +169,6 @@ class Budget implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class Budget implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets hours
@@ -287,6 +283,7 @@ class Budget implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class Budget implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

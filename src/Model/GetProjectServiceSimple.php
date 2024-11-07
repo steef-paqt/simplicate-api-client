@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetProjectServiceSimple
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetProjectServiceSimple Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetProjectServiceSimple implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class GetProjectServiceSimple implements ModelInterface, ArrayAccess
         'name' => 'string',
         'default_service_id' => 'string',
         'revenue_group_id' => 'string',
-        'use_in_resource_planner' => 'bool'
+        'use_in_resource_planner' => 'bool',
     ];
 
     /**
@@ -74,7 +75,7 @@ class GetProjectServiceSimple implements ModelInterface, ArrayAccess
         'name' => null,
         'default_service_id' => null,
         'revenue_group_id' => null,
-        'use_in_resource_planner' => null
+        'use_in_resource_planner' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class GetProjectServiceSimple implements ModelInterface, ArrayAccess
         'name' => 'name',
         'default_service_id' => 'default_service_id',
         'revenue_group_id' => 'revenue_group_id',
-        'use_in_resource_planner' => 'use_in_resource_planner'
+        'use_in_resource_planner' => 'use_in_resource_planner',
     ];
 
     /**
@@ -121,7 +122,7 @@ class GetProjectServiceSimple implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'default_service_id' => 'setDefaultServiceId',
         'revenue_group_id' => 'setRevenueGroupId',
-        'use_in_resource_planner' => 'setUseInResourcePlanner'
+        'use_in_resource_planner' => 'setUseInResourcePlanner',
     ];
 
     /**
@@ -134,7 +135,7 @@ class GetProjectServiceSimple implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'default_service_id' => 'getDefaultServiceId',
         'revenue_group_id' => 'getRevenueGroupId',
-        'use_in_resource_planner' => 'getUseInResourcePlanner'
+        'use_in_resource_planner' => 'getUseInResourcePlanner',
     ];
 
     /**
@@ -177,10 +178,6 @@ class GetProjectServiceSimple implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class GetProjectServiceSimple implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -347,6 +343,7 @@ class GetProjectServiceSimple implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class GetProjectServiceSimple implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ExternalItemMetadataConfiguration
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * ExternalItemMetadataConfiguration Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'employee_id' => 'string',
         'has_external_agenda_integration' => 'bool',
-        'external_agenda_sync_method' => 'object'
+        'external_agenda_sync_method' => 'object',
     ];
 
     /**
@@ -70,7 +71,7 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'employee_id' => null,
         'has_external_agenda_integration' => null,
-        'external_agenda_sync_method' => null
+        'external_agenda_sync_method' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'employee_id' => 'employee_id',
         'has_external_agenda_integration' => 'has_external_agenda_integration',
-        'external_agenda_sync_method' => 'external_agenda_sync_method'
+        'external_agenda_sync_method' => 'external_agenda_sync_method',
     ];
 
     /**
@@ -113,7 +114,7 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
     protected static $setters = [
         'employee_id' => 'setEmployeeId',
         'has_external_agenda_integration' => 'setHasExternalAgendaIntegration',
-        'external_agenda_sync_method' => 'setExternalAgendaSyncMethod'
+        'external_agenda_sync_method' => 'setExternalAgendaSyncMethod',
     ];
 
     /**
@@ -124,7 +125,7 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
     protected static $getters = [
         'employee_id' => 'getEmployeeId',
         'has_external_agenda_integration' => 'getHasExternalAgendaIntegration',
-        'external_agenda_sync_method' => 'getExternalAgendaSyncMethod'
+        'external_agenda_sync_method' => 'getExternalAgendaSyncMethod',
     ];
 
     /**
@@ -168,10 +169,6 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets employee_id
@@ -287,6 +283,7 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

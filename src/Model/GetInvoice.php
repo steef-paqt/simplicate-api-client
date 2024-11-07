@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetInvoice
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetInvoice Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetInvoice implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -86,7 +87,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
         'subject' => 'string',
         'reference' => 'string',
         'project_id' => 'string',
-        'comments' => 'string'
+        'comments' => 'string',
     ];
 
     /**
@@ -124,7 +125,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
         'subject' => null,
         'reference' => null,
         'project_id' => null,
-        'comments' => null
+        'comments' => null,
     ];
 
     /**
@@ -183,7 +184,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
         'subject' => 'subject',
         'reference' => 'reference',
         'project_id' => 'project_id',
-        'comments' => 'comments'
+        'comments' => 'comments',
     ];
 
     /**
@@ -221,7 +222,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
         'subject' => 'setSubject',
         'reference' => 'setReference',
         'project_id' => 'setProjectId',
-        'comments' => 'setComments'
+        'comments' => 'setComments',
     ];
 
     /**
@@ -259,7 +260,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
         'subject' => 'getSubject',
         'reference' => 'getReference',
         'project_id' => 'getProjectId',
-        'comments' => 'getComments'
+        'comments' => 'getComments',
     ];
 
     /**
@@ -303,17 +304,15 @@ class GetInvoice implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const STATUS_CONCEPT = 'Concept';
-    const STATUS_SENT = 'Sent';
-    const STATUS_OVERDUE = 'Overdue';
-    const STATUS_PAID = 'Paid';
-    const SENDING_METHOD_POST = 'post';
-    const SENDING_METHOD_EMAIL = 'email';
-    const COMPOSITION_TYPE_LINES = 'lines';
-    const COMPOSITION_TYPE_SERVICE = 'service';
-    
+    public const STATUS_CONCEPT = 'Concept';
+    public const STATUS_SENT = 'Sent';
+    public const STATUS_OVERDUE = 'Overdue';
+    public const STATUS_PAID = 'Paid';
+    public const SENDING_METHOD_POST = 'post';
+    public const SENDING_METHOD_EMAIL = 'email';
+    public const COMPOSITION_TYPE_LINES = 'lines';
+    public const COMPOSITION_TYPE_SERVICE = 'service';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -328,7 +327,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
             self::STATUS_PAID,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      *
@@ -341,7 +340,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
             self::SENDING_METHOD_EMAIL,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      *
@@ -354,7 +353,6 @@ class GetInvoice implements ModelInterface, ArrayAccess
             self::COMPOSITION_TYPE_SERVICE,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -449,7 +447,6 @@ class GetInvoice implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -1197,6 +1194,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -1271,5 +1269,3 @@ class GetInvoice implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetHours
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetHours Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetHours implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -93,7 +94,7 @@ class GetHours implements ModelInterface, ArrayAccess
         'address' => '\Swagger\Client\Model\Address',
         'assignment_id' => 'string',
         'should_sync_to_cronofy' => 'bool',
-        'source' => 'string'
+        'source' => 'string',
     ];
 
     /**
@@ -138,7 +139,7 @@ class GetHours implements ModelInterface, ArrayAccess
         'address' => null,
         'assignment_id' => null,
         'should_sync_to_cronofy' => null,
-        'source' => null
+        'source' => null,
     ];
 
     /**
@@ -204,7 +205,7 @@ class GetHours implements ModelInterface, ArrayAccess
         'address' => 'address',
         'assignment_id' => 'assignment_id',
         'should_sync_to_cronofy' => 'should_sync_to_cronofy',
-        'source' => 'source'
+        'source' => 'source',
     ];
 
     /**
@@ -249,7 +250,7 @@ class GetHours implements ModelInterface, ArrayAccess
         'address' => 'setAddress',
         'assignment_id' => 'setAssignmentId',
         'should_sync_to_cronofy' => 'setShouldSyncToCronofy',
-        'source' => 'setSource'
+        'source' => 'setSource',
     ];
 
     /**
@@ -294,7 +295,7 @@ class GetHours implements ModelInterface, ArrayAccess
         'address' => 'getAddress',
         'assignment_id' => 'getAssignmentId',
         'should_sync_to_cronofy' => 'getShouldSyncToCronofy',
-        'source' => 'getSource'
+        'source' => 'getSource',
     ];
 
     /**
@@ -338,15 +339,13 @@ class GetHours implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const INVOICE_STATUS_FLUSHED = 'flushed';
-    const INVOICE_STATUS_INVOICED = 'invoiced';
-    const INVOICE_STATUS_INDIRECTLY = 'indirectly';
-    const SOURCE_SCHEDULE = 'schedule';
-    const SOURCE_TIMER = 'timer';
-    const SOURCE_TIMESHEET = 'timesheet';
-    
+    public const INVOICE_STATUS_FLUSHED = 'flushed';
+    public const INVOICE_STATUS_INVOICED = 'invoiced';
+    public const INVOICE_STATUS_INDIRECTLY = 'indirectly';
+    public const SOURCE_SCHEDULE = 'schedule';
+    public const SOURCE_TIMER = 'timer';
+    public const SOURCE_TIMESHEET = 'timesheet';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -360,7 +359,7 @@ class GetHours implements ModelInterface, ArrayAccess
             self::INVOICE_STATUS_INDIRECTLY,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      *
@@ -374,7 +373,6 @@ class GetHours implements ModelInterface, ArrayAccess
             self::SOURCE_TIMESHEET,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -468,7 +466,6 @@ class GetHours implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -1375,6 +1372,7 @@ class GetHours implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -1449,5 +1447,3 @@ class GetHours implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostAssignment
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostAssignment Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostAssignment implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -67,7 +68,7 @@ class PostAssignment implements ModelInterface, ArrayAccess
         'hours_type' => 'string',
         'description' => 'string',
         'created_at' => 'string',
-        'updated_at' => 'string'
+        'updated_at' => 'string',
     ];
 
     /**
@@ -86,7 +87,7 @@ class PostAssignment implements ModelInterface, ArrayAccess
         'hours_type' => null,
         'description' => null,
         'created_at' => null,
-        'updated_at' => null
+        'updated_at' => null,
     ];
 
     /**
@@ -126,7 +127,7 @@ class PostAssignment implements ModelInterface, ArrayAccess
         'hours_type' => 'hours_type',
         'description' => 'description',
         'created_at' => 'created_at',
-        'updated_at' => 'updated_at'
+        'updated_at' => 'updated_at',
     ];
 
     /**
@@ -145,7 +146,7 @@ class PostAssignment implements ModelInterface, ArrayAccess
         'hours_type' => 'setHoursType',
         'description' => 'setDescription',
         'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt'
+        'updated_at' => 'setUpdatedAt',
     ];
 
     /**
@@ -164,7 +165,7 @@ class PostAssignment implements ModelInterface, ArrayAccess
         'hours_type' => 'getHoursType',
         'description' => 'getDescription',
         'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt'
+        'updated_at' => 'getUpdatedAt',
     ];
 
     /**
@@ -208,11 +209,9 @@ class PostAssignment implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const HOURS_TYPE_PER_WEEK = 'per_week';
-    const HOURS_TYPE_TOTAL = 'total';
-    
+    public const HOURS_TYPE_PER_WEEK = 'per_week';
+    public const HOURS_TYPE_TOTAL = 'total';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -225,7 +224,6 @@ class PostAssignment implements ModelInterface, ArrayAccess
             self::HOURS_TYPE_TOTAL,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -285,7 +283,6 @@ class PostAssignment implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets start_date
@@ -559,6 +556,7 @@ class PostAssignment implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -633,5 +631,3 @@ class PostAssignment implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

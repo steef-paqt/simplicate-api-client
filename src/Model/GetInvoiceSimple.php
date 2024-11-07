@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetInvoiceSimple
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetInvoiceSimple Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetInvoiceSimple implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
         'id' => 'string',
         'invoice_number' => 'string',
         'invoice_date' => 'string',
-        'status' => '\Swagger\Client\Model\InvoiceStatus'
+        'status' => '\Swagger\Client\Model\InvoiceStatus',
     ];
 
     /**
@@ -72,7 +73,7 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
         'id' => null,
         'invoice_number' => null,
         'invoice_date' => null,
-        'status' => null
+        'status' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
         'id' => 'id',
         'invoice_number' => 'invoice_number',
         'invoice_date' => 'invoice_date',
-        'status' => 'status'
+        'status' => 'status',
     ];
 
     /**
@@ -117,7 +118,7 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'invoice_number' => 'setInvoiceNumber',
         'invoice_date' => 'setInvoiceDate',
-        'status' => 'setStatus'
+        'status' => 'setStatus',
     ];
 
     /**
@@ -129,7 +130,7 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'invoice_number' => 'getInvoiceNumber',
         'invoice_date' => 'getInvoiceDate',
-        'status' => 'getStatus'
+        'status' => 'getStatus',
     ];
 
     /**
@@ -172,10 +173,6 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -317,6 +313,7 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

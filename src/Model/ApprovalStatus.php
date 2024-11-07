@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ApprovalStatus
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * ApprovalStatus Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class ApprovalStatus implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class ApprovalStatus implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'label' => 'string',
-        'description' => 'string'
+        'description' => 'string',
     ];
 
     /**
@@ -68,7 +69,7 @@ class ApprovalStatus implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'label' => null,
-        'description' => null
+        'description' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class ApprovalStatus implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'label' => 'label',
-        'description' => 'description'
+        'description' => 'description',
     ];
 
     /**
@@ -109,7 +110,7 @@ class ApprovalStatus implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'label' => 'setLabel',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
     ];
 
     /**
@@ -119,7 +120,7 @@ class ApprovalStatus implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'label' => 'getLabel',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
     ];
 
     /**
@@ -163,10 +164,6 @@ class ApprovalStatus implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class ApprovalStatus implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets label
@@ -257,6 +253,7 @@ class ApprovalStatus implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class ApprovalStatus implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

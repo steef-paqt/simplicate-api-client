@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetPersonDebtorSimple
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetPersonDebtorSimple Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
         'relation_type' => '\Swagger\Client\Model\RelationType',
         'id' => 'string',
         'full_name' => 'string',
-        'relation_number' => 'string'
+        'relation_number' => 'string',
     ];
 
     /**
@@ -72,7 +73,7 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
         'relation_type' => null,
         'id' => null,
         'full_name' => null,
-        'relation_number' => null
+        'relation_number' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
         'relation_type' => 'relation_type',
         'id' => 'id',
         'full_name' => 'full_name',
-        'relation_number' => 'relation_number'
+        'relation_number' => 'relation_number',
     ];
 
     /**
@@ -117,7 +118,7 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
         'relation_type' => 'setRelationType',
         'id' => 'setId',
         'full_name' => 'setFullName',
-        'relation_number' => 'setRelationNumber'
+        'relation_number' => 'setRelationNumber',
     ];
 
     /**
@@ -129,7 +130,7 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
         'relation_type' => 'getRelationType',
         'id' => 'getId',
         'full_name' => 'getFullName',
-        'relation_number' => 'getRelationNumber'
+        'relation_number' => 'getRelationNumber',
     ];
 
     /**
@@ -172,10 +173,6 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets relation_type
@@ -317,6 +313,7 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

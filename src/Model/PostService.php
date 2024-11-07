@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostService
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostService Class Doc Comment
@@ -209,9 +210,9 @@ class PostService implements ModelInterface, ArrayAccess
     }
 
     const INVOICE_METHOD_FIXED_FEE = 'FixedFee';
-    
 
-    
+
+
     /**
      * Gets allowable values of the enum
      *
@@ -223,7 +224,7 @@ class PostService implements ModelInterface, ArrayAccess
             self::INVOICE_METHOD_FIXED_FEE,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values
@@ -631,5 +632,3 @@ class PostService implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

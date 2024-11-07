@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TimetableWeekDay
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * TimetableWeekDay Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class TimetableWeekDay implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'start_time' => 'float',
         'end_time' => 'float',
-        'hours' => 'float'
+        'hours' => 'float',
     ];
 
     /**
@@ -70,7 +71,7 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'start_time' => 'float',
         'end_time' => 'float',
-        'hours' => 'float'
+        'hours' => 'float',
     ];
 
     /**
@@ -102,7 +103,7 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'start_time' => 'start_time',
         'end_time' => 'end_time',
-        'hours' => 'hours'
+        'hours' => 'hours',
     ];
 
     /**
@@ -113,7 +114,7 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
     protected static $setters = [
         'start_time' => 'setStartTime',
         'end_time' => 'setEndTime',
-        'hours' => 'setHours'
+        'hours' => 'setHours',
     ];
 
     /**
@@ -124,7 +125,7 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
     protected static $getters = [
         'start_time' => 'getStartTime',
         'end_time' => 'getEndTime',
-        'hours' => 'getHours'
+        'hours' => 'getHours',
     ];
 
     /**
@@ -168,10 +169,6 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets start_time
@@ -287,6 +283,7 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

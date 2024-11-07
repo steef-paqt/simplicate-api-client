@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ContentField
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * ContentField Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class ContentField implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class ContentField implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'title' => 'string',
-        'value' => 'string'
+        'value' => 'string',
     ];
 
     /**
@@ -68,7 +69,7 @@ class ContentField implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'title' => null,
-        'value' => null
+        'value' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class ContentField implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'title' => 'title',
-        'value' => 'value'
+        'value' => 'value',
     ];
 
     /**
@@ -109,7 +110,7 @@ class ContentField implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'title' => 'setTitle',
-        'value' => 'setValue'
+        'value' => 'setValue',
     ];
 
     /**
@@ -119,7 +120,7 @@ class ContentField implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'title' => 'getTitle',
-        'value' => 'getValue'
+        'value' => 'getValue',
     ];
 
     /**
@@ -163,10 +164,6 @@ class ContentField implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class ContentField implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets title
@@ -257,6 +253,7 @@ class ContentField implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class ContentField implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

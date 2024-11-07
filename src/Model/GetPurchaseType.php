@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetPurchaseType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetPurchaseType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetPurchaseType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -63,7 +64,7 @@ class GetPurchaseType implements ModelInterface, ArrayAccess
         'tariff' => 'float',
         'is_unit_tariff' => 'bool',
         'unit_name' => 'string',
-        'is_attachment_allowed' => 'bool'
+        'is_attachment_allowed' => 'bool',
     ];
 
     /**
@@ -78,7 +79,7 @@ class GetPurchaseType implements ModelInterface, ArrayAccess
         'tariff' => 'float',
         'is_unit_tariff' => null,
         'unit_name' => null,
-        'is_attachment_allowed' => null
+        'is_attachment_allowed' => null,
     ];
 
     /**
@@ -114,7 +115,7 @@ class GetPurchaseType implements ModelInterface, ArrayAccess
         'tariff' => 'tariff',
         'is_unit_tariff' => 'is_unit_tariff',
         'unit_name' => 'unit_name',
-        'is_attachment_allowed' => 'is_attachment_allowed'
+        'is_attachment_allowed' => 'is_attachment_allowed',
     ];
 
     /**
@@ -129,7 +130,7 @@ class GetPurchaseType implements ModelInterface, ArrayAccess
         'tariff' => 'setTariff',
         'is_unit_tariff' => 'setIsUnitTariff',
         'unit_name' => 'setUnitName',
-        'is_attachment_allowed' => 'setIsAttachmentAllowed'
+        'is_attachment_allowed' => 'setIsAttachmentAllowed',
     ];
 
     /**
@@ -144,7 +145,7 @@ class GetPurchaseType implements ModelInterface, ArrayAccess
         'tariff' => 'getTariff',
         'is_unit_tariff' => 'getIsUnitTariff',
         'unit_name' => 'getUnitName',
-        'is_attachment_allowed' => 'getIsAttachmentAllowed'
+        'is_attachment_allowed' => 'getIsAttachmentAllowed',
     ];
 
     /**
@@ -187,10 +188,6 @@ class GetPurchaseType implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -238,7 +235,6 @@ class GetPurchaseType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -407,6 +403,7 @@ class GetPurchaseType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -481,5 +478,3 @@ class GetPurchaseType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

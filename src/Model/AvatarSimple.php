@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AvatarSimple
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * AvatarSimple Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class AvatarSimple implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class AvatarSimple implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'initials' => 'string',
-        'color' => 'string'
+        'color' => 'string',
     ];
 
     /**
@@ -68,7 +69,7 @@ class AvatarSimple implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'initials' => null,
-        'color' => null
+        'color' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class AvatarSimple implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'initials' => 'initials',
-        'color' => 'color'
+        'color' => 'color',
     ];
 
     /**
@@ -109,7 +110,7 @@ class AvatarSimple implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'initials' => 'setInitials',
-        'color' => 'setColor'
+        'color' => 'setColor',
     ];
 
     /**
@@ -119,7 +120,7 @@ class AvatarSimple implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'initials' => 'getInitials',
-        'color' => 'getColor'
+        'color' => 'getColor',
     ];
 
     /**
@@ -163,10 +164,6 @@ class AvatarSimple implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class AvatarSimple implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets initials
@@ -257,6 +253,7 @@ class AvatarSimple implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class AvatarSimple implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

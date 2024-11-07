@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetDocumentType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetDocumentType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetDocumentType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -71,7 +72,7 @@ class GetDocumentType implements ModelInterface, ArrayAccess
         'is_for_invoice' => 'bool',
         'is_for_myorganizationprofile' => 'bool',
         'is_blocked' => 'bool',
-        'is_visible_on_all' => 'bool'
+        'is_visible_on_all' => 'bool',
     ];
 
     /**
@@ -94,7 +95,7 @@ class GetDocumentType implements ModelInterface, ArrayAccess
         'is_for_invoice' => null,
         'is_for_myorganizationprofile' => null,
         'is_blocked' => null,
-        'is_visible_on_all' => null
+        'is_visible_on_all' => null,
     ];
 
     /**
@@ -138,7 +139,7 @@ class GetDocumentType implements ModelInterface, ArrayAccess
         'is_for_invoice' => 'is_for_invoice',
         'is_for_myorganizationprofile' => 'is_for_myorganizationprofile',
         'is_blocked' => 'is_blocked',
-        'is_visible_on_all' => 'is_visible_on_all'
+        'is_visible_on_all' => 'is_visible_on_all',
     ];
 
     /**
@@ -161,7 +162,7 @@ class GetDocumentType implements ModelInterface, ArrayAccess
         'is_for_invoice' => 'setIsForInvoice',
         'is_for_myorganizationprofile' => 'setIsForMyorganizationprofile',
         'is_blocked' => 'setIsBlocked',
-        'is_visible_on_all' => 'setIsVisibleOnAll'
+        'is_visible_on_all' => 'setIsVisibleOnAll',
     ];
 
     /**
@@ -184,7 +185,7 @@ class GetDocumentType implements ModelInterface, ArrayAccess
         'is_for_invoice' => 'getIsForInvoice',
         'is_for_myorganizationprofile' => 'getIsForMyorganizationprofile',
         'is_blocked' => 'getIsBlocked',
-        'is_visible_on_all' => 'getIsVisibleOnAll'
+        'is_visible_on_all' => 'getIsVisibleOnAll',
     ];
 
     /**
@@ -227,10 +228,6 @@ class GetDocumentType implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -286,7 +283,6 @@ class GetDocumentType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -647,6 +643,7 @@ class GetDocumentType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -721,5 +718,3 @@ class GetDocumentType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

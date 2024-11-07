@@ -1,4 +1,5 @@
 <?php
+
 /**
  * RestError
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * RestError Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class RestError implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class RestError implements ModelInterface, ArrayAccess
         'type' => 'string',
         'message' => 'string',
         'translated_message' => 'string',
-        'error_message' => 'string'
+        'error_message' => 'string',
     ];
 
     /**
@@ -74,7 +75,7 @@ class RestError implements ModelInterface, ArrayAccess
         'type' => null,
         'message' => null,
         'translated_message' => null,
-        'error_message' => null
+        'error_message' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class RestError implements ModelInterface, ArrayAccess
         'type' => 'type',
         'message' => 'message',
         'translated_message' => 'translated_message',
-        'error_message' => 'error_message'
+        'error_message' => 'error_message',
     ];
 
     /**
@@ -121,7 +122,7 @@ class RestError implements ModelInterface, ArrayAccess
         'type' => 'setType',
         'message' => 'setMessage',
         'translated_message' => 'setTranslatedMessage',
-        'error_message' => 'setErrorMessage'
+        'error_message' => 'setErrorMessage',
     ];
 
     /**
@@ -134,7 +135,7 @@ class RestError implements ModelInterface, ArrayAccess
         'type' => 'getType',
         'message' => 'getMessage',
         'translated_message' => 'getTranslatedMessage',
-        'error_message' => 'getErrorMessage'
+        'error_message' => 'getErrorMessage',
     ];
 
     /**
@@ -178,12 +179,10 @@ class RestError implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const TYPE_VALIDATION = 'Validation';
-    const TYPE_DATABASE = 'Database';
-    const TYPE_SERVER = 'Server';
-    
+    public const TYPE_VALIDATION = 'Validation';
+    public const TYPE_DATABASE = 'Database';
+    public const TYPE_SERVER = 'Server';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -197,7 +196,6 @@ class RestError implements ModelInterface, ArrayAccess
             self::TYPE_SERVER,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -251,7 +249,6 @@ class RestError implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets code
@@ -381,6 +378,7 @@ class RestError implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -455,5 +453,3 @@ class RestError implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

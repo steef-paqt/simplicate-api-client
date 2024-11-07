@@ -1,4 +1,5 @@
 <?php
+
 /**
  * RelationType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * RelationType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class RelationType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class RelationType implements ModelInterface, ArrayAccess
         'id' => 'string',
         'label' => 'string',
         'color' => 'string',
-        'type' => 'string'
+        'type' => 'string',
     ];
 
     /**
@@ -72,7 +73,7 @@ class RelationType implements ModelInterface, ArrayAccess
         'id' => null,
         'label' => null,
         'color' => null,
-        'type' => null
+        'type' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class RelationType implements ModelInterface, ArrayAccess
         'id' => 'id',
         'label' => 'label',
         'color' => 'color',
-        'type' => 'type'
+        'type' => 'type',
     ];
 
     /**
@@ -117,7 +118,7 @@ class RelationType implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'label' => 'setLabel',
         'color' => 'setColor',
-        'type' => 'setType'
+        'type' => 'setType',
     ];
 
     /**
@@ -129,7 +130,7 @@ class RelationType implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'label' => 'getLabel',
         'color' => 'getColor',
-        'type' => 'getType'
+        'type' => 'getType',
     ];
 
     /**
@@ -172,10 +173,6 @@ class RelationType implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class RelationType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -317,6 +313,7 @@ class RelationType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class RelationType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

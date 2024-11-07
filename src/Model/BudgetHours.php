@@ -1,4 +1,5 @@
 <?php
+
 /**
  * BudgetHours
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * BudgetHours Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class BudgetHours implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class BudgetHours implements ModelInterface, ArrayAccess
         'amount_budget' => 'float',
         'amount_spent' => 'float',
         'value_budget' => 'float',
-        'value_spent' => 'float'
+        'value_spent' => 'float',
     ];
 
     /**
@@ -72,7 +73,7 @@ class BudgetHours implements ModelInterface, ArrayAccess
         'amount_budget' => 'float',
         'amount_spent' => 'float',
         'value_budget' => 'float',
-        'value_spent' => 'float'
+        'value_spent' => 'float',
     ];
 
     /**
@@ -105,7 +106,7 @@ class BudgetHours implements ModelInterface, ArrayAccess
         'amount_budget' => 'amount_budget',
         'amount_spent' => 'amount_spent',
         'value_budget' => 'value_budget',
-        'value_spent' => 'value_spent'
+        'value_spent' => 'value_spent',
     ];
 
     /**
@@ -117,7 +118,7 @@ class BudgetHours implements ModelInterface, ArrayAccess
         'amount_budget' => 'setAmountBudget',
         'amount_spent' => 'setAmountSpent',
         'value_budget' => 'setValueBudget',
-        'value_spent' => 'setValueSpent'
+        'value_spent' => 'setValueSpent',
     ];
 
     /**
@@ -129,7 +130,7 @@ class BudgetHours implements ModelInterface, ArrayAccess
         'amount_budget' => 'getAmountBudget',
         'amount_spent' => 'getAmountSpent',
         'value_budget' => 'getValueBudget',
-        'value_spent' => 'getValueSpent'
+        'value_spent' => 'getValueSpent',
     ];
 
     /**
@@ -172,10 +173,6 @@ class BudgetHours implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class BudgetHours implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets amount_budget
@@ -317,6 +313,7 @@ class BudgetHours implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class BudgetHours implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

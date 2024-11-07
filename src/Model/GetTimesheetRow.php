@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetTimesheetRow
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetTimesheetRow Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetTimesheetRow implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -70,7 +71,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
         'project_id' => 'string',
         'project_service_id' => 'string',
         'itemtype_id' => 'string',
-        'type' => 'string'
+        'type' => 'string',
     ];
 
     /**
@@ -92,7 +93,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
         'project_id' => null,
         'project_service_id' => null,
         'itemtype_id' => null,
-        'type' => null
+        'type' => null,
     ];
 
     /**
@@ -135,7 +136,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
         'project_id' => 'project_id',
         'project_service_id' => 'project_service_id',
         'itemtype_id' => 'itemtype_id',
-        'type' => 'type'
+        'type' => 'type',
     ];
 
     /**
@@ -157,7 +158,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
         'project_id' => 'setProjectId',
         'project_service_id' => 'setProjectServiceId',
         'itemtype_id' => 'setItemtypeId',
-        'type' => 'setType'
+        'type' => 'setType',
     ];
 
     /**
@@ -179,7 +180,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
         'project_id' => 'getProjectId',
         'project_service_id' => 'getProjectServiceId',
         'itemtype_id' => 'getItemtypeId',
-        'type' => 'getType'
+        'type' => 'getType',
     ];
 
     /**
@@ -223,12 +224,10 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const TYPE_HOURS = 'hours';
-    const TYPE_COSTS = 'costs';
-    const TYPE_MILEAGE = 'mileage';
-    
+    public const TYPE_HOURS = 'hours';
+    public const TYPE_COSTS = 'costs';
+    public const TYPE_MILEAGE = 'mileage';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -242,7 +241,6 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
             self::TYPE_MILEAGE,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -305,7 +303,6 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -651,6 +648,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -725,5 +723,3 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetSalesServiceHoursType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetSalesServiceHoursType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetSalesServiceHoursType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class GetSalesServiceHoursType implements ModelInterface, ArrayAccess
         'hourstype' => '\Swagger\Client\Model\GetHoursType',
         'budgeted_amount' => 'float',
         'tariff' => 'float',
-        'billable' => 'bool'
+        'billable' => 'bool',
     ];
 
     /**
@@ -74,7 +75,7 @@ class GetSalesServiceHoursType implements ModelInterface, ArrayAccess
         'hourstype' => null,
         'budgeted_amount' => 'float',
         'tariff' => 'float',
-        'billable' => null
+        'billable' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class GetSalesServiceHoursType implements ModelInterface, ArrayAccess
         'hourstype' => 'hourstype',
         'budgeted_amount' => 'budgeted_amount',
         'tariff' => 'tariff',
-        'billable' => 'billable'
+        'billable' => 'billable',
     ];
 
     /**
@@ -121,7 +122,7 @@ class GetSalesServiceHoursType implements ModelInterface, ArrayAccess
         'hourstype' => 'setHourstype',
         'budgeted_amount' => 'setBudgetedAmount',
         'tariff' => 'setTariff',
-        'billable' => 'setBillable'
+        'billable' => 'setBillable',
     ];
 
     /**
@@ -134,7 +135,7 @@ class GetSalesServiceHoursType implements ModelInterface, ArrayAccess
         'hourstype' => 'getHourstype',
         'budgeted_amount' => 'getBudgetedAmount',
         'tariff' => 'getTariff',
-        'billable' => 'getBillable'
+        'billable' => 'getBillable',
     ];
 
     /**
@@ -177,10 +178,6 @@ class GetSalesServiceHoursType implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class GetSalesServiceHoursType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -347,6 +343,7 @@ class GetSalesServiceHoursType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class GetSalesServiceHoursType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

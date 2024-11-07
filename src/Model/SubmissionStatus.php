@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SubmissionStatus
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * SubmissionStatus Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class SubmissionStatus implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'employee_id' => 'string',
         'date' => 'string',
-        'status' => 'string'
+        'status' => 'string',
     ];
 
     /**
@@ -70,7 +71,7 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'employee_id' => null,
         'date' => null,
-        'status' => null
+        'status' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'employee_id' => 'employee_id',
         'date' => 'date',
-        'status' => 'status'
+        'status' => 'status',
     ];
 
     /**
@@ -113,7 +114,7 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
     protected static $setters = [
         'employee_id' => 'setEmployeeId',
         'date' => 'setDate',
-        'status' => 'setStatus'
+        'status' => 'setStatus',
     ];
 
     /**
@@ -124,7 +125,7 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
     protected static $getters = [
         'employee_id' => 'getEmployeeId',
         'date' => 'getDate',
-        'status' => 'getStatus'
+        'status' => 'getStatus',
     ];
 
     /**
@@ -168,12 +169,10 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const STATUS_SUBMITTED = 'submitted';
-    const STATUS_YET_TO_TURN_IN = 'yet_to_turn_in';
-    const STATUS_NO_HOURS = 'no_hours';
-    
+    public const STATUS_SUBMITTED = 'submitted';
+    public const STATUS_YET_TO_TURN_IN = 'yet_to_turn_in';
+    public const STATUS_NO_HOURS = 'no_hours';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -187,7 +186,6 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
             self::STATUS_NO_HOURS,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -239,7 +237,6 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets employee_id
@@ -321,6 +318,7 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -395,5 +393,3 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

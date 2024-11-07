@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ProjectEmployee
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * ProjectEmployee Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class ProjectEmployee implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
         'id' => 'string',
         'project_id' => 'string',
         'employee_id' => 'string',
-        'tariff' => 'float'
+        'tariff' => 'float',
     ];
 
     /**
@@ -72,7 +73,7 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
         'id' => null,
         'project_id' => null,
         'employee_id' => null,
-        'tariff' => 'float'
+        'tariff' => 'float',
     ];
 
     /**
@@ -105,7 +106,7 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
         'id' => 'id',
         'project_id' => 'project_id',
         'employee_id' => 'employee_id',
-        'tariff' => 'tariff'
+        'tariff' => 'tariff',
     ];
 
     /**
@@ -117,7 +118,7 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'project_id' => 'setProjectId',
         'employee_id' => 'setEmployeeId',
-        'tariff' => 'setTariff'
+        'tariff' => 'setTariff',
     ];
 
     /**
@@ -129,7 +130,7 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'project_id' => 'getProjectId',
         'employee_id' => 'getEmployeeId',
-        'tariff' => 'getTariff'
+        'tariff' => 'getTariff',
     ];
 
     /**
@@ -172,10 +173,6 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -317,6 +313,7 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

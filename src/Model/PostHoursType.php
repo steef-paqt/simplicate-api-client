@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostHoursType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostHoursType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostHoursType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -62,7 +63,7 @@ class PostHoursType implements ModelInterface, ArrayAccess
         'label' => 'string',
         'tariff' => 'string',
         'blocked' => 'bool',
-        'color' => 'string'
+        'color' => 'string',
     ];
 
     /**
@@ -76,7 +77,7 @@ class PostHoursType implements ModelInterface, ArrayAccess
         'label' => null,
         'tariff' => null,
         'blocked' => null,
-        'color' => null
+        'color' => null,
     ];
 
     /**
@@ -111,7 +112,7 @@ class PostHoursType implements ModelInterface, ArrayAccess
         'label' => 'label',
         'tariff' => 'tariff',
         'blocked' => 'blocked',
-        'color' => 'color'
+        'color' => 'color',
     ];
 
     /**
@@ -125,7 +126,7 @@ class PostHoursType implements ModelInterface, ArrayAccess
         'label' => 'setLabel',
         'tariff' => 'setTariff',
         'blocked' => 'setBlocked',
-        'color' => 'setColor'
+        'color' => 'setColor',
     ];
 
     /**
@@ -139,7 +140,7 @@ class PostHoursType implements ModelInterface, ArrayAccess
         'label' => 'getLabel',
         'tariff' => 'getTariff',
         'blocked' => 'getBlocked',
-        'color' => 'getColor'
+        'color' => 'getColor',
     ];
 
     /**
@@ -183,10 +184,8 @@ class PostHoursType implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const TYPE_WORK_TYPE = 'Work Type';
-    
+    public const TYPE_WORK_TYPE = 'Work Type';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -198,7 +197,6 @@ class PostHoursType implements ModelInterface, ArrayAccess
             self::TYPE_WORK_TYPE,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -253,7 +251,6 @@ class PostHoursType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets type
@@ -407,6 +404,7 @@ class PostHoursType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -481,5 +479,3 @@ class PostHoursType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

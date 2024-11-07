@@ -1,4 +1,5 @@
 <?php
+
 /**
  * UserBetaFeatureRequest
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * UserBetaFeatureRequest Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class UserBetaFeatureRequest implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -57,7 +58,6 @@ class UserBetaFeatureRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        
     ];
 
     /**
@@ -66,7 +66,6 @@ class UserBetaFeatureRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        
     ];
 
     /**
@@ -96,7 +95,6 @@ class UserBetaFeatureRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        
     ];
 
     /**
@@ -105,7 +103,6 @@ class UserBetaFeatureRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        
     ];
 
     /**
@@ -114,7 +111,6 @@ class UserBetaFeatureRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        
     ];
 
     /**
@@ -157,10 +153,6 @@ class UserBetaFeatureRequest implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -276,5 +268,3 @@ class UserBetaFeatureRequest implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

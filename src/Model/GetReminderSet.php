@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetReminderSet
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetReminderSet Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetReminderSet implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class GetReminderSet implements ModelInterface, ArrayAccess
         'id' => 'string',
         'templates' => '\Swagger\Client\Model\ReminderSetTemplate[]',
         'label' => 'string',
-        'disabled' => 'bool'
+        'disabled' => 'bool',
     ];
 
     /**
@@ -72,7 +73,7 @@ class GetReminderSet implements ModelInterface, ArrayAccess
         'id' => null,
         'templates' => null,
         'label' => null,
-        'disabled' => null
+        'disabled' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class GetReminderSet implements ModelInterface, ArrayAccess
         'id' => 'id',
         'templates' => 'templates',
         'label' => 'label',
-        'disabled' => 'disabled'
+        'disabled' => 'disabled',
     ];
 
     /**
@@ -117,7 +118,7 @@ class GetReminderSet implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'templates' => 'setTemplates',
         'label' => 'setLabel',
-        'disabled' => 'setDisabled'
+        'disabled' => 'setDisabled',
     ];
 
     /**
@@ -129,7 +130,7 @@ class GetReminderSet implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'templates' => 'getTemplates',
         'label' => 'getLabel',
-        'disabled' => 'getDisabled'
+        'disabled' => 'getDisabled',
     ];
 
     /**
@@ -172,10 +173,6 @@ class GetReminderSet implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class GetReminderSet implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -317,6 +313,7 @@ class GetReminderSet implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class GetReminderSet implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

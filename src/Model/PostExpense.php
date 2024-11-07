@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostExpense
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostExpense Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostExpense implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -62,7 +63,7 @@ class PostExpense implements ModelInterface, ArrayAccess
         'costtype_id' => 'string',
         'amount' => 'float',
         'employee_id' => 'string',
-        'date' => 'string'
+        'date' => 'string',
     ];
 
     /**
@@ -76,7 +77,7 @@ class PostExpense implements ModelInterface, ArrayAccess
         'costtype_id' => null,
         'amount' => 'float',
         'employee_id' => null,
-        'date' => null
+        'date' => null,
     ];
 
     /**
@@ -111,7 +112,7 @@ class PostExpense implements ModelInterface, ArrayAccess
         'costtype_id' => 'costtype_id',
         'amount' => 'amount',
         'employee_id' => 'employee_id',
-        'date' => 'date'
+        'date' => 'date',
     ];
 
     /**
@@ -125,7 +126,7 @@ class PostExpense implements ModelInterface, ArrayAccess
         'costtype_id' => 'setCosttypeId',
         'amount' => 'setAmount',
         'employee_id' => 'setEmployeeId',
-        'date' => 'setDate'
+        'date' => 'setDate',
     ];
 
     /**
@@ -139,7 +140,7 @@ class PostExpense implements ModelInterface, ArrayAccess
         'costtype_id' => 'getCosttypeId',
         'amount' => 'getAmount',
         'employee_id' => 'getEmployeeId',
-        'date' => 'getDate'
+        'date' => 'getDate',
     ];
 
     /**
@@ -182,10 +183,6 @@ class PostExpense implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -232,7 +229,6 @@ class PostExpense implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets project_id
@@ -377,6 +373,7 @@ class PostExpense implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -451,5 +448,3 @@ class PostExpense implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CustomFieldType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * CustomFieldType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class CustomFieldType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -64,7 +65,7 @@ class CustomFieldType implements ModelInterface, ArrayAccess
         'is_mandatory_configurable' => 'bool',
         'is_searchable_configurable' => 'bool',
         'is_filterable_configurable' => 'bool',
-        'is_collective_mutatable_configurable' => 'bool'
+        'is_collective_mutatable_configurable' => 'bool',
     ];
 
     /**
@@ -80,7 +81,7 @@ class CustomFieldType implements ModelInterface, ArrayAccess
         'is_mandatory_configurable' => null,
         'is_searchable_configurable' => null,
         'is_filterable_configurable' => null,
-        'is_collective_mutatable_configurable' => null
+        'is_collective_mutatable_configurable' => null,
     ];
 
     /**
@@ -117,7 +118,7 @@ class CustomFieldType implements ModelInterface, ArrayAccess
         'is_mandatory_configurable' => 'is_mandatory_configurable',
         'is_searchable_configurable' => 'is_searchable_configurable',
         'is_filterable_configurable' => 'is_filterable_configurable',
-        'is_collective_mutatable_configurable' => 'is_collective_mutatable_configurable'
+        'is_collective_mutatable_configurable' => 'is_collective_mutatable_configurable',
     ];
 
     /**
@@ -133,7 +134,7 @@ class CustomFieldType implements ModelInterface, ArrayAccess
         'is_mandatory_configurable' => 'setIsMandatoryConfigurable',
         'is_searchable_configurable' => 'setIsSearchableConfigurable',
         'is_filterable_configurable' => 'setIsFilterableConfigurable',
-        'is_collective_mutatable_configurable' => 'setIsCollectiveMutatableConfigurable'
+        'is_collective_mutatable_configurable' => 'setIsCollectiveMutatableConfigurable',
     ];
 
     /**
@@ -149,7 +150,7 @@ class CustomFieldType implements ModelInterface, ArrayAccess
         'is_mandatory_configurable' => 'getIsMandatoryConfigurable',
         'is_searchable_configurable' => 'getIsSearchableConfigurable',
         'is_filterable_configurable' => 'getIsFilterableConfigurable',
-        'is_collective_mutatable_configurable' => 'getIsCollectiveMutatableConfigurable'
+        'is_collective_mutatable_configurable' => 'getIsCollectiveMutatableConfigurable',
     ];
 
     /**
@@ -192,10 +193,6 @@ class CustomFieldType implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -244,7 +241,6 @@ class CustomFieldType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -437,6 +433,7 @@ class CustomFieldType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -511,5 +508,3 @@ class CustomFieldType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

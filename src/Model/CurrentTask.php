@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CurrentTask
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * CurrentTask Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class CurrentTask implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -64,7 +65,7 @@ class CurrentTask implements ModelInterface, ArrayAccess
         'is_return_to_sender' => 'bool',
         'average_hours_cost' => 'float',
         'can_be_transferred' => 'bool',
-        'employees' => '\Swagger\Client\Model\CurrentTaskEmployee[]'
+        'employees' => '\Swagger\Client\Model\CurrentTaskEmployee[]',
     ];
 
     /**
@@ -80,7 +81,7 @@ class CurrentTask implements ModelInterface, ArrayAccess
         'is_return_to_sender' => null,
         'average_hours_cost' => 'float',
         'can_be_transferred' => null,
-        'employees' => null
+        'employees' => null,
     ];
 
     /**
@@ -117,7 +118,7 @@ class CurrentTask implements ModelInterface, ArrayAccess
         'is_return_to_sender' => 'is_return_to_sender',
         'average_hours_cost' => 'average_hours_cost',
         'can_be_transferred' => 'can_be_transferred',
-        'employees' => 'employees'
+        'employees' => 'employees',
     ];
 
     /**
@@ -133,7 +134,7 @@ class CurrentTask implements ModelInterface, ArrayAccess
         'is_return_to_sender' => 'setIsReturnToSender',
         'average_hours_cost' => 'setAverageHoursCost',
         'can_be_transferred' => 'setCanBeTransferred',
-        'employees' => 'setEmployees'
+        'employees' => 'setEmployees',
     ];
 
     /**
@@ -149,7 +150,7 @@ class CurrentTask implements ModelInterface, ArrayAccess
         'is_return_to_sender' => 'getIsReturnToSender',
         'average_hours_cost' => 'getAverageHoursCost',
         'can_be_transferred' => 'getCanBeTransferred',
-        'employees' => 'getEmployees'
+        'employees' => 'getEmployees',
     ];
 
     /**
@@ -192,10 +193,6 @@ class CurrentTask implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -244,7 +241,6 @@ class CurrentTask implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -437,6 +433,7 @@ class CurrentTask implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -511,5 +508,3 @@ class CurrentTask implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostMileage
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostMileage Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostMileage implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -64,7 +65,7 @@ class PostMileage implements ModelInterface, ArrayAccess
         'related_hours_id' => 'string',
         'source' => 'string',
         'note' => 'string',
-        'start_date' => 'string'
+        'start_date' => 'string',
     ];
 
     /**
@@ -80,7 +81,7 @@ class PostMileage implements ModelInterface, ArrayAccess
         'related_hours_id' => null,
         'source' => null,
         'note' => null,
-        'start_date' => null
+        'start_date' => null,
     ];
 
     /**
@@ -117,7 +118,7 @@ class PostMileage implements ModelInterface, ArrayAccess
         'related_hours_id' => 'related_hours_id',
         'source' => 'source',
         'note' => 'note',
-        'start_date' => 'start_date'
+        'start_date' => 'start_date',
     ];
 
     /**
@@ -133,7 +134,7 @@ class PostMileage implements ModelInterface, ArrayAccess
         'related_hours_id' => 'setRelatedHoursId',
         'source' => 'setSource',
         'note' => 'setNote',
-        'start_date' => 'setStartDate'
+        'start_date' => 'setStartDate',
     ];
 
     /**
@@ -149,7 +150,7 @@ class PostMileage implements ModelInterface, ArrayAccess
         'related_hours_id' => 'getRelatedHoursId',
         'source' => 'getSource',
         'note' => 'getNote',
-        'start_date' => 'getStartDate'
+        'start_date' => 'getStartDate',
     ];
 
     /**
@@ -193,12 +194,10 @@ class PostMileage implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const SOURCE_SCHEDULE = 'schedule';
-    const SOURCE_TIMER = 'timer';
-    const SOURCE_TIMESHEET = 'timesheet';
-    
+    public const SOURCE_SCHEDULE = 'schedule';
+    public const SOURCE_TIMER = 'timer';
+    public const SOURCE_TIMESHEET = 'timesheet';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -212,7 +211,6 @@ class PostMileage implements ModelInterface, ArrayAccess
             self::SOURCE_TIMESHEET,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -269,7 +267,6 @@ class PostMileage implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets employee_id
@@ -471,6 +468,7 @@ class PostMileage implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -545,5 +543,3 @@ class PostMileage implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

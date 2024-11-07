@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Inbox
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Inbox Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Inbox implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class Inbox implements ModelInterface, ArrayAccess
         'employee' => '\Swagger\Client\Model\Employee',
         'label' => 'string',
         'created_at' => 'string',
-        'updated_at' => 'string'
+        'updated_at' => 'string',
     ];
 
     /**
@@ -74,7 +75,7 @@ class Inbox implements ModelInterface, ArrayAccess
         'employee' => null,
         'label' => null,
         'created_at' => null,
-        'updated_at' => null
+        'updated_at' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class Inbox implements ModelInterface, ArrayAccess
         'employee' => 'employee',
         'label' => 'label',
         'created_at' => 'created_at',
-        'updated_at' => 'updated_at'
+        'updated_at' => 'updated_at',
     ];
 
     /**
@@ -121,7 +122,7 @@ class Inbox implements ModelInterface, ArrayAccess
         'employee' => 'setEmployee',
         'label' => 'setLabel',
         'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt'
+        'updated_at' => 'setUpdatedAt',
     ];
 
     /**
@@ -134,7 +135,7 @@ class Inbox implements ModelInterface, ArrayAccess
         'employee' => 'getEmployee',
         'label' => 'getLabel',
         'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt'
+        'updated_at' => 'getUpdatedAt',
     ];
 
     /**
@@ -177,10 +178,6 @@ class Inbox implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class Inbox implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -347,6 +343,7 @@ class Inbox implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class Inbox implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

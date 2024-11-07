@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetPaymentTerm
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetPaymentTerm Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetPaymentTerm implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class GetPaymentTerm implements ModelInterface, ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'days' => 'int',
-        'method' => 'string'
+        'method' => 'string',
     ];
 
     /**
@@ -72,7 +73,7 @@ class GetPaymentTerm implements ModelInterface, ArrayAccess
         'id' => null,
         'name' => null,
         'days' => null,
-        'method' => null
+        'method' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class GetPaymentTerm implements ModelInterface, ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'days' => 'days',
-        'method' => 'method'
+        'method' => 'method',
     ];
 
     /**
@@ -117,7 +118,7 @@ class GetPaymentTerm implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'days' => 'setDays',
-        'method' => 'setMethod'
+        'method' => 'setMethod',
     ];
 
     /**
@@ -129,7 +130,7 @@ class GetPaymentTerm implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'days' => 'getDays',
-        'method' => 'getMethod'
+        'method' => 'getMethod',
     ];
 
     /**
@@ -173,12 +174,10 @@ class GetPaymentTerm implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const METHOD_DIRECT_DEBIT = 'Direct Debit';
-    const METHOD_BANK_TRANSFER = 'Bank Transfer';
-    const METHOD_CASH = 'Cash';
-    
+    public const METHOD_DIRECT_DEBIT = 'Direct Debit';
+    public const METHOD_BANK_TRANSFER = 'Bank Transfer';
+    public const METHOD_CASH = 'Cash';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -192,7 +191,6 @@ class GetPaymentTerm implements ModelInterface, ArrayAccess
             self::METHOD_CASH,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -245,7 +243,6 @@ class GetPaymentTerm implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -351,6 +348,7 @@ class GetPaymentTerm implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -425,5 +423,3 @@ class GetPaymentTerm implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

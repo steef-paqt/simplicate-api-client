@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetSales
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetSales Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetSales implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -84,7 +85,7 @@ class GetSales implements ModelInterface, ArrayAccess
         'expected_revenue' => 'float',
         'note' => 'string',
         'chance_to_score' => 'int',
-        'lost_to_competitor' => '\Swagger\Client\Model\LostToCompetitor'
+        'lost_to_competitor' => '\Swagger\Client\Model\LostToCompetitor',
     ];
 
     /**
@@ -120,7 +121,7 @@ class GetSales implements ModelInterface, ArrayAccess
         'expected_revenue' => 'float',
         'note' => null,
         'chance_to_score' => null,
-        'lost_to_competitor' => null
+        'lost_to_competitor' => null,
     ];
 
     /**
@@ -177,7 +178,7 @@ class GetSales implements ModelInterface, ArrayAccess
         'expected_revenue' => 'expected_revenue',
         'note' => 'note',
         'chance_to_score' => 'chance_to_score',
-        'lost_to_competitor' => 'lost_to_competitor'
+        'lost_to_competitor' => 'lost_to_competitor',
     ];
 
     /**
@@ -213,7 +214,7 @@ class GetSales implements ModelInterface, ArrayAccess
         'expected_revenue' => 'setExpectedRevenue',
         'note' => 'setNote',
         'chance_to_score' => 'setChanceToScore',
-        'lost_to_competitor' => 'setLostToCompetitor'
+        'lost_to_competitor' => 'setLostToCompetitor',
     ];
 
     /**
@@ -249,7 +250,7 @@ class GetSales implements ModelInterface, ArrayAccess
         'expected_revenue' => 'getExpectedRevenue',
         'note' => 'getNote',
         'chance_to_score' => 'getChanceToScore',
-        'lost_to_competitor' => 'getLostToCompetitor'
+        'lost_to_competitor' => 'getLostToCompetitor',
     ];
 
     /**
@@ -292,10 +293,6 @@ class GetSales implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -364,7 +361,6 @@ class GetSales implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -1037,6 +1033,7 @@ class GetSales implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -1111,5 +1108,3 @@ class GetSales implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

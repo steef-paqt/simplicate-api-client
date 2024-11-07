@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ObjectSerializer
  *
@@ -58,11 +59,13 @@ class ObjectSerializer
             foreach ($data as $property => $value) {
                 $data[$property] = self::sanitizeForSerialization($value);
             }
+
             return $data;
         } elseif ($data instanceof \stdClass) {
             foreach ($data as $property => $value) {
                 $data->$property = self::sanitizeForSerialization($value);
             }
+
             return $data;
         } elseif (is_object($data)) {
             $values = [];
@@ -70,10 +73,12 @@ class ObjectSerializer
             foreach ($data::swaggerTypes() as $property => $swaggerType) {
                 $getter = $data::getters()[$property];
                 $value = $data->$getter();
-                if ($value !== null
+                if (
+                    $value !== null
                     && !in_array($swaggerType, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)
                     && method_exists($swaggerType, 'getAllowableEnumValues')
-                    && !in_array($value, $swaggerType::getAllowableEnumValues(), true)) {
+                    && !in_array($value, $swaggerType::getAllowableEnumValues(), true)
+                ) {
                     $imploded = implode("', '", $swaggerType::getAllowableEnumValues());
                     throw new \InvalidArgumentException("Invalid value for enum '$swaggerType', must be one of: '$imploded'");
                 }
@@ -81,10 +86,11 @@ class ObjectSerializer
                     $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($value, $swaggerType, $formats[$property]);
                 }
             }
-            return (object)$values;
-        } else {
-            return (string)$data;
+
+            return (object) $values;
         }
+
+        return (string) $data;
     }
 
     /**
@@ -99,9 +105,9 @@ class ObjectSerializer
     {
         if (preg_match("/.*[\/\\\\](.*)$/", $filename, $match)) {
             return $match[1];
-        } else {
-            return $filename;
         }
+
+        return $filename;
     }
 
     /**
@@ -131,9 +137,9 @@ class ObjectSerializer
     {
         if (is_array($object)) {
             return implode(',', $object);
-        } else {
-            return self::toString($object);
         }
+
+        return self::toString($object);
     }
 
     /**
@@ -163,9 +169,9 @@ class ObjectSerializer
     {
         if ($value instanceof \SplFileObject) {
             return $value->getRealPath();
-        } else {
-            return self::toString($value);
         }
+
+        return self::toString($value);
     }
 
     /**
@@ -181,9 +187,9 @@ class ObjectSerializer
     {
         if ($value instanceof \DateTime) { // datetime in ISO8601 format
             return $value->format(\DateTime::ATOM);
-        } else {
-            return $value;
         }
+
+        return $value;
     }
 
     /**
@@ -237,13 +243,14 @@ class ObjectSerializer
         } elseif (substr($class, 0, 4) === 'map[') { // for associative array e.g. map[string,int]
             $inner = substr($class, 4, -1);
             $deserialized = [];
-            if (strrpos($inner, ",") !== false) {
+            if (strrpos($inner, ',') !== false) {
                 $subClass_array = explode(',', $inner, 2);
                 $subClass = $subClass_array[1];
                 foreach ($data as $key => $value) {
                     $deserialized[$key] = self::deserialize($value, $subClass, null);
                 }
             }
+
             return $deserialized;
         } elseif (strcasecmp(substr($class, -2), '[]') === 0) {
             $subClass = substr($class, 0, -2);
@@ -251,9 +258,11 @@ class ObjectSerializer
             foreach ($data as $key => $value) {
                 $values[] = self::deserialize($value, $subClass, null);
             }
+
             return $values;
         } elseif ($class === 'object') {
             settype($data, 'array');
+
             return $data;
         } elseif ($class === '\DateTime') {
             // Some API's return an invalid, empty string as a
@@ -264,18 +273,21 @@ class ObjectSerializer
             // this graceful.
             if (!empty($data)) {
                 return new \DateTime($data);
-            } else {
-                return null;
             }
+
+            return null;
         } elseif (in_array($class, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
             settype($data, $class);
+
             return $data;
         } elseif ($class === '\SplFileObject') {
             /** @var \Psr\Http\Message\StreamInterface $data */
 
             // determine file name
-            if (array_key_exists('Content-Disposition', $httpHeaders) &&
-                preg_match('/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i', $httpHeaders['Content-Disposition'], $match)) {
+            if (
+                array_key_exists('Content-Disposition', $httpHeaders) &&
+                preg_match('/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i', $httpHeaders['Content-Disposition'], $match)
+            ) {
                 $filename = Configuration::getDefaultConfiguration()->getTempFolderPath() . DIRECTORY_SEPARATOR . self::sanitizeFilename($match[1]);
             } else {
                 $filename = tempnam(Configuration::getDefaultConfiguration()->getTempFolderPath(), '');
@@ -293,30 +305,31 @@ class ObjectSerializer
                 $imploded = implode("', '", $class::getAllowableEnumValues());
                 throw new \InvalidArgumentException("Invalid value for enum '$class', must be one of: '$imploded'");
             }
+
             return $data;
-        } else {
-            // If a discriminator is defined and points to a valid subclass, use it.
-            $discriminator = $class::DISCRIMINATOR;
-            if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
-                $subclass = '\Swagger\Client\Model\\' . $data->{$discriminator};
-                if (is_subclass_of($subclass, $class)) {
-                    $class = $subclass;
-                }
-            }
-            $instance = new $class();
-            foreach ($instance::swaggerTypes() as $property => $type) {
-                $propertySetter = $instance::setters()[$property];
-
-                if (!isset($propertySetter) || !isset($data->{$instance::attributeMap()[$property]})) {
-                    continue;
-                }
-
-                $propertyValue = $data->{$instance::attributeMap()[$property]};
-                if (isset($propertyValue)) {
-                    $instance->$propertySetter(self::deserialize($propertyValue, $type, null));
-                }
-            }
-            return $instance;
         }
+        // If a discriminator is defined and points to a valid subclass, use it.
+        $discriminator = $class::DISCRIMINATOR;
+        if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
+            $subclass = '\Swagger\Client\Model\\' . $data->{$discriminator};
+            if (is_subclass_of($subclass, $class)) {
+                $class = $subclass;
+            }
+        }
+        $instance = new $class();
+        foreach ($instance::swaggerTypes() as $property => $type) {
+            $propertySetter = $instance::setters()[$property];
+
+            if (!isset($propertySetter) || !isset($data->{$instance::attributeMap()[$property]})) {
+                continue;
+            }
+
+            $propertyValue = $data->{$instance::attributeMap()[$property]};
+            if (isset($propertyValue)) {
+                $instance->$propertySetter(self::deserialize($propertyValue, $type, null));
+            }
+        }
+
+        return $instance;
     }
 }

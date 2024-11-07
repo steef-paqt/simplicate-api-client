@@ -1,4 +1,5 @@
 <?php
+
 /**
  * RestResultCustomFieldType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * RestResultCustomFieldType Class Doc Comment
@@ -173,9 +174,9 @@ class RestResultCustomFieldType implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
+
+
 
     /**
      * Associative array for storing property values
@@ -391,5 +392,3 @@ class RestResultCustomFieldType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

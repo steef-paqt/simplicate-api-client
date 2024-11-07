@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetInterest
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetInterest Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetInterest implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -63,7 +64,7 @@ class GetInterest implements ModelInterface, ArrayAccess
         'api_name' => 'string',
         'organization' => 'bool',
         'person' => 'bool',
-        'contact' => 'bool'
+        'contact' => 'bool',
     ];
 
     /**
@@ -78,7 +79,7 @@ class GetInterest implements ModelInterface, ArrayAccess
         'api_name' => null,
         'organization' => null,
         'person' => null,
-        'contact' => null
+        'contact' => null,
     ];
 
     /**
@@ -114,7 +115,7 @@ class GetInterest implements ModelInterface, ArrayAccess
         'api_name' => 'api_name',
         'organization' => 'organization',
         'person' => 'person',
-        'contact' => 'contact'
+        'contact' => 'contact',
     ];
 
     /**
@@ -129,7 +130,7 @@ class GetInterest implements ModelInterface, ArrayAccess
         'api_name' => 'setApiName',
         'organization' => 'setOrganization',
         'person' => 'setPerson',
-        'contact' => 'setContact'
+        'contact' => 'setContact',
     ];
 
     /**
@@ -144,7 +145,7 @@ class GetInterest implements ModelInterface, ArrayAccess
         'api_name' => 'getApiName',
         'organization' => 'getOrganization',
         'person' => 'getPerson',
-        'contact' => 'getContact'
+        'contact' => 'getContact',
     ];
 
     /**
@@ -187,10 +188,6 @@ class GetInterest implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -238,7 +235,6 @@ class GetInterest implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets value
@@ -407,6 +403,7 @@ class GetInterest implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -481,5 +478,3 @@ class GetInterest implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

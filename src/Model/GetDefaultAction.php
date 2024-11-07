@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetDefaultAction
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetDefaultAction Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetDefaultAction implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -62,7 +63,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
         'to_task' => '\Swagger\Client\Model\GetSimpleDefaultTask',
         'name' => 'string',
         'is_response_required' => 'bool',
-        'color' => 'string'
+        'color' => 'string',
     ];
 
     /**
@@ -76,7 +77,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
         'to_task' => null,
         'name' => null,
         'is_response_required' => null,
-        'color' => null
+        'color' => null,
     ];
 
     /**
@@ -111,7 +112,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
         'to_task' => 'to_task',
         'name' => 'name',
         'is_response_required' => 'is_response_required',
-        'color' => 'color'
+        'color' => 'color',
     ];
 
     /**
@@ -125,7 +126,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
         'to_task' => 'setToTask',
         'name' => 'setName',
         'is_response_required' => 'setIsResponseRequired',
-        'color' => 'setColor'
+        'color' => 'setColor',
     ];
 
     /**
@@ -139,7 +140,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
         'to_task' => 'getToTask',
         'name' => 'getName',
         'is_response_required' => 'getIsResponseRequired',
-        'color' => 'getColor'
+        'color' => 'getColor',
     ];
 
     /**
@@ -182,10 +183,6 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -232,7 +229,6 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -377,6 +373,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -451,5 +448,3 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

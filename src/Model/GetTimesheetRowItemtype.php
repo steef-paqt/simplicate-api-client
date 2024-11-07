@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetTimesheetRowItemtype
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetTimesheetRowItemtype Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -62,7 +63,7 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
         'unit_name' => 'string',
         'is_unit_tariff' => 'bool',
         'is_attachment_allowed' => 'bool',
-        'has_workflow' => 'bool'
+        'has_workflow' => 'bool',
     ];
 
     /**
@@ -76,7 +77,7 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
         'unit_name' => null,
         'is_unit_tariff' => null,
         'is_attachment_allowed' => null,
-        'has_workflow' => null
+        'has_workflow' => null,
     ];
 
     /**
@@ -111,7 +112,7 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
         'unit_name' => 'unit_name',
         'is_unit_tariff' => 'is_unit_tariff',
         'is_attachment_allowed' => 'is_attachment_allowed',
-        'has_workflow' => 'has_workflow'
+        'has_workflow' => 'has_workflow',
     ];
 
     /**
@@ -125,7 +126,7 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
         'unit_name' => 'setUnitName',
         'is_unit_tariff' => 'setIsUnitTariff',
         'is_attachment_allowed' => 'setIsAttachmentAllowed',
-        'has_workflow' => 'setHasWorkflow'
+        'has_workflow' => 'setHasWorkflow',
     ];
 
     /**
@@ -139,7 +140,7 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
         'unit_name' => 'getUnitName',
         'is_unit_tariff' => 'getIsUnitTariff',
         'is_attachment_allowed' => 'getIsAttachmentAllowed',
-        'has_workflow' => 'getHasWorkflow'
+        'has_workflow' => 'getHasWorkflow',
     ];
 
     /**
@@ -182,10 +183,6 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -232,7 +229,6 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -377,6 +373,7 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -451,5 +448,3 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

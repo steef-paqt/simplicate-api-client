@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostMergerCompare
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostMergerCompare Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostMergerCompare implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'swap_lock' => 'bool',
         'source_id' => 'string',
-        'target_id' => 'string'
+        'target_id' => 'string',
     ];
 
     /**
@@ -70,7 +71,7 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'swap_lock' => null,
         'source_id' => null,
-        'target_id' => null
+        'target_id' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'swap_lock' => 'swap_lock',
         'source_id' => 'source_id',
-        'target_id' => 'target_id'
+        'target_id' => 'target_id',
     ];
 
     /**
@@ -113,7 +114,7 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
     protected static $setters = [
         'swap_lock' => 'setSwapLock',
         'source_id' => 'setSourceId',
-        'target_id' => 'setTargetId'
+        'target_id' => 'setTargetId',
     ];
 
     /**
@@ -124,7 +125,7 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
     protected static $getters = [
         'swap_lock' => 'getSwapLock',
         'source_id' => 'getSourceId',
-        'target_id' => 'getTargetId'
+        'target_id' => 'getTargetId',
     ];
 
     /**
@@ -168,10 +169,6 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets swap_lock
@@ -287,6 +283,7 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

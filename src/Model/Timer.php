@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Timer
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Timer Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Timer implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class Timer implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'state' => 'string',
         'description' => 'string',
-        'metadata' => 'string'
+        'metadata' => 'string',
     ];
 
     /**
@@ -70,7 +71,7 @@ class Timer implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'state' => null,
         'description' => null,
-        'metadata' => null
+        'metadata' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class Timer implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'state' => 'state',
         'description' => 'description',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
     ];
 
     /**
@@ -113,7 +114,7 @@ class Timer implements ModelInterface, ArrayAccess
     protected static $setters = [
         'state' => 'setState',
         'description' => 'setDescription',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
     ];
 
     /**
@@ -124,7 +125,7 @@ class Timer implements ModelInterface, ArrayAccess
     protected static $getters = [
         'state' => 'getState',
         'description' => 'getDescription',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
     ];
 
     /**
@@ -168,12 +169,10 @@ class Timer implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const STATE_RUNNING = 'running';
-    const STATE_PAUSED = 'paused';
-    const STATE_FINISHED = 'finished';
-    
+    public const STATE_RUNNING = 'running';
+    public const STATE_PAUSED = 'paused';
+    public const STATE_FINISHED = 'finished';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -187,7 +186,6 @@ class Timer implements ModelInterface, ArrayAccess
             self::STATE_FINISHED,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -239,7 +237,6 @@ class Timer implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets state
@@ -321,6 +318,7 @@ class Timer implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -395,5 +393,3 @@ class Timer implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

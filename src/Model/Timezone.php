@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Timezone
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Timezone Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Timezone implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class Timezone implements ModelInterface, ArrayAccess
         'id' => 'string',
         'timezone' => 'string',
         'location' => 'string',
-        'description' => 'string'
+        'description' => 'string',
     ];
 
     /**
@@ -72,7 +73,7 @@ class Timezone implements ModelInterface, ArrayAccess
         'id' => null,
         'timezone' => null,
         'location' => null,
-        'description' => null
+        'description' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class Timezone implements ModelInterface, ArrayAccess
         'id' => 'id',
         'timezone' => 'timezone',
         'location' => 'location',
-        'description' => 'description'
+        'description' => 'description',
     ];
 
     /**
@@ -117,7 +118,7 @@ class Timezone implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'timezone' => 'setTimezone',
         'location' => 'setLocation',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
     ];
 
     /**
@@ -129,7 +130,7 @@ class Timezone implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'timezone' => 'getTimezone',
         'location' => 'getLocation',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
     ];
 
     /**
@@ -172,10 +173,6 @@ class Timezone implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class Timezone implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -317,6 +313,7 @@ class Timezone implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class Timezone implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

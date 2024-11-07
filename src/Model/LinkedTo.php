@@ -1,4 +1,5 @@
 <?php
+
 /**
  * LinkedTo
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * LinkedTo Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class LinkedTo implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -63,7 +64,7 @@ class LinkedTo implements ModelInterface, ArrayAccess
         'project_id' => 'string',
         'invoice_id' => 'string',
         'employee_id' => 'string',
-        'label' => 'string'
+        'label' => 'string',
     ];
 
     /**
@@ -78,7 +79,7 @@ class LinkedTo implements ModelInterface, ArrayAccess
         'project_id' => null,
         'invoice_id' => null,
         'employee_id' => null,
-        'label' => null
+        'label' => null,
     ];
 
     /**
@@ -114,7 +115,7 @@ class LinkedTo implements ModelInterface, ArrayAccess
         'project_id' => 'project_id',
         'invoice_id' => 'invoice_id',
         'employee_id' => 'employee_id',
-        'label' => 'label'
+        'label' => 'label',
     ];
 
     /**
@@ -129,7 +130,7 @@ class LinkedTo implements ModelInterface, ArrayAccess
         'project_id' => 'setProjectId',
         'invoice_id' => 'setInvoiceId',
         'employee_id' => 'setEmployeeId',
-        'label' => 'setLabel'
+        'label' => 'setLabel',
     ];
 
     /**
@@ -144,7 +145,7 @@ class LinkedTo implements ModelInterface, ArrayAccess
         'project_id' => 'getProjectId',
         'invoice_id' => 'getInvoiceId',
         'employee_id' => 'getEmployeeId',
-        'label' => 'getLabel'
+        'label' => 'getLabel',
     ];
 
     /**
@@ -187,10 +188,6 @@ class LinkedTo implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -238,7 +235,6 @@ class LinkedTo implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets organization_id
@@ -407,6 +403,7 @@ class LinkedTo implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -481,5 +478,3 @@ class LinkedTo implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

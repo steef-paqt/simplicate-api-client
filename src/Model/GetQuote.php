@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetQuote
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetQuote Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetQuote implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -84,7 +85,7 @@ class GetQuote implements ModelInterface, ArrayAccess
         'updated_at' => 'string',
         'sales_id' => 'string',
         'quote_subject' => 'string',
-        'customer_reference' => 'string'
+        'customer_reference' => 'string',
     ];
 
     /**
@@ -120,7 +121,7 @@ class GetQuote implements ModelInterface, ArrayAccess
         'updated_at' => null,
         'sales_id' => null,
         'quote_subject' => null,
-        'customer_reference' => null
+        'customer_reference' => null,
     ];
 
     /**
@@ -177,7 +178,7 @@ class GetQuote implements ModelInterface, ArrayAccess
         'updated_at' => 'updated_at',
         'sales_id' => 'sales_id',
         'quote_subject' => 'quote_subject',
-        'customer_reference' => 'customer_reference'
+        'customer_reference' => 'customer_reference',
     ];
 
     /**
@@ -213,7 +214,7 @@ class GetQuote implements ModelInterface, ArrayAccess
         'updated_at' => 'setUpdatedAt',
         'sales_id' => 'setSalesId',
         'quote_subject' => 'setQuoteSubject',
-        'customer_reference' => 'setCustomerReference'
+        'customer_reference' => 'setCustomerReference',
     ];
 
     /**
@@ -249,7 +250,7 @@ class GetQuote implements ModelInterface, ArrayAccess
         'updated_at' => 'getUpdatedAt',
         'sales_id' => 'getSalesId',
         'quote_subject' => 'getQuoteSubject',
-        'customer_reference' => 'getCustomerReference'
+        'customer_reference' => 'getCustomerReference',
     ];
 
     /**
@@ -293,12 +294,10 @@ class GetQuote implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const SEND_TYPE_PRINTER = 'printer';
-    const SEND_TYPE_EMAIL = 'email';
-    const SEND_TYPE_EMAIL_APPROVAL = 'email_approval';
-    
+    public const SEND_TYPE_PRINTER = 'printer';
+    public const SEND_TYPE_EMAIL = 'email';
+    public const SEND_TYPE_EMAIL_APPROVAL = 'email_approval';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -312,7 +311,6 @@ class GetQuote implements ModelInterface, ArrayAccess
             self::SEND_TYPE_EMAIL_APPROVAL,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -389,7 +387,6 @@ class GetQuote implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -1071,6 +1068,7 @@ class GetQuote implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -1145,5 +1143,3 @@ class GetQuote implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

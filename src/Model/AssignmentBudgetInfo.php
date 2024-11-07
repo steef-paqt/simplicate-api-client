@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AssignmentBudgetInfo
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * AssignmentBudgetInfo Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -63,7 +64,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
         'assignments_hours_written' => '\Swagger\Client\Model\AssignmentBudgetInfoFuturePast',
         'itemtypes_hours_written' => '\Swagger\Client\Model\AssignmentBudgetInfoFuturePast',
         'assignments_hours_corrections' => '\Swagger\Client\Model\AssignmentBudgetInfoFuturePast',
-        'itemtypes_hours_corrections' => '\Swagger\Client\Model\AssignmentBudgetInfoFuturePast'
+        'itemtypes_hours_corrections' => '\Swagger\Client\Model\AssignmentBudgetInfoFuturePast',
     ];
 
     /**
@@ -78,7 +79,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
         'assignments_hours_written' => null,
         'itemtypes_hours_written' => null,
         'assignments_hours_corrections' => null,
-        'itemtypes_hours_corrections' => null
+        'itemtypes_hours_corrections' => null,
     ];
 
     /**
@@ -114,7 +115,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
         'assignments_hours_written' => 'assignmentsHoursWritten',
         'itemtypes_hours_written' => 'itemtypesHoursWritten',
         'assignments_hours_corrections' => 'assignmentsHoursCorrections',
-        'itemtypes_hours_corrections' => 'itemtypesHoursCorrections'
+        'itemtypes_hours_corrections' => 'itemtypesHoursCorrections',
     ];
 
     /**
@@ -129,7 +130,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
         'assignments_hours_written' => 'setAssignmentsHoursWritten',
         'itemtypes_hours_written' => 'setItemtypesHoursWritten',
         'assignments_hours_corrections' => 'setAssignmentsHoursCorrections',
-        'itemtypes_hours_corrections' => 'setItemtypesHoursCorrections'
+        'itemtypes_hours_corrections' => 'setItemtypesHoursCorrections',
     ];
 
     /**
@@ -144,7 +145,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
         'assignments_hours_written' => 'getAssignmentsHoursWritten',
         'itemtypes_hours_written' => 'getItemtypesHoursWritten',
         'assignments_hours_corrections' => 'getAssignmentsHoursCorrections',
-        'itemtypes_hours_corrections' => 'getItemtypesHoursCorrections'
+        'itemtypes_hours_corrections' => 'getItemtypesHoursCorrections',
     ];
 
     /**
@@ -187,10 +188,6 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -238,7 +235,6 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -407,6 +403,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -481,5 +478,3 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

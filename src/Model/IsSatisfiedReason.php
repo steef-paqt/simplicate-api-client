@@ -1,4 +1,5 @@
 <?php
+
 /**
  * IsSatisfiedReason
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * IsSatisfiedReason Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class IsSatisfiedReason implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'message' => 'string',
-        'translated_message' => 'string'
+        'translated_message' => 'string',
     ];
 
     /**
@@ -68,7 +69,7 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'message' => null,
-        'translated_message' => null
+        'translated_message' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'message' => 'message',
-        'translated_message' => 'translated_message'
+        'translated_message' => 'translated_message',
     ];
 
     /**
@@ -109,7 +110,7 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'message' => 'setMessage',
-        'translated_message' => 'setTranslatedMessage'
+        'translated_message' => 'setTranslatedMessage',
     ];
 
     /**
@@ -119,7 +120,7 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'message' => 'getMessage',
-        'translated_message' => 'getTranslatedMessage'
+        'translated_message' => 'getTranslatedMessage',
     ];
 
     /**
@@ -163,10 +164,6 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets message
@@ -257,6 +253,7 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

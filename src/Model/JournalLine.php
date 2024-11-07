@@ -1,4 +1,5 @@
 <?php
+
 /**
  * JournalLine
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * JournalLine Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class JournalLine implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -62,7 +63,7 @@ class JournalLine implements ModelInterface, ArrayAccess
         'vat_percentage' => 'float',
         'amount' => 'float',
         'quantity' => 'int',
-        'description' => 'string'
+        'description' => 'string',
     ];
 
     /**
@@ -76,7 +77,7 @@ class JournalLine implements ModelInterface, ArrayAccess
         'vat_percentage' => 'float',
         'amount' => 'float',
         'quantity' => null,
-        'description' => null
+        'description' => null,
     ];
 
     /**
@@ -111,7 +112,7 @@ class JournalLine implements ModelInterface, ArrayAccess
         'vat_percentage' => 'vat_percentage',
         'amount' => 'amount',
         'quantity' => 'quantity',
-        'description' => 'description'
+        'description' => 'description',
     ];
 
     /**
@@ -125,7 +126,7 @@ class JournalLine implements ModelInterface, ArrayAccess
         'vat_percentage' => 'setVatPercentage',
         'amount' => 'setAmount',
         'quantity' => 'setQuantity',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
     ];
 
     /**
@@ -139,7 +140,7 @@ class JournalLine implements ModelInterface, ArrayAccess
         'vat_percentage' => 'getVatPercentage',
         'amount' => 'getAmount',
         'quantity' => 'getQuantity',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
     ];
 
     /**
@@ -182,10 +183,6 @@ class JournalLine implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -232,7 +229,6 @@ class JournalLine implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets vat_id
@@ -377,6 +373,7 @@ class JournalLine implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -451,5 +448,3 @@ class JournalLine implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

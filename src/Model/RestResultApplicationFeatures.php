@@ -1,4 +1,5 @@
 <?php
+
 /**
  * RestResultApplicationFeatures
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * RestResultApplicationFeatures Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class RestResultApplicationFeatures implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class RestResultApplicationFeatures implements ModelInterface, ArrayAccess
         'data' => '\Swagger\Client\Model\ApplicationFeature[]',
         'metadata' => '\Swagger\Client\Model\MetaData',
         'errors' => 'object[]',
-        'debug' => 'object[]'
+        'debug' => 'object[]',
     ];
 
     /**
@@ -72,7 +73,7 @@ class RestResultApplicationFeatures implements ModelInterface, ArrayAccess
         'data' => null,
         'metadata' => null,
         'errors' => null,
-        'debug' => null
+        'debug' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class RestResultApplicationFeatures implements ModelInterface, ArrayAccess
         'data' => 'data',
         'metadata' => 'metadata',
         'errors' => 'errors',
-        'debug' => 'debug'
+        'debug' => 'debug',
     ];
 
     /**
@@ -117,7 +118,7 @@ class RestResultApplicationFeatures implements ModelInterface, ArrayAccess
         'data' => 'setData',
         'metadata' => 'setMetadata',
         'errors' => 'setErrors',
-        'debug' => 'setDebug'
+        'debug' => 'setDebug',
     ];
 
     /**
@@ -129,7 +130,7 @@ class RestResultApplicationFeatures implements ModelInterface, ArrayAccess
         'data' => 'getData',
         'metadata' => 'getMetadata',
         'errors' => 'getErrors',
-        'debug' => 'getDebug'
+        'debug' => 'getDebug',
     ];
 
     /**
@@ -172,10 +173,6 @@ class RestResultApplicationFeatures implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class RestResultApplicationFeatures implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets data
@@ -317,6 +313,7 @@ class RestResultApplicationFeatures implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class RestResultApplicationFeatures implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

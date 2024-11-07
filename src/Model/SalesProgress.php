@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SalesProgress
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * SalesProgress Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class SalesProgress implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class SalesProgress implements ModelInterface, ArrayAccess
         'label' => 'string',
         'color' => 'string',
         'chance_to_score' => 'float',
-        'position' => 'int'
+        'position' => 'int',
     ];
 
     /**
@@ -74,7 +75,7 @@ class SalesProgress implements ModelInterface, ArrayAccess
         'label' => null,
         'color' => null,
         'chance_to_score' => 'float',
-        'position' => null
+        'position' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class SalesProgress implements ModelInterface, ArrayAccess
         'label' => 'label',
         'color' => 'color',
         'chance_to_score' => 'chance_to_score',
-        'position' => 'position'
+        'position' => 'position',
     ];
 
     /**
@@ -121,7 +122,7 @@ class SalesProgress implements ModelInterface, ArrayAccess
         'label' => 'setLabel',
         'color' => 'setColor',
         'chance_to_score' => 'setChanceToScore',
-        'position' => 'setPosition'
+        'position' => 'setPosition',
     ];
 
     /**
@@ -134,7 +135,7 @@ class SalesProgress implements ModelInterface, ArrayAccess
         'label' => 'getLabel',
         'color' => 'getColor',
         'chance_to_score' => 'getChanceToScore',
-        'position' => 'getPosition'
+        'position' => 'getPosition',
     ];
 
     /**
@@ -177,10 +178,6 @@ class SalesProgress implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class SalesProgress implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -347,6 +343,7 @@ class SalesProgress implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class SalesProgress implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

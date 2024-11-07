@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ProjectAssignmentDeleteResultRest
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * ProjectAssignmentDeleteResultRest Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'assignment_id' => 'object',
-        'is_deleted' => 'bool'
+        'is_deleted' => 'bool',
     ];
 
     /**
@@ -68,7 +69,7 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'assignment_id' => null,
-        'is_deleted' => null
+        'is_deleted' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'assignment_id' => 'assignment_id',
-        'is_deleted' => 'is_deleted'
+        'is_deleted' => 'is_deleted',
     ];
 
     /**
@@ -109,7 +110,7 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'assignment_id' => 'setAssignmentId',
-        'is_deleted' => 'setIsDeleted'
+        'is_deleted' => 'setIsDeleted',
     ];
 
     /**
@@ -119,7 +120,7 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'assignment_id' => 'getAssignmentId',
-        'is_deleted' => 'getIsDeleted'
+        'is_deleted' => 'getIsDeleted',
     ];
 
     /**
@@ -163,10 +164,6 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets assignment_id
@@ -257,6 +253,7 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

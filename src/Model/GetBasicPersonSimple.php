@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetBasicPersonSimple
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetBasicPersonSimple Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetBasicPersonSimple implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -68,7 +69,7 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
         'facebook_url' => 'string',
         'id' => 'string',
         'full_name' => 'string',
-        'relation_number' => 'string'
+        'relation_number' => 'string',
     ];
 
     /**
@@ -88,7 +89,7 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
         'facebook_url' => null,
         'id' => null,
         'full_name' => null,
-        'relation_number' => null
+        'relation_number' => null,
     ];
 
     /**
@@ -129,7 +130,7 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
         'facebook_url' => 'facebook_url',
         'id' => 'id',
         'full_name' => 'full_name',
-        'relation_number' => 'relation_number'
+        'relation_number' => 'relation_number',
     ];
 
     /**
@@ -149,7 +150,7 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
         'facebook_url' => 'setFacebookUrl',
         'id' => 'setId',
         'full_name' => 'setFullName',
-        'relation_number' => 'setRelationNumber'
+        'relation_number' => 'setRelationNumber',
     ];
 
     /**
@@ -169,7 +170,7 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
         'facebook_url' => 'getFacebookUrl',
         'id' => 'getId',
         'full_name' => 'getFullName',
-        'relation_number' => 'getRelationNumber'
+        'relation_number' => 'getRelationNumber',
     ];
 
     /**
@@ -212,10 +213,6 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -268,7 +265,6 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets date_of_birth
@@ -557,6 +553,7 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -631,5 +628,3 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

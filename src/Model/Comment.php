@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Comment
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Comment Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Comment implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class Comment implements ModelInterface, ArrayAccess
         'id' => 'string',
         'message' => 'string',
         'employee' => '\Swagger\Client\Model\GetEmployeeSimple',
-        'attachments' => '\Swagger\Client\Model\GetDocument[]'
+        'attachments' => '\Swagger\Client\Model\GetDocument[]',
     ];
 
     /**
@@ -72,7 +73,7 @@ class Comment implements ModelInterface, ArrayAccess
         'id' => null,
         'message' => null,
         'employee' => null,
-        'attachments' => null
+        'attachments' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class Comment implements ModelInterface, ArrayAccess
         'id' => 'id',
         'message' => 'message',
         'employee' => 'employee',
-        'attachments' => 'attachments'
+        'attachments' => 'attachments',
     ];
 
     /**
@@ -117,7 +118,7 @@ class Comment implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'message' => 'setMessage',
         'employee' => 'setEmployee',
-        'attachments' => 'setAttachments'
+        'attachments' => 'setAttachments',
     ];
 
     /**
@@ -129,7 +130,7 @@ class Comment implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'message' => 'getMessage',
         'employee' => 'getEmployee',
-        'attachments' => 'getAttachments'
+        'attachments' => 'getAttachments',
     ];
 
     /**
@@ -172,10 +173,6 @@ class Comment implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class Comment implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -317,6 +313,7 @@ class Comment implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class Comment implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

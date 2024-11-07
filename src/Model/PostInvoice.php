@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostInvoice
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostInvoice Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostInvoice implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -67,7 +68,7 @@ class PostInvoice implements ModelInterface, ArrayAccess
         'subject' => 'string',
         'reference' => 'string',
         'project_id' => 'string',
-        'comments' => 'string'
+        'comments' => 'string',
     ];
 
     /**
@@ -86,7 +87,7 @@ class PostInvoice implements ModelInterface, ArrayAccess
         'subject' => null,
         'reference' => null,
         'project_id' => null,
-        'comments' => null
+        'comments' => null,
     ];
 
     /**
@@ -126,7 +127,7 @@ class PostInvoice implements ModelInterface, ArrayAccess
         'subject' => 'subject',
         'reference' => 'reference',
         'project_id' => 'project_id',
-        'comments' => 'comments'
+        'comments' => 'comments',
     ];
 
     /**
@@ -145,7 +146,7 @@ class PostInvoice implements ModelInterface, ArrayAccess
         'subject' => 'setSubject',
         'reference' => 'setReference',
         'project_id' => 'setProjectId',
-        'comments' => 'setComments'
+        'comments' => 'setComments',
     ];
 
     /**
@@ -164,7 +165,7 @@ class PostInvoice implements ModelInterface, ArrayAccess
         'subject' => 'getSubject',
         'reference' => 'getReference',
         'project_id' => 'getProjectId',
-        'comments' => 'getComments'
+        'comments' => 'getComments',
     ];
 
     /**
@@ -207,10 +208,6 @@ class PostInvoice implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -262,7 +259,6 @@ class PostInvoice implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets payment_term_id
@@ -527,6 +523,7 @@ class PostInvoice implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -601,5 +598,3 @@ class PostInvoice implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

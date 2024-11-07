@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetReviewByWeek
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetReviewByWeek Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetReviewByWeek implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -63,7 +64,7 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
         'end_date' => 'string',
         'status_id' => 'string',
         'status_category' => 'string',
-        'status_label' => 'string'
+        'status_label' => 'string',
     ];
 
     /**
@@ -78,7 +79,7 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
         'end_date' => null,
         'status_id' => null,
         'status_category' => null,
-        'status_label' => null
+        'status_label' => null,
     ];
 
     /**
@@ -114,7 +115,7 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
         'end_date' => 'end_date',
         'status_id' => 'status_id',
         'status_category' => 'status_category',
-        'status_label' => 'status_label'
+        'status_label' => 'status_label',
     ];
 
     /**
@@ -129,7 +130,7 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
         'end_date' => 'setEndDate',
         'status_id' => 'setStatusId',
         'status_category' => 'setStatusCategory',
-        'status_label' => 'setStatusLabel'
+        'status_label' => 'setStatusLabel',
     ];
 
     /**
@@ -144,7 +145,7 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
         'end_date' => 'getEndDate',
         'status_id' => 'getStatusId',
         'status_category' => 'getStatusCategory',
-        'status_label' => 'getStatusLabel'
+        'status_label' => 'getStatusLabel',
     ];
 
     /**
@@ -187,10 +188,6 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -238,7 +235,6 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets employee_id
@@ -407,6 +403,7 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -481,5 +478,3 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostMessageLinkedTo
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostMessageLinkedTo Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostMessageLinkedTo implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -62,7 +63,7 @@ class PostMessageLinkedTo implements ModelInterface, ArrayAccess
         'employee_id' => 'string',
         'invoice_id' => 'string',
         'person_id' => 'string',
-        'organization_id' => 'string'
+        'organization_id' => 'string',
     ];
 
     /**
@@ -76,7 +77,7 @@ class PostMessageLinkedTo implements ModelInterface, ArrayAccess
         'employee_id' => null,
         'invoice_id' => null,
         'person_id' => null,
-        'organization_id' => null
+        'organization_id' => null,
     ];
 
     /**
@@ -111,7 +112,7 @@ class PostMessageLinkedTo implements ModelInterface, ArrayAccess
         'employee_id' => 'employee_id',
         'invoice_id' => 'invoice_id',
         'person_id' => 'person_id',
-        'organization_id' => 'organization_id'
+        'organization_id' => 'organization_id',
     ];
 
     /**
@@ -125,7 +126,7 @@ class PostMessageLinkedTo implements ModelInterface, ArrayAccess
         'employee_id' => 'setEmployeeId',
         'invoice_id' => 'setInvoiceId',
         'person_id' => 'setPersonId',
-        'organization_id' => 'setOrganizationId'
+        'organization_id' => 'setOrganizationId',
     ];
 
     /**
@@ -139,7 +140,7 @@ class PostMessageLinkedTo implements ModelInterface, ArrayAccess
         'employee_id' => 'getEmployeeId',
         'invoice_id' => 'getInvoiceId',
         'person_id' => 'getPersonId',
-        'organization_id' => 'getOrganizationId'
+        'organization_id' => 'getOrganizationId',
     ];
 
     /**
@@ -182,10 +183,6 @@ class PostMessageLinkedTo implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -232,7 +229,6 @@ class PostMessageLinkedTo implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets sales_id
@@ -377,6 +373,7 @@ class PostMessageLinkedTo implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -451,5 +448,3 @@ class PostMessageLinkedTo implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

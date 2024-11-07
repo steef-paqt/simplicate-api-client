@@ -1,4 +1,5 @@
 <?php
+
 /**
  * EmploymentType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * EmploymentType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class EmploymentType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class EmploymentType implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
-        'blocked' => 'bool'
+        'blocked' => 'bool',
     ];
 
     /**
@@ -70,7 +71,7 @@ class EmploymentType implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
         'name' => null,
-        'blocked' => null
+        'blocked' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class EmploymentType implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'blocked' => 'blocked'
+        'blocked' => 'blocked',
     ];
 
     /**
@@ -113,7 +114,7 @@ class EmploymentType implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'blocked' => 'setBlocked'
+        'blocked' => 'setBlocked',
     ];
 
     /**
@@ -124,7 +125,7 @@ class EmploymentType implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'blocked' => 'getBlocked'
+        'blocked' => 'getBlocked',
     ];
 
     /**
@@ -168,10 +169,6 @@ class EmploymentType implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class EmploymentType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -287,6 +283,7 @@ class EmploymentType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class EmploymentType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

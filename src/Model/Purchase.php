@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Purchase
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Purchase Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Purchase implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -63,7 +64,7 @@ class Purchase implements ModelInterface, ArrayAccess
         'supplier' => 'string',
         'invoice_number' => 'string',
         'type' => 'string',
-        'projects' => '\Swagger\Client\Model\GetProjectSimple[]'
+        'projects' => '\Swagger\Client\Model\GetProjectSimple[]',
     ];
 
     /**
@@ -78,7 +79,7 @@ class Purchase implements ModelInterface, ArrayAccess
         'supplier' => null,
         'invoice_number' => null,
         'type' => null,
-        'projects' => null
+        'projects' => null,
     ];
 
     /**
@@ -114,7 +115,7 @@ class Purchase implements ModelInterface, ArrayAccess
         'supplier' => 'supplier',
         'invoice_number' => 'invoice_number',
         'type' => 'type',
-        'projects' => 'projects'
+        'projects' => 'projects',
     ];
 
     /**
@@ -129,7 +130,7 @@ class Purchase implements ModelInterface, ArrayAccess
         'supplier' => 'setSupplier',
         'invoice_number' => 'setInvoiceNumber',
         'type' => 'setType',
-        'projects' => 'setProjects'
+        'projects' => 'setProjects',
     ];
 
     /**
@@ -144,7 +145,7 @@ class Purchase implements ModelInterface, ArrayAccess
         'supplier' => 'getSupplier',
         'invoice_number' => 'getInvoiceNumber',
         'type' => 'getType',
-        'projects' => 'getProjects'
+        'projects' => 'getProjects',
     ];
 
     /**
@@ -188,12 +189,10 @@ class Purchase implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const TYPE_PURCHASE = 'purchase';
-    const TYPE_COSTEXPENSES = 'cost/expenses';
-    const TYPE_IMPORT = 'import';
-    
+    public const TYPE_PURCHASE = 'purchase';
+    public const TYPE_COSTEXPENSES = 'cost/expenses';
+    public const TYPE_IMPORT = 'import';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -207,7 +206,6 @@ class Purchase implements ModelInterface, ArrayAccess
             self::TYPE_IMPORT,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -263,7 +261,6 @@ class Purchase implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -441,6 +438,7 @@ class Purchase implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -515,5 +513,3 @@ class Purchase implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

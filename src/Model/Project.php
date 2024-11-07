@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Project
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Project Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Project implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -68,7 +69,7 @@ class Project implements ModelInterface, ArrayAccess
         'note' => 'string',
         'start_date' => 'string',
         'end_date' => 'string',
-        'invoice_reference' => 'string'
+        'invoice_reference' => 'string',
     ];
 
     /**
@@ -88,7 +89,7 @@ class Project implements ModelInterface, ArrayAccess
         'note' => null,
         'start_date' => null,
         'end_date' => null,
-        'invoice_reference' => null
+        'invoice_reference' => null,
     ];
 
     /**
@@ -129,7 +130,7 @@ class Project implements ModelInterface, ArrayAccess
         'note' => 'note',
         'start_date' => 'start_date',
         'end_date' => 'end_date',
-        'invoice_reference' => 'invoice_reference'
+        'invoice_reference' => 'invoice_reference',
     ];
 
     /**
@@ -149,7 +150,7 @@ class Project implements ModelInterface, ArrayAccess
         'note' => 'setNote',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'invoice_reference' => 'setInvoiceReference'
+        'invoice_reference' => 'setInvoiceReference',
     ];
 
     /**
@@ -169,7 +170,7 @@ class Project implements ModelInterface, ArrayAccess
         'note' => 'getNote',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'invoice_reference' => 'getInvoiceReference'
+        'invoice_reference' => 'getInvoiceReference',
     ];
 
     /**
@@ -212,10 +213,6 @@ class Project implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -268,7 +265,6 @@ class Project implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets my_organization_profile_id
@@ -557,6 +553,7 @@ class Project implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -631,5 +628,3 @@ class Project implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

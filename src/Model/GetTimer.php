@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetTimer
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetTimer Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetTimer implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -69,7 +70,7 @@ class GetTimer implements ModelInterface, ArrayAccess
         'updated_at' => 'string',
         'state' => 'string',
         'description' => 'string',
-        'metadata' => 'string'
+        'metadata' => 'string',
     ];
 
     /**
@@ -90,7 +91,7 @@ class GetTimer implements ModelInterface, ArrayAccess
         'updated_at' => null,
         'state' => null,
         'description' => null,
-        'metadata' => null
+        'metadata' => null,
     ];
 
     /**
@@ -132,7 +133,7 @@ class GetTimer implements ModelInterface, ArrayAccess
         'updated_at' => 'updated_at',
         'state' => 'state',
         'description' => 'description',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
     ];
 
     /**
@@ -153,7 +154,7 @@ class GetTimer implements ModelInterface, ArrayAccess
         'updated_at' => 'setUpdatedAt',
         'state' => 'setState',
         'description' => 'setDescription',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
     ];
 
     /**
@@ -174,7 +175,7 @@ class GetTimer implements ModelInterface, ArrayAccess
         'updated_at' => 'getUpdatedAt',
         'state' => 'getState',
         'description' => 'getDescription',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
     ];
 
     /**
@@ -218,12 +219,10 @@ class GetTimer implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const STATE_RUNNING = 'running';
-    const STATE_PAUSED = 'paused';
-    const STATE_FINISHED = 'finished';
-    
+    public const STATE_RUNNING = 'running';
+    public const STATE_PAUSED = 'paused';
+    public const STATE_FINISHED = 'finished';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -237,7 +236,6 @@ class GetTimer implements ModelInterface, ArrayAccess
             self::STATE_FINISHED,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -299,7 +297,6 @@ class GetTimer implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -621,6 +618,7 @@ class GetTimer implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -695,5 +693,3 @@ class GetTimer implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

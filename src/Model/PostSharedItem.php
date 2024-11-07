@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostSharedItem
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostSharedItem Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostSharedItem implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class PostSharedItem implements ModelInterface, ArrayAccess
         'type' => 'string',
         'employee_id' => 'string',
         'shared' => 'string',
-        'data' => 'string'
+        'data' => 'string',
     ];
 
     /**
@@ -74,7 +75,7 @@ class PostSharedItem implements ModelInterface, ArrayAccess
         'type' => null,
         'employee_id' => null,
         'shared' => null,
-        'data' => null
+        'data' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class PostSharedItem implements ModelInterface, ArrayAccess
         'type' => 'type',
         'employee_id' => 'employee_id',
         'shared' => 'shared',
-        'data' => 'data'
+        'data' => 'data',
     ];
 
     /**
@@ -121,7 +122,7 @@ class PostSharedItem implements ModelInterface, ArrayAccess
         'type' => 'setType',
         'employee_id' => 'setEmployeeId',
         'shared' => 'setShared',
-        'data' => 'setData'
+        'data' => 'setData',
     ];
 
     /**
@@ -134,7 +135,7 @@ class PostSharedItem implements ModelInterface, ArrayAccess
         'type' => 'getType',
         'employee_id' => 'getEmployeeId',
         'shared' => 'getShared',
-        'data' => 'getData'
+        'data' => 'getData',
     ];
 
     /**
@@ -177,10 +178,6 @@ class PostSharedItem implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class PostSharedItem implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets tag
@@ -347,6 +343,7 @@ class PostSharedItem implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class PostSharedItem implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

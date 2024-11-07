@@ -1,4 +1,5 @@
 <?php
+
 /**
  * HrmGetLeaveType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * HrmGetLeaveType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class HrmGetLeaveType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class HrmGetLeaveType implements ModelInterface, ArrayAccess
         'label' => 'string',
         'blocked' => 'bool',
         'color' => 'string',
-        'affects_balance' => 'bool'
+        'affects_balance' => 'bool',
     ];
 
     /**
@@ -74,7 +75,7 @@ class HrmGetLeaveType implements ModelInterface, ArrayAccess
         'label' => null,
         'blocked' => null,
         'color' => null,
-        'affects_balance' => null
+        'affects_balance' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class HrmGetLeaveType implements ModelInterface, ArrayAccess
         'label' => 'label',
         'blocked' => 'blocked',
         'color' => 'color',
-        'affects_balance' => 'affects_balance'
+        'affects_balance' => 'affects_balance',
     ];
 
     /**
@@ -121,7 +122,7 @@ class HrmGetLeaveType implements ModelInterface, ArrayAccess
         'label' => 'setLabel',
         'blocked' => 'setBlocked',
         'color' => 'setColor',
-        'affects_balance' => 'setAffectsBalance'
+        'affects_balance' => 'setAffectsBalance',
     ];
 
     /**
@@ -134,7 +135,7 @@ class HrmGetLeaveType implements ModelInterface, ArrayAccess
         'label' => 'getLabel',
         'blocked' => 'getBlocked',
         'color' => 'getColor',
-        'affects_balance' => 'getAffectsBalance'
+        'affects_balance' => 'getAffectsBalance',
     ];
 
     /**
@@ -177,10 +178,6 @@ class HrmGetLeaveType implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class HrmGetLeaveType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -347,6 +343,7 @@ class HrmGetLeaveType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class HrmGetLeaveType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

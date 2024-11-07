@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Creator
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Creator Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Creator implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class Creator implements ModelInterface, ArrayAccess
         'id' => 'string',
         'type' => 'string',
         'label' => 'string',
-        'image' => 'string'
+        'image' => 'string',
     ];
 
     /**
@@ -72,7 +73,7 @@ class Creator implements ModelInterface, ArrayAccess
         'id' => null,
         'type' => null,
         'label' => null,
-        'image' => null
+        'image' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class Creator implements ModelInterface, ArrayAccess
         'id' => 'id',
         'type' => 'type',
         'label' => 'label',
-        'image' => 'image'
+        'image' => 'image',
     ];
 
     /**
@@ -117,7 +118,7 @@ class Creator implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'type' => 'setType',
         'label' => 'setLabel',
-        'image' => 'setImage'
+        'image' => 'setImage',
     ];
 
     /**
@@ -129,7 +130,7 @@ class Creator implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'type' => 'getType',
         'label' => 'getLabel',
-        'image' => 'getImage'
+        'image' => 'getImage',
     ];
 
     /**
@@ -172,10 +173,6 @@ class Creator implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class Creator implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -317,6 +313,7 @@ class Creator implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class Creator implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * IsSatisfied
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * IsSatisfied Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class IsSatisfied implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class IsSatisfied implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'value' => 'bool',
-        'reason' => '\Swagger\Client\Model\IsSatisfiedReason'
+        'reason' => '\Swagger\Client\Model\IsSatisfiedReason',
     ];
 
     /**
@@ -68,7 +69,7 @@ class IsSatisfied implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'value' => null,
-        'reason' => null
+        'reason' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class IsSatisfied implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'value' => 'value',
-        'reason' => 'reason'
+        'reason' => 'reason',
     ];
 
     /**
@@ -109,7 +110,7 @@ class IsSatisfied implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'value' => 'setValue',
-        'reason' => 'setReason'
+        'reason' => 'setReason',
     ];
 
     /**
@@ -119,7 +120,7 @@ class IsSatisfied implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'value' => 'getValue',
-        'reason' => 'getReason'
+        'reason' => 'getReason',
     ];
 
     /**
@@ -163,10 +164,6 @@ class IsSatisfied implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class IsSatisfied implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets value
@@ -257,6 +253,7 @@ class IsSatisfied implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class IsSatisfied implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

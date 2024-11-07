@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostAttachment
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostAttachment Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostAttachment implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class PostAttachment implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'message_id' => 'string',
-        'document_id' => 'string'
+        'document_id' => 'string',
     ];
 
     /**
@@ -68,7 +69,7 @@ class PostAttachment implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'message_id' => null,
-        'document_id' => null
+        'document_id' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class PostAttachment implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'message_id' => 'message_id',
-        'document_id' => 'document_id'
+        'document_id' => 'document_id',
     ];
 
     /**
@@ -109,7 +110,7 @@ class PostAttachment implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'message_id' => 'setMessageId',
-        'document_id' => 'setDocumentId'
+        'document_id' => 'setDocumentId',
     ];
 
     /**
@@ -119,7 +120,7 @@ class PostAttachment implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'message_id' => 'getMessageId',
-        'document_id' => 'getDocumentId'
+        'document_id' => 'getDocumentId',
     ];
 
     /**
@@ -163,10 +164,6 @@ class PostAttachment implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class PostAttachment implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets message_id
@@ -257,6 +253,7 @@ class PostAttachment implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class PostAttachment implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

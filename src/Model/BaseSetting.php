@@ -1,4 +1,5 @@
 <?php
+
 /**
  * BaseSetting
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * BaseSetting Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class BaseSetting implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class BaseSetting implements ModelInterface, ArrayAccess
         'timestamp' => 'string',
         'app_id' => 'string',
         'key' => 'string',
-        'value' => 'string'
+        'value' => 'string',
     ];
 
     /**
@@ -72,7 +73,7 @@ class BaseSetting implements ModelInterface, ArrayAccess
         'timestamp' => null,
         'app_id' => null,
         'key' => null,
-        'value' => null
+        'value' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class BaseSetting implements ModelInterface, ArrayAccess
         'timestamp' => 'timestamp',
         'app_id' => 'app_id',
         'key' => 'key',
-        'value' => 'value'
+        'value' => 'value',
     ];
 
     /**
@@ -117,7 +118,7 @@ class BaseSetting implements ModelInterface, ArrayAccess
         'timestamp' => 'setTimestamp',
         'app_id' => 'setAppId',
         'key' => 'setKey',
-        'value' => 'setValue'
+        'value' => 'setValue',
     ];
 
     /**
@@ -129,7 +130,7 @@ class BaseSetting implements ModelInterface, ArrayAccess
         'timestamp' => 'getTimestamp',
         'app_id' => 'getAppId',
         'key' => 'getKey',
-        'value' => 'getValue'
+        'value' => 'getValue',
     ];
 
     /**
@@ -172,10 +173,6 @@ class BaseSetting implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class BaseSetting implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets timestamp
@@ -317,6 +313,7 @@ class BaseSetting implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class BaseSetting implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

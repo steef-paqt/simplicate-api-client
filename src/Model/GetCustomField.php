@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetCustomField
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetCustomField Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetCustomField implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -69,7 +70,7 @@ class GetCustomField implements ModelInterface, ArrayAccess
         'mandatory' => 'bool',
         'value_type' => 'string',
         'custom_field_group' => '\Swagger\Client\Model\CustomFieldGroup',
-        'options' => '\Swagger\Client\Model\CustomFieldOption[]'
+        'options' => '\Swagger\Client\Model\CustomFieldOption[]',
     ];
 
     /**
@@ -90,7 +91,7 @@ class GetCustomField implements ModelInterface, ArrayAccess
         'mandatory' => null,
         'value_type' => null,
         'custom_field_group' => null,
-        'options' => null
+        'options' => null,
     ];
 
     /**
@@ -132,7 +133,7 @@ class GetCustomField implements ModelInterface, ArrayAccess
         'mandatory' => 'mandatory',
         'value_type' => 'value_type',
         'custom_field_group' => 'custom_field_group',
-        'options' => 'options'
+        'options' => 'options',
     ];
 
     /**
@@ -153,7 +154,7 @@ class GetCustomField implements ModelInterface, ArrayAccess
         'mandatory' => 'setMandatory',
         'value_type' => 'setValueType',
         'custom_field_group' => 'setCustomFieldGroup',
-        'options' => 'setOptions'
+        'options' => 'setOptions',
     ];
 
     /**
@@ -174,7 +175,7 @@ class GetCustomField implements ModelInterface, ArrayAccess
         'mandatory' => 'getMandatory',
         'value_type' => 'getValueType',
         'custom_field_group' => 'getCustomFieldGroup',
-        'options' => 'getOptions'
+        'options' => 'getOptions',
     ];
 
     /**
@@ -218,15 +219,13 @@ class GetCustomField implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const VALUE_TYPE_TEXT = 'Text';
-    const VALUE_TYPE_INTEGER = 'Integer';
-    const VALUE_TYPE_DECIMAL = 'Decimal';
-    const VALUE_TYPE_DATE = 'Date';
-    const VALUE_TYPE_TIME = 'Time';
-    const VALUE_TYPE_DATE_TIME = 'DateTime';
-    
+    public const VALUE_TYPE_TEXT = 'Text';
+    public const VALUE_TYPE_INTEGER = 'Integer';
+    public const VALUE_TYPE_DECIMAL = 'Decimal';
+    public const VALUE_TYPE_DATE = 'Date';
+    public const VALUE_TYPE_TIME = 'Time';
+    public const VALUE_TYPE_DATE_TIME = 'DateTime';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -243,7 +242,6 @@ class GetCustomField implements ModelInterface, ArrayAccess
             self::VALUE_TYPE_DATE_TIME,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -305,7 +303,6 @@ class GetCustomField implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -627,6 +624,7 @@ class GetCustomField implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -701,5 +699,3 @@ class GetCustomField implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

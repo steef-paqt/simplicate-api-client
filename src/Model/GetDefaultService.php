@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetDefaultService
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetDefaultService Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetDefaultService implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -66,7 +67,7 @@ class GetDefaultService implements ModelInterface, ArrayAccess
         'my_organization_profile_id' => 'string',
         'name' => 'string',
         'price_editable' => 'bool',
-        'price' => 'float'
+        'price' => 'float',
     ];
 
     /**
@@ -84,7 +85,7 @@ class GetDefaultService implements ModelInterface, ArrayAccess
         'my_organization_profile_id' => null,
         'name' => null,
         'price_editable' => null,
-        'price' => 'float'
+        'price' => 'float',
     ];
 
     /**
@@ -123,7 +124,7 @@ class GetDefaultService implements ModelInterface, ArrayAccess
         'my_organization_profile_id' => 'my_organization_profile_id',
         'name' => 'name',
         'price_editable' => 'price_editable',
-        'price' => 'price'
+        'price' => 'price',
     ];
 
     /**
@@ -141,7 +142,7 @@ class GetDefaultService implements ModelInterface, ArrayAccess
         'my_organization_profile_id' => 'setMyOrganizationProfileId',
         'name' => 'setName',
         'price_editable' => 'setPriceEditable',
-        'price' => 'setPrice'
+        'price' => 'setPrice',
     ];
 
     /**
@@ -159,7 +160,7 @@ class GetDefaultService implements ModelInterface, ArrayAccess
         'my_organization_profile_id' => 'getMyOrganizationProfileId',
         'name' => 'getName',
         'price_editable' => 'getPriceEditable',
-        'price' => 'getPrice'
+        'price' => 'getPrice',
     ];
 
     /**
@@ -202,10 +203,6 @@ class GetDefaultService implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -256,7 +253,6 @@ class GetDefaultService implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -497,6 +493,7 @@ class GetDefaultService implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -571,5 +568,3 @@ class GetDefaultService implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

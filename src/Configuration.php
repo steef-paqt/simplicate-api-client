@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Configuration
  * PHP version 5
@@ -130,6 +131,7 @@ class Configuration
     public function setApiKey($apiKeyIdentifier, $key)
     {
         $this->apiKeys[$apiKeyIdentifier] = $key;
+
         return $this;
     }
 
@@ -156,6 +158,7 @@ class Configuration
     public function setApiKeyPrefix($apiKeyIdentifier, $prefix)
     {
         $this->apiKeyPrefixes[$apiKeyIdentifier] = $prefix;
+
         return $this;
     }
 
@@ -181,6 +184,7 @@ class Configuration
     public function setAccessToken($accessToken)
     {
         $this->accessToken = $accessToken;
+
         return $this;
     }
 
@@ -204,6 +208,7 @@ class Configuration
     public function setUsername($username)
     {
         $this->username = $username;
+
         return $this;
     }
 
@@ -227,6 +232,7 @@ class Configuration
     public function setPassword($password)
     {
         $this->password = $password;
+
         return $this;
     }
 
@@ -250,6 +256,7 @@ class Configuration
     public function setHost($host)
     {
         $this->host = $host;
+
         return $this;
     }
 
@@ -278,6 +285,7 @@ class Configuration
         }
 
         $this->userAgent = $userAgent;
+
         return $this;
     }
 
@@ -301,6 +309,7 @@ class Configuration
     public function setDebug($debug)
     {
         $this->debug = $debug;
+
         return $this;
     }
 
@@ -324,6 +333,7 @@ class Configuration
     public function setDebugFile($debugFile)
     {
         $this->debugFile = $debugFile;
+
         return $this;
     }
 
@@ -347,6 +357,7 @@ class Configuration
     public function setTempFolderPath($tempFolderPath)
     {
         $this->tempFolderPath = $tempFolderPath;
+
         return $this;
     }
 
@@ -368,7 +379,7 @@ class Configuration
     public static function getDefaultConfiguration()
     {
         if (self::$defaultConfiguration === null) {
-            self::$defaultConfiguration = new Configuration();
+            self::$defaultConfiguration = new self();
         }
 
         return self::$defaultConfiguration;
@@ -381,7 +392,7 @@ class Configuration
      *
      * @return void
      */
-    public static function setDefaultConfiguration(Configuration $config)
+    public static function setDefaultConfiguration(self $config)
     {
         self::$defaultConfiguration = $config;
     }
@@ -393,7 +404,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (Swagger\Client) Debug Report:' . PHP_EOL;
+        $report = 'PHP SDK (Swagger\Client) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 2.0' . PHP_EOL;

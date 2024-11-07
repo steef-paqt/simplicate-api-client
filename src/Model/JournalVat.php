@@ -1,4 +1,5 @@
 <?php
+
 /**
  * JournalVat
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * JournalVat Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class JournalVat implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class JournalVat implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'vat_id' => 'string',
         'amount_vat' => 'float',
-        'amount_excl' => 'float'
+        'amount_excl' => 'float',
     ];
 
     /**
@@ -70,7 +71,7 @@ class JournalVat implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'vat_id' => null,
         'amount_vat' => 'float',
-        'amount_excl' => 'float'
+        'amount_excl' => 'float',
     ];
 
     /**
@@ -102,7 +103,7 @@ class JournalVat implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'vat_id' => 'vat_id',
         'amount_vat' => 'amount_vat',
-        'amount_excl' => 'amount_excl'
+        'amount_excl' => 'amount_excl',
     ];
 
     /**
@@ -113,7 +114,7 @@ class JournalVat implements ModelInterface, ArrayAccess
     protected static $setters = [
         'vat_id' => 'setVatId',
         'amount_vat' => 'setAmountVat',
-        'amount_excl' => 'setAmountExcl'
+        'amount_excl' => 'setAmountExcl',
     ];
 
     /**
@@ -124,7 +125,7 @@ class JournalVat implements ModelInterface, ArrayAccess
     protected static $getters = [
         'vat_id' => 'getVatId',
         'amount_vat' => 'getAmountVat',
-        'amount_excl' => 'getAmountExcl'
+        'amount_excl' => 'getAmountExcl',
     ];
 
     /**
@@ -168,10 +169,6 @@ class JournalVat implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class JournalVat implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets vat_id
@@ -287,6 +283,7 @@ class JournalVat implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class JournalVat implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

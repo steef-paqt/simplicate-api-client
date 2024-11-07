@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetTimesheetRowOrganizationRelation
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetTimesheetRowOrganizationRelation Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetTimesheetRowOrganizationRelation implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class GetTimesheetRowOrganizationRelation implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
-        'relation_number' => 'string'
+        'relation_number' => 'string',
     ];
 
     /**
@@ -70,7 +71,7 @@ class GetTimesheetRowOrganizationRelation implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
         'name' => null,
-        'relation_number' => null
+        'relation_number' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class GetTimesheetRowOrganizationRelation implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'relation_number' => 'relation_number'
+        'relation_number' => 'relation_number',
     ];
 
     /**
@@ -113,7 +114,7 @@ class GetTimesheetRowOrganizationRelation implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'relation_number' => 'setRelationNumber'
+        'relation_number' => 'setRelationNumber',
     ];
 
     /**
@@ -124,7 +125,7 @@ class GetTimesheetRowOrganizationRelation implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'relation_number' => 'getRelationNumber'
+        'relation_number' => 'getRelationNumber',
     ];
 
     /**
@@ -168,10 +169,6 @@ class GetTimesheetRowOrganizationRelation implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class GetTimesheetRowOrganizationRelation implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -287,6 +283,7 @@ class GetTimesheetRowOrganizationRelation implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class GetTimesheetRowOrganizationRelation implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

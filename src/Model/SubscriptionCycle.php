@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SubscriptionCycle
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * SubscriptionCycle Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class SubscriptionCycle implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'start_date' => 'string',
         'end_date' => 'string',
-        'is_invoiced' => 'bool'
+        'is_invoiced' => 'bool',
     ];
 
     /**
@@ -70,7 +71,7 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'start_date' => null,
         'end_date' => null,
-        'is_invoiced' => null
+        'is_invoiced' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'start_date' => 'start_date',
         'end_date' => 'end_date',
-        'is_invoiced' => 'is_invoiced'
+        'is_invoiced' => 'is_invoiced',
     ];
 
     /**
@@ -113,7 +114,7 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
     protected static $setters = [
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'is_invoiced' => 'setIsInvoiced'
+        'is_invoiced' => 'setIsInvoiced',
     ];
 
     /**
@@ -124,7 +125,7 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
     protected static $getters = [
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'is_invoiced' => 'getIsInvoiced'
+        'is_invoiced' => 'getIsInvoiced',
     ];
 
     /**
@@ -168,10 +169,6 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets start_date
@@ -287,6 +283,7 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

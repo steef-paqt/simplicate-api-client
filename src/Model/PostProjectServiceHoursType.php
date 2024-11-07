@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostProjectServiceHoursType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostProjectServiceHoursType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostProjectServiceHoursType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class PostProjectServiceHoursType implements ModelInterface, ArrayAccess
         'hourstype_id' => 'string',
         'budgeted_amount' => 'float',
         'tariff' => 'float',
-        'billable' => 'bool'
+        'billable' => 'bool',
     ];
 
     /**
@@ -72,7 +73,7 @@ class PostProjectServiceHoursType implements ModelInterface, ArrayAccess
         'hourstype_id' => null,
         'budgeted_amount' => 'float',
         'tariff' => 'float',
-        'billable' => null
+        'billable' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class PostProjectServiceHoursType implements ModelInterface, ArrayAccess
         'hourstype_id' => 'hourstype_id',
         'budgeted_amount' => 'budgeted_amount',
         'tariff' => 'tariff',
-        'billable' => 'billable'
+        'billable' => 'billable',
     ];
 
     /**
@@ -117,7 +118,7 @@ class PostProjectServiceHoursType implements ModelInterface, ArrayAccess
         'hourstype_id' => 'setHourstypeId',
         'budgeted_amount' => 'setBudgetedAmount',
         'tariff' => 'setTariff',
-        'billable' => 'setBillable'
+        'billable' => 'setBillable',
     ];
 
     /**
@@ -129,7 +130,7 @@ class PostProjectServiceHoursType implements ModelInterface, ArrayAccess
         'hourstype_id' => 'getHourstypeId',
         'budgeted_amount' => 'getBudgetedAmount',
         'tariff' => 'getTariff',
-        'billable' => 'getBillable'
+        'billable' => 'getBillable',
     ];
 
     /**
@@ -172,10 +173,6 @@ class PostProjectServiceHoursType implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class PostProjectServiceHoursType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets hourstype_id
@@ -317,6 +313,7 @@ class PostProjectServiceHoursType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class PostProjectServiceHoursType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

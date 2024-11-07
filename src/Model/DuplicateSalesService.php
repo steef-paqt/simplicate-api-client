@@ -1,4 +1,5 @@
 <?php
+
 /**
  * DuplicateSalesService
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * DuplicateSalesService Class Doc Comment
@@ -57,7 +58,7 @@ class DuplicateSalesService implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        
+
     ];
 
     /**
@@ -66,7 +67,7 @@ class DuplicateSalesService implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        
+
     ];
 
     /**
@@ -96,7 +97,7 @@ class DuplicateSalesService implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        
+
     ];
 
     /**
@@ -105,7 +106,7 @@ class DuplicateSalesService implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        
+
     ];
 
     /**
@@ -114,7 +115,7 @@ class DuplicateSalesService implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        
+
     ];
 
     /**
@@ -158,9 +159,9 @@ class DuplicateSalesService implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
+
+
 
     /**
      * Associative array for storing property values
@@ -276,5 +277,3 @@ class DuplicateSalesService implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

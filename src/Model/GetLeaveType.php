@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetLeaveType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetLeaveType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetLeaveType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -65,7 +66,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
         'label' => 'string',
         'tariff' => 'string',
         'blocked' => 'bool',
-        'color' => 'string'
+        'color' => 'string',
     ];
 
     /**
@@ -82,7 +83,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
         'label' => null,
         'tariff' => null,
         'blocked' => null,
-        'color' => null
+        'color' => null,
     ];
 
     /**
@@ -120,7 +121,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
         'label' => 'label',
         'tariff' => 'tariff',
         'blocked' => 'blocked',
-        'color' => 'color'
+        'color' => 'color',
     ];
 
     /**
@@ -137,7 +138,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
         'label' => 'setLabel',
         'tariff' => 'setTariff',
         'blocked' => 'setBlocked',
-        'color' => 'setColor'
+        'color' => 'setColor',
     ];
 
     /**
@@ -154,7 +155,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
         'label' => 'getLabel',
         'tariff' => 'getTariff',
         'blocked' => 'getBlocked',
-        'color' => 'getColor'
+        'color' => 'getColor',
     ];
 
     /**
@@ -198,12 +199,10 @@ class GetLeaveType implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const TYPE_NORMAL = 'normal';
-    const TYPE_LEAVE = 'leave';
-    const TYPE_ABSENCE = 'absence';
-    
+    public const TYPE_NORMAL = 'normal';
+    public const TYPE_LEAVE = 'leave';
+    public const TYPE_ABSENCE = 'absence';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -217,7 +216,6 @@ class GetLeaveType implements ModelInterface, ArrayAccess
             self::TYPE_ABSENCE,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -275,7 +273,6 @@ class GetLeaveType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets has_workflow
@@ -501,6 +498,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -575,5 +573,3 @@ class GetLeaveType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

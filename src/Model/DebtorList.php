@@ -1,4 +1,5 @@
 <?php
+
 /**
  * DebtorList
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * DebtorList Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class DebtorList implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class DebtorList implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'organization' => '\Swagger\Client\Model\GetOrganizationDebtorSimple',
-        'person' => '\Swagger\Client\Model\GetPersonDebtorSimple'
+        'person' => '\Swagger\Client\Model\GetPersonDebtorSimple',
     ];
 
     /**
@@ -68,7 +69,7 @@ class DebtorList implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'organization' => null,
-        'person' => null
+        'person' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class DebtorList implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'organization' => 'organization',
-        'person' => 'person'
+        'person' => 'person',
     ];
 
     /**
@@ -109,7 +110,7 @@ class DebtorList implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'organization' => 'setOrganization',
-        'person' => 'setPerson'
+        'person' => 'setPerson',
     ];
 
     /**
@@ -119,7 +120,7 @@ class DebtorList implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'organization' => 'getOrganization',
-        'person' => 'getPerson'
+        'person' => 'getPerson',
     ];
 
     /**
@@ -163,10 +164,6 @@ class DebtorList implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class DebtorList implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets organization
@@ -257,6 +253,7 @@ class DebtorList implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class DebtorList implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

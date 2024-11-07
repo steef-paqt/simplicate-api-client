@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetSharedItem
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetSharedItem Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetSharedItem implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -64,7 +65,7 @@ class GetSharedItem implements ModelInterface, ArrayAccess
         'type' => 'string',
         'employee_id' => 'string',
         'shared' => 'string',
-        'data' => 'string'
+        'data' => 'string',
     ];
 
     /**
@@ -80,7 +81,7 @@ class GetSharedItem implements ModelInterface, ArrayAccess
         'type' => null,
         'employee_id' => null,
         'shared' => null,
-        'data' => null
+        'data' => null,
     ];
 
     /**
@@ -117,7 +118,7 @@ class GetSharedItem implements ModelInterface, ArrayAccess
         'type' => 'type',
         'employee_id' => 'employee_id',
         'shared' => 'shared',
-        'data' => 'data'
+        'data' => 'data',
     ];
 
     /**
@@ -133,7 +134,7 @@ class GetSharedItem implements ModelInterface, ArrayAccess
         'type' => 'setType',
         'employee_id' => 'setEmployeeId',
         'shared' => 'setShared',
-        'data' => 'setData'
+        'data' => 'setData',
     ];
 
     /**
@@ -149,7 +150,7 @@ class GetSharedItem implements ModelInterface, ArrayAccess
         'type' => 'getType',
         'employee_id' => 'getEmployeeId',
         'shared' => 'getShared',
-        'data' => 'getData'
+        'data' => 'getData',
     ];
 
     /**
@@ -192,10 +193,6 @@ class GetSharedItem implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -244,7 +241,6 @@ class GetSharedItem implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -437,6 +433,7 @@ class GetSharedItem implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -511,5 +508,3 @@ class GetSharedItem implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

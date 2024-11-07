@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostWorkflow
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostWorkflow Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostWorkflow implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -67,7 +68,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
         'transfer_to_message' => 'string',
         'title' => 'string',
         'description' => 'string',
-        'deadline_date' => 'string'
+        'deadline_date' => 'string',
     ];
 
     /**
@@ -86,7 +87,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
         'transfer_to_message' => null,
         'title' => null,
         'description' => null,
-        'deadline_date' => null
+        'deadline_date' => null,
     ];
 
     /**
@@ -126,7 +127,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
         'transfer_to_message' => 'transfer_to_message',
         'title' => 'title',
         'description' => 'description',
-        'deadline_date' => 'deadline_date'
+        'deadline_date' => 'deadline_date',
     ];
 
     /**
@@ -145,7 +146,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
         'transfer_to_message' => 'setTransferToMessage',
         'title' => 'setTitle',
         'description' => 'setDescription',
-        'deadline_date' => 'setDeadlineDate'
+        'deadline_date' => 'setDeadlineDate',
     ];
 
     /**
@@ -164,7 +165,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
         'transfer_to_message' => 'getTransferToMessage',
         'title' => 'getTitle',
         'description' => 'getDescription',
-        'deadline_date' => 'getDeadlineDate'
+        'deadline_date' => 'getDeadlineDate',
     ];
 
     /**
@@ -207,10 +208,6 @@ class PostWorkflow implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -262,7 +259,6 @@ class PostWorkflow implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets defaultworkflow_id
@@ -527,6 +523,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -601,5 +598,3 @@ class PostWorkflow implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

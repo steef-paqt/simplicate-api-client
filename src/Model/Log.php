@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Log
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Log Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Log implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class Log implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'timestamp' => 'string',
-        'message' => 'string'
+        'message' => 'string',
     ];
 
     /**
@@ -68,7 +69,7 @@ class Log implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'timestamp' => null,
-        'message' => null
+        'message' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class Log implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'timestamp' => 'timestamp',
-        'message' => 'message'
+        'message' => 'message',
     ];
 
     /**
@@ -109,7 +110,7 @@ class Log implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'timestamp' => 'setTimestamp',
-        'message' => 'setMessage'
+        'message' => 'setMessage',
     ];
 
     /**
@@ -119,7 +120,7 @@ class Log implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'timestamp' => 'getTimestamp',
-        'message' => 'getMessage'
+        'message' => 'getMessage',
     ];
 
     /**
@@ -163,10 +164,6 @@ class Log implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class Log implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets timestamp
@@ -257,6 +253,7 @@ class Log implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class Log implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

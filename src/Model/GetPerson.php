@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetPerson
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetPerson Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetPerson implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -92,7 +93,7 @@ class GetPerson implements ModelInterface, ArrayAccess
         'bank_bic' => 'string',
         'invoice_receiver' => 'string',
         'mailing_list_email' => 'string',
-        'mailing_lists' => '\Swagger\Client\Model\PersonMailingList[]'
+        'mailing_lists' => '\Swagger\Client\Model\PersonMailingList[]',
     ];
 
     /**
@@ -136,7 +137,7 @@ class GetPerson implements ModelInterface, ArrayAccess
         'bank_bic' => null,
         'invoice_receiver' => null,
         'mailing_list_email' => null,
-        'mailing_lists' => null
+        'mailing_lists' => null,
     ];
 
     /**
@@ -201,7 +202,7 @@ class GetPerson implements ModelInterface, ArrayAccess
         'bank_bic' => 'bank_bic',
         'invoice_receiver' => 'invoice_receiver',
         'mailing_list_email' => 'mailing_list_email',
-        'mailing_lists' => 'mailing_lists'
+        'mailing_lists' => 'mailing_lists',
     ];
 
     /**
@@ -245,7 +246,7 @@ class GetPerson implements ModelInterface, ArrayAccess
         'bank_bic' => 'setBankBic',
         'invoice_receiver' => 'setInvoiceReceiver',
         'mailing_list_email' => 'setMailingListEmail',
-        'mailing_lists' => 'setMailingLists'
+        'mailing_lists' => 'setMailingLists',
     ];
 
     /**
@@ -289,7 +290,7 @@ class GetPerson implements ModelInterface, ArrayAccess
         'bank_bic' => 'getBankBic',
         'invoice_receiver' => 'getInvoiceReceiver',
         'mailing_list_email' => 'getMailingListEmail',
-        'mailing_lists' => 'getMailingLists'
+        'mailing_lists' => 'getMailingLists',
     ];
 
     /**
@@ -333,12 +334,10 @@ class GetPerson implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const GENDER_MALE = 'Male';
-    const GENDER_FEMALE = 'Female';
-    const GENDER_UNKNOWN = 'Unknown';
-    
+    public const GENDER_MALE = 'Male';
+    public const GENDER_FEMALE = 'Female';
+    public const GENDER_UNKNOWN = 'Unknown';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -352,7 +351,6 @@ class GetPerson implements ModelInterface, ArrayAccess
             self::GENDER_UNKNOWN,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -437,7 +435,6 @@ class GetPerson implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -1311,6 +1308,7 @@ class GetPerson implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -1385,5 +1383,3 @@ class GetPerson implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

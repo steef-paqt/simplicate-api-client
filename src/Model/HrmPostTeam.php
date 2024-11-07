@@ -1,4 +1,5 @@
 <?php
+
 /**
  * HrmPostTeam
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * HrmPostTeam Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class HrmPostTeam implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'employee_ids' => 'null[]',
-        'name' => 'string'
+        'name' => 'string',
     ];
 
     /**
@@ -68,7 +69,7 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'employee_ids' => null,
-        'name' => null
+        'name' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'employee_ids' => 'employee_ids',
-        'name' => 'name'
+        'name' => 'name',
     ];
 
     /**
@@ -109,7 +110,7 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'employee_ids' => 'setEmployeeIds',
-        'name' => 'setName'
+        'name' => 'setName',
     ];
 
     /**
@@ -119,7 +120,7 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'employee_ids' => 'getEmployeeIds',
-        'name' => 'getName'
+        'name' => 'getName',
     ];
 
     /**
@@ -163,10 +164,6 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets employee_ids
@@ -257,6 +253,7 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostChunked
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostChunked Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostChunked implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class PostChunked implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'file_name' => 'string',
-        'file_size' => 'string'
+        'file_size' => 'string',
     ];
 
     /**
@@ -68,7 +69,7 @@ class PostChunked implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'file_name' => null,
-        'file_size' => null
+        'file_size' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class PostChunked implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'file_name' => 'file_name',
-        'file_size' => 'file_size'
+        'file_size' => 'file_size',
     ];
 
     /**
@@ -109,7 +110,7 @@ class PostChunked implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'file_name' => 'setFileName',
-        'file_size' => 'setFileSize'
+        'file_size' => 'setFileSize',
     ];
 
     /**
@@ -119,7 +120,7 @@ class PostChunked implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'file_name' => 'getFileName',
-        'file_size' => 'getFileSize'
+        'file_size' => 'getFileSize',
     ];
 
     /**
@@ -163,10 +164,6 @@ class PostChunked implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class PostChunked implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets file_name
@@ -257,6 +253,7 @@ class PostChunked implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class PostChunked implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

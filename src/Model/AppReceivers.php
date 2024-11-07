@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AppReceivers
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * AppReceivers Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class AppReceivers implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class AppReceivers implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'type' => 'string',
-        'channels' => '\Swagger\Client\Model\AppReceiverSetting[]'
+        'channels' => '\Swagger\Client\Model\AppReceiverSetting[]',
     ];
 
     /**
@@ -68,7 +69,7 @@ class AppReceivers implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'type' => null,
-        'channels' => null
+        'channels' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class AppReceivers implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'type' => 'type',
-        'channels' => 'channels'
+        'channels' => 'channels',
     ];
 
     /**
@@ -109,7 +110,7 @@ class AppReceivers implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'type' => 'setType',
-        'channels' => 'setChannels'
+        'channels' => 'setChannels',
     ];
 
     /**
@@ -119,7 +120,7 @@ class AppReceivers implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'type' => 'getType',
-        'channels' => 'getChannels'
+        'channels' => 'getChannels',
     ];
 
     /**
@@ -163,10 +164,6 @@ class AppReceivers implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class AppReceivers implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets type
@@ -257,6 +253,7 @@ class AppReceivers implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class AppReceivers implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

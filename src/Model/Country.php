@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Country
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Country Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Country implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class Country implements ModelInterface, ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'country_code' => 'string',
-        'language_code' => 'string'
+        'language_code' => 'string',
     ];
 
     /**
@@ -72,7 +73,7 @@ class Country implements ModelInterface, ArrayAccess
         'id' => null,
         'name' => null,
         'country_code' => null,
-        'language_code' => null
+        'language_code' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class Country implements ModelInterface, ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'country_code' => 'country_code',
-        'language_code' => 'language_code'
+        'language_code' => 'language_code',
     ];
 
     /**
@@ -117,7 +118,7 @@ class Country implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'country_code' => 'setCountryCode',
-        'language_code' => 'setLanguageCode'
+        'language_code' => 'setLanguageCode',
     ];
 
     /**
@@ -129,7 +130,7 @@ class Country implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'country_code' => 'getCountryCode',
-        'language_code' => 'getLanguageCode'
+        'language_code' => 'getLanguageCode',
     ];
 
     /**
@@ -172,10 +173,6 @@ class Country implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class Country implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -317,6 +313,7 @@ class Country implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class Country implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

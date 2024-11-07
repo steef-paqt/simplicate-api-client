@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Leave
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Leave Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Leave implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class Leave implements ModelInterface, ArrayAccess
         'end_date' => 'string',
         'year' => 'int',
         'hours' => 'int',
-        'description' => 'string'
+        'description' => 'string',
     ];
 
     /**
@@ -74,7 +75,7 @@ class Leave implements ModelInterface, ArrayAccess
         'end_date' => null,
         'year' => null,
         'hours' => null,
-        'description' => null
+        'description' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class Leave implements ModelInterface, ArrayAccess
         'end_date' => 'end_date',
         'year' => 'year',
         'hours' => 'hours',
-        'description' => 'description'
+        'description' => 'description',
     ];
 
     /**
@@ -121,7 +122,7 @@ class Leave implements ModelInterface, ArrayAccess
         'end_date' => 'setEndDate',
         'year' => 'setYear',
         'hours' => 'setHours',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
     ];
 
     /**
@@ -134,7 +135,7 @@ class Leave implements ModelInterface, ArrayAccess
         'end_date' => 'getEndDate',
         'year' => 'getYear',
         'hours' => 'getHours',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
     ];
 
     /**
@@ -177,10 +178,6 @@ class Leave implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class Leave implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets start_date
@@ -347,6 +343,7 @@ class Leave implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class Leave implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

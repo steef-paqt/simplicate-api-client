@@ -1,4 +1,5 @@
 <?php
+
 /**
  * BudgetCosts
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * BudgetCosts Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class BudgetCosts implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class BudgetCosts implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'value_budget' => 'float',
-        'value_spent' => 'float'
+        'value_spent' => 'float',
     ];
 
     /**
@@ -68,7 +69,7 @@ class BudgetCosts implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'value_budget' => 'float',
-        'value_spent' => 'float'
+        'value_spent' => 'float',
     ];
 
     /**
@@ -99,7 +100,7 @@ class BudgetCosts implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'value_budget' => 'value_budget',
-        'value_spent' => 'value_spent'
+        'value_spent' => 'value_spent',
     ];
 
     /**
@@ -109,7 +110,7 @@ class BudgetCosts implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'value_budget' => 'setValueBudget',
-        'value_spent' => 'setValueSpent'
+        'value_spent' => 'setValueSpent',
     ];
 
     /**
@@ -119,7 +120,7 @@ class BudgetCosts implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'value_budget' => 'getValueBudget',
-        'value_spent' => 'getValueSpent'
+        'value_spent' => 'getValueSpent',
     ];
 
     /**
@@ -163,10 +164,6 @@ class BudgetCosts implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class BudgetCosts implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets value_budget
@@ -257,6 +253,7 @@ class BudgetCosts implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class BudgetCosts implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

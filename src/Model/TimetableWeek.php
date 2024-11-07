@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TimetableWeek
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * TimetableWeek Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class TimetableWeek implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -63,7 +64,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
         'day_4' => '\Swagger\Client\Model\TimetableWeekDay',
         'day_5' => '\Swagger\Client\Model\TimetableWeekDay',
         'day_6' => '\Swagger\Client\Model\TimetableWeekDay',
-        'day_7' => '\Swagger\Client\Model\TimetableWeekDay'
+        'day_7' => '\Swagger\Client\Model\TimetableWeekDay',
     ];
 
     /**
@@ -78,7 +79,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
         'day_4' => null,
         'day_5' => null,
         'day_6' => null,
-        'day_7' => null
+        'day_7' => null,
     ];
 
     /**
@@ -114,7 +115,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
         'day_4' => 'day_4',
         'day_5' => 'day_5',
         'day_6' => 'day_6',
-        'day_7' => 'day_7'
+        'day_7' => 'day_7',
     ];
 
     /**
@@ -129,7 +130,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
         'day_4' => 'setDay4',
         'day_5' => 'setDay5',
         'day_6' => 'setDay6',
-        'day_7' => 'setDay7'
+        'day_7' => 'setDay7',
     ];
 
     /**
@@ -144,7 +145,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
         'day_4' => 'getDay4',
         'day_5' => 'getDay5',
         'day_6' => 'getDay6',
-        'day_7' => 'getDay7'
+        'day_7' => 'getDay7',
     ];
 
     /**
@@ -187,10 +188,6 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -238,7 +235,6 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets day_1
@@ -407,6 +403,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -481,5 +478,3 @@ class TimetableWeek implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

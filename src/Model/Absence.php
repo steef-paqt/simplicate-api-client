@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Absence
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Absence Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Absence implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class Absence implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'start_date' => 'string',
         'end_date' => 'string',
-        'description' => 'string'
+        'description' => 'string',
     ];
 
     /**
@@ -70,7 +71,7 @@ class Absence implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'start_date' => null,
         'end_date' => null,
-        'description' => null
+        'description' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class Absence implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'start_date' => 'start_date',
         'end_date' => 'end_date',
-        'description' => 'description'
+        'description' => 'description',
     ];
 
     /**
@@ -113,7 +114,7 @@ class Absence implements ModelInterface, ArrayAccess
     protected static $setters = [
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
     ];
 
     /**
@@ -124,7 +125,7 @@ class Absence implements ModelInterface, ArrayAccess
     protected static $getters = [
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
     ];
 
     /**
@@ -168,10 +169,6 @@ class Absence implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class Absence implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets start_date
@@ -287,6 +283,7 @@ class Absence implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class Absence implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

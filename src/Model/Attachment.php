@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Attachment
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Attachment Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Attachment implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class Attachment implements ModelInterface, ArrayAccess
         'attachment_type' => '\Swagger\Client\Model\AttachmentType',
         'title' => 'string',
         'document_id' => 'string',
-        'download_link' => 'string'
+        'download_link' => 'string',
     ];
 
     /**
@@ -74,7 +75,7 @@ class Attachment implements ModelInterface, ArrayAccess
         'attachment_type' => null,
         'title' => null,
         'document_id' => null,
-        'download_link' => null
+        'download_link' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class Attachment implements ModelInterface, ArrayAccess
         'attachment_type' => 'attachment_type',
         'title' => 'title',
         'document_id' => 'document_id',
-        'download_link' => 'download_link'
+        'download_link' => 'download_link',
     ];
 
     /**
@@ -121,7 +122,7 @@ class Attachment implements ModelInterface, ArrayAccess
         'attachment_type' => 'setAttachmentType',
         'title' => 'setTitle',
         'document_id' => 'setDocumentId',
-        'download_link' => 'setDownloadLink'
+        'download_link' => 'setDownloadLink',
     ];
 
     /**
@@ -134,7 +135,7 @@ class Attachment implements ModelInterface, ArrayAccess
         'attachment_type' => 'getAttachmentType',
         'title' => 'getTitle',
         'document_id' => 'getDocumentId',
-        'download_link' => 'getDownloadLink'
+        'download_link' => 'getDownloadLink',
     ];
 
     /**
@@ -177,10 +178,6 @@ class Attachment implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class Attachment implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -347,6 +343,7 @@ class Attachment implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class Attachment implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

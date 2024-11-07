@@ -1,4 +1,5 @@
 <?php
+
 /**
  * LeaveType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * LeaveType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class LeaveType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class LeaveType implements ModelInterface, ArrayAccess
         'label' => 'string',
         'blocked' => 'bool',
         'color' => 'string',
-        'affects_balance' => 'bool'
+        'affects_balance' => 'bool',
     ];
 
     /**
@@ -72,7 +73,7 @@ class LeaveType implements ModelInterface, ArrayAccess
         'label' => null,
         'blocked' => null,
         'color' => null,
-        'affects_balance' => null
+        'affects_balance' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class LeaveType implements ModelInterface, ArrayAccess
         'label' => 'label',
         'blocked' => 'blocked',
         'color' => 'color',
-        'affects_balance' => 'affects_balance'
+        'affects_balance' => 'affects_balance',
     ];
 
     /**
@@ -117,7 +118,7 @@ class LeaveType implements ModelInterface, ArrayAccess
         'label' => 'setLabel',
         'blocked' => 'setBlocked',
         'color' => 'setColor',
-        'affects_balance' => 'setAffectsBalance'
+        'affects_balance' => 'setAffectsBalance',
     ];
 
     /**
@@ -129,7 +130,7 @@ class LeaveType implements ModelInterface, ArrayAccess
         'label' => 'getLabel',
         'blocked' => 'getBlocked',
         'color' => 'getColor',
-        'affects_balance' => 'getAffectsBalance'
+        'affects_balance' => 'getAffectsBalance',
     ];
 
     /**
@@ -172,10 +173,6 @@ class LeaveType implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class LeaveType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets label
@@ -317,6 +313,7 @@ class LeaveType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class LeaveType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

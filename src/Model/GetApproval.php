@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetApproval
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetApproval Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetApproval implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class GetApproval implements ModelInterface, ArrayAccess
         'id' => 'string',
         'employee' => '\Swagger\Client\Model\GetEmployeeSimple',
         'approvalstatus' => '\Swagger\Client\Model\GetApprovalStatus',
-        'date' => 'string'
+        'date' => 'string',
     ];
 
     /**
@@ -72,7 +73,7 @@ class GetApproval implements ModelInterface, ArrayAccess
         'id' => null,
         'employee' => null,
         'approvalstatus' => null,
-        'date' => null
+        'date' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class GetApproval implements ModelInterface, ArrayAccess
         'id' => 'id',
         'employee' => 'employee',
         'approvalstatus' => 'approvalstatus',
-        'date' => 'date'
+        'date' => 'date',
     ];
 
     /**
@@ -117,7 +118,7 @@ class GetApproval implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'employee' => 'setEmployee',
         'approvalstatus' => 'setApprovalstatus',
-        'date' => 'setDate'
+        'date' => 'setDate',
     ];
 
     /**
@@ -129,7 +130,7 @@ class GetApproval implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'employee' => 'getEmployee',
         'approvalstatus' => 'getApprovalstatus',
-        'date' => 'getDate'
+        'date' => 'getDate',
     ];
 
     /**
@@ -172,10 +173,6 @@ class GetApproval implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class GetApproval implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -317,6 +313,7 @@ class GetApproval implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class GetApproval implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Feature
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Feature Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Feature implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class Feature implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'identifier' => 'string',
         'name' => 'string',
-        'is_enabled' => 'bool'
+        'is_enabled' => 'bool',
     ];
 
     /**
@@ -70,7 +71,7 @@ class Feature implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'identifier' => null,
         'name' => null,
-        'is_enabled' => null
+        'is_enabled' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class Feature implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'identifier' => 'identifier',
         'name' => 'name',
-        'is_enabled' => 'is_enabled'
+        'is_enabled' => 'is_enabled',
     ];
 
     /**
@@ -113,7 +114,7 @@ class Feature implements ModelInterface, ArrayAccess
     protected static $setters = [
         'identifier' => 'setIdentifier',
         'name' => 'setName',
-        'is_enabled' => 'setIsEnabled'
+        'is_enabled' => 'setIsEnabled',
     ];
 
     /**
@@ -124,7 +125,7 @@ class Feature implements ModelInterface, ArrayAccess
     protected static $getters = [
         'identifier' => 'getIdentifier',
         'name' => 'getName',
-        'is_enabled' => 'getIsEnabled'
+        'is_enabled' => 'getIsEnabled',
     ];
 
     /**
@@ -168,10 +169,6 @@ class Feature implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class Feature implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets identifier
@@ -287,6 +283,7 @@ class Feature implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class Feature implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

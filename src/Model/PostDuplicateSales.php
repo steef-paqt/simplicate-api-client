@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostDuplicateSales
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostDuplicateSales Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostDuplicateSales implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -65,7 +66,7 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
         'organization_id' => 'string',
         'person_id' => 'string',
         'start_date' => 'string',
-        'end_date' => 'string'
+        'end_date' => 'string',
     ];
 
     /**
@@ -82,7 +83,7 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
         'organization_id' => null,
         'person_id' => null,
         'start_date' => null,
-        'end_date' => null
+        'end_date' => null,
     ];
 
     /**
@@ -120,7 +121,7 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
         'organization_id' => 'organization_id',
         'person_id' => 'person_id',
         'start_date' => 'start_date',
-        'end_date' => 'end_date'
+        'end_date' => 'end_date',
     ];
 
     /**
@@ -137,7 +138,7 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
         'organization_id' => 'setOrganizationId',
         'person_id' => 'setPersonId',
         'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate'
+        'end_date' => 'setEndDate',
     ];
 
     /**
@@ -154,7 +155,7 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
         'organization_id' => 'getOrganizationId',
         'person_id' => 'getPersonId',
         'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate'
+        'end_date' => 'getEndDate',
     ];
 
     /**
@@ -197,10 +198,6 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -250,7 +247,6 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets is_new_subject
@@ -467,6 +463,7 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -541,5 +538,3 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

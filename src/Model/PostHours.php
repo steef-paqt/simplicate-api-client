@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostHours
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostHours Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostHours implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -77,7 +78,7 @@ class PostHours implements ModelInterface, ArrayAccess
         'note' => 'string',
         'address' => '\Swagger\Client\Model\Address',
         'should_sync_to_cronofy' => 'bool',
-        'source' => 'string'
+        'source' => 'string',
     ];
 
     /**
@@ -106,7 +107,7 @@ class PostHours implements ModelInterface, ArrayAccess
         'note' => null,
         'address' => null,
         'should_sync_to_cronofy' => null,
-        'source' => null
+        'source' => null,
     ];
 
     /**
@@ -156,7 +157,7 @@ class PostHours implements ModelInterface, ArrayAccess
         'note' => 'note',
         'address' => 'address',
         'should_sync_to_cronofy' => 'should_sync_to_cronofy',
-        'source' => 'source'
+        'source' => 'source',
     ];
 
     /**
@@ -185,7 +186,7 @@ class PostHours implements ModelInterface, ArrayAccess
         'note' => 'setNote',
         'address' => 'setAddress',
         'should_sync_to_cronofy' => 'setShouldSyncToCronofy',
-        'source' => 'setSource'
+        'source' => 'setSource',
     ];
 
     /**
@@ -214,7 +215,7 @@ class PostHours implements ModelInterface, ArrayAccess
         'note' => 'getNote',
         'address' => 'getAddress',
         'should_sync_to_cronofy' => 'getShouldSyncToCronofy',
-        'source' => 'getSource'
+        'source' => 'getSource',
     ];
 
     /**
@@ -258,12 +259,10 @@ class PostHours implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const SOURCE_SCHEDULE = 'schedule';
-    const SOURCE_TIMER = 'timer';
-    const SOURCE_TIMESHEET = 'timesheet';
-    
+    public const SOURCE_SCHEDULE = 'schedule';
+    public const SOURCE_TIMER = 'timer';
+    public const SOURCE_TIMESHEET = 'timesheet';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -277,7 +276,6 @@ class PostHours implements ModelInterface, ArrayAccess
             self::SOURCE_TIMESHEET,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -347,7 +345,6 @@ class PostHours implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets employee_id
@@ -861,6 +858,7 @@ class PostHours implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -935,5 +933,3 @@ class PostHours implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

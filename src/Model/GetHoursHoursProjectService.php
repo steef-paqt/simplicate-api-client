@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetHoursHoursProjectService
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetHoursHoursProjectService Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -62,7 +63,7 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
         'start_date' => 'string',
         'until_date' => 'string',
         'default_service_id' => 'string',
-        'revenue_group_id' => 'string'
+        'revenue_group_id' => 'string',
     ];
 
     /**
@@ -76,7 +77,7 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
         'start_date' => null,
         'until_date' => null,
         'default_service_id' => null,
-        'revenue_group_id' => null
+        'revenue_group_id' => null,
     ];
 
     /**
@@ -111,7 +112,7 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
         'start_date' => 'start_date',
         'until_date' => 'until_date',
         'default_service_id' => 'default_service_id',
-        'revenue_group_id' => 'revenue_group_id'
+        'revenue_group_id' => 'revenue_group_id',
     ];
 
     /**
@@ -125,7 +126,7 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
         'start_date' => 'setStartDate',
         'until_date' => 'setUntilDate',
         'default_service_id' => 'setDefaultServiceId',
-        'revenue_group_id' => 'setRevenueGroupId'
+        'revenue_group_id' => 'setRevenueGroupId',
     ];
 
     /**
@@ -139,7 +140,7 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
         'start_date' => 'getStartDate',
         'until_date' => 'getUntilDate',
         'default_service_id' => 'getDefaultServiceId',
-        'revenue_group_id' => 'getRevenueGroupId'
+        'revenue_group_id' => 'getRevenueGroupId',
     ];
 
     /**
@@ -182,10 +183,6 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -232,7 +229,6 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -377,6 +373,7 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -451,5 +448,3 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

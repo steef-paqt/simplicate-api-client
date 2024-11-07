@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetServiceCostType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetServiceCostType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetServiceCostType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -62,7 +63,7 @@ class GetServiceCostType implements ModelInterface, ArrayAccess
         'budgeted_amount' => 'float',
         'tariff' => 'float',
         'purchase_margin' => 'float',
-        'purchase_tariff' => 'float'
+        'purchase_tariff' => 'float',
     ];
 
     /**
@@ -76,7 +77,7 @@ class GetServiceCostType implements ModelInterface, ArrayAccess
         'budgeted_amount' => 'float',
         'tariff' => 'float',
         'purchase_margin' => 'float',
-        'purchase_tariff' => 'float'
+        'purchase_tariff' => 'float',
     ];
 
     /**
@@ -111,7 +112,7 @@ class GetServiceCostType implements ModelInterface, ArrayAccess
         'budgeted_amount' => 'budgeted_amount',
         'tariff' => 'tariff',
         'purchase_margin' => 'purchase_margin',
-        'purchase_tariff' => 'purchase_tariff'
+        'purchase_tariff' => 'purchase_tariff',
     ];
 
     /**
@@ -125,7 +126,7 @@ class GetServiceCostType implements ModelInterface, ArrayAccess
         'budgeted_amount' => 'setBudgetedAmount',
         'tariff' => 'setTariff',
         'purchase_margin' => 'setPurchaseMargin',
-        'purchase_tariff' => 'setPurchaseTariff'
+        'purchase_tariff' => 'setPurchaseTariff',
     ];
 
     /**
@@ -139,7 +140,7 @@ class GetServiceCostType implements ModelInterface, ArrayAccess
         'budgeted_amount' => 'getBudgetedAmount',
         'tariff' => 'getTariff',
         'purchase_margin' => 'getPurchaseMargin',
-        'purchase_tariff' => 'getPurchaseTariff'
+        'purchase_tariff' => 'getPurchaseTariff',
     ];
 
     /**
@@ -182,10 +183,6 @@ class GetServiceCostType implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -232,7 +229,6 @@ class GetServiceCostType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -377,6 +373,7 @@ class GetServiceCostType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -451,5 +448,3 @@ class GetServiceCostType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

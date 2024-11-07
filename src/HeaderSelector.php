@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ApiException
  * PHP version 5
@@ -28,8 +29,6 @@
 
 namespace Swagger\Client;
 
-use \Exception;
-
 /**
  * ApiException Class Doc Comment
  *
@@ -40,7 +39,6 @@ use \Exception;
  */
 class HeaderSelector
 {
-
     /**
      * @param string[] $accept
      * @param string[] $contentTypes
@@ -56,6 +54,7 @@ class HeaderSelector
         }
 
         $headers['Content-Type'] = $this->selectContentTypeHeader($contentTypes);
+
         return $headers;
     }
 
@@ -68,6 +67,7 @@ class HeaderSelector
         $headers = $this->selectHeaders($accept, []);
 
         unset($headers['Content-Type']);
+
         return $headers;
     }
 
@@ -84,9 +84,9 @@ class HeaderSelector
             return null;
         } elseif (preg_grep("/application\/json/i", $accept)) {
             return 'application/json';
-        } else {
-            return implode(',', $accept);
         }
+
+        return implode(',', $accept);
     }
 
     /**
@@ -102,8 +102,8 @@ class HeaderSelector
             return 'application/json';
         } elseif (preg_grep("/application\/json/i", $contentType)) {
             return 'application/json';
-        } else {
-            return implode(',', $contentType);
         }
+
+        return implode(',', $contentType);
     }
 }

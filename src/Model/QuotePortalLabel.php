@@ -1,4 +1,5 @@
 <?php
+
 /**
  * QuotePortalLabel
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * QuotePortalLabel Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class QuotePortalLabel implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
         'quote_template_id' => 'string',
         'label' => 'string',
         'value' => 'string',
-        'fallback_value' => 'string'
+        'fallback_value' => 'string',
     ];
 
     /**
@@ -74,7 +75,7 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
         'quote_template_id' => null,
         'label' => null,
         'value' => null,
-        'fallback_value' => null
+        'fallback_value' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
         'quote_template_id' => 'quote_template_id',
         'label' => 'label',
         'value' => 'value',
-        'fallback_value' => 'fallback_value'
+        'fallback_value' => 'fallback_value',
     ];
 
     /**
@@ -121,7 +122,7 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
         'quote_template_id' => 'setQuoteTemplateId',
         'label' => 'setLabel',
         'value' => 'setValue',
-        'fallback_value' => 'setFallbackValue'
+        'fallback_value' => 'setFallbackValue',
     ];
 
     /**
@@ -134,7 +135,7 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
         'quote_template_id' => 'getQuoteTemplateId',
         'label' => 'getLabel',
         'value' => 'getValue',
-        'fallback_value' => 'getFallbackValue'
+        'fallback_value' => 'getFallbackValue',
     ];
 
     /**
@@ -177,10 +178,6 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -347,6 +343,7 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

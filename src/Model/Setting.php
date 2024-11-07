@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Setting
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Setting Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Setting implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class Setting implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'module' => 'string',
-        'settings' => 'null[]'
+        'settings' => 'null[]',
     ];
 
     /**
@@ -68,7 +69,7 @@ class Setting implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'module' => null,
-        'settings' => null
+        'settings' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class Setting implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'module' => 'module',
-        'settings' => 'settings'
+        'settings' => 'settings',
     ];
 
     /**
@@ -109,7 +110,7 @@ class Setting implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'module' => 'setModule',
-        'settings' => 'setSettings'
+        'settings' => 'setSettings',
     ];
 
     /**
@@ -119,7 +120,7 @@ class Setting implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'module' => 'getModule',
-        'settings' => 'getSettings'
+        'settings' => 'getSettings',
     ];
 
     /**
@@ -163,10 +164,6 @@ class Setting implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -209,7 +206,6 @@ class Setting implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets module
      *
@@ -247,7 +243,7 @@ class Setting implements ModelInterface, ArrayAccess
     /**
      * Sets settings
      *
-     * @param null[] $settings 
+     * @param null[] $settings
      *
      * @return $this
      */
@@ -257,6 +253,7 @@ class Setting implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class Setting implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

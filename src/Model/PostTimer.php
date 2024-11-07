@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostTimer
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostTimer Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostTimer implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -63,7 +64,7 @@ class PostTimer implements ModelInterface, ArrayAccess
         'hourstype_id' => 'string',
         'state' => 'string',
         'description' => 'string',
-        'metadata' => 'string'
+        'metadata' => 'string',
     ];
 
     /**
@@ -78,7 +79,7 @@ class PostTimer implements ModelInterface, ArrayAccess
         'hourstype_id' => null,
         'state' => null,
         'description' => null,
-        'metadata' => null
+        'metadata' => null,
     ];
 
     /**
@@ -114,7 +115,7 @@ class PostTimer implements ModelInterface, ArrayAccess
         'hourstype_id' => 'hourstype_id',
         'state' => 'state',
         'description' => 'description',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
     ];
 
     /**
@@ -129,7 +130,7 @@ class PostTimer implements ModelInterface, ArrayAccess
         'hourstype_id' => 'setHourstypeId',
         'state' => 'setState',
         'description' => 'setDescription',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
     ];
 
     /**
@@ -144,7 +145,7 @@ class PostTimer implements ModelInterface, ArrayAccess
         'hourstype_id' => 'getHourstypeId',
         'state' => 'getState',
         'description' => 'getDescription',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
     ];
 
     /**
@@ -188,12 +189,10 @@ class PostTimer implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const STATE_RUNNING = 'running';
-    const STATE_PAUSED = 'paused';
-    const STATE_FINISHED = 'finished';
-    
+    public const STATE_RUNNING = 'running';
+    public const STATE_PAUSED = 'paused';
+    public const STATE_FINISHED = 'finished';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -207,7 +206,6 @@ class PostTimer implements ModelInterface, ArrayAccess
             self::STATE_FINISHED,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -263,7 +261,6 @@ class PostTimer implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets employee_id
@@ -441,6 +438,7 @@ class PostTimer implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -515,5 +513,3 @@ class PostTimer implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

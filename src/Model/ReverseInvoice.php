@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ReverseInvoice
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * ReverseInvoice Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class ReverseInvoice implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -63,7 +64,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
         'invoice_number' => 'string',
         'price' => 'float',
         'project' => '\Swagger\Client\Model\GetProjectSimple',
-        'invoice' => '\Swagger\Client\Model\GetInvoiceSimple'
+        'invoice' => '\Swagger\Client\Model\GetInvoiceSimple',
     ];
 
     /**
@@ -78,7 +79,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
         'invoice_number' => null,
         'price' => 'float',
         'project' => null,
-        'invoice' => null
+        'invoice' => null,
     ];
 
     /**
@@ -114,7 +115,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
         'invoice_number' => 'invoice_number',
         'price' => 'price',
         'project' => 'project',
-        'invoice' => 'invoice'
+        'invoice' => 'invoice',
     ];
 
     /**
@@ -129,7 +130,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
         'invoice_number' => 'setInvoiceNumber',
         'price' => 'setPrice',
         'project' => 'setProject',
-        'invoice' => 'setInvoice'
+        'invoice' => 'setInvoice',
     ];
 
     /**
@@ -144,7 +145,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
         'invoice_number' => 'getInvoiceNumber',
         'price' => 'getPrice',
         'project' => 'getProject',
-        'invoice' => 'getInvoice'
+        'invoice' => 'getInvoice',
     ];
 
     /**
@@ -188,12 +189,10 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const STATUS_OPEN = 'open';
-    const STATUS_CONCEPT = 'concept';
-    const STATUS_INVOICED = 'invoiced';
-    
+    public const STATUS_OPEN = 'open';
+    public const STATUS_CONCEPT = 'concept';
+    public const STATUS_INVOICED = 'invoiced';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -207,7 +206,6 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
             self::STATUS_INVOICED,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -263,7 +261,6 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -441,6 +438,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -515,5 +513,3 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

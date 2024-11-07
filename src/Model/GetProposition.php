@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetProposition
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetProposition Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetProposition implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -68,7 +69,7 @@ class GetProposition implements ModelInterface, ArrayAccess
         'simplicate_url' => 'string',
         'project' => '\Swagger\Client\Model\GetProjectSimple',
         'created_at' => 'string',
-        'updated_at' => 'string'
+        'updated_at' => 'string',
     ];
 
     /**
@@ -88,7 +89,7 @@ class GetProposition implements ModelInterface, ArrayAccess
         'simplicate_url' => null,
         'project' => null,
         'created_at' => null,
-        'updated_at' => null
+        'updated_at' => null,
     ];
 
     /**
@@ -129,7 +130,7 @@ class GetProposition implements ModelInterface, ArrayAccess
         'simplicate_url' => 'simplicate_url',
         'project' => 'project',
         'created_at' => 'created_at',
-        'updated_at' => 'updated_at'
+        'updated_at' => 'updated_at',
     ];
 
     /**
@@ -149,7 +150,7 @@ class GetProposition implements ModelInterface, ArrayAccess
         'simplicate_url' => 'setSimplicateUrl',
         'project' => 'setProject',
         'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt'
+        'updated_at' => 'setUpdatedAt',
     ];
 
     /**
@@ -169,7 +170,7 @@ class GetProposition implements ModelInterface, ArrayAccess
         'simplicate_url' => 'getSimplicateUrl',
         'project' => 'getProject',
         'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt'
+        'updated_at' => 'getUpdatedAt',
     ];
 
     /**
@@ -212,10 +213,6 @@ class GetProposition implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -268,7 +265,6 @@ class GetProposition implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -557,6 +553,7 @@ class GetProposition implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -631,5 +628,3 @@ class GetProposition implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

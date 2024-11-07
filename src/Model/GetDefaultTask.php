@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetDefaultTask
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetDefaultTask Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetDefaultTask implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -65,7 +66,7 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
         'will_send_email' => 'bool',
         'is_return_to_sender' => 'bool',
         'average_hours_cost' => 'float',
-        'can_be_transferred' => 'bool'
+        'can_be_transferred' => 'bool',
     ];
 
     /**
@@ -82,7 +83,7 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
         'will_send_email' => null,
         'is_return_to_sender' => null,
         'average_hours_cost' => 'float',
-        'can_be_transferred' => null
+        'can_be_transferred' => null,
     ];
 
     /**
@@ -120,7 +121,7 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
         'will_send_email' => 'will_send_email',
         'is_return_to_sender' => 'is_return_to_sender',
         'average_hours_cost' => 'average_hours_cost',
-        'can_be_transferred' => 'can_be_transferred'
+        'can_be_transferred' => 'can_be_transferred',
     ];
 
     /**
@@ -137,7 +138,7 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
         'will_send_email' => 'setWillSendEmail',
         'is_return_to_sender' => 'setIsReturnToSender',
         'average_hours_cost' => 'setAverageHoursCost',
-        'can_be_transferred' => 'setCanBeTransferred'
+        'can_be_transferred' => 'setCanBeTransferred',
     ];
 
     /**
@@ -154,7 +155,7 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
         'will_send_email' => 'getWillSendEmail',
         'is_return_to_sender' => 'getIsReturnToSender',
         'average_hours_cost' => 'getAverageHoursCost',
-        'can_be_transferred' => 'getCanBeTransferred'
+        'can_be_transferred' => 'getCanBeTransferred',
     ];
 
     /**
@@ -197,10 +198,6 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -250,7 +247,6 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -467,6 +463,7 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -541,5 +538,3 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

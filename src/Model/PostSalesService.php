@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostSalesService
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostSalesService Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostSalesService implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -70,7 +71,7 @@ class PostSalesService implements ModelInterface, ArrayAccess
         'subscription_cycle' => 'string',
         'explanation' => 'string',
         'track_hours' => 'bool',
-        'track_cost' => 'bool'
+        'track_cost' => 'bool',
     ];
 
     /**
@@ -92,7 +93,7 @@ class PostSalesService implements ModelInterface, ArrayAccess
         'subscription_cycle' => null,
         'explanation' => null,
         'track_hours' => null,
-        'track_cost' => null
+        'track_cost' => null,
     ];
 
     /**
@@ -135,7 +136,7 @@ class PostSalesService implements ModelInterface, ArrayAccess
         'subscription_cycle' => 'subscription_cycle',
         'explanation' => 'explanation',
         'track_hours' => 'track_hours',
-        'track_cost' => 'track_cost'
+        'track_cost' => 'track_cost',
     ];
 
     /**
@@ -157,7 +158,7 @@ class PostSalesService implements ModelInterface, ArrayAccess
         'subscription_cycle' => 'setSubscriptionCycle',
         'explanation' => 'setExplanation',
         'track_hours' => 'setTrackHours',
-        'track_cost' => 'setTrackCost'
+        'track_cost' => 'setTrackCost',
     ];
 
     /**
@@ -179,7 +180,7 @@ class PostSalesService implements ModelInterface, ArrayAccess
         'subscription_cycle' => 'getSubscriptionCycle',
         'explanation' => 'getExplanation',
         'track_hours' => 'getTrackHours',
-        'track_cost' => 'getTrackCost'
+        'track_cost' => 'getTrackCost',
     ];
 
     /**
@@ -223,14 +224,12 @@ class PostSalesService implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const INVOICE_METHOD_FIXED_FEE = 'FixedFee';
-    const SUBSCRIPTION_CYCLE_MONTH = 'Month';
-    const SUBSCRIPTION_CYCLE_QUARTER = 'Quarter';
-    const SUBSCRIPTION_CYCLE_HALF_A_YEAR = 'Half_a_year';
-    const SUBSCRIPTION_CYCLE_YEAR = 'Year';
-    
+    public const INVOICE_METHOD_FIXED_FEE = 'FixedFee';
+    public const SUBSCRIPTION_CYCLE_MONTH = 'Month';
+    public const SUBSCRIPTION_CYCLE_QUARTER = 'Quarter';
+    public const SUBSCRIPTION_CYCLE_HALF_A_YEAR = 'Half_a_year';
+    public const SUBSCRIPTION_CYCLE_YEAR = 'Year';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -242,7 +241,7 @@ class PostSalesService implements ModelInterface, ArrayAccess
             self::INVOICE_METHOD_FIXED_FEE,
         ];
     }
-    
+
     /**
      * Gets allowable values of the enum
      *
@@ -257,7 +256,6 @@ class PostSalesService implements ModelInterface, ArrayAccess
             self::SUBSCRIPTION_CYCLE_YEAR,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -328,7 +326,6 @@ class PostSalesService implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets revenue_group_id
@@ -683,6 +680,7 @@ class PostSalesService implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -757,5 +755,3 @@ class PostSalesService implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

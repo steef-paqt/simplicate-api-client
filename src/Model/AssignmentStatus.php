@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AssignmentStatus
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * AssignmentStatus Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class AssignmentStatus implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
         'color' => 'string',
         'is_done' => 'bool',
         'is_blocked' => 'bool',
-        'order' => 'int'
+        'order' => 'int',
     ];
 
     /**
@@ -74,7 +75,7 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
         'color' => null,
         'is_done' => null,
         'is_blocked' => null,
-        'order' => null
+        'order' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
         'color' => 'color',
         'is_done' => 'is_done',
         'is_blocked' => 'is_blocked',
-        'order' => 'order'
+        'order' => 'order',
     ];
 
     /**
@@ -121,7 +122,7 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
         'color' => 'setColor',
         'is_done' => 'setIsDone',
         'is_blocked' => 'setIsBlocked',
-        'order' => 'setOrder'
+        'order' => 'setOrder',
     ];
 
     /**
@@ -134,7 +135,7 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
         'color' => 'getColor',
         'is_done' => 'getIsDone',
         'is_blocked' => 'getIsBlocked',
-        'order' => 'getOrder'
+        'order' => 'getOrder',
     ];
 
     /**
@@ -177,10 +178,6 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets name
@@ -347,6 +343,7 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

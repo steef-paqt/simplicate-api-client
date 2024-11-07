@@ -1,4 +1,5 @@
 <?php
+
 /**
  * InvoiceTemplate
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * InvoiceTemplate Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class InvoiceTemplate implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -63,7 +64,7 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
         'hide_price' => 'bool',
         'footer_normal' => 'string',
         'footer_directdebit' => 'string',
-        'default_note' => 'string'
+        'default_note' => 'string',
     ];
 
     /**
@@ -78,7 +79,7 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
         'hide_price' => null,
         'footer_normal' => null,
         'footer_directdebit' => null,
-        'default_note' => null
+        'default_note' => null,
     ];
 
     /**
@@ -114,7 +115,7 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
         'hide_price' => 'hide_price',
         'footer_normal' => 'footer_normal',
         'footer_directdebit' => 'footer_directdebit',
-        'default_note' => 'default_note'
+        'default_note' => 'default_note',
     ];
 
     /**
@@ -129,7 +130,7 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
         'hide_price' => 'setHidePrice',
         'footer_normal' => 'setFooterNormal',
         'footer_directdebit' => 'setFooterDirectdebit',
-        'default_note' => 'setDefaultNote'
+        'default_note' => 'setDefaultNote',
     ];
 
     /**
@@ -144,7 +145,7 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
         'hide_price' => 'getHidePrice',
         'footer_normal' => 'getFooterNormal',
         'footer_directdebit' => 'getFooterDirectdebit',
-        'default_note' => 'getDefaultNote'
+        'default_note' => 'getDefaultNote',
     ];
 
     /**
@@ -187,10 +188,6 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -238,7 +235,6 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -407,6 +403,7 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -481,5 +478,3 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

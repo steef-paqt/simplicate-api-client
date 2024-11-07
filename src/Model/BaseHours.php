@@ -1,4 +1,5 @@
 <?php
+
 /**
  * BaseHours
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * BaseHours Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class BaseHours implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class BaseHours implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'source' => 'string',
         'note' => 'string',
-        'start_date' => 'string'
+        'start_date' => 'string',
     ];
 
     /**
@@ -70,7 +71,7 @@ class BaseHours implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'source' => null,
         'note' => null,
-        'start_date' => null
+        'start_date' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class BaseHours implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'source' => 'source',
         'note' => 'note',
-        'start_date' => 'start_date'
+        'start_date' => 'start_date',
     ];
 
     /**
@@ -113,7 +114,7 @@ class BaseHours implements ModelInterface, ArrayAccess
     protected static $setters = [
         'source' => 'setSource',
         'note' => 'setNote',
-        'start_date' => 'setStartDate'
+        'start_date' => 'setStartDate',
     ];
 
     /**
@@ -124,7 +125,7 @@ class BaseHours implements ModelInterface, ArrayAccess
     protected static $getters = [
         'source' => 'getSource',
         'note' => 'getNote',
-        'start_date' => 'getStartDate'
+        'start_date' => 'getStartDate',
     ];
 
     /**
@@ -168,12 +169,10 @@ class BaseHours implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const SOURCE_SCHEDULE = 'schedule';
-    const SOURCE_TIMER = 'timer';
-    const SOURCE_TIMESHEET = 'timesheet';
-    
+    public const SOURCE_SCHEDULE = 'schedule';
+    public const SOURCE_TIMER = 'timer';
+    public const SOURCE_TIMESHEET = 'timesheet';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -187,7 +186,6 @@ class BaseHours implements ModelInterface, ArrayAccess
             self::SOURCE_TIMESHEET,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -239,7 +237,6 @@ class BaseHours implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets source
@@ -321,6 +318,7 @@ class BaseHours implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -395,5 +393,3 @@ class BaseHours implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

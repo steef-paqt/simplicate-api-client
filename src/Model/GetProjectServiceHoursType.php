@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetProjectServiceHoursType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetProjectServiceHoursType Class Doc Comment
@@ -183,9 +184,9 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
+
+
 
     /**
      * Associative array for storing property values
@@ -451,5 +452,3 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

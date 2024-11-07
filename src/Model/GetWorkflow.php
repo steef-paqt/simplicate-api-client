@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetWorkflow
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetWorkflow Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetWorkflow implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -70,7 +71,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
         'updated_at' => 'string',
         'title' => 'string',
         'description' => 'string',
-        'deadline_date' => 'string'
+        'deadline_date' => 'string',
     ];
 
     /**
@@ -92,7 +93,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
         'updated_at' => null,
         'title' => null,
         'description' => null,
-        'deadline_date' => null
+        'deadline_date' => null,
     ];
 
     /**
@@ -135,7 +136,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
         'updated_at' => 'updated_at',
         'title' => 'title',
         'description' => 'description',
-        'deadline_date' => 'deadline_date'
+        'deadline_date' => 'deadline_date',
     ];
 
     /**
@@ -157,7 +158,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
         'updated_at' => 'setUpdatedAt',
         'title' => 'setTitle',
         'description' => 'setDescription',
-        'deadline_date' => 'setDeadlineDate'
+        'deadline_date' => 'setDeadlineDate',
     ];
 
     /**
@@ -179,7 +180,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
         'updated_at' => 'getUpdatedAt',
         'title' => 'getTitle',
         'description' => 'getDescription',
-        'deadline_date' => 'getDeadlineDate'
+        'deadline_date' => 'getDeadlineDate',
     ];
 
     /**
@@ -222,10 +223,6 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -280,7 +277,6 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -617,6 +613,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -691,5 +688,3 @@ class GetWorkflow implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

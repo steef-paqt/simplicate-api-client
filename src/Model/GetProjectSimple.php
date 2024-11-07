@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetProjectSimple
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetProjectSimple Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetProjectSimple implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -64,7 +65,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
         'person' => '\Swagger\Client\Model\GetPersonSimple',
         'project_manager' => '\Swagger\Client\Model\GetEmployeeSimple',
         'separate_invoice_recipient' => 'object',
-        'has_register_mileage_enabled' => 'bool'
+        'has_register_mileage_enabled' => 'bool',
     ];
 
     /**
@@ -80,7 +81,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
         'person' => null,
         'project_manager' => null,
         'separate_invoice_recipient' => null,
-        'has_register_mileage_enabled' => null
+        'has_register_mileage_enabled' => null,
     ];
 
     /**
@@ -117,7 +118,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
         'person' => 'person',
         'project_manager' => 'project_manager',
         'separate_invoice_recipient' => 'separate_invoice_recipient',
-        'has_register_mileage_enabled' => 'has_register_mileage_enabled'
+        'has_register_mileage_enabled' => 'has_register_mileage_enabled',
     ];
 
     /**
@@ -133,7 +134,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
         'person' => 'setPerson',
         'project_manager' => 'setProjectManager',
         'separate_invoice_recipient' => 'setSeparateInvoiceRecipient',
-        'has_register_mileage_enabled' => 'setHasRegisterMileageEnabled'
+        'has_register_mileage_enabled' => 'setHasRegisterMileageEnabled',
     ];
 
     /**
@@ -149,7 +150,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
         'person' => 'getPerson',
         'project_manager' => 'getProjectManager',
         'separate_invoice_recipient' => 'getSeparateInvoiceRecipient',
-        'has_register_mileage_enabled' => 'getHasRegisterMileageEnabled'
+        'has_register_mileage_enabled' => 'getHasRegisterMileageEnabled',
     ];
 
     /**
@@ -192,10 +193,6 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -244,7 +241,6 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -437,6 +433,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -511,5 +508,3 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * App
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * App Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class App implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class App implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'key' => 'string',
         'label' => 'string',
-        'state' => 'string'
+        'state' => 'string',
     ];
 
     /**
@@ -70,7 +71,7 @@ class App implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'key' => null,
         'label' => null,
-        'state' => null
+        'state' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class App implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'key' => 'key',
         'label' => 'label',
-        'state' => 'state'
+        'state' => 'state',
     ];
 
     /**
@@ -113,7 +114,7 @@ class App implements ModelInterface, ArrayAccess
     protected static $setters = [
         'key' => 'setKey',
         'label' => 'setLabel',
-        'state' => 'setState'
+        'state' => 'setState',
     ];
 
     /**
@@ -124,7 +125,7 @@ class App implements ModelInterface, ArrayAccess
     protected static $getters = [
         'key' => 'getKey',
         'label' => 'getLabel',
-        'state' => 'getState'
+        'state' => 'getState',
     ];
 
     /**
@@ -168,12 +169,10 @@ class App implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const STATE_INSTALLED = 'INSTALLED';
-    const STATE_DISABLED = 'DISABLED';
-    const STATE_UNINSTALLED = 'UNINSTALLED';
-    
+    public const STATE_INSTALLED = 'INSTALLED';
+    public const STATE_DISABLED = 'DISABLED';
+    public const STATE_UNINSTALLED = 'UNINSTALLED';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -187,7 +186,6 @@ class App implements ModelInterface, ArrayAccess
             self::STATE_UNINSTALLED,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -239,7 +237,6 @@ class App implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets key
@@ -321,6 +318,7 @@ class App implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -395,5 +393,3 @@ class App implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

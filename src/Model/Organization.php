@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Organization
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Organization Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Organization implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -72,7 +73,7 @@ class Organization implements ModelInterface, ArrayAccess
         'allow_autocollect' => 'bool',
         'bank_account' => 'string',
         'bank_bic' => 'string',
-        'relation_number' => 'string'
+        'relation_number' => 'string',
     ];
 
     /**
@@ -96,7 +97,7 @@ class Organization implements ModelInterface, ArrayAccess
         'allow_autocollect' => null,
         'bank_account' => null,
         'bank_bic' => null,
-        'relation_number' => null
+        'relation_number' => null,
     ];
 
     /**
@@ -141,7 +142,7 @@ class Organization implements ModelInterface, ArrayAccess
         'allow_autocollect' => 'allow_autocollect',
         'bank_account' => 'bank_account',
         'bank_bic' => 'bank_bic',
-        'relation_number' => 'relation_number'
+        'relation_number' => 'relation_number',
     ];
 
     /**
@@ -165,7 +166,7 @@ class Organization implements ModelInterface, ArrayAccess
         'allow_autocollect' => 'setAllowAutocollect',
         'bank_account' => 'setBankAccount',
         'bank_bic' => 'setBankBic',
-        'relation_number' => 'setRelationNumber'
+        'relation_number' => 'setRelationNumber',
     ];
 
     /**
@@ -189,7 +190,7 @@ class Organization implements ModelInterface, ArrayAccess
         'allow_autocollect' => 'getAllowAutocollect',
         'bank_account' => 'getBankAccount',
         'bank_bic' => 'getBankBic',
-        'relation_number' => 'getRelationNumber'
+        'relation_number' => 'getRelationNumber',
     ];
 
     /**
@@ -232,10 +233,6 @@ class Organization implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -292,7 +289,6 @@ class Organization implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets name
@@ -677,6 +673,7 @@ class Organization implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -751,5 +748,3 @@ class Organization implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

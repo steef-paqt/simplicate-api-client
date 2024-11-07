@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostQuoteTemplate
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostQuoteTemplate Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostQuoteTemplate implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
         'description' => 'string',
         'type' => 'string',
         'html' => 'string',
-        'json' => 'string'
+        'json' => 'string',
     ];
 
     /**
@@ -74,7 +75,7 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
         'description' => null,
         'type' => null,
         'html' => null,
-        'json' => null
+        'json' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
         'description' => 'description',
         'type' => 'type',
         'html' => 'html',
-        'json' => 'json'
+        'json' => 'json',
     ];
 
     /**
@@ -121,7 +122,7 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
         'description' => 'setDescription',
         'type' => 'setType',
         'html' => 'setHtml',
-        'json' => 'setJson'
+        'json' => 'setJson',
     ];
 
     /**
@@ -134,7 +135,7 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
         'description' => 'getDescription',
         'type' => 'getType',
         'html' => 'getHtml',
-        'json' => 'getJson'
+        'json' => 'getJson',
     ];
 
     /**
@@ -177,10 +178,6 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets name
@@ -347,6 +343,7 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

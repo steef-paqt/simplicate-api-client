@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostEmployee
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostEmployee Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostEmployee implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class PostEmployee implements ModelInterface, ArrayAccess
         'person_id' => 'string',
         'supervisor' => '\Swagger\Client\Model\PostEmployeeFk',
         'status' => '\Swagger\Client\Model\PostEmployeeStatusFk',
-        'custom_fields' => '\Swagger\Client\Model\PostCustomFieldValue[]'
+        'custom_fields' => '\Swagger\Client\Model\PostCustomFieldValue[]',
     ];
 
     /**
@@ -72,7 +73,7 @@ class PostEmployee implements ModelInterface, ArrayAccess
         'person_id' => null,
         'supervisor' => null,
         'status' => null,
-        'custom_fields' => null
+        'custom_fields' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class PostEmployee implements ModelInterface, ArrayAccess
         'person_id' => 'person_id',
         'supervisor' => 'supervisor',
         'status' => 'status',
-        'custom_fields' => 'custom_fields'
+        'custom_fields' => 'custom_fields',
     ];
 
     /**
@@ -117,7 +118,7 @@ class PostEmployee implements ModelInterface, ArrayAccess
         'person_id' => 'setPersonId',
         'supervisor' => 'setSupervisor',
         'status' => 'setStatus',
-        'custom_fields' => 'setCustomFields'
+        'custom_fields' => 'setCustomFields',
     ];
 
     /**
@@ -129,7 +130,7 @@ class PostEmployee implements ModelInterface, ArrayAccess
         'person_id' => 'getPersonId',
         'supervisor' => 'getSupervisor',
         'status' => 'getStatus',
-        'custom_fields' => 'getCustomFields'
+        'custom_fields' => 'getCustomFields',
     ];
 
     /**
@@ -172,10 +173,6 @@ class PostEmployee implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class PostEmployee implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets person_id
@@ -317,6 +313,7 @@ class PostEmployee implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class PostEmployee implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

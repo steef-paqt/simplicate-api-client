@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostSeparateInvoiceRecipient
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostSeparateInvoiceRecipient Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
         'organization_id' => 'string',
         'person_id' => 'string',
         'contact_id' => 'string',
-        'is_separate_invoice_recipient' => 'bool'
+        'is_separate_invoice_recipient' => 'bool',
     ];
 
     /**
@@ -72,7 +73,7 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
         'organization_id' => null,
         'person_id' => null,
         'contact_id' => null,
-        'is_separate_invoice_recipient' => null
+        'is_separate_invoice_recipient' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
         'organization_id' => 'organization_id',
         'person_id' => 'person_id',
         'contact_id' => 'contact_id',
-        'is_separate_invoice_recipient' => 'is_separate_invoice_recipient'
+        'is_separate_invoice_recipient' => 'is_separate_invoice_recipient',
     ];
 
     /**
@@ -117,7 +118,7 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
         'organization_id' => 'setOrganizationId',
         'person_id' => 'setPersonId',
         'contact_id' => 'setContactId',
-        'is_separate_invoice_recipient' => 'setIsSeparateInvoiceRecipient'
+        'is_separate_invoice_recipient' => 'setIsSeparateInvoiceRecipient',
     ];
 
     /**
@@ -129,7 +130,7 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
         'organization_id' => 'getOrganizationId',
         'person_id' => 'getPersonId',
         'contact_id' => 'getContactId',
-        'is_separate_invoice_recipient' => 'getIsSeparateInvoiceRecipient'
+        'is_separate_invoice_recipient' => 'getIsSeparateInvoiceRecipient',
     ];
 
     /**
@@ -172,10 +173,6 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets organization_id
@@ -317,6 +313,7 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

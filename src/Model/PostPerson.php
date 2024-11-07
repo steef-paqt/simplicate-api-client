@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostPerson
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostPerson Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostPerson implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -84,7 +85,7 @@ class PostPerson implements ModelInterface, ArrayAccess
         'invoice_receiver' => 'string',
         'mailing_list_email' => 'string',
         'mailing_lists' => '\Swagger\Client\Model\PersonMailingList[]',
-        'is_active' => 'bool'
+        'is_active' => 'bool',
     ];
 
     /**
@@ -120,7 +121,7 @@ class PostPerson implements ModelInterface, ArrayAccess
         'invoice_receiver' => null,
         'mailing_list_email' => null,
         'mailing_lists' => null,
-        'is_active' => null
+        'is_active' => null,
     ];
 
     /**
@@ -177,7 +178,7 @@ class PostPerson implements ModelInterface, ArrayAccess
         'invoice_receiver' => 'invoice_receiver',
         'mailing_list_email' => 'mailing_list_email',
         'mailing_lists' => 'mailing_lists',
-        'is_active' => 'is_active'
+        'is_active' => 'is_active',
     ];
 
     /**
@@ -213,7 +214,7 @@ class PostPerson implements ModelInterface, ArrayAccess
         'invoice_receiver' => 'setInvoiceReceiver',
         'mailing_list_email' => 'setMailingListEmail',
         'mailing_lists' => 'setMailingLists',
-        'is_active' => 'setIsActive'
+        'is_active' => 'setIsActive',
     ];
 
     /**
@@ -249,7 +250,7 @@ class PostPerson implements ModelInterface, ArrayAccess
         'invoice_receiver' => 'getInvoiceReceiver',
         'mailing_list_email' => 'getMailingListEmail',
         'mailing_lists' => 'getMailingLists',
-        'is_active' => 'getIsActive'
+        'is_active' => 'getIsActive',
     ];
 
     /**
@@ -293,12 +294,10 @@ class PostPerson implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const GENDER_MALE = 'Male';
-    const GENDER_FEMALE = 'Female';
-    const GENDER_UNKNOWN = 'Unknown';
-    
+    public const GENDER_MALE = 'Male';
+    public const GENDER_FEMALE = 'Female';
+    public const GENDER_UNKNOWN = 'Unknown';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -312,7 +311,6 @@ class PostPerson implements ModelInterface, ArrayAccess
             self::GENDER_UNKNOWN,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -389,7 +387,6 @@ class PostPerson implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets interests
@@ -1071,6 +1068,7 @@ class PostPerson implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -1145,5 +1143,3 @@ class PostPerson implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

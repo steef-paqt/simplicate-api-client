@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CalendarItem
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * CalendarItem Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class CalendarItem implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -73,7 +74,7 @@ class CalendarItem implements ModelInterface, ArrayAccess
         'organizer_email' => 'string',
         'private' => 'bool',
         'obfuscate' => 'bool',
-        'hours_id' => 'string'
+        'hours_id' => 'string',
     ];
 
     /**
@@ -98,7 +99,7 @@ class CalendarItem implements ModelInterface, ArrayAccess
         'organizer_email' => null,
         'private' => null,
         'obfuscate' => null,
-        'hours_id' => null
+        'hours_id' => null,
     ];
 
     /**
@@ -144,7 +145,7 @@ class CalendarItem implements ModelInterface, ArrayAccess
         'organizer_email' => 'organizer_email',
         'private' => 'private',
         'obfuscate' => 'obfuscate',
-        'hours_id' => 'hours_id'
+        'hours_id' => 'hours_id',
     ];
 
     /**
@@ -169,7 +170,7 @@ class CalendarItem implements ModelInterface, ArrayAccess
         'organizer_email' => 'setOrganizerEmail',
         'private' => 'setPrivate',
         'obfuscate' => 'setObfuscate',
-        'hours_id' => 'setHoursId'
+        'hours_id' => 'setHoursId',
     ];
 
     /**
@@ -194,7 +195,7 @@ class CalendarItem implements ModelInterface, ArrayAccess
         'organizer_email' => 'getOrganizerEmail',
         'private' => 'getPrivate',
         'obfuscate' => 'getObfuscate',
-        'hours_id' => 'getHoursId'
+        'hours_id' => 'getHoursId',
     ];
 
     /**
@@ -237,10 +238,6 @@ class CalendarItem implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -298,7 +295,6 @@ class CalendarItem implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -707,6 +703,7 @@ class CalendarItem implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -781,5 +778,3 @@ class CalendarItem implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

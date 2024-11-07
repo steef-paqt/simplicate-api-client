@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Workflow
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Workflow Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Workflow implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class Workflow implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'title' => 'string',
         'description' => 'string',
-        'deadline_date' => 'string'
+        'deadline_date' => 'string',
     ];
 
     /**
@@ -70,7 +71,7 @@ class Workflow implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'title' => null,
         'description' => null,
-        'deadline_date' => null
+        'deadline_date' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class Workflow implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'title' => 'title',
         'description' => 'description',
-        'deadline_date' => 'deadline_date'
+        'deadline_date' => 'deadline_date',
     ];
 
     /**
@@ -113,7 +114,7 @@ class Workflow implements ModelInterface, ArrayAccess
     protected static $setters = [
         'title' => 'setTitle',
         'description' => 'setDescription',
-        'deadline_date' => 'setDeadlineDate'
+        'deadline_date' => 'setDeadlineDate',
     ];
 
     /**
@@ -124,7 +125,7 @@ class Workflow implements ModelInterface, ArrayAccess
     protected static $getters = [
         'title' => 'getTitle',
         'description' => 'getDescription',
-        'deadline_date' => 'getDeadlineDate'
+        'deadline_date' => 'getDeadlineDate',
     ];
 
     /**
@@ -168,10 +169,6 @@ class Workflow implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class Workflow implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets title
@@ -287,6 +283,7 @@ class Workflow implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class Workflow implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetDefaultWorkflowGroup
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetDefaultWorkflowGroup Class Doc Comment
@@ -168,9 +169,9 @@ class GetDefaultWorkflowGroup implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
+
+
 
     /**
      * Associative array for storing property values
@@ -361,5 +362,3 @@ class GetDefaultWorkflowGroup implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

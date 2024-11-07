@@ -1,4 +1,5 @@
 <?php
+
 /**
  * User
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * User Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class User implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -78,7 +79,7 @@ class User implements ModelInterface, ArrayAccess
         'hours_view_mode' => 'string',
         'is_account_owner' => 'bool',
         'has_external_agenda_integration' => 'bool',
-        'rights' => '\Swagger\Client\Model\Right[]'
+        'rights' => '\Swagger\Client\Model\Right[]',
     ];
 
     /**
@@ -108,7 +109,7 @@ class User implements ModelInterface, ArrayAccess
         'hours_view_mode' => null,
         'is_account_owner' => null,
         'has_external_agenda_integration' => null,
-        'rights' => null
+        'rights' => null,
     ];
 
     /**
@@ -159,7 +160,7 @@ class User implements ModelInterface, ArrayAccess
         'hours_view_mode' => 'hours_view_mode',
         'is_account_owner' => 'is_account_owner',
         'has_external_agenda_integration' => 'has_external_agenda_integration',
-        'rights' => 'rights'
+        'rights' => 'rights',
     ];
 
     /**
@@ -189,7 +190,7 @@ class User implements ModelInterface, ArrayAccess
         'hours_view_mode' => 'setHoursViewMode',
         'is_account_owner' => 'setIsAccountOwner',
         'has_external_agenda_integration' => 'setHasExternalAgendaIntegration',
-        'rights' => 'setRights'
+        'rights' => 'setRights',
     ];
 
     /**
@@ -219,7 +220,7 @@ class User implements ModelInterface, ArrayAccess
         'hours_view_mode' => 'getHoursViewMode',
         'is_account_owner' => 'getIsAccountOwner',
         'has_external_agenda_integration' => 'getHasExternalAgendaIntegration',
-        'rights' => 'getRights'
+        'rights' => 'getRights',
     ];
 
     /**
@@ -263,12 +264,10 @@ class User implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const HOURS_VIEW_MODE_AGENDA = 'agenda';
-    const HOURS_VIEW_MODE_GRID = 'grid';
-    const HOURS_VIEW_MODE_BOTH = 'both';
-    
+    public const HOURS_VIEW_MODE_AGENDA = 'agenda';
+    public const HOURS_VIEW_MODE_GRID = 'grid';
+    public const HOURS_VIEW_MODE_BOTH = 'both';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -282,7 +281,6 @@ class User implements ModelInterface, ArrayAccess
             self::HOURS_VIEW_MODE_BOTH,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -353,7 +351,6 @@ class User implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets username
@@ -891,6 +888,7 @@ class User implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -965,5 +963,3 @@ class User implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

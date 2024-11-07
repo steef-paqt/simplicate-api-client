@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Filter
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Filter Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Filter implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class Filter implements ModelInterface, ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'key' => 'string',
-        'values' => 'null[]'
+        'values' => 'null[]',
     ];
 
     /**
@@ -72,7 +73,7 @@ class Filter implements ModelInterface, ArrayAccess
         'id' => null,
         'name' => null,
         'key' => null,
-        'values' => null
+        'values' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class Filter implements ModelInterface, ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'key' => 'key',
-        'values' => 'values'
+        'values' => 'values',
     ];
 
     /**
@@ -117,7 +118,7 @@ class Filter implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'key' => 'setKey',
-        'values' => 'setValues'
+        'values' => 'setValues',
     ];
 
     /**
@@ -129,7 +130,7 @@ class Filter implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'key' => 'getKey',
-        'values' => 'getValues'
+        'values' => 'getValues',
     ];
 
     /**
@@ -172,10 +173,6 @@ class Filter implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class Filter implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -317,6 +313,7 @@ class Filter implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class Filter implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

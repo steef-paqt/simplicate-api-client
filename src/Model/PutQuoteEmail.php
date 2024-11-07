@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PutQuoteEmail
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PutQuoteEmail Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PutQuoteEmail implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -62,7 +63,7 @@ class PutQuoteEmail implements ModelInterface, ArrayAccess
         'attachments' => 'null[]',
         'to' => 'null[]',
         'cc' => 'null[]',
-        'bcc' => 'null[]'
+        'bcc' => 'null[]',
     ];
 
     /**
@@ -76,7 +77,7 @@ class PutQuoteEmail implements ModelInterface, ArrayAccess
         'attachments' => null,
         'to' => null,
         'cc' => null,
-        'bcc' => null
+        'bcc' => null,
     ];
 
     /**
@@ -111,7 +112,7 @@ class PutQuoteEmail implements ModelInterface, ArrayAccess
         'attachments' => 'attachments',
         'to' => 'to',
         'cc' => 'cc',
-        'bcc' => 'bcc'
+        'bcc' => 'bcc',
     ];
 
     /**
@@ -125,7 +126,7 @@ class PutQuoteEmail implements ModelInterface, ArrayAccess
         'attachments' => 'setAttachments',
         'to' => 'setTo',
         'cc' => 'setCc',
-        'bcc' => 'setBcc'
+        'bcc' => 'setBcc',
     ];
 
     /**
@@ -139,7 +140,7 @@ class PutQuoteEmail implements ModelInterface, ArrayAccess
         'attachments' => 'getAttachments',
         'to' => 'getTo',
         'cc' => 'getCc',
-        'bcc' => 'getBcc'
+        'bcc' => 'getBcc',
     ];
 
     /**
@@ -182,10 +183,6 @@ class PutQuoteEmail implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -232,7 +229,6 @@ class PutQuoteEmail implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets subject
@@ -377,6 +373,7 @@ class PutQuoteEmail implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -451,5 +448,3 @@ class PutQuoteEmail implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

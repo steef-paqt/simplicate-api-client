@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ReminderTemplate
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * ReminderTemplate Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class ReminderTemplate implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class ReminderTemplate implements ModelInterface, ArrayAccess
         'label' => 'string',
         'subject' => 'string',
         'body' => 'string',
-        'attach_invoice' => 'bool'
+        'attach_invoice' => 'bool',
     ];
 
     /**
@@ -74,7 +75,7 @@ class ReminderTemplate implements ModelInterface, ArrayAccess
         'label' => null,
         'subject' => null,
         'body' => null,
-        'attach_invoice' => null
+        'attach_invoice' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class ReminderTemplate implements ModelInterface, ArrayAccess
         'label' => 'label',
         'subject' => 'subject',
         'body' => 'body',
-        'attach_invoice' => 'attach_invoice'
+        'attach_invoice' => 'attach_invoice',
     ];
 
     /**
@@ -121,7 +122,7 @@ class ReminderTemplate implements ModelInterface, ArrayAccess
         'label' => 'setLabel',
         'subject' => 'setSubject',
         'body' => 'setBody',
-        'attach_invoice' => 'setAttachInvoice'
+        'attach_invoice' => 'setAttachInvoice',
     ];
 
     /**
@@ -134,7 +135,7 @@ class ReminderTemplate implements ModelInterface, ArrayAccess
         'label' => 'getLabel',
         'subject' => 'getSubject',
         'body' => 'getBody',
-        'attach_invoice' => 'getAttachInvoice'
+        'attach_invoice' => 'getAttachInvoice',
     ];
 
     /**
@@ -177,10 +178,6 @@ class ReminderTemplate implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class ReminderTemplate implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -347,6 +343,7 @@ class ReminderTemplate implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class ReminderTemplate implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

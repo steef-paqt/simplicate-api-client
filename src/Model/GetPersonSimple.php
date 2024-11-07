@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetPersonSimple
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetPersonSimple Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetPersonSimple implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'full_name' => 'string',
-        'relation_number' => 'string'
+        'relation_number' => 'string',
     ];
 
     /**
@@ -70,7 +71,7 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
         'full_name' => null,
-        'relation_number' => null
+        'relation_number' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'full_name' => 'full_name',
-        'relation_number' => 'relation_number'
+        'relation_number' => 'relation_number',
     ];
 
     /**
@@ -113,7 +114,7 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'full_name' => 'setFullName',
-        'relation_number' => 'setRelationNumber'
+        'relation_number' => 'setRelationNumber',
     ];
 
     /**
@@ -124,7 +125,7 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'full_name' => 'getFullName',
-        'relation_number' => 'getRelationNumber'
+        'relation_number' => 'getRelationNumber',
     ];
 
     /**
@@ -168,10 +169,6 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -287,6 +283,7 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

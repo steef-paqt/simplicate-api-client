@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SalesProgressHistory
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * SalesProgressHistory Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class SalesProgressHistory implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -64,7 +65,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
         'from_sales_progress_id' => 'string',
         'to_sales_progress' => '\Swagger\Client\Model\SalesProgress',
         'to_sales_progress_id' => 'string',
-        'date' => 'string'
+        'date' => 'string',
     ];
 
     /**
@@ -80,7 +81,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
         'from_sales_progress_id' => null,
         'to_sales_progress' => null,
         'to_sales_progress_id' => null,
-        'date' => null
+        'date' => null,
     ];
 
     /**
@@ -117,7 +118,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
         'from_sales_progress_id' => 'from_sales_progress_id',
         'to_sales_progress' => 'to_sales_progress',
         'to_sales_progress_id' => 'to_sales_progress_id',
-        'date' => 'date'
+        'date' => 'date',
     ];
 
     /**
@@ -133,7 +134,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
         'from_sales_progress_id' => 'setFromSalesProgressId',
         'to_sales_progress' => 'setToSalesProgress',
         'to_sales_progress_id' => 'setToSalesProgressId',
-        'date' => 'setDate'
+        'date' => 'setDate',
     ];
 
     /**
@@ -149,7 +150,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
         'from_sales_progress_id' => 'getFromSalesProgressId',
         'to_sales_progress' => 'getToSalesProgress',
         'to_sales_progress_id' => 'getToSalesProgressId',
-        'date' => 'getDate'
+        'date' => 'getDate',
     ];
 
     /**
@@ -192,10 +193,6 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -244,7 +241,6 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -437,6 +433,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -511,5 +508,3 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

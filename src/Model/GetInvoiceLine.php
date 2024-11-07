@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetInvoiceLine
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetInvoiceLine Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetInvoiceLine implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -68,7 +69,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
         'date' => 'string',
         'description' => 'string',
         'amount' => 'float',
-        'price' => 'float'
+        'price' => 'float',
     ];
 
     /**
@@ -88,7 +89,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
         'date' => null,
         'description' => null,
         'amount' => 'float',
-        'price' => 'float'
+        'price' => 'float',
     ];
 
     /**
@@ -129,7 +130,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
         'date' => 'date',
         'description' => 'description',
         'amount' => 'amount',
-        'price' => 'price'
+        'price' => 'price',
     ];
 
     /**
@@ -149,7 +150,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
         'date' => 'setDate',
         'description' => 'setDescription',
         'amount' => 'setAmount',
-        'price' => 'setPrice'
+        'price' => 'setPrice',
     ];
 
     /**
@@ -169,7 +170,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
         'date' => 'getDate',
         'description' => 'getDescription',
         'amount' => 'getAmount',
-        'price' => 'getPrice'
+        'price' => 'getPrice',
     ];
 
     /**
@@ -212,10 +213,6 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -268,7 +265,6 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -557,6 +553,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -631,5 +628,3 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

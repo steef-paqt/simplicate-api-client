@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostCalendarItem
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostCalendarItem Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostCalendarItem implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +59,7 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'location' => 'string'
+        'location' => 'string',
     ];
 
     /**
@@ -68,7 +69,7 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-        'location' => null
+        'location' => null,
     ];
 
     /**
@@ -99,7 +100,7 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'location' => 'location'
+        'location' => 'location',
     ];
 
     /**
@@ -109,7 +110,7 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'location' => 'setLocation'
+        'location' => 'setLocation',
     ];
 
     /**
@@ -119,7 +120,7 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'location' => 'getLocation'
+        'location' => 'getLocation',
     ];
 
     /**
@@ -163,10 +164,6 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,7 +205,6 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -257,6 +253,7 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -331,5 +328,3 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

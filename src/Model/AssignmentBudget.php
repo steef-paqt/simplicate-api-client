@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AssignmentBudget
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * AssignmentBudget Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class AssignmentBudget implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -64,7 +65,7 @@ class AssignmentBudget implements ModelInterface, ArrayAccess
         'budget_range_end' => 'string',
         'planned_amount' => 'object',
         'spent_amount' => 'object',
-        'hours_type' => 'string'
+        'hours_type' => 'string',
     ];
 
     /**
@@ -80,7 +81,7 @@ class AssignmentBudget implements ModelInterface, ArrayAccess
         'budget_range_end' => null,
         'planned_amount' => null,
         'spent_amount' => null,
-        'hours_type' => null
+        'hours_type' => null,
     ];
 
     /**
@@ -117,7 +118,7 @@ class AssignmentBudget implements ModelInterface, ArrayAccess
         'budget_range_end' => 'budget_range_end',
         'planned_amount' => 'planned_amount',
         'spent_amount' => 'spent_amount',
-        'hours_type' => 'hours_type'
+        'hours_type' => 'hours_type',
     ];
 
     /**
@@ -133,7 +134,7 @@ class AssignmentBudget implements ModelInterface, ArrayAccess
         'budget_range_end' => 'setBudgetRangeEnd',
         'planned_amount' => 'setPlannedAmount',
         'spent_amount' => 'setSpentAmount',
-        'hours_type' => 'setHoursType'
+        'hours_type' => 'setHoursType',
     ];
 
     /**
@@ -149,7 +150,7 @@ class AssignmentBudget implements ModelInterface, ArrayAccess
         'budget_range_end' => 'getBudgetRangeEnd',
         'planned_amount' => 'getPlannedAmount',
         'spent_amount' => 'getSpentAmount',
-        'hours_type' => 'getHoursType'
+        'hours_type' => 'getHoursType',
     ];
 
     /**
@@ -193,11 +194,9 @@ class AssignmentBudget implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const HOURS_TYPE_PER_WEEK = 'per_week';
-    const HOURS_TYPE_TOTAL = 'total';
-    
+    public const HOURS_TYPE_PER_WEEK = 'per_week';
+    public const HOURS_TYPE_TOTAL = 'total';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -210,7 +209,6 @@ class AssignmentBudget implements ModelInterface, ArrayAccess
             self::HOURS_TYPE_TOTAL,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -267,7 +265,6 @@ class AssignmentBudget implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets assignment_id
@@ -469,6 +466,7 @@ class AssignmentBudget implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -543,5 +541,3 @@ class AssignmentBudget implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

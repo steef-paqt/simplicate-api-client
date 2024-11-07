@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetPayment
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetPayment Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetPayment implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class GetPayment implements ModelInterface, ArrayAccess
         'invoice_id' => 'string',
         'date' => 'string',
         'amount' => 'float',
-        'description' => 'string'
+        'description' => 'string',
     ];
 
     /**
@@ -74,7 +75,7 @@ class GetPayment implements ModelInterface, ArrayAccess
         'invoice_id' => null,
         'date' => null,
         'amount' => 'float',
-        'description' => null
+        'description' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class GetPayment implements ModelInterface, ArrayAccess
         'invoice_id' => 'invoice_id',
         'date' => 'date',
         'amount' => 'amount',
-        'description' => 'description'
+        'description' => 'description',
     ];
 
     /**
@@ -121,7 +122,7 @@ class GetPayment implements ModelInterface, ArrayAccess
         'invoice_id' => 'setInvoiceId',
         'date' => 'setDate',
         'amount' => 'setAmount',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
     ];
 
     /**
@@ -134,7 +135,7 @@ class GetPayment implements ModelInterface, ArrayAccess
         'invoice_id' => 'getInvoiceId',
         'date' => 'getDate',
         'amount' => 'getAmount',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
     ];
 
     /**
@@ -177,10 +178,6 @@ class GetPayment implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class GetPayment implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -347,6 +343,7 @@ class GetPayment implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class GetPayment implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

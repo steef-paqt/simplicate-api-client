@@ -1,4 +1,5 @@
 <?php
+
 /**
  * HoursType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * HoursType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class HoursType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class HoursType implements ModelInterface, ArrayAccess
         'label' => 'string',
         'tariff' => 'string',
         'blocked' => 'bool',
-        'color' => 'string'
+        'color' => 'string',
     ];
 
     /**
@@ -72,7 +73,7 @@ class HoursType implements ModelInterface, ArrayAccess
         'label' => null,
         'tariff' => null,
         'blocked' => null,
-        'color' => null
+        'color' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class HoursType implements ModelInterface, ArrayAccess
         'label' => 'label',
         'tariff' => 'tariff',
         'blocked' => 'blocked',
-        'color' => 'color'
+        'color' => 'color',
     ];
 
     /**
@@ -117,7 +118,7 @@ class HoursType implements ModelInterface, ArrayAccess
         'label' => 'setLabel',
         'tariff' => 'setTariff',
         'blocked' => 'setBlocked',
-        'color' => 'setColor'
+        'color' => 'setColor',
     ];
 
     /**
@@ -129,7 +130,7 @@ class HoursType implements ModelInterface, ArrayAccess
         'label' => 'getLabel',
         'tariff' => 'getTariff',
         'blocked' => 'getBlocked',
-        'color' => 'getColor'
+        'color' => 'getColor',
     ];
 
     /**
@@ -172,10 +173,6 @@ class HoursType implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class HoursType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets label
@@ -317,6 +313,7 @@ class HoursType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class HoursType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

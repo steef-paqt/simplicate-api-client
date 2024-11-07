@@ -1,4 +1,5 @@
 <?php
+
 /**
  * MessageType
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * MessageType Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class MessageType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class MessageType implements ModelInterface, ArrayAccess
         'id' => 'string',
         'label' => 'string',
         'blocked' => 'bool',
-        'log_action' => 'string'
+        'log_action' => 'string',
     ];
 
     /**
@@ -72,7 +73,7 @@ class MessageType implements ModelInterface, ArrayAccess
         'id' => null,
         'label' => null,
         'blocked' => null,
-        'log_action' => null
+        'log_action' => null,
     ];
 
     /**
@@ -105,7 +106,7 @@ class MessageType implements ModelInterface, ArrayAccess
         'id' => 'id',
         'label' => 'label',
         'blocked' => 'blocked',
-        'log_action' => 'log_action'
+        'log_action' => 'log_action',
     ];
 
     /**
@@ -117,7 +118,7 @@ class MessageType implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'label' => 'setLabel',
         'blocked' => 'setBlocked',
-        'log_action' => 'setLogAction'
+        'log_action' => 'setLogAction',
     ];
 
     /**
@@ -129,7 +130,7 @@ class MessageType implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'label' => 'getLabel',
         'blocked' => 'getBlocked',
-        'log_action' => 'getLogAction'
+        'log_action' => 'getLogAction',
     ];
 
     /**
@@ -172,10 +173,6 @@ class MessageType implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class MessageType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -317,6 +313,7 @@ class MessageType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class MessageType implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

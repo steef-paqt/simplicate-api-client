@@ -1,4 +1,5 @@
 <?php
+
 /**
  * VatClass
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * VatClass Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class VatClass implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +61,7 @@ class VatClass implements ModelInterface, ArrayAccess
         'id' => 'string',
         'code' => 'string',
         'label' => 'string',
-        'percentage' => 'float'
+        'percentage' => 'float',
     ];
 
     /**
@@ -72,7 +73,7 @@ class VatClass implements ModelInterface, ArrayAccess
         'id' => null,
         'code' => null,
         'label' => null,
-        'percentage' => 'float'
+        'percentage' => 'float',
     ];
 
     /**
@@ -105,7 +106,7 @@ class VatClass implements ModelInterface, ArrayAccess
         'id' => 'id',
         'code' => 'code',
         'label' => 'label',
-        'percentage' => 'percentage'
+        'percentage' => 'percentage',
     ];
 
     /**
@@ -117,7 +118,7 @@ class VatClass implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'code' => 'setCode',
         'label' => 'setLabel',
-        'percentage' => 'setPercentage'
+        'percentage' => 'setPercentage',
     ];
 
     /**
@@ -129,7 +130,7 @@ class VatClass implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'code' => 'getCode',
         'label' => 'getLabel',
-        'percentage' => 'getPercentage'
+        'percentage' => 'getPercentage',
     ];
 
     /**
@@ -172,10 +173,6 @@ class VatClass implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -220,7 +217,6 @@ class VatClass implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -317,6 +313,7 @@ class VatClass implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -391,5 +388,3 @@ class VatClass implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

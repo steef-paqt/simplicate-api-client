@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetContract
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * GetContract Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class GetContract implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -68,7 +69,7 @@ class GetContract implements ModelInterface, ArrayAccess
         'end_date' => 'bool',
         'salary_fulltime' => 'float',
         'parttime_percentage' => 'float',
-        'days_off' => 'float'
+        'days_off' => 'float',
     ];
 
     /**
@@ -88,7 +89,7 @@ class GetContract implements ModelInterface, ArrayAccess
         'end_date' => null,
         'salary_fulltime' => 'float',
         'parttime_percentage' => 'float',
-        'days_off' => 'float'
+        'days_off' => 'float',
     ];
 
     /**
@@ -129,7 +130,7 @@ class GetContract implements ModelInterface, ArrayAccess
         'end_date' => 'end_date',
         'salary_fulltime' => 'salary_fulltime',
         'parttime_percentage' => 'parttime_percentage',
-        'days_off' => 'days_off'
+        'days_off' => 'days_off',
     ];
 
     /**
@@ -149,7 +150,7 @@ class GetContract implements ModelInterface, ArrayAccess
         'end_date' => 'setEndDate',
         'salary_fulltime' => 'setSalaryFulltime',
         'parttime_percentage' => 'setParttimePercentage',
-        'days_off' => 'setDaysOff'
+        'days_off' => 'setDaysOff',
     ];
 
     /**
@@ -169,7 +170,7 @@ class GetContract implements ModelInterface, ArrayAccess
         'end_date' => 'getEndDate',
         'salary_fulltime' => 'getSalaryFulltime',
         'parttime_percentage' => 'getParttimePercentage',
-        'days_off' => 'getDaysOff'
+        'days_off' => 'getDaysOff',
     ];
 
     /**
@@ -212,10 +213,6 @@ class GetContract implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -268,7 +265,6 @@ class GetContract implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -557,6 +553,7 @@ class GetContract implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -631,5 +628,3 @@ class GetContract implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

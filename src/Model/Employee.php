@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Employee
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Employee Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Employee implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -73,7 +74,7 @@ class Employee implements ModelInterface, ArrayAccess
         'avatar' => '\Swagger\Client\Model\Avatar',
         'created_at' => 'string',
         'updated_at' => 'string',
-        'simplicate_url' => 'string'
+        'simplicate_url' => 'string',
     ];
 
     /**
@@ -98,7 +99,7 @@ class Employee implements ModelInterface, ArrayAccess
         'avatar' => null,
         'created_at' => null,
         'updated_at' => null,
-        'simplicate_url' => null
+        'simplicate_url' => null,
     ];
 
     /**
@@ -144,7 +145,7 @@ class Employee implements ModelInterface, ArrayAccess
         'avatar' => 'avatar',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
-        'simplicate_url' => 'simplicate_url'
+        'simplicate_url' => 'simplicate_url',
     ];
 
     /**
@@ -169,7 +170,7 @@ class Employee implements ModelInterface, ArrayAccess
         'avatar' => 'setAvatar',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
-        'simplicate_url' => 'setSimplicateUrl'
+        'simplicate_url' => 'setSimplicateUrl',
     ];
 
     /**
@@ -194,7 +195,7 @@ class Employee implements ModelInterface, ArrayAccess
         'avatar' => 'getAvatar',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
-        'simplicate_url' => 'getSimplicateUrl'
+        'simplicate_url' => 'getSimplicateUrl',
     ];
 
     /**
@@ -238,11 +239,9 @@ class Employee implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const EMPLOYMENT_STATUS_ACTIVE = 'active';
-    const EMPLOYMENT_STATUS_INACTIVE = 'inactive';
-    
+    public const EMPLOYMENT_STATUS_ACTIVE = 'active';
+    public const EMPLOYMENT_STATUS_INACTIVE = 'inactive';
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -255,7 +254,6 @@ class Employee implements ModelInterface, ArrayAccess
             self::EMPLOYMENT_STATUS_INACTIVE,
         ];
     }
-    
 
     /**
      * Associative array for storing property values
@@ -321,7 +319,6 @@ class Employee implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -739,6 +736,7 @@ class Employee implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -813,5 +811,3 @@ class Employee implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

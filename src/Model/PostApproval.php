@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PostApproval
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * PostApproval Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class PostApproval implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -59,7 +60,7 @@ class PostApproval implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'employee_id' => 'string',
         'approvalstatus_id' => 'string',
-        'date' => 'string'
+        'date' => 'string',
     ];
 
     /**
@@ -70,7 +71,7 @@ class PostApproval implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'employee_id' => null,
         'approvalstatus_id' => null,
-        'date' => null
+        'date' => null,
     ];
 
     /**
@@ -102,7 +103,7 @@ class PostApproval implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'employee_id' => 'employee_id',
         'approvalstatus_id' => 'approvalstatus_id',
-        'date' => 'date'
+        'date' => 'date',
     ];
 
     /**
@@ -113,7 +114,7 @@ class PostApproval implements ModelInterface, ArrayAccess
     protected static $setters = [
         'employee_id' => 'setEmployeeId',
         'approvalstatus_id' => 'setApprovalstatusId',
-        'date' => 'setDate'
+        'date' => 'setDate',
     ];
 
     /**
@@ -124,7 +125,7 @@ class PostApproval implements ModelInterface, ArrayAccess
     protected static $getters = [
         'employee_id' => 'getEmployeeId',
         'approvalstatus_id' => 'getApprovalstatusId',
-        'date' => 'getDate'
+        'date' => 'getDate',
     ];
 
     /**
@@ -168,10 +169,6 @@ class PostApproval implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,7 +211,6 @@ class PostApproval implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets employee_id
@@ -287,6 +283,7 @@ class PostApproval implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -361,5 +358,3 @@ class PostApproval implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Right
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Right Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Right implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +62,7 @@ class Right implements ModelInterface, ArrayAccess
         'module_label' => 'string',
         'right_key' => 'string',
         'right_label' => 'string',
-        'rightsgroup_label' => 'string'
+        'rightsgroup_label' => 'string',
     ];
 
     /**
@@ -74,7 +75,7 @@ class Right implements ModelInterface, ArrayAccess
         'module_label' => null,
         'right_key' => null,
         'right_label' => null,
-        'rightsgroup_label' => null
+        'rightsgroup_label' => null,
     ];
 
     /**
@@ -108,7 +109,7 @@ class Right implements ModelInterface, ArrayAccess
         'module_label' => 'module_label',
         'right_key' => 'right_key',
         'right_label' => 'right_label',
-        'rightsgroup_label' => 'rightsgroup_label'
+        'rightsgroup_label' => 'rightsgroup_label',
     ];
 
     /**
@@ -121,7 +122,7 @@ class Right implements ModelInterface, ArrayAccess
         'module_label' => 'setModuleLabel',
         'right_key' => 'setRightKey',
         'right_label' => 'setRightLabel',
-        'rightsgroup_label' => 'setRightsgroupLabel'
+        'rightsgroup_label' => 'setRightsgroupLabel',
     ];
 
     /**
@@ -134,7 +135,7 @@ class Right implements ModelInterface, ArrayAccess
         'module_label' => 'getModuleLabel',
         'right_key' => 'getRightKey',
         'right_label' => 'getRightLabel',
-        'rightsgroup_label' => 'getRightsgroupLabel'
+        'rightsgroup_label' => 'getRightsgroupLabel',
     ];
 
     /**
@@ -177,10 +178,6 @@ class Right implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -226,7 +223,6 @@ class Right implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets module_key
@@ -347,6 +343,7 @@ class Right implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,5 +418,3 @@ class Right implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

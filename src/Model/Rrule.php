@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Rrule
  *
@@ -29,8 +30,8 @@
 
 namespace Swagger\Client\Model;
 
-use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use ArrayAccess;
+use Swagger\Client\ObjectSerializer;
 
 /**
  * Rrule Class Doc Comment
@@ -42,7 +43,7 @@ use \Swagger\Client\ObjectSerializer;
  */
 class Rrule implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -64,7 +65,7 @@ class Rrule implements ModelInterface, ArrayAccess
         'interval' => 'int',
         'wkst' => 'string',
         'byday' => 'string',
-        'bysetpos' => 'string'
+        'bysetpos' => 'string',
     ];
 
     /**
@@ -80,7 +81,7 @@ class Rrule implements ModelInterface, ArrayAccess
         'interval' => null,
         'wkst' => null,
         'byday' => null,
-        'bysetpos' => null
+        'bysetpos' => null,
     ];
 
     /**
@@ -117,7 +118,7 @@ class Rrule implements ModelInterface, ArrayAccess
         'interval' => 'interval',
         'wkst' => 'wkst',
         'byday' => 'byday',
-        'bysetpos' => 'bysetpos'
+        'bysetpos' => 'bysetpos',
     ];
 
     /**
@@ -133,7 +134,7 @@ class Rrule implements ModelInterface, ArrayAccess
         'interval' => 'setInterval',
         'wkst' => 'setWkst',
         'byday' => 'setByday',
-        'bysetpos' => 'setBysetpos'
+        'bysetpos' => 'setBysetpos',
     ];
 
     /**
@@ -149,7 +150,7 @@ class Rrule implements ModelInterface, ArrayAccess
         'interval' => 'getInterval',
         'wkst' => 'getWkst',
         'byday' => 'getByday',
-        'bysetpos' => 'getBysetpos'
+        'bysetpos' => 'getBysetpos',
     ];
 
     /**
@@ -192,10 +193,6 @@ class Rrule implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-    
-
-    
 
     /**
      * Associative array for storing property values
@@ -244,7 +241,6 @@ class Rrule implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets dtstart
@@ -437,6 +433,7 @@ class Rrule implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -511,5 +508,3 @@ class Rrule implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-
