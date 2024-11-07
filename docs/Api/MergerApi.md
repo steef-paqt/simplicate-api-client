@@ -24,7 +24,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\MergerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $body = new \Paqtcom\Simplicate\Model\PostMerger(); // \Paqtcom\Simplicate\Model\PostMerger | Merge object containing the source id and target id
 
@@ -73,7 +73,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\MergerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $body = new \Paqtcom\Simplicate\Model\PostMerger(); // \Paqtcom\Simplicate\Model\PostMerger | Merge object containing the source id and target id
 
@@ -122,7 +122,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\MergerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $body = new \Paqtcom\Simplicate\Model\PostMergerCompare(); // \Paqtcom\Simplicate\Model\PostMergerCompare | Compare objects containing the source id and target id
 
@@ -171,7 +171,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\MergerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $body = new \Paqtcom\Simplicate\Model\PostMergerCompare(); // \Paqtcom\Simplicate\Model\PostMergerCompare | Compare objects containing the source id and target id
 

@@ -65,7 +65,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -118,7 +118,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -167,7 +167,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\PutAssignment(); // \Paqtcom\Simplicate\Model\PutAssignment | Project assignment PUT body
@@ -217,7 +217,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $body = new \Paqtcom\Simplicate\Model\PostAssignment(); // \Paqtcom\Simplicate\Model\PostAssignment | Project assignment POST body
 
@@ -266,7 +266,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $q_range_start = "q_range_start_example"; // string | 
 $q_employee_id = "q_employee_id_example"; // string | 
@@ -325,7 +325,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -378,7 +378,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 $offset = 56; // int | The offset to search from
@@ -433,7 +433,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\AssignmentStatus(); // \Paqtcom\Simplicate\Model\AssignmentStatus | Project assignment POST body
@@ -483,7 +483,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $body = new \Paqtcom\Simplicate\Model\AssignmentStatus(); // \Paqtcom\Simplicate\Model\AssignmentStatus | Project assignment POST body
 
@@ -531,7 +531,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -584,7 +584,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -632,7 +632,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -681,7 +681,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $body = new \Paqtcom\Simplicate\Model\PostDocument(); // \Paqtcom\Simplicate\Model\PostDocument | Document object containing data
 
@@ -729,7 +729,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $body = new \Paqtcom\Simplicate\Model\PutDocument(); // \Paqtcom\Simplicate\Model\PutDocument | Document object containing data
 
@@ -777,7 +777,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -830,7 +830,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -879,7 +879,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -932,7 +932,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -980,7 +980,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -1029,7 +1029,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 $by = "by_example"; // string | 
@@ -1082,7 +1082,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\PostProject(); // \Paqtcom\Simplicate\Model\PostProject | project object that needs to be updated
@@ -1132,7 +1132,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $body = new \Paqtcom\Simplicate\Model\PostProject(); // \Paqtcom\Simplicate\Model\PostProject | Project object that needs to be added
 
@@ -1180,7 +1180,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -1233,7 +1233,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -1282,7 +1282,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -1335,7 +1335,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -1384,7 +1384,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $body = new \Paqtcom\Simplicate\Model\Body(); // \Paqtcom\Simplicate\Model\Body | Body for adding an employee to a project
 
@@ -1432,7 +1432,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 
 try {
@@ -1477,7 +1477,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -1530,7 +1530,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -1579,7 +1579,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -1632,7 +1632,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -1681,7 +1681,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -1734,7 +1734,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -1783,7 +1783,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -1836,7 +1836,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -1885,7 +1885,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -1938,7 +1938,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -1987,7 +1987,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -2040,7 +2040,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -2088,7 +2088,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\DuplicateProjectService(); // \Paqtcom\Simplicate\Model\DuplicateProjectService | Optional parameters to overwrite
@@ -2138,7 +2138,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -2187,7 +2187,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 $by = "by_example"; // string | 
@@ -2240,7 +2240,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\PutProjectService(); // \Paqtcom\Simplicate\Model\PutProjectService | Service object that needs to be updated
@@ -2290,7 +2290,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $body = new \Paqtcom\Simplicate\Model\PostProjectService(); // \Paqtcom\Simplicate\Model\PostProjectService | template object that needs to be added
 

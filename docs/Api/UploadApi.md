@@ -22,7 +22,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\UploadApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\PutChunked(); // \Paqtcom\Simplicate\Model\PutChunked | Next chunk for an chunked_upload
@@ -72,7 +72,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\UploadApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $body = new \Paqtcom\Simplicate\Model\PostChunked(); // \Paqtcom\Simplicate\Model\PostChunked | Data required to initialize an upload
 

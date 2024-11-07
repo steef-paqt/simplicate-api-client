@@ -25,7 +25,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\SharedApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -78,7 +78,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\SharedApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -126,7 +126,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\SharedApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 
@@ -175,7 +175,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\SharedApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\PostSharedItem(); // \Paqtcom\Simplicate\Model\PostSharedItem | Shared item object that with the data that needs to be updated
@@ -225,7 +225,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\SharedApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")
 );
 $body = new \Paqtcom\Simplicate\Model\PostSharedItem(); // \Paqtcom\Simplicate\Model\PostSharedItem | Item object that needs to be added
 
