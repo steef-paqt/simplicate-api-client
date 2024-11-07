@@ -24,14 +24,14 @@
         }
     ],
     "require": {
-        "php": "^8.2",
+        "php": "^8.1",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^6.2",
-        "symfony/http-client": "^7.1",
-        "php-http/discovery": "^1.20",
-        "php-http/client-common": "^2.7"
+        "guzzlehttp/guzzle": ">=6",
+        "symfony/http-client": "^>=7",
+        "php-http/discovery": ">=1",
+        "php-http/client-common": ">=2"
     },
     "autoload": {
         "psr-4": { "Paqtcom\\Simplicate\\" : "src/" }

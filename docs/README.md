@@ -9,7 +9,7 @@ project:
 
 ## Requirements
 
-PHP 8.3 and later
+PHP 8.1 and later
 
 ## Installation & Usage
 
