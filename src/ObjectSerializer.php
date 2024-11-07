@@ -285,6 +285,9 @@ class ObjectSerializer
             return null;
         }
         if (in_array($class, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
+            if ($class === 'string' && is_object($data)) {
+                return $data;
+            }
             settype($data, $class);
 
             return $data;

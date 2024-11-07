@@ -586,6 +586,8 @@ class GetInvoice implements ModelInterface, ArrayAccess, \Stringable
     public function setStatus($status)
     {
         $allowedValues = $this->getStatusAllowableValues();
+        $status = $status?->name ?? $status;
+        $status = str_replace('label_', '', $status);
         if (!is_null($status) && !in_array($status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(

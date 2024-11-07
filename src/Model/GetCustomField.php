@@ -562,15 +562,15 @@ class GetCustomField implements ModelInterface, ArrayAccess, \Stringable
     public function setValueType($value_type)
     {
         $allowedValues = $this->getValueTypeAllowableValues();
-        if (!is_null($value_type) && !in_array($value_type, $allowedValues, true)) {
+        if (!is_null($value_type) && !in_array(strtolower($value_type), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'value_type', must be one of '%s'",
+                    "Invalid value for 'value_type', must be one of '%s'... $value_type provided",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['value_type'] = $value_type;
+        $this->container['value_type'] = strtolower($value_type);
 
         return $this;
     }

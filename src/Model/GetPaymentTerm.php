@@ -185,8 +185,11 @@ class GetPaymentTerm implements ModelInterface, ArrayAccess, \Stringable
     {
         return [
             self::METHOD_DIRECT_DEBIT,
+            strtolower(str_replace(' ', '', self::METHOD_DIRECT_DEBIT)),
             self::METHOD_BANK_TRANSFER,
+            strtolower(str_replace(' ', '', self::METHOD_BANK_TRANSFER)),
             self::METHOD_CASH,
+            strtolower(self::METHOD_CASH),
         ];
     }
 
