@@ -1,4 +1,4 @@
-# Paqtcom\Simplicate\HrmApi
+# HrmApi
 
 All URIs are relative to *http://localhost/api/v2*
 

@@ -1,4 +1,4 @@
-# Paqtcom\Simplicate\SharedApi
+# SharedApi
 
 All URIs are relative to *http://localhost/api/v2*
 

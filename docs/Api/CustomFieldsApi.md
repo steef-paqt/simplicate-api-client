@@ -1,4 +1,4 @@
-# Paqtcom\Simplicate\CustomFieldsApi
+# CustomFieldsApi
 
 All URIs are relative to *http://localhost/api/v2*
 

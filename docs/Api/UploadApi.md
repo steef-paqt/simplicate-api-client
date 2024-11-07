@@ -1,4 +1,4 @@
-# Paqtcom\Simplicate\UploadApi
+# UploadApi
 
 All URIs are relative to *http://localhost/api/v2*
 

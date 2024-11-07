@@ -1,4 +1,4 @@
-# Paqtcom\Simplicate\HoursApi
+# HoursApi
 
 All URIs are relative to *http://localhost/api/v2*
 

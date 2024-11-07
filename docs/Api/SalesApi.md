@@ -1,4 +1,4 @@
-# Paqtcom\Simplicate\SalesApi
+# SalesApi
 
 All URIs are relative to *http://localhost/api/v2*
 

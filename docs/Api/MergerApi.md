@@ -1,4 +1,4 @@
-# Paqtcom\Simplicate\MergerApi
+# MergerApi
 
 All URIs are relative to *http://localhost/api/v2*
 

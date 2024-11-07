@@ -1,4 +1,4 @@
-# Paqtcom\Simplicate\CostsApi
+# CostsApi
 
 All URIs are relative to *http://localhost/api/v2*
 
