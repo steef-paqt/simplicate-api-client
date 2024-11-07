@@ -1,0 +1,157 @@
+:root {
+    --md-text-font: "Karla";
+    --paqt-link-color: #3a76fc;
+    --paqt-link-hover-color: #ee7b42;
+    --paqt-side-link-color: #2065ff;
+    --paqt-side-active-link-color: #3a76fc;
+    --paqt-link-footer-hover-color: var(--paqt-link-hover-color);
+    --paqt-header-color: rgba(0, 0, 0, .54);
+
+    /* code highlighting colors */
+    --hl-class-bg-color: #232525;
+    --hl-class-fg-color: #fff;
+    --hl-var-fg-color: #987597;
+    --hl-int-fg-color: #689bc7;
+    --hl-method-fg-color: #eebb53;
+    --hl-comment-fg-color: #7c776d;
+    --hl-docblock-fg-color: #5f9866;
+    --hl-string-fg-color: #678249;
+    --hl-comm-fg-color: #c77632;
+    --hl-punctuation-color: rgba(210, 215, 249, 0.62);
+    --hl-code-fg-color: #ddd;
+}
+:root [data-md-color-scheme="slate"] {
+    --paqt-link-color: #9bf;
+    --paqt-side-link-color: #9bf;
+    --paqt-side-active-link-color: #f70;
+    --paqt-link-footer-hover-color: #e64a1e;
+    --paqt-header-color: rgba(255, 255, 255, .54);
+}
+[data-md-color-primary="white"] { /* header */
+    --md-primary-bg-color: #1e1e1e;
+    --md-primary-fg-color: #f3f9f3;
+}
+:root, [data-md-color-scheme="default"] {
+    --md-default-bg-color: #f3f9f3;
+    --md-accent-fg-color: #e64a1e; /* higher contrast for readability */
+}
+
+a {
+    color: var(--paqt-link-color);
+}
+a:hover {
+    color: var(--paqt-link-hover-color);
+}
+footer a {
+    color: #fff;
+}
+footer a:hover {
+    color: #ff9b6a; /* higher contrast for readability */
+}
+.md-copyright {
+    opacity: 0.5;
+}
+
+.md-typeset a {
+    color: var(--paqt-link-color)
+}
+
+.md-nav__item .md-nav__link--active {
+    color: var(--paqt-side-active-link-color);
+    font-weight: bold;
+}
+
+@font-face{font-family:'Rany';src:url('../fonts/Rany-Regular.woff2') format('woff2'),url('../fonts/Rany-Regular.woff') format('woff');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Karla';src:url('../fonts/Karla-Regular.woff2') format('woff2'),url('../fonts/Karla-Regular.woff') format('woff');font-weight:400;font-style:normal;font-display:swap;}
+
+h1, h2 {
+    font-family: "Rany", sans-serif;
+}
+.md-typeset h1 {
+    color: #000;
+}
+[data-md-color-scheme="slate"] .md-typeset h1 {
+    color: #fff;
+}
+.md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6, .md-typeset h7 {
+    color: var(--paqt-header-color);
+}
+
+
+/**
+ * code highlighting
+ */
+.highlight .nv {
+    color: var(--hl-var-fg-color);
+}
+.highlight .na {
+    color: var(--hl-method-fg-color);
+}
+.highlight .nx {
+    color: var(--hl-class-fg-color);
+}
+.highlight .k {
+    color: var(--hl-comm-fg-color);
+}
+.highlight .c1 {
+    color: var(--hl-comment-fg-color);
+}
+.highlight .s1 {
+    color: var(--hl-string-fg-color);
+}
+.highlight .mi {
+    color: var(--hl-int-fg-color);
+}
+.highlight .sd {
+    color: var(--hl-docblock-fg-color);
+}
+.highlight code .p, .highlight code .o, .highlight code .ow {
+    color: var(--hl-punctuation-color);
+}
+.md-typeset .highlight pre code {
+    background-color: var(--hl-class-bg-color);
+    color: var(--hl-code-fg-color);
+}
+
+pre code {
+    max-height: 500px;
+}
+
+/**
+ * Admonitions
+ */
+:root {
+    --md-admonition-icon--request: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M128 64c0-35.3 28.7-64 64-64h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V336h174.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H128V64zm0 224v48H24c-13.3 0-24-10.7-24-24s10.7-24 24-24h104zm384-160H384V0l128 128z"></path></svg>')
+}
+.md-typeset .admonition.request,
+.md-typeset details.request {
+    border-color: rgb(43, 155, 70);
+}
+.md-typeset .request > .admonition-title,
+.md-typeset .request > summary {
+    background-color: rgba(43, 155, 70, 0.1);
+}
+.md-typeset .request > .admonition-title::before,
+.md-typeset .request > summary::before {
+    background-color: rgb(43, 155, 70);
+    -webkit-mask-image: var(--md-admonition-icon--request);
+    mask-image: var(--md-admonition-icon--request);
+}
+
+:root {
+    --md-admonition-icon--response: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">><path d="M32 64C32 28.7 60.7 0 96 0h160v128c0 17.7 14.3 32 32 32h128v128H248c-13.3 0-24 10.7-24 24s10.7 24 24 24h168v112c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V64zm384 272v-48h110.1l-39-39c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l80 80c9.4 9.4 9.4 24.6 0 33.9l-80 80c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l39-39H416zm0-208H288V0l128 128z"></path></svg>')
+}
+.md-typeset .admonition.response,
+.md-typeset details.response {
+    border-color: rgb(51, 104, 182);
+}
+.md-typeset .response > .admonition-title,
+.md-typeset .response > summary {
+    background-color: rgba(51, 104, 182, 0.2);
+}
+.md-typeset .response > .admonition-title::before,
+.md-typeset .response > summary::before {
+    background-color: rgb(80, 140, 230);
+    -webkit-mask-image: var(--md-admonition-icon--response);
+    mask-image: var(--md-admonition-icon--response);
+}
