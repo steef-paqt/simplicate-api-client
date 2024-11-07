@@ -1,4 +1,4 @@
-# Swagger\Client\MileageApi
+# Paqtcom\Simplicate\MileageApi
 
 All URIs are relative to *http://localhost/api/v2*
 
@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost/api/v2*
 
 # **mileageMileageGet**
 
-> \Swagger\Client\Model\RestResultMileageList mileageMileageGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultMileageList mileageMileageGet($offset, $limit, $sort)
 
 Fetches all mileages
 
@@ -22,7 +22,7 @@ Fetches all mileages
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\MileageApi(
+$apiInstance = new Paqtcom\Simplicate\Api\MileageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -50,7 +50,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultMileageList**](../Model/RestResultMileageList.md)
+[**\Paqtcom\Simplicate\Model\RestResultMileageList**](../Model/RestResultMileageList.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Deletes the mileage registration with the given mileage id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\MileageApi(
+$apiInstance = new Paqtcom\Simplicate\Api\MileageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -113,7 +113,7 @@ No authorization required
 
 # **mileageMileageIdGet**
 
-> \Swagger\Client\Model\RestResultMileage mileageMileageIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultMileage mileageMileageIdGet($id)
 
 Fetches a single mileage by mileage id
 
@@ -123,7 +123,7 @@ Fetches a single mileage by mileage id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\MileageApi(
+$apiInstance = new Paqtcom\Simplicate\Api\MileageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -147,7 +147,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultMileage**](../Model/RestResultMileage.md)
+[**\Paqtcom\Simplicate\Model\RestResultMileage**](../Model/RestResultMileage.md)
 
 ### Authorization
 
@@ -172,13 +172,13 @@ Updates a mileage registration for the given mileage id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\MileageApi(
+$apiInstance = new Paqtcom\Simplicate\Api\MileageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PutMileage(); // \Swagger\Client\Model\PutMileage | Mileage object that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\PutMileage(); // \Paqtcom\Simplicate\Model\PutMileage | Mileage object that needs to be updated
 
 try {
     $apiInstance->mileageMileageIdPut($id, $body);
@@ -193,7 +193,7 @@ try {
  Name     | Type                                                           | Description                             | Notes 
 ----------|----------------------------------------------------------------|-----------------------------------------|-------
  **id**   | **string**                                                     | The template&#39;s id                   |
- **body** | [**\Swagger\Client\Model\PutMileage**](../Model/PutMileage.md) | Mileage object that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\PutMileage**](../Model/PutMileage.md) | Mileage object that needs to be updated |
 
 ### Return type
 
@@ -222,12 +222,12 @@ Add a new mileage registration
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\MileageApi(
+$apiInstance = new Paqtcom\Simplicate\Api\MileageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostMileage(); // \Swagger\Client\Model\PostMileage | Mileage object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostMileage(); // \Paqtcom\Simplicate\Model\PostMileage | Mileage object that needs to be added
 
 try {
     $apiInstance->mileageMileagePost($body);
@@ -241,7 +241,7 @@ try {
 
  Name     | Type                                                             | Description                           | Notes 
 ----------|------------------------------------------------------------------|---------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostMileage**](../Model/PostMileage.md) | Mileage object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostMileage**](../Model/PostMileage.md) | Mileage object that needs to be added |
 
 ### Return type
 

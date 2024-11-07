@@ -7,7 +7,7 @@
  **start_date**          | **string**                                                      |             | [optional] [default to '2032-01-01']                
  **end_date**            | **string**                                                      |             | [optional] [default to '2032-12-31']                
  **projecthourstype_id** | **string**                                                      |             | [optional] [default to 'hourstype:abc']             
- **employees**           | [**\Swagger\Client\Model\PostEmployeeFk[]**](PostEmployeeFk.md) |             | [optional]                                          
+ **employees**           | [**\Paqtcom\Simplicate\Model\PostEmployeeFk[]**](PostEmployeeFk.md) |             | [optional]                                          
  **status_id**           | **string**                                                      |             | [optional] [default to 'assignmentstatus:abc']      
  **name**                | **string**                                                      |             | [optional] [default to 'Website Design Assignment'] 
  **use_spread**          | **bool**                                                        |             | [optional]                                          

@@ -1,11 +1,11 @@
 <?php
 
 /**
- * CRMApi
+ * CrmApi
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Paqtcom\Simplicate\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,20 +35,20 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ApiException;
+use Paqtcom\Simplicate\Configuration;
+use Paqtcom\Simplicate\HeaderSelector;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
- * CRMApi Class Doc Comment
+ * CrmApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CRMApi
+class CrmApi
 {
     /**
      * @var ClientInterface
@@ -98,9 +98,9 @@ class CRMApi
      * @param  string $sort Sort the result by column name (optional)
      * @param  string $select Select only specific fields to return (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultContactPersons
+     * @return \Paqtcom\Simplicate\Model\RestResultContactPersons
      */
     public function crmContactpersonGet($offset = null, $limit = '5', $sort = null, $select = null)
     {
@@ -119,13 +119,13 @@ class CRMApi
      * @param  string $sort Sort the result by column name (optional)
      * @param  string $select Select only specific fields to return (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultContactPersons, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultContactPersons, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmContactpersonGetWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultContactPersons';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultContactPersons';
         $request = $this->crmContactpersonGetRequest($offset, $limit, $sort, $select);
 
         try {
@@ -176,7 +176,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultContactPersons',
+                        '\Paqtcom\Simplicate\Model\RestResultContactPersons',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -224,7 +224,7 @@ class CRMApi
      */
     public function crmContactpersonGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultContactPersons';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultContactPersons';
         $request = $this->crmContactpersonGetRequest($offset, $limit, $sort, $select);
 
         return $this->client
@@ -377,7 +377,7 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -393,7 +393,7 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -605,9 +605,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultContactPerson
+     * @return \Paqtcom\Simplicate\Model\RestResultContactPerson
      */
     public function crmContactpersonIdGet($id)
     {
@@ -623,13 +623,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultContactPerson, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultContactPerson, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmContactpersonIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultContactPerson';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultContactPerson';
         $request = $this->crmContactpersonIdGetRequest($id);
 
         try {
@@ -680,7 +680,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultContactPerson',
+                        '\Paqtcom\Simplicate\Model\RestResultContactPerson',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -722,7 +722,7 @@ class CRMApi
      */
     public function crmContactpersonIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultContactPerson';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultContactPerson';
         $request = $this->crmContactpersonIdGetRequest($id);
 
         return $this->client
@@ -873,9 +873,9 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCountries
+     * @return \Paqtcom\Simplicate\Model\RestResultCountries
      */
     public function crmCountryGet($offset = null, $limit = '5', $sort = null)
     {
@@ -893,13 +893,13 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCountries, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCountries, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmCountryGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCountries';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCountries';
         $request = $this->crmCountryGetRequest($offset, $limit, $sort);
 
         try {
@@ -950,7 +950,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCountries',
+                        '\Paqtcom\Simplicate\Model\RestResultCountries',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -996,7 +996,7 @@ class CRMApi
      */
     public function crmCountryGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCountries';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCountries';
         $request = $this->crmCountryGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1144,9 +1144,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCountry
+     * @return \Paqtcom\Simplicate\Model\RestResultCountry
      */
     public function crmCountryIdGet($id)
     {
@@ -1162,13 +1162,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCountry, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCountry, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmCountryIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCountry';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCountry';
         $request = $this->crmCountryIdGetRequest($id);
 
         try {
@@ -1219,7 +1219,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCountry',
+                        '\Paqtcom\Simplicate\Model\RestResultCountry',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1261,7 +1261,7 @@ class CRMApi
      */
     public function crmCountryIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCountry';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCountry';
         $request = $this->crmCountryIdGetRequest($id);
 
         return $this->client
@@ -1412,9 +1412,9 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDebtorList
+     * @return \Paqtcom\Simplicate\Model\RestResultDebtorList
      */
     public function crmDebtorGet($offset = null, $limit = '5', $sort = null)
     {
@@ -1432,13 +1432,13 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDebtorList, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDebtorList, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmDebtorGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDebtorList';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDebtorList';
         $request = $this->crmDebtorGetRequest($offset, $limit, $sort);
 
         try {
@@ -1489,7 +1489,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDebtorList',
+                        '\Paqtcom\Simplicate\Model\RestResultDebtorList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1535,7 +1535,7 @@ class CRMApi
      */
     public function crmDebtorGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDebtorList';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDebtorList';
         $request = $this->crmDebtorGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1685,9 +1685,9 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocuments
+     * @return \Paqtcom\Simplicate\Model\RestResultDocuments
      */
     public function crmDocumentGet($offset = null, $limit = '5', $sort = null)
     {
@@ -1705,13 +1705,13 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocuments, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocuments, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmDocumentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocuments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
         $request = $this->crmDocumentGetRequest($offset, $limit, $sort);
 
         try {
@@ -1762,7 +1762,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocuments',
+                        '\Paqtcom\Simplicate\Model\RestResultDocuments',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1808,7 +1808,7 @@ class CRMApi
      */
     public function crmDocumentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocuments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
         $request = $this->crmDocumentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1956,7 +1956,7 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1972,7 +1972,7 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2184,9 +2184,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocument
+     * @return \Paqtcom\Simplicate\Model\RestResultDocument
      */
     public function crmDocumentIdGet($id)
     {
@@ -2202,13 +2202,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocument, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocument, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmDocumentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocument';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
         $request = $this->crmDocumentIdGetRequest($id);
 
         try {
@@ -2259,7 +2259,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocument',
+                        '\Paqtcom\Simplicate\Model\RestResultDocument',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2301,7 +2301,7 @@ class CRMApi
      */
     public function crmDocumentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocument';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
         $request = $this->crmDocumentIdGetRequest($id);
 
         return $this->client
@@ -2448,9 +2448,9 @@ class CRMApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2464,9 +2464,9 @@ class CRMApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2516,7 +2516,7 @@ class CRMApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2536,7 +2536,7 @@ class CRMApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2572,7 +2572,7 @@ class CRMApi
     /**
      * Create request for operation 'crmDocumentPost'
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2670,9 +2670,9 @@ class CRMApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2686,9 +2686,9 @@ class CRMApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2738,7 +2738,7 @@ class CRMApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2758,7 +2758,7 @@ class CRMApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2794,7 +2794,7 @@ class CRMApi
     /**
      * Create request for operation 'crmDocumentPut'
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2896,9 +2896,9 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocumentTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultDocumentTypes
      */
     public function crmDocumenttypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -2916,13 +2916,13 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocumentTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocumentTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmDocumenttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
         $request = $this->crmDocumenttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -2973,7 +2973,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocumentTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultDocumentTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3019,7 +3019,7 @@ class CRMApi
      */
     public function crmDocumenttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
         $request = $this->crmDocumenttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3167,9 +3167,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocumentType
+     * @return \Paqtcom\Simplicate\Model\RestResultDocumentType
      */
     public function crmDocumenttypeIdGet($id)
     {
@@ -3185,13 +3185,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocumentType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocumentType, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmDocumenttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
         $request = $this->crmDocumenttypeIdGetRequest($id);
 
         try {
@@ -3242,7 +3242,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocumentType',
+                        '\Paqtcom\Simplicate\Model\RestResultDocumentType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3284,7 +3284,7 @@ class CRMApi
      */
     public function crmDocumenttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
         $request = $this->crmDocumenttypeIdGetRequest($id);
 
         return $this->client
@@ -3435,9 +3435,9 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultGenders
+     * @return \Paqtcom\Simplicate\Model\RestResultGenders
      */
     public function crmGenderGet($offset = null, $limit = '5', $sort = null)
     {
@@ -3455,13 +3455,13 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultGenders, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultGenders, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmGenderGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultGenders';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultGenders';
         $request = $this->crmGenderGetRequest($offset, $limit, $sort);
 
         try {
@@ -3512,7 +3512,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultGenders',
+                        '\Paqtcom\Simplicate\Model\RestResultGenders',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3558,7 +3558,7 @@ class CRMApi
      */
     public function crmGenderGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultGenders';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultGenders';
         $request = $this->crmGenderGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3706,9 +3706,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultGender
+     * @return \Paqtcom\Simplicate\Model\RestResultGender
      */
     public function crmGenderIdGet($id)
     {
@@ -3724,13 +3724,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultGender, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultGender, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmGenderIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultGender';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultGender';
         $request = $this->crmGenderIdGetRequest($id);
 
         try {
@@ -3781,7 +3781,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultGender',
+                        '\Paqtcom\Simplicate\Model\RestResultGender',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3823,7 +3823,7 @@ class CRMApi
      */
     public function crmGenderIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultGender';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultGender';
         $request = $this->crmGenderIdGetRequest($id);
 
         return $this->client
@@ -3974,9 +3974,9 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultIndustries
+     * @return \Paqtcom\Simplicate\Model\RestResultIndustries
      */
     public function crmIndustryGet($offset = null, $limit = '5', $sort = null)
     {
@@ -3994,13 +3994,13 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultIndustries, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultIndustries, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmIndustryGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultIndustries';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultIndustries';
         $request = $this->crmIndustryGetRequest($offset, $limit, $sort);
 
         try {
@@ -4051,7 +4051,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultIndustries',
+                        '\Paqtcom\Simplicate\Model\RestResultIndustries',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4097,7 +4097,7 @@ class CRMApi
      */
     public function crmIndustryGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultIndustries';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultIndustries';
         $request = $this->crmIndustryGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -4245,9 +4245,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultIndustry
+     * @return \Paqtcom\Simplicate\Model\RestResultIndustry
      */
     public function crmIndustryIdGet($id)
     {
@@ -4263,13 +4263,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultIndustry, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultIndustry, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmIndustryIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultIndustry';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultIndustry';
         $request = $this->crmIndustryIdGetRequest($id);
 
         try {
@@ -4320,7 +4320,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultIndustry',
+                        '\Paqtcom\Simplicate\Model\RestResultIndustry',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4362,7 +4362,7 @@ class CRMApi
      */
     public function crmIndustryIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultIndustry';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultIndustry';
         $request = $this->crmIndustryIdGetRequest($id);
 
         return $this->client
@@ -4513,9 +4513,9 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultInterests
+     * @return \Paqtcom\Simplicate\Model\RestResultInterests
      */
     public function crmInterestsGet($offset = null, $limit = '5', $sort = null)
     {
@@ -4533,13 +4533,13 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultInterests, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultInterests, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmInterestsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultInterests';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultInterests';
         $request = $this->crmInterestsGetRequest($offset, $limit, $sort);
 
         try {
@@ -4590,7 +4590,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultInterests',
+                        '\Paqtcom\Simplicate\Model\RestResultInterests',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4636,7 +4636,7 @@ class CRMApi
      */
     public function crmInterestsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultInterests';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultInterests';
         $request = $this->crmInterestsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -4784,9 +4784,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultInterest
+     * @return \Paqtcom\Simplicate\Model\RestResultInterest
      */
     public function crmInterestsIdGet($id)
     {
@@ -4802,13 +4802,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultInterest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultInterest, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmInterestsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultInterest';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultInterest';
         $request = $this->crmInterestsIdGetRequest($id);
 
         try {
@@ -4859,7 +4859,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultInterest',
+                        '\Paqtcom\Simplicate\Model\RestResultInterest',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4901,7 +4901,7 @@ class CRMApi
      */
     public function crmInterestsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultInterest';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultInterest';
         $request = $this->crmInterestsIdGetRequest($id);
 
         return $this->client
@@ -5052,9 +5052,9 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultMyOrganizationProfiles
+     * @return \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles
      */
     public function crmMyorganizationprofileGet($offset = null, $limit = '5', $sort = null)
     {
@@ -5072,13 +5072,13 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultMyOrganizationProfiles, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmMyorganizationprofileGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultMyOrganizationProfiles';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles';
         $request = $this->crmMyorganizationprofileGetRequest($offset, $limit, $sort);
 
         try {
@@ -5129,7 +5129,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultMyOrganizationProfiles',
+                        '\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5175,7 +5175,7 @@ class CRMApi
      */
     public function crmMyorganizationprofileGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultMyOrganizationProfiles';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles';
         $request = $this->crmMyorganizationprofileGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -5323,9 +5323,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultMyOrganizationProfile
+     * @return \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfile
      */
     public function crmMyorganizationprofileIdGet($id)
     {
@@ -5341,13 +5341,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultMyOrganizationProfile, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfile, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmMyorganizationprofileIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultMyOrganizationProfile';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfile';
         $request = $this->crmMyorganizationprofileIdGetRequest($id);
 
         try {
@@ -5398,7 +5398,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultMyOrganizationProfile',
+                        '\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfile',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5440,7 +5440,7 @@ class CRMApi
      */
     public function crmMyorganizationprofileIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultMyOrganizationProfile';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfile';
         $request = $this->crmMyorganizationprofileIdGetRequest($id);
 
         return $this->client
@@ -5592,9 +5592,9 @@ class CRMApi
      * @param  string $sort Sort the result by column name (optional)
      * @param  string $select Select only specific fields to return (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultOrganizations
+     * @return \Paqtcom\Simplicate\Model\RestResultOrganizations
      */
     public function crmOrganizationGet($offset = null, $limit = '5', $sort = null, $select = null)
     {
@@ -5613,13 +5613,13 @@ class CRMApi
      * @param  string $sort Sort the result by column name (optional)
      * @param  string $select Select only specific fields to return (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultOrganizations, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultOrganizations, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmOrganizationGetWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultOrganizations';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganizations';
         $request = $this->crmOrganizationGetRequest($offset, $limit, $sort, $select);
 
         try {
@@ -5670,7 +5670,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultOrganizations',
+                        '\Paqtcom\Simplicate\Model\RestResultOrganizations',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5718,7 +5718,7 @@ class CRMApi
      */
     public function crmOrganizationGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultOrganizations';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganizations';
         $request = $this->crmOrganizationGetRequest($offset, $limit, $sort, $select);
 
         return $this->client
@@ -5871,7 +5871,7 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5887,7 +5887,7 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6099,9 +6099,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultOrganization
+     * @return \Paqtcom\Simplicate\Model\RestResultOrganization
      */
     public function crmOrganizationIdGet($id)
     {
@@ -6117,13 +6117,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultOrganization, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultOrganization, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmOrganizationIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultOrganization';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganization';
         $request = $this->crmOrganizationIdGetRequest($id);
 
         try {
@@ -6174,7 +6174,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultOrganization',
+                        '\Paqtcom\Simplicate\Model\RestResultOrganization',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6216,7 +6216,7 @@ class CRMApi
      */
     public function crmOrganizationIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultOrganization';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganization';
         $request = $this->crmOrganizationIdGetRequest($id);
 
         return $this->client
@@ -6364,9 +6364,9 @@ class CRMApi
      * Updates an organization for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostOrganization $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostOrganization $body Organization object containing data that with the new values (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6381,9 +6381,9 @@ class CRMApi
      * Updates an organization for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostOrganization $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostOrganization $body Organization object containing data that with the new values (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6434,7 +6434,7 @@ class CRMApi
      * Updates an organization for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostOrganization $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostOrganization $body Organization object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6455,7 +6455,7 @@ class CRMApi
      * Updates an organization for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostOrganization $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostOrganization $body Organization object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6492,7 +6492,7 @@ class CRMApi
      * Create request for operation 'crmOrganizationIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostOrganization $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostOrganization $body Organization object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6605,9 +6605,9 @@ class CRMApi
      *
      * Add a new organization
      *
-     * @param  \Swagger\Client\Model\PostOrganization $body Organization object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostOrganization $body Organization object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6621,9 +6621,9 @@ class CRMApi
      *
      * Add a new organization
      *
-     * @param  \Swagger\Client\Model\PostOrganization $body Organization object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostOrganization $body Organization object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6673,7 +6673,7 @@ class CRMApi
      *
      * Add a new organization
      *
-     * @param  \Swagger\Client\Model\PostOrganization $body Organization object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostOrganization $body Organization object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6693,7 +6693,7 @@ class CRMApi
      *
      * Add a new organization
      *
-     * @param  \Swagger\Client\Model\PostOrganization $body Organization object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostOrganization $body Organization object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6729,7 +6729,7 @@ class CRMApi
     /**
      * Create request for operation 'crmOrganizationPost'
      *
-     * @param  \Swagger\Client\Model\PostOrganization $body Organization object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostOrganization $body Organization object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6831,9 +6831,9 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldGroups
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups
      */
     public function crmOrganizationcustomfieldgroupsGet($offset = null, $limit = '5', $sort = null)
     {
@@ -6851,13 +6851,13 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldGroups, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmOrganizationcustomfieldgroupsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroups';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
         $request = $this->crmOrganizationcustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         try {
@@ -6908,7 +6908,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldGroups',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6954,7 +6954,7 @@ class CRMApi
      */
     public function crmOrganizationcustomfieldgroupsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroups';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
         $request = $this->crmOrganizationcustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7102,9 +7102,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldGroup
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup
      */
     public function crmOrganizationcustomfieldgroupsIdGet($id)
     {
@@ -7120,13 +7120,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldGroup, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmOrganizationcustomfieldgroupsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroup';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
         $request = $this->crmOrganizationcustomfieldgroupsIdGetRequest($id);
 
         try {
@@ -7177,7 +7177,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldGroup',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7219,7 +7219,7 @@ class CRMApi
      */
     public function crmOrganizationcustomfieldgroupsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroup';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
         $request = $this->crmOrganizationcustomfieldgroupsIdGetRequest($id);
 
         return $this->client
@@ -7370,9 +7370,9 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFields
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFields
      */
     public function crmOrganizationcustomfieldsGet($offset = null, $limit = '5', $sort = null)
     {
@@ -7390,13 +7390,13 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFields, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFields, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmOrganizationcustomfieldsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFields';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
         $request = $this->crmOrganizationcustomfieldsGetRequest($offset, $limit, $sort);
 
         try {
@@ -7447,7 +7447,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFields',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFields',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7493,7 +7493,7 @@ class CRMApi
      */
     public function crmOrganizationcustomfieldsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFields';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
         $request = $this->crmOrganizationcustomfieldsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7641,9 +7641,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomField
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomField
      */
     public function crmOrganizationcustomfieldsIdGet($id)
     {
@@ -7659,13 +7659,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomField, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomField, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmOrganizationcustomfieldsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomField';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
         $request = $this->crmOrganizationcustomfieldsIdGetRequest($id);
 
         try {
@@ -7716,7 +7716,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomField',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomField',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7758,7 +7758,7 @@ class CRMApi
      */
     public function crmOrganizationcustomfieldsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomField';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
         $request = $this->crmOrganizationcustomfieldsIdGetRequest($id);
 
         return $this->client
@@ -7909,9 +7909,9 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultOrganizationSizes
+     * @return \Paqtcom\Simplicate\Model\RestResultOrganizationSizes
      */
     public function crmOrganizationsizeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -7929,13 +7929,13 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultOrganizationSizes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultOrganizationSizes, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmOrganizationsizeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultOrganizationSizes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganizationSizes';
         $request = $this->crmOrganizationsizeGetRequest($offset, $limit, $sort);
 
         try {
@@ -7986,7 +7986,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultOrganizationSizes',
+                        '\Paqtcom\Simplicate\Model\RestResultOrganizationSizes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8032,7 +8032,7 @@ class CRMApi
      */
     public function crmOrganizationsizeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultOrganizationSizes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganizationSizes';
         $request = $this->crmOrganizationsizeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -8180,9 +8180,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultOrganizationSize
+     * @return \Paqtcom\Simplicate\Model\RestResultOrganizationSize
      */
     public function crmOrganizationsizeIdGet($id)
     {
@@ -8198,13 +8198,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultOrganizationSize, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultOrganizationSize, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmOrganizationsizeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultOrganizationSize';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganizationSize';
         $request = $this->crmOrganizationsizeIdGetRequest($id);
 
         try {
@@ -8255,7 +8255,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultOrganizationSize',
+                        '\Paqtcom\Simplicate\Model\RestResultOrganizationSize',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8297,7 +8297,7 @@ class CRMApi
      */
     public function crmOrganizationsizeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultOrganizationSize';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganizationSize';
         $request = $this->crmOrganizationsizeIdGetRequest($id);
 
         return $this->client
@@ -8449,9 +8449,9 @@ class CRMApi
      * @param  string $sort Sort the result by column name (optional)
      * @param  string $select Select only specific fields to return (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultPersons
+     * @return \Paqtcom\Simplicate\Model\RestResultPersons
      */
     public function crmPersonGet($offset = null, $limit = '5', $sort = null, $select = null)
     {
@@ -8470,13 +8470,13 @@ class CRMApi
      * @param  string $sort Sort the result by column name (optional)
      * @param  string $select Select only specific fields to return (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultPersons, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultPersons, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmPersonGetWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPersons';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPersons';
         $request = $this->crmPersonGetRequest($offset, $limit, $sort, $select);
 
         try {
@@ -8527,7 +8527,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultPersons',
+                        '\Paqtcom\Simplicate\Model\RestResultPersons',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8575,7 +8575,7 @@ class CRMApi
      */
     public function crmPersonGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPersons';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPersons';
         $request = $this->crmPersonGetRequest($offset, $limit, $sort, $select);
 
         return $this->client
@@ -8728,7 +8728,7 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -8744,7 +8744,7 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -8956,9 +8956,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultPerson
+     * @return \Paqtcom\Simplicate\Model\RestResultPerson
      */
     public function crmPersonIdGet($id)
     {
@@ -8974,13 +8974,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultPerson, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultPerson, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmPersonIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPerson';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPerson';
         $request = $this->crmPersonIdGetRequest($id);
 
         try {
@@ -9031,7 +9031,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultPerson',
+                        '\Paqtcom\Simplicate\Model\RestResultPerson',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9073,7 +9073,7 @@ class CRMApi
      */
     public function crmPersonIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPerson';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPerson';
         $request = $this->crmPersonIdGetRequest($id);
 
         return $this->client
@@ -9221,9 +9221,9 @@ class CRMApi
      * Updates a person for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostPerson $body Person object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -9238,9 +9238,9 @@ class CRMApi
      * Updates a person for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostPerson $body Person object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -9291,7 +9291,7 @@ class CRMApi
      * Updates a person for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostPerson $body Person object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9312,7 +9312,7 @@ class CRMApi
      * Updates a person for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostPerson $body Person object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9349,7 +9349,7 @@ class CRMApi
      * Create request for operation 'crmPersonIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostPerson $body Person object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -9462,9 +9462,9 @@ class CRMApi
      *
      * Add a new person
      *
-     * @param  \Swagger\Client\Model\PostPerson $body Person object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -9478,9 +9478,9 @@ class CRMApi
      *
      * Add a new person
      *
-     * @param  \Swagger\Client\Model\PostPerson $body Person object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -9530,7 +9530,7 @@ class CRMApi
      *
      * Add a new person
      *
-     * @param  \Swagger\Client\Model\PostPerson $body Person object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9550,7 +9550,7 @@ class CRMApi
      *
      * Add a new person
      *
-     * @param  \Swagger\Client\Model\PostPerson $body Person object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9586,7 +9586,7 @@ class CRMApi
     /**
      * Create request for operation 'crmPersonPost'
      *
-     * @param  \Swagger\Client\Model\PostPerson $body Person object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -9688,9 +9688,9 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldGroups
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups
      */
     public function crmPersoncustomfieldgroupsGet($offset = null, $limit = '5', $sort = null)
     {
@@ -9708,13 +9708,13 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldGroups, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmPersoncustomfieldgroupsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroups';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
         $request = $this->crmPersoncustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         try {
@@ -9765,7 +9765,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldGroups',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9811,7 +9811,7 @@ class CRMApi
      */
     public function crmPersoncustomfieldgroupsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroups';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
         $request = $this->crmPersoncustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -9959,9 +9959,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldGroup
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup
      */
     public function crmPersoncustomfieldgroupsIdGet($id)
     {
@@ -9977,13 +9977,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldGroup, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmPersoncustomfieldgroupsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroup';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
         $request = $this->crmPersoncustomfieldgroupsIdGetRequest($id);
 
         try {
@@ -10034,7 +10034,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldGroup',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10076,7 +10076,7 @@ class CRMApi
      */
     public function crmPersoncustomfieldgroupsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroup';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
         $request = $this->crmPersoncustomfieldgroupsIdGetRequest($id);
 
         return $this->client
@@ -10227,9 +10227,9 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFields
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFields
      */
     public function crmPersoncustomfieldsGet($offset = null, $limit = '5', $sort = null)
     {
@@ -10247,13 +10247,13 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFields, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFields, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmPersoncustomfieldsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFields';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
         $request = $this->crmPersoncustomfieldsGetRequest($offset, $limit, $sort);
 
         try {
@@ -10304,7 +10304,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFields',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFields',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10350,7 +10350,7 @@ class CRMApi
      */
     public function crmPersoncustomfieldsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFields';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
         $request = $this->crmPersoncustomfieldsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -10498,9 +10498,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomField
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomField
      */
     public function crmPersoncustomfieldsIdGet($id)
     {
@@ -10516,13 +10516,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomField, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomField, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmPersoncustomfieldsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomField';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
         $request = $this->crmPersoncustomfieldsIdGetRequest($id);
 
         try {
@@ -10573,7 +10573,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomField',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomField',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10615,7 +10615,7 @@ class CRMApi
      */
     public function crmPersoncustomfieldsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomField';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
         $request = $this->crmPersoncustomfieldsIdGetRequest($id);
 
         return $this->client
@@ -10766,9 +10766,9 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultRelationTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultRelationTypes
      */
     public function crmRelationtypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -10786,13 +10786,13 @@ class CRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultRelationTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultRelationTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmRelationtypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultRelationTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultRelationTypes';
         $request = $this->crmRelationtypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -10843,7 +10843,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultRelationTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultRelationTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10889,7 +10889,7 @@ class CRMApi
      */
     public function crmRelationtypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultRelationTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultRelationTypes';
         $request = $this->crmRelationtypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -11037,9 +11037,9 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultRelationType
+     * @return \Paqtcom\Simplicate\Model\RestResultRelationType
      */
     public function crmRelationtypeIdGet($id)
     {
@@ -11055,13 +11055,13 @@ class CRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultRelationType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultRelationType, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmRelationtypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultRelationType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultRelationType';
         $request = $this->crmRelationtypeIdGetRequest($id);
 
         try {
@@ -11112,7 +11112,7 @@ class CRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultRelationType',
+                        '\Paqtcom\Simplicate\Model\RestResultRelationType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11154,7 +11154,7 @@ class CRMApi
      */
     public function crmRelationtypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultRelationType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultRelationType';
         $request = $this->crmRelationtypeIdGetRequest($id);
 
         return $this->client

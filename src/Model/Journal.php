@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * Journal Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -67,9 +67,9 @@ class Journal implements ModelInterface, ArrayAccess
         'amount_excl' => 'float',
         'amount_incl' => 'float',
         'autocollect' => 'bool',
-        'revenuegroup' => '\Swagger\Client\Model\RevenueGroup',
-        'journal_lines' => '\Swagger\Client\Model\JournalLine[]',
-        'vat' => '\Swagger\Client\Model\JournalVat[]',
+        'revenuegroup' => '\Paqtcom\Simplicate\Model\RevenueGroup',
+        'journal_lines' => '\Paqtcom\Simplicate\Model\JournalLine[]',
+        'vat' => '\Paqtcom\Simplicate\Model\JournalVat[]',
     ];
 
     /**
@@ -485,7 +485,7 @@ class Journal implements ModelInterface, ArrayAccess
     /**
      * Gets revenuegroup
      *
-     * @return \Swagger\Client\Model\RevenueGroup
+     * @return \Paqtcom\Simplicate\Model\RevenueGroup
      */
     public function getRevenuegroup()
     {
@@ -495,7 +495,7 @@ class Journal implements ModelInterface, ArrayAccess
     /**
      * Sets revenuegroup
      *
-     * @param \Swagger\Client\Model\RevenueGroup $revenuegroup revenuegroup
+     * @param \Paqtcom\Simplicate\Model\RevenueGroup $revenuegroup revenuegroup
      *
      * @return $this
      */
@@ -509,7 +509,7 @@ class Journal implements ModelInterface, ArrayAccess
     /**
      * Gets journal_lines
      *
-     * @return \Swagger\Client\Model\JournalLine[]
+     * @return \Paqtcom\Simplicate\Model\JournalLine[]
      */
     public function getJournalLines()
     {
@@ -519,7 +519,7 @@ class Journal implements ModelInterface, ArrayAccess
     /**
      * Sets journal_lines
      *
-     * @param \Swagger\Client\Model\JournalLine[] $journal_lines journal_lines
+     * @param \Paqtcom\Simplicate\Model\JournalLine[] $journal_lines journal_lines
      *
      * @return $this
      */
@@ -533,7 +533,7 @@ class Journal implements ModelInterface, ArrayAccess
     /**
      * Gets vat
      *
-     * @return \Swagger\Client\Model\JournalVat[]
+     * @return \Paqtcom\Simplicate\Model\JournalVat[]
      */
     public function getVat()
     {
@@ -543,7 +543,7 @@ class Journal implements ModelInterface, ArrayAccess
     /**
      * Sets vat
      *
-     * @param \Swagger\Client\Model\JournalVat[] $vat vat
+     * @param \Paqtcom\Simplicate\Model\JournalVat[] $vat vat
      *
      * @return $this
      */

@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetTimesheetRow Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -60,11 +60,11 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'order' => 'int',
-        'project' => '\Swagger\Client\Model\GetTimesheetRowProject',
-        'project_service' => '\Swagger\Client\Model\GetTimesheetRowProjectService',
-        'itemtype' => '\Swagger\Client\Model\GetTimesheetRowItemtype',
-        'person' => '\Swagger\Client\Model\GetTimesheetRowPersonRelation',
-        'organization' => '\Swagger\Client\Model\GetTimesheetRowOrganizationRelation',
+        'project' => '\Paqtcom\Simplicate\Model\GetTimesheetRowProject',
+        'project_service' => '\Paqtcom\Simplicate\Model\GetTimesheetRowProjectService',
+        'itemtype' => '\Paqtcom\Simplicate\Model\GetTimesheetRowItemtype',
+        'person' => '\Paqtcom\Simplicate\Model\GetTimesheetRowPersonRelation',
+        'organization' => '\Paqtcom\Simplicate\Model\GetTimesheetRowOrganizationRelation',
         'employee_id' => 'string',
         'start_date' => 'string',
         'end_date' => 'string',
@@ -355,7 +355,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
     /**
      * Gets project
      *
-     * @return \Swagger\Client\Model\GetTimesheetRowProject
+     * @return \Paqtcom\Simplicate\Model\GetTimesheetRowProject
      */
     public function getProject()
     {
@@ -365,7 +365,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
     /**
      * Sets project
      *
-     * @param \Swagger\Client\Model\GetTimesheetRowProject $project project
+     * @param \Paqtcom\Simplicate\Model\GetTimesheetRowProject $project project
      *
      * @return $this
      */
@@ -379,7 +379,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
     /**
      * Gets project_service
      *
-     * @return \Swagger\Client\Model\GetTimesheetRowProjectService
+     * @return \Paqtcom\Simplicate\Model\GetTimesheetRowProjectService
      */
     public function getProjectService()
     {
@@ -389,7 +389,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
     /**
      * Sets project_service
      *
-     * @param \Swagger\Client\Model\GetTimesheetRowProjectService $project_service project_service
+     * @param \Paqtcom\Simplicate\Model\GetTimesheetRowProjectService $project_service project_service
      *
      * @return $this
      */
@@ -403,7 +403,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
     /**
      * Gets itemtype
      *
-     * @return \Swagger\Client\Model\GetTimesheetRowItemtype
+     * @return \Paqtcom\Simplicate\Model\GetTimesheetRowItemtype
      */
     public function getItemtype()
     {
@@ -413,7 +413,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
     /**
      * Sets itemtype
      *
-     * @param \Swagger\Client\Model\GetTimesheetRowItemtype $itemtype itemtype
+     * @param \Paqtcom\Simplicate\Model\GetTimesheetRowItemtype $itemtype itemtype
      *
      * @return $this
      */
@@ -427,7 +427,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
     /**
      * Gets person
      *
-     * @return \Swagger\Client\Model\GetTimesheetRowPersonRelation
+     * @return \Paqtcom\Simplicate\Model\GetTimesheetRowPersonRelation
      */
     public function getPerson()
     {
@@ -437,7 +437,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
     /**
      * Sets person
      *
-     * @param \Swagger\Client\Model\GetTimesheetRowPersonRelation $person person
+     * @param \Paqtcom\Simplicate\Model\GetTimesheetRowPersonRelation $person person
      *
      * @return $this
      */
@@ -451,7 +451,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
     /**
      * Gets organization
      *
-     * @return \Swagger\Client\Model\GetTimesheetRowOrganizationRelation
+     * @return \Paqtcom\Simplicate\Model\GetTimesheetRowOrganizationRelation
      */
     public function getOrganization()
     {
@@ -461,7 +461,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
     /**
      * Sets organization
      *
-     * @param \Swagger\Client\Model\GetTimesheetRowOrganizationRelation $organization organization
+     * @param \Paqtcom\Simplicate\Model\GetTimesheetRowOrganizationRelation $organization organization
      *
      * @return $this
      */

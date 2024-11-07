@@ -7,7 +7,7 @@
  **date_of_birth**   | **string**                                            |             | [optional] 
  **gender_id**       | **string**                                            |             | [optional] 
  **gender**          | **string**                                            |             | [optional] 
- **address**         | [**\Swagger\Client\Model\GetAddress**](GetAddress.md) |             | [optional] 
+ **address**         | [**\Paqtcom\Simplicate\Model\GetAddress**](GetAddress.md) |             | [optional] 
  **email**           | **string**                                            |             | [optional] 
  **phone**           | **string**                                            |             | [optional] 
  **twitter_url**     | **string**                                            |             | [optional] 

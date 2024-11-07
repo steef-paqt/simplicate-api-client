@@ -1,4 +1,4 @@
-# Swagger\Client\ProjectsApi
+# Paqtcom\Simplicate\ProjectsApi
 
 All URIs are relative to *http://localhost/api/v2*
 
@@ -52,7 +52,7 @@ All URIs are relative to *http://localhost/api/v2*
 
 # **projectsAssignmentGet**
 
-> \Swagger\Client\Model\RestResultProjectAssignments projectsAssignmentGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultProjectAssignments projectsAssignmentGet($offset, $limit, $sort)
 
 Fetches all available assignments for projects
 
@@ -62,7 +62,7 @@ Fetches all available assignments for projects
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -90,7 +90,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultProjectAssignments**](../Model/RestResultProjectAssignments.md)
+[**\Paqtcom\Simplicate\Model\RestResultProjectAssignments**](../Model/RestResultProjectAssignments.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ No authorization required
 
 # **projectsAssignmentIdGet**
 
-> \Swagger\Client\Model\RestResultProjectAssignment projectsAssignmentIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultProjectAssignment projectsAssignmentIdGet($id)
 
 Fetches all a single assignment by its id
 
@@ -115,7 +115,7 @@ Fetches all a single assignment by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -139,7 +139,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultProjectAssignment**](../Model/RestResultProjectAssignment.md)
+[**\Paqtcom\Simplicate\Model\RestResultProjectAssignment**](../Model/RestResultProjectAssignment.md)
 
 ### Authorization
 
@@ -164,13 +164,13 @@ Updates a project assignment for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PutAssignment(); // \Swagger\Client\Model\PutAssignment | Project assignment PUT body
+$body = new \Paqtcom\Simplicate\Model\PutAssignment(); // \Paqtcom\Simplicate\Model\PutAssignment | Project assignment PUT body
 
 try {
     $apiInstance->projectsAssignmentIdPut($id, $body);
@@ -185,7 +185,7 @@ try {
  Name     | Type                                                                 | Description                 | Notes 
 ----------|----------------------------------------------------------------------|-----------------------------|-------
  **id**   | **string**                                                           | The template&#39;s id       |
- **body** | [**\Swagger\Client\Model\PutAssignment**](../Model/PutAssignment.md) | Project assignment PUT body |
+ **body** | [**\Paqtcom\Simplicate\Model\PutAssignment**](../Model/PutAssignment.md) | Project assignment PUT body |
 
 ### Return type
 
@@ -214,12 +214,12 @@ Creates a new project assignment
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostAssignment(); // \Swagger\Client\Model\PostAssignment | Project assignment POST body
+$body = new \Paqtcom\Simplicate\Model\PostAssignment(); // \Paqtcom\Simplicate\Model\PostAssignment | Project assignment POST body
 
 try {
     $apiInstance->projectsAssignmentPost($body);
@@ -233,7 +233,7 @@ try {
 
  Name     | Type                                                                   | Description                  | Notes 
 ----------|------------------------------------------------------------------------|------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostAssignment**](../Model/PostAssignment.md) | Project assignment POST body |
+ **body** | [**\Paqtcom\Simplicate\Model\PostAssignment**](../Model/PostAssignment.md) | Project assignment POST body |
 
 ### Return type
 
@@ -252,7 +252,7 @@ No authorization required
 
 # **projectsAssignmentbudgetGet**
 
-> \Swagger\Client\Model\RestResultProjectAssignmentbudget projectsAssignmentbudgetGet($q_range_start, $q_employee_id,
+> \Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget projectsAssignmentbudgetGet($q_range_start, $q_employee_id,
 > $q_assignment_id, $offset, $limit, $sort)
 
 Get budget information (planned amount, spent amount etc.) of assignment within given date range
@@ -263,7 +263,7 @@ Get budget information (planned amount, spent amount etc.) of assignment within 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -297,7 +297,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultProjectAssignmentbudget**](../Model/RestResultProjectAssignmentbudget.md)
+[**\Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget**](../Model/RestResultProjectAssignmentbudget.md)
 
 ### Authorization
 
@@ -312,7 +312,7 @@ No authorization required
 
 # **projectsAssignmentstatusGet**
 
-> \Swagger\Client\Model\RestResultProjectAssignmentStatuses projectsAssignmentstatusGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatuses projectsAssignmentstatusGet($offset, $limit, $sort)
 
 Fetches all available assignment statuses for projects
 
@@ -322,7 +322,7 @@ Fetches all available assignment statuses for projects
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -350,7 +350,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultProjectAssignmentStatuses**](../Model/RestResultProjectAssignmentStatuses.md)
+[**\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatuses**](../Model/RestResultProjectAssignmentStatuses.md)
 
 ### Authorization
 
@@ -365,7 +365,7 @@ No authorization required
 
 # **projectsAssignmentstatusIdGet**
 
-> \Swagger\Client\Model\RestResultProjectAssignmentStatus projectsAssignmentstatusIdGet($id, $offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus projectsAssignmentstatusIdGet($id, $offset, $limit, $sort)
 
 Fetches a single assignment status by its id
 
@@ -375,7 +375,7 @@ Fetches a single assignment status by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -405,7 +405,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultProjectAssignmentStatus**](../Model/RestResultProjectAssignmentStatus.md)
+[**\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus**](../Model/RestResultProjectAssignmentStatus.md)
 
 ### Authorization
 
@@ -430,13 +430,13 @@ Updates a project assignment status for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\AssignmentStatus(); // \Swagger\Client\Model\AssignmentStatus | Project assignment POST body
+$body = new \Paqtcom\Simplicate\Model\AssignmentStatus(); // \Paqtcom\Simplicate\Model\AssignmentStatus | Project assignment POST body
 
 try {
     $apiInstance->projectsAssignmentstatusIdPut($id, $body);
@@ -451,7 +451,7 @@ try {
  Name     | Type                                                                       | Description                  | Notes 
 ----------|----------------------------------------------------------------------------|------------------------------|-------
  **id**   | **string**                                                                 | The template&#39;s id        |
- **body** | [**\Swagger\Client\Model\AssignmentStatus**](../Model/AssignmentStatus.md) | Project assignment POST body |
+ **body** | [**\Paqtcom\Simplicate\Model\AssignmentStatus**](../Model/AssignmentStatus.md) | Project assignment POST body |
 
 ### Return type
 
@@ -480,12 +480,12 @@ Creates a new project assignment status
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\AssignmentStatus(); // \Swagger\Client\Model\AssignmentStatus | Project assignment POST body
+$body = new \Paqtcom\Simplicate\Model\AssignmentStatus(); // \Paqtcom\Simplicate\Model\AssignmentStatus | Project assignment POST body
 
 try {
     $apiInstance->projectsAssignmentstatusPost($body);
@@ -499,7 +499,7 @@ try {
 
  Name     | Type                                                                       | Description                  | Notes 
 ----------|----------------------------------------------------------------------------|------------------------------|-------
- **body** | [**\Swagger\Client\Model\AssignmentStatus**](../Model/AssignmentStatus.md) | Project assignment POST body |
+ **body** | [**\Paqtcom\Simplicate\Model\AssignmentStatus**](../Model/AssignmentStatus.md) | Project assignment POST body |
 
 ### Return type
 
@@ -518,7 +518,7 @@ No authorization required
 
 # **projectsDocumentGet**
 
-> \Swagger\Client\Model\RestResultDocuments projectsDocumentGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultDocuments projectsDocumentGet($offset, $limit, $sort)
 
 Fetches all available documents for projects
 
@@ -528,7 +528,7 @@ Fetches all available documents for projects
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -556,7 +556,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocuments**](../Model/RestResultDocuments.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocuments**](../Model/RestResultDocuments.md)
 
 ### Authorization
 
@@ -581,7 +581,7 @@ Deletes the document with the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -619,7 +619,7 @@ No authorization required
 
 # **projectsDocumentIdGet**
 
-> \Swagger\Client\Model\RestResultDocument projectsDocumentIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultDocument projectsDocumentIdGet($id)
 
 Fetches a single document for projects by its id
 
@@ -629,7 +629,7 @@ Fetches a single document for projects by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -653,7 +653,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocument**](../Model/RestResultDocument.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocument**](../Model/RestResultDocument.md)
 
 ### Authorization
 
@@ -678,12 +678,12 @@ create a document
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostDocument(); // \Swagger\Client\Model\PostDocument | Document object containing data
+$body = new \Paqtcom\Simplicate\Model\PostDocument(); // \Paqtcom\Simplicate\Model\PostDocument | Document object containing data
 
 try {
     $apiInstance->projectsDocumentPost($body);
@@ -697,7 +697,7 @@ try {
 
  Name     | Type                                                               | Description                     | Notes 
 ----------|--------------------------------------------------------------------|---------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostDocument**](../Model/PostDocument.md) | Document object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostDocument**](../Model/PostDocument.md) | Document object containing data |
 
 ### Return type
 
@@ -726,12 +726,12 @@ update a document
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PutDocument(); // \Swagger\Client\Model\PutDocument | Document object containing data
+$body = new \Paqtcom\Simplicate\Model\PutDocument(); // \Paqtcom\Simplicate\Model\PutDocument | Document object containing data
 
 try {
     $apiInstance->projectsDocumentPut($body);
@@ -745,7 +745,7 @@ try {
 
  Name     | Type                                                             | Description                     | Notes 
 ----------|------------------------------------------------------------------|---------------------------------|-------
- **body** | [**\Swagger\Client\Model\PutDocument**](../Model/PutDocument.md) | Document object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PutDocument**](../Model/PutDocument.md) | Document object containing data |
 
 ### Return type
 
@@ -764,7 +764,7 @@ No authorization required
 
 # **projectsDocumenttypeGet**
 
-> \Swagger\Client\Model\RestResultDocumentTypes projectsDocumenttypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultDocumentTypes projectsDocumenttypeGet($offset, $limit, $sort)
 
 Fetches all available document types for Projects
 
@@ -774,7 +774,7 @@ Fetches all available document types for Projects
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -802,7 +802,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocumentTypes**](../Model/RestResultDocumentTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocumentTypes**](../Model/RestResultDocumentTypes.md)
 
 ### Authorization
 
@@ -817,7 +817,7 @@ No authorization required
 
 # **projectsDocumenttypeIdGet**
 
-> \Swagger\Client\Model\RestResultDocumentType projectsDocumenttypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultDocumentType projectsDocumenttypeIdGet($id)
 
 Fetches a single document type for Projects by its id
 
@@ -827,7 +827,7 @@ Fetches a single document type for Projects by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -851,7 +851,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocumentType**](../Model/RestResultDocumentType.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocumentType**](../Model/RestResultDocumentType.md)
 
 ### Authorization
 
@@ -866,7 +866,7 @@ No authorization required
 
 # **projectsProjectGet**
 
-> \Swagger\Client\Model\RestResultProjects projectsProjectGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultProjects projectsProjectGet($offset, $limit, $sort)
 
 Fetches all projects
 
@@ -876,7 +876,7 @@ Fetches all projects
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -904,7 +904,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultProjects**](../Model/RestResultProjects.md)
+[**\Paqtcom\Simplicate\Model\RestResultProjects**](../Model/RestResultProjects.md)
 
 ### Authorization
 
@@ -929,7 +929,7 @@ Deletes the project with the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -967,7 +967,7 @@ No authorization required
 
 # **projectsProjectIdGet**
 
-> \Swagger\Client\Model\RestResultProject projectsProjectIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultProject projectsProjectIdGet($id)
 
 Fetches a single project by id
 
@@ -977,7 +977,7 @@ Fetches a single project by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1001,7 +1001,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultProject**](../Model/RestResultProject.md)
+[**\Paqtcom\Simplicate\Model\RestResultProject**](../Model/RestResultProject.md)
 
 ### Authorization
 
@@ -1016,7 +1016,7 @@ No authorization required
 
 # **projectsProjectIdPlanningBudgetGet**
 
-> \Swagger\Client\Model\RestResult projectsProjectIdPlanningBudgetGet($id, $by, $until_date)
+> \Paqtcom\Simplicate\Model\RestResult projectsProjectIdPlanningBudgetGet($id, $by, $until_date)
 
 Fetches the assignment budget info of a project
 
@@ -1026,7 +1026,7 @@ Fetches the assignment budget info of a project
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1054,7 +1054,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResult**](../Model/RestResult.md)
+[**\Paqtcom\Simplicate\Model\RestResult**](../Model/RestResult.md)
 
 ### Authorization
 
@@ -1079,13 +1079,13 @@ Updates a project for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostProject(); // \Swagger\Client\Model\PostProject | project object that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\PostProject(); // \Paqtcom\Simplicate\Model\PostProject | project object that needs to be updated
 
 try {
     $apiInstance->projectsProjectIdPut($id, $body);
@@ -1100,7 +1100,7 @@ try {
  Name     | Type                                                             | Description                             | Notes 
 ----------|------------------------------------------------------------------|-----------------------------------------|-------
  **id**   | **string**                                                       | The template&#39;s id                   |
- **body** | [**\Swagger\Client\Model\PostProject**](../Model/PostProject.md) | project object that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\PostProject**](../Model/PostProject.md) | project object that needs to be updated |
 
 ### Return type
 
@@ -1129,12 +1129,12 @@ Add a new project
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostProject(); // \Swagger\Client\Model\PostProject | Project object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostProject(); // \Paqtcom\Simplicate\Model\PostProject | Project object that needs to be added
 
 try {
     $apiInstance->projectsProjectPost($body);
@@ -1148,7 +1148,7 @@ try {
 
  Name     | Type                                                             | Description                           | Notes 
 ----------|------------------------------------------------------------------|---------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostProject**](../Model/PostProject.md) | Project object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostProject**](../Model/PostProject.md) | Project object that needs to be added |
 
 ### Return type
 
@@ -1167,7 +1167,7 @@ No authorization required
 
 # **projectsProjectcustomfieldgroupsGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldGroups projectsProjectcustomfieldgroupsGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups projectsProjectcustomfieldgroupsGet($offset, $limit, $sort)
 
 Fetches all custom field groups available for projects
 
@@ -1177,7 +1177,7 @@ Fetches all custom field groups available for projects
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1205,7 +1205,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldGroups**](../Model/RestResultCustomFieldGroups.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups**](../Model/RestResultCustomFieldGroups.md)
 
 ### Authorization
 
@@ -1220,7 +1220,7 @@ No authorization required
 
 # **projectsProjectcustomfieldgroupsIdGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldGroup projectsProjectcustomfieldgroupsIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup projectsProjectcustomfieldgroupsIdGet($id)
 
 Fetches a single custom field group available for project
 
@@ -1230,7 +1230,7 @@ Fetches a single custom field group available for project
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1254,7 +1254,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldGroup**](../Model/RestResultCustomFieldGroup.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup**](../Model/RestResultCustomFieldGroup.md)
 
 ### Authorization
 
@@ -1269,7 +1269,7 @@ No authorization required
 
 # **projectsProjectcustomfieldsGet**
 
-> \Swagger\Client\Model\RestResultCustomFields projectsProjectcustomfieldsGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFields projectsProjectcustomfieldsGet($offset, $limit, $sort)
 
 Fetches all custom fields available for projects
 
@@ -1279,7 +1279,7 @@ Fetches all custom fields available for projects
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1307,7 +1307,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFields**](../Model/RestResultCustomFields.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFields**](../Model/RestResultCustomFields.md)
 
 ### Authorization
 
@@ -1322,7 +1322,7 @@ No authorization required
 
 # **projectsProjectcustomfieldsIdGet**
 
-> \Swagger\Client\Model\RestResultCustomField projectsProjectcustomfieldsIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultCustomField projectsProjectcustomfieldsIdGet($id)
 
 Fetches a single custom field available for projects
 
@@ -1332,7 +1332,7 @@ Fetches a single custom field available for projects
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1356,7 +1356,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomField**](../Model/RestResultCustomField.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomField**](../Model/RestResultCustomField.md)
 
 ### Authorization
 
@@ -1381,12 +1381,12 @@ Add an employee to a project
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\Body(); // \Swagger\Client\Model\Body | Body for adding an employee to a project
+$body = new \Paqtcom\Simplicate\Model\Body(); // \Paqtcom\Simplicate\Model\Body | Body for adding an employee to a project
 
 try {
     $apiInstance->projectsProjectemployeePost($body);
@@ -1400,7 +1400,7 @@ try {
 
  Name     | Type                                               | Description                              | Notes 
 ----------|----------------------------------------------------|------------------------------------------|-------
- **body** | [**\Swagger\Client\Model\Body**](../Model/Body.md) | Body for adding an employee to a project |
+ **body** | [**\Paqtcom\Simplicate\Model\Body**](../Model/Body.md) | Body for adding an employee to a project |
 
 ### Return type
 
@@ -1429,7 +1429,7 @@ Remove an employee from a project
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1464,7 +1464,7 @@ No authorization required
 
 # **projectsProjectfiltersGet**
 
-> \Swagger\Client\Model\RestResultFilters projectsProjectfiltersGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultFilters projectsProjectfiltersGet($offset, $limit, $sort)
 
 Fetches all filters available for projects
 
@@ -1474,7 +1474,7 @@ Fetches all filters available for projects
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1502,7 +1502,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultFilters**](../Model/RestResultFilters.md)
+[**\Paqtcom\Simplicate\Model\RestResultFilters**](../Model/RestResultFilters.md)
 
 ### Authorization
 
@@ -1517,7 +1517,7 @@ No authorization required
 
 # **projectsProjectfiltersIdGet**
 
-> \Swagger\Client\Model\RestResultFilter projectsProjectfiltersIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultFilter projectsProjectfiltersIdGet($id)
 
 Fetches a single filter available for projects
 
@@ -1527,7 +1527,7 @@ Fetches a single filter available for projects
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1551,7 +1551,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultFilter**](../Model/RestResultFilter.md)
+[**\Paqtcom\Simplicate\Model\RestResultFilter**](../Model/RestResultFilter.md)
 
 ### Authorization
 
@@ -1566,7 +1566,7 @@ No authorization required
 
 # **projectsProjectstatusGet**
 
-> \Swagger\Client\Model\RestResultProjectStatusses projectsProjectstatusGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultProjectStatusses projectsProjectstatusGet($offset, $limit, $sort)
 
 Fetches all projects statusses
 
@@ -1576,7 +1576,7 @@ Fetches all projects statusses
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1604,7 +1604,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultProjectStatusses**](../Model/RestResultProjectStatusses.md)
+[**\Paqtcom\Simplicate\Model\RestResultProjectStatusses**](../Model/RestResultProjectStatusses.md)
 
 ### Authorization
 
@@ -1619,7 +1619,7 @@ No authorization required
 
 # **projectsProjectstatusIdGet**
 
-> \Swagger\Client\Model\RestResultProjectStatus projectsProjectstatusIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultProjectStatus projectsProjectstatusIdGet($id)
 
 Fetches a single projects status by id
 
@@ -1629,7 +1629,7 @@ Fetches a single projects status by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1653,7 +1653,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultProjectStatus**](../Model/RestResultProjectStatus.md)
+[**\Paqtcom\Simplicate\Model\RestResultProjectStatus**](../Model/RestResultProjectStatus.md)
 
 ### Authorization
 
@@ -1668,7 +1668,7 @@ No authorization required
 
 # **projectsPurchaseGet**
 
-> \Swagger\Client\Model\RestResultPurchases projectsPurchaseGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultPurchases projectsPurchaseGet($offset, $limit, $sort)
 
 Fetches all project purchase records
 
@@ -1678,7 +1678,7 @@ Fetches all project purchase records
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1706,7 +1706,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultPurchases**](../Model/RestResultPurchases.md)
+[**\Paqtcom\Simplicate\Model\RestResultPurchases**](../Model/RestResultPurchases.md)
 
 ### Authorization
 
@@ -1721,7 +1721,7 @@ No authorization required
 
 # **projectsPurchaseIdGet**
 
-> \Swagger\Client\Model\RestResultPurchase projectsPurchaseIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultPurchase projectsPurchaseIdGet($id)
 
 Fetches a single project purchase record
 
@@ -1731,7 +1731,7 @@ Fetches a single project purchase record
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1755,7 +1755,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultPurchase**](../Model/RestResultPurchase.md)
+[**\Paqtcom\Simplicate\Model\RestResultPurchase**](../Model/RestResultPurchase.md)
 
 ### Authorization
 
@@ -1770,7 +1770,7 @@ No authorization required
 
 # **projectsPurchasetypeGet**
 
-> \Swagger\Client\Model\RestResultPurchaseTypes projectsPurchasetypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultPurchaseTypes projectsPurchasetypeGet($offset, $limit, $sort)
 
 Fetches all purchase types
 
@@ -1780,7 +1780,7 @@ Fetches all purchase types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1808,7 +1808,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultPurchaseTypes**](../Model/RestResultPurchaseTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultPurchaseTypes**](../Model/RestResultPurchaseTypes.md)
 
 ### Authorization
 
@@ -1823,7 +1823,7 @@ No authorization required
 
 # **projectsPurchasetypeIdGet**
 
-> \Swagger\Client\Model\RestResultPurchaseType projectsPurchasetypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultPurchaseType projectsPurchasetypeIdGet($id)
 
 Fetches a single purchase type by id
 
@@ -1833,7 +1833,7 @@ Fetches a single purchase type by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1857,7 +1857,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultPurchaseType**](../Model/RestResultPurchaseType.md)
+[**\Paqtcom\Simplicate\Model\RestResultPurchaseType**](../Model/RestResultPurchaseType.md)
 
 ### Authorization
 
@@ -1872,7 +1872,7 @@ No authorization required
 
 # **projectsReverseinvoiceGet**
 
-> \Swagger\Client\Model\RestResultReverseInvoices projectsReverseinvoiceGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultReverseInvoices projectsReverseinvoiceGet($offset, $limit, $sort)
 
 Fetches all reverse invoice records
 
@@ -1882,7 +1882,7 @@ Fetches all reverse invoice records
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1910,7 +1910,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultReverseInvoices**](../Model/RestResultReverseInvoices.md)
+[**\Paqtcom\Simplicate\Model\RestResultReverseInvoices**](../Model/RestResultReverseInvoices.md)
 
 ### Authorization
 
@@ -1925,7 +1925,7 @@ No authorization required
 
 # **projectsReverseinvoiceIdGet**
 
-> \Swagger\Client\Model\RestResultReverseInvoice projectsReverseinvoiceIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultReverseInvoice projectsReverseinvoiceIdGet($id)
 
 Fetches a single project reverse invoice
 
@@ -1935,7 +1935,7 @@ Fetches a single project reverse invoice
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1959,7 +1959,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultReverseInvoice**](../Model/RestResultReverseInvoice.md)
+[**\Paqtcom\Simplicate\Model\RestResultReverseInvoice**](../Model/RestResultReverseInvoice.md)
 
 ### Authorization
 
@@ -1974,7 +1974,7 @@ No authorization required
 
 # **projectsServiceGet**
 
-> \Swagger\Client\Model\RestResultProjectServices projectsServiceGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultProjectServices projectsServiceGet($offset, $limit, $sort)
 
 Fetches all services
 
@@ -1984,7 +1984,7 @@ Fetches all services
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2012,7 +2012,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultProjectServices**](../Model/RestResultProjectServices.md)
+[**\Paqtcom\Simplicate\Model\RestResultProjectServices**](../Model/RestResultProjectServices.md)
 
 ### Authorization
 
@@ -2037,7 +2037,7 @@ Deletes the service with the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2085,13 +2085,13 @@ Duplicates a service on base of the id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\DuplicateProjectService(); // \Swagger\Client\Model\DuplicateProjectService | Optional parameters to overwrite
+$body = new \Paqtcom\Simplicate\Model\DuplicateProjectService(); // \Paqtcom\Simplicate\Model\DuplicateProjectService | Optional parameters to overwrite
 
 try {
     $apiInstance->projectsServiceIdDuplicatePost($id, $body);
@@ -2106,7 +2106,7 @@ try {
  Name     | Type                                                                                     | Description                      | Notes      
 ----------|------------------------------------------------------------------------------------------|----------------------------------|------------
  **id**   | **string**                                                                               | The template&#39;s id            |
- **body** | [**\Swagger\Client\Model\DuplicateProjectService**](../Model/DuplicateProjectService.md) | Optional parameters to overwrite | [optional] 
+ **body** | [**\Paqtcom\Simplicate\Model\DuplicateProjectService**](../Model/DuplicateProjectService.md) | Optional parameters to overwrite | [optional] 
 
 ### Return type
 
@@ -2125,7 +2125,7 @@ No authorization required
 
 # **projectsServiceIdGet**
 
-> \Swagger\Client\Model\RestResultProjectService projectsServiceIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultProjectService projectsServiceIdGet($id)
 
 Fetches a single service by id
 
@@ -2135,7 +2135,7 @@ Fetches a single service by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2159,7 +2159,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultProjectService**](../Model/RestResultProjectService.md)
+[**\Paqtcom\Simplicate\Model\RestResultProjectService**](../Model/RestResultProjectService.md)
 
 ### Authorization
 
@@ -2174,7 +2174,7 @@ No authorization required
 
 # **projectsServiceIdPlanningBudgetGet**
 
-> \Swagger\Client\Model\RestResult projectsServiceIdPlanningBudgetGet($id, $by, $until_date)
+> \Paqtcom\Simplicate\Model\RestResult projectsServiceIdPlanningBudgetGet($id, $by, $until_date)
 
 Fetches the assignment budget info of a project service
 
@@ -2184,7 +2184,7 @@ Fetches the assignment budget info of a project service
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2212,7 +2212,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResult**](../Model/RestResult.md)
+[**\Paqtcom\Simplicate\Model\RestResult**](../Model/RestResult.md)
 
 ### Authorization
 
@@ -2237,13 +2237,13 @@ Updates a service for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PutProjectService(); // \Swagger\Client\Model\PutProjectService | Service object that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\PutProjectService(); // \Paqtcom\Simplicate\Model\PutProjectService | Service object that needs to be updated
 
 try {
     $apiInstance->projectsServiceIdPut($id, $body);
@@ -2258,7 +2258,7 @@ try {
  Name     | Type                                                                         | Description                             | Notes 
 ----------|------------------------------------------------------------------------------|-----------------------------------------|-------
  **id**   | **string**                                                                   | The template&#39;s id                   |
- **body** | [**\Swagger\Client\Model\PutProjectService**](../Model/PutProjectService.md) | Service object that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\PutProjectService**](../Model/PutProjectService.md) | Service object that needs to be updated |
 
 ### Return type
 
@@ -2287,12 +2287,12 @@ Add a new service
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ProjectsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostProjectService(); // \Swagger\Client\Model\PostProjectService | template object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostProjectService(); // \Paqtcom\Simplicate\Model\PostProjectService | template object that needs to be added
 
 try {
     $apiInstance->projectsServicePost($body);
@@ -2306,7 +2306,7 @@ try {
 
  Name     | Type                                                                           | Description                            | Notes 
 ----------|--------------------------------------------------------------------------------|----------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostProjectService**](../Model/PostProjectService.md) | template object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostProjectService**](../Model/PostProjectService.md) | template object that needs to be added |
 
 ### Return type
 

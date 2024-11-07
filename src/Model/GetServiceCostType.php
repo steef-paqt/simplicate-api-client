@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetServiceCostType Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class GetServiceCostType implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'costtype' => '\Swagger\Client\Model\GetPurchaseType',
+        'costtype' => '\Paqtcom\Simplicate\Model\GetPurchaseType',
         'budgeted_amount' => 'float',
         'tariff' => 'float',
         'purchase_margin' => 'float',
@@ -257,7 +257,7 @@ class GetServiceCostType implements ModelInterface, ArrayAccess
     /**
      * Gets costtype
      *
-     * @return \Swagger\Client\Model\GetPurchaseType
+     * @return \Paqtcom\Simplicate\Model\GetPurchaseType
      */
     public function getCosttype()
     {
@@ -267,7 +267,7 @@ class GetServiceCostType implements ModelInterface, ArrayAccess
     /**
      * Sets costtype
      *
-     * @param \Swagger\Client\Model\GetPurchaseType $costtype costtype
+     * @param \Paqtcom\Simplicate\Model\GetPurchaseType $costtype costtype
      *
      * @return $this
      */

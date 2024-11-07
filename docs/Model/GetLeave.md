@@ -5,8 +5,8 @@
  Name            | Type                                                                | Description | Notes      
 -----------------|---------------------------------------------------------------------|-------------|------------
  **id**          | **string**                                                          |             | [optional] 
- **employee**    | [**\Swagger\Client\Model\GetEmployeeSimple**](GetEmployeeSimple.md) |             | [optional] 
- **leavetype**   | [**\Swagger\Client\Model\HrmGetLeaveType**](HrmGetLeaveType.md)     |             | [optional] 
+ **employee**    | [**\Paqtcom\Simplicate\Model\GetEmployeeSimple**](GetEmployeeSimple.md) |             | [optional] 
+ **leavetype**   | [**\Paqtcom\Simplicate\Model\HrmGetLeaveType**](HrmGetLeaveType.md)     |             | [optional] 
  **created_at**  | **string**                                                          |             | [optional] 
  **updated_at**  | **string**                                                          |             | [optional] 
  **start_date**  | **string**                                                          |             | [optional] 

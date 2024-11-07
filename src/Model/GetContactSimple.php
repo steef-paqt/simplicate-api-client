@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetContactSimple Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,8 +59,8 @@ class GetContactSimple implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'person' => '\Swagger\Client\Model\GetPersonSimple',
-        'organization' => '\Swagger\Client\Model\GetOrganizationSimple',
+        'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
+        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
     ];
 
     /**
@@ -239,7 +239,7 @@ class GetContactSimple implements ModelInterface, ArrayAccess
     /**
      * Gets person
      *
-     * @return \Swagger\Client\Model\GetPersonSimple
+     * @return \Paqtcom\Simplicate\Model\GetPersonSimple
      */
     public function getPerson()
     {
@@ -249,7 +249,7 @@ class GetContactSimple implements ModelInterface, ArrayAccess
     /**
      * Sets person
      *
-     * @param \Swagger\Client\Model\GetPersonSimple $person person
+     * @param \Paqtcom\Simplicate\Model\GetPersonSimple $person person
      *
      * @return $this
      */
@@ -263,7 +263,7 @@ class GetContactSimple implements ModelInterface, ArrayAccess
     /**
      * Gets organization
      *
-     * @return \Swagger\Client\Model\GetOrganizationSimple
+     * @return \Paqtcom\Simplicate\Model\GetOrganizationSimple
      */
     public function getOrganization()
     {
@@ -273,7 +273,7 @@ class GetContactSimple implements ModelInterface, ArrayAccess
     /**
      * Sets organization
      *
-     * @param \Swagger\Client\Model\GetOrganizationSimple $organization organization
+     * @param \Paqtcom\Simplicate\Model\GetOrganizationSimple $organization organization
      *
      * @return $this
      */

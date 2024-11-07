@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetHoursSimple Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -65,11 +65,11 @@ class GetHoursSimple implements ModelInterface, ArrayAccess
         'end_date' => 'string',
         'is_time_defined' => 'bool',
         'is_recurring' => 'bool',
-        'recurrence' => '\Swagger\Client\Model\Recurrence',
+        'recurrence' => '\Paqtcom\Simplicate\Model\Recurrence',
         'is_external' => 'bool',
         'billable' => 'bool',
         'note' => 'string',
-        'address' => '\Swagger\Client\Model\Address',
+        'address' => '\Paqtcom\Simplicate\Model\Address',
         'assignment_id' => 'string',
         'should_sync_to_cronofy' => 'bool',
         'source' => 'string',
@@ -481,7 +481,7 @@ class GetHoursSimple implements ModelInterface, ArrayAccess
     /**
      * Gets recurrence
      *
-     * @return \Swagger\Client\Model\Recurrence
+     * @return \Paqtcom\Simplicate\Model\Recurrence
      */
     public function getRecurrence()
     {
@@ -491,7 +491,7 @@ class GetHoursSimple implements ModelInterface, ArrayAccess
     /**
      * Sets recurrence
      *
-     * @param \Swagger\Client\Model\Recurrence $recurrence recurrence
+     * @param \Paqtcom\Simplicate\Model\Recurrence $recurrence recurrence
      *
      * @return $this
      */
@@ -577,7 +577,7 @@ class GetHoursSimple implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \Swagger\Client\Model\Address
+     * @return \Paqtcom\Simplicate\Model\Address
      */
     public function getAddress()
     {
@@ -587,7 +587,7 @@ class GetHoursSimple implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \Swagger\Client\Model\Address $address address
+     * @param \Paqtcom\Simplicate\Model\Address $address address
      *
      * @return $this
      */

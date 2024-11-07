@@ -4,7 +4,7 @@
 
  Name                   | Type                                                                  | Description | Notes      
 ------------------------|-----------------------------------------------------------------------|-------------|------------
- **relation_type**      | [**\Swagger\Client\Model\RelationType**](RelationType.md)             |             | [optional] 
+ **relation_type**      | [**\Paqtcom\Simplicate\Model\RelationType**](RelationType.md)             |             | [optional] 
  **gender**             | **string**                                                            |             | [optional] 
  **initials**           | **string**                                                            |             | [optional] 
  **first_name**         | **string**                                                            |             | [optional] 
@@ -23,9 +23,9 @@
  **bank_account**       | **string**                                                            |             | [optional] 
  **bank_bic**           | **string**                                                            |             | [optional] 
  **invoice_receiver**   | **string**                                                            |             | [optional] 
- **address**            | [**\Swagger\Client\Model\Address**](Address.md)                       |             | [optional] 
+ **address**            | [**\Paqtcom\Simplicate\Model\Address**](Address.md)                       |             | [optional] 
  **mailing_list_email** | **string**                                                            |             | [optional] 
- **mailing_lists**      | [**\Swagger\Client\Model\PersonMailingList[]**](PersonMailingList.md) |             | [optional] 
+ **mailing_lists**      | [**\Paqtcom\Simplicate\Model\PersonMailingList[]**](PersonMailingList.md) |             | [optional] 
  **is_active**          | **bool**                                                              |             | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

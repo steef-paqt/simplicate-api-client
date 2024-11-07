@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetInvoiceLine Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,9 +59,9 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'revenue_group' => '\Swagger\Client\Model\RevenueGroup',
+        'revenue_group' => '\Paqtcom\Simplicate\Model\RevenueGroup',
         'default_service_id' => 'string',
-        'vat_class' => '\Swagger\Client\Model\VatClass',
+        'vat_class' => '\Paqtcom\Simplicate\Model\VatClass',
         'total_vat' => 'float',
         'service_id' => 'string',
         'created_at' => 'string',
@@ -293,7 +293,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
     /**
      * Gets revenue_group
      *
-     * @return \Swagger\Client\Model\RevenueGroup
+     * @return \Paqtcom\Simplicate\Model\RevenueGroup
      */
     public function getRevenueGroup()
     {
@@ -303,7 +303,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
     /**
      * Sets revenue_group
      *
-     * @param \Swagger\Client\Model\RevenueGroup $revenue_group revenue_group
+     * @param \Paqtcom\Simplicate\Model\RevenueGroup $revenue_group revenue_group
      *
      * @return $this
      */
@@ -341,7 +341,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
     /**
      * Gets vat_class
      *
-     * @return \Swagger\Client\Model\VatClass
+     * @return \Paqtcom\Simplicate\Model\VatClass
      */
     public function getVatClass()
     {
@@ -351,7 +351,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
     /**
      * Sets vat_class
      *
-     * @param \Swagger\Client\Model\VatClass $vat_class vat_class
+     * @param \Paqtcom\Simplicate\Model\VatClass $vat_class vat_class
      *
      * @return $this
      */

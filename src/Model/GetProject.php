@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetProject Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,29 +59,29 @@ class GetProject implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'project_manager' => '\Swagger\Client\Model\GetEmployeeSimple',
-        'project_status' => '\Swagger\Client\Model\ProjectStatus',
+        'project_manager' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
+        'project_status' => '\Paqtcom\Simplicate\Model\ProjectStatus',
         'hours_rate_type' => 'string',
         'abnormal_address' => 'bool',
         'abnormal_person_id' => 'string',
         'abnormal_organization_id' => 'string',
-        'organization' => '\Swagger\Client\Model\GetOrganizationSimple',
-        'person' => '\Swagger\Client\Model\GetPersonSimple',
-        'separate_invoice_recipient' => '\Swagger\Client\Model\GetSeparateInvoiceRecipient',
-        'contact' => '\Swagger\Client\Model\GetContactSimple',
-        'my_organization_profile' => '\Swagger\Client\Model\GetMyOrganizationProfileSimple',
-        'divergent_payment_term' => '\Swagger\Client\Model\GetPaymentTerm',
-        'employees' => '\Swagger\Client\Model\GetEmployeeSimple[]',
-        'teams' => '\Swagger\Client\Model\GetTeamSimple[]',
-        'budget' => '\Swagger\Client\Model\Budget',
+        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
+        'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
+        'separate_invoice_recipient' => '\Paqtcom\Simplicate\Model\GetSeparateInvoiceRecipient',
+        'contact' => '\Paqtcom\Simplicate\Model\GetContactSimple',
+        'my_organization_profile' => '\Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple',
+        'divergent_payment_term' => '\Paqtcom\Simplicate\Model\GetPaymentTerm',
+        'employees' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple[]',
+        'teams' => '\Paqtcom\Simplicate\Model\GetTeamSimple[]',
+        'budget' => '\Paqtcom\Simplicate\Model\Budget',
         'abnormal_contact_id' => 'string',
-        'custom_fields' => '\Swagger\Client\Model\GetCustomField[]',
+        'custom_fields' => '\Paqtcom\Simplicate\Model\GetCustomField[]',
         'created_at' => 'string',
         'updated_at' => 'string',
         'simplicate_url' => 'string',
         'is_reverse_billing' => 'bool',
         'is_invoice_approval' => 'bool',
-        'copied_from_project' => '\Swagger\Client\Model\GetProjectSimple',
+        'copied_from_project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
         'my_organization_profile_id' => 'string',
         'person_id' => 'string',
         'organization_id' => 'string',
@@ -437,7 +437,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Gets project_manager
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple
      */
     public function getProjectManager()
     {
@@ -447,7 +447,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Sets project_manager
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple $project_manager
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple $project_manager
      *
      * @return $this
      */
@@ -461,7 +461,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Gets project_status
      *
-     * @return \Swagger\Client\Model\ProjectStatus
+     * @return \Paqtcom\Simplicate\Model\ProjectStatus
      */
     public function getProjectStatus()
     {
@@ -471,7 +471,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Sets project_status
      *
-     * @param \Swagger\Client\Model\ProjectStatus $project_status project_status
+     * @param \Paqtcom\Simplicate\Model\ProjectStatus $project_status project_status
      *
      * @return $this
      */
@@ -581,7 +581,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Gets organization
      *
-     * @return \Swagger\Client\Model\GetOrganizationSimple
+     * @return \Paqtcom\Simplicate\Model\GetOrganizationSimple
      */
     public function getOrganization()
     {
@@ -591,7 +591,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Sets organization
      *
-     * @param \Swagger\Client\Model\GetOrganizationSimple $organization organization
+     * @param \Paqtcom\Simplicate\Model\GetOrganizationSimple $organization organization
      *
      * @return $this
      */
@@ -605,7 +605,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Gets person
      *
-     * @return \Swagger\Client\Model\GetPersonSimple
+     * @return \Paqtcom\Simplicate\Model\GetPersonSimple
      */
     public function getPerson()
     {
@@ -615,7 +615,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Sets person
      *
-     * @param \Swagger\Client\Model\GetPersonSimple $person person
+     * @param \Paqtcom\Simplicate\Model\GetPersonSimple $person person
      *
      * @return $this
      */
@@ -629,7 +629,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Gets separate_invoice_recipient
      *
-     * @return \Swagger\Client\Model\GetSeparateInvoiceRecipient
+     * @return \Paqtcom\Simplicate\Model\GetSeparateInvoiceRecipient
      */
     public function getSeparateInvoiceRecipient()
     {
@@ -639,7 +639,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Sets separate_invoice_recipient
      *
-     * @param \Swagger\Client\Model\GetSeparateInvoiceRecipient $separate_invoice_recipient separate_invoice_recipient
+     * @param \Paqtcom\Simplicate\Model\GetSeparateInvoiceRecipient $separate_invoice_recipient separate_invoice_recipient
      *
      * @return $this
      */
@@ -653,7 +653,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Gets contact
      *
-     * @return \Swagger\Client\Model\GetContactSimple
+     * @return \Paqtcom\Simplicate\Model\GetContactSimple
      */
     public function getContact()
     {
@@ -663,7 +663,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Sets contact
      *
-     * @param \Swagger\Client\Model\GetContactSimple $contact contact
+     * @param \Paqtcom\Simplicate\Model\GetContactSimple $contact contact
      *
      * @return $this
      */
@@ -677,7 +677,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Gets my_organization_profile
      *
-     * @return \Swagger\Client\Model\GetMyOrganizationProfileSimple
+     * @return \Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple
      */
     public function getMyOrganizationProfile()
     {
@@ -687,7 +687,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Sets my_organization_profile
      *
-     * @param \Swagger\Client\Model\GetMyOrganizationProfileSimple $my_organization_profile my_organization_profile
+     * @param \Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple $my_organization_profile my_organization_profile
      *
      * @return $this
      */
@@ -701,7 +701,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Gets divergent_payment_term
      *
-     * @return \Swagger\Client\Model\GetPaymentTerm
+     * @return \Paqtcom\Simplicate\Model\GetPaymentTerm
      */
     public function getDivergentPaymentTerm()
     {
@@ -711,7 +711,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Sets divergent_payment_term
      *
-     * @param \Swagger\Client\Model\GetPaymentTerm $divergent_payment_term divergent_payment_term
+     * @param \Paqtcom\Simplicate\Model\GetPaymentTerm $divergent_payment_term divergent_payment_term
      *
      * @return $this
      */
@@ -725,7 +725,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Gets employees
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple[]
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple[]
      */
     public function getEmployees()
     {
@@ -735,7 +735,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Sets employees
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple[] $employees employees
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple[] $employees employees
      *
      * @return $this
      */
@@ -749,7 +749,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Gets teams
      *
-     * @return \Swagger\Client\Model\GetTeamSimple[]
+     * @return \Paqtcom\Simplicate\Model\GetTeamSimple[]
      */
     public function getTeams()
     {
@@ -759,7 +759,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Sets teams
      *
-     * @param \Swagger\Client\Model\GetTeamSimple[] $teams teams
+     * @param \Paqtcom\Simplicate\Model\GetTeamSimple[] $teams teams
      *
      * @return $this
      */
@@ -773,7 +773,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Gets budget
      *
-     * @return \Swagger\Client\Model\Budget
+     * @return \Paqtcom\Simplicate\Model\Budget
      */
     public function getBudget()
     {
@@ -783,7 +783,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Sets budget
      *
-     * @param \Swagger\Client\Model\Budget $budget budget
+     * @param \Paqtcom\Simplicate\Model\Budget $budget budget
      *
      * @return $this
      */
@@ -821,7 +821,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Gets custom_fields
      *
-     * @return \Swagger\Client\Model\GetCustomField[]
+     * @return \Paqtcom\Simplicate\Model\GetCustomField[]
      */
     public function getCustomFields()
     {
@@ -831,7 +831,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Sets custom_fields
      *
-     * @param \Swagger\Client\Model\GetCustomField[] $custom_fields custom_fields
+     * @param \Paqtcom\Simplicate\Model\GetCustomField[] $custom_fields custom_fields
      *
      * @return $this
      */
@@ -965,7 +965,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Gets copied_from_project
      *
-     * @return \Swagger\Client\Model\GetProjectSimple
+     * @return \Paqtcom\Simplicate\Model\GetProjectSimple
      */
     public function getCopiedFromProject()
     {
@@ -975,7 +975,7 @@ class GetProject implements ModelInterface, ArrayAccess
     /**
      * Sets copied_from_project
      *
-     * @param \Swagger\Client\Model\GetProjectSimple $copied_from_project copied_from_project
+     * @param \Paqtcom\Simplicate\Model\GetProjectSimple $copied_from_project copied_from_project
      *
      * @return $this
      */

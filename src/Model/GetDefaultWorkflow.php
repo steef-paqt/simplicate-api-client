@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetDefaultWorkflow Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class GetDefaultWorkflow implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'workflowgroup' => '\Swagger\Client\Model\GetDefaultWorkflowGroup',
+        'workflowgroup' => '\Paqtcom\Simplicate\Model\GetDefaultWorkflowGroup',
         'title' => 'string',
         'description' => 'string',
         'can_have_attachment' => 'bool',
@@ -317,7 +317,7 @@ class GetDefaultWorkflow implements ModelInterface, ArrayAccess
     /**
      * Gets workflowgroup
      *
-     * @return \Swagger\Client\Model\GetDefaultWorkflowGroup
+     * @return \Paqtcom\Simplicate\Model\GetDefaultWorkflowGroup
      */
     public function getWorkflowgroup()
     {
@@ -327,7 +327,7 @@ class GetDefaultWorkflow implements ModelInterface, ArrayAccess
     /**
      * Sets workflowgroup
      *
-     * @param \Swagger\Client\Model\GetDefaultWorkflowGroup $workflowgroup workflowgroup
+     * @param \Paqtcom\Simplicate\Model\GetDefaultWorkflowGroup $workflowgroup workflowgroup
      *
      * @return $this
      */

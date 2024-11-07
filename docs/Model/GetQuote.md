@@ -5,13 +5,13 @@
  Name                             | Type                                                                  | Description | Notes      
 ----------------------------------|-----------------------------------------------------------------------|-------------|------------
  **id**                           | **string**                                                            |             | [optional] 
- **quotetemplate**                | [**\Swagger\Client\Model\QuoteTemplate**](QuoteTemplate.md)           |             | [optional] 
+ **quotetemplate**                | [**\Paqtcom\Simplicate\Model\QuoteTemplate**](QuoteTemplate.md)           |             | [optional] 
  **send_type**                    | **string**                                                            |             | [optional] 
  **quote_number**                 | **string**                                                            |             | [optional] 
  **quote_date**                   | **string**                                                            |             | [optional] 
- **quotestatus**                  | [**\Swagger\Client\Model\QuoteStatus**](QuoteStatus.md)               |             | [optional] 
+ **quotestatus**                  | [**\Paqtcom\Simplicate\Model\QuoteStatus**](QuoteStatus.md)               |             | [optional] 
  **json**                         | **string**                                                            |             | [optional] 
- **services**                     | [**\Swagger\Client\Model\QuoteSalesService[]**](QuoteSalesService.md) |             | [optional] 
+ **services**                     | [**\Paqtcom\Simplicate\Model\QuoteSalesService[]**](QuoteSalesService.md) |             | [optional] 
  **total_excl**                   | **string**                                                            |             | [optional] 
  **total_incl**                   | **string**                                                            |             | [optional] 
  **total_vat**                    | **string**                                                            |             | [optional] 

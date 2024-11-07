@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetPerson Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -62,18 +62,18 @@ class GetPerson implements ModelInterface, ArrayAccess
         'gender_id' => 'string',
         'use_custom_salutation' => 'bool',
         'custom_salutation' => 'string',
-        'interests' => '\Swagger\Client\Model\GetInterest[]',
+        'interests' => '\Paqtcom\Simplicate\Model\GetInterest[]',
         'simplicate_url' => 'string',
-        'address' => '\Swagger\Client\Model\GetAddress[]',
-        'relation_manager' => '\Swagger\Client\Model\Employee',
-        'teams' => '\Swagger\Client\Model\GetTeamSimple[]',
+        'address' => '\Paqtcom\Simplicate\Model\GetAddress[]',
+        'relation_manager' => '\Paqtcom\Simplicate\Model\Employee',
+        'teams' => '\Paqtcom\Simplicate\Model\GetTeamSimple[]',
         'is_employee' => 'int',
-        'linked_as_contact_to_organization' => '\Swagger\Client\Model\OrganizationContact[]',
-        'custom_fields' => '\Swagger\Client\Model\GetCustomField[]',
+        'linked_as_contact_to_organization' => '\Paqtcom\Simplicate\Model\OrganizationContact[]',
+        'custom_fields' => '\Paqtcom\Simplicate\Model\GetCustomField[]',
         'created_at' => 'string',
         'updated_at' => 'string',
         'is_active' => 'bool',
-        'relation_type' => '\Swagger\Client\Model\RelationType',
+        'relation_type' => '\Paqtcom\Simplicate\Model\RelationType',
         'gender' => 'string',
         'initials' => 'string',
         'first_name' => 'string',
@@ -93,7 +93,7 @@ class GetPerson implements ModelInterface, ArrayAccess
         'bank_bic' => 'string',
         'invoice_receiver' => 'string',
         'mailing_list_email' => 'string',
-        'mailing_lists' => '\Swagger\Client\Model\PersonMailingList[]',
+        'mailing_lists' => '\Paqtcom\Simplicate\Model\PersonMailingList[]',
     ];
 
     /**
@@ -535,7 +535,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Gets interests
      *
-     * @return \Swagger\Client\Model\GetInterest[]
+     * @return \Paqtcom\Simplicate\Model\GetInterest[]
      */
     public function getInterests()
     {
@@ -545,7 +545,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Sets interests
      *
-     * @param \Swagger\Client\Model\GetInterest[] $interests interests
+     * @param \Paqtcom\Simplicate\Model\GetInterest[] $interests interests
      *
      * @return $this
      */
@@ -583,7 +583,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \Swagger\Client\Model\GetAddress[]
+     * @return \Paqtcom\Simplicate\Model\GetAddress[]
      */
     public function getAddress()
     {
@@ -593,7 +593,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \Swagger\Client\Model\GetAddress[] $address address
+     * @param \Paqtcom\Simplicate\Model\GetAddress[] $address address
      *
      * @return $this
      */
@@ -607,7 +607,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Gets relation_manager
      *
-     * @return \Swagger\Client\Model\Employee
+     * @return \Paqtcom\Simplicate\Model\Employee
      */
     public function getRelationManager()
     {
@@ -617,7 +617,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Sets relation_manager
      *
-     * @param \Swagger\Client\Model\Employee $relation_manager relation_manager
+     * @param \Paqtcom\Simplicate\Model\Employee $relation_manager relation_manager
      *
      * @return $this
      */
@@ -631,7 +631,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Gets teams
      *
-     * @return \Swagger\Client\Model\GetTeamSimple[]
+     * @return \Paqtcom\Simplicate\Model\GetTeamSimple[]
      */
     public function getTeams()
     {
@@ -641,7 +641,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Sets teams
      *
-     * @param \Swagger\Client\Model\GetTeamSimple[] $teams teams
+     * @param \Paqtcom\Simplicate\Model\GetTeamSimple[] $teams teams
      *
      * @return $this
      */
@@ -679,7 +679,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Gets linked_as_contact_to_organization
      *
-     * @return \Swagger\Client\Model\OrganizationContact[]
+     * @return \Paqtcom\Simplicate\Model\OrganizationContact[]
      */
     public function getLinkedAsContactToOrganization()
     {
@@ -689,7 +689,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Sets linked_as_contact_to_organization
      *
-     * @param \Swagger\Client\Model\OrganizationContact[] $linked_as_contact_to_organization linked_as_contact_to_organization
+     * @param \Paqtcom\Simplicate\Model\OrganizationContact[] $linked_as_contact_to_organization linked_as_contact_to_organization
      *
      * @return $this
      */
@@ -703,7 +703,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Gets custom_fields
      *
-     * @return \Swagger\Client\Model\GetCustomField[]
+     * @return \Paqtcom\Simplicate\Model\GetCustomField[]
      */
     public function getCustomFields()
     {
@@ -713,7 +713,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Sets custom_fields
      *
-     * @param \Swagger\Client\Model\GetCustomField[] $custom_fields custom_fields
+     * @param \Paqtcom\Simplicate\Model\GetCustomField[] $custom_fields custom_fields
      *
      * @return $this
      */
@@ -799,7 +799,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Gets relation_type
      *
-     * @return \Swagger\Client\Model\RelationType
+     * @return \Paqtcom\Simplicate\Model\RelationType
      */
     public function getRelationType()
     {
@@ -809,7 +809,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Sets relation_type
      *
-     * @param \Swagger\Client\Model\RelationType $relation_type relation_type
+     * @param \Paqtcom\Simplicate\Model\RelationType $relation_type relation_type
      *
      * @return $this
      */
@@ -1288,7 +1288,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Gets mailing_lists
      *
-     * @return \Swagger\Client\Model\PersonMailingList[]
+     * @return \Paqtcom\Simplicate\Model\PersonMailingList[]
      */
     public function getMailingLists()
     {
@@ -1298,7 +1298,7 @@ class GetPerson implements ModelInterface, ArrayAccess
     /**
      * Sets mailing_lists
      *
-     * @param \Swagger\Client\Model\PersonMailingList[] $mailing_lists mailing_lists
+     * @param \Paqtcom\Simplicate\Model\PersonMailingList[] $mailing_lists mailing_lists
      *
      * @return $this
      */

@@ -1,11 +1,11 @@
 <?php
 
 /**
- * HRMApi
+ * HrmApi
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Paqtcom\Simplicate\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,20 +35,20 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ApiException;
+use Paqtcom\Simplicate\Configuration;
+use Paqtcom\Simplicate\HeaderSelector;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
- * HRMApi Class Doc Comment
+ * HrmApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class HRMApi
+class HrmApi
 {
     /**
      * @var ClientInterface
@@ -97,9 +97,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultAbsenceMultiple
+     * @return \Paqtcom\Simplicate\Model\RestResultAbsenceMultiple
      */
     public function hrmAbsenceGet($offset = null, $limit = '5', $sort = null)
     {
@@ -117,13 +117,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultAbsenceMultiple, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultAbsenceMultiple, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmAbsenceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultAbsenceMultiple';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsenceMultiple';
         $request = $this->hrmAbsenceGetRequest($offset, $limit, $sort);
 
         try {
@@ -174,7 +174,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultAbsenceMultiple',
+                        '\Paqtcom\Simplicate\Model\RestResultAbsenceMultiple',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +220,7 @@ class HRMApi
      */
     public function hrmAbsenceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultAbsenceMultiple';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsenceMultiple';
         $request = $this->hrmAbsenceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -368,7 +368,7 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -384,7 +384,7 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -596,9 +596,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultAbsence
+     * @return \Paqtcom\Simplicate\Model\RestResultAbsence
      */
     public function hrmAbsenceIdGet($id)
     {
@@ -614,13 +614,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultAbsence, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultAbsence, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmAbsenceIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultAbsence';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsence';
         $request = $this->hrmAbsenceIdGetRequest($id);
 
         try {
@@ -671,7 +671,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultAbsence',
+                        '\Paqtcom\Simplicate\Model\RestResultAbsence',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -713,7 +713,7 @@ class HRMApi
      */
     public function hrmAbsenceIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultAbsence';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsence';
         $request = $this->hrmAbsenceIdGetRequest($id);
 
         return $this->client
@@ -861,9 +861,9 @@ class HRMApi
      * Updates an absence for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostAbsence $body Absence object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -878,9 +878,9 @@ class HRMApi
      * Updates an absence for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostAbsence $body Absence object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -931,7 +931,7 @@ class HRMApi
      * Updates an absence for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostAbsence $body Absence object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -952,7 +952,7 @@ class HRMApi
      * Updates an absence for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostAbsence $body Absence object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -989,7 +989,7 @@ class HRMApi
      * Create request for operation 'hrmAbsenceIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostAbsence $body Absence object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1102,9 +1102,9 @@ class HRMApi
      *
      * Add a new absence entity
      *
-     * @param  \Swagger\Client\Model\PostAbsence $body absence object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body absence object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1118,9 +1118,9 @@ class HRMApi
      *
      * Add a new absence entity
      *
-     * @param  \Swagger\Client\Model\PostAbsence $body absence object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body absence object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1170,7 +1170,7 @@ class HRMApi
      *
      * Add a new absence entity
      *
-     * @param  \Swagger\Client\Model\PostAbsence $body absence object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body absence object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1190,7 +1190,7 @@ class HRMApi
      *
      * Add a new absence entity
      *
-     * @param  \Swagger\Client\Model\PostAbsence $body absence object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body absence object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1226,7 +1226,7 @@ class HRMApi
     /**
      * Create request for operation 'hrmAbsencePost'
      *
-     * @param  \Swagger\Client\Model\PostAbsence $body absence object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body absence object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1328,9 +1328,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultAbsenceTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultAbsenceTypes
      */
     public function hrmAbsencetypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -1348,13 +1348,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultAbsenceTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultAbsenceTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmAbsencetypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultAbsenceTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsenceTypes';
         $request = $this->hrmAbsencetypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -1405,7 +1405,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultAbsenceTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultAbsenceTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1451,7 +1451,7 @@ class HRMApi
      */
     public function hrmAbsencetypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultAbsenceTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsenceTypes';
         $request = $this->hrmAbsencetypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1599,9 +1599,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultAbsenceType
+     * @return \Paqtcom\Simplicate\Model\RestResultAbsenceType
      */
     public function hrmAbsencetypeIdGet($id)
     {
@@ -1617,13 +1617,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultAbsenceType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultAbsenceType, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmAbsencetypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultAbsenceType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsenceType';
         $request = $this->hrmAbsencetypeIdGetRequest($id);
 
         try {
@@ -1674,7 +1674,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultAbsenceType',
+                        '\Paqtcom\Simplicate\Model\RestResultAbsenceType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1716,7 +1716,7 @@ class HRMApi
      */
     public function hrmAbsencetypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultAbsenceType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsenceType';
         $request = $this->hrmAbsencetypeIdGetRequest($id);
 
         return $this->client
@@ -1867,9 +1867,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCivilStatuses
+     * @return \Paqtcom\Simplicate\Model\RestResultCivilStatuses
      */
     public function hrmCivilstatusGet($offset = null, $limit = '5', $sort = null)
     {
@@ -1887,13 +1887,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCivilStatuses, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCivilStatuses, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmCivilstatusGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCivilStatuses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCivilStatuses';
         $request = $this->hrmCivilstatusGetRequest($offset, $limit, $sort);
 
         try {
@@ -1944,7 +1944,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCivilStatuses',
+                        '\Paqtcom\Simplicate\Model\RestResultCivilStatuses',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1990,7 +1990,7 @@ class HRMApi
      */
     public function hrmCivilstatusGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCivilStatuses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCivilStatuses';
         $request = $this->hrmCivilstatusGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -2138,9 +2138,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCivilStatus
+     * @return \Paqtcom\Simplicate\Model\RestResultCivilStatus
      */
     public function hrmCivilstatusIdGet($id)
     {
@@ -2156,13 +2156,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCivilStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCivilStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmCivilstatusIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCivilStatus';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCivilStatus';
         $request = $this->hrmCivilstatusIdGetRequest($id);
 
         try {
@@ -2213,7 +2213,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCivilStatus',
+                        '\Paqtcom\Simplicate\Model\RestResultCivilStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2255,7 +2255,7 @@ class HRMApi
      */
     public function hrmCivilstatusIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCivilStatus';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCivilStatus';
         $request = $this->hrmCivilstatusIdGetRequest($id);
 
         return $this->client
@@ -2406,9 +2406,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultContracts
+     * @return \Paqtcom\Simplicate\Model\RestResultContracts
      */
     public function hrmContractGet($offset = null, $limit = '5', $sort = null)
     {
@@ -2426,13 +2426,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultContracts, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultContracts, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmContractGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultContracts';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultContracts';
         $request = $this->hrmContractGetRequest($offset, $limit, $sort);
 
         try {
@@ -2483,7 +2483,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultContracts',
+                        '\Paqtcom\Simplicate\Model\RestResultContracts',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2529,7 +2529,7 @@ class HRMApi
      */
     public function hrmContractGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultContracts';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultContracts';
         $request = $this->hrmContractGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -2677,9 +2677,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultContract
+     * @return \Paqtcom\Simplicate\Model\RestResultContract
      */
     public function hrmContractIdGet($id)
     {
@@ -2695,13 +2695,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultContract, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultContract, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmContractIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultContract';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultContract';
         $request = $this->hrmContractIdGetRequest($id);
 
         try {
@@ -2752,7 +2752,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultContract',
+                        '\Paqtcom\Simplicate\Model\RestResultContract',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2794,7 +2794,7 @@ class HRMApi
      */
     public function hrmContractIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultContract';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultContract';
         $request = $this->hrmContractIdGetRequest($id);
 
         return $this->client
@@ -2945,9 +2945,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultContractTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultContractTypes
      */
     public function hrmContracttypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -2965,13 +2965,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultContractTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultContractTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmContracttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultContractTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultContractTypes';
         $request = $this->hrmContracttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -3022,7 +3022,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultContractTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultContractTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3068,7 +3068,7 @@ class HRMApi
      */
     public function hrmContracttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultContractTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultContractTypes';
         $request = $this->hrmContracttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3216,9 +3216,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultContractType
+     * @return \Paqtcom\Simplicate\Model\RestResultContractType
      */
     public function hrmContracttypeIdGet($id)
     {
@@ -3234,13 +3234,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultContractType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultContractType, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmContracttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultContractType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultContractType';
         $request = $this->hrmContracttypeIdGetRequest($id);
 
         try {
@@ -3291,7 +3291,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultContractType',
+                        '\Paqtcom\Simplicate\Model\RestResultContractType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3333,7 +3333,7 @@ class HRMApi
      */
     public function hrmContracttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultContractType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultContractType';
         $request = $this->hrmContracttypeIdGetRequest($id);
 
         return $this->client
@@ -3484,9 +3484,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocuments
+     * @return \Paqtcom\Simplicate\Model\RestResultDocuments
      */
     public function hrmDocumentGet($offset = null, $limit = '5', $sort = null)
     {
@@ -3504,13 +3504,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocuments, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocuments, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmDocumentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocuments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
         $request = $this->hrmDocumentGetRequest($offset, $limit, $sort);
 
         try {
@@ -3561,7 +3561,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocuments',
+                        '\Paqtcom\Simplicate\Model\RestResultDocuments',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3607,7 +3607,7 @@ class HRMApi
      */
     public function hrmDocumentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocuments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
         $request = $this->hrmDocumentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3755,7 +3755,7 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3771,7 +3771,7 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3983,9 +3983,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocument
+     * @return \Paqtcom\Simplicate\Model\RestResultDocument
      */
     public function hrmDocumentIdGet($id)
     {
@@ -4001,13 +4001,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocument, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocument, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmDocumentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocument';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
         $request = $this->hrmDocumentIdGetRequest($id);
 
         try {
@@ -4058,7 +4058,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocument',
+                        '\Paqtcom\Simplicate\Model\RestResultDocument',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4100,7 +4100,7 @@ class HRMApi
      */
     public function hrmDocumentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocument';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
         $request = $this->hrmDocumentIdGetRequest($id);
 
         return $this->client
@@ -4247,9 +4247,9 @@ class HRMApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4263,9 +4263,9 @@ class HRMApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4315,7 +4315,7 @@ class HRMApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4335,7 +4335,7 @@ class HRMApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4371,7 +4371,7 @@ class HRMApi
     /**
      * Create request for operation 'hrmDocumentPost'
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4469,9 +4469,9 @@ class HRMApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4485,9 +4485,9 @@ class HRMApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4537,7 +4537,7 @@ class HRMApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4557,7 +4557,7 @@ class HRMApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4593,7 +4593,7 @@ class HRMApi
     /**
      * Create request for operation 'hrmDocumentPut'
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4695,9 +4695,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocumentTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultDocumentTypes
      */
     public function hrmDocumenttypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -4715,13 +4715,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocumentTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocumentTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmDocumenttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
         $request = $this->hrmDocumenttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -4772,7 +4772,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocumentTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultDocumentTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4818,7 +4818,7 @@ class HRMApi
      */
     public function hrmDocumenttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
         $request = $this->hrmDocumenttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -4966,9 +4966,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocumentType
+     * @return \Paqtcom\Simplicate\Model\RestResultDocumentType
      */
     public function hrmDocumenttypeIdGet($id)
     {
@@ -4984,13 +4984,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocumentType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocumentType, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmDocumenttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
         $request = $this->hrmDocumenttypeIdGetRequest($id);
 
         try {
@@ -5041,7 +5041,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocumentType',
+                        '\Paqtcom\Simplicate\Model\RestResultDocumentType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5083,7 +5083,7 @@ class HRMApi
      */
     public function hrmDocumenttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
         $request = $this->hrmDocumenttypeIdGetRequest($id);
 
         return $this->client
@@ -5234,9 +5234,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultEmployees
+     * @return \Paqtcom\Simplicate\Model\RestResultEmployees
      */
     public function hrmEmployeeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -5254,13 +5254,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultEmployees, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultEmployees, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmEmployeeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployees';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployees';
         $request = $this->hrmEmployeeGetRequest($offset, $limit, $sort);
 
         try {
@@ -5311,7 +5311,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultEmployees',
+                        '\Paqtcom\Simplicate\Model\RestResultEmployees',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5357,7 +5357,7 @@ class HRMApi
      */
     public function hrmEmployeeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployees';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployees';
         $request = $this->hrmEmployeeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -5505,9 +5505,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultEmployee
+     * @return \Paqtcom\Simplicate\Model\RestResultEmployee
      */
     public function hrmEmployeeIdGet($id)
     {
@@ -5523,13 +5523,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultEmployee, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultEmployee, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmEmployeeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployee';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployee';
         $request = $this->hrmEmployeeIdGetRequest($id);
 
         try {
@@ -5580,7 +5580,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultEmployee',
+                        '\Paqtcom\Simplicate\Model\RestResultEmployee',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5622,7 +5622,7 @@ class HRMApi
      */
     public function hrmEmployeeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployee';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployee';
         $request = $this->hrmEmployeeIdGetRequest($id);
 
         return $this->client
@@ -5769,9 +5769,9 @@ class HRMApi
      *
      * Updates an existing employee
      *
-     * @param  \Swagger\Client\Model\PutEmployee $body Employee object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutEmployee $body Employee object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5785,9 +5785,9 @@ class HRMApi
      *
      * Updates an existing employee
      *
-     * @param  \Swagger\Client\Model\PutEmployee $body Employee object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutEmployee $body Employee object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5837,7 +5837,7 @@ class HRMApi
      *
      * Updates an existing employee
      *
-     * @param  \Swagger\Client\Model\PutEmployee $body Employee object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutEmployee $body Employee object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5857,7 +5857,7 @@ class HRMApi
      *
      * Updates an existing employee
      *
-     * @param  \Swagger\Client\Model\PutEmployee $body Employee object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutEmployee $body Employee object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5893,7 +5893,7 @@ class HRMApi
     /**
      * Create request for operation 'hrmEmployeeIdPut'
      *
-     * @param  \Swagger\Client\Model\PutEmployee $body Employee object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutEmployee $body Employee object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5991,9 +5991,9 @@ class HRMApi
      *
      * Add a new employee
      *
-     * @param  \Swagger\Client\Model\PostEmployee $body Employee object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostEmployee $body Employee object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6007,9 +6007,9 @@ class HRMApi
      *
      * Add a new employee
      *
-     * @param  \Swagger\Client\Model\PostEmployee $body Employee object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostEmployee $body Employee object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6059,7 +6059,7 @@ class HRMApi
      *
      * Add a new employee
      *
-     * @param  \Swagger\Client\Model\PostEmployee $body Employee object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostEmployee $body Employee object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6079,7 +6079,7 @@ class HRMApi
      *
      * Add a new employee
      *
-     * @param  \Swagger\Client\Model\PostEmployee $body Employee object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostEmployee $body Employee object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6115,7 +6115,7 @@ class HRMApi
     /**
      * Create request for operation 'hrmEmployeePost'
      *
-     * @param  \Swagger\Client\Model\PostEmployee $body Employee object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostEmployee $body Employee object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6217,9 +6217,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldGroups
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups
      */
     public function hrmEmployeecustomfieldgroupsGet($offset = null, $limit = '5', $sort = null)
     {
@@ -6237,13 +6237,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldGroups, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmEmployeecustomfieldgroupsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroups';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
         $request = $this->hrmEmployeecustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         try {
@@ -6294,7 +6294,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldGroups',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6340,7 +6340,7 @@ class HRMApi
      */
     public function hrmEmployeecustomfieldgroupsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroups';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
         $request = $this->hrmEmployeecustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -6488,9 +6488,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldGroup
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup
      */
     public function hrmEmployeecustomfieldgroupsIdGet($id)
     {
@@ -6506,13 +6506,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldGroup, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmEmployeecustomfieldgroupsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroup';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
         $request = $this->hrmEmployeecustomfieldgroupsIdGetRequest($id);
 
         try {
@@ -6563,7 +6563,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldGroup',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6605,7 +6605,7 @@ class HRMApi
      */
     public function hrmEmployeecustomfieldgroupsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroup';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
         $request = $this->hrmEmployeecustomfieldgroupsIdGetRequest($id);
 
         return $this->client
@@ -6756,9 +6756,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFields
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFields
      */
     public function hrmEmployeecustomfieldsGet($offset = null, $limit = '5', $sort = null)
     {
@@ -6776,13 +6776,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFields, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFields, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmEmployeecustomfieldsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFields';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
         $request = $this->hrmEmployeecustomfieldsGetRequest($offset, $limit, $sort);
 
         try {
@@ -6833,7 +6833,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFields',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFields',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6879,7 +6879,7 @@ class HRMApi
      */
     public function hrmEmployeecustomfieldsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFields';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
         $request = $this->hrmEmployeecustomfieldsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7027,9 +7027,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomField
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomField
      */
     public function hrmEmployeecustomfieldsIdGet($id)
     {
@@ -7045,13 +7045,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomField, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomField, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmEmployeecustomfieldsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomField';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
         $request = $this->hrmEmployeecustomfieldsIdGetRequest($id);
 
         try {
@@ -7102,7 +7102,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomField',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomField',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7144,7 +7144,7 @@ class HRMApi
      */
     public function hrmEmployeecustomfieldsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomField';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
         $request = $this->hrmEmployeecustomfieldsIdGetRequest($id);
 
         return $this->client
@@ -7295,9 +7295,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultEmployeeTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultEmployeeTypes
      */
     public function hrmEmployeetypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -7315,13 +7315,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultEmployeeTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultEmployeeTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmEmployeetypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployeeTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeTypes';
         $request = $this->hrmEmployeetypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -7372,7 +7372,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultEmployeeTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultEmployeeTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7418,7 +7418,7 @@ class HRMApi
      */
     public function hrmEmployeetypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployeeTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeTypes';
         $request = $this->hrmEmployeetypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7566,9 +7566,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultEmployeeType
+     * @return \Paqtcom\Simplicate\Model\RestResultEmployeeType
      */
     public function hrmEmployeetypeIdGet($id)
     {
@@ -7584,13 +7584,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultEmployeeType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultEmployeeType, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmEmployeetypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployeeType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeType';
         $request = $this->hrmEmployeetypeIdGetRequest($id);
 
         try {
@@ -7641,7 +7641,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultEmployeeType',
+                        '\Paqtcom\Simplicate\Model\RestResultEmployeeType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7683,7 +7683,7 @@ class HRMApi
      */
     public function hrmEmployeetypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployeeType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeType';
         $request = $this->hrmEmployeetypeIdGetRequest($id);
 
         return $this->client
@@ -7834,9 +7834,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultEmploymentTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultEmploymentTypes
      */
     public function hrmEmploymenttypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -7854,13 +7854,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultEmploymentTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultEmploymentTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmEmploymenttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmploymentTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmploymentTypes';
         $request = $this->hrmEmploymenttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -7911,7 +7911,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultEmploymentTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultEmploymentTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7957,7 +7957,7 @@ class HRMApi
      */
     public function hrmEmploymenttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmploymentTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmploymentTypes';
         $request = $this->hrmEmploymenttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -8105,9 +8105,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultEmploymentType
+     * @return \Paqtcom\Simplicate\Model\RestResultEmploymentType
      */
     public function hrmEmploymenttypeIdGet($id)
     {
@@ -8123,13 +8123,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultEmploymentType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultEmploymentType, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmEmploymenttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmploymentType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmploymentType';
         $request = $this->hrmEmploymenttypeIdGetRequest($id);
 
         try {
@@ -8180,7 +8180,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultEmploymentType',
+                        '\Paqtcom\Simplicate\Model\RestResultEmploymentType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8222,7 +8222,7 @@ class HRMApi
      */
     public function hrmEmploymenttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmploymentType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmploymentType';
         $request = $this->hrmEmploymenttypeIdGetRequest($id);
 
         return $this->client
@@ -8373,9 +8373,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultLeaveMultiple
+     * @return \Paqtcom\Simplicate\Model\RestResultLeaveMultiple
      */
     public function hrmLeaveGet($offset = null, $limit = '5', $sort = null)
     {
@@ -8393,13 +8393,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultLeaveMultiple, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultLeaveMultiple, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmLeaveGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultLeaveMultiple';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveMultiple';
         $request = $this->hrmLeaveGetRequest($offset, $limit, $sort);
 
         try {
@@ -8450,7 +8450,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultLeaveMultiple',
+                        '\Paqtcom\Simplicate\Model\RestResultLeaveMultiple',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8496,7 +8496,7 @@ class HRMApi
      */
     public function hrmLeaveGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultLeaveMultiple';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveMultiple';
         $request = $this->hrmLeaveGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -8644,9 +8644,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultLeave
+     * @return \Paqtcom\Simplicate\Model\RestResultLeave
      */
     public function hrmLeaveIdGet($id)
     {
@@ -8662,13 +8662,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultLeave, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultLeave, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmLeaveIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultLeave';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeave';
         $request = $this->hrmLeaveIdGetRequest($id);
 
         try {
@@ -8719,7 +8719,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultLeave',
+                        '\Paqtcom\Simplicate\Model\RestResultLeave',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8761,7 +8761,7 @@ class HRMApi
      */
     public function hrmLeaveIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultLeave';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeave';
         $request = $this->hrmLeaveIdGetRequest($id);
 
         return $this->client
@@ -8909,9 +8909,9 @@ class HRMApi
      * Updates an leave for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data that with the new values (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -8926,9 +8926,9 @@ class HRMApi
      * Updates an leave for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data that with the new values (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -8979,7 +8979,7 @@ class HRMApi
      * Updates an leave for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9000,7 +9000,7 @@ class HRMApi
      * Updates an leave for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9037,7 +9037,7 @@ class HRMApi
      * Create request for operation 'hrmLeaveIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -9150,9 +9150,9 @@ class HRMApi
      *
      * Add a new leave entity
      *
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -9166,9 +9166,9 @@ class HRMApi
      *
      * Add a new leave entity
      *
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -9218,7 +9218,7 @@ class HRMApi
      *
      * Add a new leave entity
      *
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9238,7 +9238,7 @@ class HRMApi
      *
      * Add a new leave entity
      *
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9274,7 +9274,7 @@ class HRMApi
     /**
      * Create request for operation 'hrmLeavePost'
      *
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -9376,9 +9376,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultLeaveBalances
+     * @return \Paqtcom\Simplicate\Model\RestResultLeaveBalances
      */
     public function hrmLeavebalanceGet($offset = null, $limit = '5', $sort = null)
     {
@@ -9396,13 +9396,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultLeaveBalances, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultLeaveBalances, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmLeavebalanceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultLeaveBalances';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveBalances';
         $request = $this->hrmLeavebalanceGetRequest($offset, $limit, $sort);
 
         try {
@@ -9453,7 +9453,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultLeaveBalances',
+                        '\Paqtcom\Simplicate\Model\RestResultLeaveBalances',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9499,7 +9499,7 @@ class HRMApi
      */
     public function hrmLeavebalanceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultLeaveBalances';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveBalances';
         $request = $this->hrmLeavebalanceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -9649,9 +9649,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultLeaveTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultLeaveTypes
      */
     public function hrmLeavetypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -9669,13 +9669,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultLeaveTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultLeaveTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmLeavetypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultLeaveTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveTypes';
         $request = $this->hrmLeavetypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -9726,7 +9726,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultLeaveTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultLeaveTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9772,7 +9772,7 @@ class HRMApi
      */
     public function hrmLeavetypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultLeaveTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveTypes';
         $request = $this->hrmLeavetypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -9920,9 +9920,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultLeaveType
+     * @return \Paqtcom\Simplicate\Model\RestResultLeaveType
      */
     public function hrmLeavetypeIdGet($id)
     {
@@ -9938,13 +9938,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultLeaveType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultLeaveType, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmLeavetypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultLeaveType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveType';
         $request = $this->hrmLeavetypeIdGetRequest($id);
 
         try {
@@ -9995,7 +9995,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultLeaveType',
+                        '\Paqtcom\Simplicate\Model\RestResultLeaveType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10037,7 +10037,7 @@ class HRMApi
      */
     public function hrmLeavetypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultLeaveType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveType';
         $request = $this->hrmLeavetypeIdGetRequest($id);
 
         return $this->client
@@ -10188,9 +10188,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultTeams
+     * @return \Paqtcom\Simplicate\Model\RestResultTeams
      */
     public function hrmTeamGet($offset = null, $limit = '5', $sort = null)
     {
@@ -10208,13 +10208,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultTeams, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultTeams, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmTeamGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTeams';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTeams';
         $request = $this->hrmTeamGetRequest($offset, $limit, $sort);
 
         try {
@@ -10265,7 +10265,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultTeams',
+                        '\Paqtcom\Simplicate\Model\RestResultTeams',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10311,7 +10311,7 @@ class HRMApi
      */
     public function hrmTeamGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTeams';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTeams';
         $request = $this->hrmTeamGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -10459,9 +10459,9 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultTeam
+     * @return \Paqtcom\Simplicate\Model\RestResultTeam
      */
     public function hrmTeamIdGet($id)
     {
@@ -10477,13 +10477,13 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultTeam, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultTeam, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmTeamIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTeam';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTeam';
         $request = $this->hrmTeamIdGetRequest($id);
 
         try {
@@ -10534,7 +10534,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultTeam',
+                        '\Paqtcom\Simplicate\Model\RestResultTeam',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10576,7 +10576,7 @@ class HRMApi
      */
     public function hrmTeamIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTeam';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTeam';
         $request = $this->hrmTeamIdGetRequest($id);
 
         return $this->client
@@ -10727,9 +10727,9 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultTimetables
+     * @return \Paqtcom\Simplicate\Model\RestResultTimetables
      */
     public function hrmTimetableGet($offset = null, $limit = '5', $sort = null)
     {
@@ -10747,13 +10747,13 @@ class HRMApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultTimetables, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultTimetables, HTTP status code, HTTP response headers (array of strings)
      */
     public function hrmTimetableGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTimetables';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimetables';
         $request = $this->hrmTimetableGetRequest($offset, $limit, $sort);
 
         try {
@@ -10804,7 +10804,7 @@ class HRMApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultTimetables',
+                        '\Paqtcom\Simplicate\Model\RestResultTimetables',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10850,7 +10850,7 @@ class HRMApi
      */
     public function hrmTimetableGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTimetables';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimetables';
         $request = $this->hrmTimetableGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -10998,7 +10998,7 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -11014,7 +11014,7 @@ class HRMApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -11224,9 +11224,9 @@ class HRMApi
      *
      * Updates an existing timetable
      *
-     * @param  \Swagger\Client\Model\PutTimetable $body Timetable object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutTimetable $body Timetable object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -11240,9 +11240,9 @@ class HRMApi
      *
      * Updates an existing timetable
      *
-     * @param  \Swagger\Client\Model\PutTimetable $body Timetable object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutTimetable $body Timetable object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -11292,7 +11292,7 @@ class HRMApi
      *
      * Updates an existing timetable
      *
-     * @param  \Swagger\Client\Model\PutTimetable $body Timetable object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutTimetable $body Timetable object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11312,7 +11312,7 @@ class HRMApi
      *
      * Updates an existing timetable
      *
-     * @param  \Swagger\Client\Model\PutTimetable $body Timetable object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutTimetable $body Timetable object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11348,7 +11348,7 @@ class HRMApi
     /**
      * Create request for operation 'hrmTimetableIdPut'
      *
-     * @param  \Swagger\Client\Model\PutTimetable $body Timetable object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutTimetable $body Timetable object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -11446,9 +11446,9 @@ class HRMApi
      *
      * Add a new timetable
      *
-     * @param  \Swagger\Client\Model\PostTimetable $body Timetable object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimetable $body Timetable object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -11462,9 +11462,9 @@ class HRMApi
      *
      * Add a new timetable
      *
-     * @param  \Swagger\Client\Model\PostTimetable $body Timetable object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimetable $body Timetable object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -11514,7 +11514,7 @@ class HRMApi
      *
      * Add a new timetable
      *
-     * @param  \Swagger\Client\Model\PostTimetable $body Timetable object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimetable $body Timetable object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11534,7 +11534,7 @@ class HRMApi
      *
      * Add a new timetable
      *
-     * @param  \Swagger\Client\Model\PostTimetable $body Timetable object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimetable $body Timetable object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11570,7 +11570,7 @@ class HRMApi
     /**
      * Create request for operation 'hrmTimetablePost'
      *
-     * @param  \Swagger\Client\Model\PostTimetable $body Timetable object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimetable $body Timetable object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

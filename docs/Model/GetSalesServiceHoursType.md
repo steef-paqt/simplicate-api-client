@@ -5,7 +5,7 @@
  Name                | Type                                                      | Description | Notes      
 ---------------------|-----------------------------------------------------------|-------------|------------
  **id**              | **string**                                                |             | [optional] 
- **hourstype**       | [**\Swagger\Client\Model\GetHoursType**](GetHoursType.md) |             | [optional] 
+ **hourstype**       | [**\Paqtcom\Simplicate\Model\GetHoursType**](GetHoursType.md) |             | [optional] 
  **budgeted_amount** | **float**                                                 |             | [optional] 
  **tariff**          | **float**                                                 |             | [optional] 
  **billable**        | **bool**                                                  |             | [optional] 

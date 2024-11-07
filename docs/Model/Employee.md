@@ -17,7 +17,7 @@
  **work_email**          | **string**                                    |             | [optional] 
  **hourly_sales_tariff** | **float**                                     |             | [optional] 
  **hourly_cost_tariff**  | **float**                                     |             | [optional] 
- **avatar**              | [**\Swagger\Client\Model\Avatar**](Avatar.md) |             | [optional] 
+ **avatar**              | [**\Paqtcom\Simplicate\Model\Avatar**](Avatar.md) |             | [optional] 
  **created_at**          | **string**                                    |             | [optional] 
  **updated_at**          | **string**                                    |             | [optional] 
  **simplicate_url**      | **string**                                    |             | [optional] 

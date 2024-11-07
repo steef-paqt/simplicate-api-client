@@ -5,7 +5,7 @@
  Name                       | Type                                                                              | Description | Notes      
 ----------------------------|-----------------------------------------------------------------------------------|-------------|------------
  **id**                     | **string**                                                                        |             | [optional] 
- **defaultworkflow**        | [**\Swagger\Client\Model\GetSimpleDefaultWorkflow**](GetSimpleDefaultWorkflow.md) |             | [optional] 
+ **defaultworkflow**        | [**\Paqtcom\Simplicate\Model\GetSimpleDefaultWorkflow**](GetSimpleDefaultWorkflow.md) |             | [optional] 
  **order**                  | **int**                                                                           |             | [optional] 
  **description**            | **string**                                                                        |             | [optional] 
  **can_change_destination** | **bool**                                                                          |             | [optional] 

@@ -1,4 +1,4 @@
-# Swagger\Client\InvoicesApi
+# Paqtcom\Simplicate\InvoicesApi
 
 All URIs are relative to *http://localhost/api/v2*
 
@@ -34,7 +34,7 @@ All URIs are relative to *http://localhost/api/v2*
 
 # **invoicesDocumentGet**
 
-> \Swagger\Client\Model\RestResultDocuments invoicesDocumentGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultDocuments invoicesDocumentGet($offset, $limit, $sort)
 
 Fetches all available documents for invoices
 
@@ -44,7 +44,7 @@ Fetches all available documents for invoices
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -72,7 +72,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocuments**](../Model/RestResultDocuments.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocuments**](../Model/RestResultDocuments.md)
 
 ### Authorization
 
@@ -97,7 +97,7 @@ Deletes the document with the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -135,7 +135,7 @@ No authorization required
 
 # **invoicesDocumentIdGet**
 
-> \Swagger\Client\Model\RestResultDocument invoicesDocumentIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultDocument invoicesDocumentIdGet($id)
 
 Fetches a single document for invoices by its id
 
@@ -145,7 +145,7 @@ Fetches a single document for invoices by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -169,7 +169,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocument**](../Model/RestResultDocument.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocument**](../Model/RestResultDocument.md)
 
 ### Authorization
 
@@ -194,12 +194,12 @@ create a document
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostDocument(); // \Swagger\Client\Model\PostDocument | Document object containing data
+$body = new \Paqtcom\Simplicate\Model\PostDocument(); // \Paqtcom\Simplicate\Model\PostDocument | Document object containing data
 
 try {
     $apiInstance->invoicesDocumentPost($body);
@@ -213,7 +213,7 @@ try {
 
  Name     | Type                                                               | Description                     | Notes 
 ----------|--------------------------------------------------------------------|---------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostDocument**](../Model/PostDocument.md) | Document object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostDocument**](../Model/PostDocument.md) | Document object containing data |
 
 ### Return type
 
@@ -242,12 +242,12 @@ update a document
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PutDocument(); // \Swagger\Client\Model\PutDocument | Document object containing data
+$body = new \Paqtcom\Simplicate\Model\PutDocument(); // \Paqtcom\Simplicate\Model\PutDocument | Document object containing data
 
 try {
     $apiInstance->invoicesDocumentPut($body);
@@ -261,7 +261,7 @@ try {
 
  Name     | Type                                                             | Description                     | Notes 
 ----------|------------------------------------------------------------------|---------------------------------|-------
- **body** | [**\Swagger\Client\Model\PutDocument**](../Model/PutDocument.md) | Document object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PutDocument**](../Model/PutDocument.md) | Document object containing data |
 
 ### Return type
 
@@ -280,7 +280,7 @@ No authorization required
 
 # **invoicesDocumenttypeGet**
 
-> \Swagger\Client\Model\RestResultDocumentTypes invoicesDocumenttypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultDocumentTypes invoicesDocumenttypeGet($offset, $limit, $sort)
 
 Fetches all available document types for Invoices
 
@@ -290,7 +290,7 @@ Fetches all available document types for Invoices
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -318,7 +318,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocumentTypes**](../Model/RestResultDocumentTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocumentTypes**](../Model/RestResultDocumentTypes.md)
 
 ### Authorization
 
@@ -333,7 +333,7 @@ No authorization required
 
 # **invoicesDocumenttypeIdGet**
 
-> \Swagger\Client\Model\RestResultDocumentType invoicesDocumenttypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultDocumentType invoicesDocumenttypeIdGet($id)
 
 Fetches a single document type for Invoices by its id
 
@@ -343,7 +343,7 @@ Fetches a single document type for Invoices by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -367,7 +367,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocumentType**](../Model/RestResultDocumentType.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocumentType**](../Model/RestResultDocumentType.md)
 
 ### Authorization
 
@@ -382,7 +382,7 @@ No authorization required
 
 # **invoicesInvoiceGet**
 
-> \Swagger\Client\Model\RestResultInvoices invoicesInvoiceGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultInvoices invoicesInvoiceGet($offset, $limit, $sort)
 
 Fetches all invoices
 
@@ -392,7 +392,7 @@ Fetches all invoices
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -420,7 +420,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultInvoices**](../Model/RestResultInvoices.md)
+[**\Paqtcom\Simplicate\Model\RestResultInvoices**](../Model/RestResultInvoices.md)
 
 ### Authorization
 
@@ -445,7 +445,7 @@ Deletes the invoice for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -483,7 +483,7 @@ No authorization required
 
 # **invoicesInvoiceIdGet**
 
-> \Swagger\Client\Model\RestResultInvoice invoicesInvoiceIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultInvoice invoicesInvoiceIdGet($id)
 
 Fetches a single invoice by id
 
@@ -493,7 +493,7 @@ Fetches a single invoice by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -517,7 +517,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultInvoice**](../Model/RestResultInvoice.md)
+[**\Paqtcom\Simplicate\Model\RestResultInvoice**](../Model/RestResultInvoice.md)
 
 ### Authorization
 
@@ -542,13 +542,13 @@ Updates a invoice for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\Invoice(); // \Swagger\Client\Model\Invoice | template object that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\Invoice(); // \Paqtcom\Simplicate\Model\Invoice | template object that needs to be updated
 
 try {
     $apiInstance->invoicesInvoiceIdPut($id, $body);
@@ -563,7 +563,7 @@ try {
  Name     | Type                                                     | Description                              | Notes 
 ----------|----------------------------------------------------------|------------------------------------------|-------
  **id**   | **string**                                               | The template&#39;s id                    |
- **body** | [**\Swagger\Client\Model\Invoice**](../Model/Invoice.md) | template object that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\Invoice**](../Model/Invoice.md) | template object that needs to be updated |
 
 ### Return type
 
@@ -592,12 +592,12 @@ Add a new invoice
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostInvoice(); // \Swagger\Client\Model\PostInvoice | Invoice object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostInvoice(); // \Paqtcom\Simplicate\Model\PostInvoice | Invoice object that needs to be added
 
 try {
     $apiInstance->invoicesInvoicePost($body);
@@ -611,7 +611,7 @@ try {
 
  Name     | Type                                                             | Description                           | Notes 
 ----------|------------------------------------------------------------------|---------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostInvoice**](../Model/PostInvoice.md) | Invoice object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostInvoice**](../Model/PostInvoice.md) | Invoice object that needs to be added |
 
 ### Return type
 
@@ -630,7 +630,7 @@ No authorization required
 
 # **invoicesInvoicestatusGet**
 
-> \Swagger\Client\Model\RestResultInvoiceStatuses invoicesInvoicestatusGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultInvoiceStatuses invoicesInvoicestatusGet($offset, $limit, $sort)
 
 Fetches all invoice status
 
@@ -640,7 +640,7 @@ Fetches all invoice status
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -668,7 +668,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultInvoiceStatuses**](../Model/RestResultInvoiceStatuses.md)
+[**\Paqtcom\Simplicate\Model\RestResultInvoiceStatuses**](../Model/RestResultInvoiceStatuses.md)
 
 ### Authorization
 
@@ -683,7 +683,7 @@ No authorization required
 
 # **invoicesInvoicestatusIdGet**
 
-> \Swagger\Client\Model\RestResultInvoiceStatus invoicesInvoicestatusIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultInvoiceStatus invoicesInvoicestatusIdGet($id)
 
 Fetches a single invoice status by id
 
@@ -693,7 +693,7 @@ Fetches a single invoice status by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -717,7 +717,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultInvoiceStatus**](../Model/RestResultInvoiceStatus.md)
+[**\Paqtcom\Simplicate\Model\RestResultInvoiceStatus**](../Model/RestResultInvoiceStatus.md)
 
 ### Authorization
 
@@ -732,7 +732,7 @@ No authorization required
 
 # **invoicesPaymentGet**
 
-> \Swagger\Client\Model\RestResultPayments invoicesPaymentGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultPayments invoicesPaymentGet($offset, $limit, $sort)
 
 Fetches all payments
 
@@ -742,7 +742,7 @@ Fetches all payments
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -770,7 +770,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultPayments**](../Model/RestResultPayments.md)
+[**\Paqtcom\Simplicate\Model\RestResultPayments**](../Model/RestResultPayments.md)
 
 ### Authorization
 
@@ -785,7 +785,7 @@ No authorization required
 
 # **invoicesPaymentIdGet**
 
-> \Swagger\Client\Model\RestResultPayment invoicesPaymentIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultPayment invoicesPaymentIdGet($id)
 
 Fetches a single payment by id
 
@@ -795,7 +795,7 @@ Fetches a single payment by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -819,7 +819,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultPayment**](../Model/RestResultPayment.md)
+[**\Paqtcom\Simplicate\Model\RestResultPayment**](../Model/RestResultPayment.md)
 
 ### Authorization
 
@@ -844,13 +844,13 @@ Updates a payment for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\Payment(); // \Swagger\Client\Model\Payment | Payment object that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\Payment(); // \Paqtcom\Simplicate\Model\Payment | Payment object that needs to be updated
 
 try {
     $apiInstance->invoicesPaymentIdPut($id, $body);
@@ -865,7 +865,7 @@ try {
  Name     | Type                                                     | Description                             | Notes 
 ----------|----------------------------------------------------------|-----------------------------------------|-------
  **id**   | **string**                                               | The template&#39;s id                   |
- **body** | [**\Swagger\Client\Model\Payment**](../Model/Payment.md) | Payment object that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\Payment**](../Model/Payment.md) | Payment object that needs to be updated |
 
 ### Return type
 
@@ -894,12 +894,12 @@ Add a new payment
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\Payment(); // \Swagger\Client\Model\Payment | Payment object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\Payment(); // \Paqtcom\Simplicate\Model\Payment | Payment object that needs to be added
 
 try {
     $apiInstance->invoicesPaymentPost($body);
@@ -913,7 +913,7 @@ try {
 
  Name     | Type                                                     | Description                           | Notes 
 ----------|----------------------------------------------------------|---------------------------------------|-------
- **body** | [**\Swagger\Client\Model\Payment**](../Model/Payment.md) | Payment object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\Payment**](../Model/Payment.md) | Payment object that needs to be added |
 
 ### Return type
 
@@ -932,7 +932,7 @@ No authorization required
 
 # **invoicesPaymenttermGet**
 
-> \Swagger\Client\Model\RestResultPaymentTerms invoicesPaymenttermGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultPaymentTerms invoicesPaymenttermGet($offset, $limit, $sort)
 
 Fetches all paymentterms
 
@@ -942,7 +942,7 @@ Fetches all paymentterms
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -970,7 +970,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultPaymentTerms**](../Model/RestResultPaymentTerms.md)
+[**\Paqtcom\Simplicate\Model\RestResultPaymentTerms**](../Model/RestResultPaymentTerms.md)
 
 ### Authorization
 
@@ -985,7 +985,7 @@ No authorization required
 
 # **invoicesPaymenttermIdGet**
 
-> \Swagger\Client\Model\RestResultPaymentTerm invoicesPaymenttermIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultPaymentTerm invoicesPaymenttermIdGet($id)
 
 Fetches a single payment term by id
 
@@ -995,7 +995,7 @@ Fetches a single payment term by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1019,7 +1019,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultPaymentTerm**](../Model/RestResultPaymentTerm.md)
+[**\Paqtcom\Simplicate\Model\RestResultPaymentTerm**](../Model/RestResultPaymentTerm.md)
 
 ### Authorization
 
@@ -1034,7 +1034,7 @@ No authorization required
 
 # **invoicesPropositionGet**
 
-> \Swagger\Client\Model\RestResultPropositions invoicesPropositionGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultPropositions invoicesPropositionGet($offset, $limit, $sort)
 
 Show all available propositions
 
@@ -1044,7 +1044,7 @@ Show all available propositions
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1072,7 +1072,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultPropositions**](../Model/RestResultPropositions.md)
+[**\Paqtcom\Simplicate\Model\RestResultPropositions**](../Model/RestResultPropositions.md)
 
 ### Authorization
 
@@ -1087,7 +1087,7 @@ No authorization required
 
 # **invoicesRemindersetGet**
 
-> \Swagger\Client\Model\RestResultReminderSets invoicesRemindersetGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultReminderSets invoicesRemindersetGet($offset, $limit, $sort)
 
 Fetches all invoice reminder sets
 
@@ -1097,7 +1097,7 @@ Fetches all invoice reminder sets
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1125,7 +1125,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultReminderSets**](../Model/RestResultReminderSets.md)
+[**\Paqtcom\Simplicate\Model\RestResultReminderSets**](../Model/RestResultReminderSets.md)
 
 ### Authorization
 
@@ -1140,7 +1140,7 @@ No authorization required
 
 # **invoicesRemindersetIdGet**
 
-> \Swagger\Client\Model\RestResultReminderSet invoicesRemindersetIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultReminderSet invoicesRemindersetIdGet($id)
 
 Fetches a single invoice reminder set by id
 
@@ -1150,7 +1150,7 @@ Fetches a single invoice reminder set by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1174,7 +1174,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultReminderSet**](../Model/RestResultReminderSet.md)
+[**\Paqtcom\Simplicate\Model\RestResultReminderSet**](../Model/RestResultReminderSet.md)
 
 ### Authorization
 
@@ -1189,7 +1189,7 @@ No authorization required
 
 # **invoicesRemindertemplateGet**
 
-> \Swagger\Client\Model\RestResultReminderTemplates invoicesRemindertemplateGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultReminderTemplates invoicesRemindertemplateGet($offset, $limit, $sort)
 
 Fetches all invoice reminder templates
 
@@ -1199,7 +1199,7 @@ Fetches all invoice reminder templates
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1227,7 +1227,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultReminderTemplates**](../Model/RestResultReminderTemplates.md)
+[**\Paqtcom\Simplicate\Model\RestResultReminderTemplates**](../Model/RestResultReminderTemplates.md)
 
 ### Authorization
 
@@ -1242,7 +1242,7 @@ No authorization required
 
 # **invoicesRemindertemplateIdGet**
 
-> \Swagger\Client\Model\RestResultReminderTemplate invoicesRemindertemplateIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultReminderTemplate invoicesRemindertemplateIdGet($id)
 
 Fetches a single invoice reminder template by id
 
@@ -1252,7 +1252,7 @@ Fetches a single invoice reminder template by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1276,7 +1276,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultReminderTemplate**](../Model/RestResultReminderTemplate.md)
+[**\Paqtcom\Simplicate\Model\RestResultReminderTemplate**](../Model/RestResultReminderTemplate.md)
 
 ### Authorization
 
@@ -1291,7 +1291,7 @@ No authorization required
 
 # **invoicesVatclassGet**
 
-> \Swagger\Client\Model\RestResultVatClasses invoicesVatclassGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultVatClasses invoicesVatclassGet($offset, $limit, $sort)
 
 Fetches all to vat class
 
@@ -1301,7 +1301,7 @@ Fetches all to vat class
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1329,7 +1329,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultVatClasses**](../Model/RestResultVatClasses.md)
+[**\Paqtcom\Simplicate\Model\RestResultVatClasses**](../Model/RestResultVatClasses.md)
 
 ### Authorization
 
@@ -1344,7 +1344,7 @@ No authorization required
 
 # **invoicesVatclassIdGet**
 
-> \Swagger\Client\Model\RestResultVatClass invoicesVatclassIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultVatClass invoicesVatclassIdGet($id)
 
 Fetches a single vat class by id
 
@@ -1354,7 +1354,7 @@ Fetches a single vat class by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\InvoicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\InvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1378,7 +1378,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultVatClass**](../Model/RestResultVatClass.md)
+[**\Paqtcom\Simplicate\Model\RestResultVatClass**](../Model/RestResultVatClass.md)
 
 ### Authorization
 

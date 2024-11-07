@@ -6,7 +6,7 @@
 ---------------------|-----------------------------------------------------------------|-------------|------------
  **label**           | **string**                                                      |             | [optional] 
  **id**              | **string**                                                      |             | [optional] 
- **costtype**        | [**\Swagger\Client\Model\GetPurchaseType**](GetPurchaseType.md) |             | [optional] 
+ **costtype**        | [**\Paqtcom\Simplicate\Model\GetPurchaseType**](GetPurchaseType.md) |             | [optional] 
  **budgeted_amount** | **float**                                                       |             | [optional] 
  **tariff**          | **float**                                                       |             | [optional] 
  **purchase_margin** | **float**                                                       |             | [optional] 

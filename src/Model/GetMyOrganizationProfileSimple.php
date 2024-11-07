@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetMyOrganizationProfileSimple Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class GetMyOrganizationProfileSimple implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'organization' => '\Swagger\Client\Model\GetOrganizationSimple',
+        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
     ];
 
     /**
@@ -233,7 +233,7 @@ class GetMyOrganizationProfileSimple implements ModelInterface, ArrayAccess
     /**
      * Gets organization
      *
-     * @return \Swagger\Client\Model\GetOrganizationSimple
+     * @return \Paqtcom\Simplicate\Model\GetOrganizationSimple
      */
     public function getOrganization()
     {
@@ -243,7 +243,7 @@ class GetMyOrganizationProfileSimple implements ModelInterface, ArrayAccess
     /**
      * Sets organization
      *
-     * @param \Swagger\Client\Model\GetOrganizationSimple $organization organization
+     * @param \Paqtcom\Simplicate\Model\GetOrganizationSimple $organization organization
      *
      * @return $this
      */

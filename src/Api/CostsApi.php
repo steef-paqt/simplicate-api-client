@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Paqtcom\Simplicate\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ApiException;
+use Paqtcom\Simplicate\Configuration;
+use Paqtcom\Simplicate\HeaderSelector;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * CostsApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -97,9 +97,9 @@ class CostsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultHourTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultHourTypes
      */
     public function costsCoststypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -117,13 +117,13 @@ class CostsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultHourTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultHourTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function costsCoststypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHourTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourTypes';
         $request = $this->costsCoststypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -174,7 +174,7 @@ class CostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultHourTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultHourTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +220,7 @@ class CostsApi
      */
     public function costsCoststypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHourTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourTypes';
         $request = $this->costsCoststypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -368,9 +368,9 @@ class CostsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultHourType
+     * @return \Paqtcom\Simplicate\Model\RestResultHourType
      */
     public function costsCoststypeIdGet($id)
     {
@@ -386,13 +386,13 @@ class CostsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultHourType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultHourType, HTTP status code, HTTP response headers (array of strings)
      */
     public function costsCoststypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHourType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourType';
         $request = $this->costsCoststypeIdGetRequest($id);
 
         try {
@@ -443,7 +443,7 @@ class CostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultHourType',
+                        '\Paqtcom\Simplicate\Model\RestResultHourType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -485,7 +485,7 @@ class CostsApi
      */
     public function costsCoststypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHourType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourType';
         $request = $this->costsCoststypeIdGetRequest($id);
 
         return $this->client
@@ -636,9 +636,9 @@ class CostsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultEmployeeExpenseList
+     * @return \Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList
      */
     public function costsExpenseGet($offset = null, $limit = '5', $sort = null)
     {
@@ -656,13 +656,13 @@ class CostsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultEmployeeExpenseList, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList, HTTP status code, HTTP response headers (array of strings)
      */
     public function costsExpenseGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployeeExpenseList';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList';
         $request = $this->costsExpenseGetRequest($offset, $limit, $sort);
 
         try {
@@ -713,7 +713,7 @@ class CostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultEmployeeExpenseList',
+                        '\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -759,7 +759,7 @@ class CostsApi
      */
     public function costsExpenseGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployeeExpenseList';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList';
         $request = $this->costsExpenseGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -907,9 +907,9 @@ class CostsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultEmployeeExpense
+     * @return \Paqtcom\Simplicate\Model\RestResultEmployeeExpense
      */
     public function costsExpenseIdGet($id)
     {
@@ -925,13 +925,13 @@ class CostsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultEmployeeExpense, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultEmployeeExpense, HTTP status code, HTTP response headers (array of strings)
      */
     public function costsExpenseIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployeeExpense';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpense';
         $request = $this->costsExpenseIdGetRequest($id);
 
         try {
@@ -982,7 +982,7 @@ class CostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultEmployeeExpense',
+                        '\Paqtcom\Simplicate\Model\RestResultEmployeeExpense',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1024,7 +1024,7 @@ class CostsApi
      */
     public function costsExpenseIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployeeExpense';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpense';
         $request = $this->costsExpenseIdGetRequest($id);
 
         return $this->client

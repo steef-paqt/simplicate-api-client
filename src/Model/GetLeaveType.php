@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetLeaveType Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -62,7 +62,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
         'id' => 'string',
         'type' => 'string',
         'billable' => 'float',
-        'vatclass' => '\Swagger\Client\Model\VatClass',
+        'vatclass' => '\Paqtcom\Simplicate\Model\VatClass',
         'label' => 'string',
         'tariff' => 'string',
         'blocked' => 'bool',
@@ -382,7 +382,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
     /**
      * Gets vatclass
      *
-     * @return \Swagger\Client\Model\VatClass
+     * @return \Paqtcom\Simplicate\Model\VatClass
      */
     public function getVatclass()
     {
@@ -392,7 +392,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
     /**
      * Sets vatclass
      *
-     * @param \Swagger\Client\Model\VatClass $vatclass vatclass
+     * @param \Paqtcom\Simplicate\Model\VatClass $vatclass vatclass
      *
      * @return $this
      */

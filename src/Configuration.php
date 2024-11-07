@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,14 +27,14 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client;
+namespace Paqtcom\Simplicate;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -404,7 +404,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report = 'PHP SDK (Swagger\Client) Debug Report:' . PHP_EOL;
+        $report = 'PHP SDK (Paqtcom\Simplicate) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 2.0' . PHP_EOL;

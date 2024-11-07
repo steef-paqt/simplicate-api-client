@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetInvoiceReminder Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class GetInvoiceReminder implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'set' => '\Swagger\Client\Model\ReminderSet',
+        'set' => '\Paqtcom\Simplicate\Model\ReminderSet',
         'status' => 'string',
         'paused' => 'bool',
         'next_action' => 'string',
@@ -221,7 +221,7 @@ class GetInvoiceReminder implements ModelInterface, ArrayAccess
     /**
      * Gets set
      *
-     * @return \Swagger\Client\Model\ReminderSet
+     * @return \Paqtcom\Simplicate\Model\ReminderSet
      */
     public function getSet()
     {
@@ -231,7 +231,7 @@ class GetInvoiceReminder implements ModelInterface, ArrayAccess
     /**
      * Sets set
      *
-     * @param \Swagger\Client\Model\ReminderSet $set set
+     * @param \Paqtcom\Simplicate\Model\ReminderSet $set set
      *
      * @return $this
      */

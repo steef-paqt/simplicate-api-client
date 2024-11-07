@@ -1,4 +1,4 @@
-# Swagger\Client\ServicesApi
+# Paqtcom\Simplicate\ServicesApi
 
 All URIs are relative to *http://localhost/api/v2*
 
@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost/api/v2*
 
 # **servicesDefaultserviceGet**
 
-> \Swagger\Client\Model\RestResultDefaultServices servicesDefaultserviceGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultDefaultServices servicesDefaultserviceGet($offset, $limit, $sort)
 
 Fetches all default services
 
@@ -22,7 +22,7 @@ Fetches all default services
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ServicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ServicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -50,7 +50,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDefaultServices**](../Model/RestResultDefaultServices.md)
+[**\Paqtcom\Simplicate\Model\RestResultDefaultServices**](../Model/RestResultDefaultServices.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Deletes the default service with the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ServicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ServicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -113,7 +113,7 @@ No authorization required
 
 # **servicesDefaultserviceIdGet**
 
-> \Swagger\Client\Model\RestResultDefaultService servicesDefaultserviceIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultDefaultService servicesDefaultserviceIdGet($id)
 
 Fetches a single default service by id
 
@@ -123,7 +123,7 @@ Fetches a single default service by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ServicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ServicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -147,7 +147,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDefaultService**](../Model/RestResultDefaultService.md)
+[**\Paqtcom\Simplicate\Model\RestResultDefaultService**](../Model/RestResultDefaultService.md)
 
 ### Authorization
 
@@ -172,13 +172,13 @@ Updates a default service for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ServicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ServicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostDefaultService(); // \Swagger\Client\Model\PostDefaultService | default service object that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\PostDefaultService(); // \Paqtcom\Simplicate\Model\PostDefaultService | default service object that needs to be updated
 
 try {
     $apiInstance->servicesDefaultserviceIdPut($id, $body);
@@ -193,7 +193,7 @@ try {
  Name     | Type                                                                           | Description                                     | Notes 
 ----------|--------------------------------------------------------------------------------|-------------------------------------------------|-------
  **id**   | **string**                                                                     | The template&#39;s id                           |
- **body** | [**\Swagger\Client\Model\PostDefaultService**](../Model/PostDefaultService.md) | default service object that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\PostDefaultService**](../Model/PostDefaultService.md) | default service object that needs to be updated |
 
 ### Return type
 
@@ -222,12 +222,12 @@ Add a new default service
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\ServicesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\ServicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostDefaultService(); // \Swagger\Client\Model\PostDefaultService | Default service object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostDefaultService(); // \Paqtcom\Simplicate\Model\PostDefaultService | Default service object that needs to be added
 
 try {
     $apiInstance->servicesDefaultservicePost($body);
@@ -241,7 +241,7 @@ try {
 
  Name     | Type                                                                           | Description                                   | Notes 
 ----------|--------------------------------------------------------------------------------|-----------------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostDefaultService**](../Model/PostDefaultService.md) | Default service object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostDefaultService**](../Model/PostDefaultService.md) | Default service object that needs to be added |
 
 ### Return type
 

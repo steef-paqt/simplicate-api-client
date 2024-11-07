@@ -5,7 +5,7 @@
  Name                           | Type                                                              | Description | Notes      
 --------------------------------|-------------------------------------------------------------------|-------------|------------
  **payment_term_id**            | **string**                                                        |             | [optional] 
- **invoice_lines**              | [**\Swagger\Client\Model\PostInvoiceLine[]**](PostInvoiceLine.md) |             | [optional] 
+ **invoice_lines**              | [**\Paqtcom\Simplicate\Model\PostInvoiceLine[]**](PostInvoiceLine.md) |             | [optional] 
  **status_id**                  | **string**                                                        |             | [optional] 
  **my_organization_profile_id** | **string**                                                        |             | [optional] 
  **organization_id**            | **string**                                                        |             | [optional] 

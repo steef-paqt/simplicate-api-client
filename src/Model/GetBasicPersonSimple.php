@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetBasicPersonSimple Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,7 +61,7 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
         'date_of_birth' => 'string',
         'gender_id' => 'string',
         'gender' => 'string',
-        'address' => '\Swagger\Client\Model\GetAddress',
+        'address' => '\Paqtcom\Simplicate\Model\GetAddress',
         'email' => 'string',
         'phone' => 'string',
         'twitter_url' => 'string',
@@ -341,7 +341,7 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \Swagger\Client\Model\GetAddress
+     * @return \Paqtcom\Simplicate\Model\GetAddress
      */
     public function getAddress()
     {
@@ -351,7 +351,7 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \Swagger\Client\Model\GetAddress $address address
+     * @param \Paqtcom\Simplicate\Model\GetAddress $address address
      *
      * @return $this
      */

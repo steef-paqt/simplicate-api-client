@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Paqtcom\Simplicate\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ApiException;
+use Paqtcom\Simplicate\Configuration;
+use Paqtcom\Simplicate\HeaderSelector;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * SalesApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -95,9 +95,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSale
+     * @return \Paqtcom\Simplicate\Model\RestResultSale
      */
     public function salesConverttoprojectIdGet($id)
     {
@@ -113,13 +113,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSale, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSale, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesConverttoprojectIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSale';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSale';
         $request = $this->salesConverttoprojectIdGetRequest($id);
 
         try {
@@ -170,7 +170,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSale',
+                        '\Paqtcom\Simplicate\Model\RestResultSale',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -212,7 +212,7 @@ class SalesApi
      */
     public function salesConverttoprojectIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSale';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSale';
         $request = $this->salesConverttoprojectIdGetRequest($id);
 
         return $this->client
@@ -363,9 +363,9 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocuments
+     * @return \Paqtcom\Simplicate\Model\RestResultDocuments
      */
     public function salesDocumentGet($offset = null, $limit = '5', $sort = null)
     {
@@ -383,13 +383,13 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocuments, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocuments, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesDocumentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocuments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
         $request = $this->salesDocumentGetRequest($offset, $limit, $sort);
 
         try {
@@ -440,7 +440,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocuments',
+                        '\Paqtcom\Simplicate\Model\RestResultDocuments',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -486,7 +486,7 @@ class SalesApi
      */
     public function salesDocumentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocuments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
         $request = $this->salesDocumentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -634,7 +634,7 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -650,7 +650,7 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -862,9 +862,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocument
+     * @return \Paqtcom\Simplicate\Model\RestResultDocument
      */
     public function salesDocumentIdGet($id)
     {
@@ -880,13 +880,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocument, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocument, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesDocumentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocument';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
         $request = $this->salesDocumentIdGetRequest($id);
 
         try {
@@ -937,7 +937,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocument',
+                        '\Paqtcom\Simplicate\Model\RestResultDocument',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class SalesApi
      */
     public function salesDocumentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocument';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
         $request = $this->salesDocumentIdGetRequest($id);
 
         return $this->client
@@ -1126,9 +1126,9 @@ class SalesApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1142,9 +1142,9 @@ class SalesApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1194,7 +1194,7 @@ class SalesApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1214,7 +1214,7 @@ class SalesApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1250,7 +1250,7 @@ class SalesApi
     /**
      * Create request for operation 'salesDocumentPost'
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1348,9 +1348,9 @@ class SalesApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1364,9 +1364,9 @@ class SalesApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1416,7 +1416,7 @@ class SalesApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1436,7 +1436,7 @@ class SalesApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1472,7 +1472,7 @@ class SalesApi
     /**
      * Create request for operation 'salesDocumentPut'
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1574,9 +1574,9 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocumentTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultDocumentTypes
      */
     public function salesDocumenttypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -1594,13 +1594,13 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocumentTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocumentTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesDocumenttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
         $request = $this->salesDocumenttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -1651,7 +1651,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocumentTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultDocumentTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1697,7 +1697,7 @@ class SalesApi
      */
     public function salesDocumenttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
         $request = $this->salesDocumenttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1845,9 +1845,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocumentType
+     * @return \Paqtcom\Simplicate\Model\RestResultDocumentType
      */
     public function salesDocumenttypeIdGet($id)
     {
@@ -1863,13 +1863,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocumentType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocumentType, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesDocumenttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
         $request = $this->salesDocumenttypeIdGetRequest($id);
 
         try {
@@ -1920,7 +1920,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocumentType',
+                        '\Paqtcom\Simplicate\Model\RestResultDocumentType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1962,7 +1962,7 @@ class SalesApi
      */
     public function salesDocumenttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
         $request = $this->salesDocumenttypeIdGetRequest($id);
 
         return $this->client
@@ -2113,9 +2113,9 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultQuotes
+     * @return \Paqtcom\Simplicate\Model\RestResultQuotes
      */
     public function salesQuoteGet($offset = null, $limit = '5', $sort = null)
     {
@@ -2133,13 +2133,13 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultQuotes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultQuotes, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesQuoteGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultQuotes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuotes';
         $request = $this->salesQuoteGetRequest($offset, $limit, $sort);
 
         try {
@@ -2190,7 +2190,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultQuotes',
+                        '\Paqtcom\Simplicate\Model\RestResultQuotes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2236,7 +2236,7 @@ class SalesApi
      */
     public function salesQuoteGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultQuotes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuotes';
         $request = $this->salesQuoteGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -2384,7 +2384,7 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2400,7 +2400,7 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2612,9 +2612,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultQuote
+     * @return \Paqtcom\Simplicate\Model\RestResultQuote
      */
     public function salesQuoteIdGet($id)
     {
@@ -2630,13 +2630,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultQuote, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultQuote, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesQuoteIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultQuote';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuote';
         $request = $this->salesQuoteIdGetRequest($id);
 
         try {
@@ -2687,7 +2687,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultQuote',
+                        '\Paqtcom\Simplicate\Model\RestResultQuote',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2729,7 +2729,7 @@ class SalesApi
      */
     public function salesQuoteIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultQuote';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuote';
         $request = $this->salesQuoteIdGetRequest($id);
 
         return $this->client
@@ -2877,9 +2877,9 @@ class SalesApi
      * update a quote template
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostQuote $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuote $body Quote template object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2894,9 +2894,9 @@ class SalesApi
      * update a quote template
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostQuote $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuote $body Quote template object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2947,7 +2947,7 @@ class SalesApi
      * update a quote template
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostQuote $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuote $body Quote template object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2968,7 +2968,7 @@ class SalesApi
      * update a quote template
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostQuote $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuote $body Quote template object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3005,7 +3005,7 @@ class SalesApi
      * Create request for operation 'salesQuoteIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostQuote $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuote $body Quote template object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3118,9 +3118,9 @@ class SalesApi
      *
      * create a quote template
      *
-     * @param  \Swagger\Client\Model\PostQuote $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuote $body Quote template object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3134,9 +3134,9 @@ class SalesApi
      *
      * create a quote template
      *
-     * @param  \Swagger\Client\Model\PostQuote $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuote $body Quote template object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3186,7 +3186,7 @@ class SalesApi
      *
      * create a quote template
      *
-     * @param  \Swagger\Client\Model\PostQuote $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuote $body Quote template object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3206,7 +3206,7 @@ class SalesApi
      *
      * create a quote template
      *
-     * @param  \Swagger\Client\Model\PostQuote $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuote $body Quote template object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3242,7 +3242,7 @@ class SalesApi
     /**
      * Create request for operation 'salesQuotePost'
      *
-     * @param  \Swagger\Client\Model\PostQuote $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuote $body Quote template object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3341,9 +3341,9 @@ class SalesApi
      * append only a single email to the emails collection quote
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutQuoteEmail $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutQuoteEmail $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3358,9 +3358,9 @@ class SalesApi
      * append only a single email to the emails collection quote
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutQuoteEmail $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutQuoteEmail $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3411,7 +3411,7 @@ class SalesApi
      * append only a single email to the emails collection quote
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutQuoteEmail $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutQuoteEmail $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3432,7 +3432,7 @@ class SalesApi
      * append only a single email to the emails collection quote
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutQuoteEmail $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutQuoteEmail $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3469,7 +3469,7 @@ class SalesApi
      * Create request for operation 'salesQuoteemailIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutQuoteEmail $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutQuoteEmail $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3583,9 +3583,9 @@ class SalesApi
      * Fetches all quote statuses
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultQuoteStatuses
+     * @return \Paqtcom\Simplicate\Model\RestResultQuoteStatuses
      */
     public function salesQuotestatusGet()
     {
@@ -3600,13 +3600,13 @@ class SalesApi
      * Fetches all quote statuses
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultQuoteStatuses, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultQuoteStatuses, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesQuotestatusGetWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\RestResultQuoteStatuses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteStatuses';
         $request = $this->salesQuotestatusGetRequest();
 
         try {
@@ -3657,7 +3657,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultQuoteStatuses',
+                        '\Paqtcom\Simplicate\Model\RestResultQuoteStatuses',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3697,7 +3697,7 @@ class SalesApi
      */
     public function salesQuotestatusGetAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\RestResultQuoteStatuses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteStatuses';
         $request = $this->salesQuotestatusGetRequest();
 
         return $this->client
@@ -3829,9 +3829,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultQuoteStatus
+     * @return \Paqtcom\Simplicate\Model\RestResultQuoteStatus
      */
     public function salesQuotestatusIdGet($id)
     {
@@ -3847,13 +3847,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultQuoteStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultQuoteStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesQuotestatusIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultQuoteStatus';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteStatus';
         $request = $this->salesQuotestatusIdGetRequest($id);
 
         try {
@@ -3904,7 +3904,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultQuoteStatus',
+                        '\Paqtcom\Simplicate\Model\RestResultQuoteStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3946,7 +3946,7 @@ class SalesApi
      */
     public function salesQuotestatusIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultQuoteStatus';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteStatus';
         $request = $this->salesQuotestatusIdGetRequest($id);
 
         return $this->client
@@ -4097,9 +4097,9 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultQuoteTemplates
+     * @return \Paqtcom\Simplicate\Model\RestResultQuoteTemplates
      */
     public function salesQuotetemplateGet($offset = null, $limit = '5', $sort = null)
     {
@@ -4117,13 +4117,13 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultQuoteTemplates, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultQuoteTemplates, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesQuotetemplateGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultQuoteTemplates';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteTemplates';
         $request = $this->salesQuotetemplateGetRequest($offset, $limit, $sort);
 
         try {
@@ -4174,7 +4174,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultQuoteTemplates',
+                        '\Paqtcom\Simplicate\Model\RestResultQuoteTemplates',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4220,7 +4220,7 @@ class SalesApi
      */
     public function salesQuotetemplateGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultQuoteTemplates';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteTemplates';
         $request = $this->salesQuotetemplateGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -4368,7 +4368,7 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4384,7 +4384,7 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4596,9 +4596,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultQuoteTemplate
+     * @return \Paqtcom\Simplicate\Model\RestResultQuoteTemplate
      */
     public function salesQuotetemplateIdGet($id)
     {
@@ -4614,13 +4614,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultQuoteTemplate, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultQuoteTemplate, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesQuotetemplateIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultQuoteTemplate';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteTemplate';
         $request = $this->salesQuotetemplateIdGetRequest($id);
 
         try {
@@ -4671,7 +4671,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultQuoteTemplate',
+                        '\Paqtcom\Simplicate\Model\RestResultQuoteTemplate',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4713,7 +4713,7 @@ class SalesApi
      */
     public function salesQuotetemplateIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultQuoteTemplate';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteTemplate';
         $request = $this->salesQuotetemplateIdGetRequest($id);
 
         return $this->client
@@ -4861,9 +4861,9 @@ class SalesApi
      * update a quote template
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostQuoteTemplate $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4878,9 +4878,9 @@ class SalesApi
      * update a quote template
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostQuoteTemplate $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4931,7 +4931,7 @@ class SalesApi
      * update a quote template
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostQuoteTemplate $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4952,7 +4952,7 @@ class SalesApi
      * update a quote template
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostQuoteTemplate $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4989,7 +4989,7 @@ class SalesApi
      * Create request for operation 'salesQuotetemplateIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostQuoteTemplate $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5102,9 +5102,9 @@ class SalesApi
      *
      * create a quote template
      *
-     * @param  \Swagger\Client\Model\PostQuoteTemplate $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5118,9 +5118,9 @@ class SalesApi
      *
      * create a quote template
      *
-     * @param  \Swagger\Client\Model\PostQuoteTemplate $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5170,7 +5170,7 @@ class SalesApi
      *
      * create a quote template
      *
-     * @param  \Swagger\Client\Model\PostQuoteTemplate $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5190,7 +5190,7 @@ class SalesApi
      *
      * create a quote template
      *
-     * @param  \Swagger\Client\Model\PostQuoteTemplate $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5226,7 +5226,7 @@ class SalesApi
     /**
      * Create request for operation 'salesQuotetemplatePost'
      *
-     * @param  \Swagger\Client\Model\PostQuoteTemplate $body Quote template object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5328,9 +5328,9 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultRevenueGroups
+     * @return \Paqtcom\Simplicate\Model\RestResultRevenueGroups
      */
     public function salesRevenuegroupGet($offset = null, $limit = '5', $sort = null)
     {
@@ -5348,13 +5348,13 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultRevenueGroups, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultRevenueGroups, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesRevenuegroupGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultRevenueGroups';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultRevenueGroups';
         $request = $this->salesRevenuegroupGetRequest($offset, $limit, $sort);
 
         try {
@@ -5405,7 +5405,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultRevenueGroups',
+                        '\Paqtcom\Simplicate\Model\RestResultRevenueGroups',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5451,7 +5451,7 @@ class SalesApi
      */
     public function salesRevenuegroupGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultRevenueGroups';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultRevenueGroups';
         $request = $this->salesRevenuegroupGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -5599,9 +5599,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultRevenueGroup
+     * @return \Paqtcom\Simplicate\Model\RestResultRevenueGroup
      */
     public function salesRevenuegroupIdGet($id)
     {
@@ -5617,13 +5617,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultRevenueGroup, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultRevenueGroup, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesRevenuegroupIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultRevenueGroup';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultRevenueGroup';
         $request = $this->salesRevenuegroupIdGetRequest($id);
 
         try {
@@ -5674,7 +5674,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultRevenueGroup',
+                        '\Paqtcom\Simplicate\Model\RestResultRevenueGroup',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5716,7 +5716,7 @@ class SalesApi
      */
     public function salesRevenuegroupIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultRevenueGroup';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultRevenueGroup';
         $request = $this->salesRevenuegroupIdGetRequest($id);
 
         return $this->client
@@ -5867,9 +5867,9 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSales
+     * @return \Paqtcom\Simplicate\Model\RestResultSales
      */
     public function salesSalesGet($offset = null, $limit = '5', $sort = null)
     {
@@ -5887,13 +5887,13 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSales, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSales, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalesGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSales';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSales';
         $request = $this->salesSalesGetRequest($offset, $limit, $sort);
 
         try {
@@ -5944,7 +5944,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSales',
+                        '\Paqtcom\Simplicate\Model\RestResultSales',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5990,7 +5990,7 @@ class SalesApi
      */
     public function salesSalesGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSales';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSales';
         $request = $this->salesSalesGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -6137,9 +6137,9 @@ class SalesApi
      * Duplicates a sales deal on base of the id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostDuplicateSales $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\PostDuplicateSales $body Optional parameters to overwrite (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6154,9 +6154,9 @@ class SalesApi
      * Duplicates a sales deal on base of the id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostDuplicateSales $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\PostDuplicateSales $body Optional parameters to overwrite (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6207,7 +6207,7 @@ class SalesApi
      * Duplicates a sales deal on base of the id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostDuplicateSales $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\PostDuplicateSales $body Optional parameters to overwrite (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6228,7 +6228,7 @@ class SalesApi
      * Duplicates a sales deal on base of the id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostDuplicateSales $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\PostDuplicateSales $body Optional parameters to overwrite (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6265,7 +6265,7 @@ class SalesApi
      * Create request for operation 'salesSalesIdDuplicatePost'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostDuplicateSales $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\PostDuplicateSales $body Optional parameters to overwrite (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6374,9 +6374,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSale
+     * @return \Paqtcom\Simplicate\Model\RestResultSale
      */
     public function salesSalesIdGet($id)
     {
@@ -6392,13 +6392,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSale, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSale, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalesIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSale';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSale';
         $request = $this->salesSalesIdGetRequest($id);
 
         try {
@@ -6449,7 +6449,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSale',
+                        '\Paqtcom\Simplicate\Model\RestResultSale',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6491,7 +6491,7 @@ class SalesApi
      */
     public function salesSalesIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSale';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSale';
         $request = $this->salesSalesIdGetRequest($id);
 
         return $this->client
@@ -6639,9 +6639,9 @@ class SalesApi
      * Updates a sales for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSales $body project object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSales $body project object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6656,9 +6656,9 @@ class SalesApi
      * Updates a sales for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSales $body project object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSales $body project object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6709,7 +6709,7 @@ class SalesApi
      * Updates a sales for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSales $body project object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSales $body project object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6730,7 +6730,7 @@ class SalesApi
      * Updates a sales for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSales $body project object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSales $body project object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6767,7 +6767,7 @@ class SalesApi
      * Create request for operation 'salesSalesIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSales $body project object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSales $body project object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6880,9 +6880,9 @@ class SalesApi
      *
      * Add a new sales
      *
-     * @param  \Swagger\Client\Model\PostSales $body Sales object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSales $body Sales object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6896,9 +6896,9 @@ class SalesApi
      *
      * Add a new sales
      *
-     * @param  \Swagger\Client\Model\PostSales $body Sales object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSales $body Sales object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6948,7 +6948,7 @@ class SalesApi
      *
      * Add a new sales
      *
-     * @param  \Swagger\Client\Model\PostSales $body Sales object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSales $body Sales object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6968,7 +6968,7 @@ class SalesApi
      *
      * Add a new sales
      *
-     * @param  \Swagger\Client\Model\PostSales $body Sales object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSales $body Sales object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7004,7 +7004,7 @@ class SalesApi
     /**
      * Create request for operation 'salesSalesPost'
      *
-     * @param  \Swagger\Client\Model\PostSales $body Sales object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSales $body Sales object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -7106,9 +7106,9 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldGroups
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups
      */
     public function salesSalescustomfieldgroupsGet($offset = null, $limit = '5', $sort = null)
     {
@@ -7126,13 +7126,13 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldGroups, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalescustomfieldgroupsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroups';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
         $request = $this->salesSalescustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         try {
@@ -7183,7 +7183,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldGroups',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7229,7 +7229,7 @@ class SalesApi
      */
     public function salesSalescustomfieldgroupsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroups';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
         $request = $this->salesSalescustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7377,9 +7377,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldGroup
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup
      */
     public function salesSalescustomfieldgroupsIdGet($id)
     {
@@ -7395,13 +7395,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldGroup, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalescustomfieldgroupsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroup';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
         $request = $this->salesSalescustomfieldgroupsIdGetRequest($id);
 
         try {
@@ -7452,7 +7452,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldGroup',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7494,7 +7494,7 @@ class SalesApi
      */
     public function salesSalescustomfieldgroupsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroup';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
         $request = $this->salesSalescustomfieldgroupsIdGetRequest($id);
 
         return $this->client
@@ -7645,9 +7645,9 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFields
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFields
      */
     public function salesSalescustomfieldsGet($offset = null, $limit = '5', $sort = null)
     {
@@ -7665,13 +7665,13 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFields, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFields, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalescustomfieldsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFields';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
         $request = $this->salesSalescustomfieldsGetRequest($offset, $limit, $sort);
 
         try {
@@ -7722,7 +7722,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFields',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFields',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7768,7 +7768,7 @@ class SalesApi
      */
     public function salesSalescustomfieldsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFields';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
         $request = $this->salesSalescustomfieldsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7916,9 +7916,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomField
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomField
      */
     public function salesSalescustomfieldsIdGet($id)
     {
@@ -7934,13 +7934,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomField, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomField, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalescustomfieldsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomField';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
         $request = $this->salesSalescustomfieldsIdGetRequest($id);
 
         try {
@@ -7991,7 +7991,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomField',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomField',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8033,7 +8033,7 @@ class SalesApi
      */
     public function salesSalescustomfieldsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomField';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
         $request = $this->salesSalescustomfieldsIdGetRequest($id);
 
         return $this->client
@@ -8184,9 +8184,9 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultFilters
+     * @return \Paqtcom\Simplicate\Model\RestResultFilters
      */
     public function salesSalesfiltersGet($offset = null, $limit = '5', $sort = null)
     {
@@ -8204,13 +8204,13 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultFilters, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultFilters, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalesfiltersGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultFilters';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultFilters';
         $request = $this->salesSalesfiltersGetRequest($offset, $limit, $sort);
 
         try {
@@ -8261,7 +8261,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultFilters',
+                        '\Paqtcom\Simplicate\Model\RestResultFilters',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8307,7 +8307,7 @@ class SalesApi
      */
     public function salesSalesfiltersGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultFilters';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultFilters';
         $request = $this->salesSalesfiltersGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -8455,9 +8455,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultFilter
+     * @return \Paqtcom\Simplicate\Model\RestResultFilter
      */
     public function salesSalesfiltersIdGet($id)
     {
@@ -8473,13 +8473,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultFilter, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultFilter, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalesfiltersIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultFilter';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultFilter';
         $request = $this->salesSalesfiltersIdGetRequest($id);
 
         try {
@@ -8530,7 +8530,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultFilter',
+                        '\Paqtcom\Simplicate\Model\RestResultFilter',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8572,7 +8572,7 @@ class SalesApi
      */
     public function salesSalesfiltersIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultFilter';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultFilter';
         $request = $this->salesSalesfiltersIdGetRequest($id);
 
         return $this->client
@@ -8723,9 +8723,9 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSalesProgresses
+     * @return \Paqtcom\Simplicate\Model\RestResultSalesProgresses
      */
     public function salesSalesprogressGet($offset = null, $limit = '5', $sort = null)
     {
@@ -8743,13 +8743,13 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSalesProgresses, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSalesProgresses, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalesprogressGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesProgresses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesProgresses';
         $request = $this->salesSalesprogressGetRequest($offset, $limit, $sort);
 
         try {
@@ -8800,7 +8800,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSalesProgresses',
+                        '\Paqtcom\Simplicate\Model\RestResultSalesProgresses',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8846,7 +8846,7 @@ class SalesApi
      */
     public function salesSalesprogressGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesProgresses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesProgresses';
         $request = $this->salesSalesprogressGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -8994,9 +8994,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSalesProgress
+     * @return \Paqtcom\Simplicate\Model\RestResultSalesProgress
      */
     public function salesSalesprogressIdGet($id)
     {
@@ -9012,13 +9012,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSalesProgress, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSalesProgress, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalesprogressIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesProgress';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesProgress';
         $request = $this->salesSalesprogressIdGetRequest($id);
 
         try {
@@ -9069,7 +9069,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSalesProgress',
+                        '\Paqtcom\Simplicate\Model\RestResultSalesProgress',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9111,7 +9111,7 @@ class SalesApi
      */
     public function salesSalesprogressIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesProgress';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesProgress';
         $request = $this->salesSalesprogressIdGetRequest($id);
 
         return $this->client
@@ -9263,9 +9263,9 @@ class SalesApi
      * @param  string $sort Sort the result by column name (optional)
      * @param  string $select Select only specific fields to return (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSalesReasons
+     * @return \Paqtcom\Simplicate\Model\RestResultSalesReasons
      */
     public function salesSalesreasonGet($offset = null, $limit = '5', $sort = null, $select = null)
     {
@@ -9284,13 +9284,13 @@ class SalesApi
      * @param  string $sort Sort the result by column name (optional)
      * @param  string $select Select only specific fields to return (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSalesReasons, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSalesReasons, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalesreasonGetWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesReasons';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesReasons';
         $request = $this->salesSalesreasonGetRequest($offset, $limit, $sort, $select);
 
         try {
@@ -9341,7 +9341,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSalesReasons',
+                        '\Paqtcom\Simplicate\Model\RestResultSalesReasons',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9389,7 +9389,7 @@ class SalesApi
      */
     public function salesSalesreasonGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesReasons';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesReasons';
         $request = $this->salesSalesreasonGetRequest($offset, $limit, $sort, $select);
 
         return $this->client
@@ -9542,9 +9542,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSalesReason
+     * @return \Paqtcom\Simplicate\Model\RestResultSalesReason
      */
     public function salesSalesreasonIdGet($id)
     {
@@ -9560,13 +9560,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSalesReason, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSalesReason, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalesreasonIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesReason';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesReason';
         $request = $this->salesSalesreasonIdGetRequest($id);
 
         try {
@@ -9617,7 +9617,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSalesReason',
+                        '\Paqtcom\Simplicate\Model\RestResultSalesReason',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9659,7 +9659,7 @@ class SalesApi
      */
     public function salesSalesreasonIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesReason';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesReason';
         $request = $this->salesSalesreasonIdGetRequest($id);
 
         return $this->client
@@ -9810,9 +9810,9 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSalesSources
+     * @return \Paqtcom\Simplicate\Model\RestResultSalesSources
      */
     public function salesSalessourceGet($offset = null, $limit = '5', $sort = null)
     {
@@ -9830,13 +9830,13 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSalesSources, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSalesSources, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalessourceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesSources';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesSources';
         $request = $this->salesSalessourceGetRequest($offset, $limit, $sort);
 
         try {
@@ -9887,7 +9887,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSalesSources',
+                        '\Paqtcom\Simplicate\Model\RestResultSalesSources',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9933,7 +9933,7 @@ class SalesApi
      */
     public function salesSalessourceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesSources';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesSources';
         $request = $this->salesSalessourceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -10081,9 +10081,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSalesSource
+     * @return \Paqtcom\Simplicate\Model\RestResultSalesSource
      */
     public function salesSalessourceIdGet($id)
     {
@@ -10099,13 +10099,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSalesSource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSalesSource, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalessourceIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesSource';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesSource';
         $request = $this->salesSalessourceIdGetRequest($id);
 
         try {
@@ -10156,7 +10156,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSalesSource',
+                        '\Paqtcom\Simplicate\Model\RestResultSalesSource',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10198,7 +10198,7 @@ class SalesApi
      */
     public function salesSalessourceIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesSource';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesSource';
         $request = $this->salesSalessourceIdGetRequest($id);
 
         return $this->client
@@ -10349,9 +10349,9 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSalesStatusses
+     * @return \Paqtcom\Simplicate\Model\RestResultSalesStatusses
      */
     public function salesSalesstatusGet($offset = null, $limit = '5', $sort = null)
     {
@@ -10369,13 +10369,13 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSalesStatusses, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSalesStatusses, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalesstatusGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesStatusses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesStatusses';
         $request = $this->salesSalesstatusGetRequest($offset, $limit, $sort);
 
         try {
@@ -10426,7 +10426,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSalesStatusses',
+                        '\Paqtcom\Simplicate\Model\RestResultSalesStatusses',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10472,7 +10472,7 @@ class SalesApi
      */
     public function salesSalesstatusGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesStatusses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesStatusses';
         $request = $this->salesSalesstatusGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -10620,9 +10620,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSalesStatus
+     * @return \Paqtcom\Simplicate\Model\RestResultSalesStatus
      */
     public function salesSalesstatusIdGet($id)
     {
@@ -10638,13 +10638,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSalesStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSalesStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesSalesstatusIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesStatus';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesStatus';
         $request = $this->salesSalesstatusIdGetRequest($id);
 
         try {
@@ -10695,7 +10695,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSalesStatus',
+                        '\Paqtcom\Simplicate\Model\RestResultSalesStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10737,7 +10737,7 @@ class SalesApi
      */
     public function salesSalesstatusIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesStatus';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesStatus';
         $request = $this->salesSalesstatusIdGetRequest($id);
 
         return $this->client
@@ -10888,9 +10888,9 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSalesServices
+     * @return \Paqtcom\Simplicate\Model\RestResultSalesServices
      */
     public function salesServiceGet($offset = null, $limit = '5', $sort = null)
     {
@@ -10908,13 +10908,13 @@ class SalesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSalesServices, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSalesServices, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesServiceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesServices';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesServices';
         $request = $this->salesServiceGetRequest($offset, $limit, $sort);
 
         try {
@@ -10965,7 +10965,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSalesServices',
+                        '\Paqtcom\Simplicate\Model\RestResultSalesServices',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11011,7 +11011,7 @@ class SalesApi
      */
     public function salesServiceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesServices';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesServices';
         $request = $this->salesServiceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -11159,7 +11159,7 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -11175,7 +11175,7 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -11386,9 +11386,9 @@ class SalesApi
      * Duplicates a service on base of the id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -11403,9 +11403,9 @@ class SalesApi
      * Duplicates a service on base of the id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -11456,7 +11456,7 @@ class SalesApi
      * Duplicates a service on base of the id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11477,7 +11477,7 @@ class SalesApi
      * Duplicates a service on base of the id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11514,7 +11514,7 @@ class SalesApi
      * Create request for operation 'salesServiceIdDuplicatePost'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -11623,9 +11623,9 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSalesService
+     * @return \Paqtcom\Simplicate\Model\RestResultSalesService
      */
     public function salesServiceIdGet($id)
     {
@@ -11641,13 +11641,13 @@ class SalesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSalesService, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSalesService, HTTP status code, HTTP response headers (array of strings)
      */
     public function salesServiceIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesService';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesService';
         $request = $this->salesServiceIdGetRequest($id);
 
         try {
@@ -11698,7 +11698,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSalesService',
+                        '\Paqtcom\Simplicate\Model\RestResultSalesService',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11740,7 +11740,7 @@ class SalesApi
      */
     public function salesServiceIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSalesService';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesService';
         $request = $this->salesServiceIdGetRequest($id);
 
         return $this->client
@@ -11888,9 +11888,9 @@ class SalesApi
      * Updates a service for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSalesService $body Service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSalesService $body Service object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -11905,9 +11905,9 @@ class SalesApi
      * Updates a service for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSalesService $body Service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSalesService $body Service object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -11958,7 +11958,7 @@ class SalesApi
      * Updates a service for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSalesService $body Service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSalesService $body Service object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11979,7 +11979,7 @@ class SalesApi
      * Updates a service for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSalesService $body Service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSalesService $body Service object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12016,7 +12016,7 @@ class SalesApi
      * Create request for operation 'salesServiceIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSalesService $body Service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSalesService $body Service object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -12129,9 +12129,9 @@ class SalesApi
      *
      * Add a new service
      *
-     * @param  \Swagger\Client\Model\PostSalesService $body template object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSalesService $body template object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -12145,9 +12145,9 @@ class SalesApi
      *
      * Add a new service
      *
-     * @param  \Swagger\Client\Model\PostSalesService $body template object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSalesService $body template object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -12197,7 +12197,7 @@ class SalesApi
      *
      * Add a new service
      *
-     * @param  \Swagger\Client\Model\PostSalesService $body template object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSalesService $body template object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12217,7 +12217,7 @@ class SalesApi
      *
      * Add a new service
      *
-     * @param  \Swagger\Client\Model\PostSalesService $body template object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSalesService $body template object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12253,7 +12253,7 @@ class SalesApi
     /**
      * Create request for operation 'salesServicePost'
      *
-     * @param  \Swagger\Client\Model\PostSalesService $body template object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSalesService $body template object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

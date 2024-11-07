@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetSeparateInvoiceRecipient Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,9 +58,9 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'organization' => '\Swagger\Client\Model\GetOrganizationSimple',
-        'person' => '\Swagger\Client\Model\GetPersonSimple',
-        'contact' => '\Swagger\Client\Model\GetContactSimple',
+        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
+        'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
+        'contact' => '\Paqtcom\Simplicate\Model\GetContactSimple',
         'is_separate_invoice_recipient' => 'bool',
     ];
 
@@ -221,7 +221,7 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
     /**
      * Gets organization
      *
-     * @return \Swagger\Client\Model\GetOrganizationSimple
+     * @return \Paqtcom\Simplicate\Model\GetOrganizationSimple
      */
     public function getOrganization()
     {
@@ -231,7 +231,7 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
     /**
      * Sets organization
      *
-     * @param \Swagger\Client\Model\GetOrganizationSimple $organization organization
+     * @param \Paqtcom\Simplicate\Model\GetOrganizationSimple $organization organization
      *
      * @return $this
      */
@@ -245,7 +245,7 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
     /**
      * Gets person
      *
-     * @return \Swagger\Client\Model\GetPersonSimple
+     * @return \Paqtcom\Simplicate\Model\GetPersonSimple
      */
     public function getPerson()
     {
@@ -255,7 +255,7 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
     /**
      * Sets person
      *
-     * @param \Swagger\Client\Model\GetPersonSimple $person person
+     * @param \Paqtcom\Simplicate\Model\GetPersonSimple $person person
      *
      * @return $this
      */
@@ -269,7 +269,7 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
     /**
      * Gets contact
      *
-     * @return \Swagger\Client\Model\GetContactSimple
+     * @return \Paqtcom\Simplicate\Model\GetContactSimple
      */
     public function getContact()
     {
@@ -279,7 +279,7 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
     /**
      * Sets contact
      *
-     * @param \Swagger\Client\Model\GetContactSimple $contact contact
+     * @param \Paqtcom\Simplicate\Model\GetContactSimple $contact contact
      *
      * @return $this
      */

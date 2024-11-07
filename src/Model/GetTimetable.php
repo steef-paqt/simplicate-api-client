@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetTimetable Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,13 +59,13 @@ class GetTimetable implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'employee' => '\Swagger\Client\Model\GetEmployeeSimple',
+        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
         'created_at' => 'string',
         'updated_at' => 'string',
         'hourly_sales_tariff' => 'float',
         'hourly_cost_tariff' => 'float',
-        'even_week' => '\Swagger\Client\Model\TimetableWeek',
-        'odd_week' => '\Swagger\Client\Model\TimetableWeek',
+        'even_week' => '\Paqtcom\Simplicate\Model\TimetableWeek',
+        'odd_week' => '\Paqtcom\Simplicate\Model\TimetableWeek',
         'start_date' => 'string',
         'end_date' => 'string',
         'productivity_target' => 'int',
@@ -293,7 +293,7 @@ class GetTimetable implements ModelInterface, ArrayAccess
     /**
      * Gets employee
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple
      */
     public function getEmployee()
     {
@@ -303,7 +303,7 @@ class GetTimetable implements ModelInterface, ArrayAccess
     /**
      * Sets employee
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple $employee employee
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple $employee employee
      *
      * @return $this
      */
@@ -413,7 +413,7 @@ class GetTimetable implements ModelInterface, ArrayAccess
     /**
      * Gets even_week
      *
-     * @return \Swagger\Client\Model\TimetableWeek
+     * @return \Paqtcom\Simplicate\Model\TimetableWeek
      */
     public function getEvenWeek()
     {
@@ -423,7 +423,7 @@ class GetTimetable implements ModelInterface, ArrayAccess
     /**
      * Sets even_week
      *
-     * @param \Swagger\Client\Model\TimetableWeek $even_week even_week
+     * @param \Paqtcom\Simplicate\Model\TimetableWeek $even_week even_week
      *
      * @return $this
      */
@@ -437,7 +437,7 @@ class GetTimetable implements ModelInterface, ArrayAccess
     /**
      * Gets odd_week
      *
-     * @return \Swagger\Client\Model\TimetableWeek
+     * @return \Paqtcom\Simplicate\Model\TimetableWeek
      */
     public function getOddWeek()
     {
@@ -447,7 +447,7 @@ class GetTimetable implements ModelInterface, ArrayAccess
     /**
      * Sets odd_week
      *
-     * @param \Swagger\Client\Model\TimetableWeek $odd_week odd_week
+     * @param \Paqtcom\Simplicate\Model\TimetableWeek $odd_week odd_week
      *
      * @return $this
      */

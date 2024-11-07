@@ -4,7 +4,7 @@
 
  Name              | Type                                                                                                | Description | Notes      
 -------------------|-----------------------------------------------------------------------------------------------------|-------------|------------
- **configuration** | [**\Swagger\Client\Model\ExternalItemMetadataConfiguration**](ExternalItemMetadataConfiguration.md) |             | [optional] 
+ **configuration** | [**\Paqtcom\Simplicate\Model\ExternalItemMetadataConfiguration**](ExternalItemMetadataConfiguration.md) |             | [optional] 
  **count**         | **int**                                                                                             |             | [optional] 
  **total_count**   | **int**                                                                                             |             | [optional] 
  **offset**        | **int**                                                                                             |             | [optional] 

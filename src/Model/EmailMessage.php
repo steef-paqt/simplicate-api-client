@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * EmailMessage Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -71,8 +71,8 @@ class EmailMessage implements ModelInterface, ArrayAccess
         'html_message' => 'string',
         'html_body' => 'string',
         'plain_text' => 'string',
-        'attachments' => '\Swagger\Client\Model\EmailAttachment[]',
-        'linked_to' => '\Swagger\Client\Model\LinkedToEntity[]',
+        'attachments' => '\Paqtcom\Simplicate\Model\EmailAttachment[]',
+        'linked_to' => '\Paqtcom\Simplicate\Model\LinkedToEntity[]',
     ];
 
     /**
@@ -599,7 +599,7 @@ class EmailMessage implements ModelInterface, ArrayAccess
     /**
      * Gets attachments
      *
-     * @return \Swagger\Client\Model\EmailAttachment[]
+     * @return \Paqtcom\Simplicate\Model\EmailAttachment[]
      */
     public function getAttachments()
     {
@@ -609,7 +609,7 @@ class EmailMessage implements ModelInterface, ArrayAccess
     /**
      * Sets attachments
      *
-     * @param \Swagger\Client\Model\EmailAttachment[] $attachments attachments
+     * @param \Paqtcom\Simplicate\Model\EmailAttachment[] $attachments attachments
      *
      * @return $this
      */
@@ -623,7 +623,7 @@ class EmailMessage implements ModelInterface, ArrayAccess
     /**
      * Gets linked_to
      *
-     * @return \Swagger\Client\Model\LinkedToEntity[]
+     * @return \Paqtcom\Simplicate\Model\LinkedToEntity[]
      */
     public function getLinkedTo()
     {
@@ -633,7 +633,7 @@ class EmailMessage implements ModelInterface, ArrayAccess
     /**
      * Sets linked_to
      *
-     * @param \Swagger\Client\Model\LinkedToEntity[] $linked_to
+     * @param \Paqtcom\Simplicate\Model\LinkedToEntity[] $linked_to
      *
      * @return $this
      */

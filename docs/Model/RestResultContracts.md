@@ -4,8 +4,8 @@
 
  Name         | Type                                                | Description | Notes      
 --------------|-----------------------------------------------------|-------------|------------
- **data**     | [**\Swagger\Client\Model\Contract[]**](Contract.md) |             | [optional] 
- **metadata** | [**\Swagger\Client\Model\MetaData**](MetaData.md)   |             | [optional] 
+ **data**     | [**\Paqtcom\Simplicate\Model\Contract[]**](Contract.md) |             | [optional] 
+ **metadata** | [**\Paqtcom\Simplicate\Model\MetaData**](MetaData.md)   |             | [optional] 
  **errors**   | **object[]**                                        |             | [optional] 
  **debug**    | **object[]**                                        |             | [optional] 
 

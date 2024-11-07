@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * IsSatisfied Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class IsSatisfied implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'value' => 'bool',
-        'reason' => '\Swagger\Client\Model\IsSatisfiedReason',
+        'reason' => '\Paqtcom\Simplicate\Model\IsSatisfiedReason',
     ];
 
     /**
@@ -233,7 +233,7 @@ class IsSatisfied implements ModelInterface, ArrayAccess
     /**
      * Gets reason
      *
-     * @return \Swagger\Client\Model\IsSatisfiedReason
+     * @return \Paqtcom\Simplicate\Model\IsSatisfiedReason
      */
     public function getReason()
     {
@@ -243,7 +243,7 @@ class IsSatisfied implements ModelInterface, ArrayAccess
     /**
      * Sets reason
      *
-     * @param \Swagger\Client\Model\IsSatisfiedReason $reason reason
+     * @param \Paqtcom\Simplicate\Model\IsSatisfiedReason $reason reason
      *
      * @return $this
      */

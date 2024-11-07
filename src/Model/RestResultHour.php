@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * RestResultHour Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,8 +58,8 @@ class RestResultHour implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => '\Swagger\Client\Model\GetHours',
-        'metadata' => '\Swagger\Client\Model\MetaData',
+        'data' => '\Paqtcom\Simplicate\Model\GetHours',
+        'metadata' => '\Paqtcom\Simplicate\Model\MetaData',
         'errors' => 'object[]',
         'debug' => 'object[]'
     ];
@@ -226,7 +226,7 @@ class RestResultHour implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \Swagger\Client\Model\GetHours
+     * @return \Paqtcom\Simplicate\Model\GetHours
      */
     public function getData()
     {
@@ -236,7 +236,7 @@ class RestResultHour implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \Swagger\Client\Model\GetHours $data data
+     * @param \Paqtcom\Simplicate\Model\GetHours $data data
      *
      * @return $this
      */
@@ -250,7 +250,7 @@ class RestResultHour implements ModelInterface, ArrayAccess
     /**
      * Gets metadata
      *
-     * @return \Swagger\Client\Model\MetaData
+     * @return \Paqtcom\Simplicate\Model\MetaData
      */
     public function getMetadata()
     {
@@ -260,7 +260,7 @@ class RestResultHour implements ModelInterface, ArrayAccess
     /**
      * Sets metadata
      *
-     * @param \Swagger\Client\Model\MetaData $metadata metadata
+     * @param \Paqtcom\Simplicate\Model\MetaData $metadata metadata
      *
      * @return $this
      */

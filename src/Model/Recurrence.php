@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * Recurrence Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class Recurrence implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'rrule' => '\Swagger\Client\Model\Rrule',
+        'rrule' => '\Paqtcom\Simplicate\Model\Rrule',
         'update' => 'string',
     ];
 
@@ -239,7 +239,7 @@ class Recurrence implements ModelInterface, ArrayAccess
     /**
      * Gets rrule
      *
-     * @return \Swagger\Client\Model\Rrule
+     * @return \Paqtcom\Simplicate\Model\Rrule
      */
     public function getRrule()
     {
@@ -249,7 +249,7 @@ class Recurrence implements ModelInterface, ArrayAccess
     /**
      * Sets rrule
      *
-     * @param \Swagger\Client\Model\Rrule $rrule rrule
+     * @param \Paqtcom\Simplicate\Model\Rrule $rrule rrule
      *
      * @return $this
      */

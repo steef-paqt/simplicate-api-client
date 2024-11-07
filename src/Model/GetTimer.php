@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetTimer Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,11 +61,11 @@ class GetTimer implements ModelInterface, ArrayAccess
         'id' => 'string',
         'seconds_spent' => 'int',
         'min_seconds_step' => 'int',
-        'employee' => '\Swagger\Client\Model\GetEmployeeSimple',
-        'project' => '\Swagger\Client\Model\GetProjectSimple',
-        'projectservice' => '\Swagger\Client\Model\GetProjectServiceSimple',
-        'hourstype' => '\Swagger\Client\Model\GetHoursType',
-        'related_hours' => '\Swagger\Client\Model\GetHoursSimple',
+        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
+        'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
+        'projectservice' => '\Paqtcom\Simplicate\Model\GetProjectServiceSimple',
+        'hourstype' => '\Paqtcom\Simplicate\Model\GetHoursType',
+        'related_hours' => '\Paqtcom\Simplicate\Model\GetHoursSimple',
         'created_at' => 'string',
         'updated_at' => 'string',
         'state' => 'string',
@@ -373,7 +373,7 @@ class GetTimer implements ModelInterface, ArrayAccess
     /**
      * Gets employee
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple
      */
     public function getEmployee()
     {
@@ -383,7 +383,7 @@ class GetTimer implements ModelInterface, ArrayAccess
     /**
      * Sets employee
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple $employee employee
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple $employee employee
      *
      * @return $this
      */
@@ -397,7 +397,7 @@ class GetTimer implements ModelInterface, ArrayAccess
     /**
      * Gets project
      *
-     * @return \Swagger\Client\Model\GetProjectSimple
+     * @return \Paqtcom\Simplicate\Model\GetProjectSimple
      */
     public function getProject()
     {
@@ -407,7 +407,7 @@ class GetTimer implements ModelInterface, ArrayAccess
     /**
      * Sets project
      *
-     * @param \Swagger\Client\Model\GetProjectSimple $project project
+     * @param \Paqtcom\Simplicate\Model\GetProjectSimple $project project
      *
      * @return $this
      */
@@ -421,7 +421,7 @@ class GetTimer implements ModelInterface, ArrayAccess
     /**
      * Gets projectservice
      *
-     * @return \Swagger\Client\Model\GetProjectServiceSimple
+     * @return \Paqtcom\Simplicate\Model\GetProjectServiceSimple
      */
     public function getProjectservice()
     {
@@ -431,7 +431,7 @@ class GetTimer implements ModelInterface, ArrayAccess
     /**
      * Sets projectservice
      *
-     * @param \Swagger\Client\Model\GetProjectServiceSimple $projectservice projectservice
+     * @param \Paqtcom\Simplicate\Model\GetProjectServiceSimple $projectservice projectservice
      *
      * @return $this
      */
@@ -445,7 +445,7 @@ class GetTimer implements ModelInterface, ArrayAccess
     /**
      * Gets hourstype
      *
-     * @return \Swagger\Client\Model\GetHoursType
+     * @return \Paqtcom\Simplicate\Model\GetHoursType
      */
     public function getHourstype()
     {
@@ -455,7 +455,7 @@ class GetTimer implements ModelInterface, ArrayAccess
     /**
      * Sets hourstype
      *
-     * @param \Swagger\Client\Model\GetHoursType $hourstype hourstype
+     * @param \Paqtcom\Simplicate\Model\GetHoursType $hourstype hourstype
      *
      * @return $this
      */
@@ -469,7 +469,7 @@ class GetTimer implements ModelInterface, ArrayAccess
     /**
      * Gets related_hours
      *
-     * @return \Swagger\Client\Model\GetHoursSimple
+     * @return \Paqtcom\Simplicate\Model\GetHoursSimple
      */
     public function getRelatedHours()
     {
@@ -479,7 +479,7 @@ class GetTimer implements ModelInterface, ArrayAccess
     /**
      * Sets related_hours
      *
-     * @param \Swagger\Client\Model\GetHoursSimple $related_hours related_hours
+     * @param \Paqtcom\Simplicate\Model\GetHoursSimple $related_hours related_hours
      *
      * @return $this
      */

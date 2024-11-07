@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetMileage Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,15 +59,15 @@ class GetMileage implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'employee' => '\Swagger\Client\Model\GetEmployeeSimple',
-        'project' => '\Swagger\Client\Model\GetProjectSimple',
-        'type' => '\Swagger\Client\Model\GetHoursType',
-        'approvalstatus' => '\Swagger\Client\Model\GetApprovalStatus',
+        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
+        'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
+        'type' => '\Paqtcom\Simplicate\Model\GetHoursType',
+        'approvalstatus' => '\Paqtcom\Simplicate\Model\GetApprovalStatus',
         'invoice_status' => 'string',
         'invoice_id' => 'string',
         'invoiceline_id' => 'string',
         'tariff' => 'float',
-        'vatclass' => '\Swagger\Client\Model\VatClass',
+        'vatclass' => '\Paqtcom\Simplicate\Model\VatClass',
         'created_at' => 'string',
         'updated_at' => 'string',
         'mileage' => 'float',
@@ -378,7 +378,7 @@ class GetMileage implements ModelInterface, ArrayAccess
     /**
      * Gets employee
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple
      */
     public function getEmployee()
     {
@@ -388,7 +388,7 @@ class GetMileage implements ModelInterface, ArrayAccess
     /**
      * Sets employee
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple $employee employee
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple $employee employee
      *
      * @return $this
      */
@@ -402,7 +402,7 @@ class GetMileage implements ModelInterface, ArrayAccess
     /**
      * Gets project
      *
-     * @return \Swagger\Client\Model\GetProjectSimple
+     * @return \Paqtcom\Simplicate\Model\GetProjectSimple
      */
     public function getProject()
     {
@@ -412,7 +412,7 @@ class GetMileage implements ModelInterface, ArrayAccess
     /**
      * Sets project
      *
-     * @param \Swagger\Client\Model\GetProjectSimple $project project
+     * @param \Paqtcom\Simplicate\Model\GetProjectSimple $project project
      *
      * @return $this
      */
@@ -426,7 +426,7 @@ class GetMileage implements ModelInterface, ArrayAccess
     /**
      * Gets type
      *
-     * @return \Swagger\Client\Model\GetHoursType
+     * @return \Paqtcom\Simplicate\Model\GetHoursType
      */
     public function getType()
     {
@@ -436,7 +436,7 @@ class GetMileage implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param \Swagger\Client\Model\GetHoursType $type type
+     * @param \Paqtcom\Simplicate\Model\GetHoursType $type type
      *
      * @return $this
      */
@@ -450,7 +450,7 @@ class GetMileage implements ModelInterface, ArrayAccess
     /**
      * Gets approvalstatus
      *
-     * @return \Swagger\Client\Model\GetApprovalStatus
+     * @return \Paqtcom\Simplicate\Model\GetApprovalStatus
      */
     public function getApprovalstatus()
     {
@@ -460,7 +460,7 @@ class GetMileage implements ModelInterface, ArrayAccess
     /**
      * Sets approvalstatus
      *
-     * @param \Swagger\Client\Model\GetApprovalStatus $approvalstatus approvalstatus
+     * @param \Paqtcom\Simplicate\Model\GetApprovalStatus $approvalstatus approvalstatus
      *
      * @return $this
      */
@@ -579,7 +579,7 @@ class GetMileage implements ModelInterface, ArrayAccess
     /**
      * Gets vatclass
      *
-     * @return \Swagger\Client\Model\VatClass
+     * @return \Paqtcom\Simplicate\Model\VatClass
      */
     public function getVatclass()
     {
@@ -589,7 +589,7 @@ class GetMileage implements ModelInterface, ArrayAccess
     /**
      * Sets vatclass
      *
-     * @param \Swagger\Client\Model\VatClass $vatclass vatclass
+     * @param \Paqtcom\Simplicate\Model\VatClass $vatclass vatclass
      *
      * @return $this
      */

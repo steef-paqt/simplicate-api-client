@@ -4,7 +4,7 @@
 
  Name            | Type                                                    | Description | Notes      
 -----------------|---------------------------------------------------------|-------------|------------
- **set**         | [**\Swagger\Client\Model\ReminderSet**](ReminderSet.md) |             | [optional] 
+ **set**         | [**\Paqtcom\Simplicate\Model\ReminderSet**](ReminderSet.md) |             | [optional] 
  **status**      | **string**                                              |             | [optional] 
  **paused**      | **bool**                                                |             | [optional] 
  **next_action** | **string**                                              |             | [optional] 

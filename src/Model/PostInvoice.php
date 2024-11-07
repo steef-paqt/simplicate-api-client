@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * PostInvoice Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class PostInvoice implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'payment_term_id' => 'string',
-        'invoice_lines' => '\Swagger\Client\Model\PostInvoiceLine[]',
+        'invoice_lines' => '\Paqtcom\Simplicate\Model\PostInvoiceLine[]',
         'status_id' => 'string',
         'my_organization_profile_id' => 'string',
         'organization_id' => 'string',
@@ -287,7 +287,7 @@ class PostInvoice implements ModelInterface, ArrayAccess
     /**
      * Gets invoice_lines
      *
-     * @return \Swagger\Client\Model\PostInvoiceLine[]
+     * @return \Paqtcom\Simplicate\Model\PostInvoiceLine[]
      */
     public function getInvoiceLines()
     {
@@ -297,7 +297,7 @@ class PostInvoice implements ModelInterface, ArrayAccess
     /**
      * Sets invoice_lines
      *
-     * @param \Swagger\Client\Model\PostInvoiceLine[] $invoice_lines invoice_lines
+     * @param \Paqtcom\Simplicate\Model\PostInvoiceLine[] $invoice_lines invoice_lines
      *
      * @return $this
      */

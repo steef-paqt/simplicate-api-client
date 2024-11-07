@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * Person Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class Person implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'relation_type' => '\Swagger\Client\Model\RelationType',
+        'relation_type' => '\Paqtcom\Simplicate\Model\RelationType',
         'gender' => 'string',
         'initials' => 'string',
         'first_name' => 'string',
@@ -77,9 +77,9 @@ class Person implements ModelInterface, ArrayAccess
         'bank_account' => 'string',
         'bank_bic' => 'string',
         'invoice_receiver' => 'string',
-        'address' => '\Swagger\Client\Model\Address',
+        'address' => '\Paqtcom\Simplicate\Model\Address',
         'mailing_list_email' => 'string',
-        'mailing_lists' => '\Swagger\Client\Model\PersonMailingList[]',
+        'mailing_lists' => '\Paqtcom\Simplicate\Model\PersonMailingList[]',
         'is_active' => 'bool',
     ];
 
@@ -361,7 +361,7 @@ class Person implements ModelInterface, ArrayAccess
     /**
      * Gets relation_type
      *
-     * @return \Swagger\Client\Model\RelationType
+     * @return \Paqtcom\Simplicate\Model\RelationType
      */
     public function getRelationType()
     {
@@ -371,7 +371,7 @@ class Person implements ModelInterface, ArrayAccess
     /**
      * Sets relation_type
      *
-     * @param \Swagger\Client\Model\RelationType $relation_type relation_type
+     * @param \Paqtcom\Simplicate\Model\RelationType $relation_type relation_type
      *
      * @return $this
      */
@@ -826,7 +826,7 @@ class Person implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \Swagger\Client\Model\Address
+     * @return \Paqtcom\Simplicate\Model\Address
      */
     public function getAddress()
     {
@@ -836,7 +836,7 @@ class Person implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \Swagger\Client\Model\Address $address address
+     * @param \Paqtcom\Simplicate\Model\Address $address address
      *
      * @return $this
      */
@@ -874,7 +874,7 @@ class Person implements ModelInterface, ArrayAccess
     /**
      * Gets mailing_lists
      *
-     * @return \Swagger\Client\Model\PersonMailingList[]
+     * @return \Paqtcom\Simplicate\Model\PersonMailingList[]
      */
     public function getMailingLists()
     {
@@ -884,7 +884,7 @@ class Person implements ModelInterface, ArrayAccess
     /**
      * Sets mailing_lists
      *
-     * @param \Swagger\Client\Model\PersonMailingList[] $mailing_lists mailing_lists
+     * @param \Paqtcom\Simplicate\Model\PersonMailingList[] $mailing_lists mailing_lists
      *
      * @return $this
      */

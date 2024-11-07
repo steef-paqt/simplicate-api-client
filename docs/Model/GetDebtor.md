@@ -4,7 +4,7 @@
 
  Name                                      | Type                                                          | Description     | Notes      
 -------------------------------------------|---------------------------------------------------------------|-----------------|------------
- **payment_term**                          | [**\Swagger\Client\Model\GetPaymentTerm**](GetPaymentTerm.md) |                 | [optional] 
+ **payment_term**                          | [**\Paqtcom\Simplicate\Model\GetPaymentTerm**](GetPaymentTerm.md) |                 | [optional] 
  **provision_method**                      | **string**                                                    |                 | [optional] 
  **send_invoice_email_to_contact**         | **bool**                                                      |                 | [optional] 
  **provision_contactperson_id**            | **string**                                                    | See /crm/person | [optional] 

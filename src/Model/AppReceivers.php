@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * AppReceivers Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class AppReceivers implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'type' => 'string',
-        'channels' => '\Swagger\Client\Model\AppReceiverSetting[]',
+        'channels' => '\Paqtcom\Simplicate\Model\AppReceiverSetting[]',
     ];
 
     /**
@@ -233,7 +233,7 @@ class AppReceivers implements ModelInterface, ArrayAccess
     /**
      * Gets channels
      *
-     * @return \Swagger\Client\Model\AppReceiverSetting[]
+     * @return \Paqtcom\Simplicate\Model\AppReceiverSetting[]
      */
     public function getChannels()
     {
@@ -243,7 +243,7 @@ class AppReceivers implements ModelInterface, ArrayAccess
     /**
      * Sets channels
      *
-     * @param \Swagger\Client\Model\AppReceiverSetting[] $channels channels
+     * @param \Paqtcom\Simplicate\Model\AppReceiverSetting[] $channels channels
      *
      * @return $this
      */

@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * PostProject Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -60,10 +60,10 @@ class PostProject implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'project_manager_id' => 'string',
         'project_status_id' => 'string',
-        'separate_invoice_recipient' => '\Swagger\Client\Model\PostSeparateInvoiceRecipient',
+        'separate_invoice_recipient' => '\Paqtcom\Simplicate\Model\PostSeparateInvoiceRecipient',
         'divergent_payment_term_id' => 'string',
-        'teams' => '\Swagger\Client\Model\PostTeam[]',
-        'custom_fields' => '\Swagger\Client\Model\PostCustomFieldValue[]',
+        'teams' => '\Paqtcom\Simplicate\Model\PostTeam[]',
+        'custom_fields' => '\Paqtcom\Simplicate\Model\PostCustomFieldValue[]',
         'my_organization_profile_id' => 'string',
         'person_id' => 'string',
         'organization_id' => 'string',
@@ -353,7 +353,7 @@ class PostProject implements ModelInterface, ArrayAccess
     /**
      * Gets separate_invoice_recipient
      *
-     * @return \Swagger\Client\Model\PostSeparateInvoiceRecipient
+     * @return \Paqtcom\Simplicate\Model\PostSeparateInvoiceRecipient
      */
     public function getSeparateInvoiceRecipient()
     {
@@ -363,7 +363,7 @@ class PostProject implements ModelInterface, ArrayAccess
     /**
      * Sets separate_invoice_recipient
      *
-     * @param \Swagger\Client\Model\PostSeparateInvoiceRecipient $separate_invoice_recipient separate_invoice_recipient
+     * @param \Paqtcom\Simplicate\Model\PostSeparateInvoiceRecipient $separate_invoice_recipient separate_invoice_recipient
      *
      * @return $this
      */
@@ -401,7 +401,7 @@ class PostProject implements ModelInterface, ArrayAccess
     /**
      * Gets teams
      *
-     * @return \Swagger\Client\Model\PostTeam[]
+     * @return \Paqtcom\Simplicate\Model\PostTeam[]
      */
     public function getTeams()
     {
@@ -411,7 +411,7 @@ class PostProject implements ModelInterface, ArrayAccess
     /**
      * Sets teams
      *
-     * @param \Swagger\Client\Model\PostTeam[] $teams See /hrm/team
+     * @param \Paqtcom\Simplicate\Model\PostTeam[] $teams See /hrm/team
      *
      * @return $this
      */
@@ -425,7 +425,7 @@ class PostProject implements ModelInterface, ArrayAccess
     /**
      * Gets custom_fields
      *
-     * @return \Swagger\Client\Model\PostCustomFieldValue[]
+     * @return \Paqtcom\Simplicate\Model\PostCustomFieldValue[]
      */
     public function getCustomFields()
     {
@@ -435,7 +435,7 @@ class PostProject implements ModelInterface, ArrayAccess
     /**
      * Sets custom_fields
      *
-     * @param \Swagger\Client\Model\PostCustomFieldValue[] $custom_fields custom_fields
+     * @param \Paqtcom\Simplicate\Model\PostCustomFieldValue[] $custom_fields custom_fields
      *
      * @return $this
      */

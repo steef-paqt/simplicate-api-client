@@ -4,7 +4,7 @@
 
  Name            | Type                                                            | Description | Notes                                               
 -----------------|-----------------------------------------------------------------|-------------|-----------------------------------------------------
- **employees**   | [**\Swagger\Client\Model\PostEmployeeFk[]**](PostEmployeeFk.md) |             | [optional]                                          
+ **employees**   | [**\Paqtcom\Simplicate\Model\PostEmployeeFk[]**](PostEmployeeFk.md) |             | [optional]                                          
  **status_id**   | **string**                                                      |             | [optional] [default to 'assignmentstatus:abc']      
  **name**        | **string**                                                      |             | [optional] [default to 'Website Design Assignment'] 
  **use_spread**  | **bool**                                                        |             | [optional]                                          

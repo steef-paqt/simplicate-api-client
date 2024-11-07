@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * ReverseInvoice Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -63,8 +63,8 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
         'date' => 'string',
         'invoice_number' => 'string',
         'price' => 'float',
-        'project' => '\Swagger\Client\Model\GetProjectSimple',
-        'invoice' => '\Swagger\Client\Model\GetInvoiceSimple',
+        'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
+        'invoice' => '\Paqtcom\Simplicate\Model\GetInvoiceSimple',
     ];
 
     /**
@@ -394,7 +394,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
     /**
      * Gets project
      *
-     * @return \Swagger\Client\Model\GetProjectSimple
+     * @return \Paqtcom\Simplicate\Model\GetProjectSimple
      */
     public function getProject()
     {
@@ -404,7 +404,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
     /**
      * Sets project
      *
-     * @param \Swagger\Client\Model\GetProjectSimple $project project
+     * @param \Paqtcom\Simplicate\Model\GetProjectSimple $project project
      *
      * @return $this
      */
@@ -418,7 +418,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
     /**
      * Gets invoice
      *
-     * @return \Swagger\Client\Model\GetInvoiceSimple
+     * @return \Paqtcom\Simplicate\Model\GetInvoiceSimple
      */
     public function getInvoice()
     {
@@ -428,7 +428,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
     /**
      * Sets invoice
      *
-     * @param \Swagger\Client\Model\GetInvoiceSimple $invoice invoice
+     * @param \Paqtcom\Simplicate\Model\GetInvoiceSimple $invoice invoice
      *
      * @return $this
      */

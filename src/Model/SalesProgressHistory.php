@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * SalesProgressHistory Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,9 +61,9 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
         'id' => 'string',
         'sales' => 'object',
         'sales_id' => 'string',
-        'from_sales_progress' => '\Swagger\Client\Model\SalesProgress',
+        'from_sales_progress' => '\Paqtcom\Simplicate\Model\SalesProgress',
         'from_sales_progress_id' => 'string',
-        'to_sales_progress' => '\Swagger\Client\Model\SalesProgress',
+        'to_sales_progress' => '\Paqtcom\Simplicate\Model\SalesProgress',
         'to_sales_progress_id' => 'string',
         'date' => 'string',
     ];
@@ -317,7 +317,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
     /**
      * Gets from_sales_progress
      *
-     * @return \Swagger\Client\Model\SalesProgress
+     * @return \Paqtcom\Simplicate\Model\SalesProgress
      */
     public function getFromSalesProgress()
     {
@@ -327,7 +327,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
     /**
      * Sets from_sales_progress
      *
-     * @param \Swagger\Client\Model\SalesProgress $from_sales_progress from_sales_progress
+     * @param \Paqtcom\Simplicate\Model\SalesProgress $from_sales_progress from_sales_progress
      *
      * @return $this
      */
@@ -365,7 +365,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
     /**
      * Gets to_sales_progress
      *
-     * @return \Swagger\Client\Model\SalesProgress
+     * @return \Paqtcom\Simplicate\Model\SalesProgress
      */
     public function getToSalesProgress()
     {
@@ -375,7 +375,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
     /**
      * Sets to_sales_progress
      *
-     * @param \Swagger\Client\Model\SalesProgress $to_sales_progress to_sales_progress
+     * @param \Paqtcom\Simplicate\Model\SalesProgress $to_sales_progress to_sales_progress
      *
      * @return $this
      */

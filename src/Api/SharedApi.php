@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Paqtcom\Simplicate\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ApiException;
+use Paqtcom\Simplicate\Configuration;
+use Paqtcom\Simplicate\HeaderSelector;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * SharedApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -97,9 +97,9 @@ class SharedApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSharedItems
+     * @return \Paqtcom\Simplicate\Model\RestResultSharedItems
      */
     public function sharedItemGet($offset = null, $limit = '5', $sort = null)
     {
@@ -117,13 +117,13 @@ class SharedApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSharedItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSharedItems, HTTP status code, HTTP response headers (array of strings)
      */
     public function sharedItemGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSharedItems';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSharedItems';
         $request = $this->sharedItemGetRequest($offset, $limit, $sort);
 
         try {
@@ -174,7 +174,7 @@ class SharedApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSharedItems',
+                        '\Paqtcom\Simplicate\Model\RestResultSharedItems',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +220,7 @@ class SharedApi
      */
     public function sharedItemGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSharedItems';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSharedItems';
         $request = $this->sharedItemGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -368,7 +368,7 @@ class SharedApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -384,7 +384,7 @@ class SharedApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -596,9 +596,9 @@ class SharedApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultSharedItem
+     * @return \Paqtcom\Simplicate\Model\RestResultSharedItem
      */
     public function sharedItemIdGet($id)
     {
@@ -614,13 +614,13 @@ class SharedApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultSharedItem, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultSharedItem, HTTP status code, HTTP response headers (array of strings)
      */
     public function sharedItemIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSharedItem';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSharedItem';
         $request = $this->sharedItemIdGetRequest($id);
 
         try {
@@ -671,7 +671,7 @@ class SharedApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultSharedItem',
+                        '\Paqtcom\Simplicate\Model\RestResultSharedItem',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -713,7 +713,7 @@ class SharedApi
      */
     public function sharedItemIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultSharedItem';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultSharedItem';
         $request = $this->sharedItemIdGetRequest($id);
 
         return $this->client
@@ -861,9 +861,9 @@ class SharedApi
      * Updates an existing shared item
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSharedItem $body Shared item object that with the data that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSharedItem $body Shared item object that with the data that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -878,9 +878,9 @@ class SharedApi
      * Updates an existing shared item
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSharedItem $body Shared item object that with the data that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSharedItem $body Shared item object that with the data that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -931,7 +931,7 @@ class SharedApi
      * Updates an existing shared item
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSharedItem $body Shared item object that with the data that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSharedItem $body Shared item object that with the data that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -952,7 +952,7 @@ class SharedApi
      * Updates an existing shared item
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSharedItem $body Shared item object that with the data that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSharedItem $body Shared item object that with the data that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -989,7 +989,7 @@ class SharedApi
      * Create request for operation 'sharedItemIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostSharedItem $body Shared item object that with the data that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSharedItem $body Shared item object that with the data that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1102,9 +1102,9 @@ class SharedApi
      *
      * Add a new shared item
      *
-     * @param  \Swagger\Client\Model\PostSharedItem $body Item object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSharedItem $body Item object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1118,9 +1118,9 @@ class SharedApi
      *
      * Add a new shared item
      *
-     * @param  \Swagger\Client\Model\PostSharedItem $body Item object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSharedItem $body Item object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1170,7 +1170,7 @@ class SharedApi
      *
      * Add a new shared item
      *
-     * @param  \Swagger\Client\Model\PostSharedItem $body Item object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSharedItem $body Item object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1190,7 +1190,7 @@ class SharedApi
      *
      * Add a new shared item
      *
-     * @param  \Swagger\Client\Model\PostSharedItem $body Item object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSharedItem $body Item object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1226,7 +1226,7 @@ class SharedApi
     /**
      * Create request for operation 'sharedItemPost'
      *
-     * @param  \Swagger\Client\Model\PostSharedItem $body Item object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSharedItem $body Item object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

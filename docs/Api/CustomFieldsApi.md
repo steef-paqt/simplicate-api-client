@@ -1,4 +1,4 @@
-# Swagger\Client\CustomFieldsApi
+# Paqtcom\Simplicate\CustomFieldsApi
 
 All URIs are relative to *http://localhost/api/v2*
 
@@ -21,7 +21,7 @@ All URIs are relative to *http://localhost/api/v2*
 
 # **customfieldsGroupGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldGroups customfieldsGroupGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups customfieldsGroupGet($offset, $limit, $sort)
 
 Fetches all custom field groups
 
@@ -31,7 +31,7 @@ Fetches all custom field groups
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CustomFieldsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -59,7 +59,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldGroups**](../Model/RestResultCustomFieldGroups.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups**](../Model/RestResultCustomFieldGroups.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ Deletes the customfield group for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CustomFieldsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -122,7 +122,7 @@ No authorization required
 
 # **customfieldsGroupIdGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldGroup customfieldsGroupIdGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup customfieldsGroupIdGet($offset, $limit, $sort)
 
 Fetches single custom field group
 
@@ -132,7 +132,7 @@ Fetches single custom field group
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CustomFieldsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -160,7 +160,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldGroup**](../Model/RestResultCustomFieldGroup.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup**](../Model/RestResultCustomFieldGroup.md)
 
 ### Authorization
 
@@ -185,13 +185,13 @@ Updates an group for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CustomFieldsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\CustomFieldGroup(); // \Swagger\Client\Model\CustomFieldGroup | Organization object containing data that with the new values
+$body = new \Paqtcom\Simplicate\Model\CustomFieldGroup(); // \Paqtcom\Simplicate\Model\CustomFieldGroup | Organization object containing data that with the new values
 
 try {
     $apiInstance->customfieldsGroupIdPost($id, $body);
@@ -206,7 +206,7 @@ try {
  Name     | Type                                                                       | Description                                                  | Notes 
 ----------|----------------------------------------------------------------------------|--------------------------------------------------------------|-------
  **id**   | **string**                                                                 | The template&#39;s id                                        |
- **body** | [**\Swagger\Client\Model\CustomFieldGroup**](../Model/CustomFieldGroup.md) | Organization object containing data that with the new values |
+ **body** | [**\Paqtcom\Simplicate\Model\CustomFieldGroup**](../Model/CustomFieldGroup.md) | Organization object containing data that with the new values |
 
 ### Return type
 
@@ -235,13 +235,13 @@ Updates an group for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CustomFieldsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\CustomFieldGroup(); // \Swagger\Client\Model\CustomFieldGroup | Organization object containing data that with the new values
+$body = new \Paqtcom\Simplicate\Model\CustomFieldGroup(); // \Paqtcom\Simplicate\Model\CustomFieldGroup | Organization object containing data that with the new values
 
 try {
     $apiInstance->customfieldsGroupIdPut($id, $body);
@@ -256,7 +256,7 @@ try {
  Name     | Type                                                                       | Description                                                  | Notes 
 ----------|----------------------------------------------------------------------------|--------------------------------------------------------------|-------
  **id**   | **string**                                                                 | The template&#39;s id                                        |
- **body** | [**\Swagger\Client\Model\CustomFieldGroup**](../Model/CustomFieldGroup.md) | Organization object containing data that with the new values |
+ **body** | [**\Paqtcom\Simplicate\Model\CustomFieldGroup**](../Model/CustomFieldGroup.md) | Organization object containing data that with the new values |
 
 ### Return type
 
@@ -275,7 +275,7 @@ No authorization required
 
 # **customfieldsModelGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldModels customfieldsModelGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldModels customfieldsModelGet($offset, $limit, $sort)
 
 Fetches all custom field models
 
@@ -285,7 +285,7 @@ Fetches all custom field models
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CustomFieldsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -313,7 +313,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldModels**](../Model/RestResultCustomFieldModels.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldModels**](../Model/RestResultCustomFieldModels.md)
 
 ### Authorization
 
@@ -328,7 +328,7 @@ No authorization required
 
 # **customfieldsModelIdGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldModel customfieldsModelIdGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldModel customfieldsModelIdGet($offset, $limit, $sort)
 
 Fetches all custom field models
 
@@ -338,7 +338,7 @@ Fetches all custom field models
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CustomFieldsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -366,7 +366,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldModel**](../Model/RestResultCustomFieldModel.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldModel**](../Model/RestResultCustomFieldModel.md)
 
 ### Authorization
 
@@ -381,7 +381,7 @@ No authorization required
 
 # **customfieldsOptionGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldOptions customfieldsOptionGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldOptions customfieldsOptionGet($offset, $limit, $sort)
 
 Fetches all custom field options
 
@@ -391,7 +391,7 @@ Fetches all custom field options
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CustomFieldsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -419,7 +419,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldOptions**](../Model/RestResultCustomFieldOptions.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldOptions**](../Model/RestResultCustomFieldOptions.md)
 
 ### Authorization
 
@@ -444,7 +444,7 @@ Deletes the customfield option for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CustomFieldsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -482,7 +482,7 @@ No authorization required
 
 # **customfieldsOptionIdGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldOption customfieldsOptionIdGet($id, $offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldOption customfieldsOptionIdGet($id, $offset, $limit, $sort)
 
 Fetches single custom field option
 
@@ -492,7 +492,7 @@ Fetches single custom field option
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CustomFieldsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -522,7 +522,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldOption**](../Model/RestResultCustomFieldOption.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldOption**](../Model/RestResultCustomFieldOption.md)
 
 ### Authorization
 
@@ -547,12 +547,12 @@ Creates an option
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CustomFieldsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\CustomFieldOption(); // \Swagger\Client\Model\CustomFieldOption | CustomFieldOption object containing data
+$body = new \Paqtcom\Simplicate\Model\CustomFieldOption(); // \Paqtcom\Simplicate\Model\CustomFieldOption | CustomFieldOption object containing data
 
 try {
     $apiInstance->customfieldsOptionIdPost($body);
@@ -566,7 +566,7 @@ try {
 
  Name     | Type                                                                         | Description                              | Notes 
 ----------|------------------------------------------------------------------------------|------------------------------------------|-------
- **body** | [**\Swagger\Client\Model\CustomFieldOption**](../Model/CustomFieldOption.md) | CustomFieldOption object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\CustomFieldOption**](../Model/CustomFieldOption.md) | CustomFieldOption object containing data |
 
 ### Return type
 
@@ -595,13 +595,13 @@ Updates an option
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CustomFieldsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\CustomFieldOption(); // \Swagger\Client\Model\CustomFieldOption | CustomFieldOption object containing data
+$body = new \Paqtcom\Simplicate\Model\CustomFieldOption(); // \Paqtcom\Simplicate\Model\CustomFieldOption | CustomFieldOption object containing data
 
 try {
     $apiInstance->customfieldsOptionIdPut($id, $body);
@@ -616,7 +616,7 @@ try {
  Name     | Type                                                                         | Description                              | Notes 
 ----------|------------------------------------------------------------------------------|------------------------------------------|-------
  **id**   | **string**                                                                   | The template&#39;s id                    |
- **body** | [**\Swagger\Client\Model\CustomFieldOption**](../Model/CustomFieldOption.md) | CustomFieldOption object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\CustomFieldOption**](../Model/CustomFieldOption.md) | CustomFieldOption object containing data |
 
 ### Return type
 
@@ -635,7 +635,7 @@ No authorization required
 
 # **customfieldsTypeGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldTypes customfieldsTypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldTypes customfieldsTypeGet($offset, $limit, $sort)
 
 Fetches all custom field types
 
@@ -645,7 +645,7 @@ Fetches all custom field types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CustomFieldsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -673,7 +673,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldTypes**](../Model/RestResultCustomFieldTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldTypes**](../Model/RestResultCustomFieldTypes.md)
 
 ### Authorization
 
@@ -688,7 +688,7 @@ No authorization required
 
 # **customfieldsTypeIdGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldType customfieldsTypeIdGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldType customfieldsTypeIdGet($offset, $limit, $sort)
 
 Fetches single custom field type
 
@@ -698,7 +698,7 @@ Fetches single custom field type
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CustomFieldsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -726,7 +726,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldType**](../Model/RestResultCustomFieldType.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldType**](../Model/RestResultCustomFieldType.md)
 
 ### Authorization
 

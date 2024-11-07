@@ -4,7 +4,7 @@
 
  Name                 | Type                                                                        | Description | Notes      
 ----------------------|-----------------------------------------------------------------------------|-------------|------------
- **linked_to**        | [**\Swagger\Client\Model\PostDocumentLinkedTo[]**](PostDocumentLinkedTo.md) |             | [optional] 
+ **linked_to**        | [**\Paqtcom\Simplicate\Model\PostDocumentLinkedTo[]**](PostDocumentLinkedTo.md) |             | [optional] 
  **document_type_id** | **string**                                                                  |             | [optional] 
  **upload_queue_id**  | **string**                                                                  |             | [optional] 
  **title**            | **string**                                                                  |             | [optional] 

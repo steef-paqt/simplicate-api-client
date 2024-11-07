@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * Attachment Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class Attachment implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'attachment_type' => '\Swagger\Client\Model\AttachmentType',
+        'attachment_type' => '\Paqtcom\Simplicate\Model\AttachmentType',
         'title' => 'string',
         'document_id' => 'string',
         'download_link' => 'string',
@@ -251,7 +251,7 @@ class Attachment implements ModelInterface, ArrayAccess
     /**
      * Gets attachment_type
      *
-     * @return \Swagger\Client\Model\AttachmentType
+     * @return \Paqtcom\Simplicate\Model\AttachmentType
      */
     public function getAttachmentType()
     {
@@ -261,7 +261,7 @@ class Attachment implements ModelInterface, ArrayAccess
     /**
      * Sets attachment_type
      *
-     * @param \Swagger\Client\Model\AttachmentType $attachment_type attachment_type
+     * @param \Paqtcom\Simplicate\Model\AttachmentType $attachment_type attachment_type
      *
      * @return $this
      */

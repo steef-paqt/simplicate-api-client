@@ -4,8 +4,8 @@
 
  Name         | Type                                              | Description | Notes      
 --------------|---------------------------------------------------|-------------|------------
- **data**     | [**\Swagger\Client\Model\Cache**](Cache.md)       |             | [optional] 
- **metadata** | [**\Swagger\Client\Model\MetaData**](MetaData.md) |             | [optional] 
+ **data**     | [**\Paqtcom\Simplicate\Model\Cache**](Cache.md)       |             | [optional] 
+ **metadata** | [**\Paqtcom\Simplicate\Model\MetaData**](MetaData.md) |             | [optional] 
  **errors**   | **object[]**                                      |             | [optional] 
  **debug**    | **object[]**                                      |             | [optional] 
 

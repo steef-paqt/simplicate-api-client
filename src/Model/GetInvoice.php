@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetInvoice Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -60,25 +60,25 @@ class GetInvoice implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'contact_id' => 'string',
-        'payment_term' => '\Swagger\Client\Model\PaymentTerm',
-        'invoice_lines' => '\Swagger\Client\Model\GetInvoiceLine[]',
+        'payment_term' => '\Paqtcom\Simplicate\Model\PaymentTerm',
+        'invoice_lines' => '\Paqtcom\Simplicate\Model\GetInvoiceLine[]',
         'invoice_number' => 'string',
         'status' => 'string',
         'total_excluding_vat' => 'float',
         'total_vat' => 'float',
         'total_including_vat' => 'float',
         'total_outstanding' => 'float',
-        'organization' => '\Swagger\Client\Model\GetOrganizationSimple',
-        'person' => '\Swagger\Client\Model\GetPersonSimple',
-        'my_organization_profile' => '\Swagger\Client\Model\GetMyOrganizationProfileSimple',
-        'subscription_cycle' => '\Swagger\Client\Model\SubscriptionCycle',
-        'project' => '\Swagger\Client\Model\GetProjectSimple',
-        'projects' => '\Swagger\Client\Model\GetProjectSimple[]',
+        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
+        'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
+        'my_organization_profile' => '\Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple',
+        'subscription_cycle' => '\Paqtcom\Simplicate\Model\SubscriptionCycle',
+        'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
+        'projects' => '\Paqtcom\Simplicate\Model\GetProjectSimple[]',
         'sending_method' => 'string',
         'created_at' => 'string',
         'updated_at' => 'string',
         'simplicate_url' => 'string',
-        'reminder' => '\Swagger\Client\Model\GetInvoiceReminder',
+        'reminder' => '\Paqtcom\Simplicate\Model\GetInvoiceReminder',
         'composition_type' => 'string',
         'my_organization_profile_id' => 'string',
         'organization_id' => 'string',
@@ -499,7 +499,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Gets payment_term
      *
-     * @return \Swagger\Client\Model\PaymentTerm
+     * @return \Paqtcom\Simplicate\Model\PaymentTerm
      */
     public function getPaymentTerm()
     {
@@ -509,7 +509,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Sets payment_term
      *
-     * @param \Swagger\Client\Model\PaymentTerm $payment_term payment_term
+     * @param \Paqtcom\Simplicate\Model\PaymentTerm $payment_term payment_term
      *
      * @return $this
      */
@@ -523,7 +523,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Gets invoice_lines
      *
-     * @return \Swagger\Client\Model\GetInvoiceLine[]
+     * @return \Paqtcom\Simplicate\Model\GetInvoiceLine[]
      */
     public function getInvoiceLines()
     {
@@ -533,7 +533,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Sets invoice_lines
      *
-     * @param \Swagger\Client\Model\GetInvoiceLine[] $invoice_lines invoice_lines
+     * @param \Paqtcom\Simplicate\Model\GetInvoiceLine[] $invoice_lines invoice_lines
      *
      * @return $this
      */
@@ -700,7 +700,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Gets organization
      *
-     * @return \Swagger\Client\Model\GetOrganizationSimple
+     * @return \Paqtcom\Simplicate\Model\GetOrganizationSimple
      */
     public function getOrganization()
     {
@@ -710,7 +710,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Sets organization
      *
-     * @param \Swagger\Client\Model\GetOrganizationSimple $organization organization
+     * @param \Paqtcom\Simplicate\Model\GetOrganizationSimple $organization organization
      *
      * @return $this
      */
@@ -724,7 +724,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Gets person
      *
-     * @return \Swagger\Client\Model\GetPersonSimple
+     * @return \Paqtcom\Simplicate\Model\GetPersonSimple
      */
     public function getPerson()
     {
@@ -734,7 +734,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Sets person
      *
-     * @param \Swagger\Client\Model\GetPersonSimple $person person
+     * @param \Paqtcom\Simplicate\Model\GetPersonSimple $person person
      *
      * @return $this
      */
@@ -748,7 +748,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Gets my_organization_profile
      *
-     * @return \Swagger\Client\Model\GetMyOrganizationProfileSimple
+     * @return \Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple
      */
     public function getMyOrganizationProfile()
     {
@@ -758,7 +758,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Sets my_organization_profile
      *
-     * @param \Swagger\Client\Model\GetMyOrganizationProfileSimple $my_organization_profile my_organization_profile
+     * @param \Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple $my_organization_profile my_organization_profile
      *
      * @return $this
      */
@@ -772,7 +772,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Gets subscription_cycle
      *
-     * @return \Swagger\Client\Model\SubscriptionCycle
+     * @return \Paqtcom\Simplicate\Model\SubscriptionCycle
      */
     public function getSubscriptionCycle()
     {
@@ -782,7 +782,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Sets subscription_cycle
      *
-     * @param \Swagger\Client\Model\SubscriptionCycle $subscription_cycle subscription_cycle
+     * @param \Paqtcom\Simplicate\Model\SubscriptionCycle $subscription_cycle subscription_cycle
      *
      * @return $this
      */
@@ -796,7 +796,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Gets project
      *
-     * @return \Swagger\Client\Model\GetProjectSimple
+     * @return \Paqtcom\Simplicate\Model\GetProjectSimple
      */
     public function getProject()
     {
@@ -806,7 +806,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Sets project
      *
-     * @param \Swagger\Client\Model\GetProjectSimple $project project
+     * @param \Paqtcom\Simplicate\Model\GetProjectSimple $project project
      *
      * @return $this
      */
@@ -820,7 +820,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Gets projects
      *
-     * @return \Swagger\Client\Model\GetProjectSimple[]
+     * @return \Paqtcom\Simplicate\Model\GetProjectSimple[]
      */
     public function getProjects()
     {
@@ -830,7 +830,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Sets projects
      *
-     * @param \Swagger\Client\Model\GetProjectSimple[] $projects projects
+     * @param \Paqtcom\Simplicate\Model\GetProjectSimple[] $projects projects
      *
      * @return $this
      */
@@ -949,7 +949,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Gets reminder
      *
-     * @return \Swagger\Client\Model\GetInvoiceReminder
+     * @return \Paqtcom\Simplicate\Model\GetInvoiceReminder
      */
     public function getReminder()
     {
@@ -959,7 +959,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     /**
      * Sets reminder
      *
-     * @param \Swagger\Client\Model\GetInvoiceReminder $reminder reminder
+     * @param \Paqtcom\Simplicate\Model\GetInvoiceReminder $reminder reminder
      *
      * @return $this
      */

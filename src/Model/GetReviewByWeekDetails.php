@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetReviewByWeekDetails Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'employee' => '\Swagger\Client\Model\GetEmployeeSimple',
+        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
         'start_date' => 'string',
         'end_date' => 'string',
         'status_id' => 'string',
@@ -305,7 +305,7 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
     /**
      * Gets employee
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple
      */
     public function getEmployee()
     {
@@ -315,7 +315,7 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
     /**
      * Sets employee
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple $employee employee
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple $employee employee
      *
      * @return $this
      */

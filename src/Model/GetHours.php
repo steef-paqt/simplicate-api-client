@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetHours Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,27 +59,27 @@ class GetHours implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'employee' => '\Swagger\Client\Model\GetEmployeeSimple',
-        'project' => '\Swagger\Client\Model\GetProjectSimple',
-        'projectservice' => '\Swagger\Client\Model\GetHoursHoursProjectService',
+        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
+        'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
+        'projectservice' => '\Paqtcom\Simplicate\Model\GetHoursHoursProjectService',
         'type' => 'object',
-        'approvalstatus' => '\Swagger\Client\Model\GetApprovalStatus',
+        'approvalstatus' => '\Paqtcom\Simplicate\Model\GetApprovalStatus',
         'invoice_status' => 'string',
         'invoice_id' => 'string',
         'invoiceline_id' => 'string',
         'tariff' => 'float',
-        'custom_fields' => '\Swagger\Client\Model\GetCustomField[]',
+        'custom_fields' => '\Paqtcom\Simplicate\Model\GetCustomField[]',
         'created_at' => 'string',
         'updated_at' => 'string',
         'locked' => 'bool',
-        'is_editable' => '\Swagger\Client\Model\IsSatisfied',
-        'is_deletable' => '\Swagger\Client\Model\IsSatisfied',
-        'leave_status' => '\Swagger\Client\Model\LeaveStatus',
+        'is_editable' => '\Paqtcom\Simplicate\Model\IsSatisfied',
+        'is_deletable' => '\Paqtcom\Simplicate\Model\IsSatisfied',
+        'leave_status' => '\Paqtcom\Simplicate\Model\LeaveStatus',
         'leave_id' => 'string',
         'absence_id' => 'string',
         'status' => 'string',
-        'corrections' => '\Swagger\Client\Model\Correction',
-        'mileage' => '\Swagger\Client\Model\GetMileageSimple',
+        'corrections' => '\Paqtcom\Simplicate\Model\Correction',
+        'mileage' => '\Paqtcom\Simplicate\Model\GetMileageSimple',
         'is_productive' => 'bool',
         'hours' => 'float',
         'duration_in_minutes' => 'int',
@@ -87,11 +87,11 @@ class GetHours implements ModelInterface, ArrayAccess
         'end_date' => 'string',
         'is_time_defined' => 'bool',
         'is_recurring' => 'bool',
-        'recurrence' => '\Swagger\Client\Model\Recurrence',
+        'recurrence' => '\Paqtcom\Simplicate\Model\Recurrence',
         'is_external' => 'bool',
         'billable' => 'bool',
         'note' => 'string',
-        'address' => '\Swagger\Client\Model\Address',
+        'address' => '\Paqtcom\Simplicate\Model\Address',
         'assignment_id' => 'string',
         'should_sync_to_cronofy' => 'bool',
         'source' => 'string',
@@ -494,7 +494,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Gets employee
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple
      */
     public function getEmployee()
     {
@@ -504,7 +504,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Sets employee
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple $employee employee
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple $employee employee
      *
      * @return $this
      */
@@ -518,7 +518,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Gets project
      *
-     * @return \Swagger\Client\Model\GetProjectSimple
+     * @return \Paqtcom\Simplicate\Model\GetProjectSimple
      */
     public function getProject()
     {
@@ -528,7 +528,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Sets project
      *
-     * @param \Swagger\Client\Model\GetProjectSimple $project project
+     * @param \Paqtcom\Simplicate\Model\GetProjectSimple $project project
      *
      * @return $this
      */
@@ -542,7 +542,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Gets projectservice
      *
-     * @return \Swagger\Client\Model\GetHoursHoursProjectService
+     * @return \Paqtcom\Simplicate\Model\GetHoursHoursProjectService
      */
     public function getProjectservice()
     {
@@ -552,7 +552,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Sets projectservice
      *
-     * @param \Swagger\Client\Model\GetHoursHoursProjectService $projectservice projectservice
+     * @param \Paqtcom\Simplicate\Model\GetHoursHoursProjectService $projectservice projectservice
      *
      * @return $this
      */
@@ -590,7 +590,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Gets approvalstatus
      *
-     * @return \Swagger\Client\Model\GetApprovalStatus
+     * @return \Paqtcom\Simplicate\Model\GetApprovalStatus
      */
     public function getApprovalstatus()
     {
@@ -600,7 +600,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Sets approvalstatus
      *
-     * @param \Swagger\Client\Model\GetApprovalStatus $approvalstatus approvalstatus
+     * @param \Paqtcom\Simplicate\Model\GetApprovalStatus $approvalstatus approvalstatus
      *
      * @return $this
      */
@@ -719,7 +719,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Gets custom_fields
      *
-     * @return \Swagger\Client\Model\GetCustomField[]
+     * @return \Paqtcom\Simplicate\Model\GetCustomField[]
      */
     public function getCustomFields()
     {
@@ -729,7 +729,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Sets custom_fields
      *
-     * @param \Swagger\Client\Model\GetCustomField[] $custom_fields custom_fields
+     * @param \Paqtcom\Simplicate\Model\GetCustomField[] $custom_fields custom_fields
      *
      * @return $this
      */
@@ -815,7 +815,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Gets is_editable
      *
-     * @return \Swagger\Client\Model\IsSatisfied
+     * @return \Paqtcom\Simplicate\Model\IsSatisfied
      */
     public function getIsEditable()
     {
@@ -825,7 +825,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Sets is_editable
      *
-     * @param \Swagger\Client\Model\IsSatisfied $is_editable is_editable
+     * @param \Paqtcom\Simplicate\Model\IsSatisfied $is_editable is_editable
      *
      * @return $this
      */
@@ -839,7 +839,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Gets is_deletable
      *
-     * @return \Swagger\Client\Model\IsSatisfied
+     * @return \Paqtcom\Simplicate\Model\IsSatisfied
      */
     public function getIsDeletable()
     {
@@ -849,7 +849,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Sets is_deletable
      *
-     * @param \Swagger\Client\Model\IsSatisfied $is_deletable is_deletable
+     * @param \Paqtcom\Simplicate\Model\IsSatisfied $is_deletable is_deletable
      *
      * @return $this
      */
@@ -863,7 +863,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Gets leave_status
      *
-     * @return \Swagger\Client\Model\LeaveStatus
+     * @return \Paqtcom\Simplicate\Model\LeaveStatus
      */
     public function getLeaveStatus()
     {
@@ -873,7 +873,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Sets leave_status
      *
-     * @param \Swagger\Client\Model\LeaveStatus $leave_status leave_status
+     * @param \Paqtcom\Simplicate\Model\LeaveStatus $leave_status leave_status
      *
      * @return $this
      */
@@ -959,7 +959,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Gets corrections
      *
-     * @return \Swagger\Client\Model\Correction
+     * @return \Paqtcom\Simplicate\Model\Correction
      */
     public function getCorrections()
     {
@@ -969,7 +969,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Sets corrections
      *
-     * @param \Swagger\Client\Model\Correction $corrections corrections
+     * @param \Paqtcom\Simplicate\Model\Correction $corrections corrections
      *
      * @return $this
      */
@@ -983,7 +983,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Gets mileage
      *
-     * @return \Swagger\Client\Model\GetMileageSimple
+     * @return \Paqtcom\Simplicate\Model\GetMileageSimple
      */
     public function getMileage()
     {
@@ -993,7 +993,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Sets mileage
      *
-     * @param \Swagger\Client\Model\GetMileageSimple $mileage mileage
+     * @param \Paqtcom\Simplicate\Model\GetMileageSimple $mileage mileage
      *
      * @return $this
      */
@@ -1175,7 +1175,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Gets recurrence
      *
-     * @return \Swagger\Client\Model\Recurrence
+     * @return \Paqtcom\Simplicate\Model\Recurrence
      */
     public function getRecurrence()
     {
@@ -1185,7 +1185,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Sets recurrence
      *
-     * @param \Swagger\Client\Model\Recurrence $recurrence recurrence
+     * @param \Paqtcom\Simplicate\Model\Recurrence $recurrence recurrence
      *
      * @return $this
      */
@@ -1271,7 +1271,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \Swagger\Client\Model\Address
+     * @return \Paqtcom\Simplicate\Model\Address
      */
     public function getAddress()
     {
@@ -1281,7 +1281,7 @@ class GetHours implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \Swagger\Client\Model\Address $address address
+     * @param \Paqtcom\Simplicate\Model\Address $address address
      *
      * @return $this
      */

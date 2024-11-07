@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Paqtcom\Simplicate\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ApiException;
+use Paqtcom\Simplicate\Configuration;
+use Paqtcom\Simplicate\HeaderSelector;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * ServicesApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -97,9 +97,9 @@ class ServicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDefaultServices
+     * @return \Paqtcom\Simplicate\Model\RestResultDefaultServices
      */
     public function servicesDefaultserviceGet($offset = null, $limit = '5', $sort = null)
     {
@@ -117,13 +117,13 @@ class ServicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDefaultServices, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDefaultServices, HTTP status code, HTTP response headers (array of strings)
      */
     public function servicesDefaultserviceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDefaultServices';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDefaultServices';
         $request = $this->servicesDefaultserviceGetRequest($offset, $limit, $sort);
 
         try {
@@ -174,7 +174,7 @@ class ServicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDefaultServices',
+                        '\Paqtcom\Simplicate\Model\RestResultDefaultServices',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +220,7 @@ class ServicesApi
      */
     public function servicesDefaultserviceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDefaultServices';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDefaultServices';
         $request = $this->servicesDefaultserviceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -368,7 +368,7 @@ class ServicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -384,7 +384,7 @@ class ServicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -596,9 +596,9 @@ class ServicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDefaultService
+     * @return \Paqtcom\Simplicate\Model\RestResultDefaultService
      */
     public function servicesDefaultserviceIdGet($id)
     {
@@ -614,13 +614,13 @@ class ServicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDefaultService, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDefaultService, HTTP status code, HTTP response headers (array of strings)
      */
     public function servicesDefaultserviceIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDefaultService';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDefaultService';
         $request = $this->servicesDefaultserviceIdGetRequest($id);
 
         try {
@@ -671,7 +671,7 @@ class ServicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDefaultService',
+                        '\Paqtcom\Simplicate\Model\RestResultDefaultService',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -713,7 +713,7 @@ class ServicesApi
      */
     public function servicesDefaultserviceIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDefaultService';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDefaultService';
         $request = $this->servicesDefaultserviceIdGetRequest($id);
 
         return $this->client
@@ -861,9 +861,9 @@ class ServicesApi
      * Updates a default service for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostDefaultService $body default service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDefaultService $body default service object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -878,9 +878,9 @@ class ServicesApi
      * Updates a default service for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostDefaultService $body default service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDefaultService $body default service object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -931,7 +931,7 @@ class ServicesApi
      * Updates a default service for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostDefaultService $body default service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDefaultService $body default service object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -952,7 +952,7 @@ class ServicesApi
      * Updates a default service for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostDefaultService $body default service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDefaultService $body default service object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -989,7 +989,7 @@ class ServicesApi
      * Create request for operation 'servicesDefaultserviceIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostDefaultService $body default service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDefaultService $body default service object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1102,9 +1102,9 @@ class ServicesApi
      *
      * Add a new default service
      *
-     * @param  \Swagger\Client\Model\PostDefaultService $body Default service object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDefaultService $body Default service object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1118,9 +1118,9 @@ class ServicesApi
      *
      * Add a new default service
      *
-     * @param  \Swagger\Client\Model\PostDefaultService $body Default service object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDefaultService $body Default service object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1170,7 +1170,7 @@ class ServicesApi
      *
      * Add a new default service
      *
-     * @param  \Swagger\Client\Model\PostDefaultService $body Default service object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDefaultService $body Default service object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1190,7 +1190,7 @@ class ServicesApi
      *
      * Add a new default service
      *
-     * @param  \Swagger\Client\Model\PostDefaultService $body Default service object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDefaultService $body Default service object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1226,7 +1226,7 @@ class ServicesApi
     /**
      * Create request for operation 'servicesDefaultservicePost'
      *
-     * @param  \Swagger\Client\Model\PostDefaultService $body Default service object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDefaultService $body Default service object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

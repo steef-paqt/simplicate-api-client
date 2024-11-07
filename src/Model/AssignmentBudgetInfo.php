@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * AssignmentBudgetInfo Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,12 +59,12 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'assignments_planned' => '\Swagger\Client\Model\AssignmentBudgetInfoFuturePast',
+        'assignments_planned' => '\Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast',
         'assignments_unplanned' => 'string',
-        'assignments_hours_written' => '\Swagger\Client\Model\AssignmentBudgetInfoFuturePast',
-        'itemtypes_hours_written' => '\Swagger\Client\Model\AssignmentBudgetInfoFuturePast',
-        'assignments_hours_corrections' => '\Swagger\Client\Model\AssignmentBudgetInfoFuturePast',
-        'itemtypes_hours_corrections' => '\Swagger\Client\Model\AssignmentBudgetInfoFuturePast',
+        'assignments_hours_written' => '\Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast',
+        'itemtypes_hours_written' => '\Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast',
+        'assignments_hours_corrections' => '\Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast',
+        'itemtypes_hours_corrections' => '\Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast',
     ];
 
     /**
@@ -263,7 +263,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
     /**
      * Gets assignments_planned
      *
-     * @return \Swagger\Client\Model\AssignmentBudgetInfoFuturePast
+     * @return \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast
      */
     public function getAssignmentsPlanned()
     {
@@ -273,7 +273,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
     /**
      * Sets assignments_planned
      *
-     * @param \Swagger\Client\Model\AssignmentBudgetInfoFuturePast $assignments_planned assignments_planned
+     * @param \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast $assignments_planned assignments_planned
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
     /**
      * Gets assignments_hours_written
      *
-     * @return \Swagger\Client\Model\AssignmentBudgetInfoFuturePast
+     * @return \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast
      */
     public function getAssignmentsHoursWritten()
     {
@@ -321,7 +321,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
     /**
      * Sets assignments_hours_written
      *
-     * @param \Swagger\Client\Model\AssignmentBudgetInfoFuturePast $assignments_hours_written assignments_hours_written
+     * @param \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast $assignments_hours_written assignments_hours_written
      *
      * @return $this
      */
@@ -335,7 +335,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
     /**
      * Gets itemtypes_hours_written
      *
-     * @return \Swagger\Client\Model\AssignmentBudgetInfoFuturePast
+     * @return \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast
      */
     public function getItemtypesHoursWritten()
     {
@@ -345,7 +345,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
     /**
      * Sets itemtypes_hours_written
      *
-     * @param \Swagger\Client\Model\AssignmentBudgetInfoFuturePast $itemtypes_hours_written itemtypes_hours_written
+     * @param \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast $itemtypes_hours_written itemtypes_hours_written
      *
      * @return $this
      */
@@ -359,7 +359,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
     /**
      * Gets assignments_hours_corrections
      *
-     * @return \Swagger\Client\Model\AssignmentBudgetInfoFuturePast
+     * @return \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast
      */
     public function getAssignmentsHoursCorrections()
     {
@@ -369,7 +369,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
     /**
      * Sets assignments_hours_corrections
      *
-     * @param \Swagger\Client\Model\AssignmentBudgetInfoFuturePast $assignments_hours_corrections assignments_hours_corrections
+     * @param \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast $assignments_hours_corrections assignments_hours_corrections
      *
      * @return $this
      */
@@ -383,7 +383,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
     /**
      * Gets itemtypes_hours_corrections
      *
-     * @return \Swagger\Client\Model\AssignmentBudgetInfoFuturePast
+     * @return \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast
      */
     public function getItemtypesHoursCorrections()
     {
@@ -393,7 +393,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
     /**
      * Sets itemtypes_hours_corrections
      *
-     * @param \Swagger\Client\Model\AssignmentBudgetInfoFuturePast $itemtypes_hours_corrections itemtypes_hours_corrections
+     * @param \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast $itemtypes_hours_corrections itemtypes_hours_corrections
      *
      * @return $this
      */

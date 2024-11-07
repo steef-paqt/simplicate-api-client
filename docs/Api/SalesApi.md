@@ -1,4 +1,4 @@
-# Swagger\Client\SalesApi
+# Paqtcom\Simplicate\SalesApi
 
 All URIs are relative to *http://localhost/api/v2*
 
@@ -55,7 +55,7 @@ All URIs are relative to *http://localhost/api/v2*
 
 # **salesConverttoprojectIdGet**
 
-> \Swagger\Client\Model\RestResultSale salesConverttoprojectIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultSale salesConverttoprojectIdGet($id)
 
 Shows if the provided sale id can be converted to a project
 
@@ -65,7 +65,7 @@ Shows if the provided sale id can be converted to a project
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -89,7 +89,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSale**](../Model/RestResultSale.md)
+[**\Paqtcom\Simplicate\Model\RestResultSale**](../Model/RestResultSale.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ No authorization required
 
 # **salesDocumentGet**
 
-> \Swagger\Client\Model\RestResultDocuments salesDocumentGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultDocuments salesDocumentGet($offset, $limit, $sort)
 
 Fetches all available documents for sales
 
@@ -114,7 +114,7 @@ Fetches all available documents for sales
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -142,7 +142,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocuments**](../Model/RestResultDocuments.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocuments**](../Model/RestResultDocuments.md)
 
 ### Authorization
 
@@ -167,7 +167,7 @@ Deletes the document with the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -205,7 +205,7 @@ No authorization required
 
 # **salesDocumentIdGet**
 
-> \Swagger\Client\Model\RestResultDocument salesDocumentIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultDocument salesDocumentIdGet($id)
 
 Fetches a single document for sales by its id
 
@@ -215,7 +215,7 @@ Fetches a single document for sales by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -239,7 +239,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocument**](../Model/RestResultDocument.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocument**](../Model/RestResultDocument.md)
 
 ### Authorization
 
@@ -264,12 +264,12 @@ create a document
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostDocument(); // \Swagger\Client\Model\PostDocument | Document object containing data
+$body = new \Paqtcom\Simplicate\Model\PostDocument(); // \Paqtcom\Simplicate\Model\PostDocument | Document object containing data
 
 try {
     $apiInstance->salesDocumentPost($body);
@@ -283,7 +283,7 @@ try {
 
  Name     | Type                                                               | Description                     | Notes 
 ----------|--------------------------------------------------------------------|---------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostDocument**](../Model/PostDocument.md) | Document object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostDocument**](../Model/PostDocument.md) | Document object containing data |
 
 ### Return type
 
@@ -312,12 +312,12 @@ update a document
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PutDocument(); // \Swagger\Client\Model\PutDocument | Document object containing data
+$body = new \Paqtcom\Simplicate\Model\PutDocument(); // \Paqtcom\Simplicate\Model\PutDocument | Document object containing data
 
 try {
     $apiInstance->salesDocumentPut($body);
@@ -331,7 +331,7 @@ try {
 
  Name     | Type                                                             | Description                     | Notes 
 ----------|------------------------------------------------------------------|---------------------------------|-------
- **body** | [**\Swagger\Client\Model\PutDocument**](../Model/PutDocument.md) | Document object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PutDocument**](../Model/PutDocument.md) | Document object containing data |
 
 ### Return type
 
@@ -350,7 +350,7 @@ No authorization required
 
 # **salesDocumenttypeGet**
 
-> \Swagger\Client\Model\RestResultDocumentTypes salesDocumenttypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultDocumentTypes salesDocumenttypeGet($offset, $limit, $sort)
 
 Fetches all available document types for Sales
 
@@ -360,7 +360,7 @@ Fetches all available document types for Sales
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -388,7 +388,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocumentTypes**](../Model/RestResultDocumentTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocumentTypes**](../Model/RestResultDocumentTypes.md)
 
 ### Authorization
 
@@ -403,7 +403,7 @@ No authorization required
 
 # **salesDocumenttypeIdGet**
 
-> \Swagger\Client\Model\RestResultDocumentType salesDocumenttypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultDocumentType salesDocumenttypeIdGet($id)
 
 Fetches a single document type for Sales by its id
 
@@ -413,7 +413,7 @@ Fetches a single document type for Sales by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -437,7 +437,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocumentType**](../Model/RestResultDocumentType.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocumentType**](../Model/RestResultDocumentType.md)
 
 ### Authorization
 
@@ -452,7 +452,7 @@ No authorization required
 
 # **salesQuoteGet**
 
-> \Swagger\Client\Model\RestResultQuotes salesQuoteGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultQuotes salesQuoteGet($offset, $limit, $sort)
 
 Fetches all available quote templates for sales
 
@@ -462,7 +462,7 @@ Fetches all available quote templates for sales
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -490,7 +490,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultQuotes**](../Model/RestResultQuotes.md)
+[**\Paqtcom\Simplicate\Model\RestResultQuotes**](../Model/RestResultQuotes.md)
 
 ### Authorization
 
@@ -515,7 +515,7 @@ Deletes the quote template with the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -553,7 +553,7 @@ No authorization required
 
 # **salesQuoteIdGet**
 
-> \Swagger\Client\Model\RestResultQuote salesQuoteIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultQuote salesQuoteIdGet($id)
 
 Fetches a single quote template for sales by its id
 
@@ -563,7 +563,7 @@ Fetches a single quote template for sales by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -587,7 +587,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultQuote**](../Model/RestResultQuote.md)
+[**\Paqtcom\Simplicate\Model\RestResultQuote**](../Model/RestResultQuote.md)
 
 ### Authorization
 
@@ -612,13 +612,13 @@ update a quote template
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostQuote(); // \Swagger\Client\Model\PostQuote | Quote template object containing data
+$body = new \Paqtcom\Simplicate\Model\PostQuote(); // \Paqtcom\Simplicate\Model\PostQuote | Quote template object containing data
 
 try {
     $apiInstance->salesQuoteIdPut($id, $body);
@@ -633,7 +633,7 @@ try {
  Name     | Type                                                         | Description                           | Notes 
 ----------|--------------------------------------------------------------|---------------------------------------|-------
  **id**   | **string**                                                   | The template&#39;s id                 |
- **body** | [**\Swagger\Client\Model\PostQuote**](../Model/PostQuote.md) | Quote template object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostQuote**](../Model/PostQuote.md) | Quote template object containing data |
 
 ### Return type
 
@@ -662,12 +662,12 @@ create a quote template
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostQuote(); // \Swagger\Client\Model\PostQuote | Quote template object containing data
+$body = new \Paqtcom\Simplicate\Model\PostQuote(); // \Paqtcom\Simplicate\Model\PostQuote | Quote template object containing data
 
 try {
     $apiInstance->salesQuotePost($body);
@@ -681,7 +681,7 @@ try {
 
  Name     | Type                                                         | Description                           | Notes 
 ----------|--------------------------------------------------------------|---------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostQuote**](../Model/PostQuote.md) | Quote template object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostQuote**](../Model/PostQuote.md) | Quote template object containing data |
 
 ### Return type
 
@@ -710,13 +710,13 @@ append only a single email to the emails collection quote
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PutQuoteEmail(); // \Swagger\Client\Model\PutQuoteEmail | Document object containing data
+$body = new \Paqtcom\Simplicate\Model\PutQuoteEmail(); // \Paqtcom\Simplicate\Model\PutQuoteEmail | Document object containing data
 
 try {
     $apiInstance->salesQuoteemailIdPut($id, $body);
@@ -731,7 +731,7 @@ try {
  Name     | Type                                                                 | Description                     | Notes 
 ----------|----------------------------------------------------------------------|---------------------------------|-------
  **id**   | **string**                                                           | The template&#39;s id           |
- **body** | [**\Swagger\Client\Model\PutQuoteEmail**](../Model/PutQuoteEmail.md) | Document object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PutQuoteEmail**](../Model/PutQuoteEmail.md) | Document object containing data |
 
 ### Return type
 
@@ -750,7 +750,7 @@ No authorization required
 
 # **salesQuotestatusGet**
 
-> \Swagger\Client\Model\RestResultQuoteStatuses salesQuotestatusGet()
+> \Paqtcom\Simplicate\Model\RestResultQuoteStatuses salesQuotestatusGet()
 
 Fetches all quote statuses
 
@@ -760,7 +760,7 @@ Fetches all quote statuses
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -781,7 +781,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultQuoteStatuses**](../Model/RestResultQuoteStatuses.md)
+[**\Paqtcom\Simplicate\Model\RestResultQuoteStatuses**](../Model/RestResultQuoteStatuses.md)
 
 ### Authorization
 
@@ -796,7 +796,7 @@ No authorization required
 
 # **salesQuotestatusIdGet**
 
-> \Swagger\Client\Model\RestResultQuoteStatus salesQuotestatusIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultQuoteStatus salesQuotestatusIdGet($id)
 
 Fetches a single quote status for quotes by its id
 
@@ -806,7 +806,7 @@ Fetches a single quote status for quotes by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -830,7 +830,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultQuoteStatus**](../Model/RestResultQuoteStatus.md)
+[**\Paqtcom\Simplicate\Model\RestResultQuoteStatus**](../Model/RestResultQuoteStatus.md)
 
 ### Authorization
 
@@ -845,7 +845,7 @@ No authorization required
 
 # **salesQuotetemplateGet**
 
-> \Swagger\Client\Model\RestResultQuoteTemplates salesQuotetemplateGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultQuoteTemplates salesQuotetemplateGet($offset, $limit, $sort)
 
 Fetches all available quote templates for sales
 
@@ -855,7 +855,7 @@ Fetches all available quote templates for sales
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -883,7 +883,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultQuoteTemplates**](../Model/RestResultQuoteTemplates.md)
+[**\Paqtcom\Simplicate\Model\RestResultQuoteTemplates**](../Model/RestResultQuoteTemplates.md)
 
 ### Authorization
 
@@ -908,7 +908,7 @@ Deletes the quote template with the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -946,7 +946,7 @@ No authorization required
 
 # **salesQuotetemplateIdGet**
 
-> \Swagger\Client\Model\RestResultQuoteTemplate salesQuotetemplateIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultQuoteTemplate salesQuotetemplateIdGet($id)
 
 Fetches a single quote template for sales by its id
 
@@ -956,7 +956,7 @@ Fetches a single quote template for sales by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -980,7 +980,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultQuoteTemplate**](../Model/RestResultQuoteTemplate.md)
+[**\Paqtcom\Simplicate\Model\RestResultQuoteTemplate**](../Model/RestResultQuoteTemplate.md)
 
 ### Authorization
 
@@ -1005,13 +1005,13 @@ update a quote template
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostQuoteTemplate(); // \Swagger\Client\Model\PostQuoteTemplate | Quote template object containing data
+$body = new \Paqtcom\Simplicate\Model\PostQuoteTemplate(); // \Paqtcom\Simplicate\Model\PostQuoteTemplate | Quote template object containing data
 
 try {
     $apiInstance->salesQuotetemplateIdPut($id, $body);
@@ -1026,7 +1026,7 @@ try {
  Name     | Type                                                                         | Description                           | Notes 
 ----------|------------------------------------------------------------------------------|---------------------------------------|-------
  **id**   | **string**                                                                   | The template&#39;s id                 |
- **body** | [**\Swagger\Client\Model\PostQuoteTemplate**](../Model/PostQuoteTemplate.md) | Quote template object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostQuoteTemplate**](../Model/PostQuoteTemplate.md) | Quote template object containing data |
 
 ### Return type
 
@@ -1055,12 +1055,12 @@ create a quote template
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostQuoteTemplate(); // \Swagger\Client\Model\PostQuoteTemplate | Quote template object containing data
+$body = new \Paqtcom\Simplicate\Model\PostQuoteTemplate(); // \Paqtcom\Simplicate\Model\PostQuoteTemplate | Quote template object containing data
 
 try {
     $apiInstance->salesQuotetemplatePost($body);
@@ -1074,7 +1074,7 @@ try {
 
  Name     | Type                                                                         | Description                           | Notes 
 ----------|------------------------------------------------------------------------------|---------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostQuoteTemplate**](../Model/PostQuoteTemplate.md) | Quote template object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostQuoteTemplate**](../Model/PostQuoteTemplate.md) | Quote template object containing data |
 
 ### Return type
 
@@ -1093,7 +1093,7 @@ No authorization required
 
 # **salesRevenuegroupGet**
 
-> \Swagger\Client\Model\RestResultRevenueGroups salesRevenuegroupGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultRevenueGroups salesRevenuegroupGet($offset, $limit, $sort)
 
 Fetches all revenue groups
 
@@ -1103,7 +1103,7 @@ Fetches all revenue groups
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1131,7 +1131,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultRevenueGroups**](../Model/RestResultRevenueGroups.md)
+[**\Paqtcom\Simplicate\Model\RestResultRevenueGroups**](../Model/RestResultRevenueGroups.md)
 
 ### Authorization
 
@@ -1146,7 +1146,7 @@ No authorization required
 
 # **salesRevenuegroupIdGet**
 
-> \Swagger\Client\Model\RestResultRevenueGroup salesRevenuegroupIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultRevenueGroup salesRevenuegroupIdGet($id)
 
 Fetches a single revenue group by id
 
@@ -1156,7 +1156,7 @@ Fetches a single revenue group by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1180,7 +1180,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultRevenueGroup**](../Model/RestResultRevenueGroup.md)
+[**\Paqtcom\Simplicate\Model\RestResultRevenueGroup**](../Model/RestResultRevenueGroup.md)
 
 ### Authorization
 
@@ -1195,7 +1195,7 @@ No authorization required
 
 # **salesSalesGet**
 
-> \Swagger\Client\Model\RestResultSales salesSalesGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultSales salesSalesGet($offset, $limit, $sort)
 
 Fetches all sales
 
@@ -1205,7 +1205,7 @@ Fetches all sales
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1233,7 +1233,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSales**](../Model/RestResultSales.md)
+[**\Paqtcom\Simplicate\Model\RestResultSales**](../Model/RestResultSales.md)
 
 ### Authorization
 
@@ -1258,13 +1258,13 @@ Duplicates a sales deal on base of the id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostDuplicateSales(); // \Swagger\Client\Model\PostDuplicateSales | Optional parameters to overwrite
+$body = new \Paqtcom\Simplicate\Model\PostDuplicateSales(); // \Paqtcom\Simplicate\Model\PostDuplicateSales | Optional parameters to overwrite
 
 try {
     $apiInstance->salesSalesIdDuplicatePost($id, $body);
@@ -1279,7 +1279,7 @@ try {
  Name     | Type                                                                           | Description                      | Notes      
 ----------|--------------------------------------------------------------------------------|----------------------------------|------------
  **id**   | **string**                                                                     | The template&#39;s id            |
- **body** | [**\Swagger\Client\Model\PostDuplicateSales**](../Model/PostDuplicateSales.md) | Optional parameters to overwrite | [optional] 
+ **body** | [**\Paqtcom\Simplicate\Model\PostDuplicateSales**](../Model/PostDuplicateSales.md) | Optional parameters to overwrite | [optional] 
 
 ### Return type
 
@@ -1298,7 +1298,7 @@ No authorization required
 
 # **salesSalesIdGet**
 
-> \Swagger\Client\Model\RestResultSale salesSalesIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultSale salesSalesIdGet($id)
 
 Fetches a single sales by id
 
@@ -1308,7 +1308,7 @@ Fetches a single sales by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1332,7 +1332,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSale**](../Model/RestResultSale.md)
+[**\Paqtcom\Simplicate\Model\RestResultSale**](../Model/RestResultSale.md)
 
 ### Authorization
 
@@ -1357,13 +1357,13 @@ Updates a sales for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostSales(); // \Swagger\Client\Model\PostSales | project object that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\PostSales(); // \Paqtcom\Simplicate\Model\PostSales | project object that needs to be updated
 
 try {
     $apiInstance->salesSalesIdPut($id, $body);
@@ -1378,7 +1378,7 @@ try {
  Name     | Type                                                         | Description                             | Notes 
 ----------|--------------------------------------------------------------|-----------------------------------------|-------
  **id**   | **string**                                                   | The template&#39;s id                   |
- **body** | [**\Swagger\Client\Model\PostSales**](../Model/PostSales.md) | project object that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\PostSales**](../Model/PostSales.md) | project object that needs to be updated |
 
 ### Return type
 
@@ -1407,12 +1407,12 @@ Add a new sales
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostSales(); // \Swagger\Client\Model\PostSales | Sales object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostSales(); // \Paqtcom\Simplicate\Model\PostSales | Sales object that needs to be added
 
 try {
     $apiInstance->salesSalesPost($body);
@@ -1426,7 +1426,7 @@ try {
 
  Name     | Type                                                         | Description                         | Notes 
 ----------|--------------------------------------------------------------|-------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostSales**](../Model/PostSales.md) | Sales object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostSales**](../Model/PostSales.md) | Sales object that needs to be added |
 
 ### Return type
 
@@ -1445,7 +1445,7 @@ No authorization required
 
 # **salesSalescustomfieldgroupsGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldGroups salesSalescustomfieldgroupsGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups salesSalescustomfieldgroupsGet($offset, $limit, $sort)
 
 Fetches all custom field groups available for sales
 
@@ -1455,7 +1455,7 @@ Fetches all custom field groups available for sales
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1483,7 +1483,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldGroups**](../Model/RestResultCustomFieldGroups.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups**](../Model/RestResultCustomFieldGroups.md)
 
 ### Authorization
 
@@ -1498,7 +1498,7 @@ No authorization required
 
 # **salesSalescustomfieldgroupsIdGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldGroup salesSalescustomfieldgroupsIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup salesSalescustomfieldgroupsIdGet($id)
 
 Fetches a single custom field group available for project
 
@@ -1508,7 +1508,7 @@ Fetches a single custom field group available for project
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1532,7 +1532,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldGroup**](../Model/RestResultCustomFieldGroup.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup**](../Model/RestResultCustomFieldGroup.md)
 
 ### Authorization
 
@@ -1547,7 +1547,7 @@ No authorization required
 
 # **salesSalescustomfieldsGet**
 
-> \Swagger\Client\Model\RestResultCustomFields salesSalescustomfieldsGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFields salesSalescustomfieldsGet($offset, $limit, $sort)
 
 Fetches all custom fields available for sales
 
@@ -1557,7 +1557,7 @@ Fetches all custom fields available for sales
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1585,7 +1585,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFields**](../Model/RestResultCustomFields.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFields**](../Model/RestResultCustomFields.md)
 
 ### Authorization
 
@@ -1600,7 +1600,7 @@ No authorization required
 
 # **salesSalescustomfieldsIdGet**
 
-> \Swagger\Client\Model\RestResultCustomField salesSalescustomfieldsIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultCustomField salesSalescustomfieldsIdGet($id)
 
 Fetches a single custom field available for sales
 
@@ -1610,7 +1610,7 @@ Fetches a single custom field available for sales
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1634,7 +1634,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomField**](../Model/RestResultCustomField.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomField**](../Model/RestResultCustomField.md)
 
 ### Authorization
 
@@ -1649,7 +1649,7 @@ No authorization required
 
 # **salesSalesfiltersGet**
 
-> \Swagger\Client\Model\RestResultFilters salesSalesfiltersGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultFilters salesSalesfiltersGet($offset, $limit, $sort)
 
 Fetches all filters available for sales
 
@@ -1659,7 +1659,7 @@ Fetches all filters available for sales
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1687,7 +1687,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultFilters**](../Model/RestResultFilters.md)
+[**\Paqtcom\Simplicate\Model\RestResultFilters**](../Model/RestResultFilters.md)
 
 ### Authorization
 
@@ -1702,7 +1702,7 @@ No authorization required
 
 # **salesSalesfiltersIdGet**
 
-> \Swagger\Client\Model\RestResultFilter salesSalesfiltersIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultFilter salesSalesfiltersIdGet($id)
 
 Fetches a single filter available for sales
 
@@ -1712,7 +1712,7 @@ Fetches a single filter available for sales
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1736,7 +1736,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultFilter**](../Model/RestResultFilter.md)
+[**\Paqtcom\Simplicate\Model\RestResultFilter**](../Model/RestResultFilter.md)
 
 ### Authorization
 
@@ -1751,7 +1751,7 @@ No authorization required
 
 # **salesSalesprogressGet**
 
-> \Swagger\Client\Model\RestResultSalesProgresses salesSalesprogressGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultSalesProgresses salesSalesprogressGet($offset, $limit, $sort)
 
 Fetches all sales progresses
 
@@ -1761,7 +1761,7 @@ Fetches all sales progresses
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1789,7 +1789,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSalesProgresses**](../Model/RestResultSalesProgresses.md)
+[**\Paqtcom\Simplicate\Model\RestResultSalesProgresses**](../Model/RestResultSalesProgresses.md)
 
 ### Authorization
 
@@ -1804,7 +1804,7 @@ No authorization required
 
 # **salesSalesprogressIdGet**
 
-> \Swagger\Client\Model\RestResultSalesProgress salesSalesprogressIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultSalesProgress salesSalesprogressIdGet($id)
 
 Fetches a single sales progress by id
 
@@ -1814,7 +1814,7 @@ Fetches a single sales progress by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1838,7 +1838,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSalesProgress**](../Model/RestResultSalesProgress.md)
+[**\Paqtcom\Simplicate\Model\RestResultSalesProgress**](../Model/RestResultSalesProgress.md)
 
 ### Authorization
 
@@ -1853,7 +1853,7 @@ No authorization required
 
 # **salesSalesreasonGet**
 
-> \Swagger\Client\Model\RestResultSalesReasons salesSalesreasonGet($offset, $limit, $sort, $select)
+> \Paqtcom\Simplicate\Model\RestResultSalesReasons salesSalesreasonGet($offset, $limit, $sort, $select)
 
 Fetches all sales reasons
 
@@ -1863,7 +1863,7 @@ Fetches all sales reasons
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1893,7 +1893,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSalesReasons**](../Model/RestResultSalesReasons.md)
+[**\Paqtcom\Simplicate\Model\RestResultSalesReasons**](../Model/RestResultSalesReasons.md)
 
 ### Authorization
 
@@ -1908,7 +1908,7 @@ No authorization required
 
 # **salesSalesreasonIdGet**
 
-> \Swagger\Client\Model\RestResultSalesReason salesSalesreasonIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultSalesReason salesSalesreasonIdGet($id)
 
 Fetches a single sales reason by id
 
@@ -1918,7 +1918,7 @@ Fetches a single sales reason by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1942,7 +1942,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSalesReason**](../Model/RestResultSalesReason.md)
+[**\Paqtcom\Simplicate\Model\RestResultSalesReason**](../Model/RestResultSalesReason.md)
 
 ### Authorization
 
@@ -1957,7 +1957,7 @@ No authorization required
 
 # **salesSalessourceGet**
 
-> \Swagger\Client\Model\RestResultSalesSources salesSalessourceGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultSalesSources salesSalessourceGet($offset, $limit, $sort)
 
 Fetches all sales source
 
@@ -1967,7 +1967,7 @@ Fetches all sales source
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1995,7 +1995,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSalesSources**](../Model/RestResultSalesSources.md)
+[**\Paqtcom\Simplicate\Model\RestResultSalesSources**](../Model/RestResultSalesSources.md)
 
 ### Authorization
 
@@ -2010,7 +2010,7 @@ No authorization required
 
 # **salesSalessourceIdGet**
 
-> \Swagger\Client\Model\RestResultSalesSource salesSalessourceIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultSalesSource salesSalessourceIdGet($id)
 
 Fetches a single sales source by id
 
@@ -2020,7 +2020,7 @@ Fetches a single sales source by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2044,7 +2044,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSalesSource**](../Model/RestResultSalesSource.md)
+[**\Paqtcom\Simplicate\Model\RestResultSalesSource**](../Model/RestResultSalesSource.md)
 
 ### Authorization
 
@@ -2059,7 +2059,7 @@ No authorization required
 
 # **salesSalesstatusGet**
 
-> \Swagger\Client\Model\RestResultSalesStatusses salesSalesstatusGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultSalesStatusses salesSalesstatusGet($offset, $limit, $sort)
 
 Fetches all sales statusses
 
@@ -2069,7 +2069,7 @@ Fetches all sales statusses
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2097,7 +2097,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSalesStatusses**](../Model/RestResultSalesStatusses.md)
+[**\Paqtcom\Simplicate\Model\RestResultSalesStatusses**](../Model/RestResultSalesStatusses.md)
 
 ### Authorization
 
@@ -2112,7 +2112,7 @@ No authorization required
 
 # **salesSalesstatusIdGet**
 
-> \Swagger\Client\Model\RestResultSalesStatus salesSalesstatusIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultSalesStatus salesSalesstatusIdGet($id)
 
 Fetches a single sales status by id
 
@@ -2122,7 +2122,7 @@ Fetches a single sales status by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2146,7 +2146,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSalesStatus**](../Model/RestResultSalesStatus.md)
+[**\Paqtcom\Simplicate\Model\RestResultSalesStatus**](../Model/RestResultSalesStatus.md)
 
 ### Authorization
 
@@ -2161,7 +2161,7 @@ No authorization required
 
 # **salesServiceGet**
 
-> \Swagger\Client\Model\RestResultSalesServices salesServiceGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultSalesServices salesServiceGet($offset, $limit, $sort)
 
 Fetches all services
 
@@ -2171,7 +2171,7 @@ Fetches all services
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2199,7 +2199,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSalesServices**](../Model/RestResultSalesServices.md)
+[**\Paqtcom\Simplicate\Model\RestResultSalesServices**](../Model/RestResultSalesServices.md)
 
 ### Authorization
 
@@ -2224,7 +2224,7 @@ Deletes the service with the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2272,13 +2272,13 @@ Duplicates a service on base of the id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\DuplicateProjectService(); // \Swagger\Client\Model\DuplicateProjectService | Optional parameters to overwrite
+$body = new \Paqtcom\Simplicate\Model\DuplicateProjectService(); // \Paqtcom\Simplicate\Model\DuplicateProjectService | Optional parameters to overwrite
 
 try {
     $apiInstance->salesServiceIdDuplicatePost($id, $body);
@@ -2293,7 +2293,7 @@ try {
  Name     | Type                                                                                     | Description                      | Notes      
 ----------|------------------------------------------------------------------------------------------|----------------------------------|------------
  **id**   | **string**                                                                               | The template&#39;s id            |
- **body** | [**\Swagger\Client\Model\DuplicateProjectService**](../Model/DuplicateProjectService.md) | Optional parameters to overwrite | [optional] 
+ **body** | [**\Paqtcom\Simplicate\Model\DuplicateProjectService**](../Model/DuplicateProjectService.md) | Optional parameters to overwrite | [optional] 
 
 ### Return type
 
@@ -2312,7 +2312,7 @@ No authorization required
 
 # **salesServiceIdGet**
 
-> \Swagger\Client\Model\RestResultSalesService salesServiceIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultSalesService salesServiceIdGet($id)
 
 Fetches a single service by id
 
@@ -2322,7 +2322,7 @@ Fetches a single service by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2346,7 +2346,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSalesService**](../Model/RestResultSalesService.md)
+[**\Paqtcom\Simplicate\Model\RestResultSalesService**](../Model/RestResultSalesService.md)
 
 ### Authorization
 
@@ -2371,13 +2371,13 @@ Updates a service for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostSalesService(); // \Swagger\Client\Model\PostSalesService | Service object that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\PostSalesService(); // \Paqtcom\Simplicate\Model\PostSalesService | Service object that needs to be updated
 
 try {
     $apiInstance->salesServiceIdPut($id, $body);
@@ -2392,7 +2392,7 @@ try {
  Name     | Type                                                                       | Description                             | Notes 
 ----------|----------------------------------------------------------------------------|-----------------------------------------|-------
  **id**   | **string**                                                                 | The template&#39;s id                   |
- **body** | [**\Swagger\Client\Model\PostSalesService**](../Model/PostSalesService.md) | Service object that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\PostSalesService**](../Model/PostSalesService.md) | Service object that needs to be updated |
 
 ### Return type
 
@@ -2421,12 +2421,12 @@ Add a new service
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SalesApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SalesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostSalesService(); // \Swagger\Client\Model\PostSalesService | template object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostSalesService(); // \Paqtcom\Simplicate\Model\PostSalesService | template object that needs to be added
 
 try {
     $apiInstance->salesServicePost($body);
@@ -2440,7 +2440,7 @@ try {
 
  Name     | Type                                                                       | Description                            | Notes 
 ----------|----------------------------------------------------------------------------|----------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostSalesService**](../Model/PostSalesService.md) | template object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostSalesService**](../Model/PostSalesService.md) | template object that needs to be added |
 
 ### Return type
 

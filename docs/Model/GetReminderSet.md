@@ -5,7 +5,7 @@
  Name          | Type                                                                      | Description | Notes      
 ---------------|---------------------------------------------------------------------------|-------------|------------
  **id**        | **string**                                                                |             | [optional] 
- **templates** | [**\Swagger\Client\Model\ReminderSetTemplate[]**](ReminderSetTemplate.md) |             | [optional] 
+ **templates** | [**\Paqtcom\Simplicate\Model\ReminderSetTemplate[]**](ReminderSetTemplate.md) |             | [optional] 
  **label**     | **string**                                                                |             | [optional] 
  **disabled**  | **bool**                                                                  |             | [optional] 
 

@@ -5,7 +5,7 @@
  Name                | Type                                                          | Description             | Notes      
 ---------------------|---------------------------------------------------------------|-------------------------|------------
  **id**              | **string**                                                    |                         | [optional] 
- **attachment_type** | [**\Swagger\Client\Model\AttachmentType**](AttachmentType.md) |                         | [optional] 
+ **attachment_type** | [**\Paqtcom\Simplicate\Model\AttachmentType**](AttachmentType.md) |                         | [optional] 
  **title**           | **string**                                                    |                         | [optional] 
  **document_id**     | **string**                                                    | See /documents/document | [optional] 
  **download_link**   | **string**                                                    |                         | [optional] 

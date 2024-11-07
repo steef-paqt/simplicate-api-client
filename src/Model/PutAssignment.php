@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * PutAssignment Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class PutAssignment implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'employees' => '\Swagger\Client\Model\PostEmployeeFk[]',
+        'employees' => '\Paqtcom\Simplicate\Model\PostEmployeeFk[]',
         'status_id' => 'string',
         'name' => 'string',
         'use_spread' => 'bool',
@@ -269,7 +269,7 @@ class PutAssignment implements ModelInterface, ArrayAccess
     /**
      * Gets employees
      *
-     * @return \Swagger\Client\Model\PostEmployeeFk[]
+     * @return \Paqtcom\Simplicate\Model\PostEmployeeFk[]
      */
     public function getEmployees()
     {
@@ -279,7 +279,7 @@ class PutAssignment implements ModelInterface, ArrayAccess
     /**
      * Sets employees
      *
-     * @param \Swagger\Client\Model\PostEmployeeFk[] $employees employees
+     * @param \Paqtcom\Simplicate\Model\PostEmployeeFk[] $employees employees
      *
      * @return $this
      */

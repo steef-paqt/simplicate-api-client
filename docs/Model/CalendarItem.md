@@ -5,7 +5,7 @@
  Name                | Type                                                                | Description | Notes      
 ---------------------|---------------------------------------------------------------------|-------------|------------
  **id**              | **string**                                                          |             | [optional] 
- **employee**        | [**\Swagger\Client\Model\GetEmployeeSimple**](GetEmployeeSimple.md) |             | [optional] 
+ **employee**        | [**\Paqtcom\Simplicate\Model\GetEmployeeSimple**](GetEmployeeSimple.md) |             | [optional] 
  **hours**           | **string**                                                          |             | [optional] 
  **start_date**      | **string**                                                          |             | [optional] 
  **end_date**        | **string**                                                          |             | [optional] 

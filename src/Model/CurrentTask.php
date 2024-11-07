@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * CurrentTask Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -65,7 +65,7 @@ class CurrentTask implements ModelInterface, ArrayAccess
         'is_return_to_sender' => 'bool',
         'average_hours_cost' => 'float',
         'can_be_transferred' => 'bool',
-        'employees' => '\Swagger\Client\Model\CurrentTaskEmployee[]',
+        'employees' => '\Paqtcom\Simplicate\Model\CurrentTaskEmployee[]',
     ];
 
     /**
@@ -413,7 +413,7 @@ class CurrentTask implements ModelInterface, ArrayAccess
     /**
      * Gets employees
      *
-     * @return \Swagger\Client\Model\CurrentTaskEmployee[]
+     * @return \Paqtcom\Simplicate\Model\CurrentTaskEmployee[]
      */
     public function getEmployees()
     {
@@ -423,7 +423,7 @@ class CurrentTask implements ModelInterface, ArrayAccess
     /**
      * Sets employees
      *
-     * @param \Swagger\Client\Model\CurrentTaskEmployee[] $employees employees
+     * @param \Paqtcom\Simplicate\Model\CurrentTaskEmployee[] $employees employees
      *
      * @return $this
      */

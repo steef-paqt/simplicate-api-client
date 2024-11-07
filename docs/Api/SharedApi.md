@@ -1,4 +1,4 @@
-# Swagger\Client\SharedApi
+# Paqtcom\Simplicate\SharedApi
 
 All URIs are relative to *http://localhost/api/v2*
 
@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost/api/v2*
 
 # **sharedItemGet**
 
-> \Swagger\Client\Model\RestResultSharedItems sharedItemGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultSharedItems sharedItemGet($offset, $limit, $sort)
 
 Fetches all shared items
 
@@ -22,7 +22,7 @@ Fetches all shared items
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SharedApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SharedApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -50,7 +50,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSharedItems**](../Model/RestResultSharedItems.md)
+[**\Paqtcom\Simplicate\Model\RestResultSharedItems**](../Model/RestResultSharedItems.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Deletes the shared item with the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SharedApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SharedApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -113,7 +113,7 @@ No authorization required
 
 # **sharedItemIdGet**
 
-> \Swagger\Client\Model\RestResultSharedItem sharedItemIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultSharedItem sharedItemIdGet($id)
 
 Fetches a single shared item by id
 
@@ -123,7 +123,7 @@ Fetches a single shared item by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SharedApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SharedApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -147,7 +147,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultSharedItem**](../Model/RestResultSharedItem.md)
+[**\Paqtcom\Simplicate\Model\RestResultSharedItem**](../Model/RestResultSharedItem.md)
 
 ### Authorization
 
@@ -172,13 +172,13 @@ Updates an existing shared item
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SharedApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SharedApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostSharedItem(); // \Swagger\Client\Model\PostSharedItem | Shared item object that with the data that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\PostSharedItem(); // \Paqtcom\Simplicate\Model\PostSharedItem | Shared item object that with the data that needs to be updated
 
 try {
     $apiInstance->sharedItemIdPut($id, $body);
@@ -193,7 +193,7 @@ try {
  Name     | Type                                                                   | Description                                                    | Notes 
 ----------|------------------------------------------------------------------------|----------------------------------------------------------------|-------
  **id**   | **string**                                                             | The template&#39;s id                                          |
- **body** | [**\Swagger\Client\Model\PostSharedItem**](../Model/PostSharedItem.md) | Shared item object that with the data that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\PostSharedItem**](../Model/PostSharedItem.md) | Shared item object that with the data that needs to be updated |
 
 ### Return type
 
@@ -222,12 +222,12 @@ Add a new shared item
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SharedApi(
+$apiInstance = new Paqtcom\Simplicate\Api\SharedApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostSharedItem(); // \Swagger\Client\Model\PostSharedItem | Item object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostSharedItem(); // \Paqtcom\Simplicate\Model\PostSharedItem | Item object that needs to be added
 
 try {
     $apiInstance->sharedItemPost($body);
@@ -241,7 +241,7 @@ try {
 
  Name     | Type                                                                   | Description                        | Notes 
 ----------|------------------------------------------------------------------------|------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostSharedItem**](../Model/PostSharedItem.md) | Item object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostSharedItem**](../Model/PostSharedItem.md) | Item object that needs to be added |
 
 ### Return type
 

@@ -5,7 +5,7 @@
  Name                             | Type                                                                            | Description | Notes      
 ----------------------------------|---------------------------------------------------------------------------------|-------------|------------
  **id**                           | **string**                                                                      |             | [optional] 
- **workflowgroup**                | [**\Swagger\Client\Model\GetDefaultWorkflowGroup**](GetDefaultWorkflowGroup.md) |             | [optional] 
+ **workflowgroup**                | [**\Paqtcom\Simplicate\Model\GetDefaultWorkflowGroup**](GetDefaultWorkflowGroup.md) |             | [optional] 
  **title**                        | **string**                                                                      |             | [optional] 
  **description**                  | **string**                                                                      |             | [optional] 
  **can_have_attachment**          | **bool**                                                                        |             | [optional] 

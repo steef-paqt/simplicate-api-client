@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * LeaveBalance Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,12 +58,12 @@ class LeaveBalance implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'employee' => '\Swagger\Client\Model\GetEmployeeSimple',
+        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
         'balance' => 'float',
         'first_change' => 'string',
         'last_change' => 'float',
         'year' => 'int',
-        'leavetype' => '\Swagger\Client\Model\HrmGetLeaveType',
+        'leavetype' => '\Paqtcom\Simplicate\Model\HrmGetLeaveType',
     ];
 
     /**
@@ -233,7 +233,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
     /**
      * Gets employee
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple
      */
     public function getEmployee()
     {
@@ -243,7 +243,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
     /**
      * Sets employee
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple $employee employee
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple $employee employee
      *
      * @return $this
      */
@@ -353,7 +353,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
     /**
      * Gets leavetype
      *
-     * @return \Swagger\Client\Model\HrmGetLeaveType
+     * @return \Paqtcom\Simplicate\Model\HrmGetLeaveType
      */
     public function getLeavetype()
     {
@@ -363,7 +363,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
     /**
      * Sets leavetype
      *
-     * @param \Swagger\Client\Model\HrmGetLeaveType $leavetype leavetype
+     * @param \Paqtcom\Simplicate\Model\HrmGetLeaveType $leavetype leavetype
      *
      * @return $this
      */

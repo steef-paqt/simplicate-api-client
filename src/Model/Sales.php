@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * Sales Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -62,15 +62,15 @@ class Sales implements ModelInterface, ArrayAccess
         'organization_id' => 'string',
         'person_id' => 'string',
         'contact_id' => 'string',
-        'reason' => '\Swagger\Client\Model\SalesReason',
-        'contact' => '\Swagger\Client\Model\ContactPerson',
+        'reason' => '\Paqtcom\Simplicate\Model\SalesReason',
+        'contact' => '\Paqtcom\Simplicate\Model\ContactPerson',
         'subject' => 'string',
         'start_date' => 'string',
         'expected_closing_date' => 'string',
         'expected_revenue' => 'float',
         'note' => 'string',
         'chance_to_score' => 'int',
-        'lost_to_competitor' => '\Swagger\Client\Model\LostToCompetitor',
+        'lost_to_competitor' => '\Paqtcom\Simplicate\Model\LostToCompetitor',
     ];
 
     /**
@@ -371,7 +371,7 @@ class Sales implements ModelInterface, ArrayAccess
     /**
      * Gets reason
      *
-     * @return \Swagger\Client\Model\SalesReason
+     * @return \Paqtcom\Simplicate\Model\SalesReason
      */
     public function getReason()
     {
@@ -381,7 +381,7 @@ class Sales implements ModelInterface, ArrayAccess
     /**
      * Sets reason
      *
-     * @param \Swagger\Client\Model\SalesReason $reason reason
+     * @param \Paqtcom\Simplicate\Model\SalesReason $reason reason
      *
      * @return $this
      */
@@ -395,7 +395,7 @@ class Sales implements ModelInterface, ArrayAccess
     /**
      * Gets contact
      *
-     * @return \Swagger\Client\Model\ContactPerson
+     * @return \Paqtcom\Simplicate\Model\ContactPerson
      */
     public function getContact()
     {
@@ -405,7 +405,7 @@ class Sales implements ModelInterface, ArrayAccess
     /**
      * Sets contact
      *
-     * @param \Swagger\Client\Model\ContactPerson $contact contact
+     * @param \Paqtcom\Simplicate\Model\ContactPerson $contact contact
      *
      * @return $this
      */
@@ -563,7 +563,7 @@ class Sales implements ModelInterface, ArrayAccess
     /**
      * Gets lost_to_competitor
      *
-     * @return \Swagger\Client\Model\LostToCompetitor
+     * @return \Paqtcom\Simplicate\Model\LostToCompetitor
      */
     public function getLostToCompetitor()
     {
@@ -573,7 +573,7 @@ class Sales implements ModelInterface, ArrayAccess
     /**
      * Sets lost_to_competitor
      *
-     * @param \Swagger\Client\Model\LostToCompetitor $lost_to_competitor lost_to_competitor
+     * @param \Paqtcom\Simplicate\Model\LostToCompetitor $lost_to_competitor lost_to_competitor
      *
      * @return $this
      */

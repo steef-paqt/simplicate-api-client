@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetApproval Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,8 +59,8 @@ class GetApproval implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'employee' => '\Swagger\Client\Model\GetEmployeeSimple',
-        'approvalstatus' => '\Swagger\Client\Model\GetApprovalStatus',
+        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
+        'approvalstatus' => '\Paqtcom\Simplicate\Model\GetApprovalStatus',
         'date' => 'string',
     ];
 
@@ -245,7 +245,7 @@ class GetApproval implements ModelInterface, ArrayAccess
     /**
      * Gets employee
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple
      */
     public function getEmployee()
     {
@@ -255,7 +255,7 @@ class GetApproval implements ModelInterface, ArrayAccess
     /**
      * Sets employee
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple $employee employee
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple $employee employee
      *
      * @return $this
      */
@@ -269,7 +269,7 @@ class GetApproval implements ModelInterface, ArrayAccess
     /**
      * Gets approvalstatus
      *
-     * @return \Swagger\Client\Model\GetApprovalStatus
+     * @return \Paqtcom\Simplicate\Model\GetApprovalStatus
      */
     public function getApprovalstatus()
     {
@@ -279,7 +279,7 @@ class GetApproval implements ModelInterface, ArrayAccess
     /**
      * Sets approvalstatus
      *
-     * @param \Swagger\Client\Model\GetApprovalStatus $approvalstatus approvalstatus
+     * @param \Paqtcom\Simplicate\Model\GetApprovalStatus $approvalstatus approvalstatus
      *
      * @return $this
      */

@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * CustomField Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -68,8 +68,8 @@ class CustomField implements ModelInterface, ArrayAccess
         'searchable' => 'bool',
         'mandatory' => 'bool',
         'value_type' => 'string',
-        'custom_field_group' => '\Swagger\Client\Model\CustomFieldGroup',
-        'options' => '\Swagger\Client\Model\CustomFieldOption[]',
+        'custom_field_group' => '\Paqtcom\Simplicate\Model\CustomFieldGroup',
+        'options' => '\Paqtcom\Simplicate\Model\CustomFieldOption[]',
     ];
 
     /**
@@ -550,7 +550,7 @@ class CustomField implements ModelInterface, ArrayAccess
     /**
      * Gets custom_field_group
      *
-     * @return \Swagger\Client\Model\CustomFieldGroup
+     * @return \Paqtcom\Simplicate\Model\CustomFieldGroup
      */
     public function getCustomFieldGroup()
     {
@@ -560,7 +560,7 @@ class CustomField implements ModelInterface, ArrayAccess
     /**
      * Sets custom_field_group
      *
-     * @param \Swagger\Client\Model\CustomFieldGroup $custom_field_group custom_field_group
+     * @param \Paqtcom\Simplicate\Model\CustomFieldGroup $custom_field_group custom_field_group
      *
      * @return $this
      */
@@ -574,7 +574,7 @@ class CustomField implements ModelInterface, ArrayAccess
     /**
      * Gets options
      *
-     * @return \Swagger\Client\Model\CustomFieldOption[]
+     * @return \Paqtcom\Simplicate\Model\CustomFieldOption[]
      */
     public function getOptions()
     {
@@ -584,7 +584,7 @@ class CustomField implements ModelInterface, ArrayAccess
     /**
      * Sets options
      *
-     * @param \Swagger\Client\Model\CustomFieldOption[] $options options
+     * @param \Paqtcom\Simplicate\Model\CustomFieldOption[] $options options
      *
      * @return $this
      */

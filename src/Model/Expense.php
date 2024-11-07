@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * Expense Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,10 +59,10 @@ class Expense implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'project' => '\Swagger\Client\Model\GetProjectSimple',
+        'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
         'service_id' => 'string',
-        'costtype' => '\Swagger\Client\Model\GetProjectServiceCostType',
-        'default_costtype' => '\Swagger\Client\Model\GetPurchaseType',
+        'costtype' => '\Paqtcom\Simplicate\Model\GetProjectServiceCostType',
+        'default_costtype' => '\Paqtcom\Simplicate\Model\GetPurchaseType',
         'amount' => 'float',
         'purchase_price_unit' => 'float',
         'tariff' => 'float',
@@ -70,15 +70,15 @@ class Expense implements ModelInterface, ArrayAccess
         'purchase_margin' => 'float',
         'total_price' => 'float',
         'is_billable' => 'bool',
-        'approval_status' => '\Swagger\Client\Model\ApprovalStatus',
+        'approval_status' => '\Paqtcom\Simplicate\Model\ApprovalStatus',
         'invoice_status' => 'string',
-        'invoice' => '\Swagger\Client\Model\GetInvoice',
-        'employee' => '\Swagger\Client\Model\GetEmployeeSimple',
+        'invoice' => '\Paqtcom\Simplicate\Model\GetInvoice',
+        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
         'date' => 'string',
         'note' => 'string',
         'service_purchase_start_date' => 'string',
         'service_purchase_end_date' => 'string',
-        'attachments' => '\Swagger\Client\Model\ExpenseAttachment[]',
+        'attachments' => '\Paqtcom\Simplicate\Model\ExpenseAttachment[]',
     ];
 
     /**
@@ -373,7 +373,7 @@ class Expense implements ModelInterface, ArrayAccess
     /**
      * Gets project
      *
-     * @return \Swagger\Client\Model\GetProjectSimple
+     * @return \Paqtcom\Simplicate\Model\GetProjectSimple
      */
     public function getProject()
     {
@@ -383,7 +383,7 @@ class Expense implements ModelInterface, ArrayAccess
     /**
      * Sets project
      *
-     * @param \Swagger\Client\Model\GetProjectSimple $project project
+     * @param \Paqtcom\Simplicate\Model\GetProjectSimple $project project
      *
      * @return $this
      */
@@ -421,7 +421,7 @@ class Expense implements ModelInterface, ArrayAccess
     /**
      * Gets costtype
      *
-     * @return \Swagger\Client\Model\GetProjectServiceCostType
+     * @return \Paqtcom\Simplicate\Model\GetProjectServiceCostType
      */
     public function getCosttype()
     {
@@ -431,7 +431,7 @@ class Expense implements ModelInterface, ArrayAccess
     /**
      * Sets costtype
      *
-     * @param \Swagger\Client\Model\GetProjectServiceCostType $costtype costtype
+     * @param \Paqtcom\Simplicate\Model\GetProjectServiceCostType $costtype costtype
      *
      * @return $this
      */
@@ -445,7 +445,7 @@ class Expense implements ModelInterface, ArrayAccess
     /**
      * Gets default_costtype
      *
-     * @return \Swagger\Client\Model\GetPurchaseType
+     * @return \Paqtcom\Simplicate\Model\GetPurchaseType
      */
     public function getDefaultCosttype()
     {
@@ -455,7 +455,7 @@ class Expense implements ModelInterface, ArrayAccess
     /**
      * Sets default_costtype
      *
-     * @param \Swagger\Client\Model\GetPurchaseType $default_costtype default_costtype
+     * @param \Paqtcom\Simplicate\Model\GetPurchaseType $default_costtype default_costtype
      *
      * @return $this
      */
@@ -637,7 +637,7 @@ class Expense implements ModelInterface, ArrayAccess
     /**
      * Gets approval_status
      *
-     * @return \Swagger\Client\Model\ApprovalStatus
+     * @return \Paqtcom\Simplicate\Model\ApprovalStatus
      */
     public function getApprovalStatus()
     {
@@ -647,7 +647,7 @@ class Expense implements ModelInterface, ArrayAccess
     /**
      * Sets approval_status
      *
-     * @param \Swagger\Client\Model\ApprovalStatus $approval_status approval_status
+     * @param \Paqtcom\Simplicate\Model\ApprovalStatus $approval_status approval_status
      *
      * @return $this
      */
@@ -694,7 +694,7 @@ class Expense implements ModelInterface, ArrayAccess
     /**
      * Gets invoice
      *
-     * @return \Swagger\Client\Model\GetInvoice
+     * @return \Paqtcom\Simplicate\Model\GetInvoice
      */
     public function getInvoice()
     {
@@ -704,7 +704,7 @@ class Expense implements ModelInterface, ArrayAccess
     /**
      * Sets invoice
      *
-     * @param \Swagger\Client\Model\GetInvoice $invoice invoice
+     * @param \Paqtcom\Simplicate\Model\GetInvoice $invoice invoice
      *
      * @return $this
      */
@@ -718,7 +718,7 @@ class Expense implements ModelInterface, ArrayAccess
     /**
      * Gets employee
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple
      */
     public function getEmployee()
     {
@@ -728,7 +728,7 @@ class Expense implements ModelInterface, ArrayAccess
     /**
      * Sets employee
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple $employee employee
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple $employee employee
      *
      * @return $this
      */
@@ -838,7 +838,7 @@ class Expense implements ModelInterface, ArrayAccess
     /**
      * Gets attachments
      *
-     * @return \Swagger\Client\Model\ExpenseAttachment[]
+     * @return \Paqtcom\Simplicate\Model\ExpenseAttachment[]
      */
     public function getAttachments()
     {
@@ -848,7 +848,7 @@ class Expense implements ModelInterface, ArrayAccess
     /**
      * Sets attachments
      *
-     * @param \Swagger\Client\Model\ExpenseAttachment[] $attachments attachments
+     * @param \Paqtcom\Simplicate\Model\ExpenseAttachment[] $attachments attachments
      *
      * @return $this
      */

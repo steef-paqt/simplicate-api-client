@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetQuote Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,13 +59,13 @@ class GetQuote implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'quotetemplate' => '\Swagger\Client\Model\QuoteTemplate',
+        'quotetemplate' => '\Paqtcom\Simplicate\Model\QuoteTemplate',
         'send_type' => 'string',
         'quote_number' => 'string',
         'quote_date' => 'string',
-        'quotestatus' => '\Swagger\Client\Model\QuoteStatus',
+        'quotestatus' => '\Paqtcom\Simplicate\Model\QuoteStatus',
         'json' => 'string',
-        'services' => '\Swagger\Client\Model\QuoteSalesService[]',
+        'services' => '\Paqtcom\Simplicate\Model\QuoteSalesService[]',
         'total_excl' => 'string',
         'total_incl' => 'string',
         'total_vat' => 'string',
@@ -415,7 +415,7 @@ class GetQuote implements ModelInterface, ArrayAccess
     /**
      * Gets quotetemplate
      *
-     * @return \Swagger\Client\Model\QuoteTemplate
+     * @return \Paqtcom\Simplicate\Model\QuoteTemplate
      */
     public function getQuotetemplate()
     {
@@ -425,7 +425,7 @@ class GetQuote implements ModelInterface, ArrayAccess
     /**
      * Sets quotetemplate
      *
-     * @param \Swagger\Client\Model\QuoteTemplate $quotetemplate quotetemplate
+     * @param \Paqtcom\Simplicate\Model\QuoteTemplate $quotetemplate quotetemplate
      *
      * @return $this
      */
@@ -520,7 +520,7 @@ class GetQuote implements ModelInterface, ArrayAccess
     /**
      * Gets quotestatus
      *
-     * @return \Swagger\Client\Model\QuoteStatus
+     * @return \Paqtcom\Simplicate\Model\QuoteStatus
      */
     public function getQuotestatus()
     {
@@ -530,7 +530,7 @@ class GetQuote implements ModelInterface, ArrayAccess
     /**
      * Sets quotestatus
      *
-     * @param \Swagger\Client\Model\QuoteStatus $quotestatus quotestatus
+     * @param \Paqtcom\Simplicate\Model\QuoteStatus $quotestatus quotestatus
      *
      * @return $this
      */
@@ -568,7 +568,7 @@ class GetQuote implements ModelInterface, ArrayAccess
     /**
      * Gets services
      *
-     * @return \Swagger\Client\Model\QuoteSalesService[]
+     * @return \Paqtcom\Simplicate\Model\QuoteSalesService[]
      */
     public function getServices()
     {
@@ -578,7 +578,7 @@ class GetQuote implements ModelInterface, ArrayAccess
     /**
      * Sets services
      *
-     * @param \Swagger\Client\Model\QuoteSalesService[] $services services
+     * @param \Paqtcom\Simplicate\Model\QuoteSalesService[] $services services
      *
      * @return $this
      */

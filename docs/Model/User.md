@@ -20,12 +20,12 @@
  **is_blocked**                      | **bool**                                          |             | [optional] 
  **is_lock_nav**                     | **bool**                                          |             | [optional] 
  **key_identifier**                  | **string**                                        |             | [optional] 
- **timezone**                        | [**\Swagger\Client\Model\Timezone**](Timezone.md) |             | [optional] 
- **country**                         | [**\Swagger\Client\Model\Country**](Country.md)   |             | [optional] 
+ **timezone**                        | [**\Paqtcom\Simplicate\Model\Timezone**](Timezone.md) |             | [optional] 
+ **country**                         | [**\Paqtcom\Simplicate\Model\Country**](Country.md)   |             | [optional] 
  **hours_view_mode**                 | **string**                                        |             | [optional] 
  **is_account_owner**                | **bool**                                          |             | [optional] 
  **has_external_agenda_integration** | **bool**                                          |             | [optional] 
- **rights**                          | [**\Swagger\Client\Model\Right[]**](Right.md)     |             | [optional] 
+ **rights**                          | [**\Paqtcom\Simplicate\Model\Right[]**](Right.md)     |             | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetDefaultTask Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'defaultworkflow' => '\Swagger\Client\Model\GetSimpleDefaultWorkflow',
+        'defaultworkflow' => '\Paqtcom\Simplicate\Model\GetSimpleDefaultWorkflow',
         'order' => 'int',
         'description' => 'string',
         'can_change_destination' => 'bool',
@@ -275,7 +275,7 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
     /**
      * Gets defaultworkflow
      *
-     * @return \Swagger\Client\Model\GetSimpleDefaultWorkflow
+     * @return \Paqtcom\Simplicate\Model\GetSimpleDefaultWorkflow
      */
     public function getDefaultworkflow()
     {
@@ -285,7 +285,7 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
     /**
      * Sets defaultworkflow
      *
-     * @param \Swagger\Client\Model\GetSimpleDefaultWorkflow $defaultworkflow defaultworkflow
+     * @param \Paqtcom\Simplicate\Model\GetSimpleDefaultWorkflow $defaultworkflow defaultworkflow
      *
      * @return $this
      */

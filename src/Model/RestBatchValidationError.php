@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * RestBatchValidationError Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'error' => '\Swagger\Client\Model\RestError',
+        'error' => '\Paqtcom\Simplicate\Model\RestError',
         'submitted_data' => 'object',
     ];
 
@@ -209,7 +209,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
     /**
      * Gets error
      *
-     * @return \Swagger\Client\Model\RestError
+     * @return \Paqtcom\Simplicate\Model\RestError
      */
     public function getError()
     {
@@ -219,7 +219,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
     /**
      * Sets error
      *
-     * @param \Swagger\Client\Model\RestError $error error
+     * @param \Paqtcom\Simplicate\Model\RestError $error error
      *
      * @return $this
      */

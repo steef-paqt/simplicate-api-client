@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetOrganizationDebtorSimple Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class GetOrganizationDebtorSimple implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'relation_type' => '\Swagger\Client\Model\RelationType',
+        'relation_type' => '\Paqtcom\Simplicate\Model\RelationType',
         'id' => 'string',
         'name' => 'string',
         'relation_number' => 'string',
@@ -221,7 +221,7 @@ class GetOrganizationDebtorSimple implements ModelInterface, ArrayAccess
     /**
      * Gets relation_type
      *
-     * @return \Swagger\Client\Model\RelationType
+     * @return \Paqtcom\Simplicate\Model\RelationType
      */
     public function getRelationType()
     {
@@ -231,7 +231,7 @@ class GetOrganizationDebtorSimple implements ModelInterface, ArrayAccess
     /**
      * Sets relation_type
      *
-     * @param \Swagger\Client\Model\RelationType $relation_type relation_type
+     * @param \Paqtcom\Simplicate\Model\RelationType $relation_type relation_type
      *
      * @return $this
      */

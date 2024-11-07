@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetOrganization Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,22 +59,22 @@ class GetOrganization implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'visiting_address' => '\Swagger\Client\Model\GetAddress',
-        'postal_address' => '\Swagger\Client\Model\GetAddress',
-        'relation_type' => '\Swagger\Client\Model\RelationType',
-        'relation_manager' => '\Swagger\Client\Model\Employee',
-        'customer_group' => '\Swagger\Client\Model\CustomerGroup',
-        'teams' => '\Swagger\Client\Model\GetTeamSimple[]',
-        'debtor' => '\Swagger\Client\Model\GetDebtor',
-        'organizationsize' => '\Swagger\Client\Model\OrganizationSize',
-        'linked_persons_contacts' => '\Swagger\Client\Model\ContactPerson[]',
-        'interests' => '\Swagger\Client\Model\Interest[]',
-        'accountancy' => '\Swagger\Client\Model\Accountancy',
-        'custom_fields' => '\Swagger\Client\Model\GetCustomField[]',
+        'visiting_address' => '\Paqtcom\Simplicate\Model\GetAddress',
+        'postal_address' => '\Paqtcom\Simplicate\Model\GetAddress',
+        'relation_type' => '\Paqtcom\Simplicate\Model\RelationType',
+        'relation_manager' => '\Paqtcom\Simplicate\Model\Employee',
+        'customer_group' => '\Paqtcom\Simplicate\Model\CustomerGroup',
+        'teams' => '\Paqtcom\Simplicate\Model\GetTeamSimple[]',
+        'debtor' => '\Paqtcom\Simplicate\Model\GetDebtor',
+        'organizationsize' => '\Paqtcom\Simplicate\Model\OrganizationSize',
+        'linked_persons_contacts' => '\Paqtcom\Simplicate\Model\ContactPerson[]',
+        'interests' => '\Paqtcom\Simplicate\Model\Interest[]',
+        'accountancy' => '\Paqtcom\Simplicate\Model\Accountancy',
+        'custom_fields' => '\Paqtcom\Simplicate\Model\GetCustomField[]',
         'created_at' => 'string',
         'updated_at' => 'string',
         'simplicate_url' => 'string',
-        'sbi_codes' => '\Swagger\Client\Model\SbiCode[]',
+        'sbi_codes' => '\Paqtcom\Simplicate\Model\SbiCode[]',
         'is_active' => 'bool',
         'name' => 'string',
         'coc_code' => 'string',
@@ -85,7 +85,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
         'note' => 'string',
         'linkedin_url' => 'string',
         'has_different_postal_address' => 'bool',
-        'industry' => '\Swagger\Client\Model\Industry',
+        'industry' => '\Paqtcom\Simplicate\Model\Industry',
         'invoice_receiver' => 'string',
         'allow_autocollect' => 'bool',
         'bank_account' => 'string',
@@ -419,7 +419,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Gets visiting_address
      *
-     * @return \Swagger\Client\Model\GetAddress
+     * @return \Paqtcom\Simplicate\Model\GetAddress
      */
     public function getVisitingAddress()
     {
@@ -429,7 +429,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Sets visiting_address
      *
-     * @param \Swagger\Client\Model\GetAddress $visiting_address visiting_address
+     * @param \Paqtcom\Simplicate\Model\GetAddress $visiting_address visiting_address
      *
      * @return $this
      */
@@ -443,7 +443,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Gets postal_address
      *
-     * @return \Swagger\Client\Model\GetAddress
+     * @return \Paqtcom\Simplicate\Model\GetAddress
      */
     public function getPostalAddress()
     {
@@ -453,7 +453,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Sets postal_address
      *
-     * @param \Swagger\Client\Model\GetAddress $postal_address postal_address
+     * @param \Paqtcom\Simplicate\Model\GetAddress $postal_address postal_address
      *
      * @return $this
      */
@@ -467,7 +467,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Gets relation_type
      *
-     * @return \Swagger\Client\Model\RelationType
+     * @return \Paqtcom\Simplicate\Model\RelationType
      */
     public function getRelationType()
     {
@@ -477,7 +477,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Sets relation_type
      *
-     * @param \Swagger\Client\Model\RelationType $relation_type relation_type
+     * @param \Paqtcom\Simplicate\Model\RelationType $relation_type relation_type
      *
      * @return $this
      */
@@ -491,7 +491,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Gets relation_manager
      *
-     * @return \Swagger\Client\Model\Employee
+     * @return \Paqtcom\Simplicate\Model\Employee
      */
     public function getRelationManager()
     {
@@ -501,7 +501,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Sets relation_manager
      *
-     * @param \Swagger\Client\Model\Employee $relation_manager relation_manager
+     * @param \Paqtcom\Simplicate\Model\Employee $relation_manager relation_manager
      *
      * @return $this
      */
@@ -515,7 +515,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Gets customer_group
      *
-     * @return \Swagger\Client\Model\CustomerGroup
+     * @return \Paqtcom\Simplicate\Model\CustomerGroup
      */
     public function getCustomerGroup()
     {
@@ -525,7 +525,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Sets customer_group
      *
-     * @param \Swagger\Client\Model\CustomerGroup $customer_group customer_group
+     * @param \Paqtcom\Simplicate\Model\CustomerGroup $customer_group customer_group
      *
      * @return $this
      */
@@ -539,7 +539,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Gets teams
      *
-     * @return \Swagger\Client\Model\GetTeamSimple[]
+     * @return \Paqtcom\Simplicate\Model\GetTeamSimple[]
      */
     public function getTeams()
     {
@@ -549,7 +549,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Sets teams
      *
-     * @param \Swagger\Client\Model\GetTeamSimple[] $teams teams
+     * @param \Paqtcom\Simplicate\Model\GetTeamSimple[] $teams teams
      *
      * @return $this
      */
@@ -563,7 +563,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Gets debtor
      *
-     * @return \Swagger\Client\Model\GetDebtor
+     * @return \Paqtcom\Simplicate\Model\GetDebtor
      */
     public function getDebtor()
     {
@@ -573,7 +573,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Sets debtor
      *
-     * @param \Swagger\Client\Model\GetDebtor $debtor debtor
+     * @param \Paqtcom\Simplicate\Model\GetDebtor $debtor debtor
      *
      * @return $this
      */
@@ -587,7 +587,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Gets organizationsize
      *
-     * @return \Swagger\Client\Model\OrganizationSize
+     * @return \Paqtcom\Simplicate\Model\OrganizationSize
      */
     public function getOrganizationsize()
     {
@@ -597,7 +597,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Sets organizationsize
      *
-     * @param \Swagger\Client\Model\OrganizationSize $organizationsize organizationsize
+     * @param \Paqtcom\Simplicate\Model\OrganizationSize $organizationsize organizationsize
      *
      * @return $this
      */
@@ -611,7 +611,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Gets linked_persons_contacts
      *
-     * @return \Swagger\Client\Model\ContactPerson[]
+     * @return \Paqtcom\Simplicate\Model\ContactPerson[]
      */
     public function getLinkedPersonsContacts()
     {
@@ -621,7 +621,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Sets linked_persons_contacts
      *
-     * @param \Swagger\Client\Model\ContactPerson[] $linked_persons_contacts linked_persons_contacts
+     * @param \Paqtcom\Simplicate\Model\ContactPerson[] $linked_persons_contacts linked_persons_contacts
      *
      * @return $this
      */
@@ -635,7 +635,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Gets interests
      *
-     * @return \Swagger\Client\Model\Interest[]
+     * @return \Paqtcom\Simplicate\Model\Interest[]
      */
     public function getInterests()
     {
@@ -645,7 +645,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Sets interests
      *
-     * @param \Swagger\Client\Model\Interest[] $interests interests
+     * @param \Paqtcom\Simplicate\Model\Interest[] $interests interests
      *
      * @return $this
      */
@@ -659,7 +659,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Gets accountancy
      *
-     * @return \Swagger\Client\Model\Accountancy
+     * @return \Paqtcom\Simplicate\Model\Accountancy
      */
     public function getAccountancy()
     {
@@ -669,7 +669,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Sets accountancy
      *
-     * @param \Swagger\Client\Model\Accountancy $accountancy accountancy
+     * @param \Paqtcom\Simplicate\Model\Accountancy $accountancy accountancy
      *
      * @return $this
      */
@@ -683,7 +683,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Gets custom_fields
      *
-     * @return \Swagger\Client\Model\GetCustomField[]
+     * @return \Paqtcom\Simplicate\Model\GetCustomField[]
      */
     public function getCustomFields()
     {
@@ -693,7 +693,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Sets custom_fields
      *
-     * @param \Swagger\Client\Model\GetCustomField[] $custom_fields custom_fields
+     * @param \Paqtcom\Simplicate\Model\GetCustomField[] $custom_fields custom_fields
      *
      * @return $this
      */
@@ -779,7 +779,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Gets sbi_codes
      *
-     * @return \Swagger\Client\Model\SbiCode[]
+     * @return \Paqtcom\Simplicate\Model\SbiCode[]
      */
     public function getSbiCodes()
     {
@@ -789,7 +789,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Sets sbi_codes
      *
-     * @param \Swagger\Client\Model\SbiCode[] $sbi_codes sbi_codes
+     * @param \Paqtcom\Simplicate\Model\SbiCode[] $sbi_codes sbi_codes
      *
      * @return $this
      */
@@ -1043,7 +1043,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Gets industry
      *
-     * @return \Swagger\Client\Model\Industry
+     * @return \Paqtcom\Simplicate\Model\Industry
      */
     public function getIndustry()
     {
@@ -1053,7 +1053,7 @@ class GetOrganization implements ModelInterface, ArrayAccess
     /**
      * Sets industry
      *
-     * @param \Swagger\Client\Model\Industry $industry industry
+     * @param \Paqtcom\Simplicate\Model\Industry $industry industry
      *
      * @return $this
      */

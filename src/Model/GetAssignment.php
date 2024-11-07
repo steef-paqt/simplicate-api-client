@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetAssignment Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -65,11 +65,11 @@ class GetAssignment implements ModelInterface, ArrayAccess
         'hours' => 'float',
         'hours_type' => 'string',
         'spread' => 'int[]',
-        'status' => '\Swagger\Client\Model\GetAssignmentStatus',
-        'project' => '\Swagger\Client\Model\GetProjectSimple',
-        'projectservice' => '\Swagger\Client\Model\GetProjectServiceSimple',
-        'projecthourstype' => '\Swagger\Client\Model\GetProjectServiceHoursType',
-        'employees' => '\Swagger\Client\Model\GetEmployeeSimple[]',
+        'status' => '\Paqtcom\Simplicate\Model\GetAssignmentStatus',
+        'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
+        'projectservice' => '\Paqtcom\Simplicate\Model\GetProjectServiceSimple',
+        'projecthourstype' => '\Paqtcom\Simplicate\Model\GetProjectServiceHoursType',
+        'employees' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple[]',
         'spent_amount' => 'string',
         'is_planned' => 'bool',
         'name' => 'string',
@@ -479,7 +479,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \Swagger\Client\Model\GetAssignmentStatus
+     * @return \Paqtcom\Simplicate\Model\GetAssignmentStatus
      */
     public function getStatus()
     {
@@ -489,7 +489,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Swagger\Client\Model\GetAssignmentStatus $status status
+     * @param \Paqtcom\Simplicate\Model\GetAssignmentStatus $status status
      *
      * @return $this
      */
@@ -503,7 +503,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
     /**
      * Gets project
      *
-     * @return \Swagger\Client\Model\GetProjectSimple
+     * @return \Paqtcom\Simplicate\Model\GetProjectSimple
      */
     public function getProject()
     {
@@ -513,7 +513,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
     /**
      * Sets project
      *
-     * @param \Swagger\Client\Model\GetProjectSimple $project project
+     * @param \Paqtcom\Simplicate\Model\GetProjectSimple $project project
      *
      * @return $this
      */
@@ -527,7 +527,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
     /**
      * Gets projectservice
      *
-     * @return \Swagger\Client\Model\GetProjectServiceSimple
+     * @return \Paqtcom\Simplicate\Model\GetProjectServiceSimple
      */
     public function getProjectservice()
     {
@@ -537,7 +537,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
     /**
      * Sets projectservice
      *
-     * @param \Swagger\Client\Model\GetProjectServiceSimple $projectservice projectservice
+     * @param \Paqtcom\Simplicate\Model\GetProjectServiceSimple $projectservice projectservice
      *
      * @return $this
      */
@@ -551,7 +551,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
     /**
      * Gets projecthourstype
      *
-     * @return \Swagger\Client\Model\GetProjectServiceHoursType
+     * @return \Paqtcom\Simplicate\Model\GetProjectServiceHoursType
      */
     public function getProjecthourstype()
     {
@@ -561,7 +561,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
     /**
      * Sets projecthourstype
      *
-     * @param \Swagger\Client\Model\GetProjectServiceHoursType $projecthourstype projecthourstype
+     * @param \Paqtcom\Simplicate\Model\GetProjectServiceHoursType $projecthourstype projecthourstype
      *
      * @return $this
      */
@@ -575,7 +575,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
     /**
      * Gets employees
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple[]
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple[]
      */
     public function getEmployees()
     {
@@ -585,7 +585,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
     /**
      * Sets employees
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple[] $employees employees
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple[] $employees employees
      *
      * @return $this
      */

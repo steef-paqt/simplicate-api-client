@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * RestResultPerson Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,8 +58,8 @@ class RestResultPerson implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => '\Swagger\Client\Model\GetPerson',
-        'metadata' => '\Swagger\Client\Model\MetaData',
+        'data' => '\Paqtcom\Simplicate\Model\GetPerson',
+        'metadata' => '\Paqtcom\Simplicate\Model\MetaData',
         'errors' => 'object[]',
         'debug' => 'object[]',
     ];
@@ -221,7 +221,7 @@ class RestResultPerson implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \Swagger\Client\Model\GetPerson
+     * @return \Paqtcom\Simplicate\Model\GetPerson
      */
     public function getData()
     {
@@ -231,7 +231,7 @@ class RestResultPerson implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \Swagger\Client\Model\GetPerson $data data
+     * @param \Paqtcom\Simplicate\Model\GetPerson $data data
      *
      * @return $this
      */
@@ -245,7 +245,7 @@ class RestResultPerson implements ModelInterface, ArrayAccess
     /**
      * Gets metadata
      *
-     * @return \Swagger\Client\Model\MetaData
+     * @return \Paqtcom\Simplicate\Model\MetaData
      */
     public function getMetadata()
     {
@@ -255,7 +255,7 @@ class RestResultPerson implements ModelInterface, ArrayAccess
     /**
      * Sets metadata
      *
-     * @param \Swagger\Client\Model\MetaData $metadata metadata
+     * @param \Paqtcom\Simplicate\Model\MetaData $metadata metadata
      *
      * @return $this
      */

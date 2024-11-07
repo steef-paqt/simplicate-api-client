@@ -5,8 +5,8 @@
  Name              | Type                                                                        | Description | Notes      
 -------------------|-----------------------------------------------------------------------------|-------------|------------
  **id**            | **string**                                                                  |             | [optional] 
- **organization**  | [**\Swagger\Client\Model\GetOrganizationSimple**](GetOrganizationSimple.md) |             | [optional] 
- **person**        | [**\Swagger\Client\Model\GetPersonSimple**](GetPersonSimple.md)             |             | [optional] 
+ **organization**  | [**\Paqtcom\Simplicate\Model\GetOrganizationSimple**](GetOrganizationSimple.md) |             | [optional] 
+ **person**        | [**\Paqtcom\Simplicate\Model\GetPersonSimple**](GetPersonSimple.md)             |             | [optional] 
  **created_at**    | **string**                                                                  |             | [optional] 
  **updated_at**    | **string**                                                                  |             | [optional] 
  **is_active**     | **bool**                                                                    |             | [optional] 

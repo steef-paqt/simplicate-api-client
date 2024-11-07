@@ -1,4 +1,4 @@
-# Swagger\Client\DocumentsApi
+# Paqtcom\Simplicate\DocumentsApi
 
 All URIs are relative to *http://localhost/api/v2*
 
@@ -15,7 +15,7 @@ All URIs are relative to *http://localhost/api/v2*
 
 # **documentsDocumentGet**
 
-> \Swagger\Client\Model\RestResultDocuments documentsDocumentGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultDocuments documentsDocumentGet($offset, $limit, $sort)
 
 Fetches all documents
 
@@ -25,7 +25,7 @@ Fetches all documents
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\DocumentsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -53,7 +53,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocuments**](../Model/RestResultDocuments.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocuments**](../Model/RestResultDocuments.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ Deletes the document with the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\DocumentsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -116,7 +116,7 @@ No authorization required
 
 # **documentsDocumentIdGet**
 
-> \Swagger\Client\Model\RestResultDocument documentsDocumentIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultDocument documentsDocumentIdGet($id)
 
 Fetches a single document by its id
 
@@ -126,7 +126,7 @@ Fetches a single document by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\DocumentsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -150,7 +150,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocument**](../Model/RestResultDocument.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocument**](../Model/RestResultDocument.md)
 
 ### Authorization
 
@@ -175,12 +175,12 @@ Add a new document
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\DocumentsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostDocument(); // \Swagger\Client\Model\PostDocument | Document object containing data
+$body = new \Paqtcom\Simplicate\Model\PostDocument(); // \Paqtcom\Simplicate\Model\PostDocument | Document object containing data
 
 try {
     $apiInstance->documentsDocumentPost($body);
@@ -194,7 +194,7 @@ try {
 
  Name     | Type                                                               | Description                     | Notes 
 ----------|--------------------------------------------------------------------|---------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostDocument**](../Model/PostDocument.md) | Document object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostDocument**](../Model/PostDocument.md) | Document object containing data |
 
 ### Return type
 
@@ -223,12 +223,12 @@ Add a new document
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\DocumentsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PutDocument(); // \Swagger\Client\Model\PutDocument | Document object containing data
+$body = new \Paqtcom\Simplicate\Model\PutDocument(); // \Paqtcom\Simplicate\Model\PutDocument | Document object containing data
 
 try {
     $apiInstance->documentsDocumentPut($body);
@@ -242,7 +242,7 @@ try {
 
  Name     | Type                                                             | Description                     | Notes 
 ----------|------------------------------------------------------------------|---------------------------------|-------
- **body** | [**\Swagger\Client\Model\PutDocument**](../Model/PutDocument.md) | Document object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PutDocument**](../Model/PutDocument.md) | Document object containing data |
 
 ### Return type
 
@@ -261,7 +261,7 @@ No authorization required
 
 # **documentsDocumenttypeGet**
 
-> \Swagger\Client\Model\RestResultDocumentTypes documentsDocumenttypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultDocumentTypes documentsDocumenttypeGet($offset, $limit, $sort)
 
 Fetches all available document types
 
@@ -271,7 +271,7 @@ Fetches all available document types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\DocumentsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -299,7 +299,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocumentTypes**](../Model/RestResultDocumentTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocumentTypes**](../Model/RestResultDocumentTypes.md)
 
 ### Authorization
 
@@ -314,7 +314,7 @@ No authorization required
 
 # **documentsDocumenttypeIdGet**
 
-> \Swagger\Client\Model\RestResultDocumentType documentsDocumenttypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultDocumentType documentsDocumenttypeIdGet($id)
 
 Fetches a single document type by its id
 
@@ -324,7 +324,7 @@ Fetches a single document type by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\DocumentsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -348,7 +348,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocumentType**](../Model/RestResultDocumentType.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocumentType**](../Model/RestResultDocumentType.md)
 
 ### Authorization
 
@@ -373,7 +373,7 @@ Fetches a single file by document id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\DocumentsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()

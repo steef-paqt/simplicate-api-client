@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * PersonContact Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -68,7 +68,7 @@ class PersonContact implements ModelInterface, ArrayAccess
         'work_email' => 'string',
         'work_phone' => 'string',
         'work_mobile' => 'string',
-        'interests' => '\Swagger\Client\Model\Interest[]',
+        'interests' => '\Paqtcom\Simplicate\Model\Interest[]',
     ];
 
     /**
@@ -503,7 +503,7 @@ class PersonContact implements ModelInterface, ArrayAccess
     /**
      * Gets interests
      *
-     * @return \Swagger\Client\Model\Interest[]
+     * @return \Paqtcom\Simplicate\Model\Interest[]
      */
     public function getInterests()
     {
@@ -513,7 +513,7 @@ class PersonContact implements ModelInterface, ArrayAccess
     /**
      * Sets interests
      *
-     * @param \Swagger\Client\Model\Interest[] $interests interests
+     * @param \Paqtcom\Simplicate\Model\Interest[] $interests interests
      *
      * @return $this
      */

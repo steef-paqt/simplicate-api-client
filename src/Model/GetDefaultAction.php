@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetDefaultAction Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,8 +59,8 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'task' => '\Swagger\Client\Model\GetSimpleDefaultTask',
-        'to_task' => '\Swagger\Client\Model\GetSimpleDefaultTask',
+        'task' => '\Paqtcom\Simplicate\Model\GetSimpleDefaultTask',
+        'to_task' => '\Paqtcom\Simplicate\Model\GetSimpleDefaultTask',
         'name' => 'string',
         'is_response_required' => 'bool',
         'color' => 'string',
@@ -257,7 +257,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
     /**
      * Gets task
      *
-     * @return \Swagger\Client\Model\GetSimpleDefaultTask
+     * @return \Paqtcom\Simplicate\Model\GetSimpleDefaultTask
      */
     public function getTask()
     {
@@ -267,7 +267,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
     /**
      * Sets task
      *
-     * @param \Swagger\Client\Model\GetSimpleDefaultTask $task task
+     * @param \Paqtcom\Simplicate\Model\GetSimpleDefaultTask $task task
      *
      * @return $this
      */
@@ -281,7 +281,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
     /**
      * Gets to_task
      *
-     * @return \Swagger\Client\Model\GetSimpleDefaultTask
+     * @return \Paqtcom\Simplicate\Model\GetSimpleDefaultTask
      */
     public function getToTask()
     {
@@ -291,7 +291,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
     /**
      * Sets to_task
      *
-     * @param \Swagger\Client\Model\GetSimpleDefaultTask $to_task to_task
+     * @param \Paqtcom\Simplicate\Model\GetSimpleDefaultTask $to_task to_task
      *
      * @return $this
      */

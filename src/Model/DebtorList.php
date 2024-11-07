@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * DebtorList Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,8 +58,8 @@ class DebtorList implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'organization' => '\Swagger\Client\Model\GetOrganizationDebtorSimple',
-        'person' => '\Swagger\Client\Model\GetPersonDebtorSimple',
+        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple',
+        'person' => '\Paqtcom\Simplicate\Model\GetPersonDebtorSimple',
     ];
 
     /**
@@ -209,7 +209,7 @@ class DebtorList implements ModelInterface, ArrayAccess
     /**
      * Gets organization
      *
-     * @return \Swagger\Client\Model\GetOrganizationDebtorSimple
+     * @return \Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple
      */
     public function getOrganization()
     {
@@ -219,7 +219,7 @@ class DebtorList implements ModelInterface, ArrayAccess
     /**
      * Sets organization
      *
-     * @param \Swagger\Client\Model\GetOrganizationDebtorSimple $organization organization
+     * @param \Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple $organization organization
      *
      * @return $this
      */
@@ -233,7 +233,7 @@ class DebtorList implements ModelInterface, ArrayAccess
     /**
      * Gets person
      *
-     * @return \Swagger\Client\Model\GetPersonDebtorSimple
+     * @return \Paqtcom\Simplicate\Model\GetPersonDebtorSimple
      */
     public function getPerson()
     {
@@ -243,7 +243,7 @@ class DebtorList implements ModelInterface, ArrayAccess
     /**
      * Sets person
      *
-     * @param \Swagger\Client\Model\GetPersonDebtorSimple $person person
+     * @param \Paqtcom\Simplicate\Model\GetPersonDebtorSimple $person person
      *
      * @return $this
      */

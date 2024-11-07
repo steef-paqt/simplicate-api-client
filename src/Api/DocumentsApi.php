@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Paqtcom\Simplicate\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ApiException;
+use Paqtcom\Simplicate\Configuration;
+use Paqtcom\Simplicate\HeaderSelector;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * DocumentsApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -97,9 +97,9 @@ class DocumentsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocuments
+     * @return \Paqtcom\Simplicate\Model\RestResultDocuments
      */
     public function documentsDocumentGet($offset = null, $limit = '5', $sort = null)
     {
@@ -117,13 +117,13 @@ class DocumentsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocuments, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocuments, HTTP status code, HTTP response headers (array of strings)
      */
     public function documentsDocumentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocuments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
         $request = $this->documentsDocumentGetRequest($offset, $limit, $sort);
 
         try {
@@ -174,7 +174,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocuments',
+                        '\Paqtcom\Simplicate\Model\RestResultDocuments',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +220,7 @@ class DocumentsApi
      */
     public function documentsDocumentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocuments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
         $request = $this->documentsDocumentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -368,7 +368,7 @@ class DocumentsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -384,7 +384,7 @@ class DocumentsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -596,9 +596,9 @@ class DocumentsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocument
+     * @return \Paqtcom\Simplicate\Model\RestResultDocument
      */
     public function documentsDocumentIdGet($id)
     {
@@ -614,13 +614,13 @@ class DocumentsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocument, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocument, HTTP status code, HTTP response headers (array of strings)
      */
     public function documentsDocumentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocument';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
         $request = $this->documentsDocumentIdGetRequest($id);
 
         try {
@@ -671,7 +671,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocument',
+                        '\Paqtcom\Simplicate\Model\RestResultDocument',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -713,7 +713,7 @@ class DocumentsApi
      */
     public function documentsDocumentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocument';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
         $request = $this->documentsDocumentIdGetRequest($id);
 
         return $this->client
@@ -860,9 +860,9 @@ class DocumentsApi
      *
      * Add a new document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -876,9 +876,9 @@ class DocumentsApi
      *
      * Add a new document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -928,7 +928,7 @@ class DocumentsApi
      *
      * Add a new document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -948,7 +948,7 @@ class DocumentsApi
      *
      * Add a new document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -984,7 +984,7 @@ class DocumentsApi
     /**
      * Create request for operation 'documentsDocumentPost'
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1082,9 +1082,9 @@ class DocumentsApi
      *
      * Add a new document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1098,9 +1098,9 @@ class DocumentsApi
      *
      * Add a new document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1150,7 +1150,7 @@ class DocumentsApi
      *
      * Add a new document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1170,7 +1170,7 @@ class DocumentsApi
      *
      * Add a new document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1206,7 +1206,7 @@ class DocumentsApi
     /**
      * Create request for operation 'documentsDocumentPut'
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1308,9 +1308,9 @@ class DocumentsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocumentTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultDocumentTypes
      */
     public function documentsDocumenttypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -1328,13 +1328,13 @@ class DocumentsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocumentTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocumentTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function documentsDocumenttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
         $request = $this->documentsDocumenttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -1385,7 +1385,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocumentTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultDocumentTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1431,7 +1431,7 @@ class DocumentsApi
      */
     public function documentsDocumenttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
         $request = $this->documentsDocumenttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1579,9 +1579,9 @@ class DocumentsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocumentType
+     * @return \Paqtcom\Simplicate\Model\RestResultDocumentType
      */
     public function documentsDocumenttypeIdGet($id)
     {
@@ -1597,13 +1597,13 @@ class DocumentsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocumentType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocumentType, HTTP status code, HTTP response headers (array of strings)
      */
     public function documentsDocumenttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
         $request = $this->documentsDocumenttypeIdGetRequest($id);
 
         try {
@@ -1654,7 +1654,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocumentType',
+                        '\Paqtcom\Simplicate\Model\RestResultDocumentType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1696,7 +1696,7 @@ class DocumentsApi
      */
     public function documentsDocumenttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
         $request = $this->documentsDocumenttypeIdGetRequest($id);
 
         return $this->client
@@ -1845,7 +1845,7 @@ class DocumentsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
@@ -1863,7 +1863,7 @@ class DocumentsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */

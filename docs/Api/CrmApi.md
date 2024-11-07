@@ -1,56 +1,56 @@
-# Swagger\Client\CRMApi
+# Paqtcom\Simplicate\CrmApi
 
 All URIs are relative to *http://localhost/api/v2*
 
  Method                                                                                       | HTTP request                                    | Description                                                                                    
 ----------------------------------------------------------------------------------------------|-------------------------------------------------|------------------------------------------------------------------------------------------------
- [**crmContactpersonGet**](CRMApi.md#crmContactpersonGet)                                     | **GET** /crm/contactperson                      | Fetches all contact persons                                                                    
- [**crmContactpersonIdDelete**](CRMApi.md#crmContactpersonIdDelete)                           | **DELETE** /crm/contactperson/{id}              | Deletes the contact person for the given id                                                    
- [**crmContactpersonIdGet**](CRMApi.md#crmContactpersonIdGet)                                 | **GET** /crm/contactperson/{id}                 | Fetches a single contact person by id                                                          
- [**crmCountryGet**](CRMApi.md#crmCountryGet)                                                 | **GET** /crm/country                            | Fetches all available countries                                                                
- [**crmCountryIdGet**](CRMApi.md#crmCountryIdGet)                                             | **GET** /crm/country/{id}                       | Fetches a single country by id                                                                 
- [**crmDebtorGet**](CRMApi.md#crmDebtorGet)                                                   | **GET** /crm/debtor                             | Fetches all debtors available (organization and if business to consumer is enabled person also 
- [**crmDocumentGet**](CRMApi.md#crmDocumentGet)                                               | **GET** /crm/document                           | Fetches all available documents for CRM                                                        
- [**crmDocumentIdDelete**](CRMApi.md#crmDocumentIdDelete)                                     | **DELETE** /crm/document/{id}                   | Deletes the document with the given id                                                         
- [**crmDocumentIdGet**](CRMApi.md#crmDocumentIdGet)                                           | **GET** /crm/document/{id}                      | Fetches a single document for CRM by its id                                                    
- [**crmDocumentPost**](CRMApi.md#crmDocumentPost)                                             | **POST** /crm/document                          | update a document                                                                              
- [**crmDocumentPut**](CRMApi.md#crmDocumentPut)                                               | **PUT** /crm/document                           | update a document                                                                              
- [**crmDocumenttypeGet**](CRMApi.md#crmDocumenttypeGet)                                       | **GET** /crm/documenttype                       | Fetches all available document types for CRM                                                   
- [**crmDocumenttypeIdGet**](CRMApi.md#crmDocumenttypeIdGet)                                   | **GET** /crm/documenttype/{id}                  | Fetches a single document type for CRM by its id                                               
- [**crmGenderGet**](CRMApi.md#crmGenderGet)                                                   | **GET** /crm/gender                             | Fetches all available genders                                                                  
- [**crmGenderIdGet**](CRMApi.md#crmGenderIdGet)                                               | **GET** /crm/gender/{id}                        | Fetches a single gender by id                                                                  
- [**crmIndustryGet**](CRMApi.md#crmIndustryGet)                                               | **GET** /crm/industry                           | Fetches all industry types                                                                     
- [**crmIndustryIdGet**](CRMApi.md#crmIndustryIdGet)                                           | **GET** /crm/industry/{id}                      | Fetches a industry type by id                                                                  
- [**crmInterestsGet**](CRMApi.md#crmInterestsGet)                                             | **GET** /crm/interests                          | Fetches all interests available                                                                
- [**crmInterestsIdGet**](CRMApi.md#crmInterestsIdGet)                                         | **GET** /crm/interests/{id}                     | Fetches a single interest by id                                                                
- [**crmMyorganizationprofileGet**](CRMApi.md#crmMyorganizationprofileGet)                     | **GET** /crm/myorganizationprofile              | Fetches all my organization profiles                                                           
- [**crmMyorganizationprofileIdGet**](CRMApi.md#crmMyorganizationprofileIdGet)                 | **GET** /crm/myorganizationprofile/{id}         | Fetches a single my organization profile by id                                                 
- [**crmOrganizationGet**](CRMApi.md#crmOrganizationGet)                                       | **GET** /crm/organization                       | Fetches all organizations                                                                      
- [**crmOrganizationIdDelete**](CRMApi.md#crmOrganizationIdDelete)                             | **DELETE** /crm/organization/{id}               | Deletes the organization for the given id                                                      
- [**crmOrganizationIdGet**](CRMApi.md#crmOrganizationIdGet)                                   | **GET** /crm/organization/{id}                  | Fetches a single organization by id                                                            
- [**crmOrganizationIdPut**](CRMApi.md#crmOrganizationIdPut)                                   | **PUT** /crm/organization/{id}                  | Updates an organization for the given id                                                       
- [**crmOrganizationPost**](CRMApi.md#crmOrganizationPost)                                     | **POST** /crm/organization                      | Add a new organization                                                                         
- [**crmOrganizationcustomfieldgroupsGet**](CRMApi.md#crmOrganizationcustomfieldgroupsGet)     | **GET** /crm/organizationcustomfieldgroups      | Fetches all custom field groups available for organizations                                    
- [**crmOrganizationcustomfieldgroupsIdGet**](CRMApi.md#crmOrganizationcustomfieldgroupsIdGet) | **GET** /crm/organizationcustomfieldgroups/{id} | Fetches a single custom field group available for organization                                 
- [**crmOrganizationcustomfieldsGet**](CRMApi.md#crmOrganizationcustomfieldsGet)               | **GET** /crm/organizationcustomfields           | Fetches all custom fields available for organizations                                          
- [**crmOrganizationcustomfieldsIdGet**](CRMApi.md#crmOrganizationcustomfieldsIdGet)           | **GET** /crm/organizationcustomfields/{id}      | Fetches a single custom field available for organization                                       
- [**crmOrganizationsizeGet**](CRMApi.md#crmOrganizationsizeGet)                               | **GET** /crm/organizationsize                   | Fetches all available organization sizes                                                       
- [**crmOrganizationsizeIdGet**](CRMApi.md#crmOrganizationsizeIdGet)                           | **GET** /crm/organizationsize/{id}              | Fetches a single organization size by id                                                       
- [**crmPersonGet**](CRMApi.md#crmPersonGet)                                                   | **GET** /crm/person                             | Fetches all persons                                                                            
- [**crmPersonIdDelete**](CRMApi.md#crmPersonIdDelete)                                         | **DELETE** /crm/person/{id}                     | Deletes the person for the given id                                                            
- [**crmPersonIdGet**](CRMApi.md#crmPersonIdGet)                                               | **GET** /crm/person/{id}                        | Fetches a single person by id                                                                  
- [**crmPersonIdPut**](CRMApi.md#crmPersonIdPut)                                               | **PUT** /crm/person/{id}                        | Updates a person for the given id                                                              
- [**crmPersonPost**](CRMApi.md#crmPersonPost)                                                 | **POST** /crm/person                            | Add a new person                                                                               
- [**crmPersoncustomfieldgroupsGet**](CRMApi.md#crmPersoncustomfieldgroupsGet)                 | **GET** /crm/personcustomfieldgroups            | Fetches all custom field groups available for persons                                          
- [**crmPersoncustomfieldgroupsIdGet**](CRMApi.md#crmPersoncustomfieldgroupsIdGet)             | **GET** /crm/personcustomfieldgroups/{id}       | Fetches a single custom field group available for person                                       
- [**crmPersoncustomfieldsGet**](CRMApi.md#crmPersoncustomfieldsGet)                           | **GET** /crm/personcustomfields                 | Fetches all custom fields available for persons                                                
- [**crmPersoncustomfieldsIdGet**](CRMApi.md#crmPersoncustomfieldsIdGet)                       | **GET** /crm/personcustomfields/{id}            | Fetches a single custom field available for person                                             
- [**crmRelationtypeGet**](CRMApi.md#crmRelationtypeGet)                                       | **GET** /crm/relationtype                       | Fetches all relation types                                                                     
- [**crmRelationtypeIdGet**](CRMApi.md#crmRelationtypeIdGet)                                   | **GET** /crm/relationtype/{id}                  | Fetches a single relation type by id                                                           
+ [**crmContactpersonGet**](CrmApi.md#crmContactpersonGet)                                     | **GET** /crm/contactperson                      | Fetches all contact persons                                                                    
+ [**crmContactpersonIdDelete**](CrmApi.md#crmContactpersonIdDelete)                           | **DELETE** /crm/contactperson/{id}              | Deletes the contact person for the given id                                                    
+ [**crmContactpersonIdGet**](CrmApi.md#crmContactpersonIdGet)                                 | **GET** /crm/contactperson/{id}                 | Fetches a single contact person by id                                                          
+ [**crmCountryGet**](CrmApi.md#crmCountryGet)                                                 | **GET** /crm/country                            | Fetches all available countries                                                                
+ [**crmCountryIdGet**](CrmApi.md#crmCountryIdGet)                                             | **GET** /crm/country/{id}                       | Fetches a single country by id                                                                 
+ [**crmDebtorGet**](CrmApi.md#crmDebtorGet)                                                   | **GET** /crm/debtor                             | Fetches all debtors available (organization and if business to consumer is enabled person also 
+ [**crmDocumentGet**](CrmApi.md#crmDocumentGet)                                               | **GET** /crm/document                           | Fetches all available documents for CRM                                                        
+ [**crmDocumentIdDelete**](CrmApi.md#crmDocumentIdDelete)                                     | **DELETE** /crm/document/{id}                   | Deletes the document with the given id                                                         
+ [**crmDocumentIdGet**](CrmApi.md#crmDocumentIdGet)                                           | **GET** /crm/document/{id}                      | Fetches a single document for CRM by its id                                                    
+ [**crmDocumentPost**](CrmApi.md#crmDocumentPost)                                             | **POST** /crm/document                          | update a document                                                                              
+ [**crmDocumentPut**](CrmApi.md#crmDocumentPut)                                               | **PUT** /crm/document                           | update a document                                                                              
+ [**crmDocumenttypeGet**](CrmApi.md#crmDocumenttypeGet)                                       | **GET** /crm/documenttype                       | Fetches all available document types for CRM                                                   
+ [**crmDocumenttypeIdGet**](CrmApi.md#crmDocumenttypeIdGet)                                   | **GET** /crm/documenttype/{id}                  | Fetches a single document type for CRM by its id                                               
+ [**crmGenderGet**](CrmApi.md#crmGenderGet)                                                   | **GET** /crm/gender                             | Fetches all available genders                                                                  
+ [**crmGenderIdGet**](CrmApi.md#crmGenderIdGet)                                               | **GET** /crm/gender/{id}                        | Fetches a single gender by id                                                                  
+ [**crmIndustryGet**](CrmApi.md#crmIndustryGet)                                               | **GET** /crm/industry                           | Fetches all industry types                                                                     
+ [**crmIndustryIdGet**](CrmApi.md#crmIndustryIdGet)                                           | **GET** /crm/industry/{id}                      | Fetches a industry type by id                                                                  
+ [**crmInterestsGet**](CrmApi.md#crmInterestsGet)                                             | **GET** /crm/interests                          | Fetches all interests available                                                                
+ [**crmInterestsIdGet**](CrmApi.md#crmInterestsIdGet)                                         | **GET** /crm/interests/{id}                     | Fetches a single interest by id                                                                
+ [**crmMyorganizationprofileGet**](CrmApi.md#crmMyorganizationprofileGet)                     | **GET** /crm/myorganizationprofile              | Fetches all my organization profiles                                                           
+ [**crmMyorganizationprofileIdGet**](CrmApi.md#crmMyorganizationprofileIdGet)                 | **GET** /crm/myorganizationprofile/{id}         | Fetches a single my organization profile by id                                                 
+ [**crmOrganizationGet**](CrmApi.md#crmOrganizationGet)                                       | **GET** /crm/organization                       | Fetches all organizations                                                                      
+ [**crmOrganizationIdDelete**](CrmApi.md#crmOrganizationIdDelete)                             | **DELETE** /crm/organization/{id}               | Deletes the organization for the given id                                                      
+ [**crmOrganizationIdGet**](CrmApi.md#crmOrganizationIdGet)                                   | **GET** /crm/organization/{id}                  | Fetches a single organization by id                                                            
+ [**crmOrganizationIdPut**](CrmApi.md#crmOrganizationIdPut)                                   | **PUT** /crm/organization/{id}                  | Updates an organization for the given id                                                       
+ [**crmOrganizationPost**](CrmApi.md#crmOrganizationPost)                                     | **POST** /crm/organization                      | Add a new organization                                                                         
+ [**crmOrganizationcustomfieldgroupsGet**](CrmApi.md#crmOrganizationcustomfieldgroupsGet)     | **GET** /crm/organizationcustomfieldgroups      | Fetches all custom field groups available for organizations                                    
+ [**crmOrganizationcustomfieldgroupsIdGet**](CrmApi.md#crmOrganizationcustomfieldgroupsIdGet) | **GET** /crm/organizationcustomfieldgroups/{id} | Fetches a single custom field group available for organization                                 
+ [**crmOrganizationcustomfieldsGet**](CrmApi.md#crmOrganizationcustomfieldsGet)               | **GET** /crm/organizationcustomfields           | Fetches all custom fields available for organizations                                          
+ [**crmOrganizationcustomfieldsIdGet**](CrmApi.md#crmOrganizationcustomfieldsIdGet)           | **GET** /crm/organizationcustomfields/{id}      | Fetches a single custom field available for organization                                       
+ [**crmOrganizationsizeGet**](CrmApi.md#crmOrganizationsizeGet)                               | **GET** /crm/organizationsize                   | Fetches all available organization sizes                                                       
+ [**crmOrganizationsizeIdGet**](CrmApi.md#crmOrganizationsizeIdGet)                           | **GET** /crm/organizationsize/{id}              | Fetches a single organization size by id                                                       
+ [**crmPersonGet**](CrmApi.md#crmPersonGet)                                                   | **GET** /crm/person                             | Fetches all persons                                                                            
+ [**crmPersonIdDelete**](CrmApi.md#crmPersonIdDelete)                                         | **DELETE** /crm/person/{id}                     | Deletes the person for the given id                                                            
+ [**crmPersonIdGet**](CrmApi.md#crmPersonIdGet)                                               | **GET** /crm/person/{id}                        | Fetches a single person by id                                                                  
+ [**crmPersonIdPut**](CrmApi.md#crmPersonIdPut)                                               | **PUT** /crm/person/{id}                        | Updates a person for the given id                                                              
+ [**crmPersonPost**](CrmApi.md#crmPersonPost)                                                 | **POST** /crm/person                            | Add a new person                                                                               
+ [**crmPersoncustomfieldgroupsGet**](CrmApi.md#crmPersoncustomfieldgroupsGet)                 | **GET** /crm/personcustomfieldgroups            | Fetches all custom field groups available for persons                                          
+ [**crmPersoncustomfieldgroupsIdGet**](CrmApi.md#crmPersoncustomfieldgroupsIdGet)             | **GET** /crm/personcustomfieldgroups/{id}       | Fetches a single custom field group available for person                                       
+ [**crmPersoncustomfieldsGet**](CrmApi.md#crmPersoncustomfieldsGet)                           | **GET** /crm/personcustomfields                 | Fetches all custom fields available for persons                                                
+ [**crmPersoncustomfieldsIdGet**](CrmApi.md#crmPersoncustomfieldsIdGet)                       | **GET** /crm/personcustomfields/{id}            | Fetches a single custom field available for person                                             
+ [**crmRelationtypeGet**](CrmApi.md#crmRelationtypeGet)                                       | **GET** /crm/relationtype                       | Fetches all relation types                                                                     
+ [**crmRelationtypeIdGet**](CrmApi.md#crmRelationtypeIdGet)                                   | **GET** /crm/relationtype/{id}                  | Fetches a single relation type by id                                                           
 
 # **crmContactpersonGet**
 
-> \Swagger\Client\Model\RestResultContactPersons crmContactpersonGet($offset, $limit, $sort, $select)
+> \Paqtcom\Simplicate\Model\RestResultContactPersons crmContactpersonGet($offset, $limit, $sort, $select)
 
 Fetches all contact persons
 
@@ -60,7 +60,7 @@ Fetches all contact persons
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -74,7 +74,7 @@ try {
     $result = $apiInstance->crmContactpersonGet($offset, $limit, $sort, $select);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmContactpersonGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmContactpersonGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -90,7 +90,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultContactPersons**](../Model/RestResultContactPersons.md)
+[**\Paqtcom\Simplicate\Model\RestResultContactPersons**](../Model/RestResultContactPersons.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ Deletes the contact person for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -125,7 +125,7 @@ $id = "id_example"; // string | The template's id
 try {
     $apiInstance->crmContactpersonIdDelete($id);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmContactpersonIdDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmContactpersonIdDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -153,7 +153,7 @@ No authorization required
 
 # **crmContactpersonIdGet**
 
-> \Swagger\Client\Model\RestResultContactPerson crmContactpersonIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultContactPerson crmContactpersonIdGet($id)
 
 Fetches a single contact person by id
 
@@ -163,7 +163,7 @@ Fetches a single contact person by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -174,7 +174,7 @@ try {
     $result = $apiInstance->crmContactpersonIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmContactpersonIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmContactpersonIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -187,7 +187,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultContactPerson**](../Model/RestResultContactPerson.md)
+[**\Paqtcom\Simplicate\Model\RestResultContactPerson**](../Model/RestResultContactPerson.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ No authorization required
 
 # **crmCountryGet**
 
-> \Swagger\Client\Model\RestResultCountries crmCountryGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCountries crmCountryGet($offset, $limit, $sort)
 
 Fetches all available countries
 
@@ -212,7 +212,7 @@ Fetches all available countries
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -225,7 +225,7 @@ try {
     $result = $apiInstance->crmCountryGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmCountryGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmCountryGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -240,7 +240,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCountries**](../Model/RestResultCountries.md)
+[**\Paqtcom\Simplicate\Model\RestResultCountries**](../Model/RestResultCountries.md)
 
 ### Authorization
 
@@ -255,7 +255,7 @@ No authorization required
 
 # **crmCountryIdGet**
 
-> \Swagger\Client\Model\RestResultCountry crmCountryIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultCountry crmCountryIdGet($id)
 
 Fetches a single country by id
 
@@ -265,7 +265,7 @@ Fetches a single country by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -276,7 +276,7 @@ try {
     $result = $apiInstance->crmCountryIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmCountryIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmCountryIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -289,7 +289,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCountry**](../Model/RestResultCountry.md)
+[**\Paqtcom\Simplicate\Model\RestResultCountry**](../Model/RestResultCountry.md)
 
 ### Authorization
 
@@ -304,7 +304,7 @@ No authorization required
 
 # **crmDebtorGet**
 
-> \Swagger\Client\Model\RestResultDebtorList crmDebtorGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultDebtorList crmDebtorGet($offset, $limit, $sort)
 
 Fetches all debtors available (organization and if business to consumer is enabled person also
 
@@ -314,7 +314,7 @@ Fetches all debtors available (organization and if business to consumer is enabl
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -327,7 +327,7 @@ try {
     $result = $apiInstance->crmDebtorGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmDebtorGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmDebtorGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -342,7 +342,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDebtorList**](../Model/RestResultDebtorList.md)
+[**\Paqtcom\Simplicate\Model\RestResultDebtorList**](../Model/RestResultDebtorList.md)
 
 ### Authorization
 
@@ -357,7 +357,7 @@ No authorization required
 
 # **crmDocumentGet**
 
-> \Swagger\Client\Model\RestResultDocuments crmDocumentGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultDocuments crmDocumentGet($offset, $limit, $sort)
 
 Fetches all available documents for CRM
 
@@ -367,7 +367,7 @@ Fetches all available documents for CRM
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -380,7 +380,7 @@ try {
     $result = $apiInstance->crmDocumentGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmDocumentGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmDocumentGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -395,7 +395,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocuments**](../Model/RestResultDocuments.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocuments**](../Model/RestResultDocuments.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Deletes the document with the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -430,7 +430,7 @@ $id = "id_example"; // string | The template's id
 try {
     $apiInstance->crmDocumentIdDelete($id);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmDocumentIdDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmDocumentIdDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -458,7 +458,7 @@ No authorization required
 
 # **crmDocumentIdGet**
 
-> \Swagger\Client\Model\RestResultDocument crmDocumentIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultDocument crmDocumentIdGet($id)
 
 Fetches a single document for CRM by its id
 
@@ -468,7 +468,7 @@ Fetches a single document for CRM by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -479,7 +479,7 @@ try {
     $result = $apiInstance->crmDocumentIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmDocumentIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmDocumentIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -492,7 +492,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocument**](../Model/RestResultDocument.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocument**](../Model/RestResultDocument.md)
 
 ### Authorization
 
@@ -517,17 +517,17 @@ update a document
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostDocument(); // \Swagger\Client\Model\PostDocument | Document object containing data
+$body = new \Paqtcom\Simplicate\Model\PostDocument(); // \Paqtcom\Simplicate\Model\PostDocument | Document object containing data
 
 try {
     $apiInstance->crmDocumentPost($body);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmDocumentPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmDocumentPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -536,7 +536,7 @@ try {
 
  Name     | Type                                                               | Description                     | Notes 
 ----------|--------------------------------------------------------------------|---------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostDocument**](../Model/PostDocument.md) | Document object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostDocument**](../Model/PostDocument.md) | Document object containing data |
 
 ### Return type
 
@@ -565,17 +565,17 @@ update a document
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PutDocument(); // \Swagger\Client\Model\PutDocument | Document object containing data
+$body = new \Paqtcom\Simplicate\Model\PutDocument(); // \Paqtcom\Simplicate\Model\PutDocument | Document object containing data
 
 try {
     $apiInstance->crmDocumentPut($body);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmDocumentPut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmDocumentPut: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -584,7 +584,7 @@ try {
 
  Name     | Type                                                             | Description                     | Notes 
 ----------|------------------------------------------------------------------|---------------------------------|-------
- **body** | [**\Swagger\Client\Model\PutDocument**](../Model/PutDocument.md) | Document object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PutDocument**](../Model/PutDocument.md) | Document object containing data |
 
 ### Return type
 
@@ -603,7 +603,7 @@ No authorization required
 
 # **crmDocumenttypeGet**
 
-> \Swagger\Client\Model\RestResultDocumentTypes crmDocumenttypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultDocumentTypes crmDocumenttypeGet($offset, $limit, $sort)
 
 Fetches all available document types for CRM
 
@@ -613,7 +613,7 @@ Fetches all available document types for CRM
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -626,7 +626,7 @@ try {
     $result = $apiInstance->crmDocumenttypeGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmDocumenttypeGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmDocumenttypeGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -641,7 +641,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocumentTypes**](../Model/RestResultDocumentTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocumentTypes**](../Model/RestResultDocumentTypes.md)
 
 ### Authorization
 
@@ -656,7 +656,7 @@ No authorization required
 
 # **crmDocumenttypeIdGet**
 
-> \Swagger\Client\Model\RestResultDocumentType crmDocumenttypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultDocumentType crmDocumenttypeIdGet($id)
 
 Fetches a single document type for CRM by its id
 
@@ -666,7 +666,7 @@ Fetches a single document type for CRM by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -677,7 +677,7 @@ try {
     $result = $apiInstance->crmDocumenttypeIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmDocumenttypeIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmDocumenttypeIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -690,7 +690,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocumentType**](../Model/RestResultDocumentType.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocumentType**](../Model/RestResultDocumentType.md)
 
 ### Authorization
 
@@ -705,7 +705,7 @@ No authorization required
 
 # **crmGenderGet**
 
-> \Swagger\Client\Model\RestResultGenders crmGenderGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultGenders crmGenderGet($offset, $limit, $sort)
 
 Fetches all available genders
 
@@ -715,7 +715,7 @@ Fetches all available genders
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -728,7 +728,7 @@ try {
     $result = $apiInstance->crmGenderGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmGenderGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmGenderGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -743,7 +743,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultGenders**](../Model/RestResultGenders.md)
+[**\Paqtcom\Simplicate\Model\RestResultGenders**](../Model/RestResultGenders.md)
 
 ### Authorization
 
@@ -758,7 +758,7 @@ No authorization required
 
 # **crmGenderIdGet**
 
-> \Swagger\Client\Model\RestResultGender crmGenderIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultGender crmGenderIdGet($id)
 
 Fetches a single gender by id
 
@@ -768,7 +768,7 @@ Fetches a single gender by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -779,7 +779,7 @@ try {
     $result = $apiInstance->crmGenderIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmGenderIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmGenderIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -792,7 +792,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultGender**](../Model/RestResultGender.md)
+[**\Paqtcom\Simplicate\Model\RestResultGender**](../Model/RestResultGender.md)
 
 ### Authorization
 
@@ -807,7 +807,7 @@ No authorization required
 
 # **crmIndustryGet**
 
-> \Swagger\Client\Model\RestResultIndustries crmIndustryGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultIndustries crmIndustryGet($offset, $limit, $sort)
 
 Fetches all industry types
 
@@ -817,7 +817,7 @@ Fetches all industry types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -830,7 +830,7 @@ try {
     $result = $apiInstance->crmIndustryGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmIndustryGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmIndustryGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -845,7 +845,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultIndustries**](../Model/RestResultIndustries.md)
+[**\Paqtcom\Simplicate\Model\RestResultIndustries**](../Model/RestResultIndustries.md)
 
 ### Authorization
 
@@ -860,7 +860,7 @@ No authorization required
 
 # **crmIndustryIdGet**
 
-> \Swagger\Client\Model\RestResultIndustry crmIndustryIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultIndustry crmIndustryIdGet($id)
 
 Fetches a industry type by id
 
@@ -870,7 +870,7 @@ Fetches a industry type by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -881,7 +881,7 @@ try {
     $result = $apiInstance->crmIndustryIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmIndustryIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmIndustryIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -894,7 +894,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultIndustry**](../Model/RestResultIndustry.md)
+[**\Paqtcom\Simplicate\Model\RestResultIndustry**](../Model/RestResultIndustry.md)
 
 ### Authorization
 
@@ -909,7 +909,7 @@ No authorization required
 
 # **crmInterestsGet**
 
-> \Swagger\Client\Model\RestResultInterests crmInterestsGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultInterests crmInterestsGet($offset, $limit, $sort)
 
 Fetches all interests available
 
@@ -919,7 +919,7 @@ Fetches all interests available
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -932,7 +932,7 @@ try {
     $result = $apiInstance->crmInterestsGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmInterestsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmInterestsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -947,7 +947,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultInterests**](../Model/RestResultInterests.md)
+[**\Paqtcom\Simplicate\Model\RestResultInterests**](../Model/RestResultInterests.md)
 
 ### Authorization
 
@@ -962,7 +962,7 @@ No authorization required
 
 # **crmInterestsIdGet**
 
-> \Swagger\Client\Model\RestResultInterest crmInterestsIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultInterest crmInterestsIdGet($id)
 
 Fetches a single interest by id
 
@@ -972,7 +972,7 @@ Fetches a single interest by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -983,7 +983,7 @@ try {
     $result = $apiInstance->crmInterestsIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmInterestsIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmInterestsIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -996,7 +996,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultInterest**](../Model/RestResultInterest.md)
+[**\Paqtcom\Simplicate\Model\RestResultInterest**](../Model/RestResultInterest.md)
 
 ### Authorization
 
@@ -1011,7 +1011,7 @@ No authorization required
 
 # **crmMyorganizationprofileGet**
 
-> \Swagger\Client\Model\RestResultMyOrganizationProfiles crmMyorganizationprofileGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles crmMyorganizationprofileGet($offset, $limit, $sort)
 
 Fetches all my organization profiles
 
@@ -1021,7 +1021,7 @@ Fetches all my organization profiles
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1034,7 +1034,7 @@ try {
     $result = $apiInstance->crmMyorganizationprofileGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmMyorganizationprofileGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmMyorganizationprofileGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1049,7 +1049,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultMyOrganizationProfiles**](../Model/RestResultMyOrganizationProfiles.md)
+[**\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles**](../Model/RestResultMyOrganizationProfiles.md)
 
 ### Authorization
 
@@ -1064,7 +1064,7 @@ No authorization required
 
 # **crmMyorganizationprofileIdGet**
 
-> \Swagger\Client\Model\RestResultMyOrganizationProfile crmMyorganizationprofileIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfile crmMyorganizationprofileIdGet($id)
 
 Fetches a single my organization profile by id
 
@@ -1074,7 +1074,7 @@ Fetches a single my organization profile by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1085,7 +1085,7 @@ try {
     $result = $apiInstance->crmMyorganizationprofileIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmMyorganizationprofileIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmMyorganizationprofileIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1098,7 +1098,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultMyOrganizationProfile**](../Model/RestResultMyOrganizationProfile.md)
+[**\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfile**](../Model/RestResultMyOrganizationProfile.md)
 
 ### Authorization
 
@@ -1113,7 +1113,7 @@ No authorization required
 
 # **crmOrganizationGet**
 
-> \Swagger\Client\Model\RestResultOrganizations crmOrganizationGet($offset, $limit, $sort, $select)
+> \Paqtcom\Simplicate\Model\RestResultOrganizations crmOrganizationGet($offset, $limit, $sort, $select)
 
 Fetches all organizations
 
@@ -1123,7 +1123,7 @@ Fetches all organizations
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1137,7 +1137,7 @@ try {
     $result = $apiInstance->crmOrganizationGet($offset, $limit, $sort, $select);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmOrganizationGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmOrganizationGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1153,7 +1153,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultOrganizations**](../Model/RestResultOrganizations.md)
+[**\Paqtcom\Simplicate\Model\RestResultOrganizations**](../Model/RestResultOrganizations.md)
 
 ### Authorization
 
@@ -1178,7 +1178,7 @@ Deletes the organization for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1188,7 +1188,7 @@ $id = "id_example"; // string | The template's id
 try {
     $apiInstance->crmOrganizationIdDelete($id);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmOrganizationIdDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmOrganizationIdDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1216,7 +1216,7 @@ No authorization required
 
 # **crmOrganizationIdGet**
 
-> \Swagger\Client\Model\RestResultOrganization crmOrganizationIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultOrganization crmOrganizationIdGet($id)
 
 Fetches a single organization by id
 
@@ -1226,7 +1226,7 @@ Fetches a single organization by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1237,7 +1237,7 @@ try {
     $result = $apiInstance->crmOrganizationIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmOrganizationIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmOrganizationIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1250,7 +1250,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultOrganization**](../Model/RestResultOrganization.md)
+[**\Paqtcom\Simplicate\Model\RestResultOrganization**](../Model/RestResultOrganization.md)
 
 ### Authorization
 
@@ -1275,18 +1275,18 @@ Updates an organization for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostOrganization(); // \Swagger\Client\Model\PostOrganization | Organization object containing data that with the new values
+$body = new \Paqtcom\Simplicate\Model\PostOrganization(); // \Paqtcom\Simplicate\Model\PostOrganization | Organization object containing data that with the new values
 
 try {
     $apiInstance->crmOrganizationIdPut($id, $body);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmOrganizationIdPut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmOrganizationIdPut: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1296,7 +1296,7 @@ try {
  Name     | Type                                                                       | Description                                                  | Notes 
 ----------|----------------------------------------------------------------------------|--------------------------------------------------------------|-------
  **id**   | **string**                                                                 | The template&#39;s id                                        |
- **body** | [**\Swagger\Client\Model\PostOrganization**](../Model/PostOrganization.md) | Organization object containing data that with the new values |
+ **body** | [**\Paqtcom\Simplicate\Model\PostOrganization**](../Model/PostOrganization.md) | Organization object containing data that with the new values |
 
 ### Return type
 
@@ -1325,17 +1325,17 @@ Add a new organization
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostOrganization(); // \Swagger\Client\Model\PostOrganization | Organization object containing data
+$body = new \Paqtcom\Simplicate\Model\PostOrganization(); // \Paqtcom\Simplicate\Model\PostOrganization | Organization object containing data
 
 try {
     $apiInstance->crmOrganizationPost($body);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmOrganizationPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmOrganizationPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1344,7 +1344,7 @@ try {
 
  Name     | Type                                                                       | Description                         | Notes 
 ----------|----------------------------------------------------------------------------|-------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostOrganization**](../Model/PostOrganization.md) | Organization object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostOrganization**](../Model/PostOrganization.md) | Organization object containing data |
 
 ### Return type
 
@@ -1363,7 +1363,7 @@ No authorization required
 
 # **crmOrganizationcustomfieldgroupsGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldGroups crmOrganizationcustomfieldgroupsGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups crmOrganizationcustomfieldgroupsGet($offset, $limit, $sort)
 
 Fetches all custom field groups available for organizations
 
@@ -1373,7 +1373,7 @@ Fetches all custom field groups available for organizations
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1386,7 +1386,7 @@ try {
     $result = $apiInstance->crmOrganizationcustomfieldgroupsGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmOrganizationcustomfieldgroupsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmOrganizationcustomfieldgroupsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1401,7 +1401,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldGroups**](../Model/RestResultCustomFieldGroups.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups**](../Model/RestResultCustomFieldGroups.md)
 
 ### Authorization
 
@@ -1416,7 +1416,7 @@ No authorization required
 
 # **crmOrganizationcustomfieldgroupsIdGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldGroup crmOrganizationcustomfieldgroupsIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup crmOrganizationcustomfieldgroupsIdGet($id)
 
 Fetches a single custom field group available for organization
 
@@ -1426,7 +1426,7 @@ Fetches a single custom field group available for organization
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1437,7 +1437,7 @@ try {
     $result = $apiInstance->crmOrganizationcustomfieldgroupsIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmOrganizationcustomfieldgroupsIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmOrganizationcustomfieldgroupsIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1450,7 +1450,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldGroup**](../Model/RestResultCustomFieldGroup.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup**](../Model/RestResultCustomFieldGroup.md)
 
 ### Authorization
 
@@ -1465,7 +1465,7 @@ No authorization required
 
 # **crmOrganizationcustomfieldsGet**
 
-> \Swagger\Client\Model\RestResultCustomFields crmOrganizationcustomfieldsGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFields crmOrganizationcustomfieldsGet($offset, $limit, $sort)
 
 Fetches all custom fields available for organizations
 
@@ -1475,7 +1475,7 @@ Fetches all custom fields available for organizations
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1488,7 +1488,7 @@ try {
     $result = $apiInstance->crmOrganizationcustomfieldsGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmOrganizationcustomfieldsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmOrganizationcustomfieldsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1503,7 +1503,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFields**](../Model/RestResultCustomFields.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFields**](../Model/RestResultCustomFields.md)
 
 ### Authorization
 
@@ -1518,7 +1518,7 @@ No authorization required
 
 # **crmOrganizationcustomfieldsIdGet**
 
-> \Swagger\Client\Model\RestResultCustomField crmOrganizationcustomfieldsIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultCustomField crmOrganizationcustomfieldsIdGet($id)
 
 Fetches a single custom field available for organization
 
@@ -1528,7 +1528,7 @@ Fetches a single custom field available for organization
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1539,7 +1539,7 @@ try {
     $result = $apiInstance->crmOrganizationcustomfieldsIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmOrganizationcustomfieldsIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmOrganizationcustomfieldsIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1552,7 +1552,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomField**](../Model/RestResultCustomField.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomField**](../Model/RestResultCustomField.md)
 
 ### Authorization
 
@@ -1567,7 +1567,7 @@ No authorization required
 
 # **crmOrganizationsizeGet**
 
-> \Swagger\Client\Model\RestResultOrganizationSizes crmOrganizationsizeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultOrganizationSizes crmOrganizationsizeGet($offset, $limit, $sort)
 
 Fetches all available organization sizes
 
@@ -1577,7 +1577,7 @@ Fetches all available organization sizes
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1590,7 +1590,7 @@ try {
     $result = $apiInstance->crmOrganizationsizeGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmOrganizationsizeGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmOrganizationsizeGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1605,7 +1605,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultOrganizationSizes**](../Model/RestResultOrganizationSizes.md)
+[**\Paqtcom\Simplicate\Model\RestResultOrganizationSizes**](../Model/RestResultOrganizationSizes.md)
 
 ### Authorization
 
@@ -1620,7 +1620,7 @@ No authorization required
 
 # **crmOrganizationsizeIdGet**
 
-> \Swagger\Client\Model\RestResultOrganizationSize crmOrganizationsizeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultOrganizationSize crmOrganizationsizeIdGet($id)
 
 Fetches a single organization size by id
 
@@ -1630,7 +1630,7 @@ Fetches a single organization size by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1641,7 +1641,7 @@ try {
     $result = $apiInstance->crmOrganizationsizeIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmOrganizationsizeIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmOrganizationsizeIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1654,7 +1654,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultOrganizationSize**](../Model/RestResultOrganizationSize.md)
+[**\Paqtcom\Simplicate\Model\RestResultOrganizationSize**](../Model/RestResultOrganizationSize.md)
 
 ### Authorization
 
@@ -1669,7 +1669,7 @@ No authorization required
 
 # **crmPersonGet**
 
-> \Swagger\Client\Model\RestResultPersons crmPersonGet($offset, $limit, $sort, $select)
+> \Paqtcom\Simplicate\Model\RestResultPersons crmPersonGet($offset, $limit, $sort, $select)
 
 Fetches all persons
 
@@ -1679,7 +1679,7 @@ Fetches all persons
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1693,7 +1693,7 @@ try {
     $result = $apiInstance->crmPersonGet($offset, $limit, $sort, $select);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmPersonGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmPersonGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1709,7 +1709,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultPersons**](../Model/RestResultPersons.md)
+[**\Paqtcom\Simplicate\Model\RestResultPersons**](../Model/RestResultPersons.md)
 
 ### Authorization
 
@@ -1734,7 +1734,7 @@ Deletes the person for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1744,7 +1744,7 @@ $id = "id_example"; // string | The template's id
 try {
     $apiInstance->crmPersonIdDelete($id);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmPersonIdDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmPersonIdDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1772,7 +1772,7 @@ No authorization required
 
 # **crmPersonIdGet**
 
-> \Swagger\Client\Model\RestResultPerson crmPersonIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultPerson crmPersonIdGet($id)
 
 Fetches a single person by id
 
@@ -1782,7 +1782,7 @@ Fetches a single person by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1793,7 +1793,7 @@ try {
     $result = $apiInstance->crmPersonIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmPersonIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmPersonIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1806,7 +1806,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultPerson**](../Model/RestResultPerson.md)
+[**\Paqtcom\Simplicate\Model\RestResultPerson**](../Model/RestResultPerson.md)
 
 ### Authorization
 
@@ -1831,18 +1831,18 @@ Updates a person for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostPerson(); // \Swagger\Client\Model\PostPerson | Person object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostPerson(); // \Paqtcom\Simplicate\Model\PostPerson | Person object that needs to be added
 
 try {
     $apiInstance->crmPersonIdPut($id, $body);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmPersonIdPut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmPersonIdPut: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1852,7 +1852,7 @@ try {
  Name     | Type                                                           | Description                          | Notes 
 ----------|----------------------------------------------------------------|--------------------------------------|-------
  **id**   | **string**                                                     | The template&#39;s id                |
- **body** | [**\Swagger\Client\Model\PostPerson**](../Model/PostPerson.md) | Person object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostPerson**](../Model/PostPerson.md) | Person object that needs to be added |
 
 ### Return type
 
@@ -1881,17 +1881,17 @@ Add a new person
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostPerson(); // \Swagger\Client\Model\PostPerson | Person object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostPerson(); // \Paqtcom\Simplicate\Model\PostPerson | Person object that needs to be added
 
 try {
     $apiInstance->crmPersonPost($body);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmPersonPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmPersonPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1900,7 +1900,7 @@ try {
 
  Name     | Type                                                           | Description                          | Notes 
 ----------|----------------------------------------------------------------|--------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostPerson**](../Model/PostPerson.md) | Person object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostPerson**](../Model/PostPerson.md) | Person object that needs to be added |
 
 ### Return type
 
@@ -1919,7 +1919,7 @@ No authorization required
 
 # **crmPersoncustomfieldgroupsGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldGroups crmPersoncustomfieldgroupsGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups crmPersoncustomfieldgroupsGet($offset, $limit, $sort)
 
 Fetches all custom field groups available for persons
 
@@ -1929,7 +1929,7 @@ Fetches all custom field groups available for persons
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1942,7 +1942,7 @@ try {
     $result = $apiInstance->crmPersoncustomfieldgroupsGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmPersoncustomfieldgroupsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmPersoncustomfieldgroupsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1957,7 +1957,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldGroups**](../Model/RestResultCustomFieldGroups.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups**](../Model/RestResultCustomFieldGroups.md)
 
 ### Authorization
 
@@ -1972,7 +1972,7 @@ No authorization required
 
 # **crmPersoncustomfieldgroupsIdGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldGroup crmPersoncustomfieldgroupsIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup crmPersoncustomfieldgroupsIdGet($id)
 
 Fetches a single custom field group available for person
 
@@ -1982,7 +1982,7 @@ Fetches a single custom field group available for person
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1993,7 +1993,7 @@ try {
     $result = $apiInstance->crmPersoncustomfieldgroupsIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmPersoncustomfieldgroupsIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmPersoncustomfieldgroupsIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2006,7 +2006,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldGroup**](../Model/RestResultCustomFieldGroup.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup**](../Model/RestResultCustomFieldGroup.md)
 
 ### Authorization
 
@@ -2021,7 +2021,7 @@ No authorization required
 
 # **crmPersoncustomfieldsGet**
 
-> \Swagger\Client\Model\RestResultCustomFields crmPersoncustomfieldsGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFields crmPersoncustomfieldsGet($offset, $limit, $sort)
 
 Fetches all custom fields available for persons
 
@@ -2031,7 +2031,7 @@ Fetches all custom fields available for persons
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2044,7 +2044,7 @@ try {
     $result = $apiInstance->crmPersoncustomfieldsGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmPersoncustomfieldsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmPersoncustomfieldsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2059,7 +2059,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFields**](../Model/RestResultCustomFields.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFields**](../Model/RestResultCustomFields.md)
 
 ### Authorization
 
@@ -2074,7 +2074,7 @@ No authorization required
 
 # **crmPersoncustomfieldsIdGet**
 
-> \Swagger\Client\Model\RestResultCustomField crmPersoncustomfieldsIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultCustomField crmPersoncustomfieldsIdGet($id)
 
 Fetches a single custom field available for person
 
@@ -2084,7 +2084,7 @@ Fetches a single custom field available for person
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2095,7 +2095,7 @@ try {
     $result = $apiInstance->crmPersoncustomfieldsIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmPersoncustomfieldsIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmPersoncustomfieldsIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2108,7 +2108,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomField**](../Model/RestResultCustomField.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomField**](../Model/RestResultCustomField.md)
 
 ### Authorization
 
@@ -2123,7 +2123,7 @@ No authorization required
 
 # **crmRelationtypeGet**
 
-> \Swagger\Client\Model\RestResultRelationTypes crmRelationtypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultRelationTypes crmRelationtypeGet($offset, $limit, $sort)
 
 Fetches all relation types
 
@@ -2133,7 +2133,7 @@ Fetches all relation types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2146,7 +2146,7 @@ try {
     $result = $apiInstance->crmRelationtypeGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmRelationtypeGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmRelationtypeGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2161,7 +2161,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultRelationTypes**](../Model/RestResultRelationTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultRelationTypes**](../Model/RestResultRelationTypes.md)
 
 ### Authorization
 
@@ -2176,7 +2176,7 @@ No authorization required
 
 # **crmRelationtypeIdGet**
 
-> \Swagger\Client\Model\RestResultRelationType crmRelationtypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultRelationType crmRelationtypeIdGet($id)
 
 Fetches a single relation type by id
 
@@ -2186,7 +2186,7 @@ Fetches a single relation type by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2197,7 +2197,7 @@ try {
     $result = $apiInstance->crmRelationtypeIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CRMApi->crmRelationtypeIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrmApi->crmRelationtypeIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2210,7 +2210,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultRelationType**](../Model/RestResultRelationType.md)
+[**\Paqtcom\Simplicate\Model\RestResultRelationType**](../Model/RestResultRelationType.md)
 
 ### Authorization
 

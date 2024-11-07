@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetMessage Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,14 +59,14 @@ class GetMessage implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'attachments' => '\Swagger\Client\Model\Attachment[]',
-        'message_type' => '\Swagger\Client\Model\MessageType',
-        'linked_to' => '\Swagger\Client\Model\LinkedToEntity[]',
-        'created_by' => '\Swagger\Client\Model\Creator',
+        'attachments' => '\Paqtcom\Simplicate\Model\Attachment[]',
+        'message_type' => '\Paqtcom\Simplicate\Model\MessageType',
+        'linked_to' => '\Paqtcom\Simplicate\Model\LinkedToEntity[]',
+        'created_by' => '\Paqtcom\Simplicate\Model\Creator',
         'created_at' => 'string',
         'updated_at' => 'string',
         'title' => 'string',
-        'content_fields' => '\Swagger\Client\Model\ContentField[]',
+        'content_fields' => '\Paqtcom\Simplicate\Model\ContentField[]',
         'content' => 'string',
         'display_date' => 'string',
     ];
@@ -287,7 +287,7 @@ class GetMessage implements ModelInterface, ArrayAccess
     /**
      * Gets attachments
      *
-     * @return \Swagger\Client\Model\Attachment[]
+     * @return \Paqtcom\Simplicate\Model\Attachment[]
      */
     public function getAttachments()
     {
@@ -297,7 +297,7 @@ class GetMessage implements ModelInterface, ArrayAccess
     /**
      * Sets attachments
      *
-     * @param \Swagger\Client\Model\Attachment[] $attachments attachments
+     * @param \Paqtcom\Simplicate\Model\Attachment[] $attachments attachments
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class GetMessage implements ModelInterface, ArrayAccess
     /**
      * Gets message_type
      *
-     * @return \Swagger\Client\Model\MessageType
+     * @return \Paqtcom\Simplicate\Model\MessageType
      */
     public function getMessageType()
     {
@@ -321,7 +321,7 @@ class GetMessage implements ModelInterface, ArrayAccess
     /**
      * Sets message_type
      *
-     * @param \Swagger\Client\Model\MessageType $message_type message_type
+     * @param \Paqtcom\Simplicate\Model\MessageType $message_type message_type
      *
      * @return $this
      */
@@ -335,7 +335,7 @@ class GetMessage implements ModelInterface, ArrayAccess
     /**
      * Gets linked_to
      *
-     * @return \Swagger\Client\Model\LinkedToEntity[]
+     * @return \Paqtcom\Simplicate\Model\LinkedToEntity[]
      */
     public function getLinkedTo()
     {
@@ -345,7 +345,7 @@ class GetMessage implements ModelInterface, ArrayAccess
     /**
      * Sets linked_to
      *
-     * @param \Swagger\Client\Model\LinkedToEntity[] $linked_to linked_to
+     * @param \Paqtcom\Simplicate\Model\LinkedToEntity[] $linked_to linked_to
      *
      * @return $this
      */
@@ -359,7 +359,7 @@ class GetMessage implements ModelInterface, ArrayAccess
     /**
      * Gets created_by
      *
-     * @return \Swagger\Client\Model\Creator
+     * @return \Paqtcom\Simplicate\Model\Creator
      */
     public function getCreatedBy()
     {
@@ -369,7 +369,7 @@ class GetMessage implements ModelInterface, ArrayAccess
     /**
      * Sets created_by
      *
-     * @param \Swagger\Client\Model\Creator $created_by created_by
+     * @param \Paqtcom\Simplicate\Model\Creator $created_by created_by
      *
      * @return $this
      */
@@ -455,7 +455,7 @@ class GetMessage implements ModelInterface, ArrayAccess
     /**
      * Gets content_fields
      *
-     * @return \Swagger\Client\Model\ContentField[]
+     * @return \Paqtcom\Simplicate\Model\ContentField[]
      */
     public function getContentFields()
     {
@@ -465,7 +465,7 @@ class GetMessage implements ModelInterface, ArrayAccess
     /**
      * Sets content_fields
      *
-     * @param \Swagger\Client\Model\ContentField[] $content_fields content_fields
+     * @param \Paqtcom\Simplicate\Model\ContentField[] $content_fields content_fields
      *
      * @return $this
      */

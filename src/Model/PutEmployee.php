@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * PutEmployee Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,9 +59,9 @@ class PutEmployee implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'person_id' => 'string',
-        'supervisor' => '\Swagger\Client\Model\PostEmployeeFk',
-        'status' => '\Swagger\Client\Model\PostEmployeeStatusFk',
-        'custom_fields' => '\Swagger\Client\Model\PostCustomFieldValue[]',
+        'supervisor' => '\Paqtcom\Simplicate\Model\PostEmployeeFk',
+        'status' => '\Paqtcom\Simplicate\Model\PostEmployeeStatusFk',
+        'custom_fields' => '\Paqtcom\Simplicate\Model\PostCustomFieldValue[]',
     ];
 
     /**
@@ -245,7 +245,7 @@ class PutEmployee implements ModelInterface, ArrayAccess
     /**
      * Gets supervisor
      *
-     * @return \Swagger\Client\Model\PostEmployeeFk
+     * @return \Paqtcom\Simplicate\Model\PostEmployeeFk
      */
     public function getSupervisor()
     {
@@ -255,7 +255,7 @@ class PutEmployee implements ModelInterface, ArrayAccess
     /**
      * Sets supervisor
      *
-     * @param \Swagger\Client\Model\PostEmployeeFk $supervisor supervisor
+     * @param \Paqtcom\Simplicate\Model\PostEmployeeFk $supervisor supervisor
      *
      * @return $this
      */
@@ -269,7 +269,7 @@ class PutEmployee implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \Swagger\Client\Model\PostEmployeeStatusFk
+     * @return \Paqtcom\Simplicate\Model\PostEmployeeStatusFk
      */
     public function getStatus()
     {
@@ -279,7 +279,7 @@ class PutEmployee implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Swagger\Client\Model\PostEmployeeStatusFk $status status
+     * @param \Paqtcom\Simplicate\Model\PostEmployeeStatusFk $status status
      *
      * @return $this
      */
@@ -293,7 +293,7 @@ class PutEmployee implements ModelInterface, ArrayAccess
     /**
      * Gets custom_fields
      *
-     * @return \Swagger\Client\Model\PostCustomFieldValue[]
+     * @return \Paqtcom\Simplicate\Model\PostCustomFieldValue[]
      */
     public function getCustomFields()
     {
@@ -303,7 +303,7 @@ class PutEmployee implements ModelInterface, ArrayAccess
     /**
      * Sets custom_fields
      *
-     * @param \Swagger\Client\Model\PostCustomFieldValue[] $custom_fields custom_fields
+     * @param \Paqtcom\Simplicate\Model\PostCustomFieldValue[] $custom_fields custom_fields
      *
      * @return $this
      */

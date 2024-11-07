@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * PostDocument Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class PostDocument implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'linked_to' => '\Swagger\Client\Model\PostDocumentLinkedTo[]',
+        'linked_to' => '\Paqtcom\Simplicate\Model\PostDocumentLinkedTo[]',
         'document_type_id' => 'string',
         'upload_queue_id' => 'string',
         'title' => 'string',
@@ -227,7 +227,7 @@ class PostDocument implements ModelInterface, ArrayAccess
     /**
      * Gets linked_to
      *
-     * @return \Swagger\Client\Model\PostDocumentLinkedTo[]
+     * @return \Paqtcom\Simplicate\Model\PostDocumentLinkedTo[]
      */
     public function getLinkedTo()
     {
@@ -237,7 +237,7 @@ class PostDocument implements ModelInterface, ArrayAccess
     /**
      * Sets linked_to
      *
-     * @param \Swagger\Client\Model\PostDocumentLinkedTo[] $linked_to linked_to
+     * @param \Paqtcom\Simplicate\Model\PostDocumentLinkedTo[] $linked_to linked_to
      *
      * @return $this
      */

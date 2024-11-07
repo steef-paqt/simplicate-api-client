@@ -7,9 +7,9 @@
  **id**                     | **string**                                                  |             | [optional] 
  **sales**                  | **object**                                                  |             | [optional] 
  **sales_id**               | **string**                                                  |             | [optional] 
- **from_sales_progress**    | [**\Swagger\Client\Model\SalesProgress**](SalesProgress.md) |             | [optional] 
+ **from_sales_progress**    | [**\Paqtcom\Simplicate\Model\SalesProgress**](SalesProgress.md) |             | [optional] 
  **from_sales_progress_id** | **string**                                                  |             | [optional] 
- **to_sales_progress**      | [**\Swagger\Client\Model\SalesProgress**](SalesProgress.md) |             | [optional] 
+ **to_sales_progress**      | [**\Paqtcom\Simplicate\Model\SalesProgress**](SalesProgress.md) |             | [optional] 
  **to_sales_progress_id**   | **string**                                                  |             | [optional] 
  **date**                   | **string**                                                  |             | [optional] 
 

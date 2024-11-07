@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * Purchase Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,12 +59,12 @@ class Purchase implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'organization' => '\Swagger\Client\Model\GetOrganizationSimple',
-        'person' => '\Swagger\Client\Model\GetPersonSimple',
+        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
+        'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
         'supplier' => 'string',
         'invoice_number' => 'string',
         'type' => 'string',
-        'projects' => '\Swagger\Client\Model\GetProjectSimple[]',
+        'projects' => '\Paqtcom\Simplicate\Model\GetProjectSimple[]',
     ];
 
     /**
@@ -289,7 +289,7 @@ class Purchase implements ModelInterface, ArrayAccess
     /**
      * Gets organization
      *
-     * @return \Swagger\Client\Model\GetOrganizationSimple
+     * @return \Paqtcom\Simplicate\Model\GetOrganizationSimple
      */
     public function getOrganization()
     {
@@ -299,7 +299,7 @@ class Purchase implements ModelInterface, ArrayAccess
     /**
      * Sets organization
      *
-     * @param \Swagger\Client\Model\GetOrganizationSimple $organization organization
+     * @param \Paqtcom\Simplicate\Model\GetOrganizationSimple $organization organization
      *
      * @return $this
      */
@@ -313,7 +313,7 @@ class Purchase implements ModelInterface, ArrayAccess
     /**
      * Gets person
      *
-     * @return \Swagger\Client\Model\GetPersonSimple
+     * @return \Paqtcom\Simplicate\Model\GetPersonSimple
      */
     public function getPerson()
     {
@@ -323,7 +323,7 @@ class Purchase implements ModelInterface, ArrayAccess
     /**
      * Sets person
      *
-     * @param \Swagger\Client\Model\GetPersonSimple $person person
+     * @param \Paqtcom\Simplicate\Model\GetPersonSimple $person person
      *
      * @return $this
      */
@@ -418,7 +418,7 @@ class Purchase implements ModelInterface, ArrayAccess
     /**
      * Gets projects
      *
-     * @return \Swagger\Client\Model\GetProjectSimple[]
+     * @return \Paqtcom\Simplicate\Model\GetProjectSimple[]
      */
     public function getProjects()
     {
@@ -428,7 +428,7 @@ class Purchase implements ModelInterface, ArrayAccess
     /**
      * Sets projects
      *
-     * @param \Swagger\Client\Model\GetProjectSimple[] $projects projects
+     * @param \Paqtcom\Simplicate\Model\GetProjectSimple[] $projects projects
      *
      * @return $this
      */

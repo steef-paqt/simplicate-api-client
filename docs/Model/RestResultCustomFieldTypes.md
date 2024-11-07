@@ -4,8 +4,8 @@
 
  Name         | Type                                                              | Description | Notes      
 --------------|-------------------------------------------------------------------|-------------|------------
- **data**     | [**\Swagger\Client\Model\CustomFieldType[]**](CustomFieldType.md) |             | [optional] 
- **metadata** | [**\Swagger\Client\Model\MetaData**](MetaData.md)                 |             | [optional] 
+ **data**     | [**\Paqtcom\Simplicate\Model\CustomFieldType[]**](CustomFieldType.md) |             | [optional] 
+ **metadata** | [**\Paqtcom\Simplicate\Model\MetaData**](MetaData.md)                 |             | [optional] 
  **errors**   | **object[]**                                                      |             | [optional] 
  **debug**    | **object[]**                                                      |             | [optional] 
 

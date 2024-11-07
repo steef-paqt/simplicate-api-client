@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * PostService Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,7 +61,7 @@ class PostService implements ModelInterface, ArrayAccess
         'vat_class_id' => 'string',
         'revenue_group_id' => 'string',
         'invoice_method' => 'string',
-        'hour_types' => '\Swagger\Client\Model\PostProjectServiceHoursType[]',
+        'hour_types' => '\Paqtcom\Simplicate\Model\PostProjectServiceHoursType[]',
         'default_service_id' => 'string',
         'name' => 'string',
         'explanation' => 'string',
@@ -370,7 +370,7 @@ class PostService implements ModelInterface, ArrayAccess
     /**
      * Gets hour_types
      *
-     * @return \Swagger\Client\Model\PostProjectServiceHoursType[]
+     * @return \Paqtcom\Simplicate\Model\PostProjectServiceHoursType[]
      */
     public function getHourTypes()
     {
@@ -380,7 +380,7 @@ class PostService implements ModelInterface, ArrayAccess
     /**
      * Sets hour_types
      *
-     * @param \Swagger\Client\Model\PostProjectServiceHoursType[] $hour_types hour_types
+     * @param \Paqtcom\Simplicate\Model\PostProjectServiceHoursType[] $hour_types hour_types
      *
      * @return $this
      */

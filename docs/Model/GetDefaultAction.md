@@ -5,8 +5,8 @@
  Name                     | Type                                                                      | Description | Notes      
 --------------------------|---------------------------------------------------------------------------|-------------|------------
  **id**                   | **string**                                                                |             | [optional] 
- **task**                 | [**\Swagger\Client\Model\GetSimpleDefaultTask**](GetSimpleDefaultTask.md) |             | [optional] 
- **to_task**              | [**\Swagger\Client\Model\GetSimpleDefaultTask**](GetSimpleDefaultTask.md) |             | [optional] 
+ **task**                 | [**\Paqtcom\Simplicate\Model\GetSimpleDefaultTask**](GetSimpleDefaultTask.md) |             | [optional] 
+ **to_task**              | [**\Paqtcom\Simplicate\Model\GetSimpleDefaultTask**](GetSimpleDefaultTask.md) |             | [optional] 
  **name**                 | **string**                                                                |             | [optional] 
  **is_response_required** | **bool**                                                                  |             | [optional] 
  **color**                | **string**                                                                |             | [optional] 

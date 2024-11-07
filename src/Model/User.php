@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * User Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -74,12 +74,12 @@ class User implements ModelInterface, ArrayAccess
         'is_blocked' => 'bool',
         'is_lock_nav' => 'bool',
         'key_identifier' => 'string',
-        'timezone' => '\Swagger\Client\Model\Timezone',
-        'country' => '\Swagger\Client\Model\Country',
+        'timezone' => '\Paqtcom\Simplicate\Model\Timezone',
+        'country' => '\Paqtcom\Simplicate\Model\Country',
         'hours_view_mode' => 'string',
         'is_account_owner' => 'bool',
         'has_external_agenda_integration' => 'bool',
-        'rights' => '\Swagger\Client\Model\Right[]',
+        'rights' => '\Paqtcom\Simplicate\Model\Right[]',
     ];
 
     /**
@@ -739,7 +739,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets timezone
      *
-     * @return \Swagger\Client\Model\Timezone
+     * @return \Paqtcom\Simplicate\Model\Timezone
      */
     public function getTimezone()
     {
@@ -749,7 +749,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets timezone
      *
-     * @param \Swagger\Client\Model\Timezone $timezone timezone
+     * @param \Paqtcom\Simplicate\Model\Timezone $timezone timezone
      *
      * @return $this
      */
@@ -763,7 +763,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets country
      *
-     * @return \Swagger\Client\Model\Country
+     * @return \Paqtcom\Simplicate\Model\Country
      */
     public function getCountry()
     {
@@ -773,7 +773,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets country
      *
-     * @param \Swagger\Client\Model\Country $country country
+     * @param \Paqtcom\Simplicate\Model\Country $country country
      *
      * @return $this
      */
@@ -868,7 +868,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets rights
      *
-     * @return \Swagger\Client\Model\Right[]
+     * @return \Paqtcom\Simplicate\Model\Right[]
      */
     public function getRights()
     {
@@ -878,7 +878,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets rights
      *
-     * @param \Swagger\Client\Model\Right[] $rights rights
+     * @param \Paqtcom\Simplicate\Model\Right[] $rights rights
      *
      * @return $this
      */

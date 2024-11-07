@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetSalesServiceHoursType Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class GetSalesServiceHoursType implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'hourstype' => '\Swagger\Client\Model\GetHoursType',
+        'hourstype' => '\Paqtcom\Simplicate\Model\GetHoursType',
         'budgeted_amount' => 'float',
         'tariff' => 'float',
         'billable' => 'bool',
@@ -251,7 +251,7 @@ class GetSalesServiceHoursType implements ModelInterface, ArrayAccess
     /**
      * Gets hourstype
      *
-     * @return \Swagger\Client\Model\GetHoursType
+     * @return \Paqtcom\Simplicate\Model\GetHoursType
      */
     public function getHourstype()
     {
@@ -261,7 +261,7 @@ class GetSalesServiceHoursType implements ModelInterface, ArrayAccess
     /**
      * Sets hourstype
      *
-     * @param \Swagger\Client\Model\GetHoursType $hourstype hourstype
+     * @param \Paqtcom\Simplicate\Model\GetHoursType $hourstype hourstype
      *
      * @return $this
      */

@@ -5,10 +5,10 @@
  Name               | Type                                                                    | Description                          | Notes                                     
 --------------------|-------------------------------------------------------------------------|--------------------------------------|-------------------------------------------
  **messagetype_id** | **string**                                                              |                                      | [optional]                                
- **linked_to**      | [**\Swagger\Client\Model\PostMessageLinkedTo**](PostMessageLinkedTo.md) |                                      | [optional]                                
+ **linked_to**      | [**\Paqtcom\Simplicate\Model\PostMessageLinkedTo**](PostMessageLinkedTo.md) |                                      | [optional]                                
  **created_by_id**  | **string**                                                              | employee_id as seen in /crm/employee | [optional] [default to 'employee:abc123'] 
  **title**          | **string**                                                              |                                      | [optional]                                
- **content_fields** | [**\Swagger\Client\Model\ContentField[]**](ContentField.md)             |                                      | [optional]                                
+ **content_fields** | [**\Paqtcom\Simplicate\Model\ContentField[]**](ContentField.md)             |                                      | [optional]                                
  **content**        | **string**                                                              |                                      | [optional]                                
  **display_date**   | **string**                                                              |                                      | [optional]                                
 

@@ -17,8 +17,8 @@
  **html_message**   | **string**                                                        |             | [optional] 
  **html_body**      | **string**                                                        |             | [optional] 
  **plain_text**     | **string**                                                        |             | [optional] 
- **attachments**    | [**\Swagger\Client\Model\EmailAttachment[]**](EmailAttachment.md) |             | [optional] 
- **linked_to**      | [**\Swagger\Client\Model\LinkedToEntity[]**](LinkedToEntity.md)   |             | [optional] 
+ **attachments**    | [**\Paqtcom\Simplicate\Model\EmailAttachment[]**](EmailAttachment.md) |             | [optional] 
+ **linked_to**      | [**\Paqtcom\Simplicate\Model\LinkedToEntity[]**](LinkedToEntity.md)   |             | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

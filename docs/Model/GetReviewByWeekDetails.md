@@ -4,7 +4,7 @@
 
  Name                          | Type                                                                | Description           | Notes      
 -------------------------------|---------------------------------------------------------------------|-----------------------|------------
- **employee**                  | [**\Swagger\Client\Model\GetEmployeeSimple**](GetEmployeeSimple.md) |                       | [optional] 
+ **employee**                  | [**\Paqtcom\Simplicate\Model\GetEmployeeSimple**](GetEmployeeSimple.md) |                       | [optional] 
  **start_date**                | **string**                                                          | Y-m-d, eg. 2020-01-01 | [optional] 
  **end_date**                  | **string**                                                          | Y-m-d, eg. 2020-01-01 | [optional] 
  **status_id**                 | **string**                                                          |                       | [optional] 

@@ -1,4 +1,4 @@
-# Swagger\Client\UploadApi
+# Paqtcom\Simplicate\UploadApi
 
 All URIs are relative to *http://localhost/api/v2*
 
@@ -19,13 +19,13 @@ Upload next chunk to specific chunked_upload
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\UploadApi(
+$apiInstance = new Paqtcom\Simplicate\Api\UploadApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PutChunked(); // \Swagger\Client\Model\PutChunked | Next chunk for an chunked_upload
+$body = new \Paqtcom\Simplicate\Model\PutChunked(); // \Paqtcom\Simplicate\Model\PutChunked | Next chunk for an chunked_upload
 
 try {
     $apiInstance->uploadChunkedIdPut($id, $body);
@@ -40,7 +40,7 @@ try {
  Name     | Type                                                           | Description                      | Notes 
 ----------|----------------------------------------------------------------|----------------------------------|-------
  **id**   | **string**                                                     | The template&#39;s id            |
- **body** | [**\Swagger\Client\Model\PutChunked**](../Model/PutChunked.md) | Next chunk for an chunked_upload |
+ **body** | [**\Paqtcom\Simplicate\Model\PutChunked**](../Model/PutChunked.md) | Next chunk for an chunked_upload |
 
 ### Return type
 
@@ -69,12 +69,12 @@ Create an upload record to upload a file
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\UploadApi(
+$apiInstance = new Paqtcom\Simplicate\Api\UploadApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostChunked(); // \Swagger\Client\Model\PostChunked | Data required to initialize an upload
+$body = new \Paqtcom\Simplicate\Model\PostChunked(); // \Paqtcom\Simplicate\Model\PostChunked | Data required to initialize an upload
 
 try {
     $apiInstance->uploadChunkedPost($body);
@@ -88,7 +88,7 @@ try {
 
  Name     | Type                                                             | Description                           | Notes 
 ----------|------------------------------------------------------------------|---------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostChunked**](../Model/PostChunked.md) | Data required to initialize an upload |
+ **body** | [**\Paqtcom\Simplicate\Model\PostChunked**](../Model/PostChunked.md) | Data required to initialize an upload |
 
 ### Return type
 

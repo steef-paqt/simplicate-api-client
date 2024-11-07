@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * Timetable Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,8 +58,8 @@ class Timetable implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'even_week' => '\Swagger\Client\Model\TimetableWeek',
-        'odd_week' => '\Swagger\Client\Model\TimetableWeek',
+        'even_week' => '\Paqtcom\Simplicate\Model\TimetableWeek',
+        'odd_week' => '\Paqtcom\Simplicate\Model\TimetableWeek',
         'start_date' => 'string',
         'end_date' => 'string',
         'productivity_target' => 'int',
@@ -233,7 +233,7 @@ class Timetable implements ModelInterface, ArrayAccess
     /**
      * Gets even_week
      *
-     * @return \Swagger\Client\Model\TimetableWeek
+     * @return \Paqtcom\Simplicate\Model\TimetableWeek
      */
     public function getEvenWeek()
     {
@@ -243,7 +243,7 @@ class Timetable implements ModelInterface, ArrayAccess
     /**
      * Sets even_week
      *
-     * @param \Swagger\Client\Model\TimetableWeek $even_week even_week
+     * @param \Paqtcom\Simplicate\Model\TimetableWeek $even_week even_week
      *
      * @return $this
      */
@@ -257,7 +257,7 @@ class Timetable implements ModelInterface, ArrayAccess
     /**
      * Gets odd_week
      *
-     * @return \Swagger\Client\Model\TimetableWeek
+     * @return \Paqtcom\Simplicate\Model\TimetableWeek
      */
     public function getOddWeek()
     {
@@ -267,7 +267,7 @@ class Timetable implements ModelInterface, ArrayAccess
     /**
      * Sets odd_week
      *
-     * @param \Swagger\Client\Model\TimetableWeek $odd_week odd_week
+     * @param \Paqtcom\Simplicate\Model\TimetableWeek $odd_week odd_week
      *
      * @return $this
      */

@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * CustomFieldGroup Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,7 +61,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'position' => 'string',
-        'model' => '\Swagger\Client\Model\CustomFieldModel',
+        'model' => '\Paqtcom\Simplicate\Model\CustomFieldModel',
         'type' => 'string',
     ];
 
@@ -299,7 +299,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
     /**
      * Gets model
      *
-     * @return \Swagger\Client\Model\CustomFieldModel
+     * @return \Paqtcom\Simplicate\Model\CustomFieldModel
      */
     public function getModel()
     {
@@ -309,7 +309,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
     /**
      * Sets model
      *
-     * @param \Swagger\Client\Model\CustomFieldModel $model model
+     * @param \Paqtcom\Simplicate\Model\CustomFieldModel $model model
      *
      * @return $this
      */

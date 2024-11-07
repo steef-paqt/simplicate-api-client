@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Paqtcom\Simplicate\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ApiException;
+use Paqtcom\Simplicate\Configuration;
+use Paqtcom\Simplicate\HeaderSelector;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * ProjectsApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -97,9 +97,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultProjectAssignments
+     * @return \Paqtcom\Simplicate\Model\RestResultProjectAssignments
      */
     public function projectsAssignmentGet($offset = null, $limit = '5', $sort = null)
     {
@@ -117,13 +117,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultProjectAssignments, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultProjectAssignments, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsAssignmentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectAssignments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignments';
         $request = $this->projectsAssignmentGetRequest($offset, $limit, $sort);
 
         try {
@@ -174,7 +174,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultProjectAssignments',
+                        '\Paqtcom\Simplicate\Model\RestResultProjectAssignments',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +220,7 @@ class ProjectsApi
      */
     public function projectsAssignmentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectAssignments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignments';
         $request = $this->projectsAssignmentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -368,9 +368,9 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultProjectAssignment
+     * @return \Paqtcom\Simplicate\Model\RestResultProjectAssignment
      */
     public function projectsAssignmentIdGet($id)
     {
@@ -386,13 +386,13 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultProjectAssignment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultProjectAssignment, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsAssignmentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectAssignment';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignment';
         $request = $this->projectsAssignmentIdGetRequest($id);
 
         try {
@@ -443,7 +443,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultProjectAssignment',
+                        '\Paqtcom\Simplicate\Model\RestResultProjectAssignment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -485,7 +485,7 @@ class ProjectsApi
      */
     public function projectsAssignmentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectAssignment';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignment';
         $request = $this->projectsAssignmentIdGetRequest($id);
 
         return $this->client
@@ -633,9 +633,9 @@ class ProjectsApi
      * Updates a project assignment for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutAssignment $body Project assignment PUT body (required)
+     * @param  \Paqtcom\Simplicate\Model\PutAssignment $body Project assignment PUT body (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -650,9 +650,9 @@ class ProjectsApi
      * Updates a project assignment for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutAssignment $body Project assignment PUT body (required)
+     * @param  \Paqtcom\Simplicate\Model\PutAssignment $body Project assignment PUT body (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -703,7 +703,7 @@ class ProjectsApi
      * Updates a project assignment for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutAssignment $body Project assignment PUT body (required)
+     * @param  \Paqtcom\Simplicate\Model\PutAssignment $body Project assignment PUT body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -724,7 +724,7 @@ class ProjectsApi
      * Updates a project assignment for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutAssignment $body Project assignment PUT body (required)
+     * @param  \Paqtcom\Simplicate\Model\PutAssignment $body Project assignment PUT body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -761,7 +761,7 @@ class ProjectsApi
      * Create request for operation 'projectsAssignmentIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutAssignment $body Project assignment PUT body (required)
+     * @param  \Paqtcom\Simplicate\Model\PutAssignment $body Project assignment PUT body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -874,9 +874,9 @@ class ProjectsApi
      *
      * Creates a new project assignment
      *
-     * @param  \Swagger\Client\Model\PostAssignment $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAssignment $body Project assignment POST body (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -890,9 +890,9 @@ class ProjectsApi
      *
      * Creates a new project assignment
      *
-     * @param  \Swagger\Client\Model\PostAssignment $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAssignment $body Project assignment POST body (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -942,7 +942,7 @@ class ProjectsApi
      *
      * Creates a new project assignment
      *
-     * @param  \Swagger\Client\Model\PostAssignment $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAssignment $body Project assignment POST body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -962,7 +962,7 @@ class ProjectsApi
      *
      * Creates a new project assignment
      *
-     * @param  \Swagger\Client\Model\PostAssignment $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAssignment $body Project assignment POST body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -998,7 +998,7 @@ class ProjectsApi
     /**
      * Create request for operation 'projectsAssignmentPost'
      *
-     * @param  \Swagger\Client\Model\PostAssignment $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAssignment $body Project assignment POST body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1103,9 +1103,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultProjectAssignmentbudget
+     * @return \Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget
      */
     public function projectsAssignmentbudgetGet($q_range_start, $q_employee_id, $q_assignment_id, $offset = null, $limit = '5', $sort = null)
     {
@@ -1126,13 +1126,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultProjectAssignmentbudget, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsAssignmentbudgetGetWithHttpInfo($q_range_start, $q_employee_id, $q_assignment_id, $offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectAssignmentbudget';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget';
         $request = $this->projectsAssignmentbudgetGetRequest($q_range_start, $q_employee_id, $q_assignment_id, $offset, $limit, $sort);
 
         try {
@@ -1183,7 +1183,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultProjectAssignmentbudget',
+                        '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1235,7 +1235,7 @@ class ProjectsApi
      */
     public function projectsAssignmentbudgetGetAsyncWithHttpInfo($q_range_start, $q_employee_id, $q_assignment_id, $offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectAssignmentbudget';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget';
         $request = $this->projectsAssignmentbudgetGetRequest($q_range_start, $q_employee_id, $q_assignment_id, $offset, $limit, $sort);
 
         return $this->client
@@ -1419,9 +1419,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultProjectAssignmentStatuses
+     * @return \Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatuses
      */
     public function projectsAssignmentstatusGet($offset = null, $limit = '5', $sort = null)
     {
@@ -1439,13 +1439,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultProjectAssignmentStatuses, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatuses, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsAssignmentstatusGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectAssignmentStatuses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatuses';
         $request = $this->projectsAssignmentstatusGetRequest($offset, $limit, $sort);
 
         try {
@@ -1496,7 +1496,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultProjectAssignmentStatuses',
+                        '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatuses',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1542,7 +1542,7 @@ class ProjectsApi
      */
     public function projectsAssignmentstatusGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectAssignmentStatuses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatuses';
         $request = $this->projectsAssignmentstatusGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1693,9 +1693,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultProjectAssignmentStatus
+     * @return \Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus
      */
     public function projectsAssignmentstatusIdGet($id, $offset = null, $limit = '5', $sort = null)
     {
@@ -1714,13 +1714,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultProjectAssignmentStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsAssignmentstatusIdGetWithHttpInfo($id, $offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectAssignmentStatus';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus';
         $request = $this->projectsAssignmentstatusIdGetRequest($id, $offset, $limit, $sort);
 
         try {
@@ -1771,7 +1771,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultProjectAssignmentStatus',
+                        '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1819,7 +1819,7 @@ class ProjectsApi
      */
     public function projectsAssignmentstatusIdGetAsyncWithHttpInfo($id, $offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectAssignmentStatus';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus';
         $request = $this->projectsAssignmentstatusIdGetRequest($id, $offset, $limit, $sort);
 
         return $this->client
@@ -1983,9 +1983,9 @@ class ProjectsApi
      * Updates a project assignment status for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\AssignmentStatus $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2000,9 +2000,9 @@ class ProjectsApi
      * Updates a project assignment status for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\AssignmentStatus $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2053,7 +2053,7 @@ class ProjectsApi
      * Updates a project assignment status for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\AssignmentStatus $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2074,7 +2074,7 @@ class ProjectsApi
      * Updates a project assignment status for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\AssignmentStatus $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2111,7 +2111,7 @@ class ProjectsApi
      * Create request for operation 'projectsAssignmentstatusIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\AssignmentStatus $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2224,9 +2224,9 @@ class ProjectsApi
      *
      * Creates a new project assignment status
      *
-     * @param  \Swagger\Client\Model\AssignmentStatus $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2240,9 +2240,9 @@ class ProjectsApi
      *
      * Creates a new project assignment status
      *
-     * @param  \Swagger\Client\Model\AssignmentStatus $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2292,7 +2292,7 @@ class ProjectsApi
      *
      * Creates a new project assignment status
      *
-     * @param  \Swagger\Client\Model\AssignmentStatus $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2312,7 +2312,7 @@ class ProjectsApi
      *
      * Creates a new project assignment status
      *
-     * @param  \Swagger\Client\Model\AssignmentStatus $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2348,7 +2348,7 @@ class ProjectsApi
     /**
      * Create request for operation 'projectsAssignmentstatusPost'
      *
-     * @param  \Swagger\Client\Model\AssignmentStatus $body Project assignment POST body (required)
+     * @param  \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2450,9 +2450,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocuments
+     * @return \Paqtcom\Simplicate\Model\RestResultDocuments
      */
     public function projectsDocumentGet($offset = null, $limit = '5', $sort = null)
     {
@@ -2470,13 +2470,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocuments, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocuments, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsDocumentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocuments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
         $request = $this->projectsDocumentGetRequest($offset, $limit, $sort);
 
         try {
@@ -2527,7 +2527,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocuments',
+                        '\Paqtcom\Simplicate\Model\RestResultDocuments',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2573,7 +2573,7 @@ class ProjectsApi
      */
     public function projectsDocumentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocuments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
         $request = $this->projectsDocumentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -2721,7 +2721,7 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2737,7 +2737,7 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2949,9 +2949,9 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocument
+     * @return \Paqtcom\Simplicate\Model\RestResultDocument
      */
     public function projectsDocumentIdGet($id)
     {
@@ -2967,13 +2967,13 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocument, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocument, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsDocumentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocument';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
         $request = $this->projectsDocumentIdGetRequest($id);
 
         try {
@@ -3024,7 +3024,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocument',
+                        '\Paqtcom\Simplicate\Model\RestResultDocument',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3066,7 +3066,7 @@ class ProjectsApi
      */
     public function projectsDocumentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocument';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
         $request = $this->projectsDocumentIdGetRequest($id);
 
         return $this->client
@@ -3213,9 +3213,9 @@ class ProjectsApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3229,9 +3229,9 @@ class ProjectsApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3281,7 +3281,7 @@ class ProjectsApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3301,7 +3301,7 @@ class ProjectsApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3337,7 +3337,7 @@ class ProjectsApi
     /**
      * Create request for operation 'projectsDocumentPost'
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3435,9 +3435,9 @@ class ProjectsApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3451,9 +3451,9 @@ class ProjectsApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3503,7 +3503,7 @@ class ProjectsApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3523,7 +3523,7 @@ class ProjectsApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3559,7 +3559,7 @@ class ProjectsApi
     /**
      * Create request for operation 'projectsDocumentPut'
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3661,9 +3661,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocumentTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultDocumentTypes
      */
     public function projectsDocumenttypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -3681,13 +3681,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocumentTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocumentTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsDocumenttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
         $request = $this->projectsDocumenttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -3738,7 +3738,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocumentTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultDocumentTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3784,7 +3784,7 @@ class ProjectsApi
      */
     public function projectsDocumenttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
         $request = $this->projectsDocumenttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3932,9 +3932,9 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocumentType
+     * @return \Paqtcom\Simplicate\Model\RestResultDocumentType
      */
     public function projectsDocumenttypeIdGet($id)
     {
@@ -3950,13 +3950,13 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocumentType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocumentType, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsDocumenttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
         $request = $this->projectsDocumenttypeIdGetRequest($id);
 
         try {
@@ -4007,7 +4007,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocumentType',
+                        '\Paqtcom\Simplicate\Model\RestResultDocumentType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4049,7 +4049,7 @@ class ProjectsApi
      */
     public function projectsDocumenttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
         $request = $this->projectsDocumenttypeIdGetRequest($id);
 
         return $this->client
@@ -4200,9 +4200,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultProjects
+     * @return \Paqtcom\Simplicate\Model\RestResultProjects
      */
     public function projectsProjectGet($offset = null, $limit = '5', $sort = null)
     {
@@ -4220,13 +4220,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultProjects, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultProjects, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsProjectGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjects';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjects';
         $request = $this->projectsProjectGetRequest($offset, $limit, $sort);
 
         try {
@@ -4277,7 +4277,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultProjects',
+                        '\Paqtcom\Simplicate\Model\RestResultProjects',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4323,7 +4323,7 @@ class ProjectsApi
      */
     public function projectsProjectGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjects';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjects';
         $request = $this->projectsProjectGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -4471,7 +4471,7 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4487,7 +4487,7 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4699,9 +4699,9 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultProject
+     * @return \Paqtcom\Simplicate\Model\RestResultProject
      */
     public function projectsProjectIdGet($id)
     {
@@ -4717,13 +4717,13 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultProject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultProject, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsProjectIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProject';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProject';
         $request = $this->projectsProjectIdGetRequest($id);
 
         try {
@@ -4774,7 +4774,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultProject',
+                        '\Paqtcom\Simplicate\Model\RestResultProject',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4816,7 +4816,7 @@ class ProjectsApi
      */
     public function projectsProjectIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProject';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProject';
         $request = $this->projectsProjectIdGetRequest($id);
 
         return $this->client
@@ -4967,9 +4967,9 @@ class ProjectsApi
      * @param  string $by by (optional)
      * @param  string $until_date Y-m-d (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResult
+     * @return \Paqtcom\Simplicate\Model\RestResult
      */
     public function projectsProjectIdPlanningBudgetGet($id, $by = null, $until_date = null)
     {
@@ -4987,13 +4987,13 @@ class ProjectsApi
      * @param  string $by (optional)
      * @param  string $until_date Y-m-d (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResult, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsProjectIdPlanningBudgetGetWithHttpInfo($id, $by = null, $until_date = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResult';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResult';
         $request = $this->projectsProjectIdPlanningBudgetGetRequest($id, $by, $until_date);
 
         try {
@@ -5044,7 +5044,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResult',
+                        '\Paqtcom\Simplicate\Model\RestResult',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5090,7 +5090,7 @@ class ProjectsApi
      */
     public function projectsProjectIdPlanningBudgetGetAsyncWithHttpInfo($id, $by = null, $until_date = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResult';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResult';
         $request = $this->projectsProjectIdPlanningBudgetGetRequest($id, $by, $until_date);
 
         return $this->client
@@ -5249,9 +5249,9 @@ class ProjectsApi
      * Updates a project for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostProject $body project object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProject $body project object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5266,9 +5266,9 @@ class ProjectsApi
      * Updates a project for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostProject $body project object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProject $body project object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5319,7 +5319,7 @@ class ProjectsApi
      * Updates a project for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostProject $body project object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProject $body project object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5340,7 +5340,7 @@ class ProjectsApi
      * Updates a project for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostProject $body project object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProject $body project object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5377,7 +5377,7 @@ class ProjectsApi
      * Create request for operation 'projectsProjectIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostProject $body project object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProject $body project object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5490,9 +5490,9 @@ class ProjectsApi
      *
      * Add a new project
      *
-     * @param  \Swagger\Client\Model\PostProject $body Project object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProject $body Project object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5506,9 +5506,9 @@ class ProjectsApi
      *
      * Add a new project
      *
-     * @param  \Swagger\Client\Model\PostProject $body Project object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProject $body Project object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5558,7 +5558,7 @@ class ProjectsApi
      *
      * Add a new project
      *
-     * @param  \Swagger\Client\Model\PostProject $body Project object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProject $body Project object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5578,7 +5578,7 @@ class ProjectsApi
      *
      * Add a new project
      *
-     * @param  \Swagger\Client\Model\PostProject $body Project object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProject $body Project object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5614,7 +5614,7 @@ class ProjectsApi
     /**
      * Create request for operation 'projectsProjectPost'
      *
-     * @param  \Swagger\Client\Model\PostProject $body Project object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProject $body Project object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5716,9 +5716,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldGroups
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups
      */
     public function projectsProjectcustomfieldgroupsGet($offset = null, $limit = '5', $sort = null)
     {
@@ -5736,13 +5736,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldGroups, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsProjectcustomfieldgroupsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroups';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
         $request = $this->projectsProjectcustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         try {
@@ -5793,7 +5793,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldGroups',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5839,7 +5839,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldgroupsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroups';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
         $request = $this->projectsProjectcustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -5987,9 +5987,9 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldGroup
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup
      */
     public function projectsProjectcustomfieldgroupsIdGet($id)
     {
@@ -6005,13 +6005,13 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldGroup, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsProjectcustomfieldgroupsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroup';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
         $request = $this->projectsProjectcustomfieldgroupsIdGetRequest($id);
 
         try {
@@ -6062,7 +6062,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldGroup',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6104,7 +6104,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldgroupsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroup';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
         $request = $this->projectsProjectcustomfieldgroupsIdGetRequest($id);
 
         return $this->client
@@ -6255,9 +6255,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFields
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFields
      */
     public function projectsProjectcustomfieldsGet($offset = null, $limit = '5', $sort = null)
     {
@@ -6275,13 +6275,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFields, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFields, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsProjectcustomfieldsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFields';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
         $request = $this->projectsProjectcustomfieldsGetRequest($offset, $limit, $sort);
 
         try {
@@ -6332,7 +6332,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFields',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFields',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6378,7 +6378,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFields';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
         $request = $this->projectsProjectcustomfieldsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -6526,9 +6526,9 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomField
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomField
      */
     public function projectsProjectcustomfieldsIdGet($id)
     {
@@ -6544,13 +6544,13 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomField, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomField, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsProjectcustomfieldsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomField';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
         $request = $this->projectsProjectcustomfieldsIdGetRequest($id);
 
         try {
@@ -6601,7 +6601,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomField',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomField',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6643,7 +6643,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomField';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
         $request = $this->projectsProjectcustomfieldsIdGetRequest($id);
 
         return $this->client
@@ -6790,9 +6790,9 @@ class ProjectsApi
      *
      * Add an employee to a project
      *
-     * @param  \Swagger\Client\Model\Body $body Body for adding an employee to a project (required)
+     * @param  \Paqtcom\Simplicate\Model\Body $body Body for adding an employee to a project (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6806,9 +6806,9 @@ class ProjectsApi
      *
      * Add an employee to a project
      *
-     * @param  \Swagger\Client\Model\Body $body Body for adding an employee to a project (required)
+     * @param  \Paqtcom\Simplicate\Model\Body $body Body for adding an employee to a project (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6858,7 +6858,7 @@ class ProjectsApi
      *
      * Add an employee to a project
      *
-     * @param  \Swagger\Client\Model\Body $body Body for adding an employee to a project (required)
+     * @param  \Paqtcom\Simplicate\Model\Body $body Body for adding an employee to a project (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6878,7 +6878,7 @@ class ProjectsApi
      *
      * Add an employee to a project
      *
-     * @param  \Swagger\Client\Model\Body $body Body for adding an employee to a project (required)
+     * @param  \Paqtcom\Simplicate\Model\Body $body Body for adding an employee to a project (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6914,7 +6914,7 @@ class ProjectsApi
     /**
      * Create request for operation 'projectsProjectemployeePost'
      *
-     * @param  \Swagger\Client\Model\Body $body Body for adding an employee to a project (required)
+     * @param  \Paqtcom\Simplicate\Model\Body $body Body for adding an employee to a project (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -7013,7 +7013,7 @@ class ProjectsApi
      * Remove an employee from a project
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -7028,7 +7028,7 @@ class ProjectsApi
      * Remove an employee from a project
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -7223,9 +7223,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultFilters
+     * @return \Paqtcom\Simplicate\Model\RestResultFilters
      */
     public function projectsProjectfiltersGet($offset = null, $limit = '5', $sort = null)
     {
@@ -7243,13 +7243,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultFilters, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultFilters, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsProjectfiltersGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultFilters';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultFilters';
         $request = $this->projectsProjectfiltersGetRequest($offset, $limit, $sort);
 
         try {
@@ -7300,7 +7300,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultFilters',
+                        '\Paqtcom\Simplicate\Model\RestResultFilters',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7346,7 +7346,7 @@ class ProjectsApi
      */
     public function projectsProjectfiltersGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultFilters';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultFilters';
         $request = $this->projectsProjectfiltersGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7494,9 +7494,9 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultFilter
+     * @return \Paqtcom\Simplicate\Model\RestResultFilter
      */
     public function projectsProjectfiltersIdGet($id)
     {
@@ -7512,13 +7512,13 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultFilter, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultFilter, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsProjectfiltersIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultFilter';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultFilter';
         $request = $this->projectsProjectfiltersIdGetRequest($id);
 
         try {
@@ -7569,7 +7569,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultFilter',
+                        '\Paqtcom\Simplicate\Model\RestResultFilter',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7611,7 +7611,7 @@ class ProjectsApi
      */
     public function projectsProjectfiltersIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultFilter';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultFilter';
         $request = $this->projectsProjectfiltersIdGetRequest($id);
 
         return $this->client
@@ -7762,9 +7762,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultProjectStatusses
+     * @return \Paqtcom\Simplicate\Model\RestResultProjectStatusses
      */
     public function projectsProjectstatusGet($offset = null, $limit = '5', $sort = null)
     {
@@ -7782,13 +7782,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultProjectStatusses, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultProjectStatusses, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsProjectstatusGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectStatusses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectStatusses';
         $request = $this->projectsProjectstatusGetRequest($offset, $limit, $sort);
 
         try {
@@ -7839,7 +7839,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultProjectStatusses',
+                        '\Paqtcom\Simplicate\Model\RestResultProjectStatusses',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7885,7 +7885,7 @@ class ProjectsApi
      */
     public function projectsProjectstatusGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectStatusses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectStatusses';
         $request = $this->projectsProjectstatusGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -8033,9 +8033,9 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultProjectStatus
+     * @return \Paqtcom\Simplicate\Model\RestResultProjectStatus
      */
     public function projectsProjectstatusIdGet($id)
     {
@@ -8051,13 +8051,13 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultProjectStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultProjectStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsProjectstatusIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectStatus';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectStatus';
         $request = $this->projectsProjectstatusIdGetRequest($id);
 
         try {
@@ -8108,7 +8108,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultProjectStatus',
+                        '\Paqtcom\Simplicate\Model\RestResultProjectStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8150,7 +8150,7 @@ class ProjectsApi
      */
     public function projectsProjectstatusIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectStatus';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectStatus';
         $request = $this->projectsProjectstatusIdGetRequest($id);
 
         return $this->client
@@ -8301,9 +8301,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultPurchases
+     * @return \Paqtcom\Simplicate\Model\RestResultPurchases
      */
     public function projectsPurchaseGet($offset = null, $limit = '5', $sort = null)
     {
@@ -8321,13 +8321,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultPurchases, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultPurchases, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsPurchaseGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPurchases';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchases';
         $request = $this->projectsPurchaseGetRequest($offset, $limit, $sort);
 
         try {
@@ -8378,7 +8378,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultPurchases',
+                        '\Paqtcom\Simplicate\Model\RestResultPurchases',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8424,7 +8424,7 @@ class ProjectsApi
      */
     public function projectsPurchaseGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPurchases';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchases';
         $request = $this->projectsPurchaseGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -8572,9 +8572,9 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultPurchase
+     * @return \Paqtcom\Simplicate\Model\RestResultPurchase
      */
     public function projectsPurchaseIdGet($id)
     {
@@ -8590,13 +8590,13 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultPurchase, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultPurchase, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsPurchaseIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPurchase';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchase';
         $request = $this->projectsPurchaseIdGetRequest($id);
 
         try {
@@ -8647,7 +8647,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultPurchase',
+                        '\Paqtcom\Simplicate\Model\RestResultPurchase',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8689,7 +8689,7 @@ class ProjectsApi
      */
     public function projectsPurchaseIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPurchase';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchase';
         $request = $this->projectsPurchaseIdGetRequest($id);
 
         return $this->client
@@ -8840,9 +8840,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultPurchaseTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultPurchaseTypes
      */
     public function projectsPurchasetypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -8860,13 +8860,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultPurchaseTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultPurchaseTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsPurchasetypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPurchaseTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchaseTypes';
         $request = $this->projectsPurchasetypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -8917,7 +8917,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultPurchaseTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultPurchaseTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8963,7 +8963,7 @@ class ProjectsApi
      */
     public function projectsPurchasetypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPurchaseTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchaseTypes';
         $request = $this->projectsPurchasetypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -9111,9 +9111,9 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultPurchaseType
+     * @return \Paqtcom\Simplicate\Model\RestResultPurchaseType
      */
     public function projectsPurchasetypeIdGet($id)
     {
@@ -9129,13 +9129,13 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultPurchaseType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultPurchaseType, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsPurchasetypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPurchaseType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchaseType';
         $request = $this->projectsPurchasetypeIdGetRequest($id);
 
         try {
@@ -9186,7 +9186,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultPurchaseType',
+                        '\Paqtcom\Simplicate\Model\RestResultPurchaseType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9228,7 +9228,7 @@ class ProjectsApi
      */
     public function projectsPurchasetypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPurchaseType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchaseType';
         $request = $this->projectsPurchasetypeIdGetRequest($id);
 
         return $this->client
@@ -9379,9 +9379,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultReverseInvoices
+     * @return \Paqtcom\Simplicate\Model\RestResultReverseInvoices
      */
     public function projectsReverseinvoiceGet($offset = null, $limit = '5', $sort = null)
     {
@@ -9399,13 +9399,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultReverseInvoices, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultReverseInvoices, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsReverseinvoiceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultReverseInvoices';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultReverseInvoices';
         $request = $this->projectsReverseinvoiceGetRequest($offset, $limit, $sort);
 
         try {
@@ -9456,7 +9456,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultReverseInvoices',
+                        '\Paqtcom\Simplicate\Model\RestResultReverseInvoices',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9502,7 +9502,7 @@ class ProjectsApi
      */
     public function projectsReverseinvoiceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultReverseInvoices';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultReverseInvoices';
         $request = $this->projectsReverseinvoiceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -9650,9 +9650,9 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultReverseInvoice
+     * @return \Paqtcom\Simplicate\Model\RestResultReverseInvoice
      */
     public function projectsReverseinvoiceIdGet($id)
     {
@@ -9668,13 +9668,13 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultReverseInvoice, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultReverseInvoice, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsReverseinvoiceIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultReverseInvoice';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultReverseInvoice';
         $request = $this->projectsReverseinvoiceIdGetRequest($id);
 
         try {
@@ -9725,7 +9725,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultReverseInvoice',
+                        '\Paqtcom\Simplicate\Model\RestResultReverseInvoice',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9767,7 +9767,7 @@ class ProjectsApi
      */
     public function projectsReverseinvoiceIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultReverseInvoice';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultReverseInvoice';
         $request = $this->projectsReverseinvoiceIdGetRequest($id);
 
         return $this->client
@@ -9918,9 +9918,9 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultProjectServices
+     * @return \Paqtcom\Simplicate\Model\RestResultProjectServices
      */
     public function projectsServiceGet($offset = null, $limit = '5', $sort = null)
     {
@@ -9938,13 +9938,13 @@ class ProjectsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultProjectServices, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultProjectServices, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsServiceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectServices';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectServices';
         $request = $this->projectsServiceGetRequest($offset, $limit, $sort);
 
         try {
@@ -9995,7 +9995,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultProjectServices',
+                        '\Paqtcom\Simplicate\Model\RestResultProjectServices',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10041,7 +10041,7 @@ class ProjectsApi
      */
     public function projectsServiceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectServices';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectServices';
         $request = $this->projectsServiceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -10189,7 +10189,7 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -10205,7 +10205,7 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -10416,9 +10416,9 @@ class ProjectsApi
      * Duplicates a service on base of the id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -10433,9 +10433,9 @@ class ProjectsApi
      * Duplicates a service on base of the id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -10486,7 +10486,7 @@ class ProjectsApi
      * Duplicates a service on base of the id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10507,7 +10507,7 @@ class ProjectsApi
      * Duplicates a service on base of the id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10544,7 +10544,7 @@ class ProjectsApi
      * Create request for operation 'projectsServiceIdDuplicatePost'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
+     * @param  \Paqtcom\Simplicate\Model\DuplicateProjectService $body Optional parameters to overwrite (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -10653,9 +10653,9 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultProjectService
+     * @return \Paqtcom\Simplicate\Model\RestResultProjectService
      */
     public function projectsServiceIdGet($id)
     {
@@ -10671,13 +10671,13 @@ class ProjectsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultProjectService, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultProjectService, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsServiceIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectService';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectService';
         $request = $this->projectsServiceIdGetRequest($id);
 
         try {
@@ -10728,7 +10728,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultProjectService',
+                        '\Paqtcom\Simplicate\Model\RestResultProjectService',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10770,7 +10770,7 @@ class ProjectsApi
      */
     public function projectsServiceIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultProjectService';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectService';
         $request = $this->projectsServiceIdGetRequest($id);
 
         return $this->client
@@ -10921,9 +10921,9 @@ class ProjectsApi
      * @param  string $by by (optional)
      * @param  string $until_date Y-m-d (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResult
+     * @return \Paqtcom\Simplicate\Model\RestResult
      */
     public function projectsServiceIdPlanningBudgetGet($id, $by = null, $until_date = null)
     {
@@ -10941,13 +10941,13 @@ class ProjectsApi
      * @param  string $by (optional)
      * @param  string $until_date Y-m-d (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResult, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function projectsServiceIdPlanningBudgetGetWithHttpInfo($id, $by = null, $until_date = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResult';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResult';
         $request = $this->projectsServiceIdPlanningBudgetGetRequest($id, $by, $until_date);
 
         try {
@@ -10998,7 +10998,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResult',
+                        '\Paqtcom\Simplicate\Model\RestResult',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11044,7 +11044,7 @@ class ProjectsApi
      */
     public function projectsServiceIdPlanningBudgetGetAsyncWithHttpInfo($id, $by = null, $until_date = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResult';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResult';
         $request = $this->projectsServiceIdPlanningBudgetGetRequest($id, $by, $until_date);
 
         return $this->client
@@ -11203,9 +11203,9 @@ class ProjectsApi
      * Updates a service for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutProjectService $body Service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutProjectService $body Service object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -11220,9 +11220,9 @@ class ProjectsApi
      * Updates a service for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutProjectService $body Service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutProjectService $body Service object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -11273,7 +11273,7 @@ class ProjectsApi
      * Updates a service for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutProjectService $body Service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutProjectService $body Service object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11294,7 +11294,7 @@ class ProjectsApi
      * Updates a service for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutProjectService $body Service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutProjectService $body Service object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11331,7 +11331,7 @@ class ProjectsApi
      * Create request for operation 'projectsServiceIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutProjectService $body Service object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutProjectService $body Service object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -11444,9 +11444,9 @@ class ProjectsApi
      *
      * Add a new service
      *
-     * @param  \Swagger\Client\Model\PostProjectService $body template object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProjectService $body template object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -11460,9 +11460,9 @@ class ProjectsApi
      *
      * Add a new service
      *
-     * @param  \Swagger\Client\Model\PostProjectService $body template object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProjectService $body template object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -11512,7 +11512,7 @@ class ProjectsApi
      *
      * Add a new service
      *
-     * @param  \Swagger\Client\Model\PostProjectService $body template object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProjectService $body template object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11532,7 +11532,7 @@ class ProjectsApi
      *
      * Add a new service
      *
-     * @param  \Swagger\Client\Model\PostProjectService $body template object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProjectService $body template object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11568,7 +11568,7 @@ class ProjectsApi
     /**
      * Create request for operation 'projectsServicePost'
      *
-     * @param  \Swagger\Client\Model\PostProjectService $body template object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostProjectService $body template object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

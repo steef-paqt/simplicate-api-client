@@ -13,9 +13,9 @@
  **amount_excl**     | **float**                                                 |             | [optional] 
  **amount_incl**     | **float**                                                 |             | [optional] 
  **autocollect**     | **bool**                                                  |             | [optional] 
- **revenuegroup**    | [**\Swagger\Client\Model\RevenueGroup**](RevenueGroup.md) |             | [optional] 
- **journal_lines**   | [**\Swagger\Client\Model\JournalLine[]**](JournalLine.md) |             | [optional] 
- **vat**             | [**\Swagger\Client\Model\JournalVat[]**](JournalVat.md)   |             | [optional] 
+ **revenuegroup**    | [**\Paqtcom\Simplicate\Model\RevenueGroup**](RevenueGroup.md) |             | [optional] 
+ **journal_lines**   | [**\Paqtcom\Simplicate\Model\JournalLine[]**](JournalLine.md) |             | [optional] 
+ **vat**             | [**\Paqtcom\Simplicate\Model\JournalVat[]**](JournalVat.md)   |             | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

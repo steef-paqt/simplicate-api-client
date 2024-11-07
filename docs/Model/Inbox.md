@@ -5,7 +5,7 @@
  Name           | Type                                              | Description | Notes      
 ----------------|---------------------------------------------------|-------------|------------
  **id**         | **string**                                        |             | [optional] 
- **employee**   | [**\Swagger\Client\Model\Employee**](Employee.md) |             | [optional] 
+ **employee**   | [**\Paqtcom\Simplicate\Model\Employee**](Employee.md) |             | [optional] 
  **label**      | **string**                                        |             | [optional] 
  **created_at** | **string**                                        |             | [optional] 
  **updated_at** | **string**                                        |             | [optional] 

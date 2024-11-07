@@ -1,4 +1,4 @@
-# Swagger\Client\CostsApi
+# Paqtcom\Simplicate\CostsApi
 
 All URIs are relative to *http://localhost/api/v2*
 
@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost/api/v2*
 
 # **costsCoststypeGet**
 
-> \Swagger\Client\Model\RestResultHourTypes costsCoststypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultHourTypes costsCoststypeGet($offset, $limit, $sort)
 
 Fetches all cost types
 
@@ -21,7 +21,7 @@ Fetches all cost types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CostsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CostsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -49,7 +49,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultHourTypes**](../Model/RestResultHourTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultHourTypes**](../Model/RestResultHourTypes.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ No authorization required
 
 # **costsCoststypeIdGet**
 
-> \Swagger\Client\Model\RestResultHourType costsCoststypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultHourType costsCoststypeIdGet($id)
 
 Fetches a single cost type by cost type id
 
@@ -74,7 +74,7 @@ Fetches a single cost type by cost type id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CostsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CostsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -98,7 +98,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultHourType**](../Model/RestResultHourType.md)
+[**\Paqtcom\Simplicate\Model\RestResultHourType**](../Model/RestResultHourType.md)
 
 ### Authorization
 
@@ -113,7 +113,7 @@ No authorization required
 
 # **costsExpenseGet**
 
-> \Swagger\Client\Model\RestResultEmployeeExpenseList costsExpenseGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList costsExpenseGet($offset, $limit, $sort)
 
 Fetches the expenses of employees
 
@@ -123,7 +123,7 @@ Fetches the expenses of employees
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CostsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CostsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -151,7 +151,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultEmployeeExpenseList**](../Model/RestResultEmployeeExpenseList.md)
+[**\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList**](../Model/RestResultEmployeeExpenseList.md)
 
 ### Authorization
 
@@ -166,7 +166,7 @@ No authorization required
 
 # **costsExpenseIdGet**
 
-> \Swagger\Client\Model\RestResultEmployeeExpense costsExpenseIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultEmployeeExpense costsExpenseIdGet($id)
 
 Fetches a single expense for an employee
 
@@ -176,7 +176,7 @@ Fetches a single expense for an employee
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\CostsApi(
+$apiInstance = new Paqtcom\Simplicate\Api\CostsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -200,7 +200,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultEmployeeExpense**](../Model/RestResultEmployeeExpense.md)
+[**\Paqtcom\Simplicate\Model\RestResultEmployeeExpense**](../Model/RestResultEmployeeExpense.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Paqtcom\Simplicate\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ApiException;
+use Paqtcom\Simplicate\Configuration;
+use Paqtcom\Simplicate\HeaderSelector;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * HoursApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -94,9 +94,9 @@ class HoursApi
      * Updates an hour entity for absence for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostAbsence $body Absence object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -111,9 +111,9 @@ class HoursApi
      * Updates an hour entity for absence for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostAbsence $body Absence object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -164,7 +164,7 @@ class HoursApi
      * Updates an hour entity for absence for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostAbsence $body Absence object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -185,7 +185,7 @@ class HoursApi
      * Updates an hour entity for absence for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostAbsence $body Absence object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -222,7 +222,7 @@ class HoursApi
      * Create request for operation 'hoursAbsenceIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostAbsence $body Absence object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -335,9 +335,9 @@ class HoursApi
      *
      * Add a new hours entity for absence
      *
-     * @param  \Swagger\Client\Model\PostAbsence $body absence object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body absence object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -351,9 +351,9 @@ class HoursApi
      *
      * Add a new hours entity for absence
      *
-     * @param  \Swagger\Client\Model\PostAbsence $body absence object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body absence object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -403,7 +403,7 @@ class HoursApi
      *
      * Add a new hours entity for absence
      *
-     * @param  \Swagger\Client\Model\PostAbsence $body absence object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body absence object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -423,7 +423,7 @@ class HoursApi
      *
      * Add a new hours entity for absence
      *
-     * @param  \Swagger\Client\Model\PostAbsence $body absence object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body absence object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -459,7 +459,7 @@ class HoursApi
     /**
      * Create request for operation 'hoursAbsencePost'
      *
-     * @param  \Swagger\Client\Model\PostAbsence $body absence object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAbsence $body absence object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -561,9 +561,9 @@ class HoursApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultApprovals
+     * @return \Paqtcom\Simplicate\Model\RestResultApprovals
      */
     public function hoursApprovalGet($offset = null, $limit = '5', $sort = null)
     {
@@ -581,13 +581,13 @@ class HoursApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultApprovals, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultApprovals, HTTP status code, HTTP response headers (array of strings)
      */
     public function hoursApprovalGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultApprovals';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultApprovals';
         $request = $this->hoursApprovalGetRequest($offset, $limit, $sort);
 
         try {
@@ -638,7 +638,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultApprovals',
+                        '\Paqtcom\Simplicate\Model\RestResultApprovals',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -684,7 +684,7 @@ class HoursApi
      */
     public function hoursApprovalGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultApprovals';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultApprovals';
         $request = $this->hoursApprovalGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -832,7 +832,7 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -848,7 +848,7 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1060,9 +1060,9 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultApproval
+     * @return \Paqtcom\Simplicate\Model\RestResultApproval
      */
     public function hoursApprovalIdGet($id)
     {
@@ -1078,13 +1078,13 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultApproval, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultApproval, HTTP status code, HTTP response headers (array of strings)
      */
     public function hoursApprovalIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultApproval';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultApproval';
         $request = $this->hoursApprovalIdGetRequest($id);
 
         try {
@@ -1135,7 +1135,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultApproval',
+                        '\Paqtcom\Simplicate\Model\RestResultApproval',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1177,7 +1177,7 @@ class HoursApi
      */
     public function hoursApprovalIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultApproval';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultApproval';
         $request = $this->hoursApprovalIdGetRequest($id);
 
         return $this->client
@@ -1325,9 +1325,9 @@ class HoursApi
      * Updates a hours approval for the given approval id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostApproval $body Approval object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1342,9 +1342,9 @@ class HoursApi
      * Updates a hours approval for the given approval id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostApproval $body Approval object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1395,7 +1395,7 @@ class HoursApi
      * Updates a hours approval for the given approval id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostApproval $body Approval object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1416,7 +1416,7 @@ class HoursApi
      * Updates a hours approval for the given approval id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostApproval $body Approval object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1453,7 +1453,7 @@ class HoursApi
      * Create request for operation 'hoursApprovalIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostApproval $body Approval object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1566,9 +1566,9 @@ class HoursApi
      *
      * Add a new hours approval
      *
-     * @param  \Swagger\Client\Model\PostApproval $body Approval object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1582,9 +1582,9 @@ class HoursApi
      *
      * Add a new hours approval
      *
-     * @param  \Swagger\Client\Model\PostApproval $body Approval object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1634,7 +1634,7 @@ class HoursApi
      *
      * Add a new hours approval
      *
-     * @param  \Swagger\Client\Model\PostApproval $body Approval object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1654,7 +1654,7 @@ class HoursApi
      *
      * Add a new hours approval
      *
-     * @param  \Swagger\Client\Model\PostApproval $body Approval object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1690,7 +1690,7 @@ class HoursApi
     /**
      * Create request for operation 'hoursApprovalPost'
      *
-     * @param  \Swagger\Client\Model\PostApproval $body Approval object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1792,9 +1792,9 @@ class HoursApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultApprovalStatusList
+     * @return \Paqtcom\Simplicate\Model\RestResultApprovalStatusList
      */
     public function hoursApprovalstatusGet($offset = null, $limit = '5', $sort = null)
     {
@@ -1812,13 +1812,13 @@ class HoursApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultApprovalStatusList, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultApprovalStatusList, HTTP status code, HTTP response headers (array of strings)
      */
     public function hoursApprovalstatusGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultApprovalStatusList';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultApprovalStatusList';
         $request = $this->hoursApprovalstatusGetRequest($offset, $limit, $sort);
 
         try {
@@ -1869,7 +1869,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultApprovalStatusList',
+                        '\Paqtcom\Simplicate\Model\RestResultApprovalStatusList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1915,7 +1915,7 @@ class HoursApi
      */
     public function hoursApprovalstatusGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultApprovalStatusList';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultApprovalStatusList';
         $request = $this->hoursApprovalstatusGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -2063,9 +2063,9 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultApprovalStatus
+     * @return \Paqtcom\Simplicate\Model\RestResultApprovalStatus
      */
     public function hoursApprovalstatusIdGet($id)
     {
@@ -2081,13 +2081,13 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultApprovalStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultApprovalStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function hoursApprovalstatusIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultApprovalStatus';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultApprovalStatus';
         $request = $this->hoursApprovalstatusIdGetRequest($id);
 
         try {
@@ -2138,7 +2138,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultApprovalStatus',
+                        '\Paqtcom\Simplicate\Model\RestResultApprovalStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2180,7 +2180,7 @@ class HoursApi
      */
     public function hoursApprovalstatusIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultApprovalStatus';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultApprovalStatus';
         $request = $this->hoursApprovalstatusIdGetRequest($id);
 
         return $this->client
@@ -2329,9 +2329,9 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultEmployeeExpense
+     * @return \Paqtcom\Simplicate\Model\RestResultEmployeeExpense
      */
     public function hoursEmployeeexpenseIdGet($id)
     {
@@ -2347,13 +2347,13 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultEmployeeExpense, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultEmployeeExpense, HTTP status code, HTTP response headers (array of strings)
      */
     public function hoursEmployeeexpenseIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployeeExpense';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpense';
         $request = $this->hoursEmployeeexpenseIdGetRequest($id);
 
         try {
@@ -2404,7 +2404,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultEmployeeExpense',
+                        '\Paqtcom\Simplicate\Model\RestResultEmployeeExpense',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2446,7 +2446,7 @@ class HoursApi
      */
     public function hoursEmployeeexpenseIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployeeExpense';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpense';
         $request = $this->hoursEmployeeexpenseIdGetRequest($id);
 
         return $this->client
@@ -2597,9 +2597,9 @@ class HoursApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultEmployeeExpenseList
+     * @return \Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList
      */
     public function hoursEmployeeexpensesGet($offset = null, $limit = '5', $sort = null)
     {
@@ -2617,13 +2617,13 @@ class HoursApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultEmployeeExpenseList, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList, HTTP status code, HTTP response headers (array of strings)
      */
     public function hoursEmployeeexpensesGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployeeExpenseList';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList';
         $request = $this->hoursEmployeeexpensesGetRequest($offset, $limit, $sort);
 
         try {
@@ -2674,7 +2674,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultEmployeeExpenseList',
+                        '\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2720,7 +2720,7 @@ class HoursApi
      */
     public function hoursEmployeeexpensesGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultEmployeeExpenseList';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList';
         $request = $this->hoursEmployeeexpensesGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -2870,9 +2870,9 @@ class HoursApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultHours
+     * @return \Paqtcom\Simplicate\Model\RestResultHours
      */
     public function hoursHoursGet($offset = null, $limit = '5', $sort = null)
     {
@@ -2890,13 +2890,13 @@ class HoursApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultHours, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultHours, HTTP status code, HTTP response headers (array of strings)
      */
     public function hoursHoursGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHours';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHours';
         $request = $this->hoursHoursGetRequest($offset, $limit, $sort);
 
         try {
@@ -2947,7 +2947,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultHours',
+                        '\Paqtcom\Simplicate\Model\RestResultHours',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2993,7 +2993,7 @@ class HoursApi
      */
     public function hoursHoursGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHours';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHours';
         $request = $this->hoursHoursGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3141,7 +3141,7 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3157,7 +3157,7 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3369,9 +3369,9 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultHour
+     * @return \Paqtcom\Simplicate\Model\RestResultHour
      */
     public function hoursHoursIdGet($id)
     {
@@ -3387,13 +3387,13 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultHour, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultHour, HTTP status code, HTTP response headers (array of strings)
      */
     public function hoursHoursIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHour';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHour';
         $request = $this->hoursHoursIdGetRequest($id);
 
         try {
@@ -3444,7 +3444,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultHour',
+                        '\Paqtcom\Simplicate\Model\RestResultHour',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3486,7 +3486,7 @@ class HoursApi
      */
     public function hoursHoursIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHour';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHour';
         $request = $this->hoursHoursIdGetRequest($id);
 
         return $this->client
@@ -3634,9 +3634,9 @@ class HoursApi
      * Updates a hours registration for the given hours id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostHours $body Hours object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHours $body Hours object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3651,9 +3651,9 @@ class HoursApi
      * Updates a hours registration for the given hours id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostHours $body Hours object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHours $body Hours object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3704,7 +3704,7 @@ class HoursApi
      * Updates a hours registration for the given hours id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostHours $body Hours object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHours $body Hours object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3725,7 +3725,7 @@ class HoursApi
      * Updates a hours registration for the given hours id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostHours $body Hours object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHours $body Hours object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3762,7 +3762,7 @@ class HoursApi
      * Create request for operation 'hoursHoursIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostHours $body Hours object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHours $body Hours object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3875,9 +3875,9 @@ class HoursApi
      *
      * Add a new hours registration
      *
-     * @param  \Swagger\Client\Model\PostHours $body Hours object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHours $body Hours object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3891,9 +3891,9 @@ class HoursApi
      *
      * Add a new hours registration
      *
-     * @param  \Swagger\Client\Model\PostHours $body Hours object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHours $body Hours object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3943,7 +3943,7 @@ class HoursApi
      *
      * Add a new hours registration
      *
-     * @param  \Swagger\Client\Model\PostHours $body Hours object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHours $body Hours object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3963,7 +3963,7 @@ class HoursApi
      *
      * Add a new hours registration
      *
-     * @param  \Swagger\Client\Model\PostHours $body Hours object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHours $body Hours object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3999,7 +3999,7 @@ class HoursApi
     /**
      * Create request for operation 'hoursHoursPost'
      *
-     * @param  \Swagger\Client\Model\PostHours $body Hours object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHours $body Hours object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4101,9 +4101,9 @@ class HoursApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultHourTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultHourTypes
      */
     public function hoursHourstypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -4121,13 +4121,13 @@ class HoursApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultHourTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultHourTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function hoursHourstypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHourTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourTypes';
         $request = $this->hoursHourstypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -4178,7 +4178,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultHourTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultHourTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4224,7 +4224,7 @@ class HoursApi
      */
     public function hoursHourstypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHourTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourTypes';
         $request = $this->hoursHourstypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -4372,9 +4372,9 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultHourType
+     * @return \Paqtcom\Simplicate\Model\RestResultHourType
      */
     public function hoursHourstypeIdGet($id)
     {
@@ -4390,13 +4390,13 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultHourType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultHourType, HTTP status code, HTTP response headers (array of strings)
      */
     public function hoursHourstypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHourType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourType';
         $request = $this->hoursHourstypeIdGetRequest($id);
 
         try {
@@ -4447,7 +4447,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultHourType',
+                        '\Paqtcom\Simplicate\Model\RestResultHourType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4489,7 +4489,7 @@ class HoursApi
      */
     public function hoursHourstypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHourType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourType';
         $request = $this->hoursHourstypeIdGetRequest($id);
 
         return $this->client
@@ -4637,9 +4637,9 @@ class HoursApi
      * Updates a hour type registration for the given hour type id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostHoursType $body Hours type object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHoursType $body Hours type object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4654,9 +4654,9 @@ class HoursApi
      * Updates a hour type registration for the given hour type id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostHoursType $body Hours type object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHoursType $body Hours type object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4707,7 +4707,7 @@ class HoursApi
      * Updates a hour type registration for the given hour type id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostHoursType $body Hours type object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHoursType $body Hours type object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4728,7 +4728,7 @@ class HoursApi
      * Updates a hour type registration for the given hour type id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostHoursType $body Hours type object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHoursType $body Hours type object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4765,7 +4765,7 @@ class HoursApi
      * Create request for operation 'hoursHourstypeIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostHoursType $body Hours type object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHoursType $body Hours type object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4878,9 +4878,9 @@ class HoursApi
      *
      * Add a new hour type
      *
-     * @param  \Swagger\Client\Model\PostHoursType $body Hour type object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHoursType $body Hour type object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4894,9 +4894,9 @@ class HoursApi
      *
      * Add a new hour type
      *
-     * @param  \Swagger\Client\Model\PostHoursType $body Hour type object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHoursType $body Hour type object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4946,7 +4946,7 @@ class HoursApi
      *
      * Add a new hour type
      *
-     * @param  \Swagger\Client\Model\PostHoursType $body Hour type object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHoursType $body Hour type object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4966,7 +4966,7 @@ class HoursApi
      *
      * Add a new hour type
      *
-     * @param  \Swagger\Client\Model\PostHoursType $body Hour type object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHoursType $body Hour type object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5002,7 +5002,7 @@ class HoursApi
     /**
      * Create request for operation 'hoursHourstypePost'
      *
-     * @param  \Swagger\Client\Model\PostHoursType $body Hour type object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostHoursType $body Hour type object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5101,9 +5101,9 @@ class HoursApi
      * Updates an hour entity for leave for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data that with the new values (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5118,9 +5118,9 @@ class HoursApi
      * Updates an hour entity for leave for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data that with the new values (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5171,7 +5171,7 @@ class HoursApi
      * Updates an hour entity for leave for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5192,7 +5192,7 @@ class HoursApi
      * Updates an hour entity for leave for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5229,7 +5229,7 @@ class HoursApi
      * Create request for operation 'hoursLeaveIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PostLeave $body Leave object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5342,9 +5342,9 @@ class HoursApi
      *
      * Add a new hours entity for leave
      *
-     * @param  \Swagger\Client\Model\PostLeave $body leave object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body leave object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5358,9 +5358,9 @@ class HoursApi
      *
      * Add a new hours entity for leave
      *
-     * @param  \Swagger\Client\Model\PostLeave $body leave object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body leave object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5410,7 +5410,7 @@ class HoursApi
      *
      * Add a new hours entity for leave
      *
-     * @param  \Swagger\Client\Model\PostLeave $body leave object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body leave object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5430,7 +5430,7 @@ class HoursApi
      *
      * Add a new hours entity for leave
      *
-     * @param  \Swagger\Client\Model\PostLeave $body leave object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body leave object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5466,7 +5466,7 @@ class HoursApi
     /**
      * Create request for operation 'hoursLeavePost'
      *
-     * @param  \Swagger\Client\Model\PostLeave $body leave object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostLeave $body leave object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5568,9 +5568,9 @@ class HoursApi
      * @param  string $q_end_date q_end_date (required)
      * @param  string $q_employee_id q_employee_id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultHoursSubmissions
+     * @return \Paqtcom\Simplicate\Model\RestResultHoursSubmissions
      */
     public function hoursSubmissionGet($q_start_date, $q_end_date, $q_employee_id)
     {
@@ -5588,13 +5588,13 @@ class HoursApi
      * @param  string $q_end_date (required)
      * @param  string $q_employee_id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultHoursSubmissions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultHoursSubmissions, HTTP status code, HTTP response headers (array of strings)
      */
     public function hoursSubmissionGetWithHttpInfo($q_start_date, $q_end_date, $q_employee_id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHoursSubmissions';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHoursSubmissions';
         $request = $this->hoursSubmissionGetRequest($q_start_date, $q_end_date, $q_employee_id);
 
         try {
@@ -5645,7 +5645,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultHoursSubmissions',
+                        '\Paqtcom\Simplicate\Model\RestResultHoursSubmissions',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5691,7 +5691,7 @@ class HoursApi
      */
     public function hoursSubmissionGetAsyncWithHttpInfo($q_start_date, $q_end_date, $q_employee_id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHoursSubmissions';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHoursSubmissions';
         $request = $this->hoursSubmissionGetRequest($q_start_date, $q_end_date, $q_employee_id);
 
         return $this->client
@@ -5856,9 +5856,9 @@ class HoursApi
      *
      * Submit all the employee's hours between the start and end date.
      *
-     * @param  \Swagger\Client\Model\PostSubmission $body Description of hours that need to be submitted. (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSubmission $body Description of hours that need to be submitted. (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5872,9 +5872,9 @@ class HoursApi
      *
      * Submit all the employee's hours between the start and end date.
      *
-     * @param  \Swagger\Client\Model\PostSubmission $body Description of hours that need to be submitted. (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSubmission $body Description of hours that need to be submitted. (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5924,7 +5924,7 @@ class HoursApi
      *
      * Submit all the employee's hours between the start and end date.
      *
-     * @param  \Swagger\Client\Model\PostSubmission $body Description of hours that need to be submitted. (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSubmission $body Description of hours that need to be submitted. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5944,7 +5944,7 @@ class HoursApi
      *
      * Submit all the employee's hours between the start and end date.
      *
-     * @param  \Swagger\Client\Model\PostSubmission $body Description of hours that need to be submitted. (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSubmission $body Description of hours that need to be submitted. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5980,7 +5980,7 @@ class HoursApi
     /**
      * Create request for operation 'hoursSubmissionPost'
      *
-     * @param  \Swagger\Client\Model\PostSubmission $body Description of hours that need to be submitted. (required)
+     * @param  \Paqtcom\Simplicate\Model\PostSubmission $body Description of hours that need to be submitted. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6078,9 +6078,9 @@ class HoursApi
      *
      * Submit hours for approval
      *
-     * @param  \Swagger\Client\Model\Submit $body Data that is needed to submit hours (required)
+     * @param  \Paqtcom\Simplicate\Model\Submit $body Data that is needed to submit hours (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6094,9 +6094,9 @@ class HoursApi
      *
      * Submit hours for approval
      *
-     * @param  \Swagger\Client\Model\Submit $body Data that is needed to submit hours (required)
+     * @param  \Paqtcom\Simplicate\Model\Submit $body Data that is needed to submit hours (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6146,7 +6146,7 @@ class HoursApi
      *
      * Submit hours for approval
      *
-     * @param  \Swagger\Client\Model\Submit $body Data that is needed to submit hours (required)
+     * @param  \Paqtcom\Simplicate\Model\Submit $body Data that is needed to submit hours (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6166,7 +6166,7 @@ class HoursApi
      *
      * Submit hours for approval
      *
-     * @param  \Swagger\Client\Model\Submit $body Data that is needed to submit hours (required)
+     * @param  \Paqtcom\Simplicate\Model\Submit $body Data that is needed to submit hours (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6202,7 +6202,7 @@ class HoursApi
     /**
      * Create request for operation 'hoursSubmitPost'
      *
-     * @param  \Swagger\Client\Model\Submit $body Data that is needed to submit hours (required)
+     * @param  \Paqtcom\Simplicate\Model\Submit $body Data that is needed to submit hours (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6304,9 +6304,9 @@ class HoursApi
      * @param  string $q_end_date Y-m-d, must be the Sunday after the Monday of the start_date (required)
      * @param  string $q_employee_id q_employee_id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultHoursTimesheetRows
+     * @return \Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows
      */
     public function hoursTimesheetrowGet($q_start_date, $q_end_date, $q_employee_id)
     {
@@ -6324,13 +6324,13 @@ class HoursApi
      * @param  string $q_end_date Y-m-d, must be the Sunday after the Monday of the start_date (required)
      * @param  string $q_employee_id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultHoursTimesheetRows, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows, HTTP status code, HTTP response headers (array of strings)
      */
     public function hoursTimesheetrowGetWithHttpInfo($q_start_date, $q_end_date, $q_employee_id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHoursTimesheetRows';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows';
         $request = $this->hoursTimesheetrowGetRequest($q_start_date, $q_end_date, $q_employee_id);
 
         try {
@@ -6381,7 +6381,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultHoursTimesheetRows',
+                        '\Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6427,7 +6427,7 @@ class HoursApi
      */
     public function hoursTimesheetrowGetAsyncWithHttpInfo($q_start_date, $q_end_date, $q_employee_id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultHoursTimesheetRows';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows';
         $request = $this->hoursTimesheetrowGetRequest($q_start_date, $q_end_date, $q_employee_id);
 
         return $this->client
@@ -6594,7 +6594,7 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6610,7 +6610,7 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6824,9 +6824,9 @@ class HoursApi
      * @param  string $q_employee_id q_employee_id (required)
      * @param  string $q_type q_type (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDateTimeRange
+     * @return \Paqtcom\Simplicate\Model\RestResultDateTimeRange
      */
     public function hoursTimesheetrowMostrecentGet($q_before_date, $q_employee_id, $q_type)
     {
@@ -6844,13 +6844,13 @@ class HoursApi
      * @param  string $q_employee_id (required)
      * @param  string $q_type (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDateTimeRange, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDateTimeRange, HTTP status code, HTTP response headers (array of strings)
      */
     public function hoursTimesheetrowMostrecentGetWithHttpInfo($q_before_date, $q_employee_id, $q_type)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDateTimeRange';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDateTimeRange';
         $request = $this->hoursTimesheetrowMostrecentGetRequest($q_before_date, $q_employee_id, $q_type);
 
         try {
@@ -6901,7 +6901,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDateTimeRange',
+                        '\Paqtcom\Simplicate\Model\RestResultDateTimeRange',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6947,7 +6947,7 @@ class HoursApi
      */
     public function hoursTimesheetrowMostrecentGetAsyncWithHttpInfo($q_before_date, $q_employee_id, $q_type)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDateTimeRange';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDateTimeRange';
         $request = $this->hoursTimesheetrowMostrecentGetRequest($q_before_date, $q_employee_id, $q_type);
 
         return $this->client
@@ -7114,7 +7114,7 @@ class HoursApi
      *
      * @param  string[] $body List of external ids for timesheetrows that need to be ordered. (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -7130,7 +7130,7 @@ class HoursApi
      *
      * @param  string[] $body List of external ids for timesheetrows that need to be ordered. (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -7334,9 +7334,9 @@ class HoursApi
      *
      * Submit a timesheet week row for the given employee.
      *
-     * @param  \Swagger\Client\Model\PostTimesheetRow $body Description of timesheetrow that is submitted. (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimesheetRow $body Description of timesheetrow that is submitted. (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -7350,9 +7350,9 @@ class HoursApi
      *
      * Submit a timesheet week row for the given employee.
      *
-     * @param  \Swagger\Client\Model\PostTimesheetRow $body Description of timesheetrow that is submitted. (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimesheetRow $body Description of timesheetrow that is submitted. (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -7402,7 +7402,7 @@ class HoursApi
      *
      * Submit a timesheet week row for the given employee.
      *
-     * @param  \Swagger\Client\Model\PostTimesheetRow $body Description of timesheetrow that is submitted. (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimesheetRow $body Description of timesheetrow that is submitted. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7422,7 +7422,7 @@ class HoursApi
      *
      * Submit a timesheet week row for the given employee.
      *
-     * @param  \Swagger\Client\Model\PostTimesheetRow $body Description of timesheetrow that is submitted. (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimesheetRow $body Description of timesheetrow that is submitted. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7458,7 +7458,7 @@ class HoursApi
     /**
      * Create request for operation 'hoursTimesheetrowPost'
      *
-     * @param  \Swagger\Client\Model\PostTimesheetRow $body Description of timesheetrow that is submitted. (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimesheetRow $body Description of timesheetrow that is submitted. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -7560,9 +7560,9 @@ class HoursApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultTimers
+     * @return \Paqtcom\Simplicate\Model\RestResultTimers
      */
     public function timersTimerGet($offset = null, $limit = '5', $sort = null)
     {
@@ -7580,13 +7580,13 @@ class HoursApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultTimers, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultTimers, HTTP status code, HTTP response headers (array of strings)
      */
     public function timersTimerGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTimers';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimers';
         $request = $this->timersTimerGetRequest($offset, $limit, $sort);
 
         try {
@@ -7637,7 +7637,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultTimers',
+                        '\Paqtcom\Simplicate\Model\RestResultTimers',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7683,7 +7683,7 @@ class HoursApi
      */
     public function timersTimerGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTimers';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimers';
         $request = $this->timersTimerGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7831,7 +7831,7 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -7847,7 +7847,7 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -8059,9 +8059,9 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultTimer
+     * @return \Paqtcom\Simplicate\Model\RestResultTimer
      */
     public function timersTimerIdGet($id)
     {
@@ -8077,13 +8077,13 @@ class HoursApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultTimer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultTimer, HTTP status code, HTTP response headers (array of strings)
      */
     public function timersTimerIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTimer';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimer';
         $request = $this->timersTimerIdGetRequest($id);
 
         try {
@@ -8134,7 +8134,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultTimer',
+                        '\Paqtcom\Simplicate\Model\RestResultTimer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8176,7 +8176,7 @@ class HoursApi
      */
     public function timersTimerIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTimer';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimer';
         $request = $this->timersTimerIdGetRequest($id);
 
         return $this->client
@@ -8324,9 +8324,9 @@ class HoursApi
      * Updates a timer for the given timer id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutTimer $body Timer object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutTimer $body Timer object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -8341,9 +8341,9 @@ class HoursApi
      * Updates a timer for the given timer id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutTimer $body Timer object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutTimer $body Timer object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -8394,7 +8394,7 @@ class HoursApi
      * Updates a timer for the given timer id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutTimer $body Timer object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutTimer $body Timer object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8415,7 +8415,7 @@ class HoursApi
      * Updates a timer for the given timer id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutTimer $body Timer object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutTimer $body Timer object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8452,7 +8452,7 @@ class HoursApi
      * Create request for operation 'timersTimerIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutTimer $body Timer object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutTimer $body Timer object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -8565,9 +8565,9 @@ class HoursApi
      *
      * Add a new timer
      *
-     * @param  \Swagger\Client\Model\PostTimer $body Timer object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimer $body Timer object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -8581,9 +8581,9 @@ class HoursApi
      *
      * Add a new timer
      *
-     * @param  \Swagger\Client\Model\PostTimer $body Timer object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimer $body Timer object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -8633,7 +8633,7 @@ class HoursApi
      *
      * Add a new timer
      *
-     * @param  \Swagger\Client\Model\PostTimer $body Timer object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimer $body Timer object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8653,7 +8653,7 @@ class HoursApi
      *
      * Add a new timer
      *
-     * @param  \Swagger\Client\Model\PostTimer $body Timer object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimer $body Timer object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8689,7 +8689,7 @@ class HoursApi
     /**
      * Create request for operation 'timersTimerPost'
      *
-     * @param  \Swagger\Client\Model\PostTimer $body Timer object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostTimer $body Timer object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

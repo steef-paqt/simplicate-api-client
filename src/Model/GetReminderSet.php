@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetReminderSet Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class GetReminderSet implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'templates' => '\Swagger\Client\Model\ReminderSetTemplate[]',
+        'templates' => '\Paqtcom\Simplicate\Model\ReminderSetTemplate[]',
         'label' => 'string',
         'disabled' => 'bool',
     ];
@@ -245,7 +245,7 @@ class GetReminderSet implements ModelInterface, ArrayAccess
     /**
      * Gets templates
      *
-     * @return \Swagger\Client\Model\ReminderSetTemplate[]
+     * @return \Paqtcom\Simplicate\Model\ReminderSetTemplate[]
      */
     public function getTemplates()
     {
@@ -255,7 +255,7 @@ class GetReminderSet implements ModelInterface, ArrayAccess
     /**
      * Sets templates
      *
-     * @param \Swagger\Client\Model\ReminderSetTemplate[] $templates templates
+     * @param \Paqtcom\Simplicate\Model\ReminderSetTemplate[] $templates templates
      *
      * @return $this
      */

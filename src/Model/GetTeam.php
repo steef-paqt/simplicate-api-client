@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetTeam Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class GetTeam implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'employees' => '\Swagger\Client\Model\GetEmployeeSimple[]',
+        'employees' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple[]',
         'name' => 'string',
     ];
 
@@ -239,7 +239,7 @@ class GetTeam implements ModelInterface, ArrayAccess
     /**
      * Gets employees
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple[]
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple[]
      */
     public function getEmployees()
     {
@@ -249,7 +249,7 @@ class GetTeam implements ModelInterface, ArrayAccess
     /**
      * Sets employees
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple[] $employees employees
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple[] $employees employees
      *
      * @return $this
      */

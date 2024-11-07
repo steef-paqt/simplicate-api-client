@@ -7,7 +7,7 @@
  **vat_class_id**       | **string**                                                                                | See /invoices/vatclass  | [optional] 
  **revenue_group_id**   | **string**                                                                                | See /sales/revenuegroup | [optional] 
  **invoice_method**     | **string**                                                                                |                         | [optional] 
- **hour_types**         | [**\Swagger\Client\Model\PostProjectServiceHoursType[]**](PostProjectServiceHoursType.md) |                         | [optional] 
+ **hour_types**         | [**\Paqtcom\Simplicate\Model\PostProjectServiceHoursType[]**](PostProjectServiceHoursType.md) |                         | [optional] 
  **default_service_id** | **string**                                                                                |                         | [optional] 
  **name**               | **string**                                                                                |                         | [optional] 
  **explanation**        | **string**                                                                                |                         | [optional] 

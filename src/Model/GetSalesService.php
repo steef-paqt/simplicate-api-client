@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetSalesService Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -60,13 +60,13 @@ class GetSalesService implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'invoice_date' => 'string',
-        'hour_types' => '\Swagger\Client\Model\GetSalesServiceHoursType[]',
-        'cost_types' => '\Swagger\Client\Model\GetSalesServiceCostType[]',
+        'hour_types' => '\Paqtcom\Simplicate\Model\GetSalesServiceHoursType[]',
+        'cost_types' => '\Paqtcom\Simplicate\Model\GetSalesServiceCostType[]',
         'subscription_cycle' => 'string',
         'track_cost' => 'bool',
-        'vat_class' => '\Swagger\Client\Model\VatClass',
-        'created_at' => '\Swagger\Client\Model\GetSalesServiceHoursType[]',
-        'updated_at' => '\Swagger\Client\Model\GetSalesServiceHoursType[]',
+        'vat_class' => '\Paqtcom\Simplicate\Model\VatClass',
+        'created_at' => '\Paqtcom\Simplicate\Model\GetSalesServiceHoursType[]',
+        'updated_at' => '\Paqtcom\Simplicate\Model\GetSalesServiceHoursType[]',
         'sales_id' => 'string',
         'default_service_id' => 'string',
         'name' => 'string',
@@ -414,7 +414,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
     /**
      * Gets hour_types
      *
-     * @return \Swagger\Client\Model\GetSalesServiceHoursType[]
+     * @return \Paqtcom\Simplicate\Model\GetSalesServiceHoursType[]
      */
     public function getHourTypes()
     {
@@ -424,7 +424,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
     /**
      * Sets hour_types
      *
-     * @param \Swagger\Client\Model\GetSalesServiceHoursType[] $hour_types hour_types
+     * @param \Paqtcom\Simplicate\Model\GetSalesServiceHoursType[] $hour_types hour_types
      *
      * @return $this
      */
@@ -438,7 +438,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
     /**
      * Gets cost_types
      *
-     * @return \Swagger\Client\Model\GetSalesServiceCostType[]
+     * @return \Paqtcom\Simplicate\Model\GetSalesServiceCostType[]
      */
     public function getCostTypes()
     {
@@ -448,7 +448,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
     /**
      * Sets cost_types
      *
-     * @param \Swagger\Client\Model\GetSalesServiceCostType[] $cost_types cost_types
+     * @param \Paqtcom\Simplicate\Model\GetSalesServiceCostType[] $cost_types cost_types
      *
      * @return $this
      */
@@ -519,7 +519,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
     /**
      * Gets vat_class
      *
-     * @return \Swagger\Client\Model\VatClass
+     * @return \Paqtcom\Simplicate\Model\VatClass
      */
     public function getVatClass()
     {
@@ -529,7 +529,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
     /**
      * Sets vat_class
      *
-     * @param \Swagger\Client\Model\VatClass $vat_class vat_class
+     * @param \Paqtcom\Simplicate\Model\VatClass $vat_class vat_class
      *
      * @return $this
      */
@@ -543,7 +543,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
     /**
      * Gets created_at
      *
-     * @return \Swagger\Client\Model\GetSalesServiceHoursType[]
+     * @return \Paqtcom\Simplicate\Model\GetSalesServiceHoursType[]
      */
     public function getCreatedAt()
     {
@@ -553,7 +553,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
     /**
      * Sets created_at
      *
-     * @param \Swagger\Client\Model\GetSalesServiceHoursType[] $created_at created_at
+     * @param \Paqtcom\Simplicate\Model\GetSalesServiceHoursType[] $created_at created_at
      *
      * @return $this
      */
@@ -567,7 +567,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
     /**
      * Gets updated_at
      *
-     * @return \Swagger\Client\Model\GetSalesServiceHoursType[]
+     * @return \Paqtcom\Simplicate\Model\GetSalesServiceHoursType[]
      */
     public function getUpdatedAt()
     {
@@ -577,7 +577,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
     /**
      * Sets updated_at
      *
-     * @param \Swagger\Client\Model\GetSalesServiceHoursType[] $updated_at updated_at
+     * @param \Paqtcom\Simplicate\Model\GetSalesServiceHoursType[] $updated_at updated_at
      *
      * @return $this
      */

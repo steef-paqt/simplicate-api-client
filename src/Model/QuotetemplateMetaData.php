@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * QuotetemplateMetaData Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class QuotetemplateMetaData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'configuration' => '\Swagger\Client\Model\QuotetemplateConfigurationMetaData',
+        'configuration' => '\Paqtcom\Simplicate\Model\QuotetemplateConfigurationMetaData',
         'count' => 'int',
         'total_count' => 'int',
         'offset' => 'int',
@@ -245,7 +245,7 @@ class QuotetemplateMetaData implements ModelInterface, ArrayAccess
     /**
      * Gets configuration
      *
-     * @return \Swagger\Client\Model\QuotetemplateConfigurationMetaData
+     * @return \Paqtcom\Simplicate\Model\QuotetemplateConfigurationMetaData
      */
     public function getConfiguration()
     {
@@ -255,7 +255,7 @@ class QuotetemplateMetaData implements ModelInterface, ArrayAccess
     /**
      * Sets configuration
      *
-     * @param \Swagger\Client\Model\QuotetemplateConfigurationMetaData $configuration configuration
+     * @param \Paqtcom\Simplicate\Model\QuotetemplateConfigurationMetaData $configuration configuration
      *
      * @return $this
      */

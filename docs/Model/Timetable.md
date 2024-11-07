@@ -4,8 +4,8 @@
 
  Name                    | Type                                                        | Description | Notes      
 -------------------------|-------------------------------------------------------------|-------------|------------
- **even_week**           | [**\Swagger\Client\Model\TimetableWeek**](TimetableWeek.md) |             | [optional] 
- **odd_week**            | [**\Swagger\Client\Model\TimetableWeek**](TimetableWeek.md) |             | [optional] 
+ **even_week**           | [**\Paqtcom\Simplicate\Model\TimetableWeek**](TimetableWeek.md) |             | [optional] 
+ **odd_week**            | [**\Paqtcom\Simplicate\Model\TimetableWeek**](TimetableWeek.md) |             | [optional] 
  **start_date**          | **string**                                                  |             | [optional] 
  **end_date**            | **string**                                                  |             | [optional] 
  **productivity_target** | **int**                                                     |             | [optional] 

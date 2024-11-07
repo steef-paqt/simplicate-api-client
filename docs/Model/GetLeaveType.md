@@ -8,7 +8,7 @@
  **id**           | **string**                                        |             | [optional] 
  **type**         | **string**                                        |             | [optional] 
  **billable**     | **float**                                         |             | [optional] 
- **vatclass**     | [**\Swagger\Client\Model\VatClass**](VatClass.md) |             | [optional] 
+ **vatclass**     | [**\Paqtcom\Simplicate\Model\VatClass**](VatClass.md) |             | [optional] 
  **label**        | **string**                                        |             | [optional] 
  **tariff**       | **string**                                        |             | [optional] 
  **blocked**      | **bool**                                          |             | [optional] 

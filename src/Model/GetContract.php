@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetContract Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,10 +59,10 @@ class GetContract implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'employee' => '\Swagger\Client\Model\GetEmployee',
-        'employer' => '\Swagger\Client\Model\GetOrganizationSimple',
-        'employment_type' => '\Swagger\Client\Model\EmploymentType',
-        'contract_type' => '\Swagger\Client\Model\ContractType',
+        'employee' => '\Paqtcom\Simplicate\Model\GetEmployee',
+        'employer' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
+        'employment_type' => '\Paqtcom\Simplicate\Model\EmploymentType',
+        'contract_type' => '\Paqtcom\Simplicate\Model\ContractType',
         'created_at' => 'string',
         'updated_at' => 'string',
         'start_date' => 'string',
@@ -293,7 +293,7 @@ class GetContract implements ModelInterface, ArrayAccess
     /**
      * Gets employee
      *
-     * @return \Swagger\Client\Model\GetEmployee
+     * @return \Paqtcom\Simplicate\Model\GetEmployee
      */
     public function getEmployee()
     {
@@ -303,7 +303,7 @@ class GetContract implements ModelInterface, ArrayAccess
     /**
      * Sets employee
      *
-     * @param \Swagger\Client\Model\GetEmployee $employee employee
+     * @param \Paqtcom\Simplicate\Model\GetEmployee $employee employee
      *
      * @return $this
      */
@@ -317,7 +317,7 @@ class GetContract implements ModelInterface, ArrayAccess
     /**
      * Gets employer
      *
-     * @return \Swagger\Client\Model\GetOrganizationSimple
+     * @return \Paqtcom\Simplicate\Model\GetOrganizationSimple
      */
     public function getEmployer()
     {
@@ -327,7 +327,7 @@ class GetContract implements ModelInterface, ArrayAccess
     /**
      * Sets employer
      *
-     * @param \Swagger\Client\Model\GetOrganizationSimple $employer employer
+     * @param \Paqtcom\Simplicate\Model\GetOrganizationSimple $employer employer
      *
      * @return $this
      */
@@ -341,7 +341,7 @@ class GetContract implements ModelInterface, ArrayAccess
     /**
      * Gets employment_type
      *
-     * @return \Swagger\Client\Model\EmploymentType
+     * @return \Paqtcom\Simplicate\Model\EmploymentType
      */
     public function getEmploymentType()
     {
@@ -351,7 +351,7 @@ class GetContract implements ModelInterface, ArrayAccess
     /**
      * Sets employment_type
      *
-     * @param \Swagger\Client\Model\EmploymentType $employment_type employment_type
+     * @param \Paqtcom\Simplicate\Model\EmploymentType $employment_type employment_type
      *
      * @return $this
      */
@@ -365,7 +365,7 @@ class GetContract implements ModelInterface, ArrayAccess
     /**
      * Gets contract_type
      *
-     * @return \Swagger\Client\Model\ContractType
+     * @return \Paqtcom\Simplicate\Model\ContractType
      */
     public function getContractType()
     {
@@ -375,7 +375,7 @@ class GetContract implements ModelInterface, ArrayAccess
     /**
      * Sets contract_type
      *
-     * @param \Swagger\Client\Model\ContractType $contract_type contract_type
+     * @param \Paqtcom\Simplicate\Model\ContractType $contract_type contract_type
      *
      * @return $this
      */

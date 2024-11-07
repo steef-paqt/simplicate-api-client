@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetDebtor Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class GetDebtor implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'payment_term' => '\Swagger\Client\Model\GetPaymentTerm',
+        'payment_term' => '\Paqtcom\Simplicate\Model\GetPaymentTerm',
         'provision_method' => 'string',
         'send_invoice_email_to_contact' => 'bool',
         'provision_contactperson_id' => 'string',
@@ -371,7 +371,7 @@ class GetDebtor implements ModelInterface, ArrayAccess
     /**
      * Gets payment_term
      *
-     * @return \Swagger\Client\Model\GetPaymentTerm
+     * @return \Paqtcom\Simplicate\Model\GetPaymentTerm
      */
     public function getPaymentTerm()
     {
@@ -381,7 +381,7 @@ class GetDebtor implements ModelInterface, ArrayAccess
     /**
      * Sets payment_term
      *
-     * @param \Swagger\Client\Model\GetPaymentTerm $payment_term payment_term
+     * @param \Paqtcom\Simplicate\Model\GetPaymentTerm $payment_term payment_term
      *
      * @return $this
      */

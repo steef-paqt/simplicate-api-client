@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Paqtcom\Simplicate\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ApiException;
+use Paqtcom\Simplicate\Configuration;
+use Paqtcom\Simplicate\HeaderSelector;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * CustomFieldsApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -97,9 +97,9 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldGroups
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups
      */
     public function customfieldsGroupGet($offset = null, $limit = '5', $sort = null)
     {
@@ -117,13 +117,13 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldGroups, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups, HTTP status code, HTTP response headers (array of strings)
      */
     public function customfieldsGroupGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroups';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
         $request = $this->customfieldsGroupGetRequest($offset, $limit, $sort);
 
         try {
@@ -174,7 +174,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldGroups',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +220,7 @@ class CustomFieldsApi
      */
     public function customfieldsGroupGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroups';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
         $request = $this->customfieldsGroupGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -368,7 +368,7 @@ class CustomFieldsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -384,7 +384,7 @@ class CustomFieldsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -598,9 +598,9 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldGroup
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup
      */
     public function customfieldsGroupIdGet($offset = null, $limit = '5', $sort = null)
     {
@@ -618,13 +618,13 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldGroup, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup, HTTP status code, HTTP response headers (array of strings)
      */
     public function customfieldsGroupIdGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroup';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
         $request = $this->customfieldsGroupIdGetRequest($offset, $limit, $sort);
 
         try {
@@ -675,7 +675,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldGroup',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -721,7 +721,7 @@ class CustomFieldsApi
      */
     public function customfieldsGroupIdGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldGroup';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
         $request = $this->customfieldsGroupIdGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -868,9 +868,9 @@ class CustomFieldsApi
      * Updates an group for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -885,9 +885,9 @@ class CustomFieldsApi
      * Updates an group for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -938,7 +938,7 @@ class CustomFieldsApi
      * Updates an group for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -959,7 +959,7 @@ class CustomFieldsApi
      * Updates an group for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -996,7 +996,7 @@ class CustomFieldsApi
      * Create request for operation 'customfieldsGroupIdPost'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1110,9 +1110,9 @@ class CustomFieldsApi
      * Updates an group for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1127,9 +1127,9 @@ class CustomFieldsApi
      * Updates an group for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1180,7 +1180,7 @@ class CustomFieldsApi
      * Updates an group for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1201,7 +1201,7 @@ class CustomFieldsApi
      * Updates an group for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1238,7 +1238,7 @@ class CustomFieldsApi
      * Create request for operation 'customfieldsGroupIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1355,9 +1355,9 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldModels
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldModels
      */
     public function customfieldsModelGet($offset = null, $limit = '5', $sort = null)
     {
@@ -1375,13 +1375,13 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldModels, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldModels, HTTP status code, HTTP response headers (array of strings)
      */
     public function customfieldsModelGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldModels';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldModels';
         $request = $this->customfieldsModelGetRequest($offset, $limit, $sort);
 
         try {
@@ -1432,7 +1432,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldModels',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldModels',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1478,7 +1478,7 @@ class CustomFieldsApi
      */
     public function customfieldsModelGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldModels';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldModels';
         $request = $this->customfieldsModelGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1628,9 +1628,9 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldModel
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldModel
      */
     public function customfieldsModelIdGet($offset = null, $limit = '5', $sort = null)
     {
@@ -1648,13 +1648,13 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function customfieldsModelIdGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldModel';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldModel';
         $request = $this->customfieldsModelIdGetRequest($offset, $limit, $sort);
 
         try {
@@ -1705,7 +1705,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldModel',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1751,7 +1751,7 @@ class CustomFieldsApi
      */
     public function customfieldsModelIdGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldModel';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldModel';
         $request = $this->customfieldsModelIdGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1901,9 +1901,9 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldOptions
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldOptions
      */
     public function customfieldsOptionGet($offset = null, $limit = '5', $sort = null)
     {
@@ -1921,13 +1921,13 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldOptions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldOptions, HTTP status code, HTTP response headers (array of strings)
      */
     public function customfieldsOptionGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldOptions';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldOptions';
         $request = $this->customfieldsOptionGetRequest($offset, $limit, $sort);
 
         try {
@@ -1978,7 +1978,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldOptions',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldOptions',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2024,7 +2024,7 @@ class CustomFieldsApi
      */
     public function customfieldsOptionGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldOptions';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldOptions';
         $request = $this->customfieldsOptionGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -2172,7 +2172,7 @@ class CustomFieldsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2188,7 +2188,7 @@ class CustomFieldsApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2403,9 +2403,9 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldOption
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldOption
      */
     public function customfieldsOptionIdGet($id, $offset = null, $limit = '5', $sort = null)
     {
@@ -2424,13 +2424,13 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldOption, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldOption, HTTP status code, HTTP response headers (array of strings)
      */
     public function customfieldsOptionIdGetWithHttpInfo($id, $offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldOption';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldOption';
         $request = $this->customfieldsOptionIdGetRequest($id, $offset, $limit, $sort);
 
         try {
@@ -2481,7 +2481,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldOption',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldOption',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2529,7 +2529,7 @@ class CustomFieldsApi
      */
     public function customfieldsOptionIdGetAsyncWithHttpInfo($id, $offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldOption';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldOption';
         $request = $this->customfieldsOptionIdGetRequest($id, $offset, $limit, $sort);
 
         return $this->client
@@ -2692,9 +2692,9 @@ class CustomFieldsApi
      *
      * Creates an option
      *
-     * @param  \Swagger\Client\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2708,9 +2708,9 @@ class CustomFieldsApi
      *
      * Creates an option
      *
-     * @param  \Swagger\Client\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2760,7 +2760,7 @@ class CustomFieldsApi
      *
      * Creates an option
      *
-     * @param  \Swagger\Client\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2780,7 +2780,7 @@ class CustomFieldsApi
      *
      * Creates an option
      *
-     * @param  \Swagger\Client\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2816,7 +2816,7 @@ class CustomFieldsApi
     /**
      * Create request for operation 'customfieldsOptionIdPost'
      *
-     * @param  \Swagger\Client\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2915,9 +2915,9 @@ class CustomFieldsApi
      * Updates an option
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2932,9 +2932,9 @@ class CustomFieldsApi
      * Updates an option
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2985,7 +2985,7 @@ class CustomFieldsApi
      * Updates an option
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3006,7 +3006,7 @@ class CustomFieldsApi
      * Updates an option
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3043,7 +3043,7 @@ class CustomFieldsApi
      * Create request for operation 'customfieldsOptionIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3160,9 +3160,9 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldTypes
      */
     public function customfieldsTypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -3180,13 +3180,13 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function customfieldsTypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldTypes';
         $request = $this->customfieldsTypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -3237,7 +3237,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3283,7 +3283,7 @@ class CustomFieldsApi
      */
     public function customfieldsTypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldTypes';
         $request = $this->customfieldsTypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3433,9 +3433,9 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultCustomFieldType
+     * @return \Paqtcom\Simplicate\Model\RestResultCustomFieldType
      */
     public function customfieldsTypeIdGet($offset = null, $limit = '5', $sort = null)
     {
@@ -3453,13 +3453,13 @@ class CustomFieldsApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultCustomFieldType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultCustomFieldType, HTTP status code, HTTP response headers (array of strings)
      */
     public function customfieldsTypeIdGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldType';
         $request = $this->customfieldsTypeIdGetRequest($offset, $limit, $sort);
 
         try {
@@ -3510,7 +3510,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultCustomFieldType',
+                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3556,7 +3556,7 @@ class CustomFieldsApi
      */
     public function customfieldsTypeIdGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultCustomFieldType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldType';
         $request = $this->customfieldsTypeIdGetRequest($offset, $limit, $sort);
 
         return $this->client

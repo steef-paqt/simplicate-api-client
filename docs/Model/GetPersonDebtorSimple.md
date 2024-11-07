@@ -4,7 +4,7 @@
 
  Name                | Type                                                      | Description | Notes      
 ---------------------|-----------------------------------------------------------|-------------|------------
- **relation_type**   | [**\Swagger\Client\Model\RelationType**](RelationType.md) |             | [optional] 
+ **relation_type**   | [**\Paqtcom\Simplicate\Model\RelationType**](RelationType.md) |             | [optional] 
  **id**              | **string**                                                |             | [optional] 
  **full_name**       | **string**                                                |             | [optional] 
  **relation_number** | **string**                                                |             | [optional] 

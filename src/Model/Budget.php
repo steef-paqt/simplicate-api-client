@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * Budget Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,9 +58,9 @@ class Budget implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'hours' => '\Swagger\Client\Model\BudgetHours',
-        'costs' => '\Swagger\Client\Model\BudgetCosts',
-        'total' => '\Swagger\Client\Model\BudgetTotal',
+        'hours' => '\Paqtcom\Simplicate\Model\BudgetHours',
+        'costs' => '\Paqtcom\Simplicate\Model\BudgetCosts',
+        'total' => '\Paqtcom\Simplicate\Model\BudgetTotal',
     ];
 
     /**
@@ -215,7 +215,7 @@ class Budget implements ModelInterface, ArrayAccess
     /**
      * Gets hours
      *
-     * @return \Swagger\Client\Model\BudgetHours
+     * @return \Paqtcom\Simplicate\Model\BudgetHours
      */
     public function getHours()
     {
@@ -225,7 +225,7 @@ class Budget implements ModelInterface, ArrayAccess
     /**
      * Sets hours
      *
-     * @param \Swagger\Client\Model\BudgetHours $hours hours
+     * @param \Paqtcom\Simplicate\Model\BudgetHours $hours hours
      *
      * @return $this
      */
@@ -239,7 +239,7 @@ class Budget implements ModelInterface, ArrayAccess
     /**
      * Gets costs
      *
-     * @return \Swagger\Client\Model\BudgetCosts
+     * @return \Paqtcom\Simplicate\Model\BudgetCosts
      */
     public function getCosts()
     {
@@ -249,7 +249,7 @@ class Budget implements ModelInterface, ArrayAccess
     /**
      * Sets costs
      *
-     * @param \Swagger\Client\Model\BudgetCosts $costs costs
+     * @param \Paqtcom\Simplicate\Model\BudgetCosts $costs costs
      *
      * @return $this
      */
@@ -263,7 +263,7 @@ class Budget implements ModelInterface, ArrayAccess
     /**
      * Gets total
      *
-     * @return \Swagger\Client\Model\BudgetTotal
+     * @return \Paqtcom\Simplicate\Model\BudgetTotal
      */
     public function getTotal()
     {
@@ -273,7 +273,7 @@ class Budget implements ModelInterface, ArrayAccess
     /**
      * Sets total
      *
-     * @param \Swagger\Client\Model\BudgetTotal $total total
+     * @param \Paqtcom\Simplicate\Model\BudgetTotal $total total
      *
      * @return $this
      */

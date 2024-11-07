@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetDocument Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -60,9 +60,9 @@ class GetDocument implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'download_url' => 'string',
-        'document_type' => '\Swagger\Client\Model\DocumentTypeSimple',
-        'linked_to' => '\Swagger\Client\Model\LinkedToEntity[]',
-        'created_by' => '\Swagger\Client\Model\GetEmployeeSimple',
+        'document_type' => '\Paqtcom\Simplicate\Model\DocumentTypeSimple',
+        'linked_to' => '\Paqtcom\Simplicate\Model\LinkedToEntity[]',
+        'created_by' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
         'created_at' => 'string',
         'updated_at' => 'string',
         'title' => 'string',
@@ -299,7 +299,7 @@ class GetDocument implements ModelInterface, ArrayAccess
     /**
      * Gets document_type
      *
-     * @return \Swagger\Client\Model\DocumentTypeSimple
+     * @return \Paqtcom\Simplicate\Model\DocumentTypeSimple
      */
     public function getDocumentType()
     {
@@ -309,7 +309,7 @@ class GetDocument implements ModelInterface, ArrayAccess
     /**
      * Sets document_type
      *
-     * @param \Swagger\Client\Model\DocumentTypeSimple $document_type document_type
+     * @param \Paqtcom\Simplicate\Model\DocumentTypeSimple $document_type document_type
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class GetDocument implements ModelInterface, ArrayAccess
     /**
      * Gets linked_to
      *
-     * @return \Swagger\Client\Model\LinkedToEntity[]
+     * @return \Paqtcom\Simplicate\Model\LinkedToEntity[]
      */
     public function getLinkedTo()
     {
@@ -333,7 +333,7 @@ class GetDocument implements ModelInterface, ArrayAccess
     /**
      * Sets linked_to
      *
-     * @param \Swagger\Client\Model\LinkedToEntity[] $linked_to linked_to
+     * @param \Paqtcom\Simplicate\Model\LinkedToEntity[] $linked_to linked_to
      *
      * @return $this
      */
@@ -347,7 +347,7 @@ class GetDocument implements ModelInterface, ArrayAccess
     /**
      * Gets created_by
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple
      */
     public function getCreatedBy()
     {
@@ -357,7 +357,7 @@ class GetDocument implements ModelInterface, ArrayAccess
     /**
      * Sets created_by
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple $created_by created_by
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple $created_by created_by
      *
      * @return $this
      */

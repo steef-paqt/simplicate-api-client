@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * PostMessage Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,10 +59,10 @@ class PostMessage implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'messagetype_id' => 'string',
-        'linked_to' => '\Swagger\Client\Model\PostMessageLinkedTo',
+        'linked_to' => '\Paqtcom\Simplicate\Model\PostMessageLinkedTo',
         'created_by_id' => 'string',
         'title' => 'string',
-        'content_fields' => '\Swagger\Client\Model\ContentField[]',
+        'content_fields' => '\Paqtcom\Simplicate\Model\ContentField[]',
         'content' => 'string',
         'display_date' => 'string',
     ];
@@ -263,7 +263,7 @@ class PostMessage implements ModelInterface, ArrayAccess
     /**
      * Gets linked_to
      *
-     * @return \Swagger\Client\Model\PostMessageLinkedTo
+     * @return \Paqtcom\Simplicate\Model\PostMessageLinkedTo
      */
     public function getLinkedTo()
     {
@@ -273,7 +273,7 @@ class PostMessage implements ModelInterface, ArrayAccess
     /**
      * Sets linked_to
      *
-     * @param \Swagger\Client\Model\PostMessageLinkedTo $linked_to linked_to
+     * @param \Paqtcom\Simplicate\Model\PostMessageLinkedTo $linked_to linked_to
      *
      * @return $this
      */
@@ -335,7 +335,7 @@ class PostMessage implements ModelInterface, ArrayAccess
     /**
      * Gets content_fields
      *
-     * @return \Swagger\Client\Model\ContentField[]
+     * @return \Paqtcom\Simplicate\Model\ContentField[]
      */
     public function getContentFields()
     {
@@ -345,7 +345,7 @@ class PostMessage implements ModelInterface, ArrayAccess
     /**
      * Sets content_fields
      *
-     * @param \Swagger\Client\Model\ContentField[] $content_fields content_fields
+     * @param \Paqtcom\Simplicate\Model\ContentField[] $content_fields content_fields
      *
      * @return $this
      */

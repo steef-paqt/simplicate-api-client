@@ -5,8 +5,8 @@
  Name                           | Type                                                      | Description | Notes      
 --------------------------------|-----------------------------------------------------------|-------------|------------
  **id**                         | **string**                                                |             | [optional] 
- **vat_class**                  | [**\Swagger\Client\Model\VatClass**](VatClass.md)         |             | [optional] 
- **revenue_group**              | [**\Swagger\Client\Model\RevenueGroup**](RevenueGroup.md) |             | [optional] 
+ **vat_class**                  | [**\Paqtcom\Simplicate\Model\VatClass**](VatClass.md)         |             | [optional] 
+ **revenue_group**              | [**\Paqtcom\Simplicate\Model\RevenueGroup**](RevenueGroup.md) |             | [optional] 
  **created_at**                 | **string**                                                |             | [optional] 
  **updated_at**                 | **string**                                                |             | [optional] 
  **modified**                   | **string**                                                |             | [optional] 

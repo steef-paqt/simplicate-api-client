@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetEmployee Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -60,10 +60,10 @@ class GetEmployee implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'is_user' => 'int',
-        'teams' => '\Swagger\Client\Model\Team[]',
-        'supervisor' => '\Swagger\Client\Model\GetEmployeeSimple',
-        'status' => '\Swagger\Client\Model\EmployeeStatus',
-        'custom_fields' => '\Swagger\Client\Model\GetCustomField[]',
+        'teams' => '\Paqtcom\Simplicate\Model\Team[]',
+        'supervisor' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
+        'status' => '\Paqtcom\Simplicate\Model\EmployeeStatus',
+        'custom_fields' => '\Paqtcom\Simplicate\Model\GetCustomField[]',
         'person_id' => 'string',
         'name' => 'string',
         'bank_account' => 'string',
@@ -76,7 +76,7 @@ class GetEmployee implements ModelInterface, ArrayAccess
         'work_email' => 'string',
         'hourly_sales_tariff' => 'float',
         'hourly_cost_tariff' => 'float',
-        'avatar' => '\Swagger\Client\Model\Avatar',
+        'avatar' => '\Paqtcom\Simplicate\Model\Avatar',
         'created_at' => 'string',
         'updated_at' => 'string',
         'simplicate_url' => 'string',
@@ -401,7 +401,7 @@ class GetEmployee implements ModelInterface, ArrayAccess
     /**
      * Gets teams
      *
-     * @return \Swagger\Client\Model\Team[]
+     * @return \Paqtcom\Simplicate\Model\Team[]
      */
     public function getTeams()
     {
@@ -411,7 +411,7 @@ class GetEmployee implements ModelInterface, ArrayAccess
     /**
      * Sets teams
      *
-     * @param \Swagger\Client\Model\Team[] $teams teams
+     * @param \Paqtcom\Simplicate\Model\Team[] $teams teams
      *
      * @return $this
      */
@@ -425,7 +425,7 @@ class GetEmployee implements ModelInterface, ArrayAccess
     /**
      * Gets supervisor
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple
      */
     public function getSupervisor()
     {
@@ -435,7 +435,7 @@ class GetEmployee implements ModelInterface, ArrayAccess
     /**
      * Sets supervisor
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple $supervisor supervisor
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple $supervisor supervisor
      *
      * @return $this
      */
@@ -449,7 +449,7 @@ class GetEmployee implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \Swagger\Client\Model\EmployeeStatus
+     * @return \Paqtcom\Simplicate\Model\EmployeeStatus
      */
     public function getStatus()
     {
@@ -459,7 +459,7 @@ class GetEmployee implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Swagger\Client\Model\EmployeeStatus $status status
+     * @param \Paqtcom\Simplicate\Model\EmployeeStatus $status status
      *
      * @return $this
      */
@@ -473,7 +473,7 @@ class GetEmployee implements ModelInterface, ArrayAccess
     /**
      * Gets custom_fields
      *
-     * @return \Swagger\Client\Model\GetCustomField[]
+     * @return \Paqtcom\Simplicate\Model\GetCustomField[]
      */
     public function getCustomFields()
     {
@@ -483,7 +483,7 @@ class GetEmployee implements ModelInterface, ArrayAccess
     /**
      * Sets custom_fields
      *
-     * @param \Swagger\Client\Model\GetCustomField[] $custom_fields custom_fields
+     * @param \Paqtcom\Simplicate\Model\GetCustomField[] $custom_fields custom_fields
      *
      * @return $this
      */
@@ -794,7 +794,7 @@ class GetEmployee implements ModelInterface, ArrayAccess
     /**
      * Gets avatar
      *
-     * @return \Swagger\Client\Model\Avatar
+     * @return \Paqtcom\Simplicate\Model\Avatar
      */
     public function getAvatar()
     {
@@ -804,7 +804,7 @@ class GetEmployee implements ModelInterface, ArrayAccess
     /**
      * Sets avatar
      *
-     * @param \Swagger\Client\Model\Avatar $avatar avatar
+     * @param \Paqtcom\Simplicate\Model\Avatar $avatar avatar
      *
      * @return $this
      */

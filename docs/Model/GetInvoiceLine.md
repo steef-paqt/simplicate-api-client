@@ -5,9 +5,9 @@
  Name                   | Type                                                      | Description | Notes      
 ------------------------|-----------------------------------------------------------|-------------|------------
  **id**                 | **string**                                                |             | [optional] 
- **revenue_group**      | [**\Swagger\Client\Model\RevenueGroup**](RevenueGroup.md) |             | [optional] 
+ **revenue_group**      | [**\Paqtcom\Simplicate\Model\RevenueGroup**](RevenueGroup.md) |             | [optional] 
  **default_service_id** | **string**                                                |             | [optional] 
- **vat_class**          | [**\Swagger\Client\Model\VatClass**](VatClass.md)         |             | [optional] 
+ **vat_class**          | [**\Paqtcom\Simplicate\Model\VatClass**](VatClass.md)         |             | [optional] 
  **total_vat**          | **float**                                                 |             | [optional] 
  **service_id**         | **string**                                                |             | [optional] 
  **created_at**         | **string**                                                |             | [optional] 

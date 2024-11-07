@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * ExternalItemMetadata Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'configuration' => '\Swagger\Client\Model\ExternalItemMetadataConfiguration',
+        'configuration' => '\Paqtcom\Simplicate\Model\ExternalItemMetadataConfiguration',
         'count' => 'int',
         'total_count' => 'int',
         'offset' => 'int',
@@ -245,7 +245,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
     /**
      * Gets configuration
      *
-     * @return \Swagger\Client\Model\ExternalItemMetadataConfiguration
+     * @return \Paqtcom\Simplicate\Model\ExternalItemMetadataConfiguration
      */
     public function getConfiguration()
     {
@@ -255,7 +255,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
     /**
      * Sets configuration
      *
-     * @param \Swagger\Client\Model\ExternalItemMetadataConfiguration $configuration configuration
+     * @param \Paqtcom\Simplicate\Model\ExternalItemMetadataConfiguration $configuration configuration
      *
      * @return $this
      */

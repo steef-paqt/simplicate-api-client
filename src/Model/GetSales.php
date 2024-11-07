@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetSales Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,33 +59,33 @@ class GetSales implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'responsible_employee' => '\Swagger\Client\Model\GetEmployeeSimple',
-        'person' => '\Swagger\Client\Model\GetPersonSimple',
-        'organization' => '\Swagger\Client\Model\GetOrganizationSimple',
-        'progress' => '\Swagger\Client\Model\SalesProgress',
-        'source' => '\Swagger\Client\Model\SalesSource',
-        'status' => '\Swagger\Client\Model\SalesStatus',
-        'separate_invoice_recipient' => '\Swagger\Client\Model\GetSeparateInvoiceRecipient',
-        'teams' => '\Swagger\Client\Model\GetTeamSimple[]',
-        'custom_fields' => '\Swagger\Client\Model\GetCustomField[]',
+        'responsible_employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
+        'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
+        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
+        'progress' => '\Paqtcom\Simplicate\Model\SalesProgress',
+        'source' => '\Paqtcom\Simplicate\Model\SalesSource',
+        'status' => '\Paqtcom\Simplicate\Model\SalesStatus',
+        'separate_invoice_recipient' => '\Paqtcom\Simplicate\Model\GetSeparateInvoiceRecipient',
+        'teams' => '\Paqtcom\Simplicate\Model\GetTeamSimple[]',
+        'custom_fields' => '\Paqtcom\Simplicate\Model\GetCustomField[]',
         'created_at' => 'string',
         'updated_at' => 'string',
         'status_updated_at' => 'string',
         'simplicate_url' => 'string',
-        'linked_project' => '\Swagger\Client\Model\GetProjectSimple',
+        'linked_project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
         'my_organization_profile_id' => 'string',
         'organization_id' => 'string',
         'person_id' => 'string',
         'contact_id' => 'string',
-        'reason' => '\Swagger\Client\Model\SalesReason',
-        'contact' => '\Swagger\Client\Model\ContactPerson',
+        'reason' => '\Paqtcom\Simplicate\Model\SalesReason',
+        'contact' => '\Paqtcom\Simplicate\Model\ContactPerson',
         'subject' => 'string',
         'start_date' => 'string',
         'expected_closing_date' => 'string',
         'expected_revenue' => 'float',
         'note' => 'string',
         'chance_to_score' => 'int',
-        'lost_to_competitor' => '\Swagger\Client\Model\LostToCompetitor',
+        'lost_to_competitor' => '\Paqtcom\Simplicate\Model\LostToCompetitor',
     ];
 
     /**
@@ -389,7 +389,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Gets responsible_employee
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple
      */
     public function getResponsibleEmployee()
     {
@@ -399,7 +399,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Sets responsible_employee
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple $responsible_employee responsible_employee
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple $responsible_employee responsible_employee
      *
      * @return $this
      */
@@ -413,7 +413,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Gets person
      *
-     * @return \Swagger\Client\Model\GetPersonSimple
+     * @return \Paqtcom\Simplicate\Model\GetPersonSimple
      */
     public function getPerson()
     {
@@ -423,7 +423,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Sets person
      *
-     * @param \Swagger\Client\Model\GetPersonSimple $person person
+     * @param \Paqtcom\Simplicate\Model\GetPersonSimple $person person
      *
      * @return $this
      */
@@ -437,7 +437,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Gets organization
      *
-     * @return \Swagger\Client\Model\GetOrganizationSimple
+     * @return \Paqtcom\Simplicate\Model\GetOrganizationSimple
      */
     public function getOrganization()
     {
@@ -447,7 +447,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Sets organization
      *
-     * @param \Swagger\Client\Model\GetOrganizationSimple $organization organization
+     * @param \Paqtcom\Simplicate\Model\GetOrganizationSimple $organization organization
      *
      * @return $this
      */
@@ -461,7 +461,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Gets progress
      *
-     * @return \Swagger\Client\Model\SalesProgress
+     * @return \Paqtcom\Simplicate\Model\SalesProgress
      */
     public function getProgress()
     {
@@ -471,7 +471,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Sets progress
      *
-     * @param \Swagger\Client\Model\SalesProgress $progress progress
+     * @param \Paqtcom\Simplicate\Model\SalesProgress $progress progress
      *
      * @return $this
      */
@@ -485,7 +485,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Gets source
      *
-     * @return \Swagger\Client\Model\SalesSource
+     * @return \Paqtcom\Simplicate\Model\SalesSource
      */
     public function getSource()
     {
@@ -495,7 +495,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Sets source
      *
-     * @param \Swagger\Client\Model\SalesSource $source source
+     * @param \Paqtcom\Simplicate\Model\SalesSource $source source
      *
      * @return $this
      */
@@ -509,7 +509,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return \Swagger\Client\Model\SalesStatus
+     * @return \Paqtcom\Simplicate\Model\SalesStatus
      */
     public function getStatus()
     {
@@ -519,7 +519,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param \Swagger\Client\Model\SalesStatus $status status
+     * @param \Paqtcom\Simplicate\Model\SalesStatus $status status
      *
      * @return $this
      */
@@ -533,7 +533,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Gets separate_invoice_recipient
      *
-     * @return \Swagger\Client\Model\GetSeparateInvoiceRecipient
+     * @return \Paqtcom\Simplicate\Model\GetSeparateInvoiceRecipient
      */
     public function getSeparateInvoiceRecipient()
     {
@@ -543,7 +543,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Sets separate_invoice_recipient
      *
-     * @param \Swagger\Client\Model\GetSeparateInvoiceRecipient $separate_invoice_recipient separate_invoice_recipient
+     * @param \Paqtcom\Simplicate\Model\GetSeparateInvoiceRecipient $separate_invoice_recipient separate_invoice_recipient
      *
      * @return $this
      */
@@ -557,7 +557,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Gets teams
      *
-     * @return \Swagger\Client\Model\GetTeamSimple[]
+     * @return \Paqtcom\Simplicate\Model\GetTeamSimple[]
      */
     public function getTeams()
     {
@@ -567,7 +567,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Sets teams
      *
-     * @param \Swagger\Client\Model\GetTeamSimple[] $teams teams
+     * @param \Paqtcom\Simplicate\Model\GetTeamSimple[] $teams teams
      *
      * @return $this
      */
@@ -581,7 +581,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Gets custom_fields
      *
-     * @return \Swagger\Client\Model\GetCustomField[]
+     * @return \Paqtcom\Simplicate\Model\GetCustomField[]
      */
     public function getCustomFields()
     {
@@ -591,7 +591,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Sets custom_fields
      *
-     * @param \Swagger\Client\Model\GetCustomField[] $custom_fields custom_fields
+     * @param \Paqtcom\Simplicate\Model\GetCustomField[] $custom_fields custom_fields
      *
      * @return $this
      */
@@ -701,7 +701,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Gets linked_project
      *
-     * @return \Swagger\Client\Model\GetProjectSimple
+     * @return \Paqtcom\Simplicate\Model\GetProjectSimple
      */
     public function getLinkedProject()
     {
@@ -711,7 +711,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Sets linked_project
      *
-     * @param \Swagger\Client\Model\GetProjectSimple $linked_project linked_project
+     * @param \Paqtcom\Simplicate\Model\GetProjectSimple $linked_project linked_project
      *
      * @return $this
      */
@@ -821,7 +821,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Gets reason
      *
-     * @return \Swagger\Client\Model\SalesReason
+     * @return \Paqtcom\Simplicate\Model\SalesReason
      */
     public function getReason()
     {
@@ -831,7 +831,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Sets reason
      *
-     * @param \Swagger\Client\Model\SalesReason $reason reason
+     * @param \Paqtcom\Simplicate\Model\SalesReason $reason reason
      *
      * @return $this
      */
@@ -845,7 +845,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Gets contact
      *
-     * @return \Swagger\Client\Model\ContactPerson
+     * @return \Paqtcom\Simplicate\Model\ContactPerson
      */
     public function getContact()
     {
@@ -855,7 +855,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Sets contact
      *
-     * @param \Swagger\Client\Model\ContactPerson $contact contact
+     * @param \Paqtcom\Simplicate\Model\ContactPerson $contact contact
      *
      * @return $this
      */
@@ -1013,7 +1013,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Gets lost_to_competitor
      *
-     * @return \Swagger\Client\Model\LostToCompetitor
+     * @return \Paqtcom\Simplicate\Model\LostToCompetitor
      */
     public function getLostToCompetitor()
     {
@@ -1023,7 +1023,7 @@ class GetSales implements ModelInterface, ArrayAccess
     /**
      * Sets lost_to_competitor
      *
-     * @param \Swagger\Client\Model\LostToCompetitor $lost_to_competitor lost_to_competitor
+     * @param \Paqtcom\Simplicate\Model\LostToCompetitor $lost_to_competitor lost_to_competitor
      *
      * @return $this
      */

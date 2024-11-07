@@ -1,4 +1,4 @@
-# Swagger\Client\MergerApi
+# Paqtcom\Simplicate\MergerApi
 
 All URIs are relative to *http://localhost/api/v2*
 
@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost/api/v2*
 
 # **crmMergeorganizationPost**
 
-> \Swagger\Client\Model\ResultMergerMerge crmMergeorganizationPost($body)
+> \Paqtcom\Simplicate\Model\ResultMergerMerge crmMergeorganizationPost($body)
 
 Merge two organizations by a given source and target id
 
@@ -21,12 +21,12 @@ Merge two organizations by a given source and target id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\MergerApi(
+$apiInstance = new Paqtcom\Simplicate\Api\MergerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostMerger(); // \Swagger\Client\Model\PostMerger | Merge object containing the source id and target id
+$body = new \Paqtcom\Simplicate\Model\PostMerger(); // \Paqtcom\Simplicate\Model\PostMerger | Merge object containing the source id and target id
 
 try {
     $result = $apiInstance->crmMergeorganizationPost($body);
@@ -41,11 +41,11 @@ try {
 
  Name     | Type                                                           | Description                                         | Notes 
 ----------|----------------------------------------------------------------|-----------------------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostMerger**](../Model/PostMerger.md) | Merge object containing the source id and target id |
+ **body** | [**\Paqtcom\Simplicate\Model\PostMerger**](../Model/PostMerger.md) | Merge object containing the source id and target id |
 
 ### Return type
 
-[**\Swagger\Client\Model\ResultMergerMerge**](../Model/ResultMergerMerge.md)
+[**\Paqtcom\Simplicate\Model\ResultMergerMerge**](../Model/ResultMergerMerge.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ No authorization required
 
 # **crmMergepersonPost**
 
-> \Swagger\Client\Model\ResultMergerMerge crmMergepersonPost($body)
+> \Paqtcom\Simplicate\Model\ResultMergerMerge crmMergepersonPost($body)
 
 Merge two people by a given source and target id
 
@@ -70,12 +70,12 @@ Merge two people by a given source and target id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\MergerApi(
+$apiInstance = new Paqtcom\Simplicate\Api\MergerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostMerger(); // \Swagger\Client\Model\PostMerger | Merge object containing the source id and target id
+$body = new \Paqtcom\Simplicate\Model\PostMerger(); // \Paqtcom\Simplicate\Model\PostMerger | Merge object containing the source id and target id
 
 try {
     $result = $apiInstance->crmMergepersonPost($body);
@@ -90,11 +90,11 @@ try {
 
  Name     | Type                                                           | Description                                         | Notes 
 ----------|----------------------------------------------------------------|-----------------------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostMerger**](../Model/PostMerger.md) | Merge object containing the source id and target id |
+ **body** | [**\Paqtcom\Simplicate\Model\PostMerger**](../Model/PostMerger.md) | Merge object containing the source id and target id |
 
 ### Return type
 
-[**\Swagger\Client\Model\ResultMergerMerge**](../Model/ResultMergerMerge.md)
+[**\Paqtcom\Simplicate\Model\ResultMergerMerge**](../Model/ResultMergerMerge.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ No authorization required
 
 # **mergerCompareorganizationPost**
 
-> \Swagger\Client\Model\RestResultMergerCompare mergerCompareorganizationPost($body)
+> \Paqtcom\Simplicate\Model\RestResultMergerCompare mergerCompareorganizationPost($body)
 
 Compare two organizations by a given source and target id
 
@@ -119,12 +119,12 @@ Compare two organizations by a given source and target id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\MergerApi(
+$apiInstance = new Paqtcom\Simplicate\Api\MergerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostMergerCompare(); // \Swagger\Client\Model\PostMergerCompare | Compare objects containing the source id and target id
+$body = new \Paqtcom\Simplicate\Model\PostMergerCompare(); // \Paqtcom\Simplicate\Model\PostMergerCompare | Compare objects containing the source id and target id
 
 try {
     $result = $apiInstance->mergerCompareorganizationPost($body);
@@ -139,11 +139,11 @@ try {
 
  Name     | Type                                                                         | Description                                            | Notes 
 ----------|------------------------------------------------------------------------------|--------------------------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostMergerCompare**](../Model/PostMergerCompare.md) | Compare objects containing the source id and target id |
+ **body** | [**\Paqtcom\Simplicate\Model\PostMergerCompare**](../Model/PostMergerCompare.md) | Compare objects containing the source id and target id |
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultMergerCompare**](../Model/RestResultMergerCompare.md)
+[**\Paqtcom\Simplicate\Model\RestResultMergerCompare**](../Model/RestResultMergerCompare.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ No authorization required
 
 # **mergerComparepersonPost**
 
-> \Swagger\Client\Model\RestResultMergerCompare mergerComparepersonPost($body)
+> \Paqtcom\Simplicate\Model\RestResultMergerCompare mergerComparepersonPost($body)
 
 Compare two persons by a given source and target id
 
@@ -168,12 +168,12 @@ Compare two persons by a given source and target id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\MergerApi(
+$apiInstance = new Paqtcom\Simplicate\Api\MergerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostMergerCompare(); // \Swagger\Client\Model\PostMergerCompare | Compare objects containing the source id and target id
+$body = new \Paqtcom\Simplicate\Model\PostMergerCompare(); // \Paqtcom\Simplicate\Model\PostMergerCompare | Compare objects containing the source id and target id
 
 try {
     $result = $apiInstance->mergerComparepersonPost($body);
@@ -188,11 +188,11 @@ try {
 
  Name     | Type                                                                         | Description                                            | Notes 
 ----------|------------------------------------------------------------------------------|--------------------------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostMergerCompare**](../Model/PostMergerCompare.md) | Compare objects containing the source id and target id |
+ **body** | [**\Paqtcom\Simplicate\Model\PostMergerCompare**](../Model/PostMergerCompare.md) | Compare objects containing the source id and target id |
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultMergerCompare**](../Model/RestResultMergerCompare.md)
+[**\Paqtcom\Simplicate\Model\RestResultMergerCompare**](../Model/RestResultMergerCompare.md)
 
 ### Authorization
 

@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * Message Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class Message implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'title' => 'string',
-        'content_fields' => '\Swagger\Client\Model\ContentField[]',
+        'content_fields' => '\Paqtcom\Simplicate\Model\ContentField[]',
         'content' => 'string',
         'display_date' => 'string',
     ];
@@ -245,7 +245,7 @@ class Message implements ModelInterface, ArrayAccess
     /**
      * Gets content_fields
      *
-     * @return \Swagger\Client\Model\ContentField[]
+     * @return \Paqtcom\Simplicate\Model\ContentField[]
      */
     public function getContentFields()
     {
@@ -255,7 +255,7 @@ class Message implements ModelInterface, ArrayAccess
     /**
      * Sets content_fields
      *
-     * @param \Swagger\Client\Model\ContentField[] $content_fields content_fields
+     * @param \Paqtcom\Simplicate\Model\ContentField[] $content_fields content_fields
      *
      * @return $this
      */

@@ -5,10 +5,10 @@
  Name                    | Type                                                                        | Description | Notes      
 -------------------------|-----------------------------------------------------------------------------|-------------|------------
  **id**                  | **string**                                                                  |             | [optional] 
- **employee**            | [**\Swagger\Client\Model\GetEmployee**](GetEmployee.md)                     |             | [optional] 
- **employer**            | [**\Swagger\Client\Model\GetOrganizationSimple**](GetOrganizationSimple.md) |             | [optional] 
- **employment_type**     | [**\Swagger\Client\Model\EmploymentType**](EmploymentType.md)               |             | [optional] 
- **contract_type**       | [**\Swagger\Client\Model\ContractType**](ContractType.md)                   |             | [optional] 
+ **employee**            | [**\Paqtcom\Simplicate\Model\GetEmployee**](GetEmployee.md)                     |             | [optional] 
+ **employer**            | [**\Paqtcom\Simplicate\Model\GetOrganizationSimple**](GetOrganizationSimple.md) |             | [optional] 
+ **employment_type**     | [**\Paqtcom\Simplicate\Model\EmploymentType**](EmploymentType.md)               |             | [optional] 
+ **contract_type**       | [**\Paqtcom\Simplicate\Model\ContractType**](ContractType.md)                   |             | [optional] 
  **created_at**          | **string**                                                                  |             | [optional] 
  **updated_at**          | **string**                                                                  |             | [optional] 
  **start_date**          | **string**                                                                  |             | [optional] 

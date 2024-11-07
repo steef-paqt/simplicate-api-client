@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * RestResultInvoiceStatuses Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,8 +58,8 @@ class RestResultInvoiceStatuses implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => '\Swagger\Client\Model\InvoiceStatus[]',
-        'metadata' => '\Swagger\Client\Model\MetaData',
+        'data' => '\Paqtcom\Simplicate\Model\InvoiceStatus[]',
+        'metadata' => '\Paqtcom\Simplicate\Model\MetaData',
         'errors' => 'object[]',
         'debug' => 'object[]',
     ];
@@ -221,7 +221,7 @@ class RestResultInvoiceStatuses implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \Swagger\Client\Model\InvoiceStatus[]
+     * @return \Paqtcom\Simplicate\Model\InvoiceStatus[]
      */
     public function getData()
     {
@@ -231,7 +231,7 @@ class RestResultInvoiceStatuses implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \Swagger\Client\Model\InvoiceStatus[] $data data
+     * @param \Paqtcom\Simplicate\Model\InvoiceStatus[] $data data
      *
      * @return $this
      */
@@ -245,7 +245,7 @@ class RestResultInvoiceStatuses implements ModelInterface, ArrayAccess
     /**
      * Gets metadata
      *
-     * @return \Swagger\Client\Model\MetaData
+     * @return \Paqtcom\Simplicate\Model\MetaData
      */
     public function getMetadata()
     {
@@ -255,7 +255,7 @@ class RestResultInvoiceStatuses implements ModelInterface, ArrayAccess
     /**
      * Sets metadata
      *
-     * @param \Swagger\Client\Model\MetaData $metadata metadata
+     * @param \Paqtcom\Simplicate\Model\MetaData $metadata metadata
      *
      * @return $this
      */

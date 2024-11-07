@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetProjectSimple Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,9 +61,9 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'project_number' => 'string',
-        'organization' => '\Swagger\Client\Model\GetOrganizationSimple',
-        'person' => '\Swagger\Client\Model\GetPersonSimple',
-        'project_manager' => '\Swagger\Client\Model\GetEmployeeSimple',
+        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
+        'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
+        'project_manager' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
         'separate_invoice_recipient' => 'object',
         'has_register_mileage_enabled' => 'bool',
     ];
@@ -317,7 +317,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
     /**
      * Gets organization
      *
-     * @return \Swagger\Client\Model\GetOrganizationSimple
+     * @return \Paqtcom\Simplicate\Model\GetOrganizationSimple
      */
     public function getOrganization()
     {
@@ -327,7 +327,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
     /**
      * Sets organization
      *
-     * @param \Swagger\Client\Model\GetOrganizationSimple $organization organization
+     * @param \Paqtcom\Simplicate\Model\GetOrganizationSimple $organization organization
      *
      * @return $this
      */
@@ -341,7 +341,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
     /**
      * Gets person
      *
-     * @return \Swagger\Client\Model\GetPersonSimple
+     * @return \Paqtcom\Simplicate\Model\GetPersonSimple
      */
     public function getPerson()
     {
@@ -351,7 +351,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
     /**
      * Sets person
      *
-     * @param \Swagger\Client\Model\GetPersonSimple $person person
+     * @param \Paqtcom\Simplicate\Model\GetPersonSimple $person person
      *
      * @return $this
      */
@@ -365,7 +365,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
     /**
      * Gets project_manager
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple
      */
     public function getProjectManager()
     {
@@ -375,7 +375,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
     /**
      * Sets project_manager
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple $project_manager project_manager
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple $project_manager project_manager
      *
      * @return $this
      */

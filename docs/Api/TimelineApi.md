@@ -1,4 +1,4 @@
-# Swagger\Client\TimelineApi
+# Paqtcom\Simplicate\TimelineApi
 
 All URIs are relative to *http://localhost/api/v2*
 
@@ -25,7 +25,7 @@ Deletes the timeline message attachment for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\TimelineApi(
+$apiInstance = new Paqtcom\Simplicate\Api\TimelineApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -73,12 +73,12 @@ Creates a new timeline message attachment - which is the link between /timeline/
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\TimelineApi(
+$apiInstance = new Paqtcom\Simplicate\Api\TimelineApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostAttachment(); // \Swagger\Client\Model\PostAttachment | 
+$body = new \Paqtcom\Simplicate\Model\PostAttachment(); // \Paqtcom\Simplicate\Model\PostAttachment | 
 
 try {
     $apiInstance->timelineAttachmentPost($body);
@@ -92,7 +92,7 @@ try {
 
  Name     | Type                                                                   | Description | Notes 
 ----------|------------------------------------------------------------------------|-------------|-------
- **body** | [**\Swagger\Client\Model\PostAttachment**](../Model/PostAttachment.md) |             |
+ **body** | [**\Paqtcom\Simplicate\Model\PostAttachment**](../Model/PostAttachment.md) |             |
 
 ### Return type
 
@@ -111,7 +111,7 @@ No authorization required
 
 # **timelineMessageGet**
 
-> \Swagger\Client\Model\RestResultTimelineMessages timelineMessageGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultTimelineMessages timelineMessageGet($offset, $limit, $sort)
 
 Fetches all messages
 
@@ -121,7 +121,7 @@ Fetches all messages
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\TimelineApi(
+$apiInstance = new Paqtcom\Simplicate\Api\TimelineApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -149,7 +149,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultTimelineMessages**](../Model/RestResultTimelineMessages.md)
+[**\Paqtcom\Simplicate\Model\RestResultTimelineMessages**](../Model/RestResultTimelineMessages.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Deletes the timeline message for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\TimelineApi(
+$apiInstance = new Paqtcom\Simplicate\Api\TimelineApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -212,7 +212,7 @@ No authorization required
 
 # **timelineMessageIdGet**
 
-> \Swagger\Client\Model\RestResultTimelineMessage timelineMessageIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultTimelineMessage timelineMessageIdGet($id)
 
 Fetches a single time line message by id
 
@@ -222,7 +222,7 @@ Fetches a single time line message by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\TimelineApi(
+$apiInstance = new Paqtcom\Simplicate\Api\TimelineApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -246,7 +246,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultTimelineMessage**](../Model/RestResultTimelineMessage.md)
+[**\Paqtcom\Simplicate\Model\RestResultTimelineMessage**](../Model/RestResultTimelineMessage.md)
 
 ### Authorization
 
@@ -271,12 +271,12 @@ Add a new timeline message
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\TimelineApi(
+$apiInstance = new Paqtcom\Simplicate\Api\TimelineApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostMessage(); // \Swagger\Client\Model\PostMessage | Timeline message that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostMessage(); // \Paqtcom\Simplicate\Model\PostMessage | Timeline message that needs to be added
 
 try {
     $apiInstance->timelineMessagePost($body);
@@ -290,7 +290,7 @@ try {
 
  Name     | Type                                                             | Description                             | Notes 
 ----------|------------------------------------------------------------------|-----------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostMessage**](../Model/PostMessage.md) | Timeline message that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostMessage**](../Model/PostMessage.md) | Timeline message that needs to be added |
 
 ### Return type
 
@@ -309,7 +309,7 @@ No authorization required
 
 # **timelineMessagetypeGet**
 
-> \Swagger\Client\Model\RestResultTimelineMessageTypes timelineMessagetypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes timelineMessagetypeGet($offset, $limit, $sort)
 
 Fetches all message types
 
@@ -319,7 +319,7 @@ Fetches all message types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\TimelineApi(
+$apiInstance = new Paqtcom\Simplicate\Api\TimelineApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -347,7 +347,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultTimelineMessageTypes**](../Model/RestResultTimelineMessageTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes**](../Model/RestResultTimelineMessageTypes.md)
 
 ### Authorization
 
@@ -362,7 +362,7 @@ No authorization required
 
 # **timelineMessagetypeIdGet**
 
-> \Swagger\Client\Model\RestResultTimelineMessageType timelineMessagetypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultTimelineMessageType timelineMessagetypeIdGet($id)
 
 Fetches a single timeline message type by id
 
@@ -372,7 +372,7 @@ Fetches a single timeline message type by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\TimelineApi(
+$apiInstance = new Paqtcom\Simplicate\Api\TimelineApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -396,7 +396,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultTimelineMessageType**](../Model/RestResultTimelineMessageType.md)
+[**\Paqtcom\Simplicate\Model\RestResultTimelineMessageType**](../Model/RestResultTimelineMessageType.md)
 
 ### Authorization
 

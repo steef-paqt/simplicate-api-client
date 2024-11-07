@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * Organization Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -67,8 +67,8 @@ class Organization implements ModelInterface, ArrayAccess
         'note' => 'string',
         'linkedin_url' => 'string',
         'has_different_postal_address' => 'bool',
-        'industry' => '\Swagger\Client\Model\Industry',
-        'organizationsize' => '\Swagger\Client\Model\OrganizationSize',
+        'industry' => '\Paqtcom\Simplicate\Model\Industry',
+        'organizationsize' => '\Paqtcom\Simplicate\Model\OrganizationSize',
         'invoice_receiver' => 'string',
         'allow_autocollect' => 'bool',
         'bank_account' => 'string',
@@ -509,7 +509,7 @@ class Organization implements ModelInterface, ArrayAccess
     /**
      * Gets industry
      *
-     * @return \Swagger\Client\Model\Industry
+     * @return \Paqtcom\Simplicate\Model\Industry
      */
     public function getIndustry()
     {
@@ -519,7 +519,7 @@ class Organization implements ModelInterface, ArrayAccess
     /**
      * Sets industry
      *
-     * @param \Swagger\Client\Model\Industry $industry industry
+     * @param \Paqtcom\Simplicate\Model\Industry $industry industry
      *
      * @return $this
      */
@@ -533,7 +533,7 @@ class Organization implements ModelInterface, ArrayAccess
     /**
      * Gets organizationsize
      *
-     * @return \Swagger\Client\Model\OrganizationSize
+     * @return \Paqtcom\Simplicate\Model\OrganizationSize
      */
     public function getOrganizationsize()
     {
@@ -543,7 +543,7 @@ class Organization implements ModelInterface, ArrayAccess
     /**
      * Sets organizationsize
      *
-     * @param \Swagger\Client\Model\OrganizationSize $organizationsize organizationsize
+     * @param \Paqtcom\Simplicate\Model\OrganizationSize $organizationsize organizationsize
      *
      * @return $this
      */

@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * Employee Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -71,7 +71,7 @@ class Employee implements ModelInterface, ArrayAccess
         'work_email' => 'string',
         'hourly_sales_tariff' => 'float',
         'hourly_cost_tariff' => 'float',
-        'avatar' => '\Swagger\Client\Model\Avatar',
+        'avatar' => '\Paqtcom\Simplicate\Model\Avatar',
         'created_at' => 'string',
         'updated_at' => 'string',
         'simplicate_url' => 'string',
@@ -644,7 +644,7 @@ class Employee implements ModelInterface, ArrayAccess
     /**
      * Gets avatar
      *
-     * @return \Swagger\Client\Model\Avatar
+     * @return \Paqtcom\Simplicate\Model\Avatar
      */
     public function getAvatar()
     {
@@ -654,7 +654,7 @@ class Employee implements ModelInterface, ArrayAccess
     /**
      * Sets avatar
      *
-     * @param \Swagger\Client\Model\Avatar $avatar avatar
+     * @param \Paqtcom\Simplicate\Model\Avatar $avatar avatar
      *
      * @return $this
      */

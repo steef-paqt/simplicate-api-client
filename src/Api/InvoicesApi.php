@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Paqtcom\Simplicate\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ApiException;
+use Paqtcom\Simplicate\Configuration;
+use Paqtcom\Simplicate\HeaderSelector;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * InvoicesApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -97,9 +97,9 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocuments
+     * @return \Paqtcom\Simplicate\Model\RestResultDocuments
      */
     public function invoicesDocumentGet($offset = null, $limit = '5', $sort = null)
     {
@@ -117,13 +117,13 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocuments, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocuments, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesDocumentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocuments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
         $request = $this->invoicesDocumentGetRequest($offset, $limit, $sort);
 
         try {
@@ -174,7 +174,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocuments',
+                        '\Paqtcom\Simplicate\Model\RestResultDocuments',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +220,7 @@ class InvoicesApi
      */
     public function invoicesDocumentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocuments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
         $request = $this->invoicesDocumentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -368,7 +368,7 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -384,7 +384,7 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -596,9 +596,9 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocument
+     * @return \Paqtcom\Simplicate\Model\RestResultDocument
      */
     public function invoicesDocumentIdGet($id)
     {
@@ -614,13 +614,13 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocument, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocument, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesDocumentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocument';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
         $request = $this->invoicesDocumentIdGetRequest($id);
 
         try {
@@ -671,7 +671,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocument',
+                        '\Paqtcom\Simplicate\Model\RestResultDocument',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -713,7 +713,7 @@ class InvoicesApi
      */
     public function invoicesDocumentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocument';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
         $request = $this->invoicesDocumentIdGetRequest($id);
 
         return $this->client
@@ -860,9 +860,9 @@ class InvoicesApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -876,9 +876,9 @@ class InvoicesApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -928,7 +928,7 @@ class InvoicesApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -948,7 +948,7 @@ class InvoicesApi
      *
      * create a document
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -984,7 +984,7 @@ class InvoicesApi
     /**
      * Create request for operation 'invoicesDocumentPost'
      *
-     * @param  \Swagger\Client\Model\PostDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1082,9 +1082,9 @@ class InvoicesApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1098,9 +1098,9 @@ class InvoicesApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1150,7 +1150,7 @@ class InvoicesApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1170,7 +1170,7 @@ class InvoicesApi
      *
      * update a document
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1206,7 +1206,7 @@ class InvoicesApi
     /**
      * Create request for operation 'invoicesDocumentPut'
      *
-     * @param  \Swagger\Client\Model\PutDocument $body Document object containing data (required)
+     * @param  \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1308,9 +1308,9 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocumentTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultDocumentTypes
      */
     public function invoicesDocumenttypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -1328,13 +1328,13 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocumentTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocumentTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesDocumenttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
         $request = $this->invoicesDocumenttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -1385,7 +1385,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocumentTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultDocumentTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1431,7 +1431,7 @@ class InvoicesApi
      */
     public function invoicesDocumenttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
         $request = $this->invoicesDocumenttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1579,9 +1579,9 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultDocumentType
+     * @return \Paqtcom\Simplicate\Model\RestResultDocumentType
      */
     public function invoicesDocumenttypeIdGet($id)
     {
@@ -1597,13 +1597,13 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultDocumentType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultDocumentType, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesDocumenttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
         $request = $this->invoicesDocumenttypeIdGetRequest($id);
 
         try {
@@ -1654,7 +1654,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultDocumentType',
+                        '\Paqtcom\Simplicate\Model\RestResultDocumentType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1696,7 +1696,7 @@ class InvoicesApi
      */
     public function invoicesDocumenttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultDocumentType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
         $request = $this->invoicesDocumenttypeIdGetRequest($id);
 
         return $this->client
@@ -1847,9 +1847,9 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultInvoices
+     * @return \Paqtcom\Simplicate\Model\RestResultInvoices
      */
     public function invoicesInvoiceGet($offset = null, $limit = '5', $sort = null)
     {
@@ -1867,13 +1867,13 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultInvoices, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultInvoices, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesInvoiceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultInvoices';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoices';
         $request = $this->invoicesInvoiceGetRequest($offset, $limit, $sort);
 
         try {
@@ -1924,7 +1924,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultInvoices',
+                        '\Paqtcom\Simplicate\Model\RestResultInvoices',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1970,7 +1970,7 @@ class InvoicesApi
      */
     public function invoicesInvoiceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultInvoices';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoices';
         $request = $this->invoicesInvoiceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -2118,7 +2118,7 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2134,7 +2134,7 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2346,9 +2346,9 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultInvoice
+     * @return \Paqtcom\Simplicate\Model\RestResultInvoice
      */
     public function invoicesInvoiceIdGet($id)
     {
@@ -2364,13 +2364,13 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultInvoice, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultInvoice, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesInvoiceIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultInvoice';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoice';
         $request = $this->invoicesInvoiceIdGetRequest($id);
 
         try {
@@ -2421,7 +2421,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultInvoice',
+                        '\Paqtcom\Simplicate\Model\RestResultInvoice',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2463,7 +2463,7 @@ class InvoicesApi
      */
     public function invoicesInvoiceIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultInvoice';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoice';
         $request = $this->invoicesInvoiceIdGetRequest($id);
 
         return $this->client
@@ -2611,9 +2611,9 @@ class InvoicesApi
      * Updates a invoice for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\Invoice $body template object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\Invoice $body template object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2628,9 +2628,9 @@ class InvoicesApi
      * Updates a invoice for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\Invoice $body template object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\Invoice $body template object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2681,7 +2681,7 @@ class InvoicesApi
      * Updates a invoice for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\Invoice $body template object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\Invoice $body template object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2702,7 +2702,7 @@ class InvoicesApi
      * Updates a invoice for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\Invoice $body template object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\Invoice $body template object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2739,7 +2739,7 @@ class InvoicesApi
      * Create request for operation 'invoicesInvoiceIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\Invoice $body template object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\Invoice $body template object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2852,9 +2852,9 @@ class InvoicesApi
      *
      * Add a new invoice
      *
-     * @param  \Swagger\Client\Model\PostInvoice $body Invoice object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostInvoice $body Invoice object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2868,9 +2868,9 @@ class InvoicesApi
      *
      * Add a new invoice
      *
-     * @param  \Swagger\Client\Model\PostInvoice $body Invoice object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostInvoice $body Invoice object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2920,7 +2920,7 @@ class InvoicesApi
      *
      * Add a new invoice
      *
-     * @param  \Swagger\Client\Model\PostInvoice $body Invoice object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostInvoice $body Invoice object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2940,7 +2940,7 @@ class InvoicesApi
      *
      * Add a new invoice
      *
-     * @param  \Swagger\Client\Model\PostInvoice $body Invoice object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostInvoice $body Invoice object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2976,7 +2976,7 @@ class InvoicesApi
     /**
      * Create request for operation 'invoicesInvoicePost'
      *
-     * @param  \Swagger\Client\Model\PostInvoice $body Invoice object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostInvoice $body Invoice object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3078,9 +3078,9 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultInvoiceStatuses
+     * @return \Paqtcom\Simplicate\Model\RestResultInvoiceStatuses
      */
     public function invoicesInvoicestatusGet($offset = null, $limit = '5', $sort = null)
     {
@@ -3098,13 +3098,13 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultInvoiceStatuses, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultInvoiceStatuses, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesInvoicestatusGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultInvoiceStatuses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoiceStatuses';
         $request = $this->invoicesInvoicestatusGetRequest($offset, $limit, $sort);
 
         try {
@@ -3155,7 +3155,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultInvoiceStatuses',
+                        '\Paqtcom\Simplicate\Model\RestResultInvoiceStatuses',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3201,7 +3201,7 @@ class InvoicesApi
      */
     public function invoicesInvoicestatusGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultInvoiceStatuses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoiceStatuses';
         $request = $this->invoicesInvoicestatusGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3349,9 +3349,9 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultInvoiceStatus
+     * @return \Paqtcom\Simplicate\Model\RestResultInvoiceStatus
      */
     public function invoicesInvoicestatusIdGet($id)
     {
@@ -3367,13 +3367,13 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultInvoiceStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultInvoiceStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesInvoicestatusIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultInvoiceStatus';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoiceStatus';
         $request = $this->invoicesInvoicestatusIdGetRequest($id);
 
         try {
@@ -3424,7 +3424,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultInvoiceStatus',
+                        '\Paqtcom\Simplicate\Model\RestResultInvoiceStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3466,7 +3466,7 @@ class InvoicesApi
      */
     public function invoicesInvoicestatusIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultInvoiceStatus';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoiceStatus';
         $request = $this->invoicesInvoicestatusIdGetRequest($id);
 
         return $this->client
@@ -3617,9 +3617,9 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultPayments
+     * @return \Paqtcom\Simplicate\Model\RestResultPayments
      */
     public function invoicesPaymentGet($offset = null, $limit = '5', $sort = null)
     {
@@ -3637,13 +3637,13 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultPayments, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultPayments, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesPaymentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPayments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPayments';
         $request = $this->invoicesPaymentGetRequest($offset, $limit, $sort);
 
         try {
@@ -3694,7 +3694,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultPayments',
+                        '\Paqtcom\Simplicate\Model\RestResultPayments',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3740,7 +3740,7 @@ class InvoicesApi
      */
     public function invoicesPaymentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPayments';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPayments';
         $request = $this->invoicesPaymentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3888,9 +3888,9 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultPayment
+     * @return \Paqtcom\Simplicate\Model\RestResultPayment
      */
     public function invoicesPaymentIdGet($id)
     {
@@ -3906,13 +3906,13 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultPayment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultPayment, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesPaymentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPayment';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPayment';
         $request = $this->invoicesPaymentIdGetRequest($id);
 
         try {
@@ -3963,7 +3963,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultPayment',
+                        '\Paqtcom\Simplicate\Model\RestResultPayment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4005,7 +4005,7 @@ class InvoicesApi
      */
     public function invoicesPaymentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPayment';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPayment';
         $request = $this->invoicesPaymentIdGetRequest($id);
 
         return $this->client
@@ -4153,9 +4153,9 @@ class InvoicesApi
      * Updates a payment for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\Payment $body Payment object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\Payment $body Payment object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4170,9 +4170,9 @@ class InvoicesApi
      * Updates a payment for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\Payment $body Payment object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\Payment $body Payment object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4223,7 +4223,7 @@ class InvoicesApi
      * Updates a payment for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\Payment $body Payment object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\Payment $body Payment object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4244,7 +4244,7 @@ class InvoicesApi
      * Updates a payment for the given id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\Payment $body Payment object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\Payment $body Payment object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4281,7 +4281,7 @@ class InvoicesApi
      * Create request for operation 'invoicesPaymentIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\Payment $body Payment object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\Payment $body Payment object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4394,9 +4394,9 @@ class InvoicesApi
      *
      * Add a new payment
      *
-     * @param  \Swagger\Client\Model\Payment $body Payment object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\Payment $body Payment object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4410,9 +4410,9 @@ class InvoicesApi
      *
      * Add a new payment
      *
-     * @param  \Swagger\Client\Model\Payment $body Payment object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\Payment $body Payment object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4462,7 +4462,7 @@ class InvoicesApi
      *
      * Add a new payment
      *
-     * @param  \Swagger\Client\Model\Payment $body Payment object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\Payment $body Payment object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4482,7 +4482,7 @@ class InvoicesApi
      *
      * Add a new payment
      *
-     * @param  \Swagger\Client\Model\Payment $body Payment object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\Payment $body Payment object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4518,7 +4518,7 @@ class InvoicesApi
     /**
      * Create request for operation 'invoicesPaymentPost'
      *
-     * @param  \Swagger\Client\Model\Payment $body Payment object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\Payment $body Payment object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4620,9 +4620,9 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultPaymentTerms
+     * @return \Paqtcom\Simplicate\Model\RestResultPaymentTerms
      */
     public function invoicesPaymenttermGet($offset = null, $limit = '5', $sort = null)
     {
@@ -4640,13 +4640,13 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultPaymentTerms, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultPaymentTerms, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesPaymenttermGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPaymentTerms';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPaymentTerms';
         $request = $this->invoicesPaymenttermGetRequest($offset, $limit, $sort);
 
         try {
@@ -4697,7 +4697,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultPaymentTerms',
+                        '\Paqtcom\Simplicate\Model\RestResultPaymentTerms',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4743,7 +4743,7 @@ class InvoicesApi
      */
     public function invoicesPaymenttermGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPaymentTerms';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPaymentTerms';
         $request = $this->invoicesPaymenttermGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -4891,9 +4891,9 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultPaymentTerm
+     * @return \Paqtcom\Simplicate\Model\RestResultPaymentTerm
      */
     public function invoicesPaymenttermIdGet($id)
     {
@@ -4909,13 +4909,13 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultPaymentTerm, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultPaymentTerm, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesPaymenttermIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPaymentTerm';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPaymentTerm';
         $request = $this->invoicesPaymenttermIdGetRequest($id);
 
         try {
@@ -4966,7 +4966,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultPaymentTerm',
+                        '\Paqtcom\Simplicate\Model\RestResultPaymentTerm',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5008,7 +5008,7 @@ class InvoicesApi
      */
     public function invoicesPaymenttermIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPaymentTerm';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPaymentTerm';
         $request = $this->invoicesPaymenttermIdGetRequest($id);
 
         return $this->client
@@ -5159,9 +5159,9 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultPropositions
+     * @return \Paqtcom\Simplicate\Model\RestResultPropositions
      */
     public function invoicesPropositionGet($offset = null, $limit = '5', $sort = null)
     {
@@ -5179,13 +5179,13 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultPropositions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultPropositions, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesPropositionGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPropositions';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPropositions';
         $request = $this->invoicesPropositionGetRequest($offset, $limit, $sort);
 
         try {
@@ -5236,7 +5236,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultPropositions',
+                        '\Paqtcom\Simplicate\Model\RestResultPropositions',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5282,7 +5282,7 @@ class InvoicesApi
      */
     public function invoicesPropositionGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultPropositions';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultPropositions';
         $request = $this->invoicesPropositionGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -5432,9 +5432,9 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultReminderSets
+     * @return \Paqtcom\Simplicate\Model\RestResultReminderSets
      */
     public function invoicesRemindersetGet($offset = null, $limit = '5', $sort = null)
     {
@@ -5452,13 +5452,13 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultReminderSets, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultReminderSets, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesRemindersetGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultReminderSets';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderSets';
         $request = $this->invoicesRemindersetGetRequest($offset, $limit, $sort);
 
         try {
@@ -5509,7 +5509,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultReminderSets',
+                        '\Paqtcom\Simplicate\Model\RestResultReminderSets',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5555,7 +5555,7 @@ class InvoicesApi
      */
     public function invoicesRemindersetGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultReminderSets';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderSets';
         $request = $this->invoicesRemindersetGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -5703,9 +5703,9 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultReminderSet
+     * @return \Paqtcom\Simplicate\Model\RestResultReminderSet
      */
     public function invoicesRemindersetIdGet($id)
     {
@@ -5721,13 +5721,13 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultReminderSet, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultReminderSet, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesRemindersetIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultReminderSet';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderSet';
         $request = $this->invoicesRemindersetIdGetRequest($id);
 
         try {
@@ -5778,7 +5778,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultReminderSet',
+                        '\Paqtcom\Simplicate\Model\RestResultReminderSet',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5820,7 +5820,7 @@ class InvoicesApi
      */
     public function invoicesRemindersetIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultReminderSet';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderSet';
         $request = $this->invoicesRemindersetIdGetRequest($id);
 
         return $this->client
@@ -5971,9 +5971,9 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultReminderTemplates
+     * @return \Paqtcom\Simplicate\Model\RestResultReminderTemplates
      */
     public function invoicesRemindertemplateGet($offset = null, $limit = '5', $sort = null)
     {
@@ -5991,13 +5991,13 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultReminderTemplates, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultReminderTemplates, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesRemindertemplateGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultReminderTemplates';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderTemplates';
         $request = $this->invoicesRemindertemplateGetRequest($offset, $limit, $sort);
 
         try {
@@ -6048,7 +6048,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultReminderTemplates',
+                        '\Paqtcom\Simplicate\Model\RestResultReminderTemplates',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6094,7 +6094,7 @@ class InvoicesApi
      */
     public function invoicesRemindertemplateGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultReminderTemplates';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderTemplates';
         $request = $this->invoicesRemindertemplateGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -6242,9 +6242,9 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultReminderTemplate
+     * @return \Paqtcom\Simplicate\Model\RestResultReminderTemplate
      */
     public function invoicesRemindertemplateIdGet($id)
     {
@@ -6260,13 +6260,13 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultReminderTemplate, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultReminderTemplate, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesRemindertemplateIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultReminderTemplate';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderTemplate';
         $request = $this->invoicesRemindertemplateIdGetRequest($id);
 
         try {
@@ -6317,7 +6317,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultReminderTemplate',
+                        '\Paqtcom\Simplicate\Model\RestResultReminderTemplate',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6359,7 +6359,7 @@ class InvoicesApi
      */
     public function invoicesRemindertemplateIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultReminderTemplate';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderTemplate';
         $request = $this->invoicesRemindertemplateIdGetRequest($id);
 
         return $this->client
@@ -6510,9 +6510,9 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultVatClasses
+     * @return \Paqtcom\Simplicate\Model\RestResultVatClasses
      */
     public function invoicesVatclassGet($offset = null, $limit = '5', $sort = null)
     {
@@ -6530,13 +6530,13 @@ class InvoicesApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultVatClasses, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultVatClasses, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesVatclassGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultVatClasses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultVatClasses';
         $request = $this->invoicesVatclassGetRequest($offset, $limit, $sort);
 
         try {
@@ -6587,7 +6587,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultVatClasses',
+                        '\Paqtcom\Simplicate\Model\RestResultVatClasses',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6633,7 +6633,7 @@ class InvoicesApi
      */
     public function invoicesVatclassGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultVatClasses';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultVatClasses';
         $request = $this->invoicesVatclassGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -6781,9 +6781,9 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultVatClass
+     * @return \Paqtcom\Simplicate\Model\RestResultVatClass
      */
     public function invoicesVatclassIdGet($id)
     {
@@ -6799,13 +6799,13 @@ class InvoicesApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultVatClass, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultVatClass, HTTP status code, HTTP response headers (array of strings)
      */
     public function invoicesVatclassIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultVatClass';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultVatClass';
         $request = $this->invoicesVatclassIdGetRequest($id);
 
         try {
@@ -6856,7 +6856,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultVatClass',
+                        '\Paqtcom\Simplicate\Model\RestResultVatClass',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6898,7 +6898,7 @@ class InvoicesApi
      */
     public function invoicesVatclassIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultVatClass';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultVatClass';
         $request = $this->invoicesVatclassIdGetRequest($id);
 
         return $this->client

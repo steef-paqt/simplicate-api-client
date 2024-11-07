@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Paqtcom\Simplicate\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ApiException;
+use Paqtcom\Simplicate\Configuration;
+use Paqtcom\Simplicate\HeaderSelector;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * MergerApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -93,11 +93,11 @@ class MergerApi
      *
      * Merge two organizations by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMerger $body Merge object containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMerger $body Merge object containing the source id and target id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ResultMergerMerge
+     * @return \Paqtcom\Simplicate\Model\ResultMergerMerge
      */
     public function crmMergeorganizationPost($body)
     {
@@ -111,15 +111,15 @@ class MergerApi
      *
      * Merge two organizations by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMerger $body Merge object containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMerger $body Merge object containing the source id and target id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ResultMergerMerge, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\ResultMergerMerge, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmMergeorganizationPostWithHttpInfo($body)
     {
-        $returnType = '\Swagger\Client\Model\ResultMergerMerge';
+        $returnType = '\Paqtcom\Simplicate\Model\ResultMergerMerge';
         $request = $this->crmMergeorganizationPostRequest($body);
 
         try {
@@ -170,7 +170,7 @@ class MergerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ResultMergerMerge',
+                        '\Paqtcom\Simplicate\Model\ResultMergerMerge',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -185,7 +185,7 @@ class MergerApi
      *
      * Merge two organizations by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMerger $body Merge object containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMerger $body Merge object containing the source id and target id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -205,14 +205,14 @@ class MergerApi
      *
      * Merge two organizations by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMerger $body Merge object containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMerger $body Merge object containing the source id and target id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function crmMergeorganizationPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\Swagger\Client\Model\ResultMergerMerge';
+        $returnType = '\Paqtcom\Simplicate\Model\ResultMergerMerge';
         $request = $this->crmMergeorganizationPostRequest($body);
 
         return $this->client
@@ -255,7 +255,7 @@ class MergerApi
     /**
      * Create request for operation 'crmMergeorganizationPost'
      *
-     * @param  \Swagger\Client\Model\PostMerger $body Merge object containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMerger $body Merge object containing the source id and target id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -353,11 +353,11 @@ class MergerApi
      *
      * Merge two people by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMerger $body Merge object containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMerger $body Merge object containing the source id and target id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\ResultMergerMerge
+     * @return \Paqtcom\Simplicate\Model\ResultMergerMerge
      */
     public function crmMergepersonPost($body)
     {
@@ -371,15 +371,15 @@ class MergerApi
      *
      * Merge two people by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMerger $body Merge object containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMerger $body Merge object containing the source id and target id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\ResultMergerMerge, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\ResultMergerMerge, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmMergepersonPostWithHttpInfo($body)
     {
-        $returnType = '\Swagger\Client\Model\ResultMergerMerge';
+        $returnType = '\Paqtcom\Simplicate\Model\ResultMergerMerge';
         $request = $this->crmMergepersonPostRequest($body);
 
         try {
@@ -430,7 +430,7 @@ class MergerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\ResultMergerMerge',
+                        '\Paqtcom\Simplicate\Model\ResultMergerMerge',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -445,7 +445,7 @@ class MergerApi
      *
      * Merge two people by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMerger $body Merge object containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMerger $body Merge object containing the source id and target id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -465,14 +465,14 @@ class MergerApi
      *
      * Merge two people by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMerger $body Merge object containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMerger $body Merge object containing the source id and target id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function crmMergepersonPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\Swagger\Client\Model\ResultMergerMerge';
+        $returnType = '\Paqtcom\Simplicate\Model\ResultMergerMerge';
         $request = $this->crmMergepersonPostRequest($body);
 
         return $this->client
@@ -515,7 +515,7 @@ class MergerApi
     /**
      * Create request for operation 'crmMergepersonPost'
      *
-     * @param  \Swagger\Client\Model\PostMerger $body Merge object containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMerger $body Merge object containing the source id and target id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -613,11 +613,11 @@ class MergerApi
      *
      * Compare two organizations by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultMergerCompare
+     * @return \Paqtcom\Simplicate\Model\RestResultMergerCompare
      */
     public function mergerCompareorganizationPost($body)
     {
@@ -631,15 +631,15 @@ class MergerApi
      *
      * Compare two organizations by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultMergerCompare, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultMergerCompare, HTTP status code, HTTP response headers (array of strings)
      */
     public function mergerCompareorganizationPostWithHttpInfo($body)
     {
-        $returnType = '\Swagger\Client\Model\RestResultMergerCompare';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultMergerCompare';
         $request = $this->mergerCompareorganizationPostRequest($body);
 
         try {
@@ -690,7 +690,7 @@ class MergerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultMergerCompare',
+                        '\Paqtcom\Simplicate\Model\RestResultMergerCompare',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -705,7 +705,7 @@ class MergerApi
      *
      * Compare two organizations by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -725,14 +725,14 @@ class MergerApi
      *
      * Compare two organizations by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function mergerCompareorganizationPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\Swagger\Client\Model\RestResultMergerCompare';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultMergerCompare';
         $request = $this->mergerCompareorganizationPostRequest($body);
 
         return $this->client
@@ -775,7 +775,7 @@ class MergerApi
     /**
      * Create request for operation 'mergerCompareorganizationPost'
      *
-     * @param  \Swagger\Client\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -873,11 +873,11 @@ class MergerApi
      *
      * Compare two persons by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultMergerCompare
+     * @return \Paqtcom\Simplicate\Model\RestResultMergerCompare
      */
     public function mergerComparepersonPost($body)
     {
@@ -891,15 +891,15 @@ class MergerApi
      *
      * Compare two persons by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultMergerCompare, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultMergerCompare, HTTP status code, HTTP response headers (array of strings)
      */
     public function mergerComparepersonPostWithHttpInfo($body)
     {
-        $returnType = '\Swagger\Client\Model\RestResultMergerCompare';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultMergerCompare';
         $request = $this->mergerComparepersonPostRequest($body);
 
         try {
@@ -950,7 +950,7 @@ class MergerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultMergerCompare',
+                        '\Paqtcom\Simplicate\Model\RestResultMergerCompare',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -965,7 +965,7 @@ class MergerApi
      *
      * Compare two persons by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -985,14 +985,14 @@ class MergerApi
      *
      * Compare two persons by a given source and target id
      *
-     * @param  \Swagger\Client\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function mergerComparepersonPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\Swagger\Client\Model\RestResultMergerCompare';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultMergerCompare';
         $request = $this->mergerComparepersonPostRequest($body);
 
         return $this->client
@@ -1035,7 +1035,7 @@ class MergerApi
     /**
      * Create request for operation 'mergerComparepersonPost'
      *
-     * @param  \Swagger\Client\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMergerCompare $body Compare objects containing the source id and target id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

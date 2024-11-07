@@ -1,4 +1,4 @@
-# Swagger\Client\HoursApi
+# Paqtcom\Simplicate\HoursApi
 
 All URIs are relative to *http://localhost/api/v2*
 
@@ -52,13 +52,13 @@ Updates an hour entity for absence for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostAbsence(); // \Swagger\Client\Model\PostAbsence | Absence object containing data that with the new values
+$body = new \Paqtcom\Simplicate\Model\PostAbsence(); // \Paqtcom\Simplicate\Model\PostAbsence | Absence object containing data that with the new values
 
 try {
     $apiInstance->hoursAbsenceIdPut($id, $body);
@@ -73,7 +73,7 @@ try {
  Name     | Type                                                             | Description                                             | Notes 
 ----------|------------------------------------------------------------------|---------------------------------------------------------|-------
  **id**   | **string**                                                       | The template&#39;s id                                   |
- **body** | [**\Swagger\Client\Model\PostAbsence**](../Model/PostAbsence.md) | Absence object containing data that with the new values |
+ **body** | [**\Paqtcom\Simplicate\Model\PostAbsence**](../Model/PostAbsence.md) | Absence object containing data that with the new values |
 
 ### Return type
 
@@ -102,12 +102,12 @@ Add a new hours entity for absence
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostAbsence(); // \Swagger\Client\Model\PostAbsence | absence object containing data
+$body = new \Paqtcom\Simplicate\Model\PostAbsence(); // \Paqtcom\Simplicate\Model\PostAbsence | absence object containing data
 
 try {
     $apiInstance->hoursAbsencePost($body);
@@ -121,7 +121,7 @@ try {
 
  Name     | Type                                                             | Description                    | Notes 
 ----------|------------------------------------------------------------------|--------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostAbsence**](../Model/PostAbsence.md) | absence object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostAbsence**](../Model/PostAbsence.md) | absence object containing data |
 
 ### Return type
 
@@ -140,7 +140,7 @@ No authorization required
 
 # **hoursApprovalGet**
 
-> \Swagger\Client\Model\RestResultApprovals hoursApprovalGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultApprovals hoursApprovalGet($offset, $limit, $sort)
 
 Fetches the approval status of each day for each employee
 
@@ -150,7 +150,7 @@ Fetches the approval status of each day for each employee
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -178,7 +178,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultApprovals**](../Model/RestResultApprovals.md)
+[**\Paqtcom\Simplicate\Model\RestResultApprovals**](../Model/RestResultApprovals.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ Deletes the hours approval with the given approval id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -241,7 +241,7 @@ No authorization required
 
 # **hoursApprovalIdGet**
 
-> \Swagger\Client\Model\RestResultApproval hoursApprovalIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultApproval hoursApprovalIdGet($id)
 
 Fetches a single approval status for a day for an employee
 
@@ -251,7 +251,7 @@ Fetches a single approval status for a day for an employee
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -275,7 +275,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultApproval**](../Model/RestResultApproval.md)
+[**\Paqtcom\Simplicate\Model\RestResultApproval**](../Model/RestResultApproval.md)
 
 ### Authorization
 
@@ -300,13 +300,13 @@ Updates a hours approval for the given approval id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostApproval(); // \Swagger\Client\Model\PostApproval | Approval object that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\PostApproval(); // \Paqtcom\Simplicate\Model\PostApproval | Approval object that needs to be updated
 
 try {
     $apiInstance->hoursApprovalIdPut($id, $body);
@@ -321,7 +321,7 @@ try {
  Name     | Type                                                               | Description                              | Notes 
 ----------|--------------------------------------------------------------------|------------------------------------------|-------
  **id**   | **string**                                                         | The template&#39;s id                    |
- **body** | [**\Swagger\Client\Model\PostApproval**](../Model/PostApproval.md) | Approval object that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\PostApproval**](../Model/PostApproval.md) | Approval object that needs to be updated |
 
 ### Return type
 
@@ -350,12 +350,12 @@ Add a new hours approval
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostApproval(); // \Swagger\Client\Model\PostApproval | Approval object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostApproval(); // \Paqtcom\Simplicate\Model\PostApproval | Approval object that needs to be added
 
 try {
     $apiInstance->hoursApprovalPost($body);
@@ -369,7 +369,7 @@ try {
 
  Name     | Type                                                               | Description                            | Notes 
 ----------|--------------------------------------------------------------------|----------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostApproval**](../Model/PostApproval.md) | Approval object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostApproval**](../Model/PostApproval.md) | Approval object that needs to be added |
 
 ### Return type
 
@@ -388,7 +388,7 @@ No authorization required
 
 # **hoursApprovalstatusGet**
 
-> \Swagger\Client\Model\RestResultApprovalStatusList hoursApprovalstatusGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultApprovalStatusList hoursApprovalstatusGet($offset, $limit, $sort)
 
 Fetches all hour types
 
@@ -398,7 +398,7 @@ Fetches all hour types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -426,7 +426,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultApprovalStatusList**](../Model/RestResultApprovalStatusList.md)
+[**\Paqtcom\Simplicate\Model\RestResultApprovalStatusList**](../Model/RestResultApprovalStatusList.md)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ No authorization required
 
 # **hoursApprovalstatusIdGet**
 
-> \Swagger\Client\Model\RestResultApprovalStatus hoursApprovalstatusIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultApprovalStatus hoursApprovalstatusIdGet($id)
 
 Fetches a single hour status by hour type id
 
@@ -451,7 +451,7 @@ Fetches a single hour status by hour type id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -475,7 +475,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultApprovalStatus**](../Model/RestResultApprovalStatus.md)
+[**\Paqtcom\Simplicate\Model\RestResultApprovalStatus**](../Model/RestResultApprovalStatus.md)
 
 ### Authorization
 
@@ -490,7 +490,7 @@ No authorization required
 
 # **hoursEmployeeexpenseIdGet**
 
-> \Swagger\Client\Model\RestResultEmployeeExpense hoursEmployeeexpenseIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultEmployeeExpense hoursEmployeeexpenseIdGet($id)
 
 Fetches a single expense for an employee
 
@@ -500,7 +500,7 @@ Fetches a single expense for an employee
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -524,7 +524,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultEmployeeExpense**](../Model/RestResultEmployeeExpense.md)
+[**\Paqtcom\Simplicate\Model\RestResultEmployeeExpense**](../Model/RestResultEmployeeExpense.md)
 
 ### Authorization
 
@@ -539,7 +539,7 @@ No authorization required
 
 # **hoursEmployeeexpensesGet**
 
-> \Swagger\Client\Model\RestResultEmployeeExpenseList hoursEmployeeexpensesGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList hoursEmployeeexpensesGet($offset, $limit, $sort)
 
 Fetches the expenses of employees
 
@@ -549,7 +549,7 @@ Fetches the expenses of employees
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -577,7 +577,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultEmployeeExpenseList**](../Model/RestResultEmployeeExpenseList.md)
+[**\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList**](../Model/RestResultEmployeeExpenseList.md)
 
 ### Authorization
 
@@ -592,7 +592,7 @@ No authorization required
 
 # **hoursHoursGet**
 
-> \Swagger\Client\Model\RestResultHours hoursHoursGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultHours hoursHoursGet($offset, $limit, $sort)
 
 Fetches all hours
 
@@ -602,7 +602,7 @@ Fetches all hours
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -630,7 +630,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultHours**](../Model/RestResultHours.md)
+[**\Paqtcom\Simplicate\Model\RestResultHours**](../Model/RestResultHours.md)
 
 ### Authorization
 
@@ -655,7 +655,7 @@ Deletes the hours registration with the given hours id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -693,7 +693,7 @@ No authorization required
 
 # **hoursHoursIdGet**
 
-> \Swagger\Client\Model\RestResultHour hoursHoursIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultHour hoursHoursIdGet($id)
 
 Fetches a single hours by hours id
 
@@ -703,7 +703,7 @@ Fetches a single hours by hours id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -727,7 +727,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultHour**](../Model/RestResultHour.md)
+[**\Paqtcom\Simplicate\Model\RestResultHour**](../Model/RestResultHour.md)
 
 ### Authorization
 
@@ -752,13 +752,13 @@ Updates a hours registration for the given hours id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostHours(); // \Swagger\Client\Model\PostHours | Hours object that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\PostHours(); // \Paqtcom\Simplicate\Model\PostHours | Hours object that needs to be updated
 
 try {
     $apiInstance->hoursHoursIdPut($id, $body);
@@ -773,7 +773,7 @@ try {
  Name     | Type                                                         | Description                           | Notes 
 ----------|--------------------------------------------------------------|---------------------------------------|-------
  **id**   | **string**                                                   | The template&#39;s id                 |
- **body** | [**\Swagger\Client\Model\PostHours**](../Model/PostHours.md) | Hours object that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\PostHours**](../Model/PostHours.md) | Hours object that needs to be updated |
 
 ### Return type
 
@@ -802,12 +802,12 @@ Add a new hours registration
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostHours(); // \Swagger\Client\Model\PostHours | Hours object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostHours(); // \Paqtcom\Simplicate\Model\PostHours | Hours object that needs to be added
 
 try {
     $apiInstance->hoursHoursPost($body);
@@ -821,7 +821,7 @@ try {
 
  Name     | Type                                                         | Description                         | Notes 
 ----------|--------------------------------------------------------------|-------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostHours**](../Model/PostHours.md) | Hours object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostHours**](../Model/PostHours.md) | Hours object that needs to be added |
 
 ### Return type
 
@@ -840,7 +840,7 @@ No authorization required
 
 # **hoursHourstypeGet**
 
-> \Swagger\Client\Model\RestResultHourTypes hoursHourstypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultHourTypes hoursHourstypeGet($offset, $limit, $sort)
 
 Fetches all hour types
 
@@ -850,7 +850,7 @@ Fetches all hour types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -878,7 +878,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultHourTypes**](../Model/RestResultHourTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultHourTypes**](../Model/RestResultHourTypes.md)
 
 ### Authorization
 
@@ -893,7 +893,7 @@ No authorization required
 
 # **hoursHourstypeIdGet**
 
-> \Swagger\Client\Model\RestResultHourType hoursHourstypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultHourType hoursHourstypeIdGet($id)
 
 Fetches a single hour type by hour type id
 
@@ -903,7 +903,7 @@ Fetches a single hour type by hour type id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -927,7 +927,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultHourType**](../Model/RestResultHourType.md)
+[**\Paqtcom\Simplicate\Model\RestResultHourType**](../Model/RestResultHourType.md)
 
 ### Authorization
 
@@ -952,13 +952,13 @@ Updates a hour type registration for the given hour type id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostHoursType(); // \Swagger\Client\Model\PostHoursType | Hours type object that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\PostHoursType(); // \Paqtcom\Simplicate\Model\PostHoursType | Hours type object that needs to be updated
 
 try {
     $apiInstance->hoursHourstypeIdPut($id, $body);
@@ -973,7 +973,7 @@ try {
  Name     | Type                                                                 | Description                                | Notes 
 ----------|----------------------------------------------------------------------|--------------------------------------------|-------
  **id**   | **string**                                                           | The template&#39;s id                      |
- **body** | [**\Swagger\Client\Model\PostHoursType**](../Model/PostHoursType.md) | Hours type object that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\PostHoursType**](../Model/PostHoursType.md) | Hours type object that needs to be updated |
 
 ### Return type
 
@@ -1002,12 +1002,12 @@ Add a new hour type
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostHoursType(); // \Swagger\Client\Model\PostHoursType | Hour type object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostHoursType(); // \Paqtcom\Simplicate\Model\PostHoursType | Hour type object that needs to be added
 
 try {
     $apiInstance->hoursHourstypePost($body);
@@ -1021,7 +1021,7 @@ try {
 
  Name     | Type                                                                 | Description                             | Notes 
 ----------|----------------------------------------------------------------------|-----------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostHoursType**](../Model/PostHoursType.md) | Hour type object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostHoursType**](../Model/PostHoursType.md) | Hour type object that needs to be added |
 
 ### Return type
 
@@ -1050,13 +1050,13 @@ Updates an hour entity for leave for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostLeave(); // \Swagger\Client\Model\PostLeave | Leave object containing data that with the new values
+$body = new \Paqtcom\Simplicate\Model\PostLeave(); // \Paqtcom\Simplicate\Model\PostLeave | Leave object containing data that with the new values
 
 try {
     $apiInstance->hoursLeaveIdPut($id, $body);
@@ -1071,7 +1071,7 @@ try {
  Name     | Type                                                         | Description                                           | Notes 
 ----------|--------------------------------------------------------------|-------------------------------------------------------|-------
  **id**   | **string**                                                   | The template&#39;s id                                 |
- **body** | [**\Swagger\Client\Model\PostLeave**](../Model/PostLeave.md) | Leave object containing data that with the new values |
+ **body** | [**\Paqtcom\Simplicate\Model\PostLeave**](../Model/PostLeave.md) | Leave object containing data that with the new values |
 
 ### Return type
 
@@ -1100,12 +1100,12 @@ Add a new hours entity for leave
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostLeave(); // \Swagger\Client\Model\PostLeave | leave object containing data
+$body = new \Paqtcom\Simplicate\Model\PostLeave(); // \Paqtcom\Simplicate\Model\PostLeave | leave object containing data
 
 try {
     $apiInstance->hoursLeavePost($body);
@@ -1119,7 +1119,7 @@ try {
 
  Name     | Type                                                         | Description                  | Notes 
 ----------|--------------------------------------------------------------|------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostLeave**](../Model/PostLeave.md) | leave object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostLeave**](../Model/PostLeave.md) | leave object containing data |
 
 ### Return type
 
@@ -1138,7 +1138,7 @@ No authorization required
 
 # **hoursSubmissionGet**
 
-> \Swagger\Client\Model\RestResultHoursSubmissions hoursSubmissionGet($q_start_date, $q_end_date, $q_employee_id)
+> \Paqtcom\Simplicate\Model\RestResultHoursSubmissions hoursSubmissionGet($q_start_date, $q_end_date, $q_employee_id)
 
 Fetches hours submission status, by date, for an employee
 
@@ -1148,7 +1148,7 @@ Fetches hours submission status, by date, for an employee
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1176,7 +1176,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultHoursSubmissions**](../Model/RestResultHoursSubmissions.md)
+[**\Paqtcom\Simplicate\Model\RestResultHoursSubmissions**](../Model/RestResultHoursSubmissions.md)
 
 ### Authorization
 
@@ -1201,12 +1201,12 @@ Submit all the employee's hours between the start and end date.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostSubmission(); // \Swagger\Client\Model\PostSubmission | Description of hours that need to be submitted.
+$body = new \Paqtcom\Simplicate\Model\PostSubmission(); // \Paqtcom\Simplicate\Model\PostSubmission | Description of hours that need to be submitted.
 
 try {
     $apiInstance->hoursSubmissionPost($body);
@@ -1220,7 +1220,7 @@ try {
 
  Name     | Type                                                                   | Description                                     | Notes 
 ----------|------------------------------------------------------------------------|-------------------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostSubmission**](../Model/PostSubmission.md) | Description of hours that need to be submitted. |
+ **body** | [**\Paqtcom\Simplicate\Model\PostSubmission**](../Model/PostSubmission.md) | Description of hours that need to be submitted. |
 
 ### Return type
 
@@ -1249,12 +1249,12 @@ Submit hours for approval
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\Submit(); // \Swagger\Client\Model\Submit | Data that is needed to submit hours
+$body = new \Paqtcom\Simplicate\Model\Submit(); // \Paqtcom\Simplicate\Model\Submit | Data that is needed to submit hours
 
 try {
     $apiInstance->hoursSubmitPost($body);
@@ -1268,7 +1268,7 @@ try {
 
  Name     | Type                                                   | Description                         | Notes 
 ----------|--------------------------------------------------------|-------------------------------------|-------
- **body** | [**\Swagger\Client\Model\Submit**](../Model/Submit.md) | Data that is needed to submit hours |
+ **body** | [**\Paqtcom\Simplicate\Model\Submit**](../Model/Submit.md) | Data that is needed to submit hours |
 
 ### Return type
 
@@ -1287,7 +1287,7 @@ No authorization required
 
 # **hoursTimesheetrowGet**
 
-> \Swagger\Client\Model\RestResultHoursTimesheetRows hoursTimesheetrowGet($q_start_date, $q_end_date, $q_employee_id)
+> \Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows hoursTimesheetrowGet($q_start_date, $q_end_date, $q_employee_id)
 
 Fetches timesheet rows, by date, for an employee
 
@@ -1297,7 +1297,7 @@ Fetches timesheet rows, by date, for an employee
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1325,7 +1325,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultHoursTimesheetRows**](../Model/RestResultHoursTimesheetRows.md)
+[**\Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows**](../Model/RestResultHoursTimesheetRows.md)
 
 ### Authorization
 
@@ -1350,7 +1350,7 @@ Deletes the timesheet row with the supplied timesheetrow id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1388,7 +1388,7 @@ No authorization required
 
 # **hoursTimesheetrowMostrecentGet**
 
-> \Swagger\Client\Model\RestResultDateTimeRange hoursTimesheetrowMostrecentGet($q_before_date, $q_employee_id, $q_type)
+> \Paqtcom\Simplicate\Model\RestResultDateTimeRange hoursTimesheetrowMostrecentGet($q_before_date, $q_employee_id, $q_type)
 
 Find the most recent timesheet row
 
@@ -1398,7 +1398,7 @@ Find the most recent timesheet row
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1426,7 +1426,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDateTimeRange**](../Model/RestResultDateTimeRange.md)
+[**\Paqtcom\Simplicate\Model\RestResultDateTimeRange**](../Model/RestResultDateTimeRange.md)
 
 ### Authorization
 
@@ -1451,12 +1451,12 @@ Change order for timesheetrows.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = array(new \Swagger\Client\Model\string[]()); // string[] | List of external ids for timesheetrows that need to be ordered.
+$body = array(new \Paqtcom\Simplicate\Model\string[]()); // string[] | List of external ids for timesheetrows that need to be ordered.
 
 try {
     $apiInstance->hoursTimesheetrowOrderPut($body);
@@ -1499,12 +1499,12 @@ Submit a timesheet week row for the given employee.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostTimesheetRow(); // \Swagger\Client\Model\PostTimesheetRow | Description of timesheetrow that is submitted.
+$body = new \Paqtcom\Simplicate\Model\PostTimesheetRow(); // \Paqtcom\Simplicate\Model\PostTimesheetRow | Description of timesheetrow that is submitted.
 
 try {
     $apiInstance->hoursTimesheetrowPost($body);
@@ -1518,7 +1518,7 @@ try {
 
  Name     | Type                                                                       | Description                                    | Notes 
 ----------|----------------------------------------------------------------------------|------------------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostTimesheetRow**](../Model/PostTimesheetRow.md) | Description of timesheetrow that is submitted. |
+ **body** | [**\Paqtcom\Simplicate\Model\PostTimesheetRow**](../Model/PostTimesheetRow.md) | Description of timesheetrow that is submitted. |
 
 ### Return type
 
@@ -1537,7 +1537,7 @@ No authorization required
 
 # **timersTimerGet**
 
-> \Swagger\Client\Model\RestResultTimers timersTimerGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultTimers timersTimerGet($offset, $limit, $sort)
 
 Fetches all timers
 
@@ -1547,7 +1547,7 @@ Fetches all timers
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1575,7 +1575,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultTimers**](../Model/RestResultTimers.md)
+[**\Paqtcom\Simplicate\Model\RestResultTimers**](../Model/RestResultTimers.md)
 
 ### Authorization
 
@@ -1600,7 +1600,7 @@ Deletes the timer with the given timer id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1638,7 +1638,7 @@ No authorization required
 
 # **timersTimerIdGet**
 
-> \Swagger\Client\Model\RestResultTimer timersTimerIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultTimer timersTimerIdGet($id)
 
 Fetches a single timer by its id
 
@@ -1648,7 +1648,7 @@ Fetches a single timer by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1672,7 +1672,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultTimer**](../Model/RestResultTimer.md)
+[**\Paqtcom\Simplicate\Model\RestResultTimer**](../Model/RestResultTimer.md)
 
 ### Authorization
 
@@ -1697,13 +1697,13 @@ Updates a timer for the given timer id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PutTimer(); // \Swagger\Client\Model\PutTimer | Timer object that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\PutTimer(); // \Paqtcom\Simplicate\Model\PutTimer | Timer object that needs to be updated
 
 try {
     $apiInstance->timersTimerIdPut($id, $body);
@@ -1718,7 +1718,7 @@ try {
  Name     | Type                                                       | Description                           | Notes 
 ----------|------------------------------------------------------------|---------------------------------------|-------
  **id**   | **string**                                                 | The template&#39;s id                 |
- **body** | [**\Swagger\Client\Model\PutTimer**](../Model/PutTimer.md) | Timer object that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\PutTimer**](../Model/PutTimer.md) | Timer object that needs to be updated |
 
 ### Return type
 
@@ -1747,12 +1747,12 @@ Add a new timer
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HoursApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostTimer(); // \Swagger\Client\Model\PostTimer | Timer object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostTimer(); // \Paqtcom\Simplicate\Model\PostTimer | Timer object that needs to be added
 
 try {
     $apiInstance->timersTimerPost($body);
@@ -1766,7 +1766,7 @@ try {
 
  Name     | Type                                                         | Description                         | Notes 
 ----------|--------------------------------------------------------------|-------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostTimer**](../Model/PostTimer.md) | Timer object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostTimer**](../Model/PostTimer.md) | Timer object that needs to be added |
 
 ### Return type
 

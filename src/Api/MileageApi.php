@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Paqtcom\Simplicate\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ApiException;
+use Paqtcom\Simplicate\Configuration;
+use Paqtcom\Simplicate\HeaderSelector;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * MileageApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -97,9 +97,9 @@ class MileageApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultMileageList
+     * @return \Paqtcom\Simplicate\Model\RestResultMileageList
      */
     public function mileageMileageGet($offset = null, $limit = '5', $sort = null)
     {
@@ -117,13 +117,13 @@ class MileageApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultMileageList, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultMileageList, HTTP status code, HTTP response headers (array of strings)
      */
     public function mileageMileageGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultMileageList';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultMileageList';
         $request = $this->mileageMileageGetRequest($offset, $limit, $sort);
 
         try {
@@ -174,7 +174,7 @@ class MileageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultMileageList',
+                        '\Paqtcom\Simplicate\Model\RestResultMileageList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +220,7 @@ class MileageApi
      */
     public function mileageMileageGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultMileageList';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultMileageList';
         $request = $this->mileageMileageGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -368,7 +368,7 @@ class MileageApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -384,7 +384,7 @@ class MileageApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -596,9 +596,9 @@ class MileageApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultMileage
+     * @return \Paqtcom\Simplicate\Model\RestResultMileage
      */
     public function mileageMileageIdGet($id)
     {
@@ -614,13 +614,13 @@ class MileageApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultMileage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultMileage, HTTP status code, HTTP response headers (array of strings)
      */
     public function mileageMileageIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultMileage';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultMileage';
         $request = $this->mileageMileageIdGetRequest($id);
 
         try {
@@ -671,7 +671,7 @@ class MileageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultMileage',
+                        '\Paqtcom\Simplicate\Model\RestResultMileage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -713,7 +713,7 @@ class MileageApi
      */
     public function mileageMileageIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultMileage';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultMileage';
         $request = $this->mileageMileageIdGetRequest($id);
 
         return $this->client
@@ -861,9 +861,9 @@ class MileageApi
      * Updates a mileage registration for the given mileage id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutMileage $body Mileage object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutMileage $body Mileage object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -878,9 +878,9 @@ class MileageApi
      * Updates a mileage registration for the given mileage id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutMileage $body Mileage object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutMileage $body Mileage object that needs to be updated (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -931,7 +931,7 @@ class MileageApi
      * Updates a mileage registration for the given mileage id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutMileage $body Mileage object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutMileage $body Mileage object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -952,7 +952,7 @@ class MileageApi
      * Updates a mileage registration for the given mileage id
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutMileage $body Mileage object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutMileage $body Mileage object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -989,7 +989,7 @@ class MileageApi
      * Create request for operation 'mileageMileageIdPut'
      *
      * @param  string $id The template&#39;s id (required)
-     * @param  \Swagger\Client\Model\PutMileage $body Mileage object that needs to be updated (required)
+     * @param  \Paqtcom\Simplicate\Model\PutMileage $body Mileage object that needs to be updated (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1102,9 +1102,9 @@ class MileageApi
      *
      * Add a new mileage registration
      *
-     * @param  \Swagger\Client\Model\PostMileage $body Mileage object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMileage $body Mileage object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1118,9 +1118,9 @@ class MileageApi
      *
      * Add a new mileage registration
      *
-     * @param  \Swagger\Client\Model\PostMileage $body Mileage object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMileage $body Mileage object that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1170,7 +1170,7 @@ class MileageApi
      *
      * Add a new mileage registration
      *
-     * @param  \Swagger\Client\Model\PostMileage $body Mileage object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMileage $body Mileage object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1190,7 +1190,7 @@ class MileageApi
      *
      * Add a new mileage registration
      *
-     * @param  \Swagger\Client\Model\PostMileage $body Mileage object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMileage $body Mileage object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1226,7 +1226,7 @@ class MileageApi
     /**
      * Create request for operation 'mileageMileagePost'
      *
-     * @param  \Swagger\Client\Model\PostMileage $body Mileage object that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMileage $body Mileage object that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -12,7 +12,7 @@
  **work_email**      | **string**                                          |             | [optional] 
  **work_phone**      | **string**                                          |             | [optional] 
  **work_mobile**     | **string**                                          |             | [optional] 
- **interests**       | [**\Swagger\Client\Model\Interest[]**](Interest.md) |             | [optional] 
+ **interests**       | [**\Paqtcom\Simplicate\Model\Interest[]**](Interest.md) |             | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

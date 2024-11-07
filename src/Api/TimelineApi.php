@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Paqtcom\Simplicate\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ApiException;
+use Paqtcom\Simplicate\Configuration;
+use Paqtcom\Simplicate\HeaderSelector;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * TimelineApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -95,7 +95,7 @@ class TimelineApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -111,7 +111,7 @@ class TimelineApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -321,9 +321,9 @@ class TimelineApi
      *
      * Creates a new timeline message attachment - which is the link between /timeline/message and /documents/document
      *
-     * @param  \Swagger\Client\Model\PostAttachment $body  (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAttachment $body  (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -337,9 +337,9 @@ class TimelineApi
      *
      * Creates a new timeline message attachment - which is the link between /timeline/message and /documents/document
      *
-     * @param  \Swagger\Client\Model\PostAttachment $body  (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAttachment $body  (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -389,7 +389,7 @@ class TimelineApi
      *
      * Creates a new timeline message attachment - which is the link between /timeline/message and /documents/document
      *
-     * @param  \Swagger\Client\Model\PostAttachment $body  (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAttachment $body  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -409,7 +409,7 @@ class TimelineApi
      *
      * Creates a new timeline message attachment - which is the link between /timeline/message and /documents/document
      *
-     * @param  \Swagger\Client\Model\PostAttachment $body  (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAttachment $body  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -445,7 +445,7 @@ class TimelineApi
     /**
      * Create request for operation 'timelineAttachmentPost'
      *
-     * @param  \Swagger\Client\Model\PostAttachment $body  (required)
+     * @param  \Paqtcom\Simplicate\Model\PostAttachment $body  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -547,9 +547,9 @@ class TimelineApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultTimelineMessages
+     * @return \Paqtcom\Simplicate\Model\RestResultTimelineMessages
      */
     public function timelineMessageGet($offset = null, $limit = '5', $sort = null)
     {
@@ -567,13 +567,13 @@ class TimelineApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultTimelineMessages, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultTimelineMessages, HTTP status code, HTTP response headers (array of strings)
      */
     public function timelineMessageGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTimelineMessages';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessages';
         $request = $this->timelineMessageGetRequest($offset, $limit, $sort);
 
         try {
@@ -624,7 +624,7 @@ class TimelineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultTimelineMessages',
+                        '\Paqtcom\Simplicate\Model\RestResultTimelineMessages',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -670,7 +670,7 @@ class TimelineApi
      */
     public function timelineMessageGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTimelineMessages';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessages';
         $request = $this->timelineMessageGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -818,7 +818,7 @@ class TimelineApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -834,7 +834,7 @@ class TimelineApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1046,9 +1046,9 @@ class TimelineApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultTimelineMessage
+     * @return \Paqtcom\Simplicate\Model\RestResultTimelineMessage
      */
     public function timelineMessageIdGet($id)
     {
@@ -1064,13 +1064,13 @@ class TimelineApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultTimelineMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultTimelineMessage, HTTP status code, HTTP response headers (array of strings)
      */
     public function timelineMessageIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTimelineMessage';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessage';
         $request = $this->timelineMessageIdGetRequest($id);
 
         try {
@@ -1121,7 +1121,7 @@ class TimelineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultTimelineMessage',
+                        '\Paqtcom\Simplicate\Model\RestResultTimelineMessage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1163,7 +1163,7 @@ class TimelineApi
      */
     public function timelineMessageIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTimelineMessage';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessage';
         $request = $this->timelineMessageIdGetRequest($id);
 
         return $this->client
@@ -1310,9 +1310,9 @@ class TimelineApi
      *
      * Add a new timeline message
      *
-     * @param  \Swagger\Client\Model\PostMessage $body Timeline message that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMessage $body Timeline message that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1326,9 +1326,9 @@ class TimelineApi
      *
      * Add a new timeline message
      *
-     * @param  \Swagger\Client\Model\PostMessage $body Timeline message that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMessage $body Timeline message that needs to be added (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1378,7 +1378,7 @@ class TimelineApi
      *
      * Add a new timeline message
      *
-     * @param  \Swagger\Client\Model\PostMessage $body Timeline message that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMessage $body Timeline message that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1398,7 +1398,7 @@ class TimelineApi
      *
      * Add a new timeline message
      *
-     * @param  \Swagger\Client\Model\PostMessage $body Timeline message that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMessage $body Timeline message that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1434,7 +1434,7 @@ class TimelineApi
     /**
      * Create request for operation 'timelineMessagePost'
      *
-     * @param  \Swagger\Client\Model\PostMessage $body Timeline message that needs to be added (required)
+     * @param  \Paqtcom\Simplicate\Model\PostMessage $body Timeline message that needs to be added (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1536,9 +1536,9 @@ class TimelineApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultTimelineMessageTypes
+     * @return \Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes
      */
     public function timelineMessagetypeGet($offset = null, $limit = '5', $sort = null)
     {
@@ -1556,13 +1556,13 @@ class TimelineApi
      * @param  int $limit The limit of max allowed results (optional, default to 5)
      * @param  string $sort Sort the result by column name (optional)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultTimelineMessageTypes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes, HTTP status code, HTTP response headers (array of strings)
      */
     public function timelineMessagetypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTimelineMessageTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes';
         $request = $this->timelineMessagetypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -1613,7 +1613,7 @@ class TimelineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultTimelineMessageTypes',
+                        '\Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1659,7 +1659,7 @@ class TimelineApi
      */
     public function timelineMessagetypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTimelineMessageTypes';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes';
         $request = $this->timelineMessagetypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1807,9 +1807,9 @@ class TimelineApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\RestResultTimelineMessageType
+     * @return \Paqtcom\Simplicate\Model\RestResultTimelineMessageType
      */
     public function timelineMessagetypeIdGet($id)
     {
@@ -1825,13 +1825,13 @@ class TimelineApi
      *
      * @param  string $id The template&#39;s id (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Paqtcom\Simplicate\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\RestResultTimelineMessageType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Paqtcom\Simplicate\Model\RestResultTimelineMessageType, HTTP status code, HTTP response headers (array of strings)
      */
     public function timelineMessagetypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTimelineMessageType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessageType';
         $request = $this->timelineMessagetypeIdGetRequest($id);
 
         try {
@@ -1882,7 +1882,7 @@ class TimelineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\RestResultTimelineMessageType',
+                        '\Paqtcom\Simplicate\Model\RestResultTimelineMessageType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1924,7 +1924,7 @@ class TimelineApi
      */
     public function timelineMessagetypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Swagger\Client\Model\RestResultTimelineMessageType';
+        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessageType';
         $request = $this->timelineMessagetypeIdGetRequest($id);
 
         return $this->client

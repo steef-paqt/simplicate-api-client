@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * TimetableWeek Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,13 +58,13 @@ class TimetableWeek implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'day_1' => '\Swagger\Client\Model\TimetableWeekDay',
-        'day_2' => '\Swagger\Client\Model\TimetableWeekDay',
-        'day_3' => '\Swagger\Client\Model\TimetableWeekDay',
-        'day_4' => '\Swagger\Client\Model\TimetableWeekDay',
-        'day_5' => '\Swagger\Client\Model\TimetableWeekDay',
-        'day_6' => '\Swagger\Client\Model\TimetableWeekDay',
-        'day_7' => '\Swagger\Client\Model\TimetableWeekDay',
+        'day_1' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
+        'day_2' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
+        'day_3' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
+        'day_4' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
+        'day_5' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
+        'day_6' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
+        'day_7' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
     ];
 
     /**
@@ -239,7 +239,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     /**
      * Gets day_1
      *
-     * @return \Swagger\Client\Model\TimetableWeekDay
+     * @return \Paqtcom\Simplicate\Model\TimetableWeekDay
      */
     public function getDay1()
     {
@@ -249,7 +249,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     /**
      * Sets day_1
      *
-     * @param \Swagger\Client\Model\TimetableWeekDay $day_1 day_1
+     * @param \Paqtcom\Simplicate\Model\TimetableWeekDay $day_1 day_1
      *
      * @return $this
      */
@@ -263,7 +263,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     /**
      * Gets day_2
      *
-     * @return \Swagger\Client\Model\TimetableWeekDay
+     * @return \Paqtcom\Simplicate\Model\TimetableWeekDay
      */
     public function getDay2()
     {
@@ -273,7 +273,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     /**
      * Sets day_2
      *
-     * @param \Swagger\Client\Model\TimetableWeekDay $day_2 day_2
+     * @param \Paqtcom\Simplicate\Model\TimetableWeekDay $day_2 day_2
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     /**
      * Gets day_3
      *
-     * @return \Swagger\Client\Model\TimetableWeekDay
+     * @return \Paqtcom\Simplicate\Model\TimetableWeekDay
      */
     public function getDay3()
     {
@@ -297,7 +297,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     /**
      * Sets day_3
      *
-     * @param \Swagger\Client\Model\TimetableWeekDay $day_3 day_3
+     * @param \Paqtcom\Simplicate\Model\TimetableWeekDay $day_3 day_3
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     /**
      * Gets day_4
      *
-     * @return \Swagger\Client\Model\TimetableWeekDay
+     * @return \Paqtcom\Simplicate\Model\TimetableWeekDay
      */
     public function getDay4()
     {
@@ -321,7 +321,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     /**
      * Sets day_4
      *
-     * @param \Swagger\Client\Model\TimetableWeekDay $day_4 day_4
+     * @param \Paqtcom\Simplicate\Model\TimetableWeekDay $day_4 day_4
      *
      * @return $this
      */
@@ -335,7 +335,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     /**
      * Gets day_5
      *
-     * @return \Swagger\Client\Model\TimetableWeekDay
+     * @return \Paqtcom\Simplicate\Model\TimetableWeekDay
      */
     public function getDay5()
     {
@@ -345,7 +345,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     /**
      * Sets day_5
      *
-     * @param \Swagger\Client\Model\TimetableWeekDay $day_5 day_5
+     * @param \Paqtcom\Simplicate\Model\TimetableWeekDay $day_5 day_5
      *
      * @return $this
      */
@@ -359,7 +359,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     /**
      * Gets day_6
      *
-     * @return \Swagger\Client\Model\TimetableWeekDay
+     * @return \Paqtcom\Simplicate\Model\TimetableWeekDay
      */
     public function getDay6()
     {
@@ -369,7 +369,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     /**
      * Sets day_6
      *
-     * @param \Swagger\Client\Model\TimetableWeekDay $day_6 day_6
+     * @param \Paqtcom\Simplicate\Model\TimetableWeekDay $day_6 day_6
      *
      * @return $this
      */
@@ -383,7 +383,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     /**
      * Gets day_7
      *
-     * @return \Swagger\Client\Model\TimetableWeekDay
+     * @return \Paqtcom\Simplicate\Model\TimetableWeekDay
      */
     public function getDay7()
     {
@@ -393,7 +393,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     /**
      * Sets day_7
      *
-     * @param \Swagger\Client\Model\TimetableWeekDay $day_7 day_7
+     * @param \Paqtcom\Simplicate\Model\TimetableWeekDay $day_7 day_7
      *
      * @return $this
      */

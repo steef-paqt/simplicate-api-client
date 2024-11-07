@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * PostHours Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -63,7 +63,7 @@ class PostHours implements ModelInterface, ArrayAccess
         'projectservice_id' => 'string',
         'type_id' => 'string',
         'approvalstatus_id' => 'string',
-        'external_item' => '\Swagger\Client\Model\PostCalendarItem',
+        'external_item' => '\Paqtcom\Simplicate\Model\PostCalendarItem',
         'assignment_id' => 'string',
         'address_id' => 'string',
         'hours' => 'float',
@@ -72,11 +72,11 @@ class PostHours implements ModelInterface, ArrayAccess
         'end_date' => 'string',
         'is_time_defined' => 'bool',
         'is_recurring' => 'bool',
-        'recurrence' => '\Swagger\Client\Model\Recurrence',
+        'recurrence' => '\Paqtcom\Simplicate\Model\Recurrence',
         'is_external' => 'bool',
         'billable' => 'bool',
         'note' => 'string',
-        'address' => '\Swagger\Client\Model\Address',
+        'address' => '\Paqtcom\Simplicate\Model\Address',
         'should_sync_to_cronofy' => 'bool',
         'source' => 'string',
     ];
@@ -469,7 +469,7 @@ class PostHours implements ModelInterface, ArrayAccess
     /**
      * Gets external_item
      *
-     * @return \Swagger\Client\Model\PostCalendarItem
+     * @return \Paqtcom\Simplicate\Model\PostCalendarItem
      */
     public function getExternalItem()
     {
@@ -479,7 +479,7 @@ class PostHours implements ModelInterface, ArrayAccess
     /**
      * Sets external_item
      *
-     * @param \Swagger\Client\Model\PostCalendarItem $external_item external_item
+     * @param \Paqtcom\Simplicate\Model\PostCalendarItem $external_item external_item
      *
      * @return $this
      */
@@ -685,7 +685,7 @@ class PostHours implements ModelInterface, ArrayAccess
     /**
      * Gets recurrence
      *
-     * @return \Swagger\Client\Model\Recurrence
+     * @return \Paqtcom\Simplicate\Model\Recurrence
      */
     public function getRecurrence()
     {
@@ -695,7 +695,7 @@ class PostHours implements ModelInterface, ArrayAccess
     /**
      * Sets recurrence
      *
-     * @param \Swagger\Client\Model\Recurrence $recurrence recurrence
+     * @param \Paqtcom\Simplicate\Model\Recurrence $recurrence recurrence
      *
      * @return $this
      */
@@ -781,7 +781,7 @@ class PostHours implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \Swagger\Client\Model\Address
+     * @return \Paqtcom\Simplicate\Model\Address
      */
     public function getAddress()
     {
@@ -791,7 +791,7 @@ class PostHours implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \Swagger\Client\Model\Address $address address
+     * @param \Paqtcom\Simplicate\Model\Address $address address
      *
      * @return $this
      */

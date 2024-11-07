@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * GetWorkflow Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,14 +59,14 @@ class GetWorkflow implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'defaultworkflow' => '\Swagger\Client\Model\GetSimpleDefaultWorkflow',
-        'current_task' => '\Swagger\Client\Model\CurrentTask',
-        'actions' => '\Swagger\Client\Model\GetDefaultAction[]',
-        'linked_to' => '\Swagger\Client\Model\LinkedTo[]',
+        'defaultworkflow' => '\Paqtcom\Simplicate\Model\GetSimpleDefaultWorkflow',
+        'current_task' => '\Paqtcom\Simplicate\Model\CurrentTask',
+        'actions' => '\Paqtcom\Simplicate\Model\GetDefaultAction[]',
+        'linked_to' => '\Paqtcom\Simplicate\Model\LinkedTo[]',
         'filename' => 'string',
-        'attachments' => '\Swagger\Client\Model\GetDocument[]',
-        'comments' => '\Swagger\Client\Model\Comment[]',
-        'created_by' => '\Swagger\Client\Model\CreatedBy',
+        'attachments' => '\Paqtcom\Simplicate\Model\GetDocument[]',
+        'comments' => '\Paqtcom\Simplicate\Model\Comment[]',
+        'created_by' => '\Paqtcom\Simplicate\Model\CreatedBy',
         'created_at' => 'string',
         'updated_at' => 'string',
         'title' => 'string',
@@ -305,7 +305,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     /**
      * Gets defaultworkflow
      *
-     * @return \Swagger\Client\Model\GetSimpleDefaultWorkflow
+     * @return \Paqtcom\Simplicate\Model\GetSimpleDefaultWorkflow
      */
     public function getDefaultworkflow()
     {
@@ -315,7 +315,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     /**
      * Sets defaultworkflow
      *
-     * @param \Swagger\Client\Model\GetSimpleDefaultWorkflow $defaultworkflow defaultworkflow
+     * @param \Paqtcom\Simplicate\Model\GetSimpleDefaultWorkflow $defaultworkflow defaultworkflow
      *
      * @return $this
      */
@@ -329,7 +329,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     /**
      * Gets current_task
      *
-     * @return \Swagger\Client\Model\CurrentTask
+     * @return \Paqtcom\Simplicate\Model\CurrentTask
      */
     public function getCurrentTask()
     {
@@ -339,7 +339,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     /**
      * Sets current_task
      *
-     * @param \Swagger\Client\Model\CurrentTask $current_task current_task
+     * @param \Paqtcom\Simplicate\Model\CurrentTask $current_task current_task
      *
      * @return $this
      */
@@ -353,7 +353,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     /**
      * Gets actions
      *
-     * @return \Swagger\Client\Model\GetDefaultAction[]
+     * @return \Paqtcom\Simplicate\Model\GetDefaultAction[]
      */
     public function getActions()
     {
@@ -363,7 +363,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     /**
      * Sets actions
      *
-     * @param \Swagger\Client\Model\GetDefaultAction[] $actions actions
+     * @param \Paqtcom\Simplicate\Model\GetDefaultAction[] $actions actions
      *
      * @return $this
      */
@@ -377,7 +377,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     /**
      * Gets linked_to
      *
-     * @return \Swagger\Client\Model\LinkedTo[]
+     * @return \Paqtcom\Simplicate\Model\LinkedTo[]
      */
     public function getLinkedTo()
     {
@@ -387,7 +387,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     /**
      * Sets linked_to
      *
-     * @param \Swagger\Client\Model\LinkedTo[] $linked_to linked_to
+     * @param \Paqtcom\Simplicate\Model\LinkedTo[] $linked_to linked_to
      *
      * @return $this
      */
@@ -425,7 +425,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     /**
      * Gets attachments
      *
-     * @return \Swagger\Client\Model\GetDocument[]
+     * @return \Paqtcom\Simplicate\Model\GetDocument[]
      */
     public function getAttachments()
     {
@@ -435,7 +435,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     /**
      * Sets attachments
      *
-     * @param \Swagger\Client\Model\GetDocument[] $attachments attachments
+     * @param \Paqtcom\Simplicate\Model\GetDocument[] $attachments attachments
      *
      * @return $this
      */
@@ -449,7 +449,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     /**
      * Gets comments
      *
-     * @return \Swagger\Client\Model\Comment[]
+     * @return \Paqtcom\Simplicate\Model\Comment[]
      */
     public function getComments()
     {
@@ -459,7 +459,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     /**
      * Sets comments
      *
-     * @param \Swagger\Client\Model\Comment[] $comments comments
+     * @param \Paqtcom\Simplicate\Model\Comment[] $comments comments
      *
      * @return $this
      */
@@ -473,7 +473,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     /**
      * Gets created_by
      *
-     * @return \Swagger\Client\Model\CreatedBy
+     * @return \Paqtcom\Simplicate\Model\CreatedBy
      */
     public function getCreatedBy()
     {
@@ -483,7 +483,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     /**
      * Sets created_by
      *
-     * @param \Swagger\Client\Model\CreatedBy $created_by created_by
+     * @param \Paqtcom\Simplicate\Model\CreatedBy $created_by created_by
      *
      * @return $this
      */

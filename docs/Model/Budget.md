@@ -4,9 +4,9 @@
 
  Name      | Type                                                    | Description | Notes      
 -----------|---------------------------------------------------------|-------------|------------
- **hours** | [**\Swagger\Client\Model\BudgetHours**](BudgetHours.md) |             | [optional] 
- **costs** | [**\Swagger\Client\Model\BudgetCosts**](BudgetCosts.md) |             | [optional] 
- **total** | [**\Swagger\Client\Model\BudgetTotal**](BudgetTotal.md) |             | [optional] 
+ **hours** | [**\Paqtcom\Simplicate\Model\BudgetHours**](BudgetHours.md) |             | [optional] 
+ **costs** | [**\Paqtcom\Simplicate\Model\BudgetCosts**](BudgetCosts.md) |             | [optional] 
+ **total** | [**\Paqtcom\Simplicate\Model\BudgetTotal**](BudgetTotal.md) |             | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

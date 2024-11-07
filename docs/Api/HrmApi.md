@@ -1,58 +1,58 @@
-# Swagger\Client\HRMApi
+# Paqtcom\Simplicate\HrmApi
 
 All URIs are relative to *http://localhost/api/v2*
 
  Method                                                                               | HTTP request                                | Description                                                
 --------------------------------------------------------------------------------------|---------------------------------------------|------------------------------------------------------------
- [**hrmAbsenceGet**](HRMApi.md#hrmAbsenceGet)                                         | **GET** /hrm/absence                        | Fetches all absence for employees                          
- [**hrmAbsenceIdDelete**](HRMApi.md#hrmAbsenceIdDelete)                               | **DELETE** /hrm/absence/{id}                | Deletes the absence for the given id                       
- [**hrmAbsenceIdGet**](HRMApi.md#hrmAbsenceIdGet)                                     | **GET** /hrm/absence/{id}                   | Fetches a single absence by its id                         
- [**hrmAbsenceIdPut**](HRMApi.md#hrmAbsenceIdPut)                                     | **PUT** /hrm/absence/{id}                   | Updates an absence for the given id                        
- [**hrmAbsencePost**](HRMApi.md#hrmAbsencePost)                                       | **POST** /hrm/absence                       | Add a new absence entity                                   
- [**hrmAbsencetypeGet**](HRMApi.md#hrmAbsencetypeGet)                                 | **GET** /hrm/absencetype                    | Fetches all absence types                                  
- [**hrmAbsencetypeIdGet**](HRMApi.md#hrmAbsencetypeIdGet)                             | **GET** /hrm/absencetype/{id}               | Fetches a single absence type by absence type id           
- [**hrmCivilstatusGet**](HRMApi.md#hrmCivilstatusGet)                                 | **GET** /hrm/civilstatus                    | Fetches all available civil statuses                       
- [**hrmCivilstatusIdGet**](HRMApi.md#hrmCivilstatusIdGet)                             | **GET** /hrm/civilstatus/{id}               | Fetches a single contract type by id                       
- [**hrmContractGet**](HRMApi.md#hrmContractGet)                                       | **GET** /hrm/contract                       | Fetches all contracts                                      
- [**hrmContractIdGet**](HRMApi.md#hrmContractIdGet)                                   | **GET** /hrm/contract/{id}                  | Fetches a single contract by id                            
- [**hrmContracttypeGet**](HRMApi.md#hrmContracttypeGet)                               | **GET** /hrm/contracttype                   | Fetches all available contract types                       
- [**hrmContracttypeIdGet**](HRMApi.md#hrmContracttypeIdGet)                           | **GET** /hrm/contracttype/{id}              | Fetches a single contract type by id                       
- [**hrmDocumentGet**](HRMApi.md#hrmDocumentGet)                                       | **GET** /hrm/document                       | Fetches all available documents for HRM                    
- [**hrmDocumentIdDelete**](HRMApi.md#hrmDocumentIdDelete)                             | **DELETE** /hrm/document/{id}               | Deletes the document with the given id                     
- [**hrmDocumentIdGet**](HRMApi.md#hrmDocumentIdGet)                                   | **GET** /hrm/document/{id}                  | Fetches a single document for HRM by its id                
- [**hrmDocumentPost**](HRMApi.md#hrmDocumentPost)                                     | **POST** /hrm/document                      | create a document                                          
- [**hrmDocumentPut**](HRMApi.md#hrmDocumentPut)                                       | **PUT** /hrm/document                       | update a document                                          
- [**hrmDocumenttypeGet**](HRMApi.md#hrmDocumenttypeGet)                               | **GET** /hrm/documenttype                   | Fetches all available document types for HRM               
- [**hrmDocumenttypeIdGet**](HRMApi.md#hrmDocumenttypeIdGet)                           | **GET** /hrm/documenttype/{id}              | Fetches a single document type for HRM by its id           
- [**hrmEmployeeGet**](HRMApi.md#hrmEmployeeGet)                                       | **GET** /hrm/employee                       | Fetches all employees                                      
- [**hrmEmployeeIdGet**](HRMApi.md#hrmEmployeeIdGet)                                   | **GET** /hrm/employee/{id}                  | Fetches a single employee by id                            
- [**hrmEmployeeIdPut**](HRMApi.md#hrmEmployeeIdPut)                                   | **PUT** /hrm/employee/{id}                  | Updates an existing employee                               
- [**hrmEmployeePost**](HRMApi.md#hrmEmployeePost)                                     | **POST** /hrm/employee                      | Add a new employee                                         
- [**hrmEmployeecustomfieldgroupsGet**](HRMApi.md#hrmEmployeecustomfieldgroupsGet)     | **GET** /hrm/employeecustomfieldgroups      | Fetches all custom field groups available for employees    
- [**hrmEmployeecustomfieldgroupsIdGet**](HRMApi.md#hrmEmployeecustomfieldgroupsIdGet) | **GET** /hrm/employeecustomfieldgroups/{id} | Fetches a single custom field group available for employee 
- [**hrmEmployeecustomfieldsGet**](HRMApi.md#hrmEmployeecustomfieldsGet)               | **GET** /hrm/employeecustomfields           | Fetches all custom fields available for employees          
- [**hrmEmployeecustomfieldsIdGet**](HRMApi.md#hrmEmployeecustomfieldsIdGet)           | **GET** /hrm/employeecustomfields/{id}      | Fetches a single custom field available for employee       
- [**hrmEmployeetypeGet**](HRMApi.md#hrmEmployeetypeGet)                               | **GET** /hrm/employeetype                   | Fetches all available employee types                       
- [**hrmEmployeetypeIdGet**](HRMApi.md#hrmEmployeetypeIdGet)                           | **GET** /hrm/employeetype/{id}              | Fetches a single employee type by id                       
- [**hrmEmploymenttypeGet**](HRMApi.md#hrmEmploymenttypeGet)                           | **GET** /hrm/employmenttype                 | Fetches all available contract types                       
- [**hrmEmploymenttypeIdGet**](HRMApi.md#hrmEmploymenttypeIdGet)                       | **GET** /hrm/employmenttype/{id}            | Fetches a single contract type by id                       
- [**hrmLeaveGet**](HRMApi.md#hrmLeaveGet)                                             | **GET** /hrm/leave                          | Fetches all leave for employees                            
- [**hrmLeaveIdGet**](HRMApi.md#hrmLeaveIdGet)                                         | **GET** /hrm/leave/{id}                     | Fetches a single leave by its id                           
- [**hrmLeaveIdPut**](HRMApi.md#hrmLeaveIdPut)                                         | **PUT** /hrm/leave/{id}                     | Updates an leave for the given id                          
- [**hrmLeavePost**](HRMApi.md#hrmLeavePost)                                           | **POST** /hrm/leave                         | Add a new leave entity                                     
- [**hrmLeavebalanceGet**](HRMApi.md#hrmLeavebalanceGet)                               | **GET** /hrm/leavebalance                   | Fetches all leave balances for employees                   
- [**hrmLeavetypeGet**](HRMApi.md#hrmLeavetypeGet)                                     | **GET** /hrm/leavetype                      | Fetches all leave types                                    
- [**hrmLeavetypeIdGet**](HRMApi.md#hrmLeavetypeIdGet)                                 | **GET** /hrm/leavetype/{id}                 | Fetches a single leave type by leave type id               
- [**hrmTeamGet**](HRMApi.md#hrmTeamGet)                                               | **GET** /hrm/team                           | Fetches all teams                                          
- [**hrmTeamIdGet**](HRMApi.md#hrmTeamIdGet)                                           | **GET** /hrm/team/{id}                      | Fetches a single team by id                                
- [**hrmTimetableGet**](HRMApi.md#hrmTimetableGet)                                     | **GET** /hrm/timetable                      | Fetches all available timetables                           
- [**hrmTimetableIdDelete**](HRMApi.md#hrmTimetableIdDelete)                           | **DELETE** /hrm/timetable/{id}              | Deletes the timetable with given id                        
- [**hrmTimetableIdPut**](HRMApi.md#hrmTimetableIdPut)                                 | **PUT** /hrm/timetable/{id}                 | Updates an existing timetable                              
- [**hrmTimetablePost**](HRMApi.md#hrmTimetablePost)                                   | **POST** /hrm/timetable                     | Add a new timetable                                        
+ [**hrmAbsenceGet**](HrmApi.md#hrmAbsenceGet)                                         | **GET** /hrm/absence                        | Fetches all absence for employees                          
+ [**hrmAbsenceIdDelete**](HrmApi.md#hrmAbsenceIdDelete)                               | **DELETE** /hrm/absence/{id}                | Deletes the absence for the given id                       
+ [**hrmAbsenceIdGet**](HrmApi.md#hrmAbsenceIdGet)                                     | **GET** /hrm/absence/{id}                   | Fetches a single absence by its id                         
+ [**hrmAbsenceIdPut**](HrmApi.md#hrmAbsenceIdPut)                                     | **PUT** /hrm/absence/{id}                   | Updates an absence for the given id                        
+ [**hrmAbsencePost**](HrmApi.md#hrmAbsencePost)                                       | **POST** /hrm/absence                       | Add a new absence entity                                   
+ [**hrmAbsencetypeGet**](HrmApi.md#hrmAbsencetypeGet)                                 | **GET** /hrm/absencetype                    | Fetches all absence types                                  
+ [**hrmAbsencetypeIdGet**](HrmApi.md#hrmAbsencetypeIdGet)                             | **GET** /hrm/absencetype/{id}               | Fetches a single absence type by absence type id           
+ [**hrmCivilstatusGet**](HrmApi.md#hrmCivilstatusGet)                                 | **GET** /hrm/civilstatus                    | Fetches all available civil statuses                       
+ [**hrmCivilstatusIdGet**](HrmApi.md#hrmCivilstatusIdGet)                             | **GET** /hrm/civilstatus/{id}               | Fetches a single contract type by id                       
+ [**hrmContractGet**](HrmApi.md#hrmContractGet)                                       | **GET** /hrm/contract                       | Fetches all contracts                                      
+ [**hrmContractIdGet**](HrmApi.md#hrmContractIdGet)                                   | **GET** /hrm/contract/{id}                  | Fetches a single contract by id                            
+ [**hrmContracttypeGet**](HrmApi.md#hrmContracttypeGet)                               | **GET** /hrm/contracttype                   | Fetches all available contract types                       
+ [**hrmContracttypeIdGet**](HrmApi.md#hrmContracttypeIdGet)                           | **GET** /hrm/contracttype/{id}              | Fetches a single contract type by id                       
+ [**hrmDocumentGet**](HrmApi.md#hrmDocumentGet)                                       | **GET** /hrm/document                       | Fetches all available documents for HRM                    
+ [**hrmDocumentIdDelete**](HrmApi.md#hrmDocumentIdDelete)                             | **DELETE** /hrm/document/{id}               | Deletes the document with the given id                     
+ [**hrmDocumentIdGet**](HrmApi.md#hrmDocumentIdGet)                                   | **GET** /hrm/document/{id}                  | Fetches a single document for HRM by its id                
+ [**hrmDocumentPost**](HrmApi.md#hrmDocumentPost)                                     | **POST** /hrm/document                      | create a document                                          
+ [**hrmDocumentPut**](HrmApi.md#hrmDocumentPut)                                       | **PUT** /hrm/document                       | update a document                                          
+ [**hrmDocumenttypeGet**](HrmApi.md#hrmDocumenttypeGet)                               | **GET** /hrm/documenttype                   | Fetches all available document types for HRM               
+ [**hrmDocumenttypeIdGet**](HrmApi.md#hrmDocumenttypeIdGet)                           | **GET** /hrm/documenttype/{id}              | Fetches a single document type for HRM by its id           
+ [**hrmEmployeeGet**](HrmApi.md#hrmEmployeeGet)                                       | **GET** /hrm/employee                       | Fetches all employees                                      
+ [**hrmEmployeeIdGet**](HrmApi.md#hrmEmployeeIdGet)                                   | **GET** /hrm/employee/{id}                  | Fetches a single employee by id                            
+ [**hrmEmployeeIdPut**](HrmApi.md#hrmEmployeeIdPut)                                   | **PUT** /hrm/employee/{id}                  | Updates an existing employee                               
+ [**hrmEmployeePost**](HrmApi.md#hrmEmployeePost)                                     | **POST** /hrm/employee                      | Add a new employee                                         
+ [**hrmEmployeecustomfieldgroupsGet**](HrmApi.md#hrmEmployeecustomfieldgroupsGet)     | **GET** /hrm/employeecustomfieldgroups      | Fetches all custom field groups available for employees    
+ [**hrmEmployeecustomfieldgroupsIdGet**](HrmApi.md#hrmEmployeecustomfieldgroupsIdGet) | **GET** /hrm/employeecustomfieldgroups/{id} | Fetches a single custom field group available for employee 
+ [**hrmEmployeecustomfieldsGet**](HrmApi.md#hrmEmployeecustomfieldsGet)               | **GET** /hrm/employeecustomfields           | Fetches all custom fields available for employees          
+ [**hrmEmployeecustomfieldsIdGet**](HrmApi.md#hrmEmployeecustomfieldsIdGet)           | **GET** /hrm/employeecustomfields/{id}      | Fetches a single custom field available for employee       
+ [**hrmEmployeetypeGet**](HrmApi.md#hrmEmployeetypeGet)                               | **GET** /hrm/employeetype                   | Fetches all available employee types                       
+ [**hrmEmployeetypeIdGet**](HrmApi.md#hrmEmployeetypeIdGet)                           | **GET** /hrm/employeetype/{id}              | Fetches a single employee type by id                       
+ [**hrmEmploymenttypeGet**](HrmApi.md#hrmEmploymenttypeGet)                           | **GET** /hrm/employmenttype                 | Fetches all available contract types                       
+ [**hrmEmploymenttypeIdGet**](HrmApi.md#hrmEmploymenttypeIdGet)                       | **GET** /hrm/employmenttype/{id}            | Fetches a single contract type by id                       
+ [**hrmLeaveGet**](HrmApi.md#hrmLeaveGet)                                             | **GET** /hrm/leave                          | Fetches all leave for employees                            
+ [**hrmLeaveIdGet**](HrmApi.md#hrmLeaveIdGet)                                         | **GET** /hrm/leave/{id}                     | Fetches a single leave by its id                           
+ [**hrmLeaveIdPut**](HrmApi.md#hrmLeaveIdPut)                                         | **PUT** /hrm/leave/{id}                     | Updates an leave for the given id                          
+ [**hrmLeavePost**](HrmApi.md#hrmLeavePost)                                           | **POST** /hrm/leave                         | Add a new leave entity                                     
+ [**hrmLeavebalanceGet**](HrmApi.md#hrmLeavebalanceGet)                               | **GET** /hrm/leavebalance                   | Fetches all leave balances for employees                   
+ [**hrmLeavetypeGet**](HrmApi.md#hrmLeavetypeGet)                                     | **GET** /hrm/leavetype                      | Fetches all leave types                                    
+ [**hrmLeavetypeIdGet**](HrmApi.md#hrmLeavetypeIdGet)                                 | **GET** /hrm/leavetype/{id}                 | Fetches a single leave type by leave type id               
+ [**hrmTeamGet**](HrmApi.md#hrmTeamGet)                                               | **GET** /hrm/team                           | Fetches all teams                                          
+ [**hrmTeamIdGet**](HrmApi.md#hrmTeamIdGet)                                           | **GET** /hrm/team/{id}                      | Fetches a single team by id                                
+ [**hrmTimetableGet**](HrmApi.md#hrmTimetableGet)                                     | **GET** /hrm/timetable                      | Fetches all available timetables                           
+ [**hrmTimetableIdDelete**](HrmApi.md#hrmTimetableIdDelete)                           | **DELETE** /hrm/timetable/{id}              | Deletes the timetable with given id                        
+ [**hrmTimetableIdPut**](HrmApi.md#hrmTimetableIdPut)                                 | **PUT** /hrm/timetable/{id}                 | Updates an existing timetable                              
+ [**hrmTimetablePost**](HrmApi.md#hrmTimetablePost)                                   | **POST** /hrm/timetable                     | Add a new timetable                                        
 
 # **hrmAbsenceGet**
 
-> \Swagger\Client\Model\RestResultAbsenceMultiple hrmAbsenceGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultAbsenceMultiple hrmAbsenceGet($offset, $limit, $sort)
 
 Fetches all absence for employees
 
@@ -62,7 +62,7 @@ Fetches all absence for employees
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -75,7 +75,7 @@ try {
     $result = $apiInstance->hrmAbsenceGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmAbsenceGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmAbsenceGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -90,7 +90,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultAbsenceMultiple**](../Model/RestResultAbsenceMultiple.md)
+[**\Paqtcom\Simplicate\Model\RestResultAbsenceMultiple**](../Model/RestResultAbsenceMultiple.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ Deletes the absence for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -125,7 +125,7 @@ $id = "id_example"; // string | The template's id
 try {
     $apiInstance->hrmAbsenceIdDelete($id);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmAbsenceIdDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmAbsenceIdDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -153,7 +153,7 @@ No authorization required
 
 # **hrmAbsenceIdGet**
 
-> \Swagger\Client\Model\RestResultAbsence hrmAbsenceIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultAbsence hrmAbsenceIdGet($id)
 
 Fetches a single absence by its id
 
@@ -163,7 +163,7 @@ Fetches a single absence by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -174,7 +174,7 @@ try {
     $result = $apiInstance->hrmAbsenceIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmAbsenceIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmAbsenceIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -187,7 +187,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultAbsence**](../Model/RestResultAbsence.md)
+[**\Paqtcom\Simplicate\Model\RestResultAbsence**](../Model/RestResultAbsence.md)
 
 ### Authorization
 
@@ -212,18 +212,18 @@ Updates an absence for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostAbsence(); // \Swagger\Client\Model\PostAbsence | Absence object containing data that with the new values
+$body = new \Paqtcom\Simplicate\Model\PostAbsence(); // \Paqtcom\Simplicate\Model\PostAbsence | Absence object containing data that with the new values
 
 try {
     $apiInstance->hrmAbsenceIdPut($id, $body);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmAbsenceIdPut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmAbsenceIdPut: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -233,7 +233,7 @@ try {
  Name     | Type                                                             | Description                                             | Notes 
 ----------|------------------------------------------------------------------|---------------------------------------------------------|-------
  **id**   | **string**                                                       | The template&#39;s id                                   |
- **body** | [**\Swagger\Client\Model\PostAbsence**](../Model/PostAbsence.md) | Absence object containing data that with the new values |
+ **body** | [**\Paqtcom\Simplicate\Model\PostAbsence**](../Model/PostAbsence.md) | Absence object containing data that with the new values |
 
 ### Return type
 
@@ -262,17 +262,17 @@ Add a new absence entity
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostAbsence(); // \Swagger\Client\Model\PostAbsence | absence object containing data
+$body = new \Paqtcom\Simplicate\Model\PostAbsence(); // \Paqtcom\Simplicate\Model\PostAbsence | absence object containing data
 
 try {
     $apiInstance->hrmAbsencePost($body);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmAbsencePost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmAbsencePost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -281,7 +281,7 @@ try {
 
  Name     | Type                                                             | Description                    | Notes 
 ----------|------------------------------------------------------------------|--------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostAbsence**](../Model/PostAbsence.md) | absence object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostAbsence**](../Model/PostAbsence.md) | absence object containing data |
 
 ### Return type
 
@@ -300,7 +300,7 @@ No authorization required
 
 # **hrmAbsencetypeGet**
 
-> \Swagger\Client\Model\RestResultAbsenceTypes hrmAbsencetypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultAbsenceTypes hrmAbsencetypeGet($offset, $limit, $sort)
 
 Fetches all absence types
 
@@ -310,7 +310,7 @@ Fetches all absence types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -323,7 +323,7 @@ try {
     $result = $apiInstance->hrmAbsencetypeGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmAbsencetypeGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmAbsencetypeGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -338,7 +338,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultAbsenceTypes**](../Model/RestResultAbsenceTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultAbsenceTypes**](../Model/RestResultAbsenceTypes.md)
 
 ### Authorization
 
@@ -353,7 +353,7 @@ No authorization required
 
 # **hrmAbsencetypeIdGet**
 
-> \Swagger\Client\Model\RestResultAbsenceType hrmAbsencetypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultAbsenceType hrmAbsencetypeIdGet($id)
 
 Fetches a single absence type by absence type id
 
@@ -363,7 +363,7 @@ Fetches a single absence type by absence type id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -374,7 +374,7 @@ try {
     $result = $apiInstance->hrmAbsencetypeIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmAbsencetypeIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmAbsencetypeIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -387,7 +387,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultAbsenceType**](../Model/RestResultAbsenceType.md)
+[**\Paqtcom\Simplicate\Model\RestResultAbsenceType**](../Model/RestResultAbsenceType.md)
 
 ### Authorization
 
@@ -402,7 +402,7 @@ No authorization required
 
 # **hrmCivilstatusGet**
 
-> \Swagger\Client\Model\RestResultCivilStatuses hrmCivilstatusGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCivilStatuses hrmCivilstatusGet($offset, $limit, $sort)
 
 Fetches all available civil statuses
 
@@ -412,7 +412,7 @@ Fetches all available civil statuses
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -425,7 +425,7 @@ try {
     $result = $apiInstance->hrmCivilstatusGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmCivilstatusGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmCivilstatusGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -440,7 +440,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCivilStatuses**](../Model/RestResultCivilStatuses.md)
+[**\Paqtcom\Simplicate\Model\RestResultCivilStatuses**](../Model/RestResultCivilStatuses.md)
 
 ### Authorization
 
@@ -455,7 +455,7 @@ No authorization required
 
 # **hrmCivilstatusIdGet**
 
-> \Swagger\Client\Model\RestResultCivilStatus hrmCivilstatusIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultCivilStatus hrmCivilstatusIdGet($id)
 
 Fetches a single contract type by id
 
@@ -465,7 +465,7 @@ Fetches a single contract type by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -476,7 +476,7 @@ try {
     $result = $apiInstance->hrmCivilstatusIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmCivilstatusIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmCivilstatusIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -489,7 +489,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCivilStatus**](../Model/RestResultCivilStatus.md)
+[**\Paqtcom\Simplicate\Model\RestResultCivilStatus**](../Model/RestResultCivilStatus.md)
 
 ### Authorization
 
@@ -504,7 +504,7 @@ No authorization required
 
 # **hrmContractGet**
 
-> \Swagger\Client\Model\RestResultContracts hrmContractGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultContracts hrmContractGet($offset, $limit, $sort)
 
 Fetches all contracts
 
@@ -514,7 +514,7 @@ Fetches all contracts
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -527,7 +527,7 @@ try {
     $result = $apiInstance->hrmContractGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmContractGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmContractGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -542,7 +542,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultContracts**](../Model/RestResultContracts.md)
+[**\Paqtcom\Simplicate\Model\RestResultContracts**](../Model/RestResultContracts.md)
 
 ### Authorization
 
@@ -557,7 +557,7 @@ No authorization required
 
 # **hrmContractIdGet**
 
-> \Swagger\Client\Model\RestResultContract hrmContractIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultContract hrmContractIdGet($id)
 
 Fetches a single contract by id
 
@@ -567,7 +567,7 @@ Fetches a single contract by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -578,7 +578,7 @@ try {
     $result = $apiInstance->hrmContractIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmContractIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmContractIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -591,7 +591,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultContract**](../Model/RestResultContract.md)
+[**\Paqtcom\Simplicate\Model\RestResultContract**](../Model/RestResultContract.md)
 
 ### Authorization
 
@@ -606,7 +606,7 @@ No authorization required
 
 # **hrmContracttypeGet**
 
-> \Swagger\Client\Model\RestResultContractTypes hrmContracttypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultContractTypes hrmContracttypeGet($offset, $limit, $sort)
 
 Fetches all available contract types
 
@@ -616,7 +616,7 @@ Fetches all available contract types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -629,7 +629,7 @@ try {
     $result = $apiInstance->hrmContracttypeGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmContracttypeGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmContracttypeGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -644,7 +644,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultContractTypes**](../Model/RestResultContractTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultContractTypes**](../Model/RestResultContractTypes.md)
 
 ### Authorization
 
@@ -659,7 +659,7 @@ No authorization required
 
 # **hrmContracttypeIdGet**
 
-> \Swagger\Client\Model\RestResultContractType hrmContracttypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultContractType hrmContracttypeIdGet($id)
 
 Fetches a single contract type by id
 
@@ -669,7 +669,7 @@ Fetches a single contract type by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -680,7 +680,7 @@ try {
     $result = $apiInstance->hrmContracttypeIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmContracttypeIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmContracttypeIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -693,7 +693,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultContractType**](../Model/RestResultContractType.md)
+[**\Paqtcom\Simplicate\Model\RestResultContractType**](../Model/RestResultContractType.md)
 
 ### Authorization
 
@@ -708,7 +708,7 @@ No authorization required
 
 # **hrmDocumentGet**
 
-> \Swagger\Client\Model\RestResultDocuments hrmDocumentGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultDocuments hrmDocumentGet($offset, $limit, $sort)
 
 Fetches all available documents for HRM
 
@@ -718,7 +718,7 @@ Fetches all available documents for HRM
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -731,7 +731,7 @@ try {
     $result = $apiInstance->hrmDocumentGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmDocumentGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmDocumentGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -746,7 +746,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocuments**](../Model/RestResultDocuments.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocuments**](../Model/RestResultDocuments.md)
 
 ### Authorization
 
@@ -771,7 +771,7 @@ Deletes the document with the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -781,7 +781,7 @@ $id = "id_example"; // string | The template's id
 try {
     $apiInstance->hrmDocumentIdDelete($id);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmDocumentIdDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmDocumentIdDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -809,7 +809,7 @@ No authorization required
 
 # **hrmDocumentIdGet**
 
-> \Swagger\Client\Model\RestResultDocument hrmDocumentIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultDocument hrmDocumentIdGet($id)
 
 Fetches a single document for HRM by its id
 
@@ -819,7 +819,7 @@ Fetches a single document for HRM by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -830,7 +830,7 @@ try {
     $result = $apiInstance->hrmDocumentIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmDocumentIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmDocumentIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -843,7 +843,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocument**](../Model/RestResultDocument.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocument**](../Model/RestResultDocument.md)
 
 ### Authorization
 
@@ -868,17 +868,17 @@ create a document
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostDocument(); // \Swagger\Client\Model\PostDocument | Document object containing data
+$body = new \Paqtcom\Simplicate\Model\PostDocument(); // \Paqtcom\Simplicate\Model\PostDocument | Document object containing data
 
 try {
     $apiInstance->hrmDocumentPost($body);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmDocumentPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmDocumentPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -887,7 +887,7 @@ try {
 
  Name     | Type                                                               | Description                     | Notes 
 ----------|--------------------------------------------------------------------|---------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostDocument**](../Model/PostDocument.md) | Document object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostDocument**](../Model/PostDocument.md) | Document object containing data |
 
 ### Return type
 
@@ -916,17 +916,17 @@ update a document
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PutDocument(); // \Swagger\Client\Model\PutDocument | Document object containing data
+$body = new \Paqtcom\Simplicate\Model\PutDocument(); // \Paqtcom\Simplicate\Model\PutDocument | Document object containing data
 
 try {
     $apiInstance->hrmDocumentPut($body);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmDocumentPut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmDocumentPut: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -935,7 +935,7 @@ try {
 
  Name     | Type                                                             | Description                     | Notes 
 ----------|------------------------------------------------------------------|---------------------------------|-------
- **body** | [**\Swagger\Client\Model\PutDocument**](../Model/PutDocument.md) | Document object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PutDocument**](../Model/PutDocument.md) | Document object containing data |
 
 ### Return type
 
@@ -954,7 +954,7 @@ No authorization required
 
 # **hrmDocumenttypeGet**
 
-> \Swagger\Client\Model\RestResultDocumentTypes hrmDocumenttypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultDocumentTypes hrmDocumenttypeGet($offset, $limit, $sort)
 
 Fetches all available document types for HRM
 
@@ -964,7 +964,7 @@ Fetches all available document types for HRM
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -977,7 +977,7 @@ try {
     $result = $apiInstance->hrmDocumenttypeGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmDocumenttypeGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmDocumenttypeGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -992,7 +992,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocumentTypes**](../Model/RestResultDocumentTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocumentTypes**](../Model/RestResultDocumentTypes.md)
 
 ### Authorization
 
@@ -1007,7 +1007,7 @@ No authorization required
 
 # **hrmDocumenttypeIdGet**
 
-> \Swagger\Client\Model\RestResultDocumentType hrmDocumenttypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultDocumentType hrmDocumenttypeIdGet($id)
 
 Fetches a single document type for HRM by its id
 
@@ -1017,7 +1017,7 @@ Fetches a single document type for HRM by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1028,7 +1028,7 @@ try {
     $result = $apiInstance->hrmDocumenttypeIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmDocumenttypeIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmDocumenttypeIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1041,7 +1041,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultDocumentType**](../Model/RestResultDocumentType.md)
+[**\Paqtcom\Simplicate\Model\RestResultDocumentType**](../Model/RestResultDocumentType.md)
 
 ### Authorization
 
@@ -1056,7 +1056,7 @@ No authorization required
 
 # **hrmEmployeeGet**
 
-> \Swagger\Client\Model\RestResultEmployees hrmEmployeeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultEmployees hrmEmployeeGet($offset, $limit, $sort)
 
 Fetches all employees
 
@@ -1066,7 +1066,7 @@ Fetches all employees
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1079,7 +1079,7 @@ try {
     $result = $apiInstance->hrmEmployeeGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmEmployeeGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmEmployeeGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1094,7 +1094,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultEmployees**](../Model/RestResultEmployees.md)
+[**\Paqtcom\Simplicate\Model\RestResultEmployees**](../Model/RestResultEmployees.md)
 
 ### Authorization
 
@@ -1109,7 +1109,7 @@ No authorization required
 
 # **hrmEmployeeIdGet**
 
-> \Swagger\Client\Model\RestResultEmployee hrmEmployeeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultEmployee hrmEmployeeIdGet($id)
 
 Fetches a single employee by id
 
@@ -1119,7 +1119,7 @@ Fetches a single employee by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1130,7 +1130,7 @@ try {
     $result = $apiInstance->hrmEmployeeIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmEmployeeIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmEmployeeIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1143,7 +1143,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultEmployee**](../Model/RestResultEmployee.md)
+[**\Paqtcom\Simplicate\Model\RestResultEmployee**](../Model/RestResultEmployee.md)
 
 ### Authorization
 
@@ -1168,17 +1168,17 @@ Updates an existing employee
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PutEmployee(); // \Swagger\Client\Model\PutEmployee | Employee object that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\PutEmployee(); // \Paqtcom\Simplicate\Model\PutEmployee | Employee object that needs to be updated
 
 try {
     $apiInstance->hrmEmployeeIdPut($body);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmEmployeeIdPut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmEmployeeIdPut: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1187,7 +1187,7 @@ try {
 
  Name     | Type                                                             | Description                              | Notes 
 ----------|------------------------------------------------------------------|------------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PutEmployee**](../Model/PutEmployee.md) | Employee object that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\PutEmployee**](../Model/PutEmployee.md) | Employee object that needs to be updated |
 
 ### Return type
 
@@ -1216,17 +1216,17 @@ Add a new employee
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostEmployee(); // \Swagger\Client\Model\PostEmployee | Employee object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostEmployee(); // \Paqtcom\Simplicate\Model\PostEmployee | Employee object that needs to be added
 
 try {
     $apiInstance->hrmEmployeePost($body);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmEmployeePost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmEmployeePost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1235,7 +1235,7 @@ try {
 
  Name     | Type                                                               | Description                            | Notes 
 ----------|--------------------------------------------------------------------|----------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostEmployee**](../Model/PostEmployee.md) | Employee object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostEmployee**](../Model/PostEmployee.md) | Employee object that needs to be added |
 
 ### Return type
 
@@ -1254,7 +1254,7 @@ No authorization required
 
 # **hrmEmployeecustomfieldgroupsGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldGroups hrmEmployeecustomfieldgroupsGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups hrmEmployeecustomfieldgroupsGet($offset, $limit, $sort)
 
 Fetches all custom field groups available for employees
 
@@ -1264,7 +1264,7 @@ Fetches all custom field groups available for employees
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1277,7 +1277,7 @@ try {
     $result = $apiInstance->hrmEmployeecustomfieldgroupsGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmEmployeecustomfieldgroupsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmEmployeecustomfieldgroupsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1292,7 +1292,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldGroups**](../Model/RestResultCustomFieldGroups.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups**](../Model/RestResultCustomFieldGroups.md)
 
 ### Authorization
 
@@ -1307,7 +1307,7 @@ No authorization required
 
 # **hrmEmployeecustomfieldgroupsIdGet**
 
-> \Swagger\Client\Model\RestResultCustomFieldGroup hrmEmployeecustomfieldgroupsIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup hrmEmployeecustomfieldgroupsIdGet($id)
 
 Fetches a single custom field group available for employee
 
@@ -1317,7 +1317,7 @@ Fetches a single custom field group available for employee
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1328,7 +1328,7 @@ try {
     $result = $apiInstance->hrmEmployeecustomfieldgroupsIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmEmployeecustomfieldgroupsIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmEmployeecustomfieldgroupsIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1341,7 +1341,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFieldGroup**](../Model/RestResultCustomFieldGroup.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup**](../Model/RestResultCustomFieldGroup.md)
 
 ### Authorization
 
@@ -1356,7 +1356,7 @@ No authorization required
 
 # **hrmEmployeecustomfieldsGet**
 
-> \Swagger\Client\Model\RestResultCustomFields hrmEmployeecustomfieldsGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultCustomFields hrmEmployeecustomfieldsGet($offset, $limit, $sort)
 
 Fetches all custom fields available for employees
 
@@ -1366,7 +1366,7 @@ Fetches all custom fields available for employees
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1379,7 +1379,7 @@ try {
     $result = $apiInstance->hrmEmployeecustomfieldsGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmEmployeecustomfieldsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmEmployeecustomfieldsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1394,7 +1394,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomFields**](../Model/RestResultCustomFields.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomFields**](../Model/RestResultCustomFields.md)
 
 ### Authorization
 
@@ -1409,7 +1409,7 @@ No authorization required
 
 # **hrmEmployeecustomfieldsIdGet**
 
-> \Swagger\Client\Model\RestResultCustomField hrmEmployeecustomfieldsIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultCustomField hrmEmployeecustomfieldsIdGet($id)
 
 Fetches a single custom field available for employee
 
@@ -1419,7 +1419,7 @@ Fetches a single custom field available for employee
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1430,7 +1430,7 @@ try {
     $result = $apiInstance->hrmEmployeecustomfieldsIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmEmployeecustomfieldsIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmEmployeecustomfieldsIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1443,7 +1443,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultCustomField**](../Model/RestResultCustomField.md)
+[**\Paqtcom\Simplicate\Model\RestResultCustomField**](../Model/RestResultCustomField.md)
 
 ### Authorization
 
@@ -1458,7 +1458,7 @@ No authorization required
 
 # **hrmEmployeetypeGet**
 
-> \Swagger\Client\Model\RestResultEmployeeTypes hrmEmployeetypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultEmployeeTypes hrmEmployeetypeGet($offset, $limit, $sort)
 
 Fetches all available employee types
 
@@ -1468,7 +1468,7 @@ Fetches all available employee types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1481,7 +1481,7 @@ try {
     $result = $apiInstance->hrmEmployeetypeGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmEmployeetypeGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmEmployeetypeGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1496,7 +1496,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultEmployeeTypes**](../Model/RestResultEmployeeTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultEmployeeTypes**](../Model/RestResultEmployeeTypes.md)
 
 ### Authorization
 
@@ -1511,7 +1511,7 @@ No authorization required
 
 # **hrmEmployeetypeIdGet**
 
-> \Swagger\Client\Model\RestResultEmployeeType hrmEmployeetypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultEmployeeType hrmEmployeetypeIdGet($id)
 
 Fetches a single employee type by id
 
@@ -1521,7 +1521,7 @@ Fetches a single employee type by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1532,7 +1532,7 @@ try {
     $result = $apiInstance->hrmEmployeetypeIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmEmployeetypeIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmEmployeetypeIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1545,7 +1545,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultEmployeeType**](../Model/RestResultEmployeeType.md)
+[**\Paqtcom\Simplicate\Model\RestResultEmployeeType**](../Model/RestResultEmployeeType.md)
 
 ### Authorization
 
@@ -1560,7 +1560,7 @@ No authorization required
 
 # **hrmEmploymenttypeGet**
 
-> \Swagger\Client\Model\RestResultEmploymentTypes hrmEmploymenttypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultEmploymentTypes hrmEmploymenttypeGet($offset, $limit, $sort)
 
 Fetches all available contract types
 
@@ -1570,7 +1570,7 @@ Fetches all available contract types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1583,7 +1583,7 @@ try {
     $result = $apiInstance->hrmEmploymenttypeGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmEmploymenttypeGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmEmploymenttypeGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1598,7 +1598,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultEmploymentTypes**](../Model/RestResultEmploymentTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultEmploymentTypes**](../Model/RestResultEmploymentTypes.md)
 
 ### Authorization
 
@@ -1613,7 +1613,7 @@ No authorization required
 
 # **hrmEmploymenttypeIdGet**
 
-> \Swagger\Client\Model\RestResultEmploymentType hrmEmploymenttypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultEmploymentType hrmEmploymenttypeIdGet($id)
 
 Fetches a single contract type by id
 
@@ -1623,7 +1623,7 @@ Fetches a single contract type by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1634,7 +1634,7 @@ try {
     $result = $apiInstance->hrmEmploymenttypeIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmEmploymenttypeIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmEmploymenttypeIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1647,7 +1647,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultEmploymentType**](../Model/RestResultEmploymentType.md)
+[**\Paqtcom\Simplicate\Model\RestResultEmploymentType**](../Model/RestResultEmploymentType.md)
 
 ### Authorization
 
@@ -1662,7 +1662,7 @@ No authorization required
 
 # **hrmLeaveGet**
 
-> \Swagger\Client\Model\RestResultLeaveMultiple hrmLeaveGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultLeaveMultiple hrmLeaveGet($offset, $limit, $sort)
 
 Fetches all leave for employees
 
@@ -1672,7 +1672,7 @@ Fetches all leave for employees
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1685,7 +1685,7 @@ try {
     $result = $apiInstance->hrmLeaveGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmLeaveGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmLeaveGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1700,7 +1700,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultLeaveMultiple**](../Model/RestResultLeaveMultiple.md)
+[**\Paqtcom\Simplicate\Model\RestResultLeaveMultiple**](../Model/RestResultLeaveMultiple.md)
 
 ### Authorization
 
@@ -1715,7 +1715,7 @@ No authorization required
 
 # **hrmLeaveIdGet**
 
-> \Swagger\Client\Model\RestResultLeave hrmLeaveIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultLeave hrmLeaveIdGet($id)
 
 Fetches a single leave by its id
 
@@ -1725,7 +1725,7 @@ Fetches a single leave by its id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1736,7 +1736,7 @@ try {
     $result = $apiInstance->hrmLeaveIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmLeaveIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmLeaveIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1749,7 +1749,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultLeave**](../Model/RestResultLeave.md)
+[**\Paqtcom\Simplicate\Model\RestResultLeave**](../Model/RestResultLeave.md)
 
 ### Authorization
 
@@ -1774,18 +1774,18 @@ Updates an leave for the given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | The template's id
-$body = new \Swagger\Client\Model\PostLeave(); // \Swagger\Client\Model\PostLeave | Leave object containing data that with the new values
+$body = new \Paqtcom\Simplicate\Model\PostLeave(); // \Paqtcom\Simplicate\Model\PostLeave | Leave object containing data that with the new values
 
 try {
     $apiInstance->hrmLeaveIdPut($id, $body);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmLeaveIdPut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmLeaveIdPut: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1795,7 +1795,7 @@ try {
  Name     | Type                                                         | Description                                           | Notes 
 ----------|--------------------------------------------------------------|-------------------------------------------------------|-------
  **id**   | **string**                                                   | The template&#39;s id                                 |
- **body** | [**\Swagger\Client\Model\PostLeave**](../Model/PostLeave.md) | Leave object containing data that with the new values |
+ **body** | [**\Paqtcom\Simplicate\Model\PostLeave**](../Model/PostLeave.md) | Leave object containing data that with the new values |
 
 ### Return type
 
@@ -1824,17 +1824,17 @@ Add a new leave entity
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostLeave(); // \Swagger\Client\Model\PostLeave | Leave object containing data
+$body = new \Paqtcom\Simplicate\Model\PostLeave(); // \Paqtcom\Simplicate\Model\PostLeave | Leave object containing data
 
 try {
     $apiInstance->hrmLeavePost($body);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmLeavePost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmLeavePost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1843,7 +1843,7 @@ try {
 
  Name     | Type                                                         | Description                  | Notes 
 ----------|--------------------------------------------------------------|------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostLeave**](../Model/PostLeave.md) | Leave object containing data |
+ **body** | [**\Paqtcom\Simplicate\Model\PostLeave**](../Model/PostLeave.md) | Leave object containing data |
 
 ### Return type
 
@@ -1862,7 +1862,7 @@ No authorization required
 
 # **hrmLeavebalanceGet**
 
-> \Swagger\Client\Model\RestResultLeaveBalances hrmLeavebalanceGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultLeaveBalances hrmLeavebalanceGet($offset, $limit, $sort)
 
 Fetches all leave balances for employees
 
@@ -1872,7 +1872,7 @@ Fetches all leave balances for employees
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1885,7 +1885,7 @@ try {
     $result = $apiInstance->hrmLeavebalanceGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmLeavebalanceGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmLeavebalanceGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1900,7 +1900,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultLeaveBalances**](../Model/RestResultLeaveBalances.md)
+[**\Paqtcom\Simplicate\Model\RestResultLeaveBalances**](../Model/RestResultLeaveBalances.md)
 
 ### Authorization
 
@@ -1915,7 +1915,7 @@ No authorization required
 
 # **hrmLeavetypeGet**
 
-> \Swagger\Client\Model\RestResultLeaveTypes hrmLeavetypeGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultLeaveTypes hrmLeavetypeGet($offset, $limit, $sort)
 
 Fetches all leave types
 
@@ -1925,7 +1925,7 @@ Fetches all leave types
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1938,7 +1938,7 @@ try {
     $result = $apiInstance->hrmLeavetypeGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmLeavetypeGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmLeavetypeGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1953,7 +1953,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultLeaveTypes**](../Model/RestResultLeaveTypes.md)
+[**\Paqtcom\Simplicate\Model\RestResultLeaveTypes**](../Model/RestResultLeaveTypes.md)
 
 ### Authorization
 
@@ -1968,7 +1968,7 @@ No authorization required
 
 # **hrmLeavetypeIdGet**
 
-> \Swagger\Client\Model\RestResultLeaveType hrmLeavetypeIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultLeaveType hrmLeavetypeIdGet($id)
 
 Fetches a single leave type by leave type id
 
@@ -1978,7 +1978,7 @@ Fetches a single leave type by leave type id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -1989,7 +1989,7 @@ try {
     $result = $apiInstance->hrmLeavetypeIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmLeavetypeIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmLeavetypeIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2002,7 +2002,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultLeaveType**](../Model/RestResultLeaveType.md)
+[**\Paqtcom\Simplicate\Model\RestResultLeaveType**](../Model/RestResultLeaveType.md)
 
 ### Authorization
 
@@ -2017,7 +2017,7 @@ No authorization required
 
 # **hrmTeamGet**
 
-> \Swagger\Client\Model\RestResultTeams hrmTeamGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultTeams hrmTeamGet($offset, $limit, $sort)
 
 Fetches all teams
 
@@ -2027,7 +2027,7 @@ Fetches all teams
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2040,7 +2040,7 @@ try {
     $result = $apiInstance->hrmTeamGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmTeamGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmTeamGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2055,7 +2055,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultTeams**](../Model/RestResultTeams.md)
+[**\Paqtcom\Simplicate\Model\RestResultTeams**](../Model/RestResultTeams.md)
 
 ### Authorization
 
@@ -2070,7 +2070,7 @@ No authorization required
 
 # **hrmTeamIdGet**
 
-> \Swagger\Client\Model\RestResultTeam hrmTeamIdGet($id)
+> \Paqtcom\Simplicate\Model\RestResultTeam hrmTeamIdGet($id)
 
 Fetches a single team by id
 
@@ -2080,7 +2080,7 @@ Fetches a single team by id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2091,7 +2091,7 @@ try {
     $result = $apiInstance->hrmTeamIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmTeamIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmTeamIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2104,7 +2104,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultTeam**](../Model/RestResultTeam.md)
+[**\Paqtcom\Simplicate\Model\RestResultTeam**](../Model/RestResultTeam.md)
 
 ### Authorization
 
@@ -2119,7 +2119,7 @@ No authorization required
 
 # **hrmTimetableGet**
 
-> \Swagger\Client\Model\RestResultTimetables hrmTimetableGet($offset, $limit, $sort)
+> \Paqtcom\Simplicate\Model\RestResultTimetables hrmTimetableGet($offset, $limit, $sort)
 
 Fetches all available timetables
 
@@ -2129,7 +2129,7 @@ Fetches all available timetables
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2142,7 +2142,7 @@ try {
     $result = $apiInstance->hrmTimetableGet($offset, $limit, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmTimetableGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmTimetableGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2157,7 +2157,7 @@ try {
 
 ### Return type
 
-[**\Swagger\Client\Model\RestResultTimetables**](../Model/RestResultTimetables.md)
+[**\Paqtcom\Simplicate\Model\RestResultTimetables**](../Model/RestResultTimetables.md)
 
 ### Authorization
 
@@ -2182,7 +2182,7 @@ Deletes the timetable with given id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -2192,7 +2192,7 @@ $id = "id_example"; // string | The template's id
 try {
     $apiInstance->hrmTimetableIdDelete($id);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmTimetableIdDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmTimetableIdDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2230,17 +2230,17 @@ Updates an existing timetable
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PutTimetable(); // \Swagger\Client\Model\PutTimetable | Timetable object that needs to be updated
+$body = new \Paqtcom\Simplicate\Model\PutTimetable(); // \Paqtcom\Simplicate\Model\PutTimetable | Timetable object that needs to be updated
 
 try {
     $apiInstance->hrmTimetableIdPut($body);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmTimetableIdPut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmTimetableIdPut: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2249,7 +2249,7 @@ try {
 
  Name     | Type                                                               | Description                               | Notes 
 ----------|--------------------------------------------------------------------|-------------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PutTimetable**](../Model/PutTimetable.md) | Timetable object that needs to be updated |
+ **body** | [**\Paqtcom\Simplicate\Model\PutTimetable**](../Model/PutTimetable.md) | Timetable object that needs to be updated |
 
 ### Return type
 
@@ -2278,17 +2278,17 @@ Add a new timetable
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HRMApi(
+$apiInstance = new Paqtcom\Simplicate\Api\HrmApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\PostTimetable(); // \Swagger\Client\Model\PostTimetable | Timetable object that needs to be added
+$body = new \Paqtcom\Simplicate\Model\PostTimetable(); // \Paqtcom\Simplicate\Model\PostTimetable | Timetable object that needs to be added
 
 try {
     $apiInstance->hrmTimetablePost($body);
 } catch (Exception $e) {
-    echo 'Exception when calling HRMApi->hrmTimetablePost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HrmApi->hrmTimetablePost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2297,7 +2297,7 @@ try {
 
  Name     | Type                                                                 | Description                             | Notes 
 ----------|----------------------------------------------------------------------|-----------------------------------------|-------
- **body** | [**\Swagger\Client\Model\PostTimetable**](../Model/PostTimetable.md) | Timetable object that needs to be added |
+ **body** | [**\Paqtcom\Simplicate\Model\PostTimetable**](../Model/PostTimetable.md) | Timetable object that needs to be added |
 
 ### Return type
 

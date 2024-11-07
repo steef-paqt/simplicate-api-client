@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * PostWorkflow Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,10 +59,10 @@ class PostWorkflow implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'defaultworkflow_id' => 'string',
-        'created_by' => '\Swagger\Client\Model\CreatedBy',
-        'linked_to' => '\Swagger\Client\Model\LinkedTo[]',
-        'attachments' => '\Swagger\Client\Model\PostDocument[]',
-        'comments' => '\Swagger\Client\Model\Comment[]',
+        'created_by' => '\Paqtcom\Simplicate\Model\CreatedBy',
+        'linked_to' => '\Paqtcom\Simplicate\Model\LinkedTo[]',
+        'attachments' => '\Paqtcom\Simplicate\Model\PostDocument[]',
+        'comments' => '\Paqtcom\Simplicate\Model\Comment[]',
         'destination_employee_id' => 'string',
         'transfer_to_employee_id' => 'string',
         'transfer_to_message' => 'string',
@@ -287,7 +287,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
     /**
      * Gets created_by
      *
-     * @return \Swagger\Client\Model\CreatedBy
+     * @return \Paqtcom\Simplicate\Model\CreatedBy
      */
     public function getCreatedBy()
     {
@@ -297,7 +297,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
     /**
      * Sets created_by
      *
-     * @param \Swagger\Client\Model\CreatedBy $created_by created_by
+     * @param \Paqtcom\Simplicate\Model\CreatedBy $created_by created_by
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
     /**
      * Gets linked_to
      *
-     * @return \Swagger\Client\Model\LinkedTo[]
+     * @return \Paqtcom\Simplicate\Model\LinkedTo[]
      */
     public function getLinkedTo()
     {
@@ -321,7 +321,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
     /**
      * Sets linked_to
      *
-     * @param \Swagger\Client\Model\LinkedTo[] $linked_to linked_to
+     * @param \Paqtcom\Simplicate\Model\LinkedTo[] $linked_to linked_to
      *
      * @return $this
      */
@@ -335,7 +335,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
     /**
      * Gets attachments
      *
-     * @return \Swagger\Client\Model\PostDocument[]
+     * @return \Paqtcom\Simplicate\Model\PostDocument[]
      */
     public function getAttachments()
     {
@@ -345,7 +345,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
     /**
      * Sets attachments
      *
-     * @param \Swagger\Client\Model\PostDocument[] $attachments attachments
+     * @param \Paqtcom\Simplicate\Model\PostDocument[] $attachments attachments
      *
      * @return $this
      */
@@ -359,7 +359,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
     /**
      * Gets comments
      *
-     * @return \Swagger\Client\Model\Comment[]
+     * @return \Paqtcom\Simplicate\Model\Comment[]
      */
     public function getComments()
     {
@@ -369,7 +369,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
     /**
      * Sets comments
      *
-     * @param \Swagger\Client\Model\Comment[] $comments comments
+     * @param \Paqtcom\Simplicate\Model\Comment[] $comments comments
      *
      * @return $this
      */

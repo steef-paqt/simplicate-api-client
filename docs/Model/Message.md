@@ -5,7 +5,7 @@
  Name               | Type                                                        | Description | Notes      
 --------------------|-------------------------------------------------------------|-------------|------------
  **title**          | **string**                                                  |             | [optional] 
- **content_fields** | [**\Swagger\Client\Model\ContentField[]**](ContentField.md) |             | [optional] 
+ **content_fields** | [**\Paqtcom\Simplicate\Model\ContentField[]**](ContentField.md) |             | [optional] 
  **content**        | **string**                                                  |             | [optional] 
  **display_date**   | **string**                                                  |             | [optional] 
 

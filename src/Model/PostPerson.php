@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * PostPerson Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,13 +58,13 @@ class PostPerson implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'interests' => '\Swagger\Client\Model\PostInterest[]',
-        'address' => '\Swagger\Client\Model\PostAddress',
-        'linked_as_contact_to_organization' => '\Swagger\Client\Model\PostContactOrganizationFk[]',
+        'interests' => '\Paqtcom\Simplicate\Model\PostInterest[]',
+        'address' => '\Paqtcom\Simplicate\Model\PostAddress',
+        'linked_as_contact_to_organization' => '\Paqtcom\Simplicate\Model\PostContactOrganizationFk[]',
         'gender_id' => 'string',
-        'teams' => '\Swagger\Client\Model\PostTeam[]',
-        'custom_fields' => '\Swagger\Client\Model\PostCustomFieldValue[]',
-        'relation_type' => '\Swagger\Client\Model\RelationType',
+        'teams' => '\Paqtcom\Simplicate\Model\PostTeam[]',
+        'custom_fields' => '\Paqtcom\Simplicate\Model\PostCustomFieldValue[]',
+        'relation_type' => '\Paqtcom\Simplicate\Model\RelationType',
         'gender' => 'string',
         'initials' => 'string',
         'first_name' => 'string',
@@ -84,7 +84,7 @@ class PostPerson implements ModelInterface, ArrayAccess
         'bank_bic' => 'string',
         'invoice_receiver' => 'string',
         'mailing_list_email' => 'string',
-        'mailing_lists' => '\Swagger\Client\Model\PersonMailingList[]',
+        'mailing_lists' => '\Paqtcom\Simplicate\Model\PersonMailingList[]',
         'is_active' => 'bool',
     ];
 
@@ -391,7 +391,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     /**
      * Gets interests
      *
-     * @return \Swagger\Client\Model\PostInterest[]
+     * @return \Paqtcom\Simplicate\Model\PostInterest[]
      */
     public function getInterests()
     {
@@ -401,7 +401,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     /**
      * Sets interests
      *
-     * @param \Swagger\Client\Model\PostInterest[] $interests interests
+     * @param \Paqtcom\Simplicate\Model\PostInterest[] $interests interests
      *
      * @return $this
      */
@@ -415,7 +415,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \Swagger\Client\Model\PostAddress
+     * @return \Paqtcom\Simplicate\Model\PostAddress
      */
     public function getAddress()
     {
@@ -425,7 +425,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \Swagger\Client\Model\PostAddress $address address
+     * @param \Paqtcom\Simplicate\Model\PostAddress $address address
      *
      * @return $this
      */
@@ -439,7 +439,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     /**
      * Gets linked_as_contact_to_organization
      *
-     * @return \Swagger\Client\Model\PostContactOrganizationFk[]
+     * @return \Paqtcom\Simplicate\Model\PostContactOrganizationFk[]
      */
     public function getLinkedAsContactToOrganization()
     {
@@ -449,7 +449,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     /**
      * Sets linked_as_contact_to_organization
      *
-     * @param \Swagger\Client\Model\PostContactOrganizationFk[] $linked_as_contact_to_organization linked_as_contact_to_organization
+     * @param \Paqtcom\Simplicate\Model\PostContactOrganizationFk[] $linked_as_contact_to_organization linked_as_contact_to_organization
      *
      * @return $this
      */
@@ -487,7 +487,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     /**
      * Gets teams
      *
-     * @return \Swagger\Client\Model\PostTeam[]
+     * @return \Paqtcom\Simplicate\Model\PostTeam[]
      */
     public function getTeams()
     {
@@ -497,7 +497,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     /**
      * Sets teams
      *
-     * @param \Swagger\Client\Model\PostTeam[] $teams See /hrm/team
+     * @param \Paqtcom\Simplicate\Model\PostTeam[] $teams See /hrm/team
      *
      * @return $this
      */
@@ -511,7 +511,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     /**
      * Gets custom_fields
      *
-     * @return \Swagger\Client\Model\PostCustomFieldValue[]
+     * @return \Paqtcom\Simplicate\Model\PostCustomFieldValue[]
      */
     public function getCustomFields()
     {
@@ -521,7 +521,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     /**
      * Sets custom_fields
      *
-     * @param \Swagger\Client\Model\PostCustomFieldValue[] $custom_fields custom_fields
+     * @param \Paqtcom\Simplicate\Model\PostCustomFieldValue[] $custom_fields custom_fields
      *
      * @return $this
      */
@@ -535,7 +535,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     /**
      * Gets relation_type
      *
-     * @return \Swagger\Client\Model\RelationType
+     * @return \Paqtcom\Simplicate\Model\RelationType
      */
     public function getRelationType()
     {
@@ -545,7 +545,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     /**
      * Sets relation_type
      *
-     * @param \Swagger\Client\Model\RelationType $relation_type relation_type
+     * @param \Paqtcom\Simplicate\Model\RelationType $relation_type relation_type
      *
      * @return $this
      */
@@ -1024,7 +1024,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     /**
      * Gets mailing_lists
      *
-     * @return \Swagger\Client\Model\PersonMailingList[]
+     * @return \Paqtcom\Simplicate\Model\PersonMailingList[]
      */
     public function getMailingLists()
     {
@@ -1034,7 +1034,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     /**
      * Sets mailing_lists
      *
-     * @param \Swagger\Client\Model\PersonMailingList[] $mailing_lists mailing_lists
+     * @param \Paqtcom\Simplicate\Model\PersonMailingList[] $mailing_lists mailing_lists
      *
      * @return $this
      */

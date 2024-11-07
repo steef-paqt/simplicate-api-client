@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Paqtcom\Simplicate\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Paqtcom\Simplicate\ObjectSerializer;
 
 /**
  * Comment Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Paqtcom\Simplicate
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -60,8 +60,8 @@ class Comment implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'message' => 'string',
-        'employee' => '\Swagger\Client\Model\GetEmployeeSimple',
-        'attachments' => '\Swagger\Client\Model\GetDocument[]',
+        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
+        'attachments' => '\Paqtcom\Simplicate\Model\GetDocument[]',
     ];
 
     /**
@@ -269,7 +269,7 @@ class Comment implements ModelInterface, ArrayAccess
     /**
      * Gets employee
      *
-     * @return \Swagger\Client\Model\GetEmployeeSimple
+     * @return \Paqtcom\Simplicate\Model\GetEmployeeSimple
      */
     public function getEmployee()
     {
@@ -279,7 +279,7 @@ class Comment implements ModelInterface, ArrayAccess
     /**
      * Sets employee
      *
-     * @param \Swagger\Client\Model\GetEmployeeSimple $employee employee
+     * @param \Paqtcom\Simplicate\Model\GetEmployeeSimple $employee employee
      *
      * @return $this
      */
@@ -293,7 +293,7 @@ class Comment implements ModelInterface, ArrayAccess
     /**
      * Gets attachments
      *
-     * @return \Swagger\Client\Model\GetDocument[]
+     * @return \Paqtcom\Simplicate\Model\GetDocument[]
      */
     public function getAttachments()
     {
@@ -303,7 +303,7 @@ class Comment implements ModelInterface, ArrayAccess
     /**
      * Sets attachments
      *
-     * @param \Swagger\Client\Model\GetDocument[] $attachments attachments
+     * @param \Paqtcom\Simplicate\Model\GetDocument[] $attachments attachments
      *
      * @return $this
      */
