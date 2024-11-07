@@ -122,7 +122,7 @@ class ObjectSerializer
     public static function sanitizeFilename($filename): string
     {
         if (preg_match("/.*[\/\\\\](.*)$/", $filename, $match)) {
-            return (string) $match[1];
+            return $match[1];
         }
 
         return $filename;
@@ -217,8 +217,6 @@ class ObjectSerializer
      * @param string $collectionFormat           the format use for serialization (csv,
      * ssv, tsv, pipes, multi)
      * @param bool   $allowCollectionFormatMulti allow collection format to be a multidimensional array
-     *
-     * @return string
      */
     public static function serializeCollection(array $collection, $collectionFormat, $allowCollectionFormatMulti = false): string
     {
