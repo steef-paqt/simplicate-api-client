@@ -144,7 +144,7 @@ class Configuration
      */
     public function getApiKey($apiKeyIdentifier)
     {
-        return isset($this->apiKeys[$apiKeyIdentifier]) ? $this->apiKeys[$apiKeyIdentifier] : null;
+        return $this->apiKeys[$apiKeyIdentifier] ?? null;
     }
 
     /**
@@ -171,7 +171,7 @@ class Configuration
      */
     public function getApiKeyPrefix($apiKeyIdentifier)
     {
-        return isset($this->apiKeyPrefixes[$apiKeyIdentifier]) ? $this->apiKeyPrefixes[$apiKeyIdentifier] : null;
+        return $this->apiKeyPrefixes[$apiKeyIdentifier] ?? null;
     }
 
     /**
@@ -408,9 +408,8 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 2.0' . PHP_EOL;
-        $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
-        return $report;
+        return $report . ('    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL);
     }
 
     /**
@@ -430,11 +429,9 @@ class Configuration
         }
 
         if ($prefix === null) {
-            $keyWithPrefix = $apiKey;
-        } else {
-            $keyWithPrefix = $prefix . ' ' . $apiKey;
+            return $apiKey;
         }
 
-        return $keyWithPrefix;
+        return $prefix . ' ' . $apiKey;
     }
 }

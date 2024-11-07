@@ -43,7 +43,7 @@ use Paqtcom\Simplicate\ObjectSerializer;
  */
 class DuplicateSalesService implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +58,6 @@ class DuplicateSalesService implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-
     ];
 
     /**
@@ -67,7 +66,6 @@ class DuplicateSalesService implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-
     ];
 
     /**
@@ -97,7 +95,6 @@ class DuplicateSalesService implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-
     ];
 
     /**
@@ -106,7 +103,6 @@ class DuplicateSalesService implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-
     ];
 
     /**
@@ -115,7 +111,6 @@ class DuplicateSalesService implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-
     ];
 
     /**
@@ -159,10 +154,6 @@ class DuplicateSalesService implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-
-
-
-
     /**
      * Associative array for storing property values
      *
@@ -176,9 +167,7 @@ class DuplicateSalesService implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
-    }
+    public function __construct(array $data = null) {}
 
     /**
      * Show all the invalid properties with reasons.

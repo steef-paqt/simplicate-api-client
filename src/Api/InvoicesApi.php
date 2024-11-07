@@ -65,11 +65,6 @@ class InvoicesApi
      */
     protected $headerSelector;
 
-    /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     */
     public function __construct(
         ClientInterface $client = null,
         Configuration $config = null,
@@ -103,7 +98,7 @@ class InvoicesApi
      */
     public function invoicesDocumentGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->invoicesDocumentGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->invoicesDocumentGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -123,7 +118,7 @@ class InvoicesApi
      */
     public function invoicesDocumentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocuments::class;
         $request = $this->invoicesDocumentGetRequest($offset, $limit, $sort);
 
         try {
@@ -159,9 +154,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -174,7 +167,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocuments',
+                        \Paqtcom\Simplicate\Model\RestResultDocuments::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +213,7 @@ class InvoicesApi
      */
     public function invoicesDocumentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocuments::class;
         $request = $this->invoicesDocumentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -232,9 +225,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -317,9 +308,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -390,7 +379,6 @@ class InvoicesApi
      */
     public function invoicesDocumentIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->invoicesDocumentIdDeleteRequest($id);
 
         try {
@@ -512,13 +500,11 @@ class InvoicesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -545,9 +531,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -602,7 +586,7 @@ class InvoicesApi
      */
     public function invoicesDocumentIdGet($id)
     {
-        list($response) = $this->invoicesDocumentIdGetWithHttpInfo($id);
+        [$response] = $this->invoicesDocumentIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -620,7 +604,7 @@ class InvoicesApi
      */
     public function invoicesDocumentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocument::class;
         $request = $this->invoicesDocumentIdGetRequest($id);
 
         try {
@@ -656,9 +640,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -671,7 +653,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocument',
+                        \Paqtcom\Simplicate\Model\RestResultDocument::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -713,7 +695,7 @@ class InvoicesApi
      */
     public function invoicesDocumentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocument::class;
         $request = $this->invoicesDocumentIdGetRequest($id);
 
         return $this->client
@@ -725,9 +707,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -778,13 +758,11 @@ class InvoicesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -811,9 +789,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -884,7 +860,6 @@ class InvoicesApi
      */
     public function invoicesDocumentPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->invoicesDocumentPostRequest($body);
 
         try {
@@ -1004,12 +979,7 @@ class InvoicesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1106,7 +1076,6 @@ class InvoicesApi
      */
     public function invoicesDocumentPutWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->invoicesDocumentPutRequest($body);
 
         try {
@@ -1226,12 +1195,7 @@ class InvoicesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1314,7 +1278,7 @@ class InvoicesApi
      */
     public function invoicesDocumenttypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->invoicesDocumenttypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->invoicesDocumenttypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -1334,7 +1298,7 @@ class InvoicesApi
      */
     public function invoicesDocumenttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class;
         $request = $this->invoicesDocumenttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -1370,9 +1334,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1385,7 +1347,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocumentTypes',
+                        \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1431,7 +1393,7 @@ class InvoicesApi
      */
     public function invoicesDocumenttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class;
         $request = $this->invoicesDocumenttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1443,9 +1405,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1528,9 +1488,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1585,7 +1543,7 @@ class InvoicesApi
      */
     public function invoicesDocumenttypeIdGet($id)
     {
-        list($response) = $this->invoicesDocumenttypeIdGetWithHttpInfo($id);
+        [$response] = $this->invoicesDocumenttypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -1603,7 +1561,7 @@ class InvoicesApi
      */
     public function invoicesDocumenttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentType::class;
         $request = $this->invoicesDocumenttypeIdGetRequest($id);
 
         try {
@@ -1639,9 +1597,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1654,7 +1610,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocumentType',
+                        \Paqtcom\Simplicate\Model\RestResultDocumentType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1696,7 +1652,7 @@ class InvoicesApi
      */
     public function invoicesDocumenttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentType::class;
         $request = $this->invoicesDocumenttypeIdGetRequest($id);
 
         return $this->client
@@ -1708,9 +1664,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1761,13 +1715,11 @@ class InvoicesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -1794,9 +1746,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1853,7 +1803,7 @@ class InvoicesApi
      */
     public function invoicesInvoiceGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->invoicesInvoiceGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->invoicesInvoiceGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -1873,7 +1823,7 @@ class InvoicesApi
      */
     public function invoicesInvoiceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoices';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultInvoices::class;
         $request = $this->invoicesInvoiceGetRequest($offset, $limit, $sort);
 
         try {
@@ -1909,9 +1859,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1924,7 +1872,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultInvoices',
+                        \Paqtcom\Simplicate\Model\RestResultInvoices::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1970,7 +1918,7 @@ class InvoicesApi
      */
     public function invoicesInvoiceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoices';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultInvoices::class;
         $request = $this->invoicesInvoiceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1982,9 +1930,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2067,9 +2013,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2140,7 +2084,6 @@ class InvoicesApi
      */
     public function invoicesInvoiceIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->invoicesInvoiceIdDeleteRequest($id);
 
         try {
@@ -2262,13 +2205,11 @@ class InvoicesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2295,9 +2236,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2352,7 +2291,7 @@ class InvoicesApi
      */
     public function invoicesInvoiceIdGet($id)
     {
-        list($response) = $this->invoicesInvoiceIdGetWithHttpInfo($id);
+        [$response] = $this->invoicesInvoiceIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -2370,7 +2309,7 @@ class InvoicesApi
      */
     public function invoicesInvoiceIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoice';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultInvoice::class;
         $request = $this->invoicesInvoiceIdGetRequest($id);
 
         try {
@@ -2406,9 +2345,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -2421,7 +2358,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultInvoice',
+                        \Paqtcom\Simplicate\Model\RestResultInvoice::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2463,7 +2400,7 @@ class InvoicesApi
      */
     public function invoicesInvoiceIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoice';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultInvoice::class;
         $request = $this->invoicesInvoiceIdGetRequest($id);
 
         return $this->client
@@ -2475,9 +2412,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2528,13 +2463,11 @@ class InvoicesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2561,9 +2494,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2636,7 +2567,6 @@ class InvoicesApi
      */
     public function invoicesInvoiceIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->invoicesInvoiceIdPutRequest($id, $body);
 
         try {
@@ -2765,21 +2695,13 @@ class InvoicesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2876,7 +2798,6 @@ class InvoicesApi
      */
     public function invoicesInvoicePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->invoicesInvoicePostRequest($body);
 
         try {
@@ -2996,12 +2917,7 @@ class InvoicesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -3084,7 +3000,7 @@ class InvoicesApi
      */
     public function invoicesInvoicestatusGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->invoicesInvoicestatusGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->invoicesInvoicestatusGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -3104,7 +3020,7 @@ class InvoicesApi
      */
     public function invoicesInvoicestatusGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoiceStatuses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultInvoiceStatuses::class;
         $request = $this->invoicesInvoicestatusGetRequest($offset, $limit, $sort);
 
         try {
@@ -3140,9 +3056,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3155,7 +3069,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultInvoiceStatuses',
+                        \Paqtcom\Simplicate\Model\RestResultInvoiceStatuses::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3201,7 +3115,7 @@ class InvoicesApi
      */
     public function invoicesInvoicestatusGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoiceStatuses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultInvoiceStatuses::class;
         $request = $this->invoicesInvoicestatusGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3213,9 +3127,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3298,9 +3210,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3355,7 +3265,7 @@ class InvoicesApi
      */
     public function invoicesInvoicestatusIdGet($id)
     {
-        list($response) = $this->invoicesInvoicestatusIdGetWithHttpInfo($id);
+        [$response] = $this->invoicesInvoicestatusIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -3373,7 +3283,7 @@ class InvoicesApi
      */
     public function invoicesInvoicestatusIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoiceStatus';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultInvoiceStatus::class;
         $request = $this->invoicesInvoicestatusIdGetRequest($id);
 
         try {
@@ -3409,9 +3319,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3424,7 +3332,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultInvoiceStatus',
+                        \Paqtcom\Simplicate\Model\RestResultInvoiceStatus::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3466,7 +3374,7 @@ class InvoicesApi
      */
     public function invoicesInvoicestatusIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultInvoiceStatus';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultInvoiceStatus::class;
         $request = $this->invoicesInvoicestatusIdGetRequest($id);
 
         return $this->client
@@ -3478,9 +3386,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3531,13 +3437,11 @@ class InvoicesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -3564,9 +3468,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3623,7 +3525,7 @@ class InvoicesApi
      */
     public function invoicesPaymentGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->invoicesPaymentGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->invoicesPaymentGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -3643,7 +3545,7 @@ class InvoicesApi
      */
     public function invoicesPaymentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPayments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPayments::class;
         $request = $this->invoicesPaymentGetRequest($offset, $limit, $sort);
 
         try {
@@ -3679,9 +3581,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3694,7 +3594,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultPayments',
+                        \Paqtcom\Simplicate\Model\RestResultPayments::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3740,7 +3640,7 @@ class InvoicesApi
      */
     public function invoicesPaymentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPayments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPayments::class;
         $request = $this->invoicesPaymentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3752,9 +3652,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3837,9 +3735,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3894,7 +3790,7 @@ class InvoicesApi
      */
     public function invoicesPaymentIdGet($id)
     {
-        list($response) = $this->invoicesPaymentIdGetWithHttpInfo($id);
+        [$response] = $this->invoicesPaymentIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -3912,7 +3808,7 @@ class InvoicesApi
      */
     public function invoicesPaymentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPayment';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPayment::class;
         $request = $this->invoicesPaymentIdGetRequest($id);
 
         try {
@@ -3948,9 +3844,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3963,7 +3857,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultPayment',
+                        \Paqtcom\Simplicate\Model\RestResultPayment::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4005,7 +3899,7 @@ class InvoicesApi
      */
     public function invoicesPaymentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPayment';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPayment::class;
         $request = $this->invoicesPaymentIdGetRequest($id);
 
         return $this->client
@@ -4017,9 +3911,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4070,13 +3962,11 @@ class InvoicesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -4103,9 +3993,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4178,7 +4066,6 @@ class InvoicesApi
      */
     public function invoicesPaymentIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->invoicesPaymentIdPutRequest($id, $body);
 
         try {
@@ -4307,21 +4194,13 @@ class InvoicesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -4418,7 +4297,6 @@ class InvoicesApi
      */
     public function invoicesPaymentPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->invoicesPaymentPostRequest($body);
 
         try {
@@ -4538,12 +4416,7 @@ class InvoicesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -4626,7 +4499,7 @@ class InvoicesApi
      */
     public function invoicesPaymenttermGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->invoicesPaymenttermGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->invoicesPaymenttermGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -4646,7 +4519,7 @@ class InvoicesApi
      */
     public function invoicesPaymenttermGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPaymentTerms';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPaymentTerms::class;
         $request = $this->invoicesPaymenttermGetRequest($offset, $limit, $sort);
 
         try {
@@ -4682,9 +4555,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4697,7 +4568,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultPaymentTerms',
+                        \Paqtcom\Simplicate\Model\RestResultPaymentTerms::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4743,7 +4614,7 @@ class InvoicesApi
      */
     public function invoicesPaymenttermGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPaymentTerms';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPaymentTerms::class;
         $request = $this->invoicesPaymenttermGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -4755,9 +4626,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4840,9 +4709,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4897,7 +4764,7 @@ class InvoicesApi
      */
     public function invoicesPaymenttermIdGet($id)
     {
-        list($response) = $this->invoicesPaymenttermIdGetWithHttpInfo($id);
+        [$response] = $this->invoicesPaymenttermIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -4915,7 +4782,7 @@ class InvoicesApi
      */
     public function invoicesPaymenttermIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPaymentTerm';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPaymentTerm::class;
         $request = $this->invoicesPaymenttermIdGetRequest($id);
 
         try {
@@ -4951,9 +4818,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4966,7 +4831,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultPaymentTerm',
+                        \Paqtcom\Simplicate\Model\RestResultPaymentTerm::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5008,7 +4873,7 @@ class InvoicesApi
      */
     public function invoicesPaymenttermIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPaymentTerm';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPaymentTerm::class;
         $request = $this->invoicesPaymenttermIdGetRequest($id);
 
         return $this->client
@@ -5020,9 +4885,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5073,13 +4936,11 @@ class InvoicesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -5106,9 +4967,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5165,7 +5024,7 @@ class InvoicesApi
      */
     public function invoicesPropositionGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->invoicesPropositionGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->invoicesPropositionGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -5185,7 +5044,7 @@ class InvoicesApi
      */
     public function invoicesPropositionGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPropositions';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPropositions::class;
         $request = $this->invoicesPropositionGetRequest($offset, $limit, $sort);
 
         try {
@@ -5221,9 +5080,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5236,7 +5093,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultPropositions',
+                        \Paqtcom\Simplicate\Model\RestResultPropositions::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5282,7 +5139,7 @@ class InvoicesApi
      */
     public function invoicesPropositionGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPropositions';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPropositions::class;
         $request = $this->invoicesPropositionGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -5294,9 +5151,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5379,9 +5234,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5438,7 +5291,7 @@ class InvoicesApi
      */
     public function invoicesRemindersetGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->invoicesRemindersetGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->invoicesRemindersetGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -5458,7 +5311,7 @@ class InvoicesApi
      */
     public function invoicesRemindersetGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderSets';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultReminderSets::class;
         $request = $this->invoicesRemindersetGetRequest($offset, $limit, $sort);
 
         try {
@@ -5494,9 +5347,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5509,7 +5360,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultReminderSets',
+                        \Paqtcom\Simplicate\Model\RestResultReminderSets::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5555,7 +5406,7 @@ class InvoicesApi
      */
     public function invoicesRemindersetGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderSets';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultReminderSets::class;
         $request = $this->invoicesRemindersetGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -5567,9 +5418,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5652,9 +5501,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5709,7 +5556,7 @@ class InvoicesApi
      */
     public function invoicesRemindersetIdGet($id)
     {
-        list($response) = $this->invoicesRemindersetIdGetWithHttpInfo($id);
+        [$response] = $this->invoicesRemindersetIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -5727,7 +5574,7 @@ class InvoicesApi
      */
     public function invoicesRemindersetIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderSet';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultReminderSet::class;
         $request = $this->invoicesRemindersetIdGetRequest($id);
 
         try {
@@ -5763,9 +5610,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5778,7 +5623,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultReminderSet',
+                        \Paqtcom\Simplicate\Model\RestResultReminderSet::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5820,7 +5665,7 @@ class InvoicesApi
      */
     public function invoicesRemindersetIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderSet';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultReminderSet::class;
         $request = $this->invoicesRemindersetIdGetRequest($id);
 
         return $this->client
@@ -5832,9 +5677,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5885,13 +5728,11 @@ class InvoicesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -5918,9 +5759,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5977,7 +5816,7 @@ class InvoicesApi
      */
     public function invoicesRemindertemplateGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->invoicesRemindertemplateGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->invoicesRemindertemplateGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -5997,7 +5836,7 @@ class InvoicesApi
      */
     public function invoicesRemindertemplateGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderTemplates';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultReminderTemplates::class;
         $request = $this->invoicesRemindertemplateGetRequest($offset, $limit, $sort);
 
         try {
@@ -6033,9 +5872,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6048,7 +5885,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultReminderTemplates',
+                        \Paqtcom\Simplicate\Model\RestResultReminderTemplates::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6094,7 +5931,7 @@ class InvoicesApi
      */
     public function invoicesRemindertemplateGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderTemplates';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultReminderTemplates::class;
         $request = $this->invoicesRemindertemplateGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -6106,9 +5943,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -6191,9 +6026,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6248,7 +6081,7 @@ class InvoicesApi
      */
     public function invoicesRemindertemplateIdGet($id)
     {
-        list($response) = $this->invoicesRemindertemplateIdGetWithHttpInfo($id);
+        [$response] = $this->invoicesRemindertemplateIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -6266,7 +6099,7 @@ class InvoicesApi
      */
     public function invoicesRemindertemplateIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderTemplate';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultReminderTemplate::class;
         $request = $this->invoicesRemindertemplateIdGetRequest($id);
 
         try {
@@ -6302,9 +6135,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6317,7 +6148,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultReminderTemplate',
+                        \Paqtcom\Simplicate\Model\RestResultReminderTemplate::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6359,7 +6190,7 @@ class InvoicesApi
      */
     public function invoicesRemindertemplateIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultReminderTemplate';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultReminderTemplate::class;
         $request = $this->invoicesRemindertemplateIdGetRequest($id);
 
         return $this->client
@@ -6371,9 +6202,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -6424,13 +6253,11 @@ class InvoicesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -6457,9 +6284,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6516,7 +6341,7 @@ class InvoicesApi
      */
     public function invoicesVatclassGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->invoicesVatclassGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->invoicesVatclassGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -6536,7 +6361,7 @@ class InvoicesApi
      */
     public function invoicesVatclassGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultVatClasses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultVatClasses::class;
         $request = $this->invoicesVatclassGetRequest($offset, $limit, $sort);
 
         try {
@@ -6572,9 +6397,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6587,7 +6410,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultVatClasses',
+                        \Paqtcom\Simplicate\Model\RestResultVatClasses::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6633,7 +6456,7 @@ class InvoicesApi
      */
     public function invoicesVatclassGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultVatClasses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultVatClasses::class;
         $request = $this->invoicesVatclassGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -6645,9 +6468,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -6730,9 +6551,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6787,7 +6606,7 @@ class InvoicesApi
      */
     public function invoicesVatclassIdGet($id)
     {
-        list($response) = $this->invoicesVatclassIdGetWithHttpInfo($id);
+        [$response] = $this->invoicesVatclassIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -6805,7 +6624,7 @@ class InvoicesApi
      */
     public function invoicesVatclassIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultVatClass';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultVatClass::class;
         $request = $this->invoicesVatclassIdGetRequest($id);
 
         try {
@@ -6841,9 +6660,7 @@ class InvoicesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6856,7 +6673,7 @@ class InvoicesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultVatClass',
+                        \Paqtcom\Simplicate\Model\RestResultVatClass::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6898,7 +6715,7 @@ class InvoicesApi
      */
     public function invoicesVatclassIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultVatClass';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultVatClass::class;
         $request = $this->invoicesVatclassIdGetRequest($id);
 
         return $this->client
@@ -6910,9 +6727,7 @@ class InvoicesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -6963,13 +6778,11 @@ class InvoicesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -6996,9 +6809,7 @@ class InvoicesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

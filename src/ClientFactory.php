@@ -15,9 +15,9 @@ class ClientFactory
     {
         $options = [
             'headers' => [
-                'Authentication-Key'    => $key,
+                'Authentication-Key' => $key,
                 'Authentication-Secret' => $secret,
-            ]
+            ],
         ];
         $curlClient = new CurlHttpClient($options);
         $httpClient = new Psr18Client($curlClient);

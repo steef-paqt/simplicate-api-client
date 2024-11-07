@@ -43,7 +43,7 @@ use Paqtcom\Simplicate\ObjectSerializer;
  */
 class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -63,7 +63,7 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
         'color' => 'string',
         'budgeted_amount' => 'float',
         'tariff' => 'float',
-        'billable' => 'bool'
+        'billable' => 'bool',
     ];
 
     /**
@@ -77,7 +77,7 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
         'color' => null,
         'budgeted_amount' => 'float',
         'tariff' => 'float',
-        'billable' => null
+        'billable' => null,
     ];
 
     /**
@@ -112,7 +112,7 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
         'color' => 'color',
         'budgeted_amount' => 'budgeted_amount',
         'tariff' => 'tariff',
-        'billable' => 'billable'
+        'billable' => 'billable',
     ];
 
     /**
@@ -126,7 +126,7 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
         'color' => 'setColor',
         'budgeted_amount' => 'setBudgetedAmount',
         'tariff' => 'setTariff',
-        'billable' => 'setBillable'
+        'billable' => 'setBillable',
     ];
 
     /**
@@ -140,7 +140,7 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
         'color' => 'getColor',
         'budgeted_amount' => 'getBudgetedAmount',
         'tariff' => 'getTariff',
-        'billable' => 'getBillable'
+        'billable' => 'getBillable',
     ];
 
     /**
@@ -183,10 +183,6 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-
-
-
 
     /**
      * Associative array for storing property values
@@ -233,7 +229,6 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -378,6 +373,7 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -43,7 +43,7 @@ use Paqtcom\Simplicate\ObjectSerializer;
  */
 class GetDefaultWorkflowGroup implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -60,7 +60,7 @@ class GetDefaultWorkflowGroup implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
-        'is_blocked' => 'bool'
+        'is_blocked' => 'bool',
     ];
 
     /**
@@ -71,7 +71,7 @@ class GetDefaultWorkflowGroup implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
         'name' => null,
-        'is_blocked' => null
+        'is_blocked' => null,
     ];
 
     /**
@@ -103,7 +103,7 @@ class GetDefaultWorkflowGroup implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'is_blocked' => 'is_blocked'
+        'is_blocked' => 'is_blocked',
     ];
 
     /**
@@ -114,7 +114,7 @@ class GetDefaultWorkflowGroup implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'is_blocked' => 'setIsBlocked'
+        'is_blocked' => 'setIsBlocked',
     ];
 
     /**
@@ -125,7 +125,7 @@ class GetDefaultWorkflowGroup implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'is_blocked' => 'getIsBlocked'
+        'is_blocked' => 'getIsBlocked',
     ];
 
     /**
@@ -169,10 +169,6 @@ class GetDefaultWorkflowGroup implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-
-
-
-
     /**
      * Associative array for storing property values
      *
@@ -215,7 +211,6 @@ class GetDefaultWorkflowGroup implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets id
@@ -288,6 +283,7 @@ class GetDefaultWorkflowGroup implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

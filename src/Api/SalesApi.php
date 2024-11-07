@@ -65,11 +65,6 @@ class SalesApi
      */
     protected $headerSelector;
 
-    /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     */
     public function __construct(
         ClientInterface $client = null,
         Configuration $config = null,
@@ -101,7 +96,7 @@ class SalesApi
      */
     public function salesConverttoprojectIdGet($id)
     {
-        list($response) = $this->salesConverttoprojectIdGetWithHttpInfo($id);
+        [$response] = $this->salesConverttoprojectIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -119,7 +114,7 @@ class SalesApi
      */
     public function salesConverttoprojectIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSale';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSale::class;
         $request = $this->salesConverttoprojectIdGetRequest($id);
 
         try {
@@ -155,9 +150,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -170,7 +163,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultSale',
+                        \Paqtcom\Simplicate\Model\RestResultSale::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -212,7 +205,7 @@ class SalesApi
      */
     public function salesConverttoprojectIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSale';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSale::class;
         $request = $this->salesConverttoprojectIdGetRequest($id);
 
         return $this->client
@@ -224,9 +217,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -277,13 +268,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -310,9 +299,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -369,7 +356,7 @@ class SalesApi
      */
     public function salesDocumentGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->salesDocumentGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->salesDocumentGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -389,7 +376,7 @@ class SalesApi
      */
     public function salesDocumentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocuments::class;
         $request = $this->salesDocumentGetRequest($offset, $limit, $sort);
 
         try {
@@ -425,9 +412,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -440,7 +425,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocuments',
+                        \Paqtcom\Simplicate\Model\RestResultDocuments::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -486,7 +471,7 @@ class SalesApi
      */
     public function salesDocumentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocuments::class;
         $request = $this->salesDocumentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -498,9 +483,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -583,9 +566,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -656,7 +637,6 @@ class SalesApi
      */
     public function salesDocumentIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->salesDocumentIdDeleteRequest($id);
 
         try {
@@ -778,13 +758,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -811,9 +789,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -868,7 +844,7 @@ class SalesApi
      */
     public function salesDocumentIdGet($id)
     {
-        list($response) = $this->salesDocumentIdGetWithHttpInfo($id);
+        [$response] = $this->salesDocumentIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -886,7 +862,7 @@ class SalesApi
      */
     public function salesDocumentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocument::class;
         $request = $this->salesDocumentIdGetRequest($id);
 
         try {
@@ -922,9 +898,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -937,7 +911,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocument',
+                        \Paqtcom\Simplicate\Model\RestResultDocument::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +953,7 @@ class SalesApi
      */
     public function salesDocumentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocument::class;
         $request = $this->salesDocumentIdGetRequest($id);
 
         return $this->client
@@ -991,9 +965,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1044,13 +1016,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -1077,9 +1047,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1150,7 +1118,6 @@ class SalesApi
      */
     public function salesDocumentPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->salesDocumentPostRequest($body);
 
         try {
@@ -1270,12 +1237,7 @@ class SalesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1372,7 +1334,6 @@ class SalesApi
      */
     public function salesDocumentPutWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->salesDocumentPutRequest($body);
 
         try {
@@ -1492,12 +1453,7 @@ class SalesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1580,7 +1536,7 @@ class SalesApi
      */
     public function salesDocumenttypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->salesDocumenttypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->salesDocumenttypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -1600,7 +1556,7 @@ class SalesApi
      */
     public function salesDocumenttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class;
         $request = $this->salesDocumenttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -1636,9 +1592,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1651,7 +1605,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocumentTypes',
+                        \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1697,7 +1651,7 @@ class SalesApi
      */
     public function salesDocumenttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class;
         $request = $this->salesDocumenttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1709,9 +1663,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1794,9 +1746,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1851,7 +1801,7 @@ class SalesApi
      */
     public function salesDocumenttypeIdGet($id)
     {
-        list($response) = $this->salesDocumenttypeIdGetWithHttpInfo($id);
+        [$response] = $this->salesDocumenttypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -1869,7 +1819,7 @@ class SalesApi
      */
     public function salesDocumenttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentType::class;
         $request = $this->salesDocumenttypeIdGetRequest($id);
 
         try {
@@ -1905,9 +1855,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1920,7 +1868,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocumentType',
+                        \Paqtcom\Simplicate\Model\RestResultDocumentType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1962,7 +1910,7 @@ class SalesApi
      */
     public function salesDocumenttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentType::class;
         $request = $this->salesDocumenttypeIdGetRequest($id);
 
         return $this->client
@@ -1974,9 +1922,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2027,13 +1973,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2060,9 +2004,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2119,7 +2061,7 @@ class SalesApi
      */
     public function salesQuoteGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->salesQuoteGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->salesQuoteGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -2139,7 +2081,7 @@ class SalesApi
      */
     public function salesQuoteGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuotes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultQuotes::class;
         $request = $this->salesQuoteGetRequest($offset, $limit, $sort);
 
         try {
@@ -2175,9 +2117,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -2190,7 +2130,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultQuotes',
+                        \Paqtcom\Simplicate\Model\RestResultQuotes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2236,7 +2176,7 @@ class SalesApi
      */
     public function salesQuoteGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuotes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultQuotes::class;
         $request = $this->salesQuoteGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -2248,9 +2188,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2333,9 +2271,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2406,7 +2342,6 @@ class SalesApi
      */
     public function salesQuoteIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->salesQuoteIdDeleteRequest($id);
 
         try {
@@ -2528,13 +2463,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2561,9 +2494,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2618,7 +2549,7 @@ class SalesApi
      */
     public function salesQuoteIdGet($id)
     {
-        list($response) = $this->salesQuoteIdGetWithHttpInfo($id);
+        [$response] = $this->salesQuoteIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -2636,7 +2567,7 @@ class SalesApi
      */
     public function salesQuoteIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuote';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultQuote::class;
         $request = $this->salesQuoteIdGetRequest($id);
 
         try {
@@ -2672,9 +2603,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -2687,7 +2616,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultQuote',
+                        \Paqtcom\Simplicate\Model\RestResultQuote::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2729,7 +2658,7 @@ class SalesApi
      */
     public function salesQuoteIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuote';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultQuote::class;
         $request = $this->salesQuoteIdGetRequest($id);
 
         return $this->client
@@ -2741,9 +2670,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2794,13 +2721,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2827,9 +2752,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2902,7 +2825,6 @@ class SalesApi
      */
     public function salesQuoteIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->salesQuoteIdPutRequest($id, $body);
 
         try {
@@ -3031,21 +2953,13 @@ class SalesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -3142,7 +3056,6 @@ class SalesApi
      */
     public function salesQuotePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->salesQuotePostRequest($body);
 
         try {
@@ -3262,12 +3175,7 @@ class SalesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -3366,7 +3274,6 @@ class SalesApi
      */
     public function salesQuoteemailIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->salesQuoteemailIdPutRequest($id, $body);
 
         try {
@@ -3495,21 +3402,13 @@ class SalesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -3589,7 +3488,7 @@ class SalesApi
      */
     public function salesQuotestatusGet()
     {
-        list($response) = $this->salesQuotestatusGetWithHttpInfo();
+        [$response] = $this->salesQuotestatusGetWithHttpInfo();
 
         return $response;
     }
@@ -3606,7 +3505,7 @@ class SalesApi
      */
     public function salesQuotestatusGetWithHttpInfo()
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteStatuses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultQuoteStatuses::class;
         $request = $this->salesQuotestatusGetRequest();
 
         try {
@@ -3642,9 +3541,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3657,7 +3554,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultQuoteStatuses',
+                        \Paqtcom\Simplicate\Model\RestResultQuoteStatuses::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3697,7 +3594,7 @@ class SalesApi
      */
     public function salesQuotestatusGetAsyncWithHttpInfo()
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteStatuses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultQuoteStatuses::class;
         $request = $this->salesQuotestatusGetRequest();
 
         return $this->client
@@ -3709,9 +3606,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3778,9 +3673,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3835,7 +3728,7 @@ class SalesApi
      */
     public function salesQuotestatusIdGet($id)
     {
-        list($response) = $this->salesQuotestatusIdGetWithHttpInfo($id);
+        [$response] = $this->salesQuotestatusIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -3853,7 +3746,7 @@ class SalesApi
      */
     public function salesQuotestatusIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteStatus';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultQuoteStatus::class;
         $request = $this->salesQuotestatusIdGetRequest($id);
 
         try {
@@ -3889,9 +3782,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3904,7 +3795,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultQuoteStatus',
+                        \Paqtcom\Simplicate\Model\RestResultQuoteStatus::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3946,7 +3837,7 @@ class SalesApi
      */
     public function salesQuotestatusIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteStatus';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultQuoteStatus::class;
         $request = $this->salesQuotestatusIdGetRequest($id);
 
         return $this->client
@@ -3958,9 +3849,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4011,13 +3900,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -4044,9 +3931,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4103,7 +3988,7 @@ class SalesApi
      */
     public function salesQuotetemplateGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->salesQuotetemplateGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->salesQuotetemplateGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -4123,7 +4008,7 @@ class SalesApi
      */
     public function salesQuotetemplateGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteTemplates';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultQuoteTemplates::class;
         $request = $this->salesQuotetemplateGetRequest($offset, $limit, $sort);
 
         try {
@@ -4159,9 +4044,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4174,7 +4057,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultQuoteTemplates',
+                        \Paqtcom\Simplicate\Model\RestResultQuoteTemplates::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4220,7 +4103,7 @@ class SalesApi
      */
     public function salesQuotetemplateGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteTemplates';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultQuoteTemplates::class;
         $request = $this->salesQuotetemplateGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -4232,9 +4115,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4317,9 +4198,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4390,7 +4269,6 @@ class SalesApi
      */
     public function salesQuotetemplateIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->salesQuotetemplateIdDeleteRequest($id);
 
         try {
@@ -4512,13 +4390,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -4545,9 +4421,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4602,7 +4476,7 @@ class SalesApi
      */
     public function salesQuotetemplateIdGet($id)
     {
-        list($response) = $this->salesQuotetemplateIdGetWithHttpInfo($id);
+        [$response] = $this->salesQuotetemplateIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -4620,7 +4494,7 @@ class SalesApi
      */
     public function salesQuotetemplateIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteTemplate';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultQuoteTemplate::class;
         $request = $this->salesQuotetemplateIdGetRequest($id);
 
         try {
@@ -4656,9 +4530,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4671,7 +4543,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultQuoteTemplate',
+                        \Paqtcom\Simplicate\Model\RestResultQuoteTemplate::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4713,7 +4585,7 @@ class SalesApi
      */
     public function salesQuotetemplateIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultQuoteTemplate';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultQuoteTemplate::class;
         $request = $this->salesQuotetemplateIdGetRequest($id);
 
         return $this->client
@@ -4725,9 +4597,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4778,13 +4648,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -4811,9 +4679,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4886,7 +4752,6 @@ class SalesApi
      */
     public function salesQuotetemplateIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->salesQuotetemplateIdPutRequest($id, $body);
 
         try {
@@ -5015,21 +4880,13 @@ class SalesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -5126,7 +4983,6 @@ class SalesApi
      */
     public function salesQuotetemplatePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->salesQuotetemplatePostRequest($body);
 
         try {
@@ -5246,12 +5102,7 @@ class SalesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -5334,7 +5185,7 @@ class SalesApi
      */
     public function salesRevenuegroupGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->salesRevenuegroupGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->salesRevenuegroupGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -5354,7 +5205,7 @@ class SalesApi
      */
     public function salesRevenuegroupGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultRevenueGroups';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultRevenueGroups::class;
         $request = $this->salesRevenuegroupGetRequest($offset, $limit, $sort);
 
         try {
@@ -5390,9 +5241,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5405,7 +5254,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultRevenueGroups',
+                        \Paqtcom\Simplicate\Model\RestResultRevenueGroups::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5451,7 +5300,7 @@ class SalesApi
      */
     public function salesRevenuegroupGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultRevenueGroups';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultRevenueGroups::class;
         $request = $this->salesRevenuegroupGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -5463,9 +5312,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5548,9 +5395,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5605,7 +5450,7 @@ class SalesApi
      */
     public function salesRevenuegroupIdGet($id)
     {
-        list($response) = $this->salesRevenuegroupIdGetWithHttpInfo($id);
+        [$response] = $this->salesRevenuegroupIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -5623,7 +5468,7 @@ class SalesApi
      */
     public function salesRevenuegroupIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultRevenueGroup';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultRevenueGroup::class;
         $request = $this->salesRevenuegroupIdGetRequest($id);
 
         try {
@@ -5659,9 +5504,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5674,7 +5517,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultRevenueGroup',
+                        \Paqtcom\Simplicate\Model\RestResultRevenueGroup::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5716,7 +5559,7 @@ class SalesApi
      */
     public function salesRevenuegroupIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultRevenueGroup';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultRevenueGroup::class;
         $request = $this->salesRevenuegroupIdGetRequest($id);
 
         return $this->client
@@ -5728,9 +5571,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5781,13 +5622,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -5814,9 +5653,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5873,7 +5710,7 @@ class SalesApi
      */
     public function salesSalesGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->salesSalesGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->salesSalesGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -5893,7 +5730,7 @@ class SalesApi
      */
     public function salesSalesGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSales';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSales::class;
         $request = $this->salesSalesGetRequest($offset, $limit, $sort);
 
         try {
@@ -5929,9 +5766,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5944,7 +5779,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultSales',
+                        \Paqtcom\Simplicate\Model\RestResultSales::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5990,7 +5825,7 @@ class SalesApi
      */
     public function salesSalesGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSales';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSales::class;
         $request = $this->salesSalesGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -6002,9 +5837,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -6087,9 +5920,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6162,7 +5993,6 @@ class SalesApi
      */
     public function salesSalesIdDuplicatePostWithHttpInfo($id, $body = null)
     {
-        $returnType = '';
         $request = $this->salesSalesIdDuplicatePostRequest($id, $body);
 
         try {
@@ -6287,13 +6117,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -6380,7 +6208,7 @@ class SalesApi
      */
     public function salesSalesIdGet($id)
     {
-        list($response) = $this->salesSalesIdGetWithHttpInfo($id);
+        [$response] = $this->salesSalesIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -6398,7 +6226,7 @@ class SalesApi
      */
     public function salesSalesIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSale';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSale::class;
         $request = $this->salesSalesIdGetRequest($id);
 
         try {
@@ -6434,9 +6262,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6449,7 +6275,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultSale',
+                        \Paqtcom\Simplicate\Model\RestResultSale::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6491,7 +6317,7 @@ class SalesApi
      */
     public function salesSalesIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSale';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSale::class;
         $request = $this->salesSalesIdGetRequest($id);
 
         return $this->client
@@ -6503,9 +6329,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -6556,13 +6380,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -6589,9 +6411,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6664,7 +6484,6 @@ class SalesApi
      */
     public function salesSalesIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->salesSalesIdPutRequest($id, $body);
 
         try {
@@ -6793,21 +6612,13 @@ class SalesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -6904,7 +6715,6 @@ class SalesApi
      */
     public function salesSalesPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->salesSalesPostRequest($body);
 
         try {
@@ -7024,12 +6834,7 @@ class SalesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -7112,7 +6917,7 @@ class SalesApi
      */
     public function salesSalescustomfieldgroupsGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->salesSalescustomfieldgroupsGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->salesSalescustomfieldgroupsGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -7132,7 +6937,7 @@ class SalesApi
      */
     public function salesSalescustomfieldgroupsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class;
         $request = $this->salesSalescustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         try {
@@ -7168,9 +6973,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7183,7 +6986,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7229,7 +7032,7 @@ class SalesApi
      */
     public function salesSalescustomfieldgroupsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class;
         $request = $this->salesSalescustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7241,9 +7044,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7326,9 +7127,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7383,7 +7182,7 @@ class SalesApi
      */
     public function salesSalescustomfieldgroupsIdGet($id)
     {
-        list($response) = $this->salesSalescustomfieldgroupsIdGetWithHttpInfo($id);
+        [$response] = $this->salesSalescustomfieldgroupsIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -7401,7 +7200,7 @@ class SalesApi
      */
     public function salesSalescustomfieldgroupsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class;
         $request = $this->salesSalescustomfieldgroupsIdGetRequest($id);
 
         try {
@@ -7437,9 +7236,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7452,7 +7249,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7494,7 +7291,7 @@ class SalesApi
      */
     public function salesSalescustomfieldgroupsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class;
         $request = $this->salesSalescustomfieldgroupsIdGetRequest($id);
 
         return $this->client
@@ -7506,9 +7303,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7559,13 +7354,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -7592,9 +7385,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7651,7 +7442,7 @@ class SalesApi
      */
     public function salesSalescustomfieldsGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->salesSalescustomfieldsGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->salesSalescustomfieldsGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -7671,7 +7462,7 @@ class SalesApi
      */
     public function salesSalescustomfieldsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFields::class;
         $request = $this->salesSalescustomfieldsGetRequest($offset, $limit, $sort);
 
         try {
@@ -7707,9 +7498,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7722,7 +7511,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFields',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFields::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7768,7 +7557,7 @@ class SalesApi
      */
     public function salesSalescustomfieldsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFields::class;
         $request = $this->salesSalescustomfieldsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7780,9 +7569,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7865,9 +7652,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7922,7 +7707,7 @@ class SalesApi
      */
     public function salesSalescustomfieldsIdGet($id)
     {
-        list($response) = $this->salesSalescustomfieldsIdGetWithHttpInfo($id);
+        [$response] = $this->salesSalescustomfieldsIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -7940,7 +7725,7 @@ class SalesApi
      */
     public function salesSalescustomfieldsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomField::class;
         $request = $this->salesSalescustomfieldsIdGetRequest($id);
 
         try {
@@ -7976,9 +7761,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7991,7 +7774,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomField',
+                        \Paqtcom\Simplicate\Model\RestResultCustomField::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8033,7 +7816,7 @@ class SalesApi
      */
     public function salesSalescustomfieldsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomField::class;
         $request = $this->salesSalescustomfieldsIdGetRequest($id);
 
         return $this->client
@@ -8045,9 +7828,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8098,13 +7879,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -8131,9 +7910,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8190,7 +7967,7 @@ class SalesApi
      */
     public function salesSalesfiltersGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->salesSalesfiltersGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->salesSalesfiltersGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -8246,9 +8023,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -8319,9 +8094,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8404,9 +8177,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8461,7 +8232,7 @@ class SalesApi
      */
     public function salesSalesfiltersIdGet($id)
     {
-        list($response) = $this->salesSalesfiltersIdGetWithHttpInfo($id);
+        [$response] = $this->salesSalesfiltersIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -8515,9 +8286,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -8584,9 +8353,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8637,13 +8404,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -8670,9 +8435,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8729,7 +8492,7 @@ class SalesApi
      */
     public function salesSalesprogressGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->salesSalesprogressGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->salesSalesprogressGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -8749,7 +8512,7 @@ class SalesApi
      */
     public function salesSalesprogressGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesProgresses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesProgresses::class;
         $request = $this->salesSalesprogressGetRequest($offset, $limit, $sort);
 
         try {
@@ -8785,9 +8548,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -8800,7 +8561,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultSalesProgresses',
+                        \Paqtcom\Simplicate\Model\RestResultSalesProgresses::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8846,7 +8607,7 @@ class SalesApi
      */
     public function salesSalesprogressGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesProgresses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesProgresses::class;
         $request = $this->salesSalesprogressGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -8858,9 +8619,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8943,9 +8702,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -9000,7 +8757,7 @@ class SalesApi
      */
     public function salesSalesprogressIdGet($id)
     {
-        list($response) = $this->salesSalesprogressIdGetWithHttpInfo($id);
+        [$response] = $this->salesSalesprogressIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -9018,7 +8775,7 @@ class SalesApi
      */
     public function salesSalesprogressIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesProgress';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesProgress::class;
         $request = $this->salesSalesprogressIdGetRequest($id);
 
         try {
@@ -9054,9 +8811,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -9069,7 +8824,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultSalesProgress',
+                        \Paqtcom\Simplicate\Model\RestResultSalesProgress::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9111,7 +8866,7 @@ class SalesApi
      */
     public function salesSalesprogressIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesProgress';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesProgress::class;
         $request = $this->salesSalesprogressIdGetRequest($id);
 
         return $this->client
@@ -9123,9 +8878,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -9176,13 +8929,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -9209,9 +8960,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -9269,7 +9018,7 @@ class SalesApi
      */
     public function salesSalesreasonGet($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        list($response) = $this->salesSalesreasonGetWithHttpInfo($offset, $limit, $sort, $select);
+        [$response] = $this->salesSalesreasonGetWithHttpInfo($offset, $limit, $sort, $select);
 
         return $response;
     }
@@ -9290,7 +9039,7 @@ class SalesApi
      */
     public function salesSalesreasonGetWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesReasons';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesReasons::class;
         $request = $this->salesSalesreasonGetRequest($offset, $limit, $sort, $select);
 
         try {
@@ -9326,9 +9075,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -9341,7 +9088,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultSalesReasons',
+                        \Paqtcom\Simplicate\Model\RestResultSalesReasons::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9389,7 +9136,7 @@ class SalesApi
      */
     public function salesSalesreasonGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesReasons';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesReasons::class;
         $request = $this->salesSalesreasonGetRequest($offset, $limit, $sort, $select);
 
         return $this->client
@@ -9401,9 +9148,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -9491,9 +9236,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -9548,7 +9291,7 @@ class SalesApi
      */
     public function salesSalesreasonIdGet($id)
     {
-        list($response) = $this->salesSalesreasonIdGetWithHttpInfo($id);
+        [$response] = $this->salesSalesreasonIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -9566,7 +9309,7 @@ class SalesApi
      */
     public function salesSalesreasonIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesReason';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesReason::class;
         $request = $this->salesSalesreasonIdGetRequest($id);
 
         try {
@@ -9602,9 +9345,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -9617,7 +9358,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultSalesReason',
+                        \Paqtcom\Simplicate\Model\RestResultSalesReason::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9659,7 +9400,7 @@ class SalesApi
      */
     public function salesSalesreasonIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesReason';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesReason::class;
         $request = $this->salesSalesreasonIdGetRequest($id);
 
         return $this->client
@@ -9671,9 +9412,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -9724,13 +9463,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -9757,9 +9494,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -9816,7 +9551,7 @@ class SalesApi
      */
     public function salesSalessourceGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->salesSalessourceGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->salesSalessourceGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -9836,7 +9571,7 @@ class SalesApi
      */
     public function salesSalessourceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesSources';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesSources::class;
         $request = $this->salesSalessourceGetRequest($offset, $limit, $sort);
 
         try {
@@ -9872,9 +9607,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -9887,7 +9620,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultSalesSources',
+                        \Paqtcom\Simplicate\Model\RestResultSalesSources::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9933,7 +9666,7 @@ class SalesApi
      */
     public function salesSalessourceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesSources';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesSources::class;
         $request = $this->salesSalessourceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -9945,9 +9678,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -10030,9 +9761,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10087,7 +9816,7 @@ class SalesApi
      */
     public function salesSalessourceIdGet($id)
     {
-        list($response) = $this->salesSalessourceIdGetWithHttpInfo($id);
+        [$response] = $this->salesSalessourceIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -10105,7 +9834,7 @@ class SalesApi
      */
     public function salesSalessourceIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesSource';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesSource::class;
         $request = $this->salesSalessourceIdGetRequest($id);
 
         try {
@@ -10141,9 +9870,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -10156,7 +9883,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultSalesSource',
+                        \Paqtcom\Simplicate\Model\RestResultSalesSource::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10198,7 +9925,7 @@ class SalesApi
      */
     public function salesSalessourceIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesSource';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesSource::class;
         $request = $this->salesSalessourceIdGetRequest($id);
 
         return $this->client
@@ -10210,9 +9937,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -10263,13 +9988,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -10296,9 +10019,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10355,7 +10076,7 @@ class SalesApi
      */
     public function salesSalesstatusGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->salesSalesstatusGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->salesSalesstatusGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -10375,7 +10096,7 @@ class SalesApi
      */
     public function salesSalesstatusGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesStatusses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesStatusses::class;
         $request = $this->salesSalesstatusGetRequest($offset, $limit, $sort);
 
         try {
@@ -10411,9 +10132,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -10426,7 +10145,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultSalesStatusses',
+                        \Paqtcom\Simplicate\Model\RestResultSalesStatusses::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10472,7 +10191,7 @@ class SalesApi
      */
     public function salesSalesstatusGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesStatusses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesStatusses::class;
         $request = $this->salesSalesstatusGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -10484,9 +10203,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -10569,9 +10286,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10626,7 +10341,7 @@ class SalesApi
      */
     public function salesSalesstatusIdGet($id)
     {
-        list($response) = $this->salesSalesstatusIdGetWithHttpInfo($id);
+        [$response] = $this->salesSalesstatusIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -10644,7 +10359,7 @@ class SalesApi
      */
     public function salesSalesstatusIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesStatus';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesStatus::class;
         $request = $this->salesSalesstatusIdGetRequest($id);
 
         try {
@@ -10680,9 +10395,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -10695,7 +10408,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultSalesStatus',
+                        \Paqtcom\Simplicate\Model\RestResultSalesStatus::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10737,7 +10450,7 @@ class SalesApi
      */
     public function salesSalesstatusIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesStatus';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesStatus::class;
         $request = $this->salesSalesstatusIdGetRequest($id);
 
         return $this->client
@@ -10749,9 +10462,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -10802,13 +10513,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -10835,9 +10544,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10894,7 +10601,7 @@ class SalesApi
      */
     public function salesServiceGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->salesServiceGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->salesServiceGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -10914,7 +10621,7 @@ class SalesApi
      */
     public function salesServiceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesServices';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesServices::class;
         $request = $this->salesServiceGetRequest($offset, $limit, $sort);
 
         try {
@@ -10950,9 +10657,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -10965,7 +10670,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultSalesServices',
+                        \Paqtcom\Simplicate\Model\RestResultSalesServices::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11011,7 +10716,7 @@ class SalesApi
      */
     public function salesServiceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesServices';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesServices::class;
         $request = $this->salesServiceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -11023,9 +10728,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -11108,9 +10811,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -11181,7 +10882,6 @@ class SalesApi
      */
     public function salesServiceIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->salesServiceIdDeleteRequest($id);
 
         try {
@@ -11303,13 +11003,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -11336,9 +11034,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -11411,7 +11107,6 @@ class SalesApi
      */
     public function salesServiceIdDuplicatePostWithHttpInfo($id, $body = null)
     {
-        $returnType = '';
         $request = $this->salesServiceIdDuplicatePostRequest($id, $body);
 
         try {
@@ -11536,13 +11231,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -11629,7 +11322,7 @@ class SalesApi
      */
     public function salesServiceIdGet($id)
     {
-        list($response) = $this->salesServiceIdGetWithHttpInfo($id);
+        [$response] = $this->salesServiceIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -11647,7 +11340,7 @@ class SalesApi
      */
     public function salesServiceIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesService';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesService::class;
         $request = $this->salesServiceIdGetRequest($id);
 
         try {
@@ -11683,9 +11376,7 @@ class SalesApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -11698,7 +11389,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultSalesService',
+                        \Paqtcom\Simplicate\Model\RestResultSalesService::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11740,7 +11431,7 @@ class SalesApi
      */
     public function salesServiceIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultSalesService';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultSalesService::class;
         $request = $this->salesServiceIdGetRequest($id);
 
         return $this->client
@@ -11752,9 +11443,7 @@ class SalesApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -11805,13 +11494,11 @@ class SalesApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -11838,9 +11525,7 @@ class SalesApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -11913,7 +11598,6 @@ class SalesApi
      */
     public function salesServiceIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->salesServiceIdPutRequest($id, $body);
 
         try {
@@ -12042,21 +11726,13 @@ class SalesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -12153,7 +11829,6 @@ class SalesApi
      */
     public function salesServicePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->salesServicePostRequest($body);
 
         try {
@@ -12273,12 +11948,7 @@ class SalesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(

@@ -65,11 +65,6 @@ class CostsApi
      */
     protected $headerSelector;
 
-    /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     */
     public function __construct(
         ClientInterface $client = null,
         Configuration $config = null,
@@ -103,7 +98,7 @@ class CostsApi
      */
     public function costsCoststypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->costsCoststypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->costsCoststypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -123,7 +118,7 @@ class CostsApi
      */
     public function costsCoststypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHourTypes::class;
         $request = $this->costsCoststypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -159,9 +154,7 @@ class CostsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -174,7 +167,7 @@ class CostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultHourTypes',
+                        \Paqtcom\Simplicate\Model\RestResultHourTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +213,7 @@ class CostsApi
      */
     public function costsCoststypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHourTypes::class;
         $request = $this->costsCoststypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -232,9 +225,7 @@ class CostsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -317,9 +308,7 @@ class CostsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -374,7 +363,7 @@ class CostsApi
      */
     public function costsCoststypeIdGet($id)
     {
-        list($response) = $this->costsCoststypeIdGetWithHttpInfo($id);
+        [$response] = $this->costsCoststypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -392,7 +381,7 @@ class CostsApi
      */
     public function costsCoststypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHourType::class;
         $request = $this->costsCoststypeIdGetRequest($id);
 
         try {
@@ -428,9 +417,7 @@ class CostsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -443,7 +430,7 @@ class CostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultHourType',
+                        \Paqtcom\Simplicate\Model\RestResultHourType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -485,7 +472,7 @@ class CostsApi
      */
     public function costsCoststypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHourType::class;
         $request = $this->costsCoststypeIdGetRequest($id);
 
         return $this->client
@@ -497,9 +484,7 @@ class CostsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -550,13 +535,11 @@ class CostsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -583,9 +566,7 @@ class CostsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -642,7 +623,7 @@ class CostsApi
      */
     public function costsExpenseGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->costsExpenseGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->costsExpenseGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -662,7 +643,7 @@ class CostsApi
      */
     public function costsExpenseGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList::class;
         $request = $this->costsExpenseGetRequest($offset, $limit, $sort);
 
         try {
@@ -698,9 +679,7 @@ class CostsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -713,7 +692,7 @@ class CostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList',
+                        \Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -759,7 +738,7 @@ class CostsApi
      */
     public function costsExpenseGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList::class;
         $request = $this->costsExpenseGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -771,9 +750,7 @@ class CostsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -856,9 +833,7 @@ class CostsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -913,7 +888,7 @@ class CostsApi
      */
     public function costsExpenseIdGet($id)
     {
-        list($response) = $this->costsExpenseIdGetWithHttpInfo($id);
+        [$response] = $this->costsExpenseIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -931,7 +906,7 @@ class CostsApi
      */
     public function costsExpenseIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpense';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployeeExpense::class;
         $request = $this->costsExpenseIdGetRequest($id);
 
         try {
@@ -967,9 +942,7 @@ class CostsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -982,7 +955,7 @@ class CostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultEmployeeExpense',
+                        \Paqtcom\Simplicate\Model\RestResultEmployeeExpense::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1024,7 +997,7 @@ class CostsApi
      */
     public function costsExpenseIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpense';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployeeExpense::class;
         $request = $this->costsExpenseIdGetRequest($id);
 
         return $this->client
@@ -1036,9 +1009,7 @@ class CostsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1089,13 +1060,11 @@ class CostsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -1122,9 +1091,7 @@ class CostsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

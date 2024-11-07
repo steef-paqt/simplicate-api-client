@@ -65,11 +65,6 @@ class ProjectsApi
      */
     protected $headerSelector;
 
-    /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     */
     public function __construct(
         ClientInterface $client = null,
         Configuration $config = null,
@@ -103,7 +98,7 @@ class ProjectsApi
      */
     public function projectsAssignmentGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsAssignmentGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->projectsAssignmentGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -123,7 +118,7 @@ class ProjectsApi
      */
     public function projectsAssignmentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectAssignments::class;
         $request = $this->projectsAssignmentGetRequest($offset, $limit, $sort);
 
         try {
@@ -159,9 +154,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -174,7 +167,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultProjectAssignments',
+                        \Paqtcom\Simplicate\Model\RestResultProjectAssignments::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +213,7 @@ class ProjectsApi
      */
     public function projectsAssignmentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectAssignments::class;
         $request = $this->projectsAssignmentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -232,9 +225,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -317,9 +308,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -374,7 +363,7 @@ class ProjectsApi
      */
     public function projectsAssignmentIdGet($id)
     {
-        list($response) = $this->projectsAssignmentIdGetWithHttpInfo($id);
+        [$response] = $this->projectsAssignmentIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -392,7 +381,7 @@ class ProjectsApi
      */
     public function projectsAssignmentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignment';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectAssignment::class;
         $request = $this->projectsAssignmentIdGetRequest($id);
 
         try {
@@ -428,9 +417,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -443,7 +430,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultProjectAssignment',
+                        \Paqtcom\Simplicate\Model\RestResultProjectAssignment::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -485,7 +472,7 @@ class ProjectsApi
      */
     public function projectsAssignmentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignment';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectAssignment::class;
         $request = $this->projectsAssignmentIdGetRequest($id);
 
         return $this->client
@@ -497,9 +484,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -550,13 +535,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -583,9 +566,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -658,7 +639,6 @@ class ProjectsApi
      */
     public function projectsAssignmentIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->projectsAssignmentIdPutRequest($id, $body);
 
         try {
@@ -787,21 +767,13 @@ class ProjectsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -898,7 +870,6 @@ class ProjectsApi
      */
     public function projectsAssignmentPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->projectsAssignmentPostRequest($body);
 
         try {
@@ -1018,12 +989,7 @@ class ProjectsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1109,7 +1075,7 @@ class ProjectsApi
      */
     public function projectsAssignmentbudgetGet($q_range_start, $q_employee_id, $q_assignment_id, $offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsAssignmentbudgetGetWithHttpInfo($q_range_start, $q_employee_id, $q_assignment_id, $offset, $limit, $sort);
+        [$response] = $this->projectsAssignmentbudgetGetWithHttpInfo($q_range_start, $q_employee_id, $q_assignment_id, $offset, $limit, $sort);
 
         return $response;
     }
@@ -1132,7 +1098,7 @@ class ProjectsApi
      */
     public function projectsAssignmentbudgetGetWithHttpInfo($q_range_start, $q_employee_id, $q_assignment_id, $offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget::class;
         $request = $this->projectsAssignmentbudgetGetRequest($q_range_start, $q_employee_id, $q_assignment_id, $offset, $limit, $sort);
 
         try {
@@ -1168,9 +1134,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1183,7 +1147,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget',
+                        \Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1235,7 +1199,7 @@ class ProjectsApi
      */
     public function projectsAssignmentbudgetGetAsyncWithHttpInfo($q_range_start, $q_employee_id, $q_assignment_id, $offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectAssignmentbudget::class;
         $request = $this->projectsAssignmentbudgetGetRequest($q_range_start, $q_employee_id, $q_assignment_id, $offset, $limit, $sort);
 
         return $this->client
@@ -1247,9 +1211,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1317,17 +1279,11 @@ class ProjectsApi
         $multipart = false;
 
         // query params
-        if ($q_range_start !== null) {
-            $queryParams['q[range_start]'] = ObjectSerializer::toQueryValue($q_range_start);
-        }
+        $queryParams['q[range_start]'] = ObjectSerializer::toQueryValue($q_range_start);
         // query params
-        if ($q_employee_id !== null) {
-            $queryParams['q[employee_id]'] = ObjectSerializer::toQueryValue($q_employee_id);
-        }
+        $queryParams['q[employee_id]'] = ObjectSerializer::toQueryValue($q_employee_id);
         // query params
-        if ($q_assignment_id !== null) {
-            $queryParams['q[assignment_id]'] = ObjectSerializer::toQueryValue($q_assignment_id);
-        }
+        $queryParams['q[assignment_id]'] = ObjectSerializer::toQueryValue($q_assignment_id);
         // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
@@ -1366,9 +1322,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1425,7 +1379,7 @@ class ProjectsApi
      */
     public function projectsAssignmentstatusGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsAssignmentstatusGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->projectsAssignmentstatusGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -1445,7 +1399,7 @@ class ProjectsApi
      */
     public function projectsAssignmentstatusGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatuses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatuses::class;
         $request = $this->projectsAssignmentstatusGetRequest($offset, $limit, $sort);
 
         try {
@@ -1481,9 +1435,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1496,7 +1448,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatuses',
+                        \Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatuses::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1542,7 +1494,7 @@ class ProjectsApi
      */
     public function projectsAssignmentstatusGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatuses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatuses::class;
         $request = $this->projectsAssignmentstatusGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1554,9 +1506,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1639,9 +1589,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1699,7 +1647,7 @@ class ProjectsApi
      */
     public function projectsAssignmentstatusIdGet($id, $offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsAssignmentstatusIdGetWithHttpInfo($id, $offset, $limit, $sort);
+        [$response] = $this->projectsAssignmentstatusIdGetWithHttpInfo($id, $offset, $limit, $sort);
 
         return $response;
     }
@@ -1720,7 +1668,7 @@ class ProjectsApi
      */
     public function projectsAssignmentstatusIdGetWithHttpInfo($id, $offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus::class;
         $request = $this->projectsAssignmentstatusIdGetRequest($id, $offset, $limit, $sort);
 
         try {
@@ -1756,9 +1704,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1771,7 +1717,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus',
+                        \Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1819,7 +1765,7 @@ class ProjectsApi
      */
     public function projectsAssignmentstatusIdGetAsyncWithHttpInfo($id, $offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectAssignmentStatus::class;
         $request = $this->projectsAssignmentstatusIdGetRequest($id, $offset, $limit, $sort);
 
         return $this->client
@@ -1831,9 +1777,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1900,13 +1844,11 @@ class ProjectsApi
         }
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -1933,9 +1875,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2008,7 +1948,6 @@ class ProjectsApi
      */
     public function projectsAssignmentstatusIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->projectsAssignmentstatusIdPutRequest($id, $body);
 
         try {
@@ -2137,21 +2076,13 @@ class ProjectsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2248,7 +2179,6 @@ class ProjectsApi
      */
     public function projectsAssignmentstatusPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->projectsAssignmentstatusPostRequest($body);
 
         try {
@@ -2368,12 +2298,7 @@ class ProjectsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2456,7 +2381,7 @@ class ProjectsApi
      */
     public function projectsDocumentGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsDocumentGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->projectsDocumentGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -2476,7 +2401,7 @@ class ProjectsApi
      */
     public function projectsDocumentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocuments::class;
         $request = $this->projectsDocumentGetRequest($offset, $limit, $sort);
 
         try {
@@ -2512,9 +2437,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -2527,7 +2450,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocuments',
+                        \Paqtcom\Simplicate\Model\RestResultDocuments::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2573,7 +2496,7 @@ class ProjectsApi
      */
     public function projectsDocumentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocuments::class;
         $request = $this->projectsDocumentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -2585,9 +2508,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2670,9 +2591,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2743,7 +2662,6 @@ class ProjectsApi
      */
     public function projectsDocumentIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->projectsDocumentIdDeleteRequest($id);
 
         try {
@@ -2865,13 +2783,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2898,9 +2814,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2955,7 +2869,7 @@ class ProjectsApi
      */
     public function projectsDocumentIdGet($id)
     {
-        list($response) = $this->projectsDocumentIdGetWithHttpInfo($id);
+        [$response] = $this->projectsDocumentIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -2973,7 +2887,7 @@ class ProjectsApi
      */
     public function projectsDocumentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocument::class;
         $request = $this->projectsDocumentIdGetRequest($id);
 
         try {
@@ -3009,9 +2923,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3024,7 +2936,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocument',
+                        \Paqtcom\Simplicate\Model\RestResultDocument::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3066,7 +2978,7 @@ class ProjectsApi
      */
     public function projectsDocumentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocument::class;
         $request = $this->projectsDocumentIdGetRequest($id);
 
         return $this->client
@@ -3078,9 +2990,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3131,13 +3041,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -3164,9 +3072,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3237,7 +3143,6 @@ class ProjectsApi
      */
     public function projectsDocumentPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->projectsDocumentPostRequest($body);
 
         try {
@@ -3357,12 +3262,7 @@ class ProjectsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -3459,7 +3359,6 @@ class ProjectsApi
      */
     public function projectsDocumentPutWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->projectsDocumentPutRequest($body);
 
         try {
@@ -3579,12 +3478,7 @@ class ProjectsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -3667,7 +3561,7 @@ class ProjectsApi
      */
     public function projectsDocumenttypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsDocumenttypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->projectsDocumenttypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -3687,7 +3581,7 @@ class ProjectsApi
      */
     public function projectsDocumenttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class;
         $request = $this->projectsDocumenttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -3723,9 +3617,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3738,7 +3630,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocumentTypes',
+                        \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3784,7 +3676,7 @@ class ProjectsApi
      */
     public function projectsDocumenttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class;
         $request = $this->projectsDocumenttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3796,9 +3688,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3881,9 +3771,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3938,7 +3826,7 @@ class ProjectsApi
      */
     public function projectsDocumenttypeIdGet($id)
     {
-        list($response) = $this->projectsDocumenttypeIdGetWithHttpInfo($id);
+        [$response] = $this->projectsDocumenttypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -3956,7 +3844,7 @@ class ProjectsApi
      */
     public function projectsDocumenttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentType::class;
         $request = $this->projectsDocumenttypeIdGetRequest($id);
 
         try {
@@ -3992,9 +3880,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4007,7 +3893,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocumentType',
+                        \Paqtcom\Simplicate\Model\RestResultDocumentType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4049,7 +3935,7 @@ class ProjectsApi
      */
     public function projectsDocumenttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentType::class;
         $request = $this->projectsDocumenttypeIdGetRequest($id);
 
         return $this->client
@@ -4061,9 +3947,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4114,13 +3998,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -4147,9 +4029,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4206,7 +4086,7 @@ class ProjectsApi
      */
     public function projectsProjectGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsProjectGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->projectsProjectGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -4226,7 +4106,7 @@ class ProjectsApi
      */
     public function projectsProjectGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjects';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjects::class;
         $request = $this->projectsProjectGetRequest($offset, $limit, $sort);
 
         try {
@@ -4262,9 +4142,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4277,7 +4155,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultProjects',
+                        \Paqtcom\Simplicate\Model\RestResultProjects::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4323,7 +4201,7 @@ class ProjectsApi
      */
     public function projectsProjectGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjects';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjects::class;
         $request = $this->projectsProjectGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -4335,9 +4213,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4420,9 +4296,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4493,7 +4367,6 @@ class ProjectsApi
      */
     public function projectsProjectIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->projectsProjectIdDeleteRequest($id);
 
         try {
@@ -4615,13 +4488,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -4648,9 +4519,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4705,7 +4574,7 @@ class ProjectsApi
      */
     public function projectsProjectIdGet($id)
     {
-        list($response) = $this->projectsProjectIdGetWithHttpInfo($id);
+        [$response] = $this->projectsProjectIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -4723,7 +4592,7 @@ class ProjectsApi
      */
     public function projectsProjectIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProject';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProject::class;
         $request = $this->projectsProjectIdGetRequest($id);
 
         try {
@@ -4759,9 +4628,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4774,7 +4641,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultProject',
+                        \Paqtcom\Simplicate\Model\RestResultProject::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4816,7 +4683,7 @@ class ProjectsApi
      */
     public function projectsProjectIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProject';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProject::class;
         $request = $this->projectsProjectIdGetRequest($id);
 
         return $this->client
@@ -4828,9 +4695,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4881,13 +4746,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -4914,9 +4777,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4973,7 +4834,7 @@ class ProjectsApi
      */
     public function projectsProjectIdPlanningBudgetGet($id, $by = null, $until_date = null)
     {
-        list($response) = $this->projectsProjectIdPlanningBudgetGetWithHttpInfo($id, $by, $until_date);
+        [$response] = $this->projectsProjectIdPlanningBudgetGetWithHttpInfo($id, $by, $until_date);
 
         return $response;
     }
@@ -5029,9 +4890,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5102,9 +4961,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5166,13 +5023,11 @@ class ProjectsApi
         }
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -5199,9 +5054,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5274,7 +5127,6 @@ class ProjectsApi
      */
     public function projectsProjectIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->projectsProjectIdPutRequest($id, $body);
 
         try {
@@ -5403,21 +5255,13 @@ class ProjectsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -5514,7 +5358,6 @@ class ProjectsApi
      */
     public function projectsProjectPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->projectsProjectPostRequest($body);
 
         try {
@@ -5634,12 +5477,7 @@ class ProjectsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -5722,7 +5560,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldgroupsGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsProjectcustomfieldgroupsGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->projectsProjectcustomfieldgroupsGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -5742,7 +5580,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldgroupsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class;
         $request = $this->projectsProjectcustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         try {
@@ -5778,9 +5616,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5793,7 +5629,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5839,7 +5675,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldgroupsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class;
         $request = $this->projectsProjectcustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -5851,9 +5687,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5936,9 +5770,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5993,7 +5825,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldgroupsIdGet($id)
     {
-        list($response) = $this->projectsProjectcustomfieldgroupsIdGetWithHttpInfo($id);
+        [$response] = $this->projectsProjectcustomfieldgroupsIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -6011,7 +5843,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldgroupsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class;
         $request = $this->projectsProjectcustomfieldgroupsIdGetRequest($id);
 
         try {
@@ -6047,9 +5879,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6062,7 +5892,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6104,7 +5934,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldgroupsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class;
         $request = $this->projectsProjectcustomfieldgroupsIdGetRequest($id);
 
         return $this->client
@@ -6116,9 +5946,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -6169,13 +5997,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -6202,9 +6028,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6261,7 +6085,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldsGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsProjectcustomfieldsGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->projectsProjectcustomfieldsGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -6281,7 +6105,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFields::class;
         $request = $this->projectsProjectcustomfieldsGetRequest($offset, $limit, $sort);
 
         try {
@@ -6317,9 +6141,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6332,7 +6154,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFields',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFields::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6378,7 +6200,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFields::class;
         $request = $this->projectsProjectcustomfieldsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -6390,9 +6212,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -6475,9 +6295,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6532,7 +6350,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldsIdGet($id)
     {
-        list($response) = $this->projectsProjectcustomfieldsIdGetWithHttpInfo($id);
+        [$response] = $this->projectsProjectcustomfieldsIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -6550,7 +6368,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomField::class;
         $request = $this->projectsProjectcustomfieldsIdGetRequest($id);
 
         try {
@@ -6586,9 +6404,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6601,7 +6417,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomField',
+                        \Paqtcom\Simplicate\Model\RestResultCustomField::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6643,7 +6459,7 @@ class ProjectsApi
      */
     public function projectsProjectcustomfieldsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomField::class;
         $request = $this->projectsProjectcustomfieldsIdGetRequest($id);
 
         return $this->client
@@ -6655,9 +6471,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -6708,13 +6522,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -6741,9 +6553,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6814,7 +6624,6 @@ class ProjectsApi
      */
     public function projectsProjectemployeePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->projectsProjectemployeePostRequest($body);
 
         try {
@@ -6934,12 +6743,7 @@ class ProjectsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -7034,7 +6838,6 @@ class ProjectsApi
      */
     public function projectsProjectemployeeProjectEmployeeIdDeleteWithHttpInfo()
     {
-        $returnType = '';
         $request = $this->projectsProjectemployeeProjectEmployeeIdDeleteRequest();
 
         try {
@@ -7170,9 +6973,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7229,7 +7030,7 @@ class ProjectsApi
      */
     public function projectsProjectfiltersGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsProjectfiltersGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->projectsProjectfiltersGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -7285,9 +7086,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7358,9 +7157,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7443,9 +7240,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7500,7 +7295,7 @@ class ProjectsApi
      */
     public function projectsProjectfiltersIdGet($id)
     {
-        list($response) = $this->projectsProjectfiltersIdGetWithHttpInfo($id);
+        [$response] = $this->projectsProjectfiltersIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -7554,9 +7349,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7623,9 +7416,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7676,13 +7467,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -7709,9 +7498,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7768,7 +7555,7 @@ class ProjectsApi
      */
     public function projectsProjectstatusGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsProjectstatusGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->projectsProjectstatusGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -7788,7 +7575,7 @@ class ProjectsApi
      */
     public function projectsProjectstatusGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectStatusses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectStatusses::class;
         $request = $this->projectsProjectstatusGetRequest($offset, $limit, $sort);
 
         try {
@@ -7824,9 +7611,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7839,7 +7624,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultProjectStatusses',
+                        \Paqtcom\Simplicate\Model\RestResultProjectStatusses::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7885,7 +7670,7 @@ class ProjectsApi
      */
     public function projectsProjectstatusGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectStatusses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectStatusses::class;
         $request = $this->projectsProjectstatusGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7897,9 +7682,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7982,9 +7765,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8039,7 +7820,7 @@ class ProjectsApi
      */
     public function projectsProjectstatusIdGet($id)
     {
-        list($response) = $this->projectsProjectstatusIdGetWithHttpInfo($id);
+        [$response] = $this->projectsProjectstatusIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -8057,7 +7838,7 @@ class ProjectsApi
      */
     public function projectsProjectstatusIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectStatus';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectStatus::class;
         $request = $this->projectsProjectstatusIdGetRequest($id);
 
         try {
@@ -8093,9 +7874,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -8108,7 +7887,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultProjectStatus',
+                        \Paqtcom\Simplicate\Model\RestResultProjectStatus::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8150,7 +7929,7 @@ class ProjectsApi
      */
     public function projectsProjectstatusIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectStatus';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectStatus::class;
         $request = $this->projectsProjectstatusIdGetRequest($id);
 
         return $this->client
@@ -8162,9 +7941,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8215,13 +7992,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -8248,9 +8023,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8307,7 +8080,7 @@ class ProjectsApi
      */
     public function projectsPurchaseGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsPurchaseGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->projectsPurchaseGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -8327,7 +8100,7 @@ class ProjectsApi
      */
     public function projectsPurchaseGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchases';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPurchases::class;
         $request = $this->projectsPurchaseGetRequest($offset, $limit, $sort);
 
         try {
@@ -8363,9 +8136,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -8378,7 +8149,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultPurchases',
+                        \Paqtcom\Simplicate\Model\RestResultPurchases::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8424,7 +8195,7 @@ class ProjectsApi
      */
     public function projectsPurchaseGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchases';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPurchases::class;
         $request = $this->projectsPurchaseGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -8436,9 +8207,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8521,9 +8290,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8578,7 +8345,7 @@ class ProjectsApi
      */
     public function projectsPurchaseIdGet($id)
     {
-        list($response) = $this->projectsPurchaseIdGetWithHttpInfo($id);
+        [$response] = $this->projectsPurchaseIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -8596,7 +8363,7 @@ class ProjectsApi
      */
     public function projectsPurchaseIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchase';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPurchase::class;
         $request = $this->projectsPurchaseIdGetRequest($id);
 
         try {
@@ -8632,9 +8399,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -8647,7 +8412,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultPurchase',
+                        \Paqtcom\Simplicate\Model\RestResultPurchase::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8689,7 +8454,7 @@ class ProjectsApi
      */
     public function projectsPurchaseIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchase';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPurchase::class;
         $request = $this->projectsPurchaseIdGetRequest($id);
 
         return $this->client
@@ -8701,9 +8466,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8754,13 +8517,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -8787,9 +8548,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8846,7 +8605,7 @@ class ProjectsApi
      */
     public function projectsPurchasetypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsPurchasetypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->projectsPurchasetypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -8866,7 +8625,7 @@ class ProjectsApi
      */
     public function projectsPurchasetypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchaseTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPurchaseTypes::class;
         $request = $this->projectsPurchasetypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -8902,9 +8661,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -8917,7 +8674,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultPurchaseTypes',
+                        \Paqtcom\Simplicate\Model\RestResultPurchaseTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8963,7 +8720,7 @@ class ProjectsApi
      */
     public function projectsPurchasetypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchaseTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPurchaseTypes::class;
         $request = $this->projectsPurchasetypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -8975,9 +8732,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -9060,9 +8815,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -9117,7 +8870,7 @@ class ProjectsApi
      */
     public function projectsPurchasetypeIdGet($id)
     {
-        list($response) = $this->projectsPurchasetypeIdGetWithHttpInfo($id);
+        [$response] = $this->projectsPurchasetypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -9135,7 +8888,7 @@ class ProjectsApi
      */
     public function projectsPurchasetypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchaseType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPurchaseType::class;
         $request = $this->projectsPurchasetypeIdGetRequest($id);
 
         try {
@@ -9171,9 +8924,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -9186,7 +8937,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultPurchaseType',
+                        \Paqtcom\Simplicate\Model\RestResultPurchaseType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9228,7 +8979,7 @@ class ProjectsApi
      */
     public function projectsPurchasetypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPurchaseType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPurchaseType::class;
         $request = $this->projectsPurchasetypeIdGetRequest($id);
 
         return $this->client
@@ -9240,9 +8991,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -9293,13 +9042,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -9326,9 +9073,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -9385,7 +9130,7 @@ class ProjectsApi
      */
     public function projectsReverseinvoiceGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsReverseinvoiceGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->projectsReverseinvoiceGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -9405,7 +9150,7 @@ class ProjectsApi
      */
     public function projectsReverseinvoiceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultReverseInvoices';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultReverseInvoices::class;
         $request = $this->projectsReverseinvoiceGetRequest($offset, $limit, $sort);
 
         try {
@@ -9441,9 +9186,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -9456,7 +9199,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultReverseInvoices',
+                        \Paqtcom\Simplicate\Model\RestResultReverseInvoices::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9502,7 +9245,7 @@ class ProjectsApi
      */
     public function projectsReverseinvoiceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultReverseInvoices';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultReverseInvoices::class;
         $request = $this->projectsReverseinvoiceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -9514,9 +9257,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -9599,9 +9340,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -9656,7 +9395,7 @@ class ProjectsApi
      */
     public function projectsReverseinvoiceIdGet($id)
     {
-        list($response) = $this->projectsReverseinvoiceIdGetWithHttpInfo($id);
+        [$response] = $this->projectsReverseinvoiceIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -9674,7 +9413,7 @@ class ProjectsApi
      */
     public function projectsReverseinvoiceIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultReverseInvoice';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultReverseInvoice::class;
         $request = $this->projectsReverseinvoiceIdGetRequest($id);
 
         try {
@@ -9710,9 +9449,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -9725,7 +9462,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultReverseInvoice',
+                        \Paqtcom\Simplicate\Model\RestResultReverseInvoice::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9767,7 +9504,7 @@ class ProjectsApi
      */
     public function projectsReverseinvoiceIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultReverseInvoice';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultReverseInvoice::class;
         $request = $this->projectsReverseinvoiceIdGetRequest($id);
 
         return $this->client
@@ -9779,9 +9516,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -9832,13 +9567,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -9865,9 +9598,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -9924,7 +9655,7 @@ class ProjectsApi
      */
     public function projectsServiceGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->projectsServiceGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->projectsServiceGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -9944,7 +9675,7 @@ class ProjectsApi
      */
     public function projectsServiceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectServices';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectServices::class;
         $request = $this->projectsServiceGetRequest($offset, $limit, $sort);
 
         try {
@@ -9980,9 +9711,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -9995,7 +9724,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultProjectServices',
+                        \Paqtcom\Simplicate\Model\RestResultProjectServices::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10041,7 +9770,7 @@ class ProjectsApi
      */
     public function projectsServiceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectServices';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectServices::class;
         $request = $this->projectsServiceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -10053,9 +9782,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -10138,9 +9865,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10211,7 +9936,6 @@ class ProjectsApi
      */
     public function projectsServiceIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->projectsServiceIdDeleteRequest($id);
 
         try {
@@ -10333,13 +10057,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -10366,9 +10088,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10441,7 +10161,6 @@ class ProjectsApi
      */
     public function projectsServiceIdDuplicatePostWithHttpInfo($id, $body = null)
     {
-        $returnType = '';
         $request = $this->projectsServiceIdDuplicatePostRequest($id, $body);
 
         try {
@@ -10566,13 +10285,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -10659,7 +10376,7 @@ class ProjectsApi
      */
     public function projectsServiceIdGet($id)
     {
-        list($response) = $this->projectsServiceIdGetWithHttpInfo($id);
+        [$response] = $this->projectsServiceIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -10677,7 +10394,7 @@ class ProjectsApi
      */
     public function projectsServiceIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectService';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectService::class;
         $request = $this->projectsServiceIdGetRequest($id);
 
         try {
@@ -10713,9 +10430,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -10728,7 +10443,7 @@ class ProjectsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultProjectService',
+                        \Paqtcom\Simplicate\Model\RestResultProjectService::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10770,7 +10485,7 @@ class ProjectsApi
      */
     public function projectsServiceIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultProjectService';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultProjectService::class;
         $request = $this->projectsServiceIdGetRequest($id);
 
         return $this->client
@@ -10782,9 +10497,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -10835,13 +10548,11 @@ class ProjectsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -10868,9 +10579,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10927,7 +10636,7 @@ class ProjectsApi
      */
     public function projectsServiceIdPlanningBudgetGet($id, $by = null, $until_date = null)
     {
-        list($response) = $this->projectsServiceIdPlanningBudgetGetWithHttpInfo($id, $by, $until_date);
+        [$response] = $this->projectsServiceIdPlanningBudgetGetWithHttpInfo($id, $by, $until_date);
 
         return $response;
     }
@@ -10983,9 +10692,7 @@ class ProjectsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -11056,9 +10763,7 @@ class ProjectsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -11120,13 +10825,11 @@ class ProjectsApi
         }
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -11153,9 +10856,7 @@ class ProjectsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -11228,7 +10929,6 @@ class ProjectsApi
      */
     public function projectsServiceIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->projectsServiceIdPutRequest($id, $body);
 
         try {
@@ -11357,21 +11057,13 @@ class ProjectsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -11468,7 +11160,6 @@ class ProjectsApi
      */
     public function projectsServicePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->projectsServicePostRequest($body);
 
         try {
@@ -11588,12 +11279,7 @@ class ProjectsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(

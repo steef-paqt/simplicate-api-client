@@ -65,11 +65,6 @@ class HrmApi
      */
     protected $headerSelector;
 
-    /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     */
     public function __construct(
         ClientInterface $client = null,
         Configuration $config = null,
@@ -103,7 +98,7 @@ class HrmApi
      */
     public function hrmAbsenceGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmAbsenceGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmAbsenceGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -123,7 +118,7 @@ class HrmApi
      */
     public function hrmAbsenceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsenceMultiple';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultAbsenceMultiple::class;
         $request = $this->hrmAbsenceGetRequest($offset, $limit, $sort);
 
         try {
@@ -159,9 +154,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -174,7 +167,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultAbsenceMultiple',
+                        \Paqtcom\Simplicate\Model\RestResultAbsenceMultiple::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +213,7 @@ class HrmApi
      */
     public function hrmAbsenceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsenceMultiple';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultAbsenceMultiple::class;
         $request = $this->hrmAbsenceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -232,9 +225,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -317,9 +308,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -390,7 +379,6 @@ class HrmApi
      */
     public function hrmAbsenceIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->hrmAbsenceIdDeleteRequest($id);
 
         try {
@@ -512,13 +500,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -545,9 +531,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -602,7 +586,7 @@ class HrmApi
      */
     public function hrmAbsenceIdGet($id)
     {
-        list($response) = $this->hrmAbsenceIdGetWithHttpInfo($id);
+        [$response] = $this->hrmAbsenceIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -620,7 +604,7 @@ class HrmApi
      */
     public function hrmAbsenceIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsence';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultAbsence::class;
         $request = $this->hrmAbsenceIdGetRequest($id);
 
         try {
@@ -656,9 +640,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -671,7 +653,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultAbsence',
+                        \Paqtcom\Simplicate\Model\RestResultAbsence::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -713,7 +695,7 @@ class HrmApi
      */
     public function hrmAbsenceIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsence';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultAbsence::class;
         $request = $this->hrmAbsenceIdGetRequest($id);
 
         return $this->client
@@ -725,9 +707,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -778,13 +758,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -811,9 +789,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -886,7 +862,6 @@ class HrmApi
      */
     public function hrmAbsenceIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->hrmAbsenceIdPutRequest($id, $body);
 
         try {
@@ -1015,21 +990,13 @@ class HrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1126,7 +1093,6 @@ class HrmApi
      */
     public function hrmAbsencePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hrmAbsencePostRequest($body);
 
         try {
@@ -1246,12 +1212,7 @@ class HrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1334,7 +1295,7 @@ class HrmApi
      */
     public function hrmAbsencetypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmAbsencetypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmAbsencetypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -1354,7 +1315,7 @@ class HrmApi
      */
     public function hrmAbsencetypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsenceTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultAbsenceTypes::class;
         $request = $this->hrmAbsencetypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -1390,9 +1351,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1405,7 +1364,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultAbsenceTypes',
+                        \Paqtcom\Simplicate\Model\RestResultAbsenceTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1451,7 +1410,7 @@ class HrmApi
      */
     public function hrmAbsencetypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsenceTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultAbsenceTypes::class;
         $request = $this->hrmAbsencetypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1463,9 +1422,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1548,9 +1505,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1605,7 +1560,7 @@ class HrmApi
      */
     public function hrmAbsencetypeIdGet($id)
     {
-        list($response) = $this->hrmAbsencetypeIdGetWithHttpInfo($id);
+        [$response] = $this->hrmAbsencetypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -1623,7 +1578,7 @@ class HrmApi
      */
     public function hrmAbsencetypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsenceType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultAbsenceType::class;
         $request = $this->hrmAbsencetypeIdGetRequest($id);
 
         try {
@@ -1659,9 +1614,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1674,7 +1627,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultAbsenceType',
+                        \Paqtcom\Simplicate\Model\RestResultAbsenceType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1716,7 +1669,7 @@ class HrmApi
      */
     public function hrmAbsencetypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultAbsenceType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultAbsenceType::class;
         $request = $this->hrmAbsencetypeIdGetRequest($id);
 
         return $this->client
@@ -1728,9 +1681,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1781,13 +1732,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -1814,9 +1763,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1873,7 +1820,7 @@ class HrmApi
      */
     public function hrmCivilstatusGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmCivilstatusGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmCivilstatusGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -1893,7 +1840,7 @@ class HrmApi
      */
     public function hrmCivilstatusGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCivilStatuses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCivilStatuses::class;
         $request = $this->hrmCivilstatusGetRequest($offset, $limit, $sort);
 
         try {
@@ -1929,9 +1876,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1944,7 +1889,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCivilStatuses',
+                        \Paqtcom\Simplicate\Model\RestResultCivilStatuses::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1990,7 +1935,7 @@ class HrmApi
      */
     public function hrmCivilstatusGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCivilStatuses';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCivilStatuses::class;
         $request = $this->hrmCivilstatusGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -2002,9 +1947,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2087,9 +2030,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2144,7 +2085,7 @@ class HrmApi
      */
     public function hrmCivilstatusIdGet($id)
     {
-        list($response) = $this->hrmCivilstatusIdGetWithHttpInfo($id);
+        [$response] = $this->hrmCivilstatusIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -2162,7 +2103,7 @@ class HrmApi
      */
     public function hrmCivilstatusIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCivilStatus';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCivilStatus::class;
         $request = $this->hrmCivilstatusIdGetRequest($id);
 
         try {
@@ -2198,9 +2139,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -2213,7 +2152,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCivilStatus',
+                        \Paqtcom\Simplicate\Model\RestResultCivilStatus::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2255,7 +2194,7 @@ class HrmApi
      */
     public function hrmCivilstatusIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCivilStatus';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCivilStatus::class;
         $request = $this->hrmCivilstatusIdGetRequest($id);
 
         return $this->client
@@ -2267,9 +2206,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2320,13 +2257,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2353,9 +2288,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2412,7 +2345,7 @@ class HrmApi
      */
     public function hrmContractGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmContractGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmContractGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -2432,7 +2365,7 @@ class HrmApi
      */
     public function hrmContractGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultContracts';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultContracts::class;
         $request = $this->hrmContractGetRequest($offset, $limit, $sort);
 
         try {
@@ -2468,9 +2401,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -2483,7 +2414,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultContracts',
+                        \Paqtcom\Simplicate\Model\RestResultContracts::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2529,7 +2460,7 @@ class HrmApi
      */
     public function hrmContractGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultContracts';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultContracts::class;
         $request = $this->hrmContractGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -2541,9 +2472,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2626,9 +2555,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2683,7 +2610,7 @@ class HrmApi
      */
     public function hrmContractIdGet($id)
     {
-        list($response) = $this->hrmContractIdGetWithHttpInfo($id);
+        [$response] = $this->hrmContractIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -2701,7 +2628,7 @@ class HrmApi
      */
     public function hrmContractIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultContract';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultContract::class;
         $request = $this->hrmContractIdGetRequest($id);
 
         try {
@@ -2737,9 +2664,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -2752,7 +2677,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultContract',
+                        \Paqtcom\Simplicate\Model\RestResultContract::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2794,7 +2719,7 @@ class HrmApi
      */
     public function hrmContractIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultContract';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultContract::class;
         $request = $this->hrmContractIdGetRequest($id);
 
         return $this->client
@@ -2806,9 +2731,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2859,13 +2782,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2892,9 +2813,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2951,7 +2870,7 @@ class HrmApi
      */
     public function hrmContracttypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmContracttypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmContracttypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -2971,7 +2890,7 @@ class HrmApi
      */
     public function hrmContracttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultContractTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultContractTypes::class;
         $request = $this->hrmContracttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -3007,9 +2926,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3022,7 +2939,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultContractTypes',
+                        \Paqtcom\Simplicate\Model\RestResultContractTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3068,7 +2985,7 @@ class HrmApi
      */
     public function hrmContracttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultContractTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultContractTypes::class;
         $request = $this->hrmContracttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3080,9 +2997,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3165,9 +3080,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3222,7 +3135,7 @@ class HrmApi
      */
     public function hrmContracttypeIdGet($id)
     {
-        list($response) = $this->hrmContracttypeIdGetWithHttpInfo($id);
+        [$response] = $this->hrmContracttypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -3240,7 +3153,7 @@ class HrmApi
      */
     public function hrmContracttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultContractType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultContractType::class;
         $request = $this->hrmContracttypeIdGetRequest($id);
 
         try {
@@ -3276,9 +3189,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3291,7 +3202,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultContractType',
+                        \Paqtcom\Simplicate\Model\RestResultContractType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3333,7 +3244,7 @@ class HrmApi
      */
     public function hrmContracttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultContractType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultContractType::class;
         $request = $this->hrmContracttypeIdGetRequest($id);
 
         return $this->client
@@ -3345,9 +3256,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3398,13 +3307,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -3431,9 +3338,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3490,7 +3395,7 @@ class HrmApi
      */
     public function hrmDocumentGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmDocumentGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmDocumentGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -3510,7 +3415,7 @@ class HrmApi
      */
     public function hrmDocumentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocuments::class;
         $request = $this->hrmDocumentGetRequest($offset, $limit, $sort);
 
         try {
@@ -3546,9 +3451,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3561,7 +3464,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocuments',
+                        \Paqtcom\Simplicate\Model\RestResultDocuments::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3607,7 +3510,7 @@ class HrmApi
      */
     public function hrmDocumentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocuments::class;
         $request = $this->hrmDocumentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3619,9 +3522,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3704,9 +3605,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3777,7 +3676,6 @@ class HrmApi
      */
     public function hrmDocumentIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->hrmDocumentIdDeleteRequest($id);
 
         try {
@@ -3899,13 +3797,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -3932,9 +3828,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3989,7 +3883,7 @@ class HrmApi
      */
     public function hrmDocumentIdGet($id)
     {
-        list($response) = $this->hrmDocumentIdGetWithHttpInfo($id);
+        [$response] = $this->hrmDocumentIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -4007,7 +3901,7 @@ class HrmApi
      */
     public function hrmDocumentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocument::class;
         $request = $this->hrmDocumentIdGetRequest($id);
 
         try {
@@ -4043,9 +3937,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4058,7 +3950,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocument',
+                        \Paqtcom\Simplicate\Model\RestResultDocument::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4100,7 +3992,7 @@ class HrmApi
      */
     public function hrmDocumentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocument::class;
         $request = $this->hrmDocumentIdGetRequest($id);
 
         return $this->client
@@ -4112,9 +4004,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4165,13 +4055,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -4198,9 +4086,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4271,7 +4157,6 @@ class HrmApi
      */
     public function hrmDocumentPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hrmDocumentPostRequest($body);
 
         try {
@@ -4391,12 +4276,7 @@ class HrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -4493,7 +4373,6 @@ class HrmApi
      */
     public function hrmDocumentPutWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hrmDocumentPutRequest($body);
 
         try {
@@ -4613,12 +4492,7 @@ class HrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -4701,7 +4575,7 @@ class HrmApi
      */
     public function hrmDocumenttypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmDocumenttypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmDocumenttypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -4721,7 +4595,7 @@ class HrmApi
      */
     public function hrmDocumenttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class;
         $request = $this->hrmDocumenttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -4757,9 +4631,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4772,7 +4644,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocumentTypes',
+                        \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4818,7 +4690,7 @@ class HrmApi
      */
     public function hrmDocumenttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class;
         $request = $this->hrmDocumenttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -4830,9 +4702,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4915,9 +4785,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4972,7 +4840,7 @@ class HrmApi
      */
     public function hrmDocumenttypeIdGet($id)
     {
-        list($response) = $this->hrmDocumenttypeIdGetWithHttpInfo($id);
+        [$response] = $this->hrmDocumenttypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -4990,7 +4858,7 @@ class HrmApi
      */
     public function hrmDocumenttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentType::class;
         $request = $this->hrmDocumenttypeIdGetRequest($id);
 
         try {
@@ -5026,9 +4894,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5041,7 +4907,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocumentType',
+                        \Paqtcom\Simplicate\Model\RestResultDocumentType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5083,7 +4949,7 @@ class HrmApi
      */
     public function hrmDocumenttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentType::class;
         $request = $this->hrmDocumenttypeIdGetRequest($id);
 
         return $this->client
@@ -5095,9 +4961,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5148,13 +5012,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -5181,9 +5043,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5240,7 +5100,7 @@ class HrmApi
      */
     public function hrmEmployeeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmEmployeeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmEmployeeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -5260,7 +5120,7 @@ class HrmApi
      */
     public function hrmEmployeeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployees';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployees::class;
         $request = $this->hrmEmployeeGetRequest($offset, $limit, $sort);
 
         try {
@@ -5296,9 +5156,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5311,7 +5169,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultEmployees',
+                        \Paqtcom\Simplicate\Model\RestResultEmployees::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5357,7 +5215,7 @@ class HrmApi
      */
     public function hrmEmployeeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployees';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployees::class;
         $request = $this->hrmEmployeeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -5369,9 +5227,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5454,9 +5310,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5511,7 +5365,7 @@ class HrmApi
      */
     public function hrmEmployeeIdGet($id)
     {
-        list($response) = $this->hrmEmployeeIdGetWithHttpInfo($id);
+        [$response] = $this->hrmEmployeeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -5529,7 +5383,7 @@ class HrmApi
      */
     public function hrmEmployeeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployee';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployee::class;
         $request = $this->hrmEmployeeIdGetRequest($id);
 
         try {
@@ -5565,9 +5419,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5580,7 +5432,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultEmployee',
+                        \Paqtcom\Simplicate\Model\RestResultEmployee::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5622,7 +5474,7 @@ class HrmApi
      */
     public function hrmEmployeeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployee';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployee::class;
         $request = $this->hrmEmployeeIdGetRequest($id);
 
         return $this->client
@@ -5634,9 +5486,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5687,13 +5537,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -5720,9 +5568,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5793,7 +5639,6 @@ class HrmApi
      */
     public function hrmEmployeeIdPutWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hrmEmployeeIdPutRequest($body);
 
         try {
@@ -5913,12 +5758,7 @@ class HrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -6015,7 +5855,6 @@ class HrmApi
      */
     public function hrmEmployeePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hrmEmployeePostRequest($body);
 
         try {
@@ -6135,12 +5974,7 @@ class HrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -6223,7 +6057,7 @@ class HrmApi
      */
     public function hrmEmployeecustomfieldgroupsGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmEmployeecustomfieldgroupsGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmEmployeecustomfieldgroupsGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -6243,7 +6077,7 @@ class HrmApi
      */
     public function hrmEmployeecustomfieldgroupsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class;
         $request = $this->hrmEmployeecustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         try {
@@ -6279,9 +6113,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6294,7 +6126,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6340,7 +6172,7 @@ class HrmApi
      */
     public function hrmEmployeecustomfieldgroupsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class;
         $request = $this->hrmEmployeecustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -6352,9 +6184,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -6437,9 +6267,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6494,7 +6322,7 @@ class HrmApi
      */
     public function hrmEmployeecustomfieldgroupsIdGet($id)
     {
-        list($response) = $this->hrmEmployeecustomfieldgroupsIdGetWithHttpInfo($id);
+        [$response] = $this->hrmEmployeecustomfieldgroupsIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -6512,7 +6340,7 @@ class HrmApi
      */
     public function hrmEmployeecustomfieldgroupsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class;
         $request = $this->hrmEmployeecustomfieldgroupsIdGetRequest($id);
 
         try {
@@ -6548,9 +6376,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6563,7 +6389,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6605,7 +6431,7 @@ class HrmApi
      */
     public function hrmEmployeecustomfieldgroupsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class;
         $request = $this->hrmEmployeecustomfieldgroupsIdGetRequest($id);
 
         return $this->client
@@ -6617,9 +6443,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -6670,13 +6494,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -6703,9 +6525,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6762,7 +6582,7 @@ class HrmApi
      */
     public function hrmEmployeecustomfieldsGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmEmployeecustomfieldsGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmEmployeecustomfieldsGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -6782,7 +6602,7 @@ class HrmApi
      */
     public function hrmEmployeecustomfieldsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFields::class;
         $request = $this->hrmEmployeecustomfieldsGetRequest($offset, $limit, $sort);
 
         try {
@@ -6818,9 +6638,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6833,7 +6651,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFields',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFields::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6879,7 +6697,7 @@ class HrmApi
      */
     public function hrmEmployeecustomfieldsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFields::class;
         $request = $this->hrmEmployeecustomfieldsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -6891,9 +6709,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -6976,9 +6792,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7033,7 +6847,7 @@ class HrmApi
      */
     public function hrmEmployeecustomfieldsIdGet($id)
     {
-        list($response) = $this->hrmEmployeecustomfieldsIdGetWithHttpInfo($id);
+        [$response] = $this->hrmEmployeecustomfieldsIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -7051,7 +6865,7 @@ class HrmApi
      */
     public function hrmEmployeecustomfieldsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomField::class;
         $request = $this->hrmEmployeecustomfieldsIdGetRequest($id);
 
         try {
@@ -7087,9 +6901,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7102,7 +6914,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomField',
+                        \Paqtcom\Simplicate\Model\RestResultCustomField::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7144,7 +6956,7 @@ class HrmApi
      */
     public function hrmEmployeecustomfieldsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomField::class;
         $request = $this->hrmEmployeecustomfieldsIdGetRequest($id);
 
         return $this->client
@@ -7156,9 +6968,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7209,13 +7019,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -7242,9 +7050,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7301,7 +7107,7 @@ class HrmApi
      */
     public function hrmEmployeetypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmEmployeetypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmEmployeetypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -7321,7 +7127,7 @@ class HrmApi
      */
     public function hrmEmployeetypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployeeTypes::class;
         $request = $this->hrmEmployeetypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -7357,9 +7163,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7372,7 +7176,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultEmployeeTypes',
+                        \Paqtcom\Simplicate\Model\RestResultEmployeeTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7418,7 +7222,7 @@ class HrmApi
      */
     public function hrmEmployeetypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployeeTypes::class;
         $request = $this->hrmEmployeetypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7430,9 +7234,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7515,9 +7317,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7572,7 +7372,7 @@ class HrmApi
      */
     public function hrmEmployeetypeIdGet($id)
     {
-        list($response) = $this->hrmEmployeetypeIdGetWithHttpInfo($id);
+        [$response] = $this->hrmEmployeetypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -7590,7 +7390,7 @@ class HrmApi
      */
     public function hrmEmployeetypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployeeType::class;
         $request = $this->hrmEmployeetypeIdGetRequest($id);
 
         try {
@@ -7626,9 +7426,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7641,7 +7439,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultEmployeeType',
+                        \Paqtcom\Simplicate\Model\RestResultEmployeeType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7683,7 +7481,7 @@ class HrmApi
      */
     public function hrmEmployeetypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployeeType::class;
         $request = $this->hrmEmployeetypeIdGetRequest($id);
 
         return $this->client
@@ -7695,9 +7493,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7748,13 +7544,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -7781,9 +7575,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7840,7 +7632,7 @@ class HrmApi
      */
     public function hrmEmploymenttypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmEmploymenttypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmEmploymenttypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -7860,7 +7652,7 @@ class HrmApi
      */
     public function hrmEmploymenttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmploymentTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmploymentTypes::class;
         $request = $this->hrmEmploymenttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -7896,9 +7688,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7911,7 +7701,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultEmploymentTypes',
+                        \Paqtcom\Simplicate\Model\RestResultEmploymentTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7957,7 +7747,7 @@ class HrmApi
      */
     public function hrmEmploymenttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmploymentTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmploymentTypes::class;
         $request = $this->hrmEmploymenttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7969,9 +7759,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8054,9 +7842,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8111,7 +7897,7 @@ class HrmApi
      */
     public function hrmEmploymenttypeIdGet($id)
     {
-        list($response) = $this->hrmEmploymenttypeIdGetWithHttpInfo($id);
+        [$response] = $this->hrmEmploymenttypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -8129,7 +7915,7 @@ class HrmApi
      */
     public function hrmEmploymenttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmploymentType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmploymentType::class;
         $request = $this->hrmEmploymenttypeIdGetRequest($id);
 
         try {
@@ -8165,9 +7951,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -8180,7 +7964,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultEmploymentType',
+                        \Paqtcom\Simplicate\Model\RestResultEmploymentType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8222,7 +8006,7 @@ class HrmApi
      */
     public function hrmEmploymenttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmploymentType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmploymentType::class;
         $request = $this->hrmEmploymenttypeIdGetRequest($id);
 
         return $this->client
@@ -8234,9 +8018,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8287,13 +8069,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -8320,9 +8100,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8379,7 +8157,7 @@ class HrmApi
      */
     public function hrmLeaveGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmLeaveGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmLeaveGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -8399,7 +8177,7 @@ class HrmApi
      */
     public function hrmLeaveGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveMultiple';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultLeaveMultiple::class;
         $request = $this->hrmLeaveGetRequest($offset, $limit, $sort);
 
         try {
@@ -8435,9 +8213,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -8450,7 +8226,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultLeaveMultiple',
+                        \Paqtcom\Simplicate\Model\RestResultLeaveMultiple::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8496,7 +8272,7 @@ class HrmApi
      */
     public function hrmLeaveGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveMultiple';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultLeaveMultiple::class;
         $request = $this->hrmLeaveGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -8508,9 +8284,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8593,9 +8367,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8650,7 +8422,7 @@ class HrmApi
      */
     public function hrmLeaveIdGet($id)
     {
-        list($response) = $this->hrmLeaveIdGetWithHttpInfo($id);
+        [$response] = $this->hrmLeaveIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -8668,7 +8440,7 @@ class HrmApi
      */
     public function hrmLeaveIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeave';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultLeave::class;
         $request = $this->hrmLeaveIdGetRequest($id);
 
         try {
@@ -8704,9 +8476,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -8719,7 +8489,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultLeave',
+                        \Paqtcom\Simplicate\Model\RestResultLeave::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8761,7 +8531,7 @@ class HrmApi
      */
     public function hrmLeaveIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeave';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultLeave::class;
         $request = $this->hrmLeaveIdGetRequest($id);
 
         return $this->client
@@ -8773,9 +8543,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8826,13 +8594,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -8859,9 +8625,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8934,7 +8698,6 @@ class HrmApi
      */
     public function hrmLeaveIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->hrmLeaveIdPutRequest($id, $body);
 
         try {
@@ -9063,21 +8826,13 @@ class HrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -9174,7 +8929,6 @@ class HrmApi
      */
     public function hrmLeavePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hrmLeavePostRequest($body);
 
         try {
@@ -9294,12 +9048,7 @@ class HrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -9382,7 +9131,7 @@ class HrmApi
      */
     public function hrmLeavebalanceGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmLeavebalanceGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmLeavebalanceGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -9402,7 +9151,7 @@ class HrmApi
      */
     public function hrmLeavebalanceGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveBalances';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultLeaveBalances::class;
         $request = $this->hrmLeavebalanceGetRequest($offset, $limit, $sort);
 
         try {
@@ -9438,9 +9187,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -9453,7 +9200,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultLeaveBalances',
+                        \Paqtcom\Simplicate\Model\RestResultLeaveBalances::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9499,7 +9246,7 @@ class HrmApi
      */
     public function hrmLeavebalanceGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveBalances';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultLeaveBalances::class;
         $request = $this->hrmLeavebalanceGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -9511,9 +9258,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -9596,9 +9341,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -9655,7 +9398,7 @@ class HrmApi
      */
     public function hrmLeavetypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmLeavetypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmLeavetypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -9675,7 +9418,7 @@ class HrmApi
      */
     public function hrmLeavetypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultLeaveTypes::class;
         $request = $this->hrmLeavetypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -9711,9 +9454,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -9726,7 +9467,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultLeaveTypes',
+                        \Paqtcom\Simplicate\Model\RestResultLeaveTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9772,7 +9513,7 @@ class HrmApi
      */
     public function hrmLeavetypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultLeaveTypes::class;
         $request = $this->hrmLeavetypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -9784,9 +9525,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -9869,9 +9608,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -9926,7 +9663,7 @@ class HrmApi
      */
     public function hrmLeavetypeIdGet($id)
     {
-        list($response) = $this->hrmLeavetypeIdGetWithHttpInfo($id);
+        [$response] = $this->hrmLeavetypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -9944,7 +9681,7 @@ class HrmApi
      */
     public function hrmLeavetypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultLeaveType::class;
         $request = $this->hrmLeavetypeIdGetRequest($id);
 
         try {
@@ -9980,9 +9717,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -9995,7 +9730,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultLeaveType',
+                        \Paqtcom\Simplicate\Model\RestResultLeaveType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10037,7 +9772,7 @@ class HrmApi
      */
     public function hrmLeavetypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultLeaveType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultLeaveType::class;
         $request = $this->hrmLeavetypeIdGetRequest($id);
 
         return $this->client
@@ -10049,9 +9784,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -10102,13 +9835,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -10135,9 +9866,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10194,7 +9923,7 @@ class HrmApi
      */
     public function hrmTeamGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmTeamGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmTeamGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -10214,7 +9943,7 @@ class HrmApi
      */
     public function hrmTeamGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTeams';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTeams::class;
         $request = $this->hrmTeamGetRequest($offset, $limit, $sort);
 
         try {
@@ -10250,9 +9979,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -10265,7 +9992,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultTeams',
+                        \Paqtcom\Simplicate\Model\RestResultTeams::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10311,7 +10038,7 @@ class HrmApi
      */
     public function hrmTeamGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTeams';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTeams::class;
         $request = $this->hrmTeamGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -10323,9 +10050,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -10408,9 +10133,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10465,7 +10188,7 @@ class HrmApi
      */
     public function hrmTeamIdGet($id)
     {
-        list($response) = $this->hrmTeamIdGetWithHttpInfo($id);
+        [$response] = $this->hrmTeamIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -10483,7 +10206,7 @@ class HrmApi
      */
     public function hrmTeamIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTeam';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTeam::class;
         $request = $this->hrmTeamIdGetRequest($id);
 
         try {
@@ -10519,9 +10242,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -10534,7 +10255,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultTeam',
+                        \Paqtcom\Simplicate\Model\RestResultTeam::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10576,7 +10297,7 @@ class HrmApi
      */
     public function hrmTeamIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTeam';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTeam::class;
         $request = $this->hrmTeamIdGetRequest($id);
 
         return $this->client
@@ -10588,9 +10309,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -10641,13 +10360,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -10674,9 +10391,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10733,7 +10448,7 @@ class HrmApi
      */
     public function hrmTimetableGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hrmTimetableGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hrmTimetableGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -10753,7 +10468,7 @@ class HrmApi
      */
     public function hrmTimetableGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimetables';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTimetables::class;
         $request = $this->hrmTimetableGetRequest($offset, $limit, $sort);
 
         try {
@@ -10789,9 +10504,7 @@ class HrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -10804,7 +10517,7 @@ class HrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultTimetables',
+                        \Paqtcom\Simplicate\Model\RestResultTimetables::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10850,7 +10563,7 @@ class HrmApi
      */
     public function hrmTimetableGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimetables';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTimetables::class;
         $request = $this->hrmTimetableGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -10862,9 +10575,7 @@ class HrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -10947,9 +10658,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -11020,7 +10729,6 @@ class HrmApi
      */
     public function hrmTimetableIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->hrmTimetableIdDeleteRequest($id);
 
         try {
@@ -11142,13 +10850,11 @@ class HrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -11175,9 +10881,7 @@ class HrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -11248,7 +10952,6 @@ class HrmApi
      */
     public function hrmTimetableIdPutWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hrmTimetableIdPutRequest($body);
 
         try {
@@ -11368,12 +11071,7 @@ class HrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -11470,7 +11168,6 @@ class HrmApi
      */
     public function hrmTimetablePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hrmTimetablePostRequest($body);
 
         try {
@@ -11590,12 +11287,7 @@ class HrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(

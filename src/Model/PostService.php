@@ -43,7 +43,7 @@ use Paqtcom\Simplicate\ObjectSerializer;
  */
 class PostService implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -68,7 +68,7 @@ class PostService implements ModelInterface, ArrayAccess
         'amount' => 'float',
         'price' => 'float',
         'track_hours' => 'bool',
-        'track_cost' => 'bool'
+        'track_cost' => 'bool',
     ];
 
     /**
@@ -87,7 +87,7 @@ class PostService implements ModelInterface, ArrayAccess
         'amount' => 'float',
         'price' => 'float',
         'track_hours' => null,
-        'track_cost' => null
+        'track_cost' => null,
     ];
 
     /**
@@ -127,7 +127,7 @@ class PostService implements ModelInterface, ArrayAccess
         'amount' => 'amount',
         'price' => 'price',
         'track_hours' => 'track_hours',
-        'track_cost' => 'track_cost'
+        'track_cost' => 'track_cost',
     ];
 
     /**
@@ -146,7 +146,7 @@ class PostService implements ModelInterface, ArrayAccess
         'amount' => 'setAmount',
         'price' => 'setPrice',
         'track_hours' => 'setTrackHours',
-        'track_cost' => 'setTrackCost'
+        'track_cost' => 'setTrackCost',
     ];
 
     /**
@@ -165,7 +165,7 @@ class PostService implements ModelInterface, ArrayAccess
         'amount' => 'getAmount',
         'price' => 'getPrice',
         'track_hours' => 'getTrackHours',
-        'track_cost' => 'getTrackCost'
+        'track_cost' => 'getTrackCost',
     ];
 
     /**
@@ -209,9 +209,7 @@ class PostService implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const INVOICE_METHOD_FIXED_FEE = 'FixedFee';
-
-
+    public const INVOICE_METHOD_FIXED_FEE = 'FixedFee';
 
     /**
      * Gets allowable values of the enum
@@ -224,7 +222,6 @@ class PostService implements ModelInterface, ArrayAccess
             self::INVOICE_METHOD_FIXED_FEE,
         ];
     }
-
 
     /**
      * Associative array for storing property values
@@ -284,7 +281,6 @@ class PostService implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets vat_class_id
@@ -558,6 +554,7 @@ class PostService implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -43,7 +43,7 @@ use Paqtcom\Simplicate\ObjectSerializer;
  */
 class RestResultHour implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -61,7 +61,7 @@ class RestResultHour implements ModelInterface, ArrayAccess
         'data' => '\Paqtcom\Simplicate\Model\GetHours',
         'metadata' => '\Paqtcom\Simplicate\Model\MetaData',
         'errors' => 'object[]',
-        'debug' => 'object[]'
+        'debug' => 'object[]',
     ];
 
     /**
@@ -73,7 +73,7 @@ class RestResultHour implements ModelInterface, ArrayAccess
         'data' => null,
         'metadata' => null,
         'errors' => null,
-        'debug' => null
+        'debug' => null,
     ];
 
     /**
@@ -106,7 +106,7 @@ class RestResultHour implements ModelInterface, ArrayAccess
         'data' => 'data',
         'metadata' => 'metadata',
         'errors' => 'errors',
-        'debug' => 'debug'
+        'debug' => 'debug',
     ];
 
     /**
@@ -118,7 +118,7 @@ class RestResultHour implements ModelInterface, ArrayAccess
         'data' => 'setData',
         'metadata' => 'setMetadata',
         'errors' => 'setErrors',
-        'debug' => 'setDebug'
+        'debug' => 'setDebug',
     ];
 
     /**
@@ -130,7 +130,7 @@ class RestResultHour implements ModelInterface, ArrayAccess
         'data' => 'getData',
         'metadata' => 'getMetadata',
         'errors' => 'getErrors',
-        'debug' => 'getDebug'
+        'debug' => 'getDebug',
     ];
 
     /**
@@ -173,10 +173,6 @@ class RestResultHour implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-
-
-
 
     /**
      * Associative array for storing property values
@@ -221,7 +217,6 @@ class RestResultHour implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets data
@@ -318,6 +313,7 @@ class RestResultHour implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

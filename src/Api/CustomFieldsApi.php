@@ -65,11 +65,6 @@ class CustomFieldsApi
      */
     protected $headerSelector;
 
-    /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     */
     public function __construct(
         ClientInterface $client = null,
         Configuration $config = null,
@@ -103,7 +98,7 @@ class CustomFieldsApi
      */
     public function customfieldsGroupGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->customfieldsGroupGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->customfieldsGroupGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -123,7 +118,7 @@ class CustomFieldsApi
      */
     public function customfieldsGroupGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class;
         $request = $this->customfieldsGroupGetRequest($offset, $limit, $sort);
 
         try {
@@ -159,9 +154,7 @@ class CustomFieldsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -174,7 +167,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +213,7 @@ class CustomFieldsApi
      */
     public function customfieldsGroupGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class;
         $request = $this->customfieldsGroupGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -232,9 +225,7 @@ class CustomFieldsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -317,9 +308,7 @@ class CustomFieldsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -390,7 +379,6 @@ class CustomFieldsApi
      */
     public function customfieldsGroupIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->customfieldsGroupIdDeleteRequest($id);
 
         try {
@@ -512,13 +500,11 @@ class CustomFieldsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -545,9 +531,7 @@ class CustomFieldsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -604,7 +588,7 @@ class CustomFieldsApi
      */
     public function customfieldsGroupIdGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->customfieldsGroupIdGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->customfieldsGroupIdGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -624,7 +608,7 @@ class CustomFieldsApi
      */
     public function customfieldsGroupIdGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class;
         $request = $this->customfieldsGroupIdGetRequest($offset, $limit, $sort);
 
         try {
@@ -660,9 +644,7 @@ class CustomFieldsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -675,7 +657,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -721,7 +703,7 @@ class CustomFieldsApi
      */
     public function customfieldsGroupIdGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class;
         $request = $this->customfieldsGroupIdGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -733,9 +715,7 @@ class CustomFieldsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -818,9 +798,7 @@ class CustomFieldsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -893,7 +871,6 @@ class CustomFieldsApi
      */
     public function customfieldsGroupIdPostWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->customfieldsGroupIdPostRequest($id, $body);
 
         try {
@@ -1022,21 +999,13 @@ class CustomFieldsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1135,7 +1104,6 @@ class CustomFieldsApi
      */
     public function customfieldsGroupIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->customfieldsGroupIdPutRequest($id, $body);
 
         try {
@@ -1264,21 +1232,13 @@ class CustomFieldsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1361,7 +1321,7 @@ class CustomFieldsApi
      */
     public function customfieldsModelGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->customfieldsModelGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->customfieldsModelGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -1381,7 +1341,7 @@ class CustomFieldsApi
      */
     public function customfieldsModelGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldModels';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldModels::class;
         $request = $this->customfieldsModelGetRequest($offset, $limit, $sort);
 
         try {
@@ -1417,9 +1377,7 @@ class CustomFieldsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1432,7 +1390,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldModels',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldModels::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1478,7 +1436,7 @@ class CustomFieldsApi
      */
     public function customfieldsModelGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldModels';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldModels::class;
         $request = $this->customfieldsModelGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1490,9 +1448,7 @@ class CustomFieldsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1575,9 +1531,7 @@ class CustomFieldsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1634,7 +1588,7 @@ class CustomFieldsApi
      */
     public function customfieldsModelIdGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->customfieldsModelIdGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->customfieldsModelIdGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -1654,7 +1608,7 @@ class CustomFieldsApi
      */
     public function customfieldsModelIdGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldModel';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldModel::class;
         $request = $this->customfieldsModelIdGetRequest($offset, $limit, $sort);
 
         try {
@@ -1690,9 +1644,7 @@ class CustomFieldsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1705,7 +1657,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldModel',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldModel::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1751,7 +1703,7 @@ class CustomFieldsApi
      */
     public function customfieldsModelIdGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldModel';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldModel::class;
         $request = $this->customfieldsModelIdGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1763,9 +1715,7 @@ class CustomFieldsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1848,9 +1798,7 @@ class CustomFieldsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1907,7 +1855,7 @@ class CustomFieldsApi
      */
     public function customfieldsOptionGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->customfieldsOptionGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->customfieldsOptionGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -1927,7 +1875,7 @@ class CustomFieldsApi
      */
     public function customfieldsOptionGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldOptions';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldOptions::class;
         $request = $this->customfieldsOptionGetRequest($offset, $limit, $sort);
 
         try {
@@ -1963,9 +1911,7 @@ class CustomFieldsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1978,7 +1924,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldOptions',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldOptions::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2024,7 +1970,7 @@ class CustomFieldsApi
      */
     public function customfieldsOptionGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldOptions';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldOptions::class;
         $request = $this->customfieldsOptionGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -2036,9 +1982,7 @@ class CustomFieldsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2121,9 +2065,7 @@ class CustomFieldsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2194,7 +2136,6 @@ class CustomFieldsApi
      */
     public function customfieldsOptionIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->customfieldsOptionIdDeleteRequest($id);
 
         try {
@@ -2316,13 +2257,11 @@ class CustomFieldsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2349,9 +2288,7 @@ class CustomFieldsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2409,7 +2346,7 @@ class CustomFieldsApi
      */
     public function customfieldsOptionIdGet($id, $offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->customfieldsOptionIdGetWithHttpInfo($id, $offset, $limit, $sort);
+        [$response] = $this->customfieldsOptionIdGetWithHttpInfo($id, $offset, $limit, $sort);
 
         return $response;
     }
@@ -2430,7 +2367,7 @@ class CustomFieldsApi
      */
     public function customfieldsOptionIdGetWithHttpInfo($id, $offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldOption';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldOption::class;
         $request = $this->customfieldsOptionIdGetRequest($id, $offset, $limit, $sort);
 
         try {
@@ -2466,9 +2403,7 @@ class CustomFieldsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -2481,7 +2416,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldOption',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldOption::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2529,7 +2464,7 @@ class CustomFieldsApi
      */
     public function customfieldsOptionIdGetAsyncWithHttpInfo($id, $offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldOption';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldOption::class;
         $request = $this->customfieldsOptionIdGetRequest($id, $offset, $limit, $sort);
 
         return $this->client
@@ -2541,9 +2476,7 @@ class CustomFieldsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2610,13 +2543,11 @@ class CustomFieldsApi
         }
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2643,9 +2574,7 @@ class CustomFieldsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2716,7 +2645,6 @@ class CustomFieldsApi
      */
     public function customfieldsOptionIdPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->customfieldsOptionIdPostRequest($body);
 
         try {
@@ -2836,12 +2764,7 @@ class CustomFieldsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2940,7 +2863,6 @@ class CustomFieldsApi
      */
     public function customfieldsOptionIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->customfieldsOptionIdPutRequest($id, $body);
 
         try {
@@ -3069,21 +2991,13 @@ class CustomFieldsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -3166,7 +3080,7 @@ class CustomFieldsApi
      */
     public function customfieldsTypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->customfieldsTypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->customfieldsTypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -3186,7 +3100,7 @@ class CustomFieldsApi
      */
     public function customfieldsTypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldTypes::class;
         $request = $this->customfieldsTypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -3222,9 +3136,7 @@ class CustomFieldsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3237,7 +3149,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldTypes',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3283,7 +3195,7 @@ class CustomFieldsApi
      */
     public function customfieldsTypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldTypes::class;
         $request = $this->customfieldsTypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3295,9 +3207,7 @@ class CustomFieldsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3380,9 +3290,7 @@ class CustomFieldsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3439,7 +3347,7 @@ class CustomFieldsApi
      */
     public function customfieldsTypeIdGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->customfieldsTypeIdGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->customfieldsTypeIdGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -3459,7 +3367,7 @@ class CustomFieldsApi
      */
     public function customfieldsTypeIdGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldType::class;
         $request = $this->customfieldsTypeIdGetRequest($offset, $limit, $sort);
 
         try {
@@ -3495,9 +3403,7 @@ class CustomFieldsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3510,7 +3416,7 @@ class CustomFieldsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldType',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3556,7 +3462,7 @@ class CustomFieldsApi
      */
     public function customfieldsTypeIdGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldType::class;
         $request = $this->customfieldsTypeIdGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3568,9 +3474,7 @@ class CustomFieldsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3653,9 +3557,7 @@ class CustomFieldsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

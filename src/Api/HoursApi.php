@@ -65,11 +65,6 @@ class HoursApi
      */
     protected $headerSelector;
 
-    /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     */
     public function __construct(
         ClientInterface $client = null,
         Configuration $config = null,
@@ -119,7 +114,6 @@ class HoursApi
      */
     public function hoursAbsenceIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->hoursAbsenceIdPutRequest($id, $body);
 
         try {
@@ -248,21 +242,13 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -359,7 +345,6 @@ class HoursApi
      */
     public function hoursAbsencePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hoursAbsencePostRequest($body);
 
         try {
@@ -479,12 +464,7 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -567,7 +547,7 @@ class HoursApi
      */
     public function hoursApprovalGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hoursApprovalGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hoursApprovalGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -587,7 +567,7 @@ class HoursApi
      */
     public function hoursApprovalGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultApprovals';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultApprovals::class;
         $request = $this->hoursApprovalGetRequest($offset, $limit, $sort);
 
         try {
@@ -623,9 +603,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -638,7 +616,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultApprovals',
+                        \Paqtcom\Simplicate\Model\RestResultApprovals::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -684,7 +662,7 @@ class HoursApi
      */
     public function hoursApprovalGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultApprovals';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultApprovals::class;
         $request = $this->hoursApprovalGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -696,9 +674,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -781,9 +757,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -854,7 +828,6 @@ class HoursApi
      */
     public function hoursApprovalIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->hoursApprovalIdDeleteRequest($id);
 
         try {
@@ -976,13 +949,11 @@ class HoursApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -1009,9 +980,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1066,7 +1035,7 @@ class HoursApi
      */
     public function hoursApprovalIdGet($id)
     {
-        list($response) = $this->hoursApprovalIdGetWithHttpInfo($id);
+        [$response] = $this->hoursApprovalIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -1084,7 +1053,7 @@ class HoursApi
      */
     public function hoursApprovalIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultApproval';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultApproval::class;
         $request = $this->hoursApprovalIdGetRequest($id);
 
         try {
@@ -1120,9 +1089,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1135,7 +1102,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultApproval',
+                        \Paqtcom\Simplicate\Model\RestResultApproval::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1177,7 +1144,7 @@ class HoursApi
      */
     public function hoursApprovalIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultApproval';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultApproval::class;
         $request = $this->hoursApprovalIdGetRequest($id);
 
         return $this->client
@@ -1189,9 +1156,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1242,13 +1207,11 @@ class HoursApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -1275,9 +1238,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1350,7 +1311,6 @@ class HoursApi
      */
     public function hoursApprovalIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->hoursApprovalIdPutRequest($id, $body);
 
         try {
@@ -1479,21 +1439,13 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1590,7 +1542,6 @@ class HoursApi
      */
     public function hoursApprovalPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hoursApprovalPostRequest($body);
 
         try {
@@ -1710,12 +1661,7 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1798,7 +1744,7 @@ class HoursApi
      */
     public function hoursApprovalstatusGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hoursApprovalstatusGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hoursApprovalstatusGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -1818,7 +1764,7 @@ class HoursApi
      */
     public function hoursApprovalstatusGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultApprovalStatusList';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultApprovalStatusList::class;
         $request = $this->hoursApprovalstatusGetRequest($offset, $limit, $sort);
 
         try {
@@ -1854,9 +1800,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1869,7 +1813,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultApprovalStatusList',
+                        \Paqtcom\Simplicate\Model\RestResultApprovalStatusList::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1915,7 +1859,7 @@ class HoursApi
      */
     public function hoursApprovalstatusGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultApprovalStatusList';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultApprovalStatusList::class;
         $request = $this->hoursApprovalstatusGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1927,9 +1871,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2012,9 +1954,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2069,7 +2009,7 @@ class HoursApi
      */
     public function hoursApprovalstatusIdGet($id)
     {
-        list($response) = $this->hoursApprovalstatusIdGetWithHttpInfo($id);
+        [$response] = $this->hoursApprovalstatusIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -2087,7 +2027,7 @@ class HoursApi
      */
     public function hoursApprovalstatusIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultApprovalStatus';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultApprovalStatus::class;
         $request = $this->hoursApprovalstatusIdGetRequest($id);
 
         try {
@@ -2123,9 +2063,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -2138,7 +2076,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultApprovalStatus',
+                        \Paqtcom\Simplicate\Model\RestResultApprovalStatus::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2180,7 +2118,7 @@ class HoursApi
      */
     public function hoursApprovalstatusIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultApprovalStatus';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultApprovalStatus::class;
         $request = $this->hoursApprovalstatusIdGetRequest($id);
 
         return $this->client
@@ -2192,9 +2130,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2245,13 +2181,11 @@ class HoursApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2278,9 +2212,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2335,7 +2267,7 @@ class HoursApi
      */
     public function hoursEmployeeexpenseIdGet($id)
     {
-        list($response) = $this->hoursEmployeeexpenseIdGetWithHttpInfo($id);
+        [$response] = $this->hoursEmployeeexpenseIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -2353,7 +2285,7 @@ class HoursApi
      */
     public function hoursEmployeeexpenseIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpense';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployeeExpense::class;
         $request = $this->hoursEmployeeexpenseIdGetRequest($id);
 
         try {
@@ -2389,9 +2321,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -2404,7 +2334,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultEmployeeExpense',
+                        \Paqtcom\Simplicate\Model\RestResultEmployeeExpense::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2446,7 +2376,7 @@ class HoursApi
      */
     public function hoursEmployeeexpenseIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpense';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployeeExpense::class;
         $request = $this->hoursEmployeeexpenseIdGetRequest($id);
 
         return $this->client
@@ -2458,9 +2388,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2511,13 +2439,11 @@ class HoursApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2544,9 +2470,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2603,7 +2527,7 @@ class HoursApi
      */
     public function hoursEmployeeexpensesGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hoursEmployeeexpensesGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hoursEmployeeexpensesGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -2623,7 +2547,7 @@ class HoursApi
      */
     public function hoursEmployeeexpensesGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList::class;
         $request = $this->hoursEmployeeexpensesGetRequest($offset, $limit, $sort);
 
         try {
@@ -2659,9 +2583,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -2674,7 +2596,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList',
+                        \Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2720,7 +2642,7 @@ class HoursApi
      */
     public function hoursEmployeeexpensesGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultEmployeeExpenseList::class;
         $request = $this->hoursEmployeeexpensesGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -2732,9 +2654,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2817,9 +2737,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2876,7 +2794,7 @@ class HoursApi
      */
     public function hoursHoursGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hoursHoursGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hoursHoursGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -2896,7 +2814,7 @@ class HoursApi
      */
     public function hoursHoursGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHours';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHours::class;
         $request = $this->hoursHoursGetRequest($offset, $limit, $sort);
 
         try {
@@ -2932,9 +2850,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -2947,7 +2863,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultHours',
+                        \Paqtcom\Simplicate\Model\RestResultHours::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2993,7 +2909,7 @@ class HoursApi
      */
     public function hoursHoursGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHours';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHours::class;
         $request = $this->hoursHoursGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3005,9 +2921,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3090,9 +3004,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3163,7 +3075,6 @@ class HoursApi
      */
     public function hoursHoursIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->hoursHoursIdDeleteRequest($id);
 
         try {
@@ -3285,13 +3196,11 @@ class HoursApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -3318,9 +3227,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3375,7 +3282,7 @@ class HoursApi
      */
     public function hoursHoursIdGet($id)
     {
-        list($response) = $this->hoursHoursIdGetWithHttpInfo($id);
+        [$response] = $this->hoursHoursIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -3393,7 +3300,7 @@ class HoursApi
      */
     public function hoursHoursIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHour';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHour::class;
         $request = $this->hoursHoursIdGetRequest($id);
 
         try {
@@ -3429,9 +3336,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3444,7 +3349,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultHour',
+                        \Paqtcom\Simplicate\Model\RestResultHour::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3486,7 +3391,7 @@ class HoursApi
      */
     public function hoursHoursIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHour';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHour::class;
         $request = $this->hoursHoursIdGetRequest($id);
 
         return $this->client
@@ -3498,9 +3403,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3551,13 +3454,11 @@ class HoursApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -3584,9 +3485,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3659,7 +3558,6 @@ class HoursApi
      */
     public function hoursHoursIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->hoursHoursIdPutRequest($id, $body);
 
         try {
@@ -3788,21 +3686,13 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -3899,7 +3789,6 @@ class HoursApi
      */
     public function hoursHoursPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hoursHoursPostRequest($body);
 
         try {
@@ -4019,12 +3908,7 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -4107,7 +3991,7 @@ class HoursApi
      */
     public function hoursHourstypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->hoursHourstypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->hoursHourstypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -4127,7 +4011,7 @@ class HoursApi
      */
     public function hoursHourstypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHourTypes::class;
         $request = $this->hoursHourstypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -4163,9 +4047,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4178,7 +4060,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultHourTypes',
+                        \Paqtcom\Simplicate\Model\RestResultHourTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4224,7 +4106,7 @@ class HoursApi
      */
     public function hoursHourstypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHourTypes::class;
         $request = $this->hoursHourstypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -4236,9 +4118,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4321,9 +4201,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4378,7 +4256,7 @@ class HoursApi
      */
     public function hoursHourstypeIdGet($id)
     {
-        list($response) = $this->hoursHourstypeIdGetWithHttpInfo($id);
+        [$response] = $this->hoursHourstypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -4396,7 +4274,7 @@ class HoursApi
      */
     public function hoursHourstypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHourType::class;
         $request = $this->hoursHourstypeIdGetRequest($id);
 
         try {
@@ -4432,9 +4310,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4447,7 +4323,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultHourType',
+                        \Paqtcom\Simplicate\Model\RestResultHourType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4489,7 +4365,7 @@ class HoursApi
      */
     public function hoursHourstypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHourType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHourType::class;
         $request = $this->hoursHourstypeIdGetRequest($id);
 
         return $this->client
@@ -4501,9 +4377,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4554,13 +4428,11 @@ class HoursApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -4587,9 +4459,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4662,7 +4532,6 @@ class HoursApi
      */
     public function hoursHourstypeIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->hoursHourstypeIdPutRequest($id, $body);
 
         try {
@@ -4791,21 +4660,13 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -4902,7 +4763,6 @@ class HoursApi
      */
     public function hoursHourstypePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hoursHourstypePostRequest($body);
 
         try {
@@ -5022,12 +4882,7 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -5126,7 +4981,6 @@ class HoursApi
      */
     public function hoursLeaveIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->hoursLeaveIdPutRequest($id, $body);
 
         try {
@@ -5255,21 +5109,13 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -5366,7 +5212,6 @@ class HoursApi
      */
     public function hoursLeavePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hoursLeavePostRequest($body);
 
         try {
@@ -5486,12 +5331,7 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -5574,7 +5414,7 @@ class HoursApi
      */
     public function hoursSubmissionGet($q_start_date, $q_end_date, $q_employee_id)
     {
-        list($response) = $this->hoursSubmissionGetWithHttpInfo($q_start_date, $q_end_date, $q_employee_id);
+        [$response] = $this->hoursSubmissionGetWithHttpInfo($q_start_date, $q_end_date, $q_employee_id);
 
         return $response;
     }
@@ -5594,7 +5434,7 @@ class HoursApi
      */
     public function hoursSubmissionGetWithHttpInfo($q_start_date, $q_end_date, $q_employee_id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHoursSubmissions';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHoursSubmissions::class;
         $request = $this->hoursSubmissionGetRequest($q_start_date, $q_end_date, $q_employee_id);
 
         try {
@@ -5630,9 +5470,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5645,7 +5483,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultHoursSubmissions',
+                        \Paqtcom\Simplicate\Model\RestResultHoursSubmissions::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5691,7 +5529,7 @@ class HoursApi
      */
     public function hoursSubmissionGetAsyncWithHttpInfo($q_start_date, $q_end_date, $q_employee_id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHoursSubmissions';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHoursSubmissions::class;
         $request = $this->hoursSubmissionGetRequest($q_start_date, $q_end_date, $q_employee_id);
 
         return $this->client
@@ -5703,9 +5541,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5770,17 +5606,11 @@ class HoursApi
         $multipart = false;
 
         // query params
-        if ($q_start_date !== null) {
-            $queryParams['q[start_date]'] = ObjectSerializer::toQueryValue($q_start_date);
-        }
+        $queryParams['q[start_date]'] = ObjectSerializer::toQueryValue($q_start_date);
         // query params
-        if ($q_end_date !== null) {
-            $queryParams['q[end_date]'] = ObjectSerializer::toQueryValue($q_end_date);
-        }
+        $queryParams['q[end_date]'] = ObjectSerializer::toQueryValue($q_end_date);
         // query params
-        if ($q_employee_id !== null) {
-            $queryParams['q[employee_id]'] = ObjectSerializer::toQueryValue($q_employee_id);
-        }
+        $queryParams['q[employee_id]'] = ObjectSerializer::toQueryValue($q_employee_id);
 
         // body params
         $_tempBody = null;
@@ -5807,9 +5637,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5880,7 +5708,6 @@ class HoursApi
      */
     public function hoursSubmissionPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hoursSubmissionPostRequest($body);
 
         try {
@@ -6000,12 +5827,7 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -6102,7 +5924,6 @@ class HoursApi
      */
     public function hoursSubmitPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hoursSubmitPostRequest($body);
 
         try {
@@ -6222,12 +6043,7 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -6310,7 +6126,7 @@ class HoursApi
      */
     public function hoursTimesheetrowGet($q_start_date, $q_end_date, $q_employee_id)
     {
-        list($response) = $this->hoursTimesheetrowGetWithHttpInfo($q_start_date, $q_end_date, $q_employee_id);
+        [$response] = $this->hoursTimesheetrowGetWithHttpInfo($q_start_date, $q_end_date, $q_employee_id);
 
         return $response;
     }
@@ -6330,7 +6146,7 @@ class HoursApi
      */
     public function hoursTimesheetrowGetWithHttpInfo($q_start_date, $q_end_date, $q_employee_id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows::class;
         $request = $this->hoursTimesheetrowGetRequest($q_start_date, $q_end_date, $q_employee_id);
 
         try {
@@ -6366,9 +6182,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6381,7 +6195,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows',
+                        \Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6427,7 +6241,7 @@ class HoursApi
      */
     public function hoursTimesheetrowGetAsyncWithHttpInfo($q_start_date, $q_end_date, $q_employee_id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultHoursTimesheetRows::class;
         $request = $this->hoursTimesheetrowGetRequest($q_start_date, $q_end_date, $q_employee_id);
 
         return $this->client
@@ -6439,9 +6253,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -6506,17 +6318,11 @@ class HoursApi
         $multipart = false;
 
         // query params
-        if ($q_start_date !== null) {
-            $queryParams['q[start_date]'] = ObjectSerializer::toQueryValue($q_start_date);
-        }
+        $queryParams['q[start_date]'] = ObjectSerializer::toQueryValue($q_start_date);
         // query params
-        if ($q_end_date !== null) {
-            $queryParams['q[end_date]'] = ObjectSerializer::toQueryValue($q_end_date);
-        }
+        $queryParams['q[end_date]'] = ObjectSerializer::toQueryValue($q_end_date);
         // query params
-        if ($q_employee_id !== null) {
-            $queryParams['q[employee_id]'] = ObjectSerializer::toQueryValue($q_employee_id);
-        }
+        $queryParams['q[employee_id]'] = ObjectSerializer::toQueryValue($q_employee_id);
 
         // body params
         $_tempBody = null;
@@ -6543,9 +6349,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6616,7 +6420,6 @@ class HoursApi
      */
     public function hoursTimesheetrowIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->hoursTimesheetrowIdDeleteRequest($id);
 
         try {
@@ -6738,13 +6541,11 @@ class HoursApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -6771,9 +6572,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6830,7 +6629,7 @@ class HoursApi
      */
     public function hoursTimesheetrowMostrecentGet($q_before_date, $q_employee_id, $q_type)
     {
-        list($response) = $this->hoursTimesheetrowMostrecentGetWithHttpInfo($q_before_date, $q_employee_id, $q_type);
+        [$response] = $this->hoursTimesheetrowMostrecentGetWithHttpInfo($q_before_date, $q_employee_id, $q_type);
 
         return $response;
     }
@@ -6850,7 +6649,7 @@ class HoursApi
      */
     public function hoursTimesheetrowMostrecentGetWithHttpInfo($q_before_date, $q_employee_id, $q_type)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDateTimeRange';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDateTimeRange::class;
         $request = $this->hoursTimesheetrowMostrecentGetRequest($q_before_date, $q_employee_id, $q_type);
 
         try {
@@ -6886,9 +6685,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6901,7 +6698,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDateTimeRange',
+                        \Paqtcom\Simplicate\Model\RestResultDateTimeRange::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6947,7 +6744,7 @@ class HoursApi
      */
     public function hoursTimesheetrowMostrecentGetAsyncWithHttpInfo($q_before_date, $q_employee_id, $q_type)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDateTimeRange';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDateTimeRange::class;
         $request = $this->hoursTimesheetrowMostrecentGetRequest($q_before_date, $q_employee_id, $q_type);
 
         return $this->client
@@ -6959,9 +6756,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7026,17 +6821,11 @@ class HoursApi
         $multipart = false;
 
         // query params
-        if ($q_before_date !== null) {
-            $queryParams['q[before_date]'] = ObjectSerializer::toQueryValue($q_before_date);
-        }
+        $queryParams['q[before_date]'] = ObjectSerializer::toQueryValue($q_before_date);
         // query params
-        if ($q_employee_id !== null) {
-            $queryParams['q[employee_id]'] = ObjectSerializer::toQueryValue($q_employee_id);
-        }
+        $queryParams['q[employee_id]'] = ObjectSerializer::toQueryValue($q_employee_id);
         // query params
-        if ($q_type !== null) {
-            $queryParams['q[type]'] = ObjectSerializer::toQueryValue($q_type);
-        }
+        $queryParams['q[type]'] = ObjectSerializer::toQueryValue($q_type);
 
         // body params
         $_tempBody = null;
@@ -7063,9 +6852,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7136,7 +6923,6 @@ class HoursApi
      */
     public function hoursTimesheetrowOrderPutWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hoursTimesheetrowOrderPutRequest($body);
 
         try {
@@ -7358,7 +7144,6 @@ class HoursApi
      */
     public function hoursTimesheetrowPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->hoursTimesheetrowPostRequest($body);
 
         try {
@@ -7478,12 +7263,7 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -7566,7 +7346,7 @@ class HoursApi
      */
     public function timersTimerGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->timersTimerGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->timersTimerGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -7586,7 +7366,7 @@ class HoursApi
      */
     public function timersTimerGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimers';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTimers::class;
         $request = $this->timersTimerGetRequest($offset, $limit, $sort);
 
         try {
@@ -7622,9 +7402,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7637,7 +7415,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultTimers',
+                        \Paqtcom\Simplicate\Model\RestResultTimers::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7683,7 +7461,7 @@ class HoursApi
      */
     public function timersTimerGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimers';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTimers::class;
         $request = $this->timersTimerGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7695,9 +7473,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7780,9 +7556,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7853,7 +7627,6 @@ class HoursApi
      */
     public function timersTimerIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->timersTimerIdDeleteRequest($id);
 
         try {
@@ -7975,13 +7748,11 @@ class HoursApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -8008,9 +7779,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8065,7 +7834,7 @@ class HoursApi
      */
     public function timersTimerIdGet($id)
     {
-        list($response) = $this->timersTimerIdGetWithHttpInfo($id);
+        [$response] = $this->timersTimerIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -8083,7 +7852,7 @@ class HoursApi
      */
     public function timersTimerIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimer';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTimer::class;
         $request = $this->timersTimerIdGetRequest($id);
 
         try {
@@ -8119,9 +7888,7 @@ class HoursApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -8134,7 +7901,7 @@ class HoursApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultTimer',
+                        \Paqtcom\Simplicate\Model\RestResultTimer::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8176,7 +7943,7 @@ class HoursApi
      */
     public function timersTimerIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimer';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTimer::class;
         $request = $this->timersTimerIdGetRequest($id);
 
         return $this->client
@@ -8188,9 +7955,7 @@ class HoursApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8241,13 +8006,11 @@ class HoursApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -8274,9 +8037,7 @@ class HoursApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8349,7 +8110,6 @@ class HoursApi
      */
     public function timersTimerIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->timersTimerIdPutRequest($id, $body);
 
         try {
@@ -8478,21 +8238,13 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -8589,7 +8341,6 @@ class HoursApi
      */
     public function timersTimerPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->timersTimerPostRequest($body);
 
         try {
@@ -8709,12 +8460,7 @@ class HoursApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(

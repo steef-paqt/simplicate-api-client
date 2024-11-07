@@ -43,7 +43,7 @@ use Paqtcom\Simplicate\ObjectSerializer;
  */
 class Installment implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -66,7 +66,7 @@ class Installment implements ModelInterface, ArrayAccess
         'status' => 'string',
         'invoiced_date' => 'string',
         'invoice_id' => 'string',
-        'invoice_line_id' => 'string'
+        'invoice_line_id' => 'string',
     ];
 
     /**
@@ -83,7 +83,7 @@ class Installment implements ModelInterface, ArrayAccess
         'status' => null,
         'invoiced_date' => null,
         'invoice_id' => null,
-        'invoice_line_id' => null
+        'invoice_line_id' => null,
     ];
 
     /**
@@ -121,7 +121,7 @@ class Installment implements ModelInterface, ArrayAccess
         'status' => 'status',
         'invoiced_date' => 'invoiced_date',
         'invoice_id' => 'invoice_id',
-        'invoice_line_id' => 'invoice_line_id'
+        'invoice_line_id' => 'invoice_line_id',
     ];
 
     /**
@@ -138,7 +138,7 @@ class Installment implements ModelInterface, ArrayAccess
         'status' => 'setStatus',
         'invoiced_date' => 'setInvoicedDate',
         'invoice_id' => 'setInvoiceId',
-        'invoice_line_id' => 'setInvoiceLineId'
+        'invoice_line_id' => 'setInvoiceLineId',
     ];
 
     /**
@@ -155,7 +155,7 @@ class Installment implements ModelInterface, ArrayAccess
         'status' => 'getStatus',
         'invoiced_date' => 'getInvoicedDate',
         'invoice_id' => 'getInvoiceId',
-        'invoice_line_id' => 'getInvoiceLineId'
+        'invoice_line_id' => 'getInvoiceLineId',
     ];
 
     /**
@@ -199,11 +199,9 @@ class Installment implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const STATUS_OPEN = 'open';
-    const STATUS_FLUSHED = 'flushed';
-    const STATUS_INVOICED = 'invoiced';
-
-
+    public const STATUS_OPEN = 'open';
+    public const STATUS_FLUSHED = 'flushed';
+    public const STATUS_INVOICED = 'invoiced';
 
     /**
      * Gets allowable values of the enum
@@ -218,7 +216,6 @@ class Installment implements ModelInterface, ArrayAccess
             self::STATUS_INVOICED,
         ];
     }
-
 
     /**
      * Associative array for storing property values
@@ -276,7 +273,6 @@ class Installment implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets name
@@ -502,6 +498,7 @@ class Installment implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

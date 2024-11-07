@@ -65,11 +65,6 @@ class MergerApi
      */
     protected $headerSelector;
 
-    /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     */
     public function __construct(
         ClientInterface $client = null,
         Configuration $config = null,
@@ -101,7 +96,7 @@ class MergerApi
      */
     public function crmMergeorganizationPost($body)
     {
-        list($response) = $this->crmMergeorganizationPostWithHttpInfo($body);
+        [$response] = $this->crmMergeorganizationPostWithHttpInfo($body);
 
         return $response;
     }
@@ -119,7 +114,7 @@ class MergerApi
      */
     public function crmMergeorganizationPostWithHttpInfo($body)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\ResultMergerMerge';
+        $returnType = \Paqtcom\Simplicate\Model\ResultMergerMerge::class;
         $request = $this->crmMergeorganizationPostRequest($body);
 
         try {
@@ -155,9 +150,7 @@ class MergerApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -170,7 +163,7 @@ class MergerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\ResultMergerMerge',
+                        \Paqtcom\Simplicate\Model\ResultMergerMerge::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -212,7 +205,7 @@ class MergerApi
      */
     public function crmMergeorganizationPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\ResultMergerMerge';
+        $returnType = \Paqtcom\Simplicate\Model\ResultMergerMerge::class;
         $request = $this->crmMergeorganizationPostRequest($body);
 
         return $this->client
@@ -224,9 +217,7 @@ class MergerApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -275,12 +266,7 @@ class MergerApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -361,7 +347,7 @@ class MergerApi
      */
     public function crmMergepersonPost($body)
     {
-        list($response) = $this->crmMergepersonPostWithHttpInfo($body);
+        [$response] = $this->crmMergepersonPostWithHttpInfo($body);
 
         return $response;
     }
@@ -379,7 +365,7 @@ class MergerApi
      */
     public function crmMergepersonPostWithHttpInfo($body)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\ResultMergerMerge';
+        $returnType = \Paqtcom\Simplicate\Model\ResultMergerMerge::class;
         $request = $this->crmMergepersonPostRequest($body);
 
         try {
@@ -415,9 +401,7 @@ class MergerApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -430,7 +414,7 @@ class MergerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\ResultMergerMerge',
+                        \Paqtcom\Simplicate\Model\ResultMergerMerge::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -472,7 +456,7 @@ class MergerApi
      */
     public function crmMergepersonPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\ResultMergerMerge';
+        $returnType = \Paqtcom\Simplicate\Model\ResultMergerMerge::class;
         $request = $this->crmMergepersonPostRequest($body);
 
         return $this->client
@@ -484,9 +468,7 @@ class MergerApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -535,12 +517,7 @@ class MergerApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -621,7 +598,7 @@ class MergerApi
      */
     public function mergerCompareorganizationPost($body)
     {
-        list($response) = $this->mergerCompareorganizationPostWithHttpInfo($body);
+        [$response] = $this->mergerCompareorganizationPostWithHttpInfo($body);
 
         return $response;
     }
@@ -639,7 +616,7 @@ class MergerApi
      */
     public function mergerCompareorganizationPostWithHttpInfo($body)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultMergerCompare';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultMergerCompare::class;
         $request = $this->mergerCompareorganizationPostRequest($body);
 
         try {
@@ -675,9 +652,7 @@ class MergerApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -690,7 +665,7 @@ class MergerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultMergerCompare',
+                        \Paqtcom\Simplicate\Model\RestResultMergerCompare::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -732,7 +707,7 @@ class MergerApi
      */
     public function mergerCompareorganizationPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultMergerCompare';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultMergerCompare::class;
         $request = $this->mergerCompareorganizationPostRequest($body);
 
         return $this->client
@@ -744,9 +719,7 @@ class MergerApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -795,12 +768,7 @@ class MergerApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -881,7 +849,7 @@ class MergerApi
      */
     public function mergerComparepersonPost($body)
     {
-        list($response) = $this->mergerComparepersonPostWithHttpInfo($body);
+        [$response] = $this->mergerComparepersonPostWithHttpInfo($body);
 
         return $response;
     }
@@ -899,7 +867,7 @@ class MergerApi
      */
     public function mergerComparepersonPostWithHttpInfo($body)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultMergerCompare';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultMergerCompare::class;
         $request = $this->mergerComparepersonPostRequest($body);
 
         try {
@@ -935,9 +903,7 @@ class MergerApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -950,7 +916,7 @@ class MergerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultMergerCompare',
+                        \Paqtcom\Simplicate\Model\RestResultMergerCompare::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -992,7 +958,7 @@ class MergerApi
      */
     public function mergerComparepersonPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultMergerCompare';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultMergerCompare::class;
         $request = $this->mergerComparepersonPostRequest($body);
 
         return $this->client
@@ -1004,9 +970,7 @@ class MergerApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1055,12 +1019,7 @@ class MergerApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(

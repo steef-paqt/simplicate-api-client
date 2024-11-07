@@ -65,11 +65,6 @@ class TimelineApi
      */
     protected $headerSelector;
 
-    /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     */
     public function __construct(
         ClientInterface $client = null,
         Configuration $config = null,
@@ -117,7 +112,6 @@ class TimelineApi
      */
     public function timelineAttachmentIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->timelineAttachmentIdDeleteRequest($id);
 
         try {
@@ -239,13 +233,11 @@ class TimelineApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -272,9 +264,7 @@ class TimelineApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -345,7 +335,6 @@ class TimelineApi
      */
     public function timelineAttachmentPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->timelineAttachmentPostRequest($body);
 
         try {
@@ -465,12 +454,7 @@ class TimelineApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -553,7 +537,7 @@ class TimelineApi
      */
     public function timelineMessageGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->timelineMessageGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->timelineMessageGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -573,7 +557,7 @@ class TimelineApi
      */
     public function timelineMessageGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessages';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTimelineMessages::class;
         $request = $this->timelineMessageGetRequest($offset, $limit, $sort);
 
         try {
@@ -609,9 +593,7 @@ class TimelineApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -624,7 +606,7 @@ class TimelineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultTimelineMessages',
+                        \Paqtcom\Simplicate\Model\RestResultTimelineMessages::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -670,7 +652,7 @@ class TimelineApi
      */
     public function timelineMessageGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessages';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTimelineMessages::class;
         $request = $this->timelineMessageGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -682,9 +664,7 @@ class TimelineApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -767,9 +747,7 @@ class TimelineApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -840,7 +818,6 @@ class TimelineApi
      */
     public function timelineMessageIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->timelineMessageIdDeleteRequest($id);
 
         try {
@@ -962,13 +939,11 @@ class TimelineApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -995,9 +970,7 @@ class TimelineApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1052,7 +1025,7 @@ class TimelineApi
      */
     public function timelineMessageIdGet($id)
     {
-        list($response) = $this->timelineMessageIdGetWithHttpInfo($id);
+        [$response] = $this->timelineMessageIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -1070,7 +1043,7 @@ class TimelineApi
      */
     public function timelineMessageIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessage';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTimelineMessage::class;
         $request = $this->timelineMessageIdGetRequest($id);
 
         try {
@@ -1106,9 +1079,7 @@ class TimelineApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1121,7 +1092,7 @@ class TimelineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultTimelineMessage',
+                        \Paqtcom\Simplicate\Model\RestResultTimelineMessage::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1163,7 +1134,7 @@ class TimelineApi
      */
     public function timelineMessageIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessage';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTimelineMessage::class;
         $request = $this->timelineMessageIdGetRequest($id);
 
         return $this->client
@@ -1175,9 +1146,7 @@ class TimelineApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1228,13 +1197,11 @@ class TimelineApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -1261,9 +1228,7 @@ class TimelineApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1334,7 +1299,6 @@ class TimelineApi
      */
     public function timelineMessagePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->timelineMessagePostRequest($body);
 
         try {
@@ -1454,12 +1418,7 @@ class TimelineApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1542,7 +1501,7 @@ class TimelineApi
      */
     public function timelineMessagetypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->timelineMessagetypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->timelineMessagetypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -1562,7 +1521,7 @@ class TimelineApi
      */
     public function timelineMessagetypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes::class;
         $request = $this->timelineMessagetypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -1598,9 +1557,7 @@ class TimelineApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1613,7 +1570,7 @@ class TimelineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes',
+                        \Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1659,7 +1616,7 @@ class TimelineApi
      */
     public function timelineMessagetypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTimelineMessageTypes::class;
         $request = $this->timelineMessagetypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1671,9 +1628,7 @@ class TimelineApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1756,9 +1711,7 @@ class TimelineApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1813,7 +1766,7 @@ class TimelineApi
      */
     public function timelineMessagetypeIdGet($id)
     {
-        list($response) = $this->timelineMessagetypeIdGetWithHttpInfo($id);
+        [$response] = $this->timelineMessagetypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -1831,7 +1784,7 @@ class TimelineApi
      */
     public function timelineMessagetypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessageType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTimelineMessageType::class;
         $request = $this->timelineMessagetypeIdGetRequest($id);
 
         try {
@@ -1867,9 +1820,7 @@ class TimelineApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1882,7 +1833,7 @@ class TimelineApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultTimelineMessageType',
+                        \Paqtcom\Simplicate\Model\RestResultTimelineMessageType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1924,7 +1875,7 @@ class TimelineApi
      */
     public function timelineMessagetypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultTimelineMessageType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultTimelineMessageType::class;
         $request = $this->timelineMessagetypeIdGetRequest($id);
 
         return $this->client
@@ -1936,9 +1887,7 @@ class TimelineApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1989,13 +1938,11 @@ class TimelineApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2022,9 +1969,7 @@ class TimelineApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

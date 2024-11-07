@@ -65,11 +65,6 @@ class MileageApi
      */
     protected $headerSelector;
 
-    /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     */
     public function __construct(
         ClientInterface $client = null,
         Configuration $config = null,
@@ -103,7 +98,7 @@ class MileageApi
      */
     public function mileageMileageGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->mileageMileageGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->mileageMileageGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -123,7 +118,7 @@ class MileageApi
      */
     public function mileageMileageGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultMileageList';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultMileageList::class;
         $request = $this->mileageMileageGetRequest($offset, $limit, $sort);
 
         try {
@@ -159,9 +154,7 @@ class MileageApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -174,7 +167,7 @@ class MileageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultMileageList',
+                        \Paqtcom\Simplicate\Model\RestResultMileageList::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +213,7 @@ class MileageApi
      */
     public function mileageMileageGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultMileageList';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultMileageList::class;
         $request = $this->mileageMileageGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -232,9 +225,7 @@ class MileageApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -317,9 +308,7 @@ class MileageApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -390,7 +379,6 @@ class MileageApi
      */
     public function mileageMileageIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->mileageMileageIdDeleteRequest($id);
 
         try {
@@ -512,13 +500,11 @@ class MileageApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -545,9 +531,7 @@ class MileageApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -602,7 +586,7 @@ class MileageApi
      */
     public function mileageMileageIdGet($id)
     {
-        list($response) = $this->mileageMileageIdGetWithHttpInfo($id);
+        [$response] = $this->mileageMileageIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -620,7 +604,7 @@ class MileageApi
      */
     public function mileageMileageIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultMileage';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultMileage::class;
         $request = $this->mileageMileageIdGetRequest($id);
 
         try {
@@ -656,9 +640,7 @@ class MileageApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -671,7 +653,7 @@ class MileageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultMileage',
+                        \Paqtcom\Simplicate\Model\RestResultMileage::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -713,7 +695,7 @@ class MileageApi
      */
     public function mileageMileageIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultMileage';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultMileage::class;
         $request = $this->mileageMileageIdGetRequest($id);
 
         return $this->client
@@ -725,9 +707,7 @@ class MileageApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -778,13 +758,11 @@ class MileageApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -811,9 +789,7 @@ class MileageApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -886,7 +862,6 @@ class MileageApi
      */
     public function mileageMileageIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->mileageMileageIdPutRequest($id, $body);
 
         try {
@@ -1015,21 +990,13 @@ class MileageApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1126,7 +1093,6 @@ class MileageApi
      */
     public function mileageMileagePostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->mileageMileagePostRequest($body);
 
         try {
@@ -1246,12 +1212,7 @@ class MileageApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(

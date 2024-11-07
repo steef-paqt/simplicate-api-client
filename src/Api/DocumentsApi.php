@@ -65,11 +65,6 @@ class DocumentsApi
      */
     protected $headerSelector;
 
-    /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     */
     public function __construct(
         ClientInterface $client = null,
         Configuration $config = null,
@@ -103,7 +98,7 @@ class DocumentsApi
      */
     public function documentsDocumentGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->documentsDocumentGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->documentsDocumentGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -123,7 +118,7 @@ class DocumentsApi
      */
     public function documentsDocumentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocuments::class;
         $request = $this->documentsDocumentGetRequest($offset, $limit, $sort);
 
         try {
@@ -159,9 +154,7 @@ class DocumentsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -174,7 +167,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocuments',
+                        \Paqtcom\Simplicate\Model\RestResultDocuments::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,7 +213,7 @@ class DocumentsApi
      */
     public function documentsDocumentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocuments::class;
         $request = $this->documentsDocumentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -232,9 +225,7 @@ class DocumentsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -317,9 +308,7 @@ class DocumentsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -390,7 +379,6 @@ class DocumentsApi
      */
     public function documentsDocumentIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->documentsDocumentIdDeleteRequest($id);
 
         try {
@@ -512,13 +500,11 @@ class DocumentsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -545,9 +531,7 @@ class DocumentsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -602,7 +586,7 @@ class DocumentsApi
      */
     public function documentsDocumentIdGet($id)
     {
-        list($response) = $this->documentsDocumentIdGetWithHttpInfo($id);
+        [$response] = $this->documentsDocumentIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -620,7 +604,7 @@ class DocumentsApi
      */
     public function documentsDocumentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocument::class;
         $request = $this->documentsDocumentIdGetRequest($id);
 
         try {
@@ -656,9 +640,7 @@ class DocumentsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -671,7 +653,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocument',
+                        \Paqtcom\Simplicate\Model\RestResultDocument::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -713,7 +695,7 @@ class DocumentsApi
      */
     public function documentsDocumentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocument::class;
         $request = $this->documentsDocumentIdGetRequest($id);
 
         return $this->client
@@ -725,9 +707,7 @@ class DocumentsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -778,13 +758,11 @@ class DocumentsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -811,9 +789,7 @@ class DocumentsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -884,7 +860,6 @@ class DocumentsApi
      */
     public function documentsDocumentPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->documentsDocumentPostRequest($body);
 
         try {
@@ -1004,12 +979,7 @@ class DocumentsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1106,7 +1076,6 @@ class DocumentsApi
      */
     public function documentsDocumentPutWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->documentsDocumentPutRequest($body);
 
         try {
@@ -1226,12 +1195,7 @@ class DocumentsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1314,7 +1278,7 @@ class DocumentsApi
      */
     public function documentsDocumenttypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->documentsDocumenttypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->documentsDocumenttypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -1334,7 +1298,7 @@ class DocumentsApi
      */
     public function documentsDocumenttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class;
         $request = $this->documentsDocumenttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -1370,9 +1334,7 @@ class DocumentsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1385,7 +1347,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocumentTypes',
+                        \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1431,7 +1393,7 @@ class DocumentsApi
      */
     public function documentsDocumenttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class;
         $request = $this->documentsDocumenttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1443,9 +1405,7 @@ class DocumentsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1528,9 +1488,7 @@ class DocumentsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1585,7 +1543,7 @@ class DocumentsApi
      */
     public function documentsDocumenttypeIdGet($id)
     {
-        list($response) = $this->documentsDocumenttypeIdGetWithHttpInfo($id);
+        [$response] = $this->documentsDocumenttypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -1603,7 +1561,7 @@ class DocumentsApi
      */
     public function documentsDocumenttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentType::class;
         $request = $this->documentsDocumenttypeIdGetRequest($id);
 
         try {
@@ -1639,9 +1597,7 @@ class DocumentsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1654,7 +1610,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocumentType',
+                        \Paqtcom\Simplicate\Model\RestResultDocumentType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1696,7 +1652,7 @@ class DocumentsApi
      */
     public function documentsDocumenttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentType::class;
         $request = $this->documentsDocumenttypeIdGetRequest($id);
 
         return $this->client
@@ -1708,9 +1664,7 @@ class DocumentsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1761,13 +1715,11 @@ class DocumentsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -1794,9 +1746,7 @@ class DocumentsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1851,7 +1801,7 @@ class DocumentsApi
      */
     public function documentsDownloadIdGet($id)
     {
-        list($response) = $this->documentsDownloadIdGetWithHttpInfo($id);
+        [$response] = $this->documentsDownloadIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -1905,9 +1855,7 @@ class DocumentsApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1974,9 +1922,7 @@ class DocumentsApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2027,13 +1973,11 @@ class DocumentsApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2060,9 +2004,7 @@ class DocumentsApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

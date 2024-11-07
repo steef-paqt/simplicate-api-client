@@ -43,7 +43,7 @@ use Paqtcom\Simplicate\ObjectSerializer;
  */
 class Task implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -58,7 +58,7 @@ class Task implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'status' => 'string'
+        'status' => 'string',
     ];
 
     /**
@@ -67,7 +67,7 @@ class Task implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'status' => null
+        'status' => null,
     ];
 
     /**
@@ -97,7 +97,7 @@ class Task implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status'
+        'status' => 'status',
     ];
 
     /**
@@ -106,7 +106,7 @@ class Task implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus'
+        'status' => 'setStatus',
     ];
 
     /**
@@ -115,7 +115,7 @@ class Task implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus'
+        'status' => 'getStatus',
     ];
 
     /**
@@ -159,10 +159,6 @@ class Task implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-
-
-
-
     /**
      * Associative array for storing property values
      *
@@ -204,7 +200,6 @@ class Task implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets status
      *
@@ -228,6 +223,7 @@ class Task implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

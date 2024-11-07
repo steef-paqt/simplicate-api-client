@@ -65,11 +65,6 @@ class CrmApi
      */
     protected $headerSelector;
 
-    /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     */
     public function __construct(
         ClientInterface $client = null,
         Configuration $config = null,
@@ -104,7 +99,7 @@ class CrmApi
      */
     public function crmContactpersonGet($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        list($response) = $this->crmContactpersonGetWithHttpInfo($offset, $limit, $sort, $select);
+        [$response] = $this->crmContactpersonGetWithHttpInfo($offset, $limit, $sort, $select);
 
         return $response;
     }
@@ -125,7 +120,7 @@ class CrmApi
      */
     public function crmContactpersonGetWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultContactPersons';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultContactPersons::class;
         $request = $this->crmContactpersonGetRequest($offset, $limit, $sort, $select);
 
         try {
@@ -161,9 +156,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -176,7 +169,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultContactPersons',
+                        \Paqtcom\Simplicate\Model\RestResultContactPersons::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -224,7 +217,7 @@ class CrmApi
      */
     public function crmContactpersonGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultContactPersons';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultContactPersons::class;
         $request = $this->crmContactpersonGetRequest($offset, $limit, $sort, $select);
 
         return $this->client
@@ -236,9 +229,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -326,9 +317,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -399,7 +388,6 @@ class CrmApi
      */
     public function crmContactpersonIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->crmContactpersonIdDeleteRequest($id);
 
         try {
@@ -521,13 +509,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -554,9 +540,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -611,7 +595,7 @@ class CrmApi
      */
     public function crmContactpersonIdGet($id)
     {
-        list($response) = $this->crmContactpersonIdGetWithHttpInfo($id);
+        [$response] = $this->crmContactpersonIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -629,7 +613,7 @@ class CrmApi
      */
     public function crmContactpersonIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultContactPerson';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultContactPerson::class;
         $request = $this->crmContactpersonIdGetRequest($id);
 
         try {
@@ -665,9 +649,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -680,7 +662,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultContactPerson',
+                        \Paqtcom\Simplicate\Model\RestResultContactPerson::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -722,7 +704,7 @@ class CrmApi
      */
     public function crmContactpersonIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultContactPerson';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultContactPerson::class;
         $request = $this->crmContactpersonIdGetRequest($id);
 
         return $this->client
@@ -734,9 +716,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -787,13 +767,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -820,9 +798,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -879,7 +855,7 @@ class CrmApi
      */
     public function crmCountryGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->crmCountryGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->crmCountryGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -899,7 +875,7 @@ class CrmApi
      */
     public function crmCountryGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCountries';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCountries::class;
         $request = $this->crmCountryGetRequest($offset, $limit, $sort);
 
         try {
@@ -935,9 +911,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -950,7 +924,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCountries',
+                        \Paqtcom\Simplicate\Model\RestResultCountries::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -996,7 +970,7 @@ class CrmApi
      */
     public function crmCountryGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCountries';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCountries::class;
         $request = $this->crmCountryGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1008,9 +982,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1093,9 +1065,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1150,7 +1120,7 @@ class CrmApi
      */
     public function crmCountryIdGet($id)
     {
-        list($response) = $this->crmCountryIdGetWithHttpInfo($id);
+        [$response] = $this->crmCountryIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -1168,7 +1138,7 @@ class CrmApi
      */
     public function crmCountryIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCountry';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCountry::class;
         $request = $this->crmCountryIdGetRequest($id);
 
         try {
@@ -1204,9 +1174,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1219,7 +1187,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCountry',
+                        \Paqtcom\Simplicate\Model\RestResultCountry::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1261,7 +1229,7 @@ class CrmApi
      */
     public function crmCountryIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCountry';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCountry::class;
         $request = $this->crmCountryIdGetRequest($id);
 
         return $this->client
@@ -1273,9 +1241,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1326,13 +1292,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -1359,9 +1323,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1418,7 +1380,7 @@ class CrmApi
      */
     public function crmDebtorGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->crmDebtorGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->crmDebtorGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -1438,7 +1400,7 @@ class CrmApi
      */
     public function crmDebtorGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDebtorList';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDebtorList::class;
         $request = $this->crmDebtorGetRequest($offset, $limit, $sort);
 
         try {
@@ -1474,9 +1436,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1489,7 +1449,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDebtorList',
+                        \Paqtcom\Simplicate\Model\RestResultDebtorList::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1535,7 +1495,7 @@ class CrmApi
      */
     public function crmDebtorGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDebtorList';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDebtorList::class;
         $request = $this->crmDebtorGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1547,9 +1507,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1632,9 +1590,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1691,7 +1647,7 @@ class CrmApi
      */
     public function crmDocumentGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->crmDocumentGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->crmDocumentGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -1711,7 +1667,7 @@ class CrmApi
      */
     public function crmDocumentGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocuments::class;
         $request = $this->crmDocumentGetRequest($offset, $limit, $sort);
 
         try {
@@ -1747,9 +1703,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -1762,7 +1716,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocuments',
+                        \Paqtcom\Simplicate\Model\RestResultDocuments::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1808,7 +1762,7 @@ class CrmApi
      */
     public function crmDocumentGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocuments';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocuments::class;
         $request = $this->crmDocumentGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -1820,9 +1774,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -1905,9 +1857,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1978,7 +1928,6 @@ class CrmApi
      */
     public function crmDocumentIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->crmDocumentIdDeleteRequest($id);
 
         try {
@@ -2100,13 +2049,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2133,9 +2080,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2190,7 +2135,7 @@ class CrmApi
      */
     public function crmDocumentIdGet($id)
     {
-        list($response) = $this->crmDocumentIdGetWithHttpInfo($id);
+        [$response] = $this->crmDocumentIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -2208,7 +2153,7 @@ class CrmApi
      */
     public function crmDocumentIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocument::class;
         $request = $this->crmDocumentIdGetRequest($id);
 
         try {
@@ -2244,9 +2189,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -2259,7 +2202,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocument',
+                        \Paqtcom\Simplicate\Model\RestResultDocument::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2301,7 +2244,7 @@ class CrmApi
      */
     public function crmDocumentIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocument';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocument::class;
         $request = $this->crmDocumentIdGetRequest($id);
 
         return $this->client
@@ -2313,9 +2256,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -2366,13 +2307,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -2399,9 +2338,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2472,7 +2409,6 @@ class CrmApi
      */
     public function crmDocumentPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->crmDocumentPostRequest($body);
 
         try {
@@ -2592,12 +2528,7 @@ class CrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2694,7 +2625,6 @@ class CrmApi
      */
     public function crmDocumentPutWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->crmDocumentPutRequest($body);
 
         try {
@@ -2814,12 +2744,7 @@ class CrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2902,7 +2827,7 @@ class CrmApi
      */
     public function crmDocumenttypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->crmDocumenttypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->crmDocumenttypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -2922,7 +2847,7 @@ class CrmApi
      */
     public function crmDocumenttypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class;
         $request = $this->crmDocumenttypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -2958,9 +2883,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -2973,7 +2896,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocumentTypes',
+                        \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3019,7 +2942,7 @@ class CrmApi
      */
     public function crmDocumenttypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentTypes::class;
         $request = $this->crmDocumenttypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3031,9 +2954,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3116,9 +3037,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3173,7 +3092,7 @@ class CrmApi
      */
     public function crmDocumenttypeIdGet($id)
     {
-        list($response) = $this->crmDocumenttypeIdGetWithHttpInfo($id);
+        [$response] = $this->crmDocumenttypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -3191,7 +3110,7 @@ class CrmApi
      */
     public function crmDocumenttypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentType::class;
         $request = $this->crmDocumenttypeIdGetRequest($id);
 
         try {
@@ -3227,9 +3146,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3242,7 +3159,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultDocumentType',
+                        \Paqtcom\Simplicate\Model\RestResultDocumentType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3284,7 +3201,7 @@ class CrmApi
      */
     public function crmDocumenttypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultDocumentType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultDocumentType::class;
         $request = $this->crmDocumenttypeIdGetRequest($id);
 
         return $this->client
@@ -3296,9 +3213,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3349,13 +3264,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -3382,9 +3295,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3441,7 +3352,7 @@ class CrmApi
      */
     public function crmGenderGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->crmGenderGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->crmGenderGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -3461,7 +3372,7 @@ class CrmApi
      */
     public function crmGenderGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultGenders';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultGenders::class;
         $request = $this->crmGenderGetRequest($offset, $limit, $sort);
 
         try {
@@ -3497,9 +3408,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3512,7 +3421,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultGenders',
+                        \Paqtcom\Simplicate\Model\RestResultGenders::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3558,7 +3467,7 @@ class CrmApi
      */
     public function crmGenderGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultGenders';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultGenders::class;
         $request = $this->crmGenderGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -3570,9 +3479,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3655,9 +3562,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3712,7 +3617,7 @@ class CrmApi
      */
     public function crmGenderIdGet($id)
     {
-        list($response) = $this->crmGenderIdGetWithHttpInfo($id);
+        [$response] = $this->crmGenderIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -3730,7 +3635,7 @@ class CrmApi
      */
     public function crmGenderIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultGender';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultGender::class;
         $request = $this->crmGenderIdGetRequest($id);
 
         try {
@@ -3766,9 +3671,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -3781,7 +3684,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultGender',
+                        \Paqtcom\Simplicate\Model\RestResultGender::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3823,7 +3726,7 @@ class CrmApi
      */
     public function crmGenderIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultGender';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultGender::class;
         $request = $this->crmGenderIdGetRequest($id);
 
         return $this->client
@@ -3835,9 +3738,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -3888,13 +3789,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -3921,9 +3820,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3980,7 +3877,7 @@ class CrmApi
      */
     public function crmIndustryGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->crmIndustryGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->crmIndustryGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -4000,7 +3897,7 @@ class CrmApi
      */
     public function crmIndustryGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultIndustries';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultIndustries::class;
         $request = $this->crmIndustryGetRequest($offset, $limit, $sort);
 
         try {
@@ -4036,9 +3933,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4051,7 +3946,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultIndustries',
+                        \Paqtcom\Simplicate\Model\RestResultIndustries::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4097,7 +3992,7 @@ class CrmApi
      */
     public function crmIndustryGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultIndustries';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultIndustries::class;
         $request = $this->crmIndustryGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -4109,9 +4004,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4194,9 +4087,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4251,7 +4142,7 @@ class CrmApi
      */
     public function crmIndustryIdGet($id)
     {
-        list($response) = $this->crmIndustryIdGetWithHttpInfo($id);
+        [$response] = $this->crmIndustryIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -4269,7 +4160,7 @@ class CrmApi
      */
     public function crmIndustryIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultIndustry';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultIndustry::class;
         $request = $this->crmIndustryIdGetRequest($id);
 
         try {
@@ -4305,9 +4196,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4320,7 +4209,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultIndustry',
+                        \Paqtcom\Simplicate\Model\RestResultIndustry::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4362,7 +4251,7 @@ class CrmApi
      */
     public function crmIndustryIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultIndustry';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultIndustry::class;
         $request = $this->crmIndustryIdGetRequest($id);
 
         return $this->client
@@ -4374,9 +4263,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4427,13 +4314,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -4460,9 +4345,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4519,7 +4402,7 @@ class CrmApi
      */
     public function crmInterestsGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->crmInterestsGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->crmInterestsGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -4539,7 +4422,7 @@ class CrmApi
      */
     public function crmInterestsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultInterests';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultInterests::class;
         $request = $this->crmInterestsGetRequest($offset, $limit, $sort);
 
         try {
@@ -4575,9 +4458,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4590,7 +4471,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultInterests',
+                        \Paqtcom\Simplicate\Model\RestResultInterests::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4636,7 +4517,7 @@ class CrmApi
      */
     public function crmInterestsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultInterests';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultInterests::class;
         $request = $this->crmInterestsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -4648,9 +4529,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4733,9 +4612,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4790,7 +4667,7 @@ class CrmApi
      */
     public function crmInterestsIdGet($id)
     {
-        list($response) = $this->crmInterestsIdGetWithHttpInfo($id);
+        [$response] = $this->crmInterestsIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -4808,7 +4685,7 @@ class CrmApi
      */
     public function crmInterestsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultInterest';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultInterest::class;
         $request = $this->crmInterestsIdGetRequest($id);
 
         try {
@@ -4844,9 +4721,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -4859,7 +4734,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultInterest',
+                        \Paqtcom\Simplicate\Model\RestResultInterest::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4901,7 +4776,7 @@ class CrmApi
      */
     public function crmInterestsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultInterest';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultInterest::class;
         $request = $this->crmInterestsIdGetRequest($id);
 
         return $this->client
@@ -4913,9 +4788,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -4966,13 +4839,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -4999,9 +4870,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5058,7 +4927,7 @@ class CrmApi
      */
     public function crmMyorganizationprofileGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->crmMyorganizationprofileGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->crmMyorganizationprofileGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -5078,7 +4947,7 @@ class CrmApi
      */
     public function crmMyorganizationprofileGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles::class;
         $request = $this->crmMyorganizationprofileGetRequest($offset, $limit, $sort);
 
         try {
@@ -5114,9 +4983,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5129,7 +4996,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles',
+                        \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5175,7 +5042,7 @@ class CrmApi
      */
     public function crmMyorganizationprofileGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfiles::class;
         $request = $this->crmMyorganizationprofileGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -5187,9 +5054,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5272,9 +5137,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5329,7 +5192,7 @@ class CrmApi
      */
     public function crmMyorganizationprofileIdGet($id)
     {
-        list($response) = $this->crmMyorganizationprofileIdGetWithHttpInfo($id);
+        [$response] = $this->crmMyorganizationprofileIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -5347,7 +5210,7 @@ class CrmApi
      */
     public function crmMyorganizationprofileIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfile';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfile::class;
         $request = $this->crmMyorganizationprofileIdGetRequest($id);
 
         try {
@@ -5383,9 +5246,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5398,7 +5259,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfile',
+                        \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfile::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5440,7 +5301,7 @@ class CrmApi
      */
     public function crmMyorganizationprofileIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultMyOrganizationProfile';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultMyOrganizationProfile::class;
         $request = $this->crmMyorganizationprofileIdGetRequest($id);
 
         return $this->client
@@ -5452,9 +5313,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5505,13 +5364,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -5538,9 +5395,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5598,7 +5453,7 @@ class CrmApi
      */
     public function crmOrganizationGet($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        list($response) = $this->crmOrganizationGetWithHttpInfo($offset, $limit, $sort, $select);
+        [$response] = $this->crmOrganizationGetWithHttpInfo($offset, $limit, $sort, $select);
 
         return $response;
     }
@@ -5619,7 +5474,7 @@ class CrmApi
      */
     public function crmOrganizationGetWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganizations';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultOrganizations::class;
         $request = $this->crmOrganizationGetRequest($offset, $limit, $sort, $select);
 
         try {
@@ -5655,9 +5510,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -5670,7 +5523,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultOrganizations',
+                        \Paqtcom\Simplicate\Model\RestResultOrganizations::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5718,7 +5571,7 @@ class CrmApi
      */
     public function crmOrganizationGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganizations';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultOrganizations::class;
         $request = $this->crmOrganizationGetRequest($offset, $limit, $sort, $select);
 
         return $this->client
@@ -5730,9 +5583,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -5820,9 +5671,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5893,7 +5742,6 @@ class CrmApi
      */
     public function crmOrganizationIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->crmOrganizationIdDeleteRequest($id);
 
         try {
@@ -6015,13 +5863,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -6048,9 +5894,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6105,7 +5949,7 @@ class CrmApi
      */
     public function crmOrganizationIdGet($id)
     {
-        list($response) = $this->crmOrganizationIdGetWithHttpInfo($id);
+        [$response] = $this->crmOrganizationIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -6123,7 +5967,7 @@ class CrmApi
      */
     public function crmOrganizationIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganization';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultOrganization::class;
         $request = $this->crmOrganizationIdGetRequest($id);
 
         try {
@@ -6159,9 +6003,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6174,7 +6016,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultOrganization',
+                        \Paqtcom\Simplicate\Model\RestResultOrganization::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6216,7 +6058,7 @@ class CrmApi
      */
     public function crmOrganizationIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganization';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultOrganization::class;
         $request = $this->crmOrganizationIdGetRequest($id);
 
         return $this->client
@@ -6228,9 +6070,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -6281,13 +6121,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -6314,9 +6152,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6389,7 +6225,6 @@ class CrmApi
      */
     public function crmOrganizationIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->crmOrganizationIdPutRequest($id, $body);
 
         try {
@@ -6518,21 +6353,13 @@ class CrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -6629,7 +6456,6 @@ class CrmApi
      */
     public function crmOrganizationPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->crmOrganizationPostRequest($body);
 
         try {
@@ -6749,12 +6575,7 @@ class CrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -6837,7 +6658,7 @@ class CrmApi
      */
     public function crmOrganizationcustomfieldgroupsGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->crmOrganizationcustomfieldgroupsGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->crmOrganizationcustomfieldgroupsGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -6857,7 +6678,7 @@ class CrmApi
      */
     public function crmOrganizationcustomfieldgroupsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class;
         $request = $this->crmOrganizationcustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         try {
@@ -6893,9 +6714,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -6908,7 +6727,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6954,7 +6773,7 @@ class CrmApi
      */
     public function crmOrganizationcustomfieldgroupsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class;
         $request = $this->crmOrganizationcustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -6966,9 +6785,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7051,9 +6868,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7108,7 +6923,7 @@ class CrmApi
      */
     public function crmOrganizationcustomfieldgroupsIdGet($id)
     {
-        list($response) = $this->crmOrganizationcustomfieldgroupsIdGetWithHttpInfo($id);
+        [$response] = $this->crmOrganizationcustomfieldgroupsIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -7126,7 +6941,7 @@ class CrmApi
      */
     public function crmOrganizationcustomfieldgroupsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class;
         $request = $this->crmOrganizationcustomfieldgroupsIdGetRequest($id);
 
         try {
@@ -7162,9 +6977,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7177,7 +6990,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7219,7 +7032,7 @@ class CrmApi
      */
     public function crmOrganizationcustomfieldgroupsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class;
         $request = $this->crmOrganizationcustomfieldgroupsIdGetRequest($id);
 
         return $this->client
@@ -7231,9 +7044,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7284,13 +7095,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -7317,9 +7126,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7376,7 +7183,7 @@ class CrmApi
      */
     public function crmOrganizationcustomfieldsGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->crmOrganizationcustomfieldsGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->crmOrganizationcustomfieldsGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -7396,7 +7203,7 @@ class CrmApi
      */
     public function crmOrganizationcustomfieldsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFields::class;
         $request = $this->crmOrganizationcustomfieldsGetRequest($offset, $limit, $sort);
 
         try {
@@ -7432,9 +7239,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7447,7 +7252,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFields',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFields::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7493,7 +7298,7 @@ class CrmApi
      */
     public function crmOrganizationcustomfieldsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFields::class;
         $request = $this->crmOrganizationcustomfieldsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -7505,9 +7310,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7590,9 +7393,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7647,7 +7448,7 @@ class CrmApi
      */
     public function crmOrganizationcustomfieldsIdGet($id)
     {
-        list($response) = $this->crmOrganizationcustomfieldsIdGetWithHttpInfo($id);
+        [$response] = $this->crmOrganizationcustomfieldsIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -7665,7 +7466,7 @@ class CrmApi
      */
     public function crmOrganizationcustomfieldsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomField::class;
         $request = $this->crmOrganizationcustomfieldsIdGetRequest($id);
 
         try {
@@ -7701,9 +7502,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7716,7 +7515,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomField',
+                        \Paqtcom\Simplicate\Model\RestResultCustomField::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7758,7 +7557,7 @@ class CrmApi
      */
     public function crmOrganizationcustomfieldsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomField::class;
         $request = $this->crmOrganizationcustomfieldsIdGetRequest($id);
 
         return $this->client
@@ -7770,9 +7569,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -7823,13 +7620,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -7856,9 +7651,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -7915,7 +7708,7 @@ class CrmApi
      */
     public function crmOrganizationsizeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->crmOrganizationsizeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->crmOrganizationsizeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -7935,7 +7728,7 @@ class CrmApi
      */
     public function crmOrganizationsizeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganizationSizes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultOrganizationSizes::class;
         $request = $this->crmOrganizationsizeGetRequest($offset, $limit, $sort);
 
         try {
@@ -7971,9 +7764,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -7986,7 +7777,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultOrganizationSizes',
+                        \Paqtcom\Simplicate\Model\RestResultOrganizationSizes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8032,7 +7823,7 @@ class CrmApi
      */
     public function crmOrganizationsizeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganizationSizes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultOrganizationSizes::class;
         $request = $this->crmOrganizationsizeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -8044,9 +7835,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8129,9 +7918,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8186,7 +7973,7 @@ class CrmApi
      */
     public function crmOrganizationsizeIdGet($id)
     {
-        list($response) = $this->crmOrganizationsizeIdGetWithHttpInfo($id);
+        [$response] = $this->crmOrganizationsizeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -8204,7 +7991,7 @@ class CrmApi
      */
     public function crmOrganizationsizeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganizationSize';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultOrganizationSize::class;
         $request = $this->crmOrganizationsizeIdGetRequest($id);
 
         try {
@@ -8240,9 +8027,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -8255,7 +8040,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultOrganizationSize',
+                        \Paqtcom\Simplicate\Model\RestResultOrganizationSize::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8297,7 +8082,7 @@ class CrmApi
      */
     public function crmOrganizationsizeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultOrganizationSize';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultOrganizationSize::class;
         $request = $this->crmOrganizationsizeIdGetRequest($id);
 
         return $this->client
@@ -8309,9 +8094,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8362,13 +8145,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -8395,9 +8176,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8455,7 +8234,7 @@ class CrmApi
      */
     public function crmPersonGet($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        list($response) = $this->crmPersonGetWithHttpInfo($offset, $limit, $sort, $select);
+        [$response] = $this->crmPersonGetWithHttpInfo($offset, $limit, $sort, $select);
 
         return $response;
     }
@@ -8476,7 +8255,7 @@ class CrmApi
      */
     public function crmPersonGetWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPersons';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPersons::class;
         $request = $this->crmPersonGetRequest($offset, $limit, $sort, $select);
 
         try {
@@ -8512,9 +8291,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -8527,7 +8304,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultPersons',
+                        \Paqtcom\Simplicate\Model\RestResultPersons::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8575,7 +8352,7 @@ class CrmApi
      */
     public function crmPersonGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null, $select = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPersons';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPersons::class;
         $request = $this->crmPersonGetRequest($offset, $limit, $sort, $select);
 
         return $this->client
@@ -8587,9 +8364,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -8677,9 +8452,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8750,7 +8523,6 @@ class CrmApi
      */
     public function crmPersonIdDeleteWithHttpInfo($id)
     {
-        $returnType = '';
         $request = $this->crmPersonIdDeleteRequest($id);
 
         try {
@@ -8872,13 +8644,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -8905,9 +8675,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -8962,7 +8730,7 @@ class CrmApi
      */
     public function crmPersonIdGet($id)
     {
-        list($response) = $this->crmPersonIdGetWithHttpInfo($id);
+        [$response] = $this->crmPersonIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -8980,7 +8748,7 @@ class CrmApi
      */
     public function crmPersonIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPerson';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPerson::class;
         $request = $this->crmPersonIdGetRequest($id);
 
         try {
@@ -9016,9 +8784,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -9031,7 +8797,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultPerson',
+                        \Paqtcom\Simplicate\Model\RestResultPerson::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9073,7 +8839,7 @@ class CrmApi
      */
     public function crmPersonIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultPerson';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultPerson::class;
         $request = $this->crmPersonIdGetRequest($id);
 
         return $this->client
@@ -9085,9 +8851,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -9138,13 +8902,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -9171,9 +8933,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -9246,7 +9006,6 @@ class CrmApi
      */
     public function crmPersonIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->crmPersonIdPutRequest($id, $body);
 
         try {
@@ -9375,21 +9134,13 @@ class CrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -9486,7 +9237,6 @@ class CrmApi
      */
     public function crmPersonPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->crmPersonPostRequest($body);
 
         try {
@@ -9606,12 +9356,7 @@ class CrmApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -9694,7 +9439,7 @@ class CrmApi
      */
     public function crmPersoncustomfieldgroupsGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->crmPersoncustomfieldgroupsGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->crmPersoncustomfieldgroupsGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -9714,7 +9459,7 @@ class CrmApi
      */
     public function crmPersoncustomfieldgroupsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class;
         $request = $this->crmPersoncustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         try {
@@ -9750,9 +9495,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -9765,7 +9508,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9811,7 +9554,7 @@ class CrmApi
      */
     public function crmPersoncustomfieldgroupsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroups::class;
         $request = $this->crmPersoncustomfieldgroupsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -9823,9 +9566,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -9908,9 +9649,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -9965,7 +9704,7 @@ class CrmApi
      */
     public function crmPersoncustomfieldgroupsIdGet($id)
     {
-        list($response) = $this->crmPersoncustomfieldgroupsIdGetWithHttpInfo($id);
+        [$response] = $this->crmPersoncustomfieldgroupsIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -9983,7 +9722,7 @@ class CrmApi
      */
     public function crmPersoncustomfieldgroupsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class;
         $request = $this->crmPersoncustomfieldgroupsIdGetRequest($id);
 
         try {
@@ -10019,9 +9758,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -10034,7 +9771,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10076,7 +9813,7 @@ class CrmApi
      */
     public function crmPersoncustomfieldgroupsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFieldGroup::class;
         $request = $this->crmPersoncustomfieldgroupsIdGetRequest($id);
 
         return $this->client
@@ -10088,9 +9825,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -10141,13 +9876,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -10174,9 +9907,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10233,7 +9964,7 @@ class CrmApi
      */
     public function crmPersoncustomfieldsGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->crmPersoncustomfieldsGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->crmPersoncustomfieldsGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -10253,7 +9984,7 @@ class CrmApi
      */
     public function crmPersoncustomfieldsGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFields::class;
         $request = $this->crmPersoncustomfieldsGetRequest($offset, $limit, $sort);
 
         try {
@@ -10289,9 +10020,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -10304,7 +10033,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomFields',
+                        \Paqtcom\Simplicate\Model\RestResultCustomFields::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10350,7 +10079,7 @@ class CrmApi
      */
     public function crmPersoncustomfieldsGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomFields';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomFields::class;
         $request = $this->crmPersoncustomfieldsGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -10362,9 +10091,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -10447,9 +10174,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10504,7 +10229,7 @@ class CrmApi
      */
     public function crmPersoncustomfieldsIdGet($id)
     {
-        list($response) = $this->crmPersoncustomfieldsIdGetWithHttpInfo($id);
+        [$response] = $this->crmPersoncustomfieldsIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -10522,7 +10247,7 @@ class CrmApi
      */
     public function crmPersoncustomfieldsIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomField::class;
         $request = $this->crmPersoncustomfieldsIdGetRequest($id);
 
         try {
@@ -10558,9 +10283,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -10573,7 +10296,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultCustomField',
+                        \Paqtcom\Simplicate\Model\RestResultCustomField::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10615,7 +10338,7 @@ class CrmApi
      */
     public function crmPersoncustomfieldsIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultCustomField';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultCustomField::class;
         $request = $this->crmPersoncustomfieldsIdGetRequest($id);
 
         return $this->client
@@ -10627,9 +10350,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -10680,13 +10401,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -10713,9 +10432,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10772,7 +10489,7 @@ class CrmApi
      */
     public function crmRelationtypeGet($offset = null, $limit = '5', $sort = null)
     {
-        list($response) = $this->crmRelationtypeGetWithHttpInfo($offset, $limit, $sort);
+        [$response] = $this->crmRelationtypeGetWithHttpInfo($offset, $limit, $sort);
 
         return $response;
     }
@@ -10792,7 +10509,7 @@ class CrmApi
      */
     public function crmRelationtypeGetWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultRelationTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultRelationTypes::class;
         $request = $this->crmRelationtypeGetRequest($offset, $limit, $sort);
 
         try {
@@ -10828,9 +10545,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -10843,7 +10558,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultRelationTypes',
+                        \Paqtcom\Simplicate\Model\RestResultRelationTypes::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10889,7 +10604,7 @@ class CrmApi
      */
     public function crmRelationtypeGetAsyncWithHttpInfo($offset = null, $limit = '5', $sort = null)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultRelationTypes';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultRelationTypes::class;
         $request = $this->crmRelationtypeGetRequest($offset, $limit, $sort);
 
         return $this->client
@@ -10901,9 +10616,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -10986,9 +10699,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -11043,7 +10754,7 @@ class CrmApi
      */
     public function crmRelationtypeIdGet($id)
     {
-        list($response) = $this->crmRelationtypeIdGetWithHttpInfo($id);
+        [$response] = $this->crmRelationtypeIdGetWithHttpInfo($id);
 
         return $response;
     }
@@ -11061,7 +10772,7 @@ class CrmApi
      */
     public function crmRelationtypeIdGetWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultRelationType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultRelationType::class;
         $request = $this->crmRelationtypeIdGetRequest($id);
 
         try {
@@ -11097,9 +10808,7 @@ class CrmApi
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
+                $content = json_decode($content);
             }
 
             return [
@@ -11112,7 +10821,7 @@ class CrmApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Paqtcom\Simplicate\Model\RestResultRelationType',
+                        \Paqtcom\Simplicate\Model\RestResultRelationType::class,
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11154,7 +10863,7 @@ class CrmApi
      */
     public function crmRelationtypeIdGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Paqtcom\Simplicate\Model\RestResultRelationType';
+        $returnType = \Paqtcom\Simplicate\Model\RestResultRelationType::class;
         $request = $this->crmRelationtypeIdGetRequest($id);
 
         return $this->client
@@ -11166,9 +10875,7 @@ class CrmApi
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
+                        $content = json_decode($content);
                     }
 
                     return [
@@ -11219,13 +10926,11 @@ class CrmApi
         $multipart = false;
 
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
 
         // body params
         $_tempBody = null;
@@ -11252,9 +10957,7 @@ class CrmApi
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

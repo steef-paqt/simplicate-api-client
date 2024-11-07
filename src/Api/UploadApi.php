@@ -65,11 +65,6 @@ class UploadApi
      */
     protected $headerSelector;
 
-    /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     */
     public function __construct(
         ClientInterface $client = null,
         Configuration $config = null,
@@ -119,7 +114,6 @@ class UploadApi
      */
     public function uploadChunkedIdPutWithHttpInfo($id, $body)
     {
-        $returnType = '';
         $request = $this->uploadChunkedIdPutRequest($id, $body);
 
         try {
@@ -248,21 +242,13 @@ class UploadApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $resourcePath = str_replace(
+            '{' . 'id' . '}',
+            ObjectSerializer::toPathValue($id),
+            $resourcePath
+        );
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -359,7 +345,6 @@ class UploadApi
      */
     public function uploadChunkedPostWithHttpInfo($body)
     {
-        $returnType = '';
         $request = $this->uploadChunkedPostRequest($body);
 
         try {
@@ -479,12 +464,7 @@ class UploadApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
+        $_tempBody = $body;
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(

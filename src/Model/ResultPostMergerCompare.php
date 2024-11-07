@@ -43,7 +43,7 @@ use Paqtcom\Simplicate\ObjectSerializer;
  */
 class ResultPostMergerCompare implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -63,7 +63,7 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
         'message' => 'string',
         'swap_lock' => 'bool',
         'source_id' => 'string',
-        'target_id' => 'string'
+        'target_id' => 'string',
     ];
 
     /**
@@ -77,7 +77,7 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
         'message' => null,
         'swap_lock' => null,
         'source_id' => null,
-        'target_id' => null
+        'target_id' => null,
     ];
 
     /**
@@ -112,7 +112,7 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
         'message' => 'message',
         'swap_lock' => 'swap_lock',
         'source_id' => 'source_id',
-        'target_id' => 'target_id'
+        'target_id' => 'target_id',
     ];
 
     /**
@@ -126,7 +126,7 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
         'message' => 'setMessage',
         'swap_lock' => 'setSwapLock',
         'source_id' => 'setSourceId',
-        'target_id' => 'setTargetId'
+        'target_id' => 'setTargetId',
     ];
 
     /**
@@ -140,7 +140,7 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
         'message' => 'getMessage',
         'swap_lock' => 'getSwapLock',
         'source_id' => 'getSourceId',
-        'target_id' => 'getTargetId'
+        'target_id' => 'getTargetId',
     ];
 
     /**
@@ -183,10 +183,6 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
-
-
-
-
 
     /**
      * Associative array for storing property values
@@ -233,7 +229,6 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets is_valid
@@ -378,6 +373,7 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

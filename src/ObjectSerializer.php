@@ -49,25 +49,29 @@ class ObjectSerializer
      *
      * @return string|object serialized form of $data
      */
-    public static function sanitizeForSerialization($data, $type = null, $format = null)
+    public static function sanitizeForSerialization($data, $type = null, $format = null): float|object|bool|int|string|null
     {
         if (is_scalar($data) || null === $data) {
             return $data;
-        } elseif ($data instanceof \DateTime) {
+        }
+        if ($data instanceof \DateTime) {
             return ($format === 'date') ? $data->format('Y-m-d') : $data->format(\DateTime::ATOM);
-        } elseif (is_array($data)) {
+        }
+        if (is_array($data)) {
             foreach ($data as $property => $value) {
                 $data[$property] = self::sanitizeForSerialization($value);
             }
 
             return $data;
-        } elseif ($data instanceof \stdClass) {
+        }
+        if ($data instanceof \stdClass) {
             foreach ($data as $property => $value) {
                 $data->$property = self::sanitizeForSerialization($value);
             }
 
             return $data;
-        } elseif (is_object($data)) {
+        }
+        if (is_object($data)) {
             $values = [];
             $formats = $data::swaggerFormats();
             foreach ($data::swaggerTypes() as $property => $swaggerType) {
@@ -75,7 +79,21 @@ class ObjectSerializer
                 $value = $data->$getter();
                 if (
                     $value !== null
-                    && !in_array($swaggerType, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)
+                    && !in_array($swaggerType, [
+                        'DateTime',
+                        'bool',
+                        'boolean',
+                        'byte',
+                        'double',
+                        'float',
+                        'int',
+                        'integer',
+                        'mixed',
+                        'number',
+                        'object',
+                        'string',
+                        'void',
+                    ], true)
                     && method_exists($swaggerType, 'getAllowableEnumValues')
                     && !in_array($value, $swaggerType::getAllowableEnumValues(), true)
                 ) {
@@ -101,10 +119,10 @@ class ObjectSerializer
      *
      * @return string the sanitized filename
      */
-    public static function sanitizeFilename($filename)
+    public static function sanitizeFilename($filename): string
     {
         if (preg_match("/.*[\/\\\\](.*)$/", $filename, $match)) {
-            return $match[1];
+            return (string) $match[1];
         }
 
         return $filename;
@@ -118,7 +136,7 @@ class ObjectSerializer
      *
      * @return string the serialized object
      */
-    public static function toPathValue($value)
+    public static function toPathValue($value): string
     {
         return rawurlencode(self::toString($value));
     }
@@ -133,7 +151,7 @@ class ObjectSerializer
      *
      * @return string the serialized object
      */
-    public static function toQueryValue($object)
+    public static function toQueryValue($object): \DateTime|string
     {
         if (is_array($object)) {
             return implode(',', $object);
@@ -151,7 +169,7 @@ class ObjectSerializer
      *
      * @return string the header string
      */
-    public static function toHeaderValue($value)
+    public static function toHeaderValue($value): \DateTime|string
     {
         return self::toString($value);
     }
@@ -165,7 +183,7 @@ class ObjectSerializer
      *
      * @return string the form string
      */
-    public static function toFormValue($value)
+    public static function toFormValue($value): \DateTime|string
     {
         if ($value instanceof \SplFileObject) {
             return $value->getRealPath();
@@ -183,7 +201,7 @@ class ObjectSerializer
      *
      * @return string the header string
      */
-    public static function toString($value)
+    public static function toString($value): \DateTime|string
     {
         if ($value instanceof \DateTime) { // datetime in ISO8601 format
             return $value->format(\DateTime::ATOM);
@@ -202,28 +220,20 @@ class ObjectSerializer
      *
      * @return string
      */
-    public static function serializeCollection(array $collection, $collectionFormat, $allowCollectionFormatMulti = false)
+    public static function serializeCollection(array $collection, $collectionFormat, $allowCollectionFormatMulti = false): string
     {
         if ($allowCollectionFormatMulti && ('multi' === $collectionFormat)) {
             // http_build_query() almost does the job for us. We just
             // need to fix the result of multidimensional arrays.
             return preg_replace('/%5B[0-9]+%5D=/', '=', http_build_query($collection, '', '&'));
         }
-        switch ($collectionFormat) {
-            case 'pipes':
-                return implode('|', $collection);
 
-            case 'tsv':
-                return implode("\t", $collection);
-
-            case 'ssv':
-                return implode(' ', $collection);
-
-            case 'csv':
-                // Deliberate fall through. CSV is default format.
-            default:
-                return implode(',', $collection);
-        }
+        return match ($collectionFormat) {
+            'pipes' => implode('|', $collection),
+            'tsv' => implode("\t", $collection),
+            'ssv' => implode(' ', $collection),
+            default => implode(',', $collection),
+        };
     }
 
     /**
@@ -236,11 +246,13 @@ class ObjectSerializer
      *
      * @return object|array|null an single or an array of $class instances
      */
-    public static function deserialize($data, $class, $httpHeaders = null)
+    public static function deserialize($data, $class, $httpHeaders = null): object|array|null
     {
         if (null === $data) {
             return null;
-        } elseif (substr($class, 0, 4) === 'map[') { // for associative array e.g. map[string,int]
+        }
+        if (str_starts_with($class, 'map[')) {
+            // for associative array e.g. map[string,int]
             $inner = substr($class, 4, -1);
             $deserialized = [];
             if (strrpos($inner, ',') !== false) {
@@ -252,19 +264,20 @@ class ObjectSerializer
             }
 
             return $deserialized;
-        } elseif (strcasecmp(substr($class, -2), '[]') === 0) {
+        }
+        if (strcasecmp(substr($class, -2), '[]') === 0) {
             $subClass = substr($class, 0, -2);
             $values = [];
-            foreach ($data as $key => $value) {
+            foreach ($data as $value) {
                 $values[] = self::deserialize($value, $subClass, null);
             }
 
             return $values;
-        } elseif ($class === 'object') {
-            settype($data, 'array');
-
-            return $data;
-        } elseif ($class === '\DateTime') {
+        }
+        if ($class === 'object') {
+            return (array) $data;
+        }
+        if ($class === '\DateTime') {
             // Some API's return an invalid, empty string as a
             // date-time property. DateTime::__construct() will return
             // the current time for empty input which is probably not
@@ -276,13 +289,14 @@ class ObjectSerializer
             }
 
             return null;
-        } elseif (in_array($class, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
+        }
+        if (in_array($class, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
             settype($data, $class);
 
             return $data;
-        } elseif ($class === '\SplFileObject') {
+        }
+        if ($class === '\SplFileObject') {
             /** @var \Psr\Http\Message\StreamInterface $data */
-
             // determine file name
             if (
                 array_key_exists('Content-Disposition', $httpHeaders) &&
@@ -292,7 +306,6 @@ class ObjectSerializer
             } else {
                 $filename = tempnam(Configuration::getDefaultConfiguration()->getTempFolderPath(), '');
             }
-
             $file = fopen($filename, 'w');
             while ($chunk = $data->read(200)) {
                 fwrite($file, $chunk);
@@ -300,7 +313,8 @@ class ObjectSerializer
             fclose($file);
 
             return new \SplFileObject($filename, 'r');
-        } elseif (method_exists($class, 'getAllowableEnumValues')) {
+        }
+        if (method_exists($class, 'getAllowableEnumValues')) {
             if (!in_array($data, $class::getAllowableEnumValues(), true)) {
                 $imploded = implode("', '", $class::getAllowableEnumValues());
                 throw new \InvalidArgumentException("Invalid value for enum '$class', must be one of: '$imploded'");
@@ -320,7 +334,7 @@ class ObjectSerializer
         foreach ($instance::swaggerTypes() as $property => $type) {
             $propertySetter = $instance::setters()[$property];
 
-            if (!isset($propertySetter) || !isset($data->{$instance::attributeMap()[$property]})) {
+            if (!isset($propertySetter, $data->{$instance::attributeMap()[$property]})) {
                 continue;
             }
 
