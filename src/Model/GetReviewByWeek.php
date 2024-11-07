@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetReviewByWeek implements ModelInterface, ArrayAccess
+class GetReviewByWeek implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetReviewByWeek';
 
     /**
@@ -204,13 +202,13 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['employee_id'] = isset($data['employee_id']) ? $data['employee_id'] : null;
-        $this->container['employee_name'] = isset($data['employee_name']) ? $data['employee_name'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['status_id'] = isset($data['status_id']) ? $data['status_id'] : null;
-        $this->container['status_category'] = isset($data['status_category']) ? $data['status_category'] : null;
-        $this->container['status_label'] = isset($data['status_label']) ? $data['status_label'] : null;
+        $this->container['employee_id'] = $data['employee_id'] ?? null;
+        $this->container['employee_name'] = $data['employee_name'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['status_id'] = $data['status_id'] ?? null;
+        $this->container['status_category'] = $data['status_category'] ?? null;
+        $this->container['status_label'] = $data['status_label'] ?? null;
     }
 
     /**
@@ -220,9 +218,7 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -427,7 +423,7 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -463,18 +459,16 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

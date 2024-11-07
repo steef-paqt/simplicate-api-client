@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetTimetable implements ModelInterface, ArrayAccess
+class GetTimetable implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetTimetable';
 
     /**
@@ -59,13 +57,13 @@ class GetTimetable implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
+        'employee' => \Paqtcom\Simplicate\Model\GetEmployeeSimple::class,
         'created_at' => 'string',
         'updated_at' => 'string',
         'hourly_sales_tariff' => 'float',
         'hourly_cost_tariff' => 'float',
-        'even_week' => '\Paqtcom\Simplicate\Model\TimetableWeek',
-        'odd_week' => '\Paqtcom\Simplicate\Model\TimetableWeek',
+        'even_week' => \Paqtcom\Simplicate\Model\TimetableWeek::class,
+        'odd_week' => \Paqtcom\Simplicate\Model\TimetableWeek::class,
         'start_date' => 'string',
         'end_date' => 'string',
         'productivity_target' => 'int',
@@ -229,18 +227,18 @@ class GetTimetable implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['employee'] = isset($data['employee']) ? $data['employee'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['hourly_sales_tariff'] = isset($data['hourly_sales_tariff']) ? $data['hourly_sales_tariff'] : null;
-        $this->container['hourly_cost_tariff'] = isset($data['hourly_cost_tariff']) ? $data['hourly_cost_tariff'] : null;
-        $this->container['even_week'] = isset($data['even_week']) ? $data['even_week'] : null;
-        $this->container['odd_week'] = isset($data['odd_week']) ? $data['odd_week'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['productivity_target'] = isset($data['productivity_target']) ? $data['productivity_target'] : null;
-        $this->container['should_write_hours'] = isset($data['should_write_hours']) ? $data['should_write_hours'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['employee'] = $data['employee'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['hourly_sales_tariff'] = $data['hourly_sales_tariff'] ?? null;
+        $this->container['hourly_cost_tariff'] = $data['hourly_cost_tariff'] ?? null;
+        $this->container['even_week'] = $data['even_week'] ?? null;
+        $this->container['odd_week'] = $data['odd_week'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['productivity_target'] = $data['productivity_target'] ?? null;
+        $this->container['should_write_hours'] = $data['should_write_hours'] ?? null;
     }
 
     /**
@@ -250,9 +248,7 @@ class GetTimetable implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -577,7 +573,7 @@ class GetTimetable implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -613,18 +609,16 @@ class GetTimetable implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

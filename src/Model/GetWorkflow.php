@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetWorkflow implements ModelInterface, ArrayAccess
+class GetWorkflow implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetWorkflow';
 
     /**
@@ -59,14 +57,14 @@ class GetWorkflow implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'defaultworkflow' => '\Paqtcom\Simplicate\Model\GetSimpleDefaultWorkflow',
-        'current_task' => '\Paqtcom\Simplicate\Model\CurrentTask',
+        'defaultworkflow' => \Paqtcom\Simplicate\Model\GetSimpleDefaultWorkflow::class,
+        'current_task' => \Paqtcom\Simplicate\Model\CurrentTask::class,
         'actions' => '\Paqtcom\Simplicate\Model\GetDefaultAction[]',
         'linked_to' => '\Paqtcom\Simplicate\Model\LinkedTo[]',
         'filename' => 'string',
         'attachments' => '\Paqtcom\Simplicate\Model\GetDocument[]',
         'comments' => '\Paqtcom\Simplicate\Model\Comment[]',
-        'created_by' => '\Paqtcom\Simplicate\Model\CreatedBy',
+        'created_by' => \Paqtcom\Simplicate\Model\CreatedBy::class,
         'created_at' => 'string',
         'updated_at' => 'string',
         'title' => 'string',
@@ -239,20 +237,20 @@ class GetWorkflow implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['defaultworkflow'] = isset($data['defaultworkflow']) ? $data['defaultworkflow'] : null;
-        $this->container['current_task'] = isset($data['current_task']) ? $data['current_task'] : null;
-        $this->container['actions'] = isset($data['actions']) ? $data['actions'] : null;
-        $this->container['linked_to'] = isset($data['linked_to']) ? $data['linked_to'] : null;
-        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
-        $this->container['attachments'] = isset($data['attachments']) ? $data['attachments'] : null;
-        $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
-        $this->container['created_by'] = isset($data['created_by']) ? $data['created_by'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['deadline_date'] = isset($data['deadline_date']) ? $data['deadline_date'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['defaultworkflow'] = $data['defaultworkflow'] ?? null;
+        $this->container['current_task'] = $data['current_task'] ?? null;
+        $this->container['actions'] = $data['actions'] ?? null;
+        $this->container['linked_to'] = $data['linked_to'] ?? null;
+        $this->container['filename'] = $data['filename'] ?? null;
+        $this->container['attachments'] = $data['attachments'] ?? null;
+        $this->container['comments'] = $data['comments'] ?? null;
+        $this->container['created_by'] = $data['created_by'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['deadline_date'] = $data['deadline_date'] ?? null;
     }
 
     /**
@@ -262,9 +260,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -637,7 +633,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -673,18 +669,16 @@ class GetWorkflow implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

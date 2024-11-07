@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetCustomField implements ModelInterface, ArrayAccess
+class GetCustomField implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetCustomField';
 
     /**
@@ -69,7 +67,7 @@ class GetCustomField implements ModelInterface, ArrayAccess
         'searchable' => 'bool',
         'mandatory' => 'bool',
         'value_type' => 'string',
-        'custom_field_group' => '\Paqtcom\Simplicate\Model\CustomFieldGroup',
+        'custom_field_group' => \Paqtcom\Simplicate\Model\CustomFieldGroup::class,
         'options' => '\Paqtcom\Simplicate\Model\CustomFieldOption[]',
     ];
 
@@ -258,19 +256,19 @@ class GetCustomField implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['render_type'] = isset($data['render_type']) ? $data['render_type'] : null;
-        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
-        $this->container['filterable'] = isset($data['filterable']) ? $data['filterable'] : null;
-        $this->container['searchable'] = isset($data['searchable']) ? $data['searchable'] : null;
-        $this->container['mandatory'] = isset($data['mandatory']) ? $data['mandatory'] : null;
-        $this->container['value_type'] = isset($data['value_type']) ? $data['value_type'] : null;
-        $this->container['custom_field_group'] = isset($data['custom_field_group']) ? $data['custom_field_group'] : null;
-        $this->container['options'] = isset($data['options']) ? $data['options'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['label'] = $data['label'] ?? null;
+        $this->container['value'] = $data['value'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['render_type'] = $data['render_type'] ?? null;
+        $this->container['position'] = $data['position'] ?? null;
+        $this->container['filterable'] = $data['filterable'] ?? null;
+        $this->container['searchable'] = $data['searchable'] ?? null;
+        $this->container['mandatory'] = $data['mandatory'] ?? null;
+        $this->container['value_type'] = $data['value_type'] ?? null;
+        $this->container['custom_field_group'] = $data['custom_field_group'] ?? null;
+        $this->container['options'] = $data['options'] ?? null;
     }
 
     /**
@@ -648,7 +646,7 @@ class GetCustomField implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -684,18 +682,16 @@ class GetCustomField implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

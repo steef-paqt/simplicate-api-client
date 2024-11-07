@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Employee implements ModelInterface, ArrayAccess
+class Employee implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'Employee';
 
     /**
@@ -71,7 +69,7 @@ class Employee implements ModelInterface, ArrayAccess
         'work_email' => 'string',
         'hourly_sales_tariff' => 'float',
         'hourly_cost_tariff' => 'float',
-        'avatar' => '\Paqtcom\Simplicate\Model\Avatar',
+        'avatar' => \Paqtcom\Simplicate\Model\Avatar::class,
         'created_at' => 'string',
         'updated_at' => 'string',
         'simplicate_url' => 'string',
@@ -270,23 +268,23 @@ class Employee implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
-        $this->container['function'] = isset($data['function']) ? $data['function'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['employment_status'] = isset($data['employment_status']) ? $data['employment_status'] : null;
-        $this->container['civil_status'] = isset($data['civil_status']) ? $data['civil_status'] : null;
-        $this->container['work_phone'] = isset($data['work_phone']) ? $data['work_phone'] : null;
-        $this->container['work_mobile'] = isset($data['work_mobile']) ? $data['work_mobile'] : null;
-        $this->container['work_email'] = isset($data['work_email']) ? $data['work_email'] : null;
-        $this->container['hourly_sales_tariff'] = isset($data['hourly_sales_tariff']) ? $data['hourly_sales_tariff'] : null;
-        $this->container['hourly_cost_tariff'] = isset($data['hourly_cost_tariff']) ? $data['hourly_cost_tariff'] : null;
-        $this->container['avatar'] = isset($data['avatar']) ? $data['avatar'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['simplicate_url'] = isset($data['simplicate_url']) ? $data['simplicate_url'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['bank_account'] = $data['bank_account'] ?? null;
+        $this->container['function'] = $data['function'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['employment_status'] = $data['employment_status'] ?? null;
+        $this->container['civil_status'] = $data['civil_status'] ?? null;
+        $this->container['work_phone'] = $data['work_phone'] ?? null;
+        $this->container['work_mobile'] = $data['work_mobile'] ?? null;
+        $this->container['work_email'] = $data['work_email'] ?? null;
+        $this->container['hourly_sales_tariff'] = $data['hourly_sales_tariff'] ?? null;
+        $this->container['hourly_cost_tariff'] = $data['hourly_cost_tariff'] ?? null;
+        $this->container['avatar'] = $data['avatar'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['simplicate_url'] = $data['simplicate_url'] ?? null;
     }
 
     /**
@@ -760,7 +758,7 @@ class Employee implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -796,18 +794,16 @@ class Employee implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

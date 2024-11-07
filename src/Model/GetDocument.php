@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetDocument implements ModelInterface, ArrayAccess
+class GetDocument implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetDocument';
 
     /**
@@ -60,9 +58,9 @@ class GetDocument implements ModelInterface, ArrayAccess
     protected static array $swaggerTypes = [
         'id' => 'string',
         'download_url' => 'string',
-        'document_type' => '\Paqtcom\Simplicate\Model\DocumentTypeSimple',
+        'document_type' => \Paqtcom\Simplicate\Model\DocumentTypeSimple::class,
         'linked_to' => '\Paqtcom\Simplicate\Model\LinkedToEntity[]',
-        'created_by' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
+        'created_by' => \Paqtcom\Simplicate\Model\GetEmployeeSimple::class,
         'created_at' => 'string',
         'updated_at' => 'string',
         'title' => 'string',
@@ -214,15 +212,15 @@ class GetDocument implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['download_url'] = isset($data['download_url']) ? $data['download_url'] : null;
-        $this->container['document_type'] = isset($data['document_type']) ? $data['document_type'] : null;
-        $this->container['linked_to'] = isset($data['linked_to']) ? $data['linked_to'] : null;
-        $this->container['created_by'] = isset($data['created_by']) ? $data['created_by'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['download_url'] = $data['download_url'] ?? null;
+        $this->container['document_type'] = $data['document_type'] ?? null;
+        $this->container['linked_to'] = $data['linked_to'] ?? null;
+        $this->container['created_by'] = $data['created_by'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
     }
 
     /**
@@ -232,9 +230,7 @@ class GetDocument implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -487,7 +483,7 @@ class GetDocument implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -523,18 +519,16 @@ class GetDocument implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

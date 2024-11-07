@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetApproval implements ModelInterface, ArrayAccess
+class GetApproval implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetApproval';
 
     /**
@@ -59,8 +57,8 @@ class GetApproval implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
-        'approvalstatus' => '\Paqtcom\Simplicate\Model\GetApprovalStatus',
+        'employee' => \Paqtcom\Simplicate\Model\GetEmployeeSimple::class,
+        'approvalstatus' => \Paqtcom\Simplicate\Model\GetApprovalStatus::class,
         'date' => 'string',
     ];
 
@@ -189,10 +187,10 @@ class GetApproval implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['employee'] = isset($data['employee']) ? $data['employee'] : null;
-        $this->container['approvalstatus'] = isset($data['approvalstatus']) ? $data['approvalstatus'] : null;
-        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['employee'] = $data['employee'] ?? null;
+        $this->container['approvalstatus'] = $data['approvalstatus'] ?? null;
+        $this->container['date'] = $data['date'] ?? null;
     }
 
     /**
@@ -202,9 +200,7 @@ class GetApproval implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -337,7 +333,7 @@ class GetApproval implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -373,18 +369,16 @@ class GetApproval implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

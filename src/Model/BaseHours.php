@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BaseHours implements ModelInterface, ArrayAccess
+class BaseHours implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'BaseHours';
 
     /**
@@ -202,9 +200,9 @@ class BaseHours implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['source'] = $data['source'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
     }
 
     /**
@@ -342,7 +340,7 @@ class BaseHours implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -378,18 +376,16 @@ class BaseHours implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

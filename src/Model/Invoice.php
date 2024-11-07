@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Invoice implements ModelInterface, ArrayAccess
+class Invoice implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'Invoice';
 
     /**
@@ -209,14 +207,14 @@ class Invoice implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['my_organization_profile_id'] = isset($data['my_organization_profile_id']) ? $data['my_organization_profile_id'] : null;
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
-        $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
-        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
-        $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
-        $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
-        $this->container['project_id'] = isset($data['project_id']) ? $data['project_id'] : null;
-        $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
+        $this->container['my_organization_profile_id'] = $data['my_organization_profile_id'] ?? null;
+        $this->container['organization_id'] = $data['organization_id'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['date'] = $data['date'] ?? null;
+        $this->container['subject'] = $data['subject'] ?? null;
+        $this->container['reference'] = $data['reference'] ?? null;
+        $this->container['project_id'] = $data['project_id'] ?? null;
+        $this->container['comments'] = $data['comments'] ?? null;
     }
 
     /**
@@ -226,9 +224,7 @@ class Invoice implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -457,7 +453,7 @@ class Invoice implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -493,18 +489,16 @@ class Invoice implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

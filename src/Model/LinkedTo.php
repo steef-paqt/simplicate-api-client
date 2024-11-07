@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LinkedTo implements ModelInterface, ArrayAccess
+class LinkedTo implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'LinkedTo';
 
     /**
@@ -204,13 +202,13 @@ class LinkedTo implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
-        $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
-        $this->container['sales_id'] = isset($data['sales_id']) ? $data['sales_id'] : null;
-        $this->container['project_id'] = isset($data['project_id']) ? $data['project_id'] : null;
-        $this->container['invoice_id'] = isset($data['invoice_id']) ? $data['invoice_id'] : null;
-        $this->container['employee_id'] = isset($data['employee_id']) ? $data['employee_id'] : null;
-        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
+        $this->container['organization_id'] = $data['organization_id'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['sales_id'] = $data['sales_id'] ?? null;
+        $this->container['project_id'] = $data['project_id'] ?? null;
+        $this->container['invoice_id'] = $data['invoice_id'] ?? null;
+        $this->container['employee_id'] = $data['employee_id'] ?? null;
+        $this->container['label'] = $data['label'] ?? null;
     }
 
     /**
@@ -220,9 +218,7 @@ class LinkedTo implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -427,7 +423,7 @@ class LinkedTo implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -463,18 +459,16 @@ class LinkedTo implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostLeave implements ModelInterface, ArrayAccess
+class PostLeave implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PostLeave';
 
     /**
@@ -209,14 +207,14 @@ class PostLeave implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['employee_id'] = isset($data['employee_id']) ? $data['employee_id'] : null;
-        $this->container['leave_type_id'] = isset($data['leave_type_id']) ? $data['leave_type_id'] : null;
-        $this->container['is_time_defined'] = isset($data['is_time_defined']) ? $data['is_time_defined'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['year'] = isset($data['year']) ? $data['year'] : null;
-        $this->container['hours'] = isset($data['hours']) ? $data['hours'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['employee_id'] = $data['employee_id'] ?? null;
+        $this->container['leave_type_id'] = $data['leave_type_id'] ?? null;
+        $this->container['is_time_defined'] = $data['is_time_defined'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['year'] = $data['year'] ?? null;
+        $this->container['hours'] = $data['hours'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
     }
 
     /**
@@ -226,9 +224,7 @@ class PostLeave implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -457,7 +453,7 @@ class PostLeave implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -493,18 +489,16 @@ class PostLeave implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

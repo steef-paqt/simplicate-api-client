@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetProjectSimple implements ModelInterface, ArrayAccess
+class GetProjectSimple implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetProjectSimple';
 
     /**
@@ -61,9 +59,9 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'project_number' => 'string',
-        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
-        'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
-        'project_manager' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
+        'organization' => \Paqtcom\Simplicate\Model\GetOrganizationSimple::class,
+        'person' => \Paqtcom\Simplicate\Model\GetPersonSimple::class,
+        'project_manager' => \Paqtcom\Simplicate\Model\GetEmployeeSimple::class,
         'separate_invoice_recipient' => 'object',
         'has_register_mileage_enabled' => 'bool',
     ];
@@ -209,14 +207,14 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : 'project:abc';
-        $this->container['name'] = isset($data['name']) ? $data['name'] : 'My Project Name';
-        $this->container['project_number'] = isset($data['project_number']) ? $data['project_number'] : 'P1000A';
-        $this->container['organization'] = isset($data['organization']) ? $data['organization'] : null;
-        $this->container['person'] = isset($data['person']) ? $data['person'] : null;
-        $this->container['project_manager'] = isset($data['project_manager']) ? $data['project_manager'] : null;
-        $this->container['separate_invoice_recipient'] = isset($data['separate_invoice_recipient']) ? $data['separate_invoice_recipient'] : null;
-        $this->container['has_register_mileage_enabled'] = isset($data['has_register_mileage_enabled']) ? $data['has_register_mileage_enabled'] : null;
+        $this->container['id'] = $data['id'] ?? 'project:abc';
+        $this->container['name'] = $data['name'] ?? 'My Project Name';
+        $this->container['project_number'] = $data['project_number'] ?? 'P1000A';
+        $this->container['organization'] = $data['organization'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
+        $this->container['project_manager'] = $data['project_manager'] ?? null;
+        $this->container['separate_invoice_recipient'] = $data['separate_invoice_recipient'] ?? null;
+        $this->container['has_register_mileage_enabled'] = $data['has_register_mileage_enabled'] ?? null;
     }
 
     /**
@@ -226,9 +224,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -457,7 +453,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -493,18 +489,16 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

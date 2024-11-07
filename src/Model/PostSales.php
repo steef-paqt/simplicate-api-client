@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostSales implements ModelInterface, ArrayAccess
+class PostSales implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PostSales';
 
     /**
@@ -63,21 +61,21 @@ class PostSales implements ModelInterface, ArrayAccess
         'source_id' => 'string',
         'status_id' => 'string',
         'teams' => '\Paqtcom\Simplicate\Model\PostTeam[]',
-        'separate_invoice_recipient' => '\Paqtcom\Simplicate\Model\PostSeparateInvoiceRecipient',
+        'separate_invoice_recipient' => \Paqtcom\Simplicate\Model\PostSeparateInvoiceRecipient::class,
         'custom_fields' => '\Paqtcom\Simplicate\Model\PostCustomFieldValue[]',
         'my_organization_profile_id' => 'string',
         'organization_id' => 'string',
         'person_id' => 'string',
         'contact_id' => 'string',
-        'reason' => '\Paqtcom\Simplicate\Model\SalesReason',
-        'contact' => '\Paqtcom\Simplicate\Model\ContactPerson',
+        'reason' => \Paqtcom\Simplicate\Model\SalesReason::class,
+        'contact' => \Paqtcom\Simplicate\Model\ContactPerson::class,
         'subject' => 'string',
         'start_date' => 'string',
         'expected_closing_date' => 'string',
         'expected_revenue' => 'float',
         'note' => 'string',
         'chance_to_score' => 'int',
-        'lost_to_competitor' => '\Paqtcom\Simplicate\Model\LostToCompetitor',
+        'lost_to_competitor' => \Paqtcom\Simplicate\Model\LostToCompetitor::class,
     ];
 
     /**
@@ -269,26 +267,26 @@ class PostSales implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['responsible_employee_id'] = isset($data['responsible_employee_id']) ? $data['responsible_employee_id'] : null;
-        $this->container['progress_id'] = isset($data['progress_id']) ? $data['progress_id'] : null;
-        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
-        $this->container['status_id'] = isset($data['status_id']) ? $data['status_id'] : null;
-        $this->container['teams'] = isset($data['teams']) ? $data['teams'] : null;
-        $this->container['separate_invoice_recipient'] = isset($data['separate_invoice_recipient']) ? $data['separate_invoice_recipient'] : null;
-        $this->container['custom_fields'] = isset($data['custom_fields']) ? $data['custom_fields'] : null;
-        $this->container['my_organization_profile_id'] = isset($data['my_organization_profile_id']) ? $data['my_organization_profile_id'] : null;
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
-        $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
-        $this->container['contact_id'] = isset($data['contact_id']) ? $data['contact_id'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
-        $this->container['contact'] = isset($data['contact']) ? $data['contact'] : null;
-        $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['expected_closing_date'] = isset($data['expected_closing_date']) ? $data['expected_closing_date'] : null;
-        $this->container['expected_revenue'] = isset($data['expected_revenue']) ? $data['expected_revenue'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
-        $this->container['chance_to_score'] = isset($data['chance_to_score']) ? $data['chance_to_score'] : null;
-        $this->container['lost_to_competitor'] = isset($data['lost_to_competitor']) ? $data['lost_to_competitor'] : null;
+        $this->container['responsible_employee_id'] = $data['responsible_employee_id'] ?? null;
+        $this->container['progress_id'] = $data['progress_id'] ?? null;
+        $this->container['source_id'] = $data['source_id'] ?? null;
+        $this->container['status_id'] = $data['status_id'] ?? null;
+        $this->container['teams'] = $data['teams'] ?? null;
+        $this->container['separate_invoice_recipient'] = $data['separate_invoice_recipient'] ?? null;
+        $this->container['custom_fields'] = $data['custom_fields'] ?? null;
+        $this->container['my_organization_profile_id'] = $data['my_organization_profile_id'] ?? null;
+        $this->container['organization_id'] = $data['organization_id'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['contact_id'] = $data['contact_id'] ?? null;
+        $this->container['reason'] = $data['reason'] ?? null;
+        $this->container['contact'] = $data['contact'] ?? null;
+        $this->container['subject'] = $data['subject'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['expected_closing_date'] = $data['expected_closing_date'] ?? null;
+        $this->container['expected_revenue'] = $data['expected_revenue'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['chance_to_score'] = $data['chance_to_score'] ?? null;
+        $this->container['lost_to_competitor'] = $data['lost_to_competitor'] ?? null;
     }
 
     /**
@@ -298,9 +296,7 @@ class PostSales implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -817,7 +813,7 @@ class PostSales implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -853,18 +849,16 @@ class PostSales implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

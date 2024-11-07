@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetInvoiceLine implements ModelInterface, ArrayAccess
+class GetInvoiceLine implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetInvoiceLine';
 
     /**
@@ -59,9 +57,9 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'revenue_group' => '\Paqtcom\Simplicate\Model\RevenueGroup',
+        'revenue_group' => \Paqtcom\Simplicate\Model\RevenueGroup::class,
         'default_service_id' => 'string',
-        'vat_class' => '\Paqtcom\Simplicate\Model\VatClass',
+        'vat_class' => \Paqtcom\Simplicate\Model\VatClass::class,
         'total_vat' => 'float',
         'service_id' => 'string',
         'created_at' => 'string',
@@ -229,18 +227,18 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['revenue_group'] = isset($data['revenue_group']) ? $data['revenue_group'] : null;
-        $this->container['default_service_id'] = isset($data['default_service_id']) ? $data['default_service_id'] : null;
-        $this->container['vat_class'] = isset($data['vat_class']) ? $data['vat_class'] : null;
-        $this->container['total_vat'] = isset($data['total_vat']) ? $data['total_vat'] : null;
-        $this->container['service_id'] = isset($data['service_id']) ? $data['service_id'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['revenue_group'] = $data['revenue_group'] ?? null;
+        $this->container['default_service_id'] = $data['default_service_id'] ?? null;
+        $this->container['vat_class'] = $data['vat_class'] ?? null;
+        $this->container['total_vat'] = $data['total_vat'] ?? null;
+        $this->container['service_id'] = $data['service_id'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['date'] = $data['date'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['price'] = $data['price'] ?? null;
     }
 
     /**
@@ -250,9 +248,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -577,7 +573,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -613,18 +609,16 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

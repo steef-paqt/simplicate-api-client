@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
+class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetTimesheetRowItemtype';
 
     /**
@@ -199,12 +197,12 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['unit_name'] = isset($data['unit_name']) ? $data['unit_name'] : null;
-        $this->container['is_unit_tariff'] = isset($data['is_unit_tariff']) ? $data['is_unit_tariff'] : null;
-        $this->container['is_attachment_allowed'] = isset($data['is_attachment_allowed']) ? $data['is_attachment_allowed'] : null;
-        $this->container['has_workflow'] = isset($data['has_workflow']) ? $data['has_workflow'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['unit_name'] = $data['unit_name'] ?? null;
+        $this->container['is_unit_tariff'] = $data['is_unit_tariff'] ?? null;
+        $this->container['is_attachment_allowed'] = $data['is_attachment_allowed'] ?? null;
+        $this->container['has_workflow'] = $data['has_workflow'] ?? null;
     }
 
     /**
@@ -214,9 +212,7 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -397,7 +393,7 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -433,18 +429,16 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

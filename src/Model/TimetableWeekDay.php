@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TimetableWeekDay implements ModelInterface, ArrayAccess
+class TimetableWeekDay implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'TimetableWeekDay';
 
     /**
@@ -184,9 +182,9 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['start_time'] = isset($data['start_time']) ? $data['start_time'] : null;
-        $this->container['end_time'] = isset($data['end_time']) ? $data['end_time'] : null;
-        $this->container['hours'] = isset($data['hours']) ? $data['hours'] : null;
+        $this->container['start_time'] = $data['start_time'] ?? null;
+        $this->container['end_time'] = $data['end_time'] ?? null;
+        $this->container['hours'] = $data['hours'] ?? null;
     }
 
     /**
@@ -196,9 +194,7 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -307,7 +303,7 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -343,18 +339,16 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

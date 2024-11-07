@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostDebtor implements ModelInterface, ArrayAccess
+class PostDebtor implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PostDebtor';
 
     /**
@@ -302,23 +300,23 @@ class PostDebtor implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['payment_term_id'] = isset($data['payment_term_id']) ? $data['payment_term_id'] : null;
-        $this->container['provision_method'] = isset($data['provision_method']) ? $data['provision_method'] : null;
-        $this->container['send_invoice_email_to_contact'] = isset($data['send_invoice_email_to_contact']) ? $data['send_invoice_email_to_contact'] : null;
-        $this->container['provision_contactperson_id'] = isset($data['provision_contactperson_id']) ? $data['provision_contactperson_id'] : null;
-        $this->container['send_invoice_email_to_project_contact'] = isset($data['send_invoice_email_to_project_contact']) ? $data['send_invoice_email_to_project_contact'] : null;
-        $this->container['send_invoice_email_to_fixed_email'] = isset($data['send_invoice_email_to_fixed_email']) ? $data['send_invoice_email_to_fixed_email'] : null;
-        $this->container['send_email_email'] = isset($data['send_email_email']) ? $data['send_email_email'] : null;
-        $this->container['send_invoice_email_to_cc'] = isset($data['send_invoice_email_to_cc']) ? $data['send_invoice_email_to_cc'] : null;
-        $this->container['cc'] = isset($data['cc']) ? $data['cc'] : null;
-        $this->container['attention_to'] = isset($data['attention_to']) ? $data['attention_to'] : null;
-        $this->container['attention_to_person_id'] = isset($data['attention_to_person_id']) ? $data['attention_to_person_id'] : null;
-        $this->container['attention_to_fixed'] = isset($data['attention_to_fixed']) ? $data['attention_to_fixed'] : null;
-        $this->container['autocollect'] = isset($data['autocollect']) ? $data['autocollect'] : null;
-        $this->container['reminders'] = isset($data['reminders']) ? $data['reminders'] : null;
-        $this->container['send_email_type'] = isset($data['send_email_type']) ? $data['send_email_type'] : null;
-        $this->container['autosend_subscription_invoice'] = isset($data['autosend_subscription_invoice']) ? $data['autosend_subscription_invoice'] : null;
-        $this->container['invoicetemplate_id'] = isset($data['invoicetemplate_id']) ? $data['invoicetemplate_id'] : null;
+        $this->container['payment_term_id'] = $data['payment_term_id'] ?? null;
+        $this->container['provision_method'] = $data['provision_method'] ?? null;
+        $this->container['send_invoice_email_to_contact'] = $data['send_invoice_email_to_contact'] ?? null;
+        $this->container['provision_contactperson_id'] = $data['provision_contactperson_id'] ?? null;
+        $this->container['send_invoice_email_to_project_contact'] = $data['send_invoice_email_to_project_contact'] ?? null;
+        $this->container['send_invoice_email_to_fixed_email'] = $data['send_invoice_email_to_fixed_email'] ?? null;
+        $this->container['send_email_email'] = $data['send_email_email'] ?? null;
+        $this->container['send_invoice_email_to_cc'] = $data['send_invoice_email_to_cc'] ?? null;
+        $this->container['cc'] = $data['cc'] ?? null;
+        $this->container['attention_to'] = $data['attention_to'] ?? null;
+        $this->container['attention_to_person_id'] = $data['attention_to_person_id'] ?? null;
+        $this->container['attention_to_fixed'] = $data['attention_to_fixed'] ?? null;
+        $this->container['autocollect'] = $data['autocollect'] ?? null;
+        $this->container['reminders'] = $data['reminders'] ?? null;
+        $this->container['send_email_type'] = $data['send_email_type'] ?? null;
+        $this->container['autosend_subscription_invoice'] = $data['autosend_subscription_invoice'] ?? null;
+        $this->container['invoicetemplate_id'] = $data['invoicetemplate_id'] ?? null;
     }
 
     /**
@@ -826,7 +824,7 @@ class PostDebtor implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -862,18 +860,16 @@ class PostDebtor implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

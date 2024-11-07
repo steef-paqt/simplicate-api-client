@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostContactPerson implements ModelInterface, ArrayAccess
+class PostContactPerson implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PostContactPerson';
 
     /**
@@ -204,13 +202,13 @@ class PostContactPerson implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
-        $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
-        $this->container['is_active'] = isset($data['is_active']) ? $data['is_active'] : null;
-        $this->container['work_function'] = isset($data['work_function']) ? $data['work_function'] : null;
-        $this->container['work_email'] = isset($data['work_email']) ? $data['work_email'] : null;
-        $this->container['work_phone'] = isset($data['work_phone']) ? $data['work_phone'] : null;
-        $this->container['work_mobile'] = isset($data['work_mobile']) ? $data['work_mobile'] : null;
+        $this->container['organization_id'] = $data['organization_id'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['is_active'] = $data['is_active'] ?? null;
+        $this->container['work_function'] = $data['work_function'] ?? null;
+        $this->container['work_email'] = $data['work_email'] ?? null;
+        $this->container['work_phone'] = $data['work_phone'] ?? null;
+        $this->container['work_mobile'] = $data['work_mobile'] ?? null;
     }
 
     /**
@@ -220,9 +218,7 @@ class PostContactPerson implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -427,7 +423,7 @@ class PostContactPerson implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -463,18 +459,16 @@ class PostContactPerson implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

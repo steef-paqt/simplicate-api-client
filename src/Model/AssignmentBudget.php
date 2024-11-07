@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AssignmentBudget implements ModelInterface, ArrayAccess
+class AssignmentBudget implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'AssignmentBudget';
 
     /**
@@ -225,14 +223,14 @@ class AssignmentBudget implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['assignment_id'] = isset($data['assignment_id']) ? $data['assignment_id'] : null;
-        $this->container['range_start'] = isset($data['range_start']) ? $data['range_start'] : '2020-02-03';
-        $this->container['budget_range_start'] = isset($data['budget_range_start']) ? $data['budget_range_start'] : null;
-        $this->container['range_end'] = isset($data['range_end']) ? $data['range_end'] : '2020-02-10';
-        $this->container['budget_range_end'] = isset($data['budget_range_end']) ? $data['budget_range_end'] : null;
-        $this->container['planned_amount'] = isset($data['planned_amount']) ? $data['planned_amount'] : null;
-        $this->container['spent_amount'] = isset($data['spent_amount']) ? $data['spent_amount'] : null;
-        $this->container['hours_type'] = isset($data['hours_type']) ? $data['hours_type'] : null;
+        $this->container['assignment_id'] = $data['assignment_id'] ?? null;
+        $this->container['range_start'] = $data['range_start'] ?? '2020-02-03';
+        $this->container['budget_range_start'] = $data['budget_range_start'] ?? null;
+        $this->container['range_end'] = $data['range_end'] ?? '2020-02-10';
+        $this->container['budget_range_end'] = $data['budget_range_end'] ?? null;
+        $this->container['planned_amount'] = $data['planned_amount'] ?? null;
+        $this->container['spent_amount'] = $data['spent_amount'] ?? null;
+        $this->container['hours_type'] = $data['hours_type'] ?? null;
     }
 
     /**
@@ -490,7 +488,7 @@ class AssignmentBudget implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -526,18 +524,16 @@ class AssignmentBudget implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

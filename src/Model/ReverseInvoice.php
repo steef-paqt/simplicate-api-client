@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ReverseInvoice implements ModelInterface, ArrayAccess
+class ReverseInvoice implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'ReverseInvoice';
 
     /**
@@ -63,8 +61,8 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
         'date' => 'string',
         'invoice_number' => 'string',
         'price' => 'float',
-        'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
-        'invoice' => '\Paqtcom\Simplicate\Model\GetInvoiceSimple',
+        'project' => \Paqtcom\Simplicate\Model\GetProjectSimple::class,
+        'invoice' => \Paqtcom\Simplicate\Model\GetInvoiceSimple::class,
     ];
 
     /**
@@ -222,13 +220,13 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
-        $this->container['invoice_number'] = isset($data['invoice_number']) ? $data['invoice_number'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
-        $this->container['project'] = isset($data['project']) ? $data['project'] : null;
-        $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['date'] = $data['date'] ?? null;
+        $this->container['invoice_number'] = $data['invoice_number'] ?? null;
+        $this->container['price'] = $data['price'] ?? null;
+        $this->container['project'] = $data['project'] ?? null;
+        $this->container['invoice'] = $data['invoice'] ?? null;
     }
 
     /**
@@ -462,7 +460,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -498,18 +496,16 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

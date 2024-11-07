@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Right implements ModelInterface, ArrayAccess
+class Right implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'Right';
 
     /**
@@ -194,11 +192,11 @@ class Right implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['module_key'] = isset($data['module_key']) ? $data['module_key'] : null;
-        $this->container['module_label'] = isset($data['module_label']) ? $data['module_label'] : null;
-        $this->container['right_key'] = isset($data['right_key']) ? $data['right_key'] : null;
-        $this->container['right_label'] = isset($data['right_label']) ? $data['right_label'] : null;
-        $this->container['rightsgroup_label'] = isset($data['rightsgroup_label']) ? $data['rightsgroup_label'] : null;
+        $this->container['module_key'] = $data['module_key'] ?? null;
+        $this->container['module_label'] = $data['module_label'] ?? null;
+        $this->container['right_key'] = $data['right_key'] ?? null;
+        $this->container['right_label'] = $data['right_label'] ?? null;
+        $this->container['rightsgroup_label'] = $data['rightsgroup_label'] ?? null;
     }
 
     /**
@@ -208,9 +206,7 @@ class Right implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -367,7 +363,7 @@ class Right implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -403,18 +399,16 @@ class Right implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

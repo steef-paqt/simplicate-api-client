@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetPurchaseType implements ModelInterface, ArrayAccess
+class GetPurchaseType implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetPurchaseType';
 
     /**
@@ -204,13 +202,13 @@ class GetPurchaseType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
-        $this->container['blocked'] = isset($data['blocked']) ? $data['blocked'] : null;
-        $this->container['tariff'] = isset($data['tariff']) ? $data['tariff'] : null;
-        $this->container['is_unit_tariff'] = isset($data['is_unit_tariff']) ? $data['is_unit_tariff'] : null;
-        $this->container['unit_name'] = isset($data['unit_name']) ? $data['unit_name'] : null;
-        $this->container['is_attachment_allowed'] = isset($data['is_attachment_allowed']) ? $data['is_attachment_allowed'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['label'] = $data['label'] ?? null;
+        $this->container['blocked'] = $data['blocked'] ?? null;
+        $this->container['tariff'] = $data['tariff'] ?? null;
+        $this->container['is_unit_tariff'] = $data['is_unit_tariff'] ?? null;
+        $this->container['unit_name'] = $data['unit_name'] ?? null;
+        $this->container['is_attachment_allowed'] = $data['is_attachment_allowed'] ?? null;
     }
 
     /**
@@ -220,9 +218,7 @@ class GetPurchaseType implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -427,7 +423,7 @@ class GetPurchaseType implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -463,18 +459,16 @@ class GetPurchaseType implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

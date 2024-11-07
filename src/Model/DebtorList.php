@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DebtorList implements ModelInterface, ArrayAccess
+class DebtorList implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'DebtorList';
 
     /**
@@ -58,8 +56,8 @@ class DebtorList implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $swaggerTypes = [
-        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple',
-        'person' => '\Paqtcom\Simplicate\Model\GetPersonDebtorSimple',
+        'organization' => \Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple::class,
+        'person' => \Paqtcom\Simplicate\Model\GetPersonDebtorSimple::class,
     ];
 
     /**
@@ -179,8 +177,8 @@ class DebtorList implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['organization'] = isset($data['organization']) ? $data['organization'] : null;
-        $this->container['person'] = isset($data['person']) ? $data['person'] : null;
+        $this->container['organization'] = $data['organization'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
     }
 
     /**
@@ -190,9 +188,7 @@ class DebtorList implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -277,7 +273,7 @@ class DebtorList implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -313,18 +309,16 @@ class DebtorList implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

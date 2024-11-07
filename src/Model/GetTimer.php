@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetTimer implements ModelInterface, ArrayAccess
+class GetTimer implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetTimer';
 
     /**
@@ -61,11 +59,11 @@ class GetTimer implements ModelInterface, ArrayAccess
         'id' => 'string',
         'seconds_spent' => 'int',
         'min_seconds_step' => 'int',
-        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
-        'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
-        'projectservice' => '\Paqtcom\Simplicate\Model\GetProjectServiceSimple',
-        'hourstype' => '\Paqtcom\Simplicate\Model\GetHoursType',
-        'related_hours' => '\Paqtcom\Simplicate\Model\GetHoursSimple',
+        'employee' => \Paqtcom\Simplicate\Model\GetEmployeeSimple::class,
+        'project' => \Paqtcom\Simplicate\Model\GetProjectSimple::class,
+        'projectservice' => \Paqtcom\Simplicate\Model\GetProjectServiceSimple::class,
+        'hourstype' => \Paqtcom\Simplicate\Model\GetHoursType::class,
+        'related_hours' => \Paqtcom\Simplicate\Model\GetHoursSimple::class,
         'created_at' => 'string',
         'updated_at' => 'string',
         'state' => 'string',
@@ -252,19 +250,19 @@ class GetTimer implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['seconds_spent'] = isset($data['seconds_spent']) ? $data['seconds_spent'] : null;
-        $this->container['min_seconds_step'] = isset($data['min_seconds_step']) ? $data['min_seconds_step'] : null;
-        $this->container['employee'] = isset($data['employee']) ? $data['employee'] : null;
-        $this->container['project'] = isset($data['project']) ? $data['project'] : null;
-        $this->container['projectservice'] = isset($data['projectservice']) ? $data['projectservice'] : null;
-        $this->container['hourstype'] = isset($data['hourstype']) ? $data['hourstype'] : null;
-        $this->container['related_hours'] = isset($data['related_hours']) ? $data['related_hours'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['seconds_spent'] = $data['seconds_spent'] ?? null;
+        $this->container['min_seconds_step'] = $data['min_seconds_step'] ?? null;
+        $this->container['employee'] = $data['employee'] ?? null;
+        $this->container['project'] = $data['project'] ?? null;
+        $this->container['projectservice'] = $data['projectservice'] ?? null;
+        $this->container['hourstype'] = $data['hourstype'] ?? null;
+        $this->container['related_hours'] = $data['related_hours'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['state'] = $data['state'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['metadata'] = $data['metadata'] ?? null;
     }
 
     /**
@@ -642,7 +640,7 @@ class GetTimer implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -678,18 +676,16 @@ class GetTimer implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

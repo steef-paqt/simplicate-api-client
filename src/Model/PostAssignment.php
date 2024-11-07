@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostAssignment implements ModelInterface, ArrayAccess
+class PostAssignment implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PostAssignment';
 
     /**
@@ -240,17 +238,17 @@ class PostAssignment implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : '2032-01-01';
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : '2032-12-31';
-        $this->container['projecthourstype_id'] = isset($data['projecthourstype_id']) ? $data['projecthourstype_id'] : 'hourstype:abc';
-        $this->container['employees'] = isset($data['employees']) ? $data['employees'] : null;
-        $this->container['status_id'] = isset($data['status_id']) ? $data['status_id'] : 'assignmentstatus:abc';
-        $this->container['name'] = isset($data['name']) ? $data['name'] : 'Website Design Assignment';
-        $this->container['use_spread'] = isset($data['use_spread']) ? $data['use_spread'] : null;
-        $this->container['hours_type'] = isset($data['hours_type']) ? $data['hours_type'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['start_date'] = $data['start_date'] ?? '2032-01-01';
+        $this->container['end_date'] = $data['end_date'] ?? '2032-12-31';
+        $this->container['projecthourstype_id'] = $data['projecthourstype_id'] ?? 'hourstype:abc';
+        $this->container['employees'] = $data['employees'] ?? null;
+        $this->container['status_id'] = $data['status_id'] ?? 'assignmentstatus:abc';
+        $this->container['name'] = $data['name'] ?? 'Website Design Assignment';
+        $this->container['use_spread'] = $data['use_spread'] ?? null;
+        $this->container['hours_type'] = $data['hours_type'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
     }
 
     /**
@@ -580,7 +578,7 @@ class PostAssignment implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -616,18 +614,16 @@ class PostAssignment implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

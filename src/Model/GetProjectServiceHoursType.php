@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
+class GetProjectServiceHoursType implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetProjectServiceHoursType';
 
     /**
@@ -59,7 +57,7 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'hourstype' => '\Paqtcom\Simplicate\Model\GetHoursType',
+        'hourstype' => \Paqtcom\Simplicate\Model\GetHoursType::class,
         'color' => 'string',
         'budgeted_amount' => 'float',
         'tariff' => 'float',
@@ -199,12 +197,12 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['hourstype'] = isset($data['hourstype']) ? $data['hourstype'] : null;
-        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
-        $this->container['budgeted_amount'] = isset($data['budgeted_amount']) ? $data['budgeted_amount'] : null;
-        $this->container['tariff'] = isset($data['tariff']) ? $data['tariff'] : null;
-        $this->container['billable'] = isset($data['billable']) ? $data['billable'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['hourstype'] = $data['hourstype'] ?? null;
+        $this->container['color'] = $data['color'] ?? null;
+        $this->container['budgeted_amount'] = $data['budgeted_amount'] ?? null;
+        $this->container['tariff'] = $data['tariff'] ?? null;
+        $this->container['billable'] = $data['billable'] ?? null;
     }
 
     /**
@@ -214,9 +212,7 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -397,7 +393,7 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -433,18 +429,16 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

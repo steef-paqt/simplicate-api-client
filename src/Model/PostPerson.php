@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostPerson implements ModelInterface, ArrayAccess
+class PostPerson implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PostPerson';
 
     /**
@@ -59,12 +57,12 @@ class PostPerson implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'interests' => '\Paqtcom\Simplicate\Model\PostInterest[]',
-        'address' => '\Paqtcom\Simplicate\Model\PostAddress',
+        'address' => \Paqtcom\Simplicate\Model\PostAddress::class,
         'linked_as_contact_to_organization' => '\Paqtcom\Simplicate\Model\PostContactOrganizationFk[]',
         'gender_id' => 'string',
         'teams' => '\Paqtcom\Simplicate\Model\PostTeam[]',
         'custom_fields' => '\Paqtcom\Simplicate\Model\PostCustomFieldValue[]',
-        'relation_type' => '\Paqtcom\Simplicate\Model\RelationType',
+        'relation_type' => \Paqtcom\Simplicate\Model\RelationType::class,
         'gender' => 'string',
         'initials' => 'string',
         'first_name' => 'string',
@@ -327,34 +325,34 @@ class PostPerson implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['interests'] = isset($data['interests']) ? $data['interests'] : null;
-        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['linked_as_contact_to_organization'] = isset($data['linked_as_contact_to_organization']) ? $data['linked_as_contact_to_organization'] : null;
-        $this->container['gender_id'] = isset($data['gender_id']) ? $data['gender_id'] : null;
-        $this->container['teams'] = isset($data['teams']) ? $data['teams'] : null;
-        $this->container['custom_fields'] = isset($data['custom_fields']) ? $data['custom_fields'] : null;
-        $this->container['relation_type'] = isset($data['relation_type']) ? $data['relation_type'] : null;
-        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
-        $this->container['initials'] = isset($data['initials']) ? $data['initials'] : null;
-        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
-        $this->container['family_name_prefix'] = isset($data['family_name_prefix']) ? $data['family_name_prefix'] : null;
-        $this->container['family_name'] = isset($data['family_name']) ? $data['family_name'] : null;
-        $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
-        $this->container['date_of_birth'] = isset($data['date_of_birth']) ? $data['date_of_birth'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['website_url'] = isset($data['website_url']) ? $data['website_url'] : null;
-        $this->container['twitter_url'] = isset($data['twitter_url']) ? $data['twitter_url'] : null;
-        $this->container['linkedin_url'] = isset($data['linkedin_url']) ? $data['linkedin_url'] : null;
-        $this->container['facebook_url'] = isset($data['facebook_url']) ? $data['facebook_url'] : null;
-        $this->container['relation_number'] = isset($data['relation_number']) ? $data['relation_number'] : null;
-        $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
-        $this->container['bank_bic'] = isset($data['bank_bic']) ? $data['bank_bic'] : null;
-        $this->container['invoice_receiver'] = isset($data['invoice_receiver']) ? $data['invoice_receiver'] : null;
-        $this->container['mailing_list_email'] = isset($data['mailing_list_email']) ? $data['mailing_list_email'] : null;
-        $this->container['mailing_lists'] = isset($data['mailing_lists']) ? $data['mailing_lists'] : null;
-        $this->container['is_active'] = isset($data['is_active']) ? $data['is_active'] : null;
+        $this->container['interests'] = $data['interests'] ?? null;
+        $this->container['address'] = $data['address'] ?? null;
+        $this->container['linked_as_contact_to_organization'] = $data['linked_as_contact_to_organization'] ?? null;
+        $this->container['gender_id'] = $data['gender_id'] ?? null;
+        $this->container['teams'] = $data['teams'] ?? null;
+        $this->container['custom_fields'] = $data['custom_fields'] ?? null;
+        $this->container['relation_type'] = $data['relation_type'] ?? null;
+        $this->container['gender'] = $data['gender'] ?? null;
+        $this->container['initials'] = $data['initials'] ?? null;
+        $this->container['first_name'] = $data['first_name'] ?? null;
+        $this->container['family_name_prefix'] = $data['family_name_prefix'] ?? null;
+        $this->container['family_name'] = $data['family_name'] ?? null;
+        $this->container['full_name'] = $data['full_name'] ?? null;
+        $this->container['date_of_birth'] = $data['date_of_birth'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['website_url'] = $data['website_url'] ?? null;
+        $this->container['twitter_url'] = $data['twitter_url'] ?? null;
+        $this->container['linkedin_url'] = $data['linkedin_url'] ?? null;
+        $this->container['facebook_url'] = $data['facebook_url'] ?? null;
+        $this->container['relation_number'] = $data['relation_number'] ?? null;
+        $this->container['bank_account'] = $data['bank_account'] ?? null;
+        $this->container['bank_bic'] = $data['bank_bic'] ?? null;
+        $this->container['invoice_receiver'] = $data['invoice_receiver'] ?? null;
+        $this->container['mailing_list_email'] = $data['mailing_list_email'] ?? null;
+        $this->container['mailing_lists'] = $data['mailing_lists'] ?? null;
+        $this->container['is_active'] = $data['is_active'] ?? null;
     }
 
     /**
@@ -1092,7 +1090,7 @@ class PostPerson implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -1128,18 +1126,16 @@ class PostPerson implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

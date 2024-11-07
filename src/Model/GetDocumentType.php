@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetDocumentType implements ModelInterface, ArrayAccess
+class GetDocumentType implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetDocumentType';
 
     /**
@@ -244,21 +242,21 @@ class GetDocumentType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['can_have_attachment'] = isset($data['can_have_attachment']) ? $data['can_have_attachment'] : null;
-        $this->container['is_for_crm'] = isset($data['is_for_crm']) ? $data['is_for_crm'] : null;
-        $this->container['is_for_contact'] = isset($data['is_for_contact']) ? $data['is_for_contact'] : null;
-        $this->container['is_for_sale'] = isset($data['is_for_sale']) ? $data['is_for_sale'] : null;
-        $this->container['is_for_debtor'] = isset($data['is_for_debtor']) ? $data['is_for_debtor'] : null;
-        $this->container['is_for_project'] = isset($data['is_for_project']) ? $data['is_for_project'] : null;
-        $this->container['is_for_subscription'] = isset($data['is_for_subscription']) ? $data['is_for_subscription'] : null;
-        $this->container['is_for_employee'] = isset($data['is_for_employee']) ? $data['is_for_employee'] : null;
-        $this->container['is_for_invoice'] = isset($data['is_for_invoice']) ? $data['is_for_invoice'] : null;
-        $this->container['is_for_myorganizationprofile'] = isset($data['is_for_myorganizationprofile']) ? $data['is_for_myorganizationprofile'] : null;
-        $this->container['is_blocked'] = isset($data['is_blocked']) ? $data['is_blocked'] : null;
-        $this->container['is_visible_on_all'] = isset($data['is_visible_on_all']) ? $data['is_visible_on_all'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['label'] = $data['label'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['can_have_attachment'] = $data['can_have_attachment'] ?? null;
+        $this->container['is_for_crm'] = $data['is_for_crm'] ?? null;
+        $this->container['is_for_contact'] = $data['is_for_contact'] ?? null;
+        $this->container['is_for_sale'] = $data['is_for_sale'] ?? null;
+        $this->container['is_for_debtor'] = $data['is_for_debtor'] ?? null;
+        $this->container['is_for_project'] = $data['is_for_project'] ?? null;
+        $this->container['is_for_subscription'] = $data['is_for_subscription'] ?? null;
+        $this->container['is_for_employee'] = $data['is_for_employee'] ?? null;
+        $this->container['is_for_invoice'] = $data['is_for_invoice'] ?? null;
+        $this->container['is_for_myorganizationprofile'] = $data['is_for_myorganizationprofile'] ?? null;
+        $this->container['is_blocked'] = $data['is_blocked'] ?? null;
+        $this->container['is_visible_on_all'] = $data['is_visible_on_all'] ?? null;
     }
 
     /**
@@ -268,9 +266,7 @@ class GetDocumentType implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -667,7 +663,7 @@ class GetDocumentType implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -703,18 +699,16 @@ class GetDocumentType implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class JournalLine implements ModelInterface, ArrayAccess
+class JournalLine implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'JournalLine';
 
     /**
@@ -199,12 +197,12 @@ class JournalLine implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['vat_id'] = isset($data['vat_id']) ? $data['vat_id'] : null;
-        $this->container['vat_included'] = isset($data['vat_included']) ? $data['vat_included'] : null;
-        $this->container['vat_percentage'] = isset($data['vat_percentage']) ? $data['vat_percentage'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['vat_id'] = $data['vat_id'] ?? null;
+        $this->container['vat_included'] = $data['vat_included'] ?? null;
+        $this->container['vat_percentage'] = $data['vat_percentage'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['quantity'] = $data['quantity'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
     }
 
     /**
@@ -214,9 +212,7 @@ class JournalLine implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -397,7 +393,7 @@ class JournalLine implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -433,18 +429,16 @@ class JournalLine implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

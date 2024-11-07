@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetSales implements ModelInterface, ArrayAccess
+class GetSales implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetSales';
 
     /**
@@ -59,33 +57,33 @@ class GetSales implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'responsible_employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
-        'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
-        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
-        'progress' => '\Paqtcom\Simplicate\Model\SalesProgress',
-        'source' => '\Paqtcom\Simplicate\Model\SalesSource',
-        'status' => '\Paqtcom\Simplicate\Model\SalesStatus',
-        'separate_invoice_recipient' => '\Paqtcom\Simplicate\Model\GetSeparateInvoiceRecipient',
+        'responsible_employee' => \Paqtcom\Simplicate\Model\GetEmployeeSimple::class,
+        'person' => \Paqtcom\Simplicate\Model\GetPersonSimple::class,
+        'organization' => \Paqtcom\Simplicate\Model\GetOrganizationSimple::class,
+        'progress' => \Paqtcom\Simplicate\Model\SalesProgress::class,
+        'source' => \Paqtcom\Simplicate\Model\SalesSource::class,
+        'status' => \Paqtcom\Simplicate\Model\SalesStatus::class,
+        'separate_invoice_recipient' => \Paqtcom\Simplicate\Model\GetSeparateInvoiceRecipient::class,
         'teams' => '\Paqtcom\Simplicate\Model\GetTeamSimple[]',
         'custom_fields' => '\Paqtcom\Simplicate\Model\GetCustomField[]',
         'created_at' => 'string',
         'updated_at' => 'string',
         'status_updated_at' => 'string',
         'simplicate_url' => 'string',
-        'linked_project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
+        'linked_project' => \Paqtcom\Simplicate\Model\GetProjectSimple::class,
         'my_organization_profile_id' => 'string',
         'organization_id' => 'string',
         'person_id' => 'string',
         'contact_id' => 'string',
-        'reason' => '\Paqtcom\Simplicate\Model\SalesReason',
-        'contact' => '\Paqtcom\Simplicate\Model\ContactPerson',
+        'reason' => \Paqtcom\Simplicate\Model\SalesReason::class,
+        'contact' => \Paqtcom\Simplicate\Model\ContactPerson::class,
         'subject' => 'string',
         'start_date' => 'string',
         'expected_closing_date' => 'string',
         'expected_revenue' => 'float',
         'note' => 'string',
         'chance_to_score' => 'int',
-        'lost_to_competitor' => '\Paqtcom\Simplicate\Model\LostToCompetitor',
+        'lost_to_competitor' => \Paqtcom\Simplicate\Model\LostToCompetitor::class,
     ];
 
     /**
@@ -309,34 +307,34 @@ class GetSales implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['responsible_employee'] = isset($data['responsible_employee']) ? $data['responsible_employee'] : null;
-        $this->container['person'] = isset($data['person']) ? $data['person'] : null;
-        $this->container['organization'] = isset($data['organization']) ? $data['organization'] : null;
-        $this->container['progress'] = isset($data['progress']) ? $data['progress'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['separate_invoice_recipient'] = isset($data['separate_invoice_recipient']) ? $data['separate_invoice_recipient'] : null;
-        $this->container['teams'] = isset($data['teams']) ? $data['teams'] : null;
-        $this->container['custom_fields'] = isset($data['custom_fields']) ? $data['custom_fields'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['status_updated_at'] = isset($data['status_updated_at']) ? $data['status_updated_at'] : null;
-        $this->container['simplicate_url'] = isset($data['simplicate_url']) ? $data['simplicate_url'] : null;
-        $this->container['linked_project'] = isset($data['linked_project']) ? $data['linked_project'] : null;
-        $this->container['my_organization_profile_id'] = isset($data['my_organization_profile_id']) ? $data['my_organization_profile_id'] : null;
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
-        $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
-        $this->container['contact_id'] = isset($data['contact_id']) ? $data['contact_id'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
-        $this->container['contact'] = isset($data['contact']) ? $data['contact'] : null;
-        $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['expected_closing_date'] = isset($data['expected_closing_date']) ? $data['expected_closing_date'] : null;
-        $this->container['expected_revenue'] = isset($data['expected_revenue']) ? $data['expected_revenue'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
-        $this->container['chance_to_score'] = isset($data['chance_to_score']) ? $data['chance_to_score'] : null;
-        $this->container['lost_to_competitor'] = isset($data['lost_to_competitor']) ? $data['lost_to_competitor'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['responsible_employee'] = $data['responsible_employee'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
+        $this->container['organization'] = $data['organization'] ?? null;
+        $this->container['progress'] = $data['progress'] ?? null;
+        $this->container['source'] = $data['source'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['separate_invoice_recipient'] = $data['separate_invoice_recipient'] ?? null;
+        $this->container['teams'] = $data['teams'] ?? null;
+        $this->container['custom_fields'] = $data['custom_fields'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['status_updated_at'] = $data['status_updated_at'] ?? null;
+        $this->container['simplicate_url'] = $data['simplicate_url'] ?? null;
+        $this->container['linked_project'] = $data['linked_project'] ?? null;
+        $this->container['my_organization_profile_id'] = $data['my_organization_profile_id'] ?? null;
+        $this->container['organization_id'] = $data['organization_id'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['contact_id'] = $data['contact_id'] ?? null;
+        $this->container['reason'] = $data['reason'] ?? null;
+        $this->container['contact'] = $data['contact'] ?? null;
+        $this->container['subject'] = $data['subject'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['expected_closing_date'] = $data['expected_closing_date'] ?? null;
+        $this->container['expected_revenue'] = $data['expected_revenue'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['chance_to_score'] = $data['chance_to_score'] ?? null;
+        $this->container['lost_to_competitor'] = $data['lost_to_competitor'] ?? null;
     }
 
     /**
@@ -346,9 +344,7 @@ class GetSales implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -1057,7 +1053,7 @@ class GetSales implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -1093,18 +1089,16 @@ class GetSales implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

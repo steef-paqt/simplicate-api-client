@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Expense implements ModelInterface, ArrayAccess
+class Expense implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'Expense';
 
     /**
@@ -59,10 +57,10 @@ class Expense implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
+        'project' => \Paqtcom\Simplicate\Model\GetProjectSimple::class,
         'service_id' => 'string',
-        'costtype' => '\Paqtcom\Simplicate\Model\GetProjectServiceCostType',
-        'default_costtype' => '\Paqtcom\Simplicate\Model\GetPurchaseType',
+        'costtype' => \Paqtcom\Simplicate\Model\GetProjectServiceCostType::class,
+        'default_costtype' => \Paqtcom\Simplicate\Model\GetPurchaseType::class,
         'amount' => 'float',
         'purchase_price_unit' => 'float',
         'tariff' => 'float',
@@ -70,10 +68,10 @@ class Expense implements ModelInterface, ArrayAccess
         'purchase_margin' => 'float',
         'total_price' => 'float',
         'is_billable' => 'bool',
-        'approval_status' => '\Paqtcom\Simplicate\Model\ApprovalStatus',
+        'approval_status' => \Paqtcom\Simplicate\Model\ApprovalStatus::class,
         'invoice_status' => 'string',
-        'invoice' => '\Paqtcom\Simplicate\Model\GetInvoice',
-        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
+        'invoice' => \Paqtcom\Simplicate\Model\GetInvoice::class,
+        'employee' => \Paqtcom\Simplicate\Model\GetEmployeeSimple::class,
         'date' => 'string',
         'note' => 'string',
         'service_purchase_start_date' => 'string',
@@ -292,27 +290,27 @@ class Expense implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['project'] = isset($data['project']) ? $data['project'] : null;
-        $this->container['service_id'] = isset($data['service_id']) ? $data['service_id'] : null;
-        $this->container['costtype'] = isset($data['costtype']) ? $data['costtype'] : null;
-        $this->container['default_costtype'] = isset($data['default_costtype']) ? $data['default_costtype'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['purchase_price_unit'] = isset($data['purchase_price_unit']) ? $data['purchase_price_unit'] : null;
-        $this->container['tariff'] = isset($data['tariff']) ? $data['tariff'] : null;
-        $this->container['purchase_price_total'] = isset($data['purchase_price_total']) ? $data['purchase_price_total'] : null;
-        $this->container['purchase_margin'] = isset($data['purchase_margin']) ? $data['purchase_margin'] : null;
-        $this->container['total_price'] = isset($data['total_price']) ? $data['total_price'] : null;
-        $this->container['is_billable'] = isset($data['is_billable']) ? $data['is_billable'] : null;
-        $this->container['approval_status'] = isset($data['approval_status']) ? $data['approval_status'] : null;
-        $this->container['invoice_status'] = isset($data['invoice_status']) ? $data['invoice_status'] : null;
-        $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
-        $this->container['employee'] = isset($data['employee']) ? $data['employee'] : null;
-        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
-        $this->container['service_purchase_start_date'] = isset($data['service_purchase_start_date']) ? $data['service_purchase_start_date'] : null;
-        $this->container['service_purchase_end_date'] = isset($data['service_purchase_end_date']) ? $data['service_purchase_end_date'] : null;
-        $this->container['attachments'] = isset($data['attachments']) ? $data['attachments'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['project'] = $data['project'] ?? null;
+        $this->container['service_id'] = $data['service_id'] ?? null;
+        $this->container['costtype'] = $data['costtype'] ?? null;
+        $this->container['default_costtype'] = $data['default_costtype'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['purchase_price_unit'] = $data['purchase_price_unit'] ?? null;
+        $this->container['tariff'] = $data['tariff'] ?? null;
+        $this->container['purchase_price_total'] = $data['purchase_price_total'] ?? null;
+        $this->container['purchase_margin'] = $data['purchase_margin'] ?? null;
+        $this->container['total_price'] = $data['total_price'] ?? null;
+        $this->container['is_billable'] = $data['is_billable'] ?? null;
+        $this->container['approval_status'] = $data['approval_status'] ?? null;
+        $this->container['invoice_status'] = $data['invoice_status'] ?? null;
+        $this->container['invoice'] = $data['invoice'] ?? null;
+        $this->container['employee'] = $data['employee'] ?? null;
+        $this->container['date'] = $data['date'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['service_purchase_start_date'] = $data['service_purchase_start_date'] ?? null;
+        $this->container['service_purchase_end_date'] = $data['service_purchase_end_date'] ?? null;
+        $this->container['attachments'] = $data['attachments'] ?? null;
     }
 
     /**
@@ -882,7 +880,7 @@ class Expense implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -918,18 +916,16 @@ class Expense implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

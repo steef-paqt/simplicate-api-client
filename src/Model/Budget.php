@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Budget implements ModelInterface, ArrayAccess
+class Budget implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'Budget';
 
     /**
@@ -58,9 +56,9 @@ class Budget implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $swaggerTypes = [
-        'hours' => '\Paqtcom\Simplicate\Model\BudgetHours',
-        'costs' => '\Paqtcom\Simplicate\Model\BudgetCosts',
-        'total' => '\Paqtcom\Simplicate\Model\BudgetTotal',
+        'hours' => \Paqtcom\Simplicate\Model\BudgetHours::class,
+        'costs' => \Paqtcom\Simplicate\Model\BudgetCosts::class,
+        'total' => \Paqtcom\Simplicate\Model\BudgetTotal::class,
     ];
 
     /**
@@ -184,9 +182,9 @@ class Budget implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['hours'] = isset($data['hours']) ? $data['hours'] : null;
-        $this->container['costs'] = isset($data['costs']) ? $data['costs'] : null;
-        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['hours'] = $data['hours'] ?? null;
+        $this->container['costs'] = $data['costs'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
     }
 
     /**
@@ -196,9 +194,7 @@ class Budget implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -307,7 +303,7 @@ class Budget implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -343,18 +339,16 @@ class Budget implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

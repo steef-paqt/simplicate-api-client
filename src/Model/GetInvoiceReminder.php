@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetInvoiceReminder implements ModelInterface, ArrayAccess
+class GetInvoiceReminder implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetInvoiceReminder';
 
     /**
@@ -58,7 +56,7 @@ class GetInvoiceReminder implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $swaggerTypes = [
-        'set' => '\Paqtcom\Simplicate\Model\ReminderSet',
+        'set' => \Paqtcom\Simplicate\Model\ReminderSet::class,
         'status' => 'string',
         'paused' => 'bool',
         'next_action' => 'string',
@@ -189,10 +187,10 @@ class GetInvoiceReminder implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['set'] = isset($data['set']) ? $data['set'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['paused'] = isset($data['paused']) ? $data['paused'] : null;
-        $this->container['next_action'] = isset($data['next_action']) ? $data['next_action'] : null;
+        $this->container['set'] = $data['set'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['paused'] = $data['paused'] ?? null;
+        $this->container['next_action'] = $data['next_action'] ?? null;
     }
 
     /**
@@ -202,9 +200,7 @@ class GetInvoiceReminder implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -337,7 +333,7 @@ class GetInvoiceReminder implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -373,18 +369,16 @@ class GetInvoiceReminder implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

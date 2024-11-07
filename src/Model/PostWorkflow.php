@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostWorkflow implements ModelInterface, ArrayAccess
+class PostWorkflow implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PostWorkflow';
 
     /**
@@ -59,7 +57,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'defaultworkflow_id' => 'string',
-        'created_by' => '\Paqtcom\Simplicate\Model\CreatedBy',
+        'created_by' => \Paqtcom\Simplicate\Model\CreatedBy::class,
         'linked_to' => '\Paqtcom\Simplicate\Model\LinkedTo[]',
         'attachments' => '\Paqtcom\Simplicate\Model\PostDocument[]',
         'comments' => '\Paqtcom\Simplicate\Model\Comment[]',
@@ -224,17 +222,17 @@ class PostWorkflow implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['defaultworkflow_id'] = isset($data['defaultworkflow_id']) ? $data['defaultworkflow_id'] : null;
-        $this->container['created_by'] = isset($data['created_by']) ? $data['created_by'] : null;
-        $this->container['linked_to'] = isset($data['linked_to']) ? $data['linked_to'] : null;
-        $this->container['attachments'] = isset($data['attachments']) ? $data['attachments'] : null;
-        $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
-        $this->container['destination_employee_id'] = isset($data['destination_employee_id']) ? $data['destination_employee_id'] : null;
-        $this->container['transfer_to_employee_id'] = isset($data['transfer_to_employee_id']) ? $data['transfer_to_employee_id'] : null;
-        $this->container['transfer_to_message'] = isset($data['transfer_to_message']) ? $data['transfer_to_message'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['deadline_date'] = isset($data['deadline_date']) ? $data['deadline_date'] : null;
+        $this->container['defaultworkflow_id'] = $data['defaultworkflow_id'] ?? null;
+        $this->container['created_by'] = $data['created_by'] ?? null;
+        $this->container['linked_to'] = $data['linked_to'] ?? null;
+        $this->container['attachments'] = $data['attachments'] ?? null;
+        $this->container['comments'] = $data['comments'] ?? null;
+        $this->container['destination_employee_id'] = $data['destination_employee_id'] ?? null;
+        $this->container['transfer_to_employee_id'] = $data['transfer_to_employee_id'] ?? null;
+        $this->container['transfer_to_message'] = $data['transfer_to_message'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['deadline_date'] = $data['deadline_date'] ?? null;
     }
 
     /**
@@ -244,9 +242,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -547,7 +543,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -583,18 +579,16 @@ class PostWorkflow implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

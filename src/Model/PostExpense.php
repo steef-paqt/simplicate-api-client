@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostExpense implements ModelInterface, ArrayAccess
+class PostExpense implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PostExpense';
 
     /**
@@ -199,12 +197,12 @@ class PostExpense implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['project_id'] = isset($data['project_id']) ? $data['project_id'] : null;
-        $this->container['service_id'] = isset($data['service_id']) ? $data['service_id'] : null;
-        $this->container['costtype_id'] = isset($data['costtype_id']) ? $data['costtype_id'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['employee_id'] = isset($data['employee_id']) ? $data['employee_id'] : null;
-        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
+        $this->container['project_id'] = $data['project_id'] ?? null;
+        $this->container['service_id'] = $data['service_id'] ?? null;
+        $this->container['costtype_id'] = $data['costtype_id'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['employee_id'] = $data['employee_id'] ?? null;
+        $this->container['date'] = $data['date'] ?? null;
     }
 
     /**
@@ -214,9 +212,7 @@ class PostExpense implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -397,7 +393,7 @@ class PostExpense implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -433,18 +429,16 @@ class PostExpense implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

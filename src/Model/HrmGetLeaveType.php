@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class HrmGetLeaveType implements ModelInterface, ArrayAccess
+class HrmGetLeaveType implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'HrmGetLeaveType';
 
     /**
@@ -194,11 +192,11 @@ class HrmGetLeaveType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
-        $this->container['blocked'] = isset($data['blocked']) ? $data['blocked'] : null;
-        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
-        $this->container['affects_balance'] = isset($data['affects_balance']) ? $data['affects_balance'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['label'] = $data['label'] ?? null;
+        $this->container['blocked'] = $data['blocked'] ?? null;
+        $this->container['color'] = $data['color'] ?? null;
+        $this->container['affects_balance'] = $data['affects_balance'] ?? null;
     }
 
     /**
@@ -208,9 +206,7 @@ class HrmGetLeaveType implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -367,7 +363,7 @@ class HrmGetLeaveType implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -403,18 +399,16 @@ class HrmGetLeaveType implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

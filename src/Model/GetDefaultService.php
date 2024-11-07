@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetDefaultService implements ModelInterface, ArrayAccess
+class GetDefaultService implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetDefaultService';
 
     /**
@@ -59,8 +57,8 @@ class GetDefaultService implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'vat_class' => '\Paqtcom\Simplicate\Model\VatClass',
-        'revenue_group' => '\Paqtcom\Simplicate\Model\RevenueGroup',
+        'vat_class' => \Paqtcom\Simplicate\Model\VatClass::class,
+        'revenue_group' => \Paqtcom\Simplicate\Model\RevenueGroup::class,
         'created_at' => 'string',
         'updated_at' => 'string',
         'modified' => 'string',
@@ -219,16 +217,16 @@ class GetDefaultService implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['vat_class'] = isset($data['vat_class']) ? $data['vat_class'] : null;
-        $this->container['revenue_group'] = isset($data['revenue_group']) ? $data['revenue_group'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['modified'] = isset($data['modified']) ? $data['modified'] : null;
-        $this->container['my_organization_profile_id'] = isset($data['my_organization_profile_id']) ? $data['my_organization_profile_id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['price_editable'] = isset($data['price_editable']) ? $data['price_editable'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['vat_class'] = $data['vat_class'] ?? null;
+        $this->container['revenue_group'] = $data['revenue_group'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['modified'] = $data['modified'] ?? null;
+        $this->container['my_organization_profile_id'] = $data['my_organization_profile_id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['price_editable'] = $data['price_editable'] ?? null;
+        $this->container['price'] = $data['price'] ?? null;
     }
 
     /**
@@ -238,9 +236,7 @@ class GetDefaultService implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -517,7 +513,7 @@ class GetDefaultService implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -553,18 +549,16 @@ class GetDefaultService implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

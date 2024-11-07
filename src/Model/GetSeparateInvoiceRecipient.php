@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
+class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetSeparateInvoiceRecipient';
 
     /**
@@ -58,9 +56,9 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $swaggerTypes = [
-        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
-        'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
-        'contact' => '\Paqtcom\Simplicate\Model\GetContactSimple',
+        'organization' => \Paqtcom\Simplicate\Model\GetOrganizationSimple::class,
+        'person' => \Paqtcom\Simplicate\Model\GetPersonSimple::class,
+        'contact' => \Paqtcom\Simplicate\Model\GetContactSimple::class,
         'is_separate_invoice_recipient' => 'bool',
     ];
 
@@ -189,10 +187,10 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['organization'] = isset($data['organization']) ? $data['organization'] : null;
-        $this->container['person'] = isset($data['person']) ? $data['person'] : null;
-        $this->container['contact'] = isset($data['contact']) ? $data['contact'] : null;
-        $this->container['is_separate_invoice_recipient'] = isset($data['is_separate_invoice_recipient']) ? $data['is_separate_invoice_recipient'] : null;
+        $this->container['organization'] = $data['organization'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
+        $this->container['contact'] = $data['contact'] ?? null;
+        $this->container['is_separate_invoice_recipient'] = $data['is_separate_invoice_recipient'] ?? null;
     }
 
     /**
@@ -202,9 +200,7 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -337,7 +333,7 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -373,18 +369,16 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

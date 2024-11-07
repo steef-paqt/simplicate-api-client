@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetSalesService implements ModelInterface, ArrayAccess
+class GetSalesService implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetSalesService';
 
     /**
@@ -64,7 +62,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
         'cost_types' => '\Paqtcom\Simplicate\Model\GetSalesServiceCostType[]',
         'subscription_cycle' => 'string',
         'track_cost' => 'bool',
-        'vat_class' => '\Paqtcom\Simplicate\Model\VatClass',
+        'vat_class' => \Paqtcom\Simplicate\Model\VatClass::class,
         'created_at' => '\Paqtcom\Simplicate\Model\GetSalesServiceHoursType[]',
         'updated_at' => '\Paqtcom\Simplicate\Model\GetSalesServiceHoursType[]',
         'sales_id' => 'string',
@@ -302,26 +300,26 @@ class GetSalesService implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['invoice_date'] = isset($data['invoice_date']) ? $data['invoice_date'] : null;
-        $this->container['hour_types'] = isset($data['hour_types']) ? $data['hour_types'] : null;
-        $this->container['cost_types'] = isset($data['cost_types']) ? $data['cost_types'] : null;
-        $this->container['subscription_cycle'] = isset($data['subscription_cycle']) ? $data['subscription_cycle'] : null;
-        $this->container['track_cost'] = isset($data['track_cost']) ? $data['track_cost'] : null;
-        $this->container['vat_class'] = isset($data['vat_class']) ? $data['vat_class'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['sales_id'] = isset($data['sales_id']) ? $data['sales_id'] : null;
-        $this->container['default_service_id'] = isset($data['default_service_id']) ? $data['default_service_id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['invoice_method'] = isset($data['invoice_method']) ? $data['invoice_method'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
-        $this->container['show_itemtype'] = isset($data['show_itemtype']) ? $data['show_itemtype'] : null;
-        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
-        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
-        $this->container['explanation'] = isset($data['explanation']) ? $data['explanation'] : null;
-        $this->container['track_hours'] = isset($data['track_hours']) ? $data['track_hours'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['invoice_date'] = $data['invoice_date'] ?? null;
+        $this->container['hour_types'] = $data['hour_types'] ?? null;
+        $this->container['cost_types'] = $data['cost_types'] ?? null;
+        $this->container['subscription_cycle'] = $data['subscription_cycle'] ?? null;
+        $this->container['track_cost'] = $data['track_cost'] ?? null;
+        $this->container['vat_class'] = $data['vat_class'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['sales_id'] = $data['sales_id'] ?? null;
+        $this->container['default_service_id'] = $data['default_service_id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['invoice_method'] = $data['invoice_method'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['price'] = $data['price'] ?? null;
+        $this->container['show_itemtype'] = $data['show_itemtype'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
+        $this->container['position'] = $data['position'] ?? null;
+        $this->container['explanation'] = $data['explanation'] ?? null;
+        $this->container['track_hours'] = $data['track_hours'] ?? null;
     }
 
     /**
@@ -884,7 +882,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -920,18 +918,16 @@ class GetSalesService implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

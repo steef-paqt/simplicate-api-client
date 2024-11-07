@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class User implements ModelInterface, ArrayAccess
+class User implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'User';
 
     /**
@@ -74,8 +72,8 @@ class User implements ModelInterface, ArrayAccess
         'is_blocked' => 'bool',
         'is_lock_nav' => 'bool',
         'key_identifier' => 'string',
-        'timezone' => '\Paqtcom\Simplicate\Model\Timezone',
-        'country' => '\Paqtcom\Simplicate\Model\Country',
+        'timezone' => \Paqtcom\Simplicate\Model\Timezone::class,
+        'country' => \Paqtcom\Simplicate\Model\Country::class,
         'hours_view_mode' => 'string',
         'is_account_owner' => 'bool',
         'has_external_agenda_integration' => 'bool',
@@ -297,28 +295,28 @@ class User implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
-        $this->container['initials'] = isset($data['initials']) ? $data['initials'] : null;
-        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
-        $this->container['family_name_prefix'] = isset($data['family_name_prefix']) ? $data['family_name_prefix'] : null;
-        $this->container['family_name'] = isset($data['family_name']) ? $data['family_name'] : null;
-        $this->container['birthdate'] = isset($data['birthdate']) ? $data['birthdate'] : null;
-        $this->container['is_authy_enabled'] = isset($data['is_authy_enabled']) ? $data['is_authy_enabled'] : null;
-        $this->container['is_employee'] = isset($data['is_employee']) ? $data['is_employee'] : null;
-        $this->container['is_light_user'] = isset($data['is_light_user']) ? $data['is_light_user'] : null;
-        $this->container['employee_id'] = isset($data['employee_id']) ? $data['employee_id'] : null;
-        $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
-        $this->container['is_blocked'] = isset($data['is_blocked']) ? $data['is_blocked'] : null;
-        $this->container['is_lock_nav'] = isset($data['is_lock_nav']) ? $data['is_lock_nav'] : null;
-        $this->container['key_identifier'] = isset($data['key_identifier']) ? $data['key_identifier'] : null;
-        $this->container['timezone'] = isset($data['timezone']) ? $data['timezone'] : null;
-        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
-        $this->container['hours_view_mode'] = isset($data['hours_view_mode']) ? $data['hours_view_mode'] : null;
-        $this->container['is_account_owner'] = isset($data['is_account_owner']) ? $data['is_account_owner'] : null;
-        $this->container['has_external_agenda_integration'] = isset($data['has_external_agenda_integration']) ? $data['has_external_agenda_integration'] : null;
-        $this->container['rights'] = isset($data['rights']) ? $data['rights'] : null;
+        $this->container['username'] = $data['username'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
+        $this->container['gender'] = $data['gender'] ?? null;
+        $this->container['initials'] = $data['initials'] ?? null;
+        $this->container['first_name'] = $data['first_name'] ?? null;
+        $this->container['family_name_prefix'] = $data['family_name_prefix'] ?? null;
+        $this->container['family_name'] = $data['family_name'] ?? null;
+        $this->container['birthdate'] = $data['birthdate'] ?? null;
+        $this->container['is_authy_enabled'] = $data['is_authy_enabled'] ?? null;
+        $this->container['is_employee'] = $data['is_employee'] ?? null;
+        $this->container['is_light_user'] = $data['is_light_user'] ?? null;
+        $this->container['employee_id'] = $data['employee_id'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['is_blocked'] = $data['is_blocked'] ?? null;
+        $this->container['is_lock_nav'] = $data['is_lock_nav'] ?? null;
+        $this->container['key_identifier'] = $data['key_identifier'] ?? null;
+        $this->container['timezone'] = $data['timezone'] ?? null;
+        $this->container['country'] = $data['country'] ?? null;
+        $this->container['hours_view_mode'] = $data['hours_view_mode'] ?? null;
+        $this->container['is_account_owner'] = $data['is_account_owner'] ?? null;
+        $this->container['has_external_agenda_integration'] = $data['has_external_agenda_integration'] ?? null;
+        $this->container['rights'] = $data['rights'] ?? null;
     }
 
     /**
@@ -912,7 +910,7 @@ class User implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -948,18 +946,16 @@ class User implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

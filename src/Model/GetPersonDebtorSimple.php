@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
+class GetPersonDebtorSimple implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetPersonDebtorSimple';
 
     /**
@@ -58,7 +56,7 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $swaggerTypes = [
-        'relation_type' => '\Paqtcom\Simplicate\Model\RelationType',
+        'relation_type' => \Paqtcom\Simplicate\Model\RelationType::class,
         'id' => 'string',
         'full_name' => 'string',
         'relation_number' => 'string',
@@ -189,10 +187,10 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['relation_type'] = isset($data['relation_type']) ? $data['relation_type'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
-        $this->container['relation_number'] = isset($data['relation_number']) ? $data['relation_number'] : null;
+        $this->container['relation_type'] = $data['relation_type'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['full_name'] = $data['full_name'] ?? null;
+        $this->container['relation_number'] = $data['relation_number'] ?? null;
     }
 
     /**
@@ -202,9 +200,7 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -337,7 +333,7 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -373,18 +369,16 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

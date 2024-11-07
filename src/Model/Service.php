@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Service implements ModelInterface, ArrayAccess
+class Service implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'Service';
 
     /**
@@ -227,14 +225,14 @@ class Service implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['default_service_id'] = isset($data['default_service_id']) ? $data['default_service_id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['explanation'] = isset($data['explanation']) ? $data['explanation'] : null;
-        $this->container['invoice_method'] = isset($data['invoice_method']) ? $data['invoice_method'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
-        $this->container['track_hours'] = isset($data['track_hours']) ? $data['track_hours'] : null;
-        $this->container['track_cost'] = isset($data['track_cost']) ? $data['track_cost'] : null;
+        $this->container['default_service_id'] = $data['default_service_id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['explanation'] = $data['explanation'] ?? null;
+        $this->container['invoice_method'] = $data['invoice_method'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['price'] = $data['price'] ?? null;
+        $this->container['track_hours'] = $data['track_hours'] ?? null;
+        $this->container['track_cost'] = $data['track_cost'] ?? null;
     }
 
     /**
@@ -492,7 +490,7 @@ class Service implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -528,18 +526,16 @@ class Service implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetHoursProjectService implements ModelInterface, ArrayAccess
+class GetHoursProjectService implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetHoursProjectService';
 
     /**
@@ -199,12 +197,12 @@ class GetHoursProjectService implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : 'service:abc123';
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : '2020-01-01';
-        $this->container['until_date'] = isset($data['until_date']) ? $data['until_date'] : '2020-01-01';
-        $this->container['purchase_start_date'] = isset($data['purchase_start_date']) ? $data['purchase_start_date'] : '2020-01-01';
-        $this->container['purchase_end_date'] = isset($data['purchase_end_date']) ? $data['purchase_end_date'] : '2020-01-01';
+        $this->container['id'] = $data['id'] ?? 'service:abc123';
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? '2020-01-01';
+        $this->container['until_date'] = $data['until_date'] ?? '2020-01-01';
+        $this->container['purchase_start_date'] = $data['purchase_start_date'] ?? '2020-01-01';
+        $this->container['purchase_end_date'] = $data['purchase_end_date'] ?? '2020-01-01';
     }
 
     /**
@@ -214,9 +212,7 @@ class GetHoursProjectService implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -397,7 +393,7 @@ class GetHoursProjectService implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -433,18 +429,16 @@ class GetHoursProjectService implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetContract implements ModelInterface, ArrayAccess
+class GetContract implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetContract';
 
     /**
@@ -59,10 +57,10 @@ class GetContract implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'employee' => '\Paqtcom\Simplicate\Model\GetEmployee',
-        'employer' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
-        'employment_type' => '\Paqtcom\Simplicate\Model\EmploymentType',
-        'contract_type' => '\Paqtcom\Simplicate\Model\ContractType',
+        'employee' => \Paqtcom\Simplicate\Model\GetEmployee::class,
+        'employer' => \Paqtcom\Simplicate\Model\GetOrganizationSimple::class,
+        'employment_type' => \Paqtcom\Simplicate\Model\EmploymentType::class,
+        'contract_type' => \Paqtcom\Simplicate\Model\ContractType::class,
         'created_at' => 'string',
         'updated_at' => 'string',
         'start_date' => 'string',
@@ -229,18 +227,18 @@ class GetContract implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['employee'] = isset($data['employee']) ? $data['employee'] : null;
-        $this->container['employer'] = isset($data['employer']) ? $data['employer'] : null;
-        $this->container['employment_type'] = isset($data['employment_type']) ? $data['employment_type'] : null;
-        $this->container['contract_type'] = isset($data['contract_type']) ? $data['contract_type'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['salary_fulltime'] = isset($data['salary_fulltime']) ? $data['salary_fulltime'] : null;
-        $this->container['parttime_percentage'] = isset($data['parttime_percentage']) ? $data['parttime_percentage'] : null;
-        $this->container['days_off'] = isset($data['days_off']) ? $data['days_off'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['employee'] = $data['employee'] ?? null;
+        $this->container['employer'] = $data['employer'] ?? null;
+        $this->container['employment_type'] = $data['employment_type'] ?? null;
+        $this->container['contract_type'] = $data['contract_type'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['salary_fulltime'] = $data['salary_fulltime'] ?? null;
+        $this->container['parttime_percentage'] = $data['parttime_percentage'] ?? null;
+        $this->container['days_off'] = $data['days_off'] ?? null;
     }
 
     /**
@@ -250,9 +248,7 @@ class GetContract implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -577,7 +573,7 @@ class GetContract implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -613,18 +609,16 @@ class GetContract implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

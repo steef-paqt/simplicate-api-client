@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostMessage implements ModelInterface, ArrayAccess
+class PostMessage implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PostMessage';
 
     /**
@@ -59,7 +57,7 @@ class PostMessage implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'messagetype_id' => 'string',
-        'linked_to' => '\Paqtcom\Simplicate\Model\PostMessageLinkedTo',
+        'linked_to' => \Paqtcom\Simplicate\Model\PostMessageLinkedTo::class,
         'created_by_id' => 'string',
         'title' => 'string',
         'content_fields' => '\Paqtcom\Simplicate\Model\ContentField[]',
@@ -204,13 +202,13 @@ class PostMessage implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messagetype_id'] = isset($data['messagetype_id']) ? $data['messagetype_id'] : null;
-        $this->container['linked_to'] = isset($data['linked_to']) ? $data['linked_to'] : null;
-        $this->container['created_by_id'] = isset($data['created_by_id']) ? $data['created_by_id'] : 'employee:abc123';
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['content_fields'] = isset($data['content_fields']) ? $data['content_fields'] : null;
-        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['display_date'] = isset($data['display_date']) ? $data['display_date'] : null;
+        $this->container['messagetype_id'] = $data['messagetype_id'] ?? null;
+        $this->container['linked_to'] = $data['linked_to'] ?? null;
+        $this->container['created_by_id'] = $data['created_by_id'] ?? 'employee:abc123';
+        $this->container['title'] = $data['title'] ?? null;
+        $this->container['content_fields'] = $data['content_fields'] ?? null;
+        $this->container['content'] = $data['content'] ?? null;
+        $this->container['display_date'] = $data['display_date'] ?? null;
     }
 
     /**
@@ -220,9 +218,7 @@ class PostMessage implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -427,7 +423,7 @@ class PostMessage implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -463,18 +459,16 @@ class PostMessage implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

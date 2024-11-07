@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetLeaveType implements ModelInterface, ArrayAccess
+class GetLeaveType implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetLeaveType';
 
     /**
@@ -62,7 +60,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
         'id' => 'string',
         'type' => 'string',
         'billable' => 'float',
-        'vatclass' => '\Paqtcom\Simplicate\Model\VatClass',
+        'vatclass' => \Paqtcom\Simplicate\Model\VatClass::class,
         'label' => 'string',
         'tariff' => 'string',
         'blocked' => 'bool',
@@ -232,15 +230,15 @@ class GetLeaveType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['has_workflow'] = isset($data['has_workflow']) ? $data['has_workflow'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['billable'] = isset($data['billable']) ? $data['billable'] : null;
-        $this->container['vatclass'] = isset($data['vatclass']) ? $data['vatclass'] : null;
-        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
-        $this->container['tariff'] = isset($data['tariff']) ? $data['tariff'] : null;
-        $this->container['blocked'] = isset($data['blocked']) ? $data['blocked'] : null;
-        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
+        $this->container['has_workflow'] = $data['has_workflow'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['billable'] = $data['billable'] ?? null;
+        $this->container['vatclass'] = $data['vatclass'] ?? null;
+        $this->container['label'] = $data['label'] ?? null;
+        $this->container['tariff'] = $data['tariff'] ?? null;
+        $this->container['blocked'] = $data['blocked'] ?? null;
+        $this->container['color'] = $data['color'] ?? null;
     }
 
     /**
@@ -522,7 +520,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -558,18 +556,16 @@ class GetLeaveType implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

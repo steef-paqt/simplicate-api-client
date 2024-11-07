@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostOrganization implements ModelInterface, ArrayAccess
+class PostOrganization implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PostOrganization';
 
     /**
@@ -58,16 +56,16 @@ class PostOrganization implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $swaggerTypes = [
-        'visiting_address' => '\Paqtcom\Simplicate\Model\PostAddress',
-        'postal_address' => '\Paqtcom\Simplicate\Model\PostAddress',
-        'relation_type' => '\Paqtcom\Simplicate\Model\RelationType',
-        'relation_manager' => '\Paqtcom\Simplicate\Model\PostEmployeeFk',
-        'customer_group' => '\Paqtcom\Simplicate\Model\PostOrganizationFk',
+        'visiting_address' => \Paqtcom\Simplicate\Model\PostAddress::class,
+        'postal_address' => \Paqtcom\Simplicate\Model\PostAddress::class,
+        'relation_type' => \Paqtcom\Simplicate\Model\RelationType::class,
+        'relation_manager' => \Paqtcom\Simplicate\Model\PostEmployeeFk::class,
+        'customer_group' => \Paqtcom\Simplicate\Model\PostOrganizationFk::class,
         'linked_persons_contacts' => '\Paqtcom\Simplicate\Model\PostContactPersonFk[]',
         'interests' => '\Paqtcom\Simplicate\Model\PostInterest[]',
-        'debtor' => '\Paqtcom\Simplicate\Model\PostDebtor',
+        'debtor' => \Paqtcom\Simplicate\Model\PostDebtor::class,
         'teams' => '\Paqtcom\Simplicate\Model\PostTeam[]',
-        'accountancy' => '\Paqtcom\Simplicate\Model\Accountancy',
+        'accountancy' => \Paqtcom\Simplicate\Model\Accountancy::class,
         'custom_fields' => '\Paqtcom\Simplicate\Model\PostCustomFieldValue[]',
         'name' => 'string',
         'coc_code' => 'string',
@@ -78,8 +76,8 @@ class PostOrganization implements ModelInterface, ArrayAccess
         'note' => 'string',
         'linkedin_url' => 'string',
         'has_different_postal_address' => 'bool',
-        'industry' => '\Paqtcom\Simplicate\Model\Industry',
-        'organizationsize' => '\Paqtcom\Simplicate\Model\OrganizationSize',
+        'industry' => \Paqtcom\Simplicate\Model\Industry::class,
+        'organizationsize' => \Paqtcom\Simplicate\Model\OrganizationSize::class,
         'invoice_receiver' => 'string',
         'allow_autocollect' => 'bool',
         'bank_account' => 'string',
@@ -304,33 +302,33 @@ class PostOrganization implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['visiting_address'] = isset($data['visiting_address']) ? $data['visiting_address'] : null;
-        $this->container['postal_address'] = isset($data['postal_address']) ? $data['postal_address'] : null;
-        $this->container['relation_type'] = isset($data['relation_type']) ? $data['relation_type'] : null;
-        $this->container['relation_manager'] = isset($data['relation_manager']) ? $data['relation_manager'] : null;
-        $this->container['customer_group'] = isset($data['customer_group']) ? $data['customer_group'] : null;
-        $this->container['linked_persons_contacts'] = isset($data['linked_persons_contacts']) ? $data['linked_persons_contacts'] : null;
-        $this->container['interests'] = isset($data['interests']) ? $data['interests'] : null;
-        $this->container['debtor'] = isset($data['debtor']) ? $data['debtor'] : null;
-        $this->container['teams'] = isset($data['teams']) ? $data['teams'] : null;
-        $this->container['accountancy'] = isset($data['accountancy']) ? $data['accountancy'] : null;
-        $this->container['custom_fields'] = isset($data['custom_fields']) ? $data['custom_fields'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['coc_code'] = isset($data['coc_code']) ? $data['coc_code'] : null;
-        $this->container['vat_number'] = isset($data['vat_number']) ? $data['vat_number'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
-        $this->container['linkedin_url'] = isset($data['linkedin_url']) ? $data['linkedin_url'] : null;
-        $this->container['has_different_postal_address'] = isset($data['has_different_postal_address']) ? $data['has_different_postal_address'] : null;
-        $this->container['industry'] = isset($data['industry']) ? $data['industry'] : null;
-        $this->container['organizationsize'] = isset($data['organizationsize']) ? $data['organizationsize'] : null;
-        $this->container['invoice_receiver'] = isset($data['invoice_receiver']) ? $data['invoice_receiver'] : null;
-        $this->container['allow_autocollect'] = isset($data['allow_autocollect']) ? $data['allow_autocollect'] : null;
-        $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
-        $this->container['bank_bic'] = isset($data['bank_bic']) ? $data['bank_bic'] : null;
-        $this->container['relation_number'] = isset($data['relation_number']) ? $data['relation_number'] : null;
+        $this->container['visiting_address'] = $data['visiting_address'] ?? null;
+        $this->container['postal_address'] = $data['postal_address'] ?? null;
+        $this->container['relation_type'] = $data['relation_type'] ?? null;
+        $this->container['relation_manager'] = $data['relation_manager'] ?? null;
+        $this->container['customer_group'] = $data['customer_group'] ?? null;
+        $this->container['linked_persons_contacts'] = $data['linked_persons_contacts'] ?? null;
+        $this->container['interests'] = $data['interests'] ?? null;
+        $this->container['debtor'] = $data['debtor'] ?? null;
+        $this->container['teams'] = $data['teams'] ?? null;
+        $this->container['accountancy'] = $data['accountancy'] ?? null;
+        $this->container['custom_fields'] = $data['custom_fields'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['coc_code'] = $data['coc_code'] ?? null;
+        $this->container['vat_number'] = $data['vat_number'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['url'] = $data['url'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['linkedin_url'] = $data['linkedin_url'] ?? null;
+        $this->container['has_different_postal_address'] = $data['has_different_postal_address'] ?? null;
+        $this->container['industry'] = $data['industry'] ?? null;
+        $this->container['organizationsize'] = $data['organizationsize'] ?? null;
+        $this->container['invoice_receiver'] = $data['invoice_receiver'] ?? null;
+        $this->container['allow_autocollect'] = $data['allow_autocollect'] ?? null;
+        $this->container['bank_account'] = $data['bank_account'] ?? null;
+        $this->container['bank_bic'] = $data['bank_bic'] ?? null;
+        $this->container['relation_number'] = $data['relation_number'] ?? null;
     }
 
     /**
@@ -340,9 +338,7 @@ class PostOrganization implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -1027,7 +1023,7 @@ class PostOrganization implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -1063,18 +1059,16 @@ class PostOrganization implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

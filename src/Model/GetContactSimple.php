@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetContactSimple implements ModelInterface, ArrayAccess
+class GetContactSimple implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetContactSimple';
 
     /**
@@ -59,8 +57,8 @@ class GetContactSimple implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
-        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
+        'person' => \Paqtcom\Simplicate\Model\GetPersonSimple::class,
+        'organization' => \Paqtcom\Simplicate\Model\GetOrganizationSimple::class,
     ];
 
     /**
@@ -184,9 +182,9 @@ class GetContactSimple implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['person'] = isset($data['person']) ? $data['person'] : null;
-        $this->container['organization'] = isset($data['organization']) ? $data['organization'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
+        $this->container['organization'] = $data['organization'] ?? null;
     }
 
     /**
@@ -196,9 +194,7 @@ class GetContactSimple implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -307,7 +303,7 @@ class GetContactSimple implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -343,18 +339,16 @@ class GetContactSimple implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

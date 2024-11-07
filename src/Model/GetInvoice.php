@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetInvoice implements ModelInterface, ArrayAccess
+class GetInvoice implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetInvoice';
 
     /**
@@ -60,7 +58,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     protected static array $swaggerTypes = [
         'id' => 'string',
         'contact_id' => 'string',
-        'payment_term' => '\Paqtcom\Simplicate\Model\PaymentTerm',
+        'payment_term' => \Paqtcom\Simplicate\Model\PaymentTerm::class,
         'invoice_lines' => '\Paqtcom\Simplicate\Model\GetInvoiceLine[]',
         'invoice_number' => 'string',
         'status' => 'string',
@@ -68,17 +66,17 @@ class GetInvoice implements ModelInterface, ArrayAccess
         'total_vat' => 'float',
         'total_including_vat' => 'float',
         'total_outstanding' => 'float',
-        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
-        'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
-        'my_organization_profile' => '\Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple',
-        'subscription_cycle' => '\Paqtcom\Simplicate\Model\SubscriptionCycle',
-        'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
+        'organization' => \Paqtcom\Simplicate\Model\GetOrganizationSimple::class,
+        'person' => \Paqtcom\Simplicate\Model\GetPersonSimple::class,
+        'my_organization_profile' => \Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple::class,
+        'subscription_cycle' => \Paqtcom\Simplicate\Model\SubscriptionCycle::class,
+        'project' => \Paqtcom\Simplicate\Model\GetProjectSimple::class,
         'projects' => '\Paqtcom\Simplicate\Model\GetProjectSimple[]',
         'sending_method' => 'string',
         'created_at' => 'string',
         'updated_at' => 'string',
         'simplicate_url' => 'string',
-        'reminder' => '\Paqtcom\Simplicate\Model\GetInvoiceReminder',
+        'reminder' => \Paqtcom\Simplicate\Model\GetInvoiceReminder::class,
         'composition_type' => 'string',
         'my_organization_profile_id' => 'string',
         'organization_id' => 'string',
@@ -369,36 +367,36 @@ class GetInvoice implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['contact_id'] = isset($data['contact_id']) ? $data['contact_id'] : null;
-        $this->container['payment_term'] = isset($data['payment_term']) ? $data['payment_term'] : null;
-        $this->container['invoice_lines'] = isset($data['invoice_lines']) ? $data['invoice_lines'] : null;
-        $this->container['invoice_number'] = isset($data['invoice_number']) ? $data['invoice_number'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['total_excluding_vat'] = isset($data['total_excluding_vat']) ? $data['total_excluding_vat'] : null;
-        $this->container['total_vat'] = isset($data['total_vat']) ? $data['total_vat'] : null;
-        $this->container['total_including_vat'] = isset($data['total_including_vat']) ? $data['total_including_vat'] : null;
-        $this->container['total_outstanding'] = isset($data['total_outstanding']) ? $data['total_outstanding'] : null;
-        $this->container['organization'] = isset($data['organization']) ? $data['organization'] : null;
-        $this->container['person'] = isset($data['person']) ? $data['person'] : null;
-        $this->container['my_organization_profile'] = isset($data['my_organization_profile']) ? $data['my_organization_profile'] : null;
-        $this->container['subscription_cycle'] = isset($data['subscription_cycle']) ? $data['subscription_cycle'] : null;
-        $this->container['project'] = isset($data['project']) ? $data['project'] : null;
-        $this->container['projects'] = isset($data['projects']) ? $data['projects'] : null;
-        $this->container['sending_method'] = isset($data['sending_method']) ? $data['sending_method'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['simplicate_url'] = isset($data['simplicate_url']) ? $data['simplicate_url'] : null;
-        $this->container['reminder'] = isset($data['reminder']) ? $data['reminder'] : null;
-        $this->container['composition_type'] = isset($data['composition_type']) ? $data['composition_type'] : null;
-        $this->container['my_organization_profile_id'] = isset($data['my_organization_profile_id']) ? $data['my_organization_profile_id'] : null;
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
-        $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
-        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
-        $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
-        $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
-        $this->container['project_id'] = isset($data['project_id']) ? $data['project_id'] : null;
-        $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['contact_id'] = $data['contact_id'] ?? null;
+        $this->container['payment_term'] = $data['payment_term'] ?? null;
+        $this->container['invoice_lines'] = $data['invoice_lines'] ?? null;
+        $this->container['invoice_number'] = $data['invoice_number'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['total_excluding_vat'] = $data['total_excluding_vat'] ?? null;
+        $this->container['total_vat'] = $data['total_vat'] ?? null;
+        $this->container['total_including_vat'] = $data['total_including_vat'] ?? null;
+        $this->container['total_outstanding'] = $data['total_outstanding'] ?? null;
+        $this->container['organization'] = $data['organization'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
+        $this->container['my_organization_profile'] = $data['my_organization_profile'] ?? null;
+        $this->container['subscription_cycle'] = $data['subscription_cycle'] ?? null;
+        $this->container['project'] = $data['project'] ?? null;
+        $this->container['projects'] = $data['projects'] ?? null;
+        $this->container['sending_method'] = $data['sending_method'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['simplicate_url'] = $data['simplicate_url'] ?? null;
+        $this->container['reminder'] = $data['reminder'] ?? null;
+        $this->container['composition_type'] = $data['composition_type'] ?? null;
+        $this->container['my_organization_profile_id'] = $data['my_organization_profile_id'] ?? null;
+        $this->container['organization_id'] = $data['organization_id'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['date'] = $data['date'] ?? null;
+        $this->container['subject'] = $data['subject'] ?? null;
+        $this->container['reference'] = $data['reference'] ?? null;
+        $this->container['project_id'] = $data['project_id'] ?? null;
+        $this->container['comments'] = $data['comments'] ?? null;
     }
 
     /**
@@ -1218,7 +1216,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -1254,18 +1252,16 @@ class GetInvoice implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

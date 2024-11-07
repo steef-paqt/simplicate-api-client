@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetMessage implements ModelInterface, ArrayAccess
+class GetMessage implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetMessage';
 
     /**
@@ -60,9 +58,9 @@ class GetMessage implements ModelInterface, ArrayAccess
     protected static array $swaggerTypes = [
         'id' => 'string',
         'attachments' => '\Paqtcom\Simplicate\Model\Attachment[]',
-        'message_type' => '\Paqtcom\Simplicate\Model\MessageType',
+        'message_type' => \Paqtcom\Simplicate\Model\MessageType::class,
         'linked_to' => '\Paqtcom\Simplicate\Model\LinkedToEntity[]',
-        'created_by' => '\Paqtcom\Simplicate\Model\Creator',
+        'created_by' => \Paqtcom\Simplicate\Model\Creator::class,
         'created_at' => 'string',
         'updated_at' => 'string',
         'title' => 'string',
@@ -224,17 +222,17 @@ class GetMessage implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['attachments'] = isset($data['attachments']) ? $data['attachments'] : null;
-        $this->container['message_type'] = isset($data['message_type']) ? $data['message_type'] : null;
-        $this->container['linked_to'] = isset($data['linked_to']) ? $data['linked_to'] : null;
-        $this->container['created_by'] = isset($data['created_by']) ? $data['created_by'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['content_fields'] = isset($data['content_fields']) ? $data['content_fields'] : null;
-        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['display_date'] = isset($data['display_date']) ? $data['display_date'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['attachments'] = $data['attachments'] ?? null;
+        $this->container['message_type'] = $data['message_type'] ?? null;
+        $this->container['linked_to'] = $data['linked_to'] ?? null;
+        $this->container['created_by'] = $data['created_by'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
+        $this->container['content_fields'] = $data['content_fields'] ?? null;
+        $this->container['content'] = $data['content'] ?? null;
+        $this->container['display_date'] = $data['display_date'] ?? null;
     }
 
     /**
@@ -244,9 +242,7 @@ class GetMessage implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -547,7 +543,7 @@ class GetMessage implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -583,18 +579,16 @@ class GetMessage implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

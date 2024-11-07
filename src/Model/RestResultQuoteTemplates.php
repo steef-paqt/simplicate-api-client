@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class RestResultQuoteTemplates implements ModelInterface, ArrayAccess
+class RestResultQuoteTemplates implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'RestResultQuoteTemplates';
 
     /**
@@ -59,7 +57,7 @@ class RestResultQuoteTemplates implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'data' => '\Paqtcom\Simplicate\Model\QuoteTemplate[]',
-        'metadata' => '\Paqtcom\Simplicate\Model\MetaData',
+        'metadata' => \Paqtcom\Simplicate\Model\MetaData::class,
         'errors' => 'object[]',
         'debug' => 'object[]',
     ];
@@ -189,10 +187,10 @@ class RestResultQuoteTemplates implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
-        $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
-        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
-        $this->container['debug'] = isset($data['debug']) ? $data['debug'] : null;
+        $this->container['data'] = $data['data'] ?? null;
+        $this->container['metadata'] = $data['metadata'] ?? null;
+        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['debug'] = $data['debug'] ?? null;
     }
 
     /**
@@ -202,9 +200,7 @@ class RestResultQuoteTemplates implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -337,7 +333,7 @@ class RestResultQuoteTemplates implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -373,18 +369,16 @@ class RestResultQuoteTemplates implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

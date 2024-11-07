@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Hours implements ModelInterface, ArrayAccess
+class Hours implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'Hours';
 
     /**
@@ -64,11 +62,11 @@ class Hours implements ModelInterface, ArrayAccess
         'end_date' => 'string',
         'is_time_defined' => 'bool',
         'is_recurring' => 'bool',
-        'recurrence' => '\Paqtcom\Simplicate\Model\Recurrence',
+        'recurrence' => \Paqtcom\Simplicate\Model\Recurrence::class,
         'is_external' => 'bool',
         'billable' => 'bool',
         'note' => 'string',
-        'address' => '\Paqtcom\Simplicate\Model\Address',
+        'address' => \Paqtcom\Simplicate\Model\Address::class,
         'assignment_id' => 'string',
         'should_sync_to_cronofy' => 'bool',
         'source' => 'string',
@@ -257,20 +255,20 @@ class Hours implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['hours'] = isset($data['hours']) ? $data['hours'] : null;
-        $this->container['duration_in_minutes'] = isset($data['duration_in_minutes']) ? $data['duration_in_minutes'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['is_time_defined'] = isset($data['is_time_defined']) ? $data['is_time_defined'] : null;
-        $this->container['is_recurring'] = isset($data['is_recurring']) ? $data['is_recurring'] : null;
-        $this->container['recurrence'] = isset($data['recurrence']) ? $data['recurrence'] : null;
-        $this->container['is_external'] = isset($data['is_external']) ? $data['is_external'] : null;
-        $this->container['billable'] = isset($data['billable']) ? $data['billable'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
-        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['assignment_id'] = isset($data['assignment_id']) ? $data['assignment_id'] : null;
-        $this->container['should_sync_to_cronofy'] = isset($data['should_sync_to_cronofy']) ? $data['should_sync_to_cronofy'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['hours'] = $data['hours'] ?? null;
+        $this->container['duration_in_minutes'] = $data['duration_in_minutes'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['is_time_defined'] = $data['is_time_defined'] ?? null;
+        $this->container['is_recurring'] = $data['is_recurring'] ?? null;
+        $this->container['recurrence'] = $data['recurrence'] ?? null;
+        $this->container['is_external'] = $data['is_external'] ?? null;
+        $this->container['billable'] = $data['billable'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['address'] = $data['address'] ?? null;
+        $this->container['assignment_id'] = $data['assignment_id'] ?? null;
+        $this->container['should_sync_to_cronofy'] = $data['should_sync_to_cronofy'] ?? null;
+        $this->container['source'] = $data['source'] ?? null;
     }
 
     /**
@@ -672,7 +670,7 @@ class Hours implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -708,18 +706,16 @@ class Hours implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

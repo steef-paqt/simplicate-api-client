@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetService implements ModelInterface, ArrayAccess
+class GetService implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetService';
 
     /**
@@ -271,19 +269,19 @@ class GetService implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['subscription_cycle'] = isset($data['subscription_cycle']) ? $data['subscription_cycle'] : null;
-        $this->container['budget'] = isset($data['budget']) ? $data['budget'] : null;
-        $this->container['default_service_id'] = isset($data['default_service_id']) ? $data['default_service_id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['explanation'] = isset($data['explanation']) ? $data['explanation'] : null;
-        $this->container['invoice_method'] = isset($data['invoice_method']) ? $data['invoice_method'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
-        $this->container['track_hours'] = isset($data['track_hours']) ? $data['track_hours'] : null;
-        $this->container['track_cost'] = isset($data['track_cost']) ? $data['track_cost'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['subscription_cycle'] = $data['subscription_cycle'] ?? null;
+        $this->container['budget'] = $data['budget'] ?? null;
+        $this->container['default_service_id'] = $data['default_service_id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['explanation'] = $data['explanation'] ?? null;
+        $this->container['invoice_method'] = $data['invoice_method'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['price'] = $data['price'] ?? null;
+        $this->container['track_hours'] = $data['track_hours'] ?? null;
+        $this->container['track_cost'] = $data['track_cost'] ?? null;
     }
 
     /**
@@ -678,7 +676,7 @@ class GetService implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -714,18 +712,16 @@ class GetService implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

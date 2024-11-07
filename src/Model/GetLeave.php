@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetLeave implements ModelInterface, ArrayAccess
+class GetLeave implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetLeave';
 
     /**
@@ -59,8 +57,8 @@ class GetLeave implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
-        'leavetype' => '\Paqtcom\Simplicate\Model\HrmGetLeaveType',
+        'employee' => \Paqtcom\Simplicate\Model\GetEmployeeSimple::class,
+        'leavetype' => \Paqtcom\Simplicate\Model\HrmGetLeaveType::class,
         'created_at' => 'string',
         'updated_at' => 'string',
         'start_date' => 'string',
@@ -219,16 +217,16 @@ class GetLeave implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['employee'] = isset($data['employee']) ? $data['employee'] : null;
-        $this->container['leavetype'] = isset($data['leavetype']) ? $data['leavetype'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['year'] = isset($data['year']) ? $data['year'] : null;
-        $this->container['hours'] = isset($data['hours']) ? $data['hours'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['employee'] = $data['employee'] ?? null;
+        $this->container['leavetype'] = $data['leavetype'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['year'] = $data['year'] ?? null;
+        $this->container['hours'] = $data['hours'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
     }
 
     /**
@@ -238,9 +236,7 @@ class GetLeave implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -517,7 +513,7 @@ class GetLeave implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -553,18 +549,16 @@ class GetLeave implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

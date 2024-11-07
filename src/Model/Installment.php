@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Installment implements ModelInterface, ArrayAccess
+class Installment implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'Installment';
 
     /**
@@ -232,15 +230,15 @@ class Installment implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['percentage'] = isset($data['percentage']) ? $data['percentage'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
-        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
-        $this->container['expiration_date'] = isset($data['expiration_date']) ? $data['expiration_date'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['invoiced_date'] = isset($data['invoiced_date']) ? $data['invoiced_date'] : null;
-        $this->container['invoice_id'] = isset($data['invoice_id']) ? $data['invoice_id'] : null;
-        $this->container['invoice_line_id'] = isset($data['invoice_line_id']) ? $data['invoice_line_id'] : null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['percentage'] = $data['percentage'] ?? null;
+        $this->container['price'] = $data['price'] ?? null;
+        $this->container['order'] = $data['order'] ?? null;
+        $this->container['expiration_date'] = $data['expiration_date'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['invoiced_date'] = $data['invoiced_date'] ?? null;
+        $this->container['invoice_id'] = $data['invoice_id'] ?? null;
+        $this->container['invoice_line_id'] = $data['invoice_line_id'] ?? null;
     }
 
     /**
@@ -522,7 +520,7 @@ class Installment implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -558,18 +556,16 @@ class Installment implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

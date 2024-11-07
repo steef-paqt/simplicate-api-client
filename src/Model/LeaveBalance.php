@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LeaveBalance implements ModelInterface, ArrayAccess
+class LeaveBalance implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'LeaveBalance';
 
     /**
@@ -58,12 +56,12 @@ class LeaveBalance implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $swaggerTypes = [
-        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
+        'employee' => \Paqtcom\Simplicate\Model\GetEmployeeSimple::class,
         'balance' => 'float',
         'first_change' => 'string',
         'last_change' => 'float',
         'year' => 'int',
-        'leavetype' => '\Paqtcom\Simplicate\Model\HrmGetLeaveType',
+        'leavetype' => \Paqtcom\Simplicate\Model\HrmGetLeaveType::class,
     ];
 
     /**
@@ -199,12 +197,12 @@ class LeaveBalance implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['employee'] = isset($data['employee']) ? $data['employee'] : null;
-        $this->container['balance'] = isset($data['balance']) ? $data['balance'] : null;
-        $this->container['first_change'] = isset($data['first_change']) ? $data['first_change'] : null;
-        $this->container['last_change'] = isset($data['last_change']) ? $data['last_change'] : null;
-        $this->container['year'] = isset($data['year']) ? $data['year'] : null;
-        $this->container['leavetype'] = isset($data['leavetype']) ? $data['leavetype'] : null;
+        $this->container['employee'] = $data['employee'] ?? null;
+        $this->container['balance'] = $data['balance'] ?? null;
+        $this->container['first_change'] = $data['first_change'] ?? null;
+        $this->container['last_change'] = $data['last_change'] ?? null;
+        $this->container['year'] = $data['year'] ?? null;
+        $this->container['leavetype'] = $data['leavetype'] ?? null;
     }
 
     /**
@@ -214,9 +212,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -397,7 +393,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -433,18 +429,16 @@ class LeaveBalance implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

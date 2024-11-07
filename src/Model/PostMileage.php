@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostMileage implements ModelInterface, ArrayAccess
+class PostMileage implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PostMileage';
 
     /**
@@ -227,14 +225,14 @@ class PostMileage implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['employee_id'] = isset($data['employee_id']) ? $data['employee_id'] : null;
-        $this->container['project_id'] = isset($data['project_id']) ? $data['project_id'] : null;
-        $this->container['approvalstatus_id'] = isset($data['approvalstatus_id']) ? $data['approvalstatus_id'] : null;
-        $this->container['mileage'] = isset($data['mileage']) ? $data['mileage'] : null;
-        $this->container['related_hours_id'] = isset($data['related_hours_id']) ? $data['related_hours_id'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['employee_id'] = $data['employee_id'] ?? null;
+        $this->container['project_id'] = $data['project_id'] ?? null;
+        $this->container['approvalstatus_id'] = $data['approvalstatus_id'] ?? null;
+        $this->container['mileage'] = $data['mileage'] ?? null;
+        $this->container['related_hours_id'] = $data['related_hours_id'] ?? null;
+        $this->container['source'] = $data['source'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
     }
 
     /**
@@ -492,7 +490,7 @@ class PostMileage implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -528,18 +526,16 @@ class PostMileage implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

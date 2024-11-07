@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CustomFieldType implements ModelInterface, ArrayAccess
+class CustomFieldType implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'CustomFieldType';
 
     /**
@@ -209,14 +207,14 @@ class CustomFieldType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
-        $this->container['is_mandatory_configurable'] = isset($data['is_mandatory_configurable']) ? $data['is_mandatory_configurable'] : null;
-        $this->container['is_searchable_configurable'] = isset($data['is_searchable_configurable']) ? $data['is_searchable_configurable'] : null;
-        $this->container['is_filterable_configurable'] = isset($data['is_filterable_configurable']) ? $data['is_filterable_configurable'] : null;
-        $this->container['is_collective_mutatable_configurable'] = isset($data['is_collective_mutatable_configurable']) ? $data['is_collective_mutatable_configurable'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['position'] = $data['position'] ?? null;
+        $this->container['is_mandatory_configurable'] = $data['is_mandatory_configurable'] ?? null;
+        $this->container['is_searchable_configurable'] = $data['is_searchable_configurable'] ?? null;
+        $this->container['is_filterable_configurable'] = $data['is_filterable_configurable'] ?? null;
+        $this->container['is_collective_mutatable_configurable'] = $data['is_collective_mutatable_configurable'] ?? null;
     }
 
     /**
@@ -226,9 +224,7 @@ class CustomFieldType implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -457,7 +453,7 @@ class CustomFieldType implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -493,18 +489,16 @@ class CustomFieldType implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BudgetTotal implements ModelInterface, ArrayAccess
+class BudgetTotal implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'BudgetTotal';
 
     /**
@@ -184,9 +182,9 @@ class BudgetTotal implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['value_budget'] = isset($data['value_budget']) ? $data['value_budget'] : null;
-        $this->container['value_spent'] = isset($data['value_spent']) ? $data['value_spent'] : null;
-        $this->container['value_invoiced'] = isset($data['value_invoiced']) ? $data['value_invoiced'] : null;
+        $this->container['value_budget'] = $data['value_budget'] ?? null;
+        $this->container['value_spent'] = $data['value_spent'] ?? null;
+        $this->container['value_invoiced'] = $data['value_invoiced'] ?? null;
     }
 
     /**
@@ -196,9 +194,7 @@ class BudgetTotal implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -307,7 +303,7 @@ class BudgetTotal implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -343,18 +339,16 @@ class BudgetTotal implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

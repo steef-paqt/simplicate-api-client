@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetTimesheetRow implements ModelInterface, ArrayAccess
+class GetTimesheetRow implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetTimesheetRow';
 
     /**
@@ -60,11 +58,11 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
     protected static array $swaggerTypes = [
         'id' => 'string',
         'order' => 'int',
-        'project' => '\Paqtcom\Simplicate\Model\GetTimesheetRowProject',
-        'project_service' => '\Paqtcom\Simplicate\Model\GetTimesheetRowProjectService',
-        'itemtype' => '\Paqtcom\Simplicate\Model\GetTimesheetRowItemtype',
-        'person' => '\Paqtcom\Simplicate\Model\GetTimesheetRowPersonRelation',
-        'organization' => '\Paqtcom\Simplicate\Model\GetTimesheetRowOrganizationRelation',
+        'project' => \Paqtcom\Simplicate\Model\GetTimesheetRowProject::class,
+        'project_service' => \Paqtcom\Simplicate\Model\GetTimesheetRowProjectService::class,
+        'itemtype' => \Paqtcom\Simplicate\Model\GetTimesheetRowItemtype::class,
+        'person' => \Paqtcom\Simplicate\Model\GetTimesheetRowPersonRelation::class,
+        'organization' => \Paqtcom\Simplicate\Model\GetTimesheetRowOrganizationRelation::class,
         'employee_id' => 'string',
         'start_date' => 'string',
         'end_date' => 'string',
@@ -257,20 +255,20 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
-        $this->container['project'] = isset($data['project']) ? $data['project'] : null;
-        $this->container['project_service'] = isset($data['project_service']) ? $data['project_service'] : null;
-        $this->container['itemtype'] = isset($data['itemtype']) ? $data['itemtype'] : null;
-        $this->container['person'] = isset($data['person']) ? $data['person'] : null;
-        $this->container['organization'] = isset($data['organization']) ? $data['organization'] : null;
-        $this->container['employee_id'] = isset($data['employee_id']) ? $data['employee_id'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['project_id'] = isset($data['project_id']) ? $data['project_id'] : null;
-        $this->container['project_service_id'] = isset($data['project_service_id']) ? $data['project_service_id'] : null;
-        $this->container['itemtype_id'] = isset($data['itemtype_id']) ? $data['itemtype_id'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['order'] = $data['order'] ?? null;
+        $this->container['project'] = $data['project'] ?? null;
+        $this->container['project_service'] = $data['project_service'] ?? null;
+        $this->container['itemtype'] = $data['itemtype'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
+        $this->container['organization'] = $data['organization'] ?? null;
+        $this->container['employee_id'] = $data['employee_id'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['project_id'] = $data['project_id'] ?? null;
+        $this->container['project_service_id'] = $data['project_service_id'] ?? null;
+        $this->container['itemtype_id'] = $data['itemtype_id'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -672,7 +670,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -708,18 +706,16 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

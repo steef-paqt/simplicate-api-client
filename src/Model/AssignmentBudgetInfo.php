@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
+class AssignmentBudgetInfo implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'AssignmentBudgetInfo';
 
     /**
@@ -59,12 +57,12 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'assignments_planned' => '\Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast',
+        'assignments_planned' => \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast::class,
         'assignments_unplanned' => 'string',
-        'assignments_hours_written' => '\Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast',
-        'itemtypes_hours_written' => '\Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast',
-        'assignments_hours_corrections' => '\Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast',
-        'itemtypes_hours_corrections' => '\Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast',
+        'assignments_hours_written' => \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast::class,
+        'itemtypes_hours_written' => \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast::class,
+        'assignments_hours_corrections' => \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast::class,
+        'itemtypes_hours_corrections' => \Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast::class,
     ];
 
     /**
@@ -204,13 +202,13 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : 'assignmentbudget:abc';
-        $this->container['assignments_planned'] = isset($data['assignments_planned']) ? $data['assignments_planned'] : null;
-        $this->container['assignments_unplanned'] = isset($data['assignments_unplanned']) ? $data['assignments_unplanned'] : 'PT28H45M';
-        $this->container['assignments_hours_written'] = isset($data['assignments_hours_written']) ? $data['assignments_hours_written'] : null;
-        $this->container['itemtypes_hours_written'] = isset($data['itemtypes_hours_written']) ? $data['itemtypes_hours_written'] : null;
-        $this->container['assignments_hours_corrections'] = isset($data['assignments_hours_corrections']) ? $data['assignments_hours_corrections'] : null;
-        $this->container['itemtypes_hours_corrections'] = isset($data['itemtypes_hours_corrections']) ? $data['itemtypes_hours_corrections'] : null;
+        $this->container['id'] = $data['id'] ?? 'assignmentbudget:abc';
+        $this->container['assignments_planned'] = $data['assignments_planned'] ?? null;
+        $this->container['assignments_unplanned'] = $data['assignments_unplanned'] ?? 'PT28H45M';
+        $this->container['assignments_hours_written'] = $data['assignments_hours_written'] ?? null;
+        $this->container['itemtypes_hours_written'] = $data['itemtypes_hours_written'] ?? null;
+        $this->container['assignments_hours_corrections'] = $data['assignments_hours_corrections'] ?? null;
+        $this->container['itemtypes_hours_corrections'] = $data['itemtypes_hours_corrections'] ?? null;
     }
 
     /**
@@ -220,9 +218,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -427,7 +423,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -463,18 +459,16 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

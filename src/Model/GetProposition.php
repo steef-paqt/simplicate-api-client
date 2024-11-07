@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetProposition implements ModelInterface, ArrayAccess
+class GetProposition implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetProposition';
 
     /**
@@ -67,7 +65,7 @@ class GetProposition implements ModelInterface, ArrayAccess
         'total_advance_deposit' => 'float',
         'total_future' => 'float',
         'simplicate_url' => 'string',
-        'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
+        'project' => \Paqtcom\Simplicate\Model\GetProjectSimple::class,
         'created_at' => 'string',
         'updated_at' => 'string',
     ];
@@ -229,18 +227,18 @@ class GetProposition implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['total_hours'] = isset($data['total_hours']) ? $data['total_hours'] : null;
-        $this->container['total_mileage'] = isset($data['total_mileage']) ? $data['total_mileage'] : null;
-        $this->container['total_fixed'] = isset($data['total_fixed']) ? $data['total_fixed'] : null;
-        $this->container['total_terms'] = isset($data['total_terms']) ? $data['total_terms'] : null;
-        $this->container['total_purchase'] = isset($data['total_purchase']) ? $data['total_purchase'] : null;
-        $this->container['total_advance_deposit'] = isset($data['total_advance_deposit']) ? $data['total_advance_deposit'] : null;
-        $this->container['total_future'] = isset($data['total_future']) ? $data['total_future'] : null;
-        $this->container['simplicate_url'] = isset($data['simplicate_url']) ? $data['simplicate_url'] : null;
-        $this->container['project'] = isset($data['project']) ? $data['project'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['total_hours'] = $data['total_hours'] ?? null;
+        $this->container['total_mileage'] = $data['total_mileage'] ?? null;
+        $this->container['total_fixed'] = $data['total_fixed'] ?? null;
+        $this->container['total_terms'] = $data['total_terms'] ?? null;
+        $this->container['total_purchase'] = $data['total_purchase'] ?? null;
+        $this->container['total_advance_deposit'] = $data['total_advance_deposit'] ?? null;
+        $this->container['total_future'] = $data['total_future'] ?? null;
+        $this->container['simplicate_url'] = $data['simplicate_url'] ?? null;
+        $this->container['project'] = $data['project'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
     }
 
     /**
@@ -250,9 +248,7 @@ class GetProposition implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -577,7 +573,7 @@ class GetProposition implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -613,18 +609,16 @@ class GetProposition implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

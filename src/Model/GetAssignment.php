@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetAssignment implements ModelInterface, ArrayAccess
+class GetAssignment implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetAssignment';
 
     /**
@@ -65,10 +63,10 @@ class GetAssignment implements ModelInterface, ArrayAccess
         'hours' => 'float',
         'hours_type' => 'string',
         'spread' => 'int[]',
-        'status' => '\Paqtcom\Simplicate\Model\GetAssignmentStatus',
-        'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
-        'projectservice' => '\Paqtcom\Simplicate\Model\GetProjectServiceSimple',
-        'projecthourstype' => '\Paqtcom\Simplicate\Model\GetProjectServiceHoursType',
+        'status' => \Paqtcom\Simplicate\Model\GetAssignmentStatus::class,
+        'project' => \Paqtcom\Simplicate\Model\GetProjectSimple::class,
+        'projectservice' => \Paqtcom\Simplicate\Model\GetProjectServiceSimple::class,
+        'projecthourstype' => \Paqtcom\Simplicate\Model\GetProjectServiceHoursType::class,
         'employees' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple[]',
         'spent_amount' => 'string',
         'is_planned' => 'bool',
@@ -264,25 +262,25 @@ class GetAssignment implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : 'assignment:abc';
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : '2032-01-01';
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : '2032-12-31';
-        $this->container['hours_total'] = isset($data['hours_total']) ? $data['hours_total'] : null;
-        $this->container['hours'] = isset($data['hours']) ? $data['hours'] : null;
-        $this->container['hours_type'] = isset($data['hours_type']) ? $data['hours_type'] : 'total';
-        $this->container['spread'] = isset($data['spread']) ? $data['spread'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['project'] = isset($data['project']) ? $data['project'] : null;
-        $this->container['projectservice'] = isset($data['projectservice']) ? $data['projectservice'] : null;
-        $this->container['projecthourstype'] = isset($data['projecthourstype']) ? $data['projecthourstype'] : null;
-        $this->container['employees'] = isset($data['employees']) ? $data['employees'] : null;
-        $this->container['spent_amount'] = isset($data['spent_amount']) ? $data['spent_amount'] : null;
-        $this->container['is_planned'] = isset($data['is_planned']) ? $data['is_planned'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : 'Website Design Assignment';
-        $this->container['use_spread'] = isset($data['use_spread']) ? $data['use_spread'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['id'] = $data['id'] ?? 'assignment:abc';
+        $this->container['start_date'] = $data['start_date'] ?? '2032-01-01';
+        $this->container['end_date'] = $data['end_date'] ?? '2032-12-31';
+        $this->container['hours_total'] = $data['hours_total'] ?? null;
+        $this->container['hours'] = $data['hours'] ?? null;
+        $this->container['hours_type'] = $data['hours_type'] ?? 'total';
+        $this->container['spread'] = $data['spread'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['project'] = $data['project'] ?? null;
+        $this->container['projectservice'] = $data['projectservice'] ?? null;
+        $this->container['projecthourstype'] = $data['projecthourstype'] ?? null;
+        $this->container['employees'] = $data['employees'] ?? null;
+        $this->container['spent_amount'] = $data['spent_amount'] ?? null;
+        $this->container['is_planned'] = $data['is_planned'] ?? null;
+        $this->container['name'] = $data['name'] ?? 'Website Design Assignment';
+        $this->container['use_spread'] = $data['use_spread'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
     }
 
     /**
@@ -292,9 +290,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -787,7 +783,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -823,18 +819,16 @@ class GetAssignment implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

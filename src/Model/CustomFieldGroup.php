@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CustomFieldGroup implements ModelInterface, ArrayAccess
+class CustomFieldGroup implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'CustomFieldGroup';
 
     /**
@@ -61,7 +59,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'position' => 'string',
-        'model' => '\Paqtcom\Simplicate\Model\CustomFieldModel',
+        'model' => \Paqtcom\Simplicate\Model\CustomFieldModel::class,
         'type' => 'string',
     ];
 
@@ -194,11 +192,11 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
-        $this->container['model'] = isset($data['model']) ? $data['model'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['position'] = $data['position'] ?? null;
+        $this->container['model'] = $data['model'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -208,9 +206,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -367,7 +363,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -403,18 +399,16 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Attachment implements ModelInterface, ArrayAccess
+class Attachment implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'Attachment';
 
     /**
@@ -59,7 +57,7 @@ class Attachment implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'attachment_type' => '\Paqtcom\Simplicate\Model\AttachmentType',
+        'attachment_type' => \Paqtcom\Simplicate\Model\AttachmentType::class,
         'title' => 'string',
         'document_id' => 'string',
         'download_link' => 'string',
@@ -194,11 +192,11 @@ class Attachment implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['attachment_type'] = isset($data['attachment_type']) ? $data['attachment_type'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['document_id'] = isset($data['document_id']) ? $data['document_id'] : null;
-        $this->container['download_link'] = isset($data['download_link']) ? $data['download_link'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['attachment_type'] = $data['attachment_type'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
+        $this->container['document_id'] = $data['document_id'] ?? null;
+        $this->container['download_link'] = $data['download_link'] ?? null;
     }
 
     /**
@@ -208,9 +206,7 @@ class Attachment implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -367,7 +363,7 @@ class Attachment implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -403,18 +399,16 @@ class Attachment implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostProject implements ModelInterface, ArrayAccess
+class PostProject implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PostProject';
 
     /**
@@ -60,7 +58,7 @@ class PostProject implements ModelInterface, ArrayAccess
     protected static array $swaggerTypes = [
         'project_manager_id' => 'string',
         'project_status_id' => 'string',
-        'separate_invoice_recipient' => '\Paqtcom\Simplicate\Model\PostSeparateInvoiceRecipient',
+        'separate_invoice_recipient' => \Paqtcom\Simplicate\Model\PostSeparateInvoiceRecipient::class,
         'divergent_payment_term_id' => 'string',
         'teams' => '\Paqtcom\Simplicate\Model\PostTeam[]',
         'custom_fields' => '\Paqtcom\Simplicate\Model\PostCustomFieldValue[]',
@@ -259,24 +257,24 @@ class PostProject implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['project_manager_id'] = isset($data['project_manager_id']) ? $data['project_manager_id'] : null;
-        $this->container['project_status_id'] = isset($data['project_status_id']) ? $data['project_status_id'] : null;
-        $this->container['separate_invoice_recipient'] = isset($data['separate_invoice_recipient']) ? $data['separate_invoice_recipient'] : null;
-        $this->container['divergent_payment_term_id'] = isset($data['divergent_payment_term_id']) ? $data['divergent_payment_term_id'] : null;
-        $this->container['teams'] = isset($data['teams']) ? $data['teams'] : null;
-        $this->container['custom_fields'] = isset($data['custom_fields']) ? $data['custom_fields'] : null;
-        $this->container['my_organization_profile_id'] = isset($data['my_organization_profile_id']) ? $data['my_organization_profile_id'] : null;
-        $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
-        $this->container['contact_id'] = isset($data['contact_id']) ? $data['contact_id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['billable'] = isset($data['billable']) ? $data['billable'] : null;
-        $this->container['can_register_mileage'] = isset($data['can_register_mileage']) ? $data['can_register_mileage'] : null;
-        $this->container['project_number'] = isset($data['project_number']) ? $data['project_number'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['invoice_reference'] = isset($data['invoice_reference']) ? $data['invoice_reference'] : null;
+        $this->container['project_manager_id'] = $data['project_manager_id'] ?? null;
+        $this->container['project_status_id'] = $data['project_status_id'] ?? null;
+        $this->container['separate_invoice_recipient'] = $data['separate_invoice_recipient'] ?? null;
+        $this->container['divergent_payment_term_id'] = $data['divergent_payment_term_id'] ?? null;
+        $this->container['teams'] = $data['teams'] ?? null;
+        $this->container['custom_fields'] = $data['custom_fields'] ?? null;
+        $this->container['my_organization_profile_id'] = $data['my_organization_profile_id'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['organization_id'] = $data['organization_id'] ?? null;
+        $this->container['contact_id'] = $data['contact_id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['billable'] = $data['billable'] ?? null;
+        $this->container['can_register_mileage'] = $data['can_register_mileage'] ?? null;
+        $this->container['project_number'] = $data['project_number'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['invoice_reference'] = $data['invoice_reference'] ?? null;
     }
 
     /**
@@ -286,9 +284,7 @@ class PostProject implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -757,7 +753,7 @@ class PostProject implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -793,18 +789,16 @@ class PostProject implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

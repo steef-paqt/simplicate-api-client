@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CalendarItem implements ModelInterface, ArrayAccess
+class CalendarItem implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'CalendarItem';
 
     /**
@@ -59,7 +57,7 @@ class CalendarItem implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
+        'employee' => \Paqtcom\Simplicate\Model\GetEmployeeSimple::class,
         'hours' => 'string',
         'start_date' => 'string',
         'end_date' => 'string',
@@ -254,23 +252,23 @@ class CalendarItem implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['employee'] = isset($data['employee']) ? $data['employee'] : null;
-        $this->container['hours'] = isset($data['hours']) ? $data['hours'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['summary'] = isset($data['summary']) ? $data['summary'] : null;
-        $this->container['location'] = isset($data['location']) ? $data['location'] : null;
-        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['is_recurring'] = isset($data['is_recurring']) ? $data['is_recurring'] : null;
-        $this->container['is_read_only'] = isset($data['is_read_only']) ? $data['is_read_only'] : null;
-        $this->container['is_time_defined'] = isset($data['is_time_defined']) ? $data['is_time_defined'] : null;
-        $this->container['organizer_email'] = isset($data['organizer_email']) ? $data['organizer_email'] : null;
-        $this->container['private'] = isset($data['private']) ? $data['private'] : null;
-        $this->container['obfuscate'] = isset($data['obfuscate']) ? $data['obfuscate'] : null;
-        $this->container['hours_id'] = isset($data['hours_id']) ? $data['hours_id'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['employee'] = $data['employee'] ?? null;
+        $this->container['hours'] = $data['hours'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['summary'] = $data['summary'] ?? null;
+        $this->container['location'] = $data['location'] ?? null;
+        $this->container['deleted'] = $data['deleted'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['is_recurring'] = $data['is_recurring'] ?? null;
+        $this->container['is_read_only'] = $data['is_read_only'] ?? null;
+        $this->container['is_time_defined'] = $data['is_time_defined'] ?? null;
+        $this->container['organizer_email'] = $data['organizer_email'] ?? null;
+        $this->container['private'] = $data['private'] ?? null;
+        $this->container['obfuscate'] = $data['obfuscate'] ?? null;
+        $this->container['hours_id'] = $data['hours_id'] ?? null;
     }
 
     /**
@@ -280,9 +278,7 @@ class CalendarItem implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -727,7 +723,7 @@ class CalendarItem implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -763,18 +759,16 @@ class CalendarItem implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

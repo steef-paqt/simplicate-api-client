@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetProjectService implements ModelInterface, ArrayAccess
+class GetProjectService implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetProjectService';
 
     /**
@@ -65,8 +63,8 @@ class GetProjectService implements ModelInterface, ArrayAccess
         'status' => 'string',
         'hour_types' => '\Paqtcom\Simplicate\Model\GetProjectServiceHoursType[]',
         'cost_types' => '\Paqtcom\Simplicate\Model\GetProjectServiceCostType[]',
-        'vat_class' => '\Paqtcom\Simplicate\Model\VatClass',
-        'revenue_group' => '\Paqtcom\Simplicate\Model\RevenueGroup',
+        'vat_class' => \Paqtcom\Simplicate\Model\VatClass::class,
+        'revenue_group' => \Paqtcom\Simplicate\Model\RevenueGroup::class,
         'invoice_in_installments' => 'bool',
         'installments' => '\Paqtcom\Simplicate\Model\Installment[]',
         'created_at' => 'string',
@@ -361,37 +359,37 @@ class GetProjectService implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['project_id'] = isset($data['project_id']) ? $data['project_id'] : null;
-        $this->container['related_service_id'] = isset($data['related_service_id']) ? $data['related_service_id'] : null;
-        $this->container['expected_invoice_date'] = isset($data['expected_invoice_date']) ? $data['expected_invoice_date'] : null;
-        $this->container['invoice_date'] = isset($data['invoice_date']) ? $data['invoice_date'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['hour_types'] = isset($data['hour_types']) ? $data['hour_types'] : null;
-        $this->container['cost_types'] = isset($data['cost_types']) ? $data['cost_types'] : null;
-        $this->container['vat_class'] = isset($data['vat_class']) ? $data['vat_class'] : null;
-        $this->container['revenue_group'] = isset($data['revenue_group']) ? $data['revenue_group'] : null;
-        $this->container['invoice_in_installments'] = isset($data['invoice_in_installments']) ? $data['invoice_in_installments'] : null;
-        $this->container['installments'] = isset($data['installments']) ? $data['installments'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['budget_financial_hours'] = isset($data['budget_financial_hours']) ? $data['budget_financial_hours'] : null;
-        $this->container['write_hours_start_date'] = isset($data['write_hours_start_date']) ? $data['write_hours_start_date'] : null;
-        $this->container['write_hours_end_date'] = isset($data['write_hours_end_date']) ? $data['write_hours_end_date'] : null;
-        $this->container['service_number'] = isset($data['service_number']) ? $data['service_number'] : null;
-        $this->container['use_in_resource_planner'] = isset($data['use_in_resource_planner']) ? $data['use_in_resource_planner'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['subscription_cycle'] = isset($data['subscription_cycle']) ? $data['subscription_cycle'] : null;
-        $this->container['budget'] = isset($data['budget']) ? $data['budget'] : null;
-        $this->container['default_service_id'] = isset($data['default_service_id']) ? $data['default_service_id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['explanation'] = isset($data['explanation']) ? $data['explanation'] : null;
-        $this->container['invoice_method'] = isset($data['invoice_method']) ? $data['invoice_method'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
-        $this->container['track_hours'] = isset($data['track_hours']) ? $data['track_hours'] : null;
-        $this->container['track_cost'] = isset($data['track_cost']) ? $data['track_cost'] : null;
+        $this->container['project_id'] = $data['project_id'] ?? null;
+        $this->container['related_service_id'] = $data['related_service_id'] ?? null;
+        $this->container['expected_invoice_date'] = $data['expected_invoice_date'] ?? null;
+        $this->container['invoice_date'] = $data['invoice_date'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['hour_types'] = $data['hour_types'] ?? null;
+        $this->container['cost_types'] = $data['cost_types'] ?? null;
+        $this->container['vat_class'] = $data['vat_class'] ?? null;
+        $this->container['revenue_group'] = $data['revenue_group'] ?? null;
+        $this->container['invoice_in_installments'] = $data['invoice_in_installments'] ?? null;
+        $this->container['installments'] = $data['installments'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['budget_financial_hours'] = $data['budget_financial_hours'] ?? null;
+        $this->container['write_hours_start_date'] = $data['write_hours_start_date'] ?? null;
+        $this->container['write_hours_end_date'] = $data['write_hours_end_date'] ?? null;
+        $this->container['service_number'] = $data['service_number'] ?? null;
+        $this->container['use_in_resource_planner'] = $data['use_in_resource_planner'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['subscription_cycle'] = $data['subscription_cycle'] ?? null;
+        $this->container['budget'] = $data['budget'] ?? null;
+        $this->container['default_service_id'] = $data['default_service_id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['explanation'] = $data['explanation'] ?? null;
+        $this->container['invoice_method'] = $data['invoice_method'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['price'] = $data['price'] ?? null;
+        $this->container['track_hours'] = $data['track_hours'] ?? null;
+        $this->container['track_cost'] = $data['track_cost'] ?? null;
     }
 
     /**
@@ -1218,7 +1216,7 @@ class GetProjectService implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -1254,18 +1252,16 @@ class GetProjectService implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetAddress implements ModelInterface, ArrayAccess
+class GetAddress implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetAddress';
 
     /**
@@ -219,16 +217,16 @@ class GetAddress implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['line_1'] = isset($data['line_1']) ? $data['line_1'] : null;
-        $this->container['line_2'] = isset($data['line_2']) ? $data['line_2'] : null;
-        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
-        $this->container['province'] = isset($data['province']) ? $data['province'] : null;
-        $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
-        $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
-        $this->container['country_id'] = isset($data['country_id']) ? $data['country_id'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['country'] = $data['country'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['line_1'] = $data['line_1'] ?? null;
+        $this->container['line_2'] = $data['line_2'] ?? null;
+        $this->container['postal_code'] = $data['postal_code'] ?? null;
+        $this->container['province'] = $data['province'] ?? null;
+        $this->container['locality'] = $data['locality'] ?? null;
+        $this->container['country_code'] = $data['country_code'] ?? null;
+        $this->container['country_id'] = $data['country_id'] ?? null;
     }
 
     /**
@@ -238,9 +236,7 @@ class GetAddress implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -517,7 +513,7 @@ class GetAddress implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -553,18 +549,16 @@ class GetAddress implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Organization implements ModelInterface, ArrayAccess
+class Organization implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'Organization';
 
     /**
@@ -67,8 +65,8 @@ class Organization implements ModelInterface, ArrayAccess
         'note' => 'string',
         'linkedin_url' => 'string',
         'has_different_postal_address' => 'bool',
-        'industry' => '\Paqtcom\Simplicate\Model\Industry',
-        'organizationsize' => '\Paqtcom\Simplicate\Model\OrganizationSize',
+        'industry' => \Paqtcom\Simplicate\Model\Industry::class,
+        'organizationsize' => \Paqtcom\Simplicate\Model\OrganizationSize::class,
         'invoice_receiver' => 'string',
         'allow_autocollect' => 'bool',
         'bank_account' => 'string',
@@ -249,22 +247,22 @@ class Organization implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['coc_code'] = isset($data['coc_code']) ? $data['coc_code'] : null;
-        $this->container['vat_number'] = isset($data['vat_number']) ? $data['vat_number'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
-        $this->container['linkedin_url'] = isset($data['linkedin_url']) ? $data['linkedin_url'] : null;
-        $this->container['has_different_postal_address'] = isset($data['has_different_postal_address']) ? $data['has_different_postal_address'] : null;
-        $this->container['industry'] = isset($data['industry']) ? $data['industry'] : null;
-        $this->container['organizationsize'] = isset($data['organizationsize']) ? $data['organizationsize'] : null;
-        $this->container['invoice_receiver'] = isset($data['invoice_receiver']) ? $data['invoice_receiver'] : null;
-        $this->container['allow_autocollect'] = isset($data['allow_autocollect']) ? $data['allow_autocollect'] : null;
-        $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
-        $this->container['bank_bic'] = isset($data['bank_bic']) ? $data['bank_bic'] : null;
-        $this->container['relation_number'] = isset($data['relation_number']) ? $data['relation_number'] : null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['coc_code'] = $data['coc_code'] ?? null;
+        $this->container['vat_number'] = $data['vat_number'] ?? null;
+        $this->container['email'] = $data['email'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['url'] = $data['url'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['linkedin_url'] = $data['linkedin_url'] ?? null;
+        $this->container['has_different_postal_address'] = $data['has_different_postal_address'] ?? null;
+        $this->container['industry'] = $data['industry'] ?? null;
+        $this->container['organizationsize'] = $data['organizationsize'] ?? null;
+        $this->container['invoice_receiver'] = $data['invoice_receiver'] ?? null;
+        $this->container['allow_autocollect'] = $data['allow_autocollect'] ?? null;
+        $this->container['bank_account'] = $data['bank_account'] ?? null;
+        $this->container['bank_bic'] = $data['bank_bic'] ?? null;
+        $this->container['relation_number'] = $data['relation_number'] ?? null;
     }
 
     /**
@@ -274,9 +272,7 @@ class Organization implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -697,7 +693,7 @@ class Organization implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -733,18 +729,16 @@ class Organization implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

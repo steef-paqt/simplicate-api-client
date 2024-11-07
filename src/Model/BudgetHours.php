@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BudgetHours implements ModelInterface, ArrayAccess
+class BudgetHours implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'BudgetHours';
 
     /**
@@ -189,10 +187,10 @@ class BudgetHours implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['amount_budget'] = isset($data['amount_budget']) ? $data['amount_budget'] : null;
-        $this->container['amount_spent'] = isset($data['amount_spent']) ? $data['amount_spent'] : null;
-        $this->container['value_budget'] = isset($data['value_budget']) ? $data['value_budget'] : null;
-        $this->container['value_spent'] = isset($data['value_spent']) ? $data['value_spent'] : null;
+        $this->container['amount_budget'] = $data['amount_budget'] ?? null;
+        $this->container['amount_spent'] = $data['amount_spent'] ?? null;
+        $this->container['value_budget'] = $data['value_budget'] ?? null;
+        $this->container['value_spent'] = $data['value_spent'] ?? null;
     }
 
     /**
@@ -202,9 +200,7 @@ class BudgetHours implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -337,7 +333,7 @@ class BudgetHours implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -373,18 +369,16 @@ class BudgetHours implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

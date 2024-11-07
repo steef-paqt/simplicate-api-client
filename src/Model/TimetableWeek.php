@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TimetableWeek implements ModelInterface, ArrayAccess
+class TimetableWeek implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'TimetableWeek';
 
     /**
@@ -58,13 +56,13 @@ class TimetableWeek implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $swaggerTypes = [
-        'day_1' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
-        'day_2' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
-        'day_3' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
-        'day_4' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
-        'day_5' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
-        'day_6' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
-        'day_7' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
+        'day_1' => \Paqtcom\Simplicate\Model\TimetableWeekDay::class,
+        'day_2' => \Paqtcom\Simplicate\Model\TimetableWeekDay::class,
+        'day_3' => \Paqtcom\Simplicate\Model\TimetableWeekDay::class,
+        'day_4' => \Paqtcom\Simplicate\Model\TimetableWeekDay::class,
+        'day_5' => \Paqtcom\Simplicate\Model\TimetableWeekDay::class,
+        'day_6' => \Paqtcom\Simplicate\Model\TimetableWeekDay::class,
+        'day_7' => \Paqtcom\Simplicate\Model\TimetableWeekDay::class,
     ];
 
     /**
@@ -204,13 +202,13 @@ class TimetableWeek implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['day_1'] = isset($data['day_1']) ? $data['day_1'] : null;
-        $this->container['day_2'] = isset($data['day_2']) ? $data['day_2'] : null;
-        $this->container['day_3'] = isset($data['day_3']) ? $data['day_3'] : null;
-        $this->container['day_4'] = isset($data['day_4']) ? $data['day_4'] : null;
-        $this->container['day_5'] = isset($data['day_5']) ? $data['day_5'] : null;
-        $this->container['day_6'] = isset($data['day_6']) ? $data['day_6'] : null;
-        $this->container['day_7'] = isset($data['day_7']) ? $data['day_7'] : null;
+        $this->container['day_1'] = $data['day_1'] ?? null;
+        $this->container['day_2'] = $data['day_2'] ?? null;
+        $this->container['day_3'] = $data['day_3'] ?? null;
+        $this->container['day_4'] = $data['day_4'] ?? null;
+        $this->container['day_5'] = $data['day_5'] ?? null;
+        $this->container['day_6'] = $data['day_6'] ?? null;
+        $this->container['day_7'] = $data['day_7'] ?? null;
     }
 
     /**
@@ -220,9 +218,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -427,7 +423,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -463,18 +459,16 @@ class TimetableWeek implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

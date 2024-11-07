@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PutQuoteEmail implements ModelInterface, ArrayAccess
+class PutQuoteEmail implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PutQuoteEmail';
 
     /**
@@ -199,12 +197,12 @@ class PutQuoteEmail implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
-        $this->container['body'] = isset($data['body']) ? $data['body'] : null;
-        $this->container['attachments'] = isset($data['attachments']) ? $data['attachments'] : null;
-        $this->container['to'] = isset($data['to']) ? $data['to'] : null;
-        $this->container['cc'] = isset($data['cc']) ? $data['cc'] : null;
-        $this->container['bcc'] = isset($data['bcc']) ? $data['bcc'] : null;
+        $this->container['subject'] = $data['subject'] ?? null;
+        $this->container['body'] = $data['body'] ?? null;
+        $this->container['attachments'] = $data['attachments'] ?? null;
+        $this->container['to'] = $data['to'] ?? null;
+        $this->container['cc'] = $data['cc'] ?? null;
+        $this->container['bcc'] = $data['bcc'] ?? null;
     }
 
     /**
@@ -214,9 +212,7 @@ class PutQuoteEmail implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -397,7 +393,7 @@ class PutQuoteEmail implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -433,18 +429,16 @@ class PutQuoteEmail implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostSharedItem implements ModelInterface, ArrayAccess
+class PostSharedItem implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PostSharedItem';
 
     /**
@@ -194,11 +192,11 @@ class PostSharedItem implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['employee_id'] = isset($data['employee_id']) ? $data['employee_id'] : null;
-        $this->container['shared'] = isset($data['shared']) ? $data['shared'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['tag'] = $data['tag'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['employee_id'] = $data['employee_id'] ?? null;
+        $this->container['shared'] = $data['shared'] ?? null;
+        $this->container['data'] = $data['data'] ?? null;
     }
 
     /**
@@ -208,9 +206,7 @@ class PostSharedItem implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -367,7 +363,7 @@ class PostSharedItem implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -403,18 +399,16 @@ class PostSharedItem implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

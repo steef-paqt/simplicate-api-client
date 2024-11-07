@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Rrule implements ModelInterface, ArrayAccess
+class Rrule implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'Rrule';
 
     /**
@@ -209,14 +207,14 @@ class Rrule implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['dtstart'] = isset($data['dtstart']) ? $data['dtstart'] : null;
-        $this->container['freq'] = isset($data['freq']) ? $data['freq'] : null;
-        $this->container['until'] = isset($data['until']) ? $data['until'] : null;
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['interval'] = isset($data['interval']) ? $data['interval'] : null;
-        $this->container['wkst'] = isset($data['wkst']) ? $data['wkst'] : null;
-        $this->container['byday'] = isset($data['byday']) ? $data['byday'] : null;
-        $this->container['bysetpos'] = isset($data['bysetpos']) ? $data['bysetpos'] : null;
+        $this->container['dtstart'] = $data['dtstart'] ?? null;
+        $this->container['freq'] = $data['freq'] ?? null;
+        $this->container['until'] = $data['until'] ?? null;
+        $this->container['count'] = $data['count'] ?? null;
+        $this->container['interval'] = $data['interval'] ?? null;
+        $this->container['wkst'] = $data['wkst'] ?? null;
+        $this->container['byday'] = $data['byday'] ?? null;
+        $this->container['bysetpos'] = $data['bysetpos'] ?? null;
     }
 
     /**
@@ -226,9 +224,7 @@ class Rrule implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -457,7 +453,7 @@ class Rrule implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -493,18 +489,16 @@ class Rrule implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

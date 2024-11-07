@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetHours implements ModelInterface, ArrayAccess
+class GetHours implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetHours';
 
     /**
@@ -59,11 +57,11 @@ class GetHours implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
-        'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
-        'projectservice' => '\Paqtcom\Simplicate\Model\GetHoursHoursProjectService',
+        'employee' => \Paqtcom\Simplicate\Model\GetEmployeeSimple::class,
+        'project' => \Paqtcom\Simplicate\Model\GetProjectSimple::class,
+        'projectservice' => \Paqtcom\Simplicate\Model\GetHoursHoursProjectService::class,
         'type' => 'object',
-        'approvalstatus' => '\Paqtcom\Simplicate\Model\GetApprovalStatus',
+        'approvalstatus' => \Paqtcom\Simplicate\Model\GetApprovalStatus::class,
         'invoice_status' => 'string',
         'invoice_id' => 'string',
         'invoiceline_id' => 'string',
@@ -72,14 +70,14 @@ class GetHours implements ModelInterface, ArrayAccess
         'created_at' => 'string',
         'updated_at' => 'string',
         'locked' => 'bool',
-        'is_editable' => '\Paqtcom\Simplicate\Model\IsSatisfied',
-        'is_deletable' => '\Paqtcom\Simplicate\Model\IsSatisfied',
-        'leave_status' => '\Paqtcom\Simplicate\Model\LeaveStatus',
+        'is_editable' => \Paqtcom\Simplicate\Model\IsSatisfied::class,
+        'is_deletable' => \Paqtcom\Simplicate\Model\IsSatisfied::class,
+        'leave_status' => \Paqtcom\Simplicate\Model\LeaveStatus::class,
         'leave_id' => 'string',
         'absence_id' => 'string',
         'status' => 'string',
-        'corrections' => '\Paqtcom\Simplicate\Model\Correction',
-        'mileage' => '\Paqtcom\Simplicate\Model\GetMileageSimple',
+        'corrections' => \Paqtcom\Simplicate\Model\Correction::class,
+        'mileage' => \Paqtcom\Simplicate\Model\GetMileageSimple::class,
         'is_productive' => 'bool',
         'hours' => 'float',
         'duration_in_minutes' => 'int',
@@ -87,11 +85,11 @@ class GetHours implements ModelInterface, ArrayAccess
         'end_date' => 'string',
         'is_time_defined' => 'bool',
         'is_recurring' => 'bool',
-        'recurrence' => '\Paqtcom\Simplicate\Model\Recurrence',
+        'recurrence' => \Paqtcom\Simplicate\Model\Recurrence::class,
         'is_external' => 'bool',
         'billable' => 'bool',
         'note' => 'string',
-        'address' => '\Paqtcom\Simplicate\Model\Address',
+        'address' => \Paqtcom\Simplicate\Model\Address::class,
         'assignment_id' => 'string',
         'should_sync_to_cronofy' => 'bool',
         'source' => 'string',
@@ -389,43 +387,43 @@ class GetHours implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['employee'] = isset($data['employee']) ? $data['employee'] : null;
-        $this->container['project'] = isset($data['project']) ? $data['project'] : null;
-        $this->container['projectservice'] = isset($data['projectservice']) ? $data['projectservice'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['approvalstatus'] = isset($data['approvalstatus']) ? $data['approvalstatus'] : null;
-        $this->container['invoice_status'] = isset($data['invoice_status']) ? $data['invoice_status'] : null;
-        $this->container['invoice_id'] = isset($data['invoice_id']) ? $data['invoice_id'] : null;
-        $this->container['invoiceline_id'] = isset($data['invoiceline_id']) ? $data['invoiceline_id'] : null;
-        $this->container['tariff'] = isset($data['tariff']) ? $data['tariff'] : null;
-        $this->container['custom_fields'] = isset($data['custom_fields']) ? $data['custom_fields'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['locked'] = isset($data['locked']) ? $data['locked'] : null;
-        $this->container['is_editable'] = isset($data['is_editable']) ? $data['is_editable'] : null;
-        $this->container['is_deletable'] = isset($data['is_deletable']) ? $data['is_deletable'] : null;
-        $this->container['leave_status'] = isset($data['leave_status']) ? $data['leave_status'] : null;
-        $this->container['leave_id'] = isset($data['leave_id']) ? $data['leave_id'] : null;
-        $this->container['absence_id'] = isset($data['absence_id']) ? $data['absence_id'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['corrections'] = isset($data['corrections']) ? $data['corrections'] : null;
-        $this->container['mileage'] = isset($data['mileage']) ? $data['mileage'] : null;
-        $this->container['is_productive'] = isset($data['is_productive']) ? $data['is_productive'] : null;
-        $this->container['hours'] = isset($data['hours']) ? $data['hours'] : null;
-        $this->container['duration_in_minutes'] = isset($data['duration_in_minutes']) ? $data['duration_in_minutes'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['is_time_defined'] = isset($data['is_time_defined']) ? $data['is_time_defined'] : null;
-        $this->container['is_recurring'] = isset($data['is_recurring']) ? $data['is_recurring'] : null;
-        $this->container['recurrence'] = isset($data['recurrence']) ? $data['recurrence'] : null;
-        $this->container['is_external'] = isset($data['is_external']) ? $data['is_external'] : null;
-        $this->container['billable'] = isset($data['billable']) ? $data['billable'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
-        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['assignment_id'] = isset($data['assignment_id']) ? $data['assignment_id'] : null;
-        $this->container['should_sync_to_cronofy'] = isset($data['should_sync_to_cronofy']) ? $data['should_sync_to_cronofy'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['employee'] = $data['employee'] ?? null;
+        $this->container['project'] = $data['project'] ?? null;
+        $this->container['projectservice'] = $data['projectservice'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['approvalstatus'] = $data['approvalstatus'] ?? null;
+        $this->container['invoice_status'] = $data['invoice_status'] ?? null;
+        $this->container['invoice_id'] = $data['invoice_id'] ?? null;
+        $this->container['invoiceline_id'] = $data['invoiceline_id'] ?? null;
+        $this->container['tariff'] = $data['tariff'] ?? null;
+        $this->container['custom_fields'] = $data['custom_fields'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['locked'] = $data['locked'] ?? null;
+        $this->container['is_editable'] = $data['is_editable'] ?? null;
+        $this->container['is_deletable'] = $data['is_deletable'] ?? null;
+        $this->container['leave_status'] = $data['leave_status'] ?? null;
+        $this->container['leave_id'] = $data['leave_id'] ?? null;
+        $this->container['absence_id'] = $data['absence_id'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['corrections'] = $data['corrections'] ?? null;
+        $this->container['mileage'] = $data['mileage'] ?? null;
+        $this->container['is_productive'] = $data['is_productive'] ?? null;
+        $this->container['hours'] = $data['hours'] ?? null;
+        $this->container['duration_in_minutes'] = $data['duration_in_minutes'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['is_time_defined'] = $data['is_time_defined'] ?? null;
+        $this->container['is_recurring'] = $data['is_recurring'] ?? null;
+        $this->container['recurrence'] = $data['recurrence'] ?? null;
+        $this->container['is_external'] = $data['is_external'] ?? null;
+        $this->container['billable'] = $data['billable'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['address'] = $data['address'] ?? null;
+        $this->container['assignment_id'] = $data['assignment_id'] ?? null;
+        $this->container['should_sync_to_cronofy'] = $data['should_sync_to_cronofy'] ?? null;
+        $this->container['source'] = $data['source'] ?? null;
     }
 
     /**
@@ -1396,7 +1394,7 @@ class GetHours implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -1432,18 +1430,16 @@ class GetHours implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

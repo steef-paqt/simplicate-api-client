@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DefaultTask implements ModelInterface, ArrayAccess
+class DefaultTask implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'DefaultTask';
 
     /**
@@ -204,13 +202,13 @@ class DefaultTask implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['can_change_destination'] = isset($data['can_change_destination']) ? $data['can_change_destination'] : null;
-        $this->container['will_send_email'] = isset($data['will_send_email']) ? $data['will_send_email'] : null;
-        $this->container['is_return_to_sender'] = isset($data['is_return_to_sender']) ? $data['is_return_to_sender'] : null;
-        $this->container['average_hours_cost'] = isset($data['average_hours_cost']) ? $data['average_hours_cost'] : null;
-        $this->container['can_be_transferred'] = isset($data['can_be_transferred']) ? $data['can_be_transferred'] : null;
+        $this->container['order'] = $data['order'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['can_change_destination'] = $data['can_change_destination'] ?? null;
+        $this->container['will_send_email'] = $data['will_send_email'] ?? null;
+        $this->container['is_return_to_sender'] = $data['is_return_to_sender'] ?? null;
+        $this->container['average_hours_cost'] = $data['average_hours_cost'] ?? null;
+        $this->container['can_be_transferred'] = $data['can_be_transferred'] ?? null;
     }
 
     /**
@@ -220,9 +218,7 @@ class DefaultTask implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -427,7 +423,7 @@ class DefaultTask implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -463,18 +459,16 @@ class DefaultTask implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

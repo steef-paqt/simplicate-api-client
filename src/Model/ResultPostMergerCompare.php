@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ResultPostMergerCompare implements ModelInterface, ArrayAccess
+class ResultPostMergerCompare implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'ResultPostMergerCompare';
 
     /**
@@ -199,12 +197,12 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['is_valid'] = isset($data['is_valid']) ? $data['is_valid'] : null;
-        $this->container['token'] = isset($data['token']) ? $data['token'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['swap_lock'] = isset($data['swap_lock']) ? $data['swap_lock'] : null;
-        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
-        $this->container['target_id'] = isset($data['target_id']) ? $data['target_id'] : null;
+        $this->container['is_valid'] = $data['is_valid'] ?? null;
+        $this->container['token'] = $data['token'] ?? null;
+        $this->container['message'] = $data['message'] ?? null;
+        $this->container['swap_lock'] = $data['swap_lock'] ?? null;
+        $this->container['source_id'] = $data['source_id'] ?? null;
+        $this->container['target_id'] = $data['target_id'] ?? null;
     }
 
     /**
@@ -214,9 +212,7 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -397,7 +393,7 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -433,18 +429,16 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

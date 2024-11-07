@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Accountancy implements ModelInterface, ArrayAccess
+class Accountancy implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'Accountancy';
 
     /**
@@ -229,11 +227,11 @@ class Accountancy implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['is_tax_unit_vat'] = isset($data['is_tax_unit_vat']) ? $data['is_tax_unit_vat'] : null;
-        $this->container['vat_number_fe'] = isset($data['vat_number_fe']) ? $data['vat_number_fe'] : null;
-        $this->container['tax_unit_vat_role'] = isset($data['tax_unit_vat_role']) ? $data['tax_unit_vat_role'] : null;
-        $this->container['is_tax_unit_vpb'] = isset($data['is_tax_unit_vpb']) ? $data['is_tax_unit_vpb'] : null;
-        $this->container['tax_unit_vpb_role'] = isset($data['tax_unit_vpb_role']) ? $data['tax_unit_vpb_role'] : null;
+        $this->container['is_tax_unit_vat'] = $data['is_tax_unit_vat'] ?? null;
+        $this->container['vat_number_fe'] = $data['vat_number_fe'] ?? null;
+        $this->container['tax_unit_vat_role'] = $data['tax_unit_vat_role'] ?? null;
+        $this->container['is_tax_unit_vpb'] = $data['is_tax_unit_vpb'] ?? null;
+        $this->container['tax_unit_vpb_role'] = $data['tax_unit_vpb_role'] ?? null;
     }
 
     /**
@@ -436,7 +434,7 @@ class Accountancy implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -472,18 +470,16 @@ class Accountancy implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

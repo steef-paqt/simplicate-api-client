@@ -236,15 +236,11 @@ class ObjectSerializer
 
     /**
      * Deserialize a JSON string into an object
-     *
      * @param mixed    $data          object or primitive to be deserialized
-     * @param string   $class         class name is passed as a string
-     * @param string[] $httpHeaders   HTTP headers
-     * @param string   $discriminator discriminator if polymorphism is used
-     *
-     * @return object|array|null an single or an array of $class instances
+     * @param string   $class class name is passed as a string
+     * @param null|string[] $httpHeaders   HTTP headers
      */
-    public static function deserialize($data, $class, $httpHeaders = null): object|array|null
+    public static function deserialize($data, string $class, array $httpHeaders = null): object|array|null|string
     {
         if (null === $data) {
             return null;

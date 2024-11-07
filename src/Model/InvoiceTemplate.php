@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InvoiceTemplate implements ModelInterface, ArrayAccess
+class InvoiceTemplate implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'InvoiceTemplate';
 
     /**
@@ -204,13 +202,13 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['hide_amount'] = isset($data['hide_amount']) ? $data['hide_amount'] : null;
-        $this->container['hide_price'] = isset($data['hide_price']) ? $data['hide_price'] : null;
-        $this->container['footer_normal'] = isset($data['footer_normal']) ? $data['footer_normal'] : null;
-        $this->container['footer_directdebit'] = isset($data['footer_directdebit']) ? $data['footer_directdebit'] : null;
-        $this->container['default_note'] = isset($data['default_note']) ? $data['default_note'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['hide_amount'] = $data['hide_amount'] ?? null;
+        $this->container['hide_price'] = $data['hide_price'] ?? null;
+        $this->container['footer_normal'] = $data['footer_normal'] ?? null;
+        $this->container['footer_directdebit'] = $data['footer_directdebit'] ?? null;
+        $this->container['default_note'] = $data['default_note'] ?? null;
     }
 
     /**
@@ -220,9 +218,7 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -427,7 +423,7 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -463,18 +459,16 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

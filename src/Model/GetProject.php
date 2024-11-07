@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetProject implements ModelInterface, ArrayAccess
+class GetProject implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetProject';
 
     /**
@@ -59,21 +57,21 @@ class GetProject implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'project_manager' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
-        'project_status' => '\Paqtcom\Simplicate\Model\ProjectStatus',
+        'project_manager' => \Paqtcom\Simplicate\Model\GetEmployeeSimple::class,
+        'project_status' => \Paqtcom\Simplicate\Model\ProjectStatus::class,
         'hours_rate_type' => 'string',
         'abnormal_address' => 'bool',
         'abnormal_person_id' => 'string',
         'abnormal_organization_id' => 'string',
-        'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
-        'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
-        'separate_invoice_recipient' => '\Paqtcom\Simplicate\Model\GetSeparateInvoiceRecipient',
-        'contact' => '\Paqtcom\Simplicate\Model\GetContactSimple',
-        'my_organization_profile' => '\Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple',
-        'divergent_payment_term' => '\Paqtcom\Simplicate\Model\GetPaymentTerm',
+        'organization' => \Paqtcom\Simplicate\Model\GetOrganizationSimple::class,
+        'person' => \Paqtcom\Simplicate\Model\GetPersonSimple::class,
+        'separate_invoice_recipient' => \Paqtcom\Simplicate\Model\GetSeparateInvoiceRecipient::class,
+        'contact' => \Paqtcom\Simplicate\Model\GetContactSimple::class,
+        'my_organization_profile' => \Paqtcom\Simplicate\Model\GetMyOrganizationProfileSimple::class,
+        'divergent_payment_term' => \Paqtcom\Simplicate\Model\GetPaymentTerm::class,
         'employees' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple[]',
         'teams' => '\Paqtcom\Simplicate\Model\GetTeamSimple[]',
-        'budget' => '\Paqtcom\Simplicate\Model\Budget',
+        'budget' => \Paqtcom\Simplicate\Model\Budget::class,
         'abnormal_contact_id' => 'string',
         'custom_fields' => '\Paqtcom\Simplicate\Model\GetCustomField[]',
         'created_at' => 'string',
@@ -81,7 +79,7 @@ class GetProject implements ModelInterface, ArrayAccess
         'simplicate_url' => 'string',
         'is_reverse_billing' => 'bool',
         'is_invoice_approval' => 'bool',
-        'copied_from_project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
+        'copied_from_project' => \Paqtcom\Simplicate\Model\GetProjectSimple::class,
         'my_organization_profile_id' => 'string',
         'person_id' => 'string',
         'organization_id' => 'string',
@@ -349,42 +347,42 @@ class GetProject implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['project_manager'] = isset($data['project_manager']) ? $data['project_manager'] : null;
-        $this->container['project_status'] = isset($data['project_status']) ? $data['project_status'] : null;
-        $this->container['hours_rate_type'] = isset($data['hours_rate_type']) ? $data['hours_rate_type'] : null;
-        $this->container['abnormal_address'] = isset($data['abnormal_address']) ? $data['abnormal_address'] : null;
-        $this->container['abnormal_person_id'] = isset($data['abnormal_person_id']) ? $data['abnormal_person_id'] : null;
-        $this->container['abnormal_organization_id'] = isset($data['abnormal_organization_id']) ? $data['abnormal_organization_id'] : null;
-        $this->container['organization'] = isset($data['organization']) ? $data['organization'] : null;
-        $this->container['person'] = isset($data['person']) ? $data['person'] : null;
-        $this->container['separate_invoice_recipient'] = isset($data['separate_invoice_recipient']) ? $data['separate_invoice_recipient'] : null;
-        $this->container['contact'] = isset($data['contact']) ? $data['contact'] : null;
-        $this->container['my_organization_profile'] = isset($data['my_organization_profile']) ? $data['my_organization_profile'] : null;
-        $this->container['divergent_payment_term'] = isset($data['divergent_payment_term']) ? $data['divergent_payment_term'] : null;
-        $this->container['employees'] = isset($data['employees']) ? $data['employees'] : null;
-        $this->container['teams'] = isset($data['teams']) ? $data['teams'] : null;
-        $this->container['budget'] = isset($data['budget']) ? $data['budget'] : null;
-        $this->container['abnormal_contact_id'] = isset($data['abnormal_contact_id']) ? $data['abnormal_contact_id'] : null;
-        $this->container['custom_fields'] = isset($data['custom_fields']) ? $data['custom_fields'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['simplicate_url'] = isset($data['simplicate_url']) ? $data['simplicate_url'] : null;
-        $this->container['is_reverse_billing'] = isset($data['is_reverse_billing']) ? $data['is_reverse_billing'] : null;
-        $this->container['is_invoice_approval'] = isset($data['is_invoice_approval']) ? $data['is_invoice_approval'] : null;
-        $this->container['copied_from_project'] = isset($data['copied_from_project']) ? $data['copied_from_project'] : null;
-        $this->container['my_organization_profile_id'] = isset($data['my_organization_profile_id']) ? $data['my_organization_profile_id'] : null;
-        $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
-        $this->container['organization_id'] = isset($data['organization_id']) ? $data['organization_id'] : null;
-        $this->container['contact_id'] = isset($data['contact_id']) ? $data['contact_id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['billable'] = isset($data['billable']) ? $data['billable'] : null;
-        $this->container['can_register_mileage'] = isset($data['can_register_mileage']) ? $data['can_register_mileage'] : null;
-        $this->container['project_number'] = isset($data['project_number']) ? $data['project_number'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['invoice_reference'] = isset($data['invoice_reference']) ? $data['invoice_reference'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['project_manager'] = $data['project_manager'] ?? null;
+        $this->container['project_status'] = $data['project_status'] ?? null;
+        $this->container['hours_rate_type'] = $data['hours_rate_type'] ?? null;
+        $this->container['abnormal_address'] = $data['abnormal_address'] ?? null;
+        $this->container['abnormal_person_id'] = $data['abnormal_person_id'] ?? null;
+        $this->container['abnormal_organization_id'] = $data['abnormal_organization_id'] ?? null;
+        $this->container['organization'] = $data['organization'] ?? null;
+        $this->container['person'] = $data['person'] ?? null;
+        $this->container['separate_invoice_recipient'] = $data['separate_invoice_recipient'] ?? null;
+        $this->container['contact'] = $data['contact'] ?? null;
+        $this->container['my_organization_profile'] = $data['my_organization_profile'] ?? null;
+        $this->container['divergent_payment_term'] = $data['divergent_payment_term'] ?? null;
+        $this->container['employees'] = $data['employees'] ?? null;
+        $this->container['teams'] = $data['teams'] ?? null;
+        $this->container['budget'] = $data['budget'] ?? null;
+        $this->container['abnormal_contact_id'] = $data['abnormal_contact_id'] ?? null;
+        $this->container['custom_fields'] = $data['custom_fields'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['simplicate_url'] = $data['simplicate_url'] ?? null;
+        $this->container['is_reverse_billing'] = $data['is_reverse_billing'] ?? null;
+        $this->container['is_invoice_approval'] = $data['is_invoice_approval'] ?? null;
+        $this->container['copied_from_project'] = $data['copied_from_project'] ?? null;
+        $this->container['my_organization_profile_id'] = $data['my_organization_profile_id'] ?? null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['organization_id'] = $data['organization_id'] ?? null;
+        $this->container['contact_id'] = $data['contact_id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['billable'] = $data['billable'] ?? null;
+        $this->container['can_register_mileage'] = $data['can_register_mileage'] ?? null;
+        $this->container['project_number'] = $data['project_number'] ?? null;
+        $this->container['note'] = $data['note'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
+        $this->container['invoice_reference'] = $data['invoice_reference'] ?? null;
     }
 
     /**
@@ -394,9 +392,7 @@ class GetProject implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -1297,7 +1293,7 @@ class GetProject implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -1333,18 +1329,16 @@ class GetProject implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

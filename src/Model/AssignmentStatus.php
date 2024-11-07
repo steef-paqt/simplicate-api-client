@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AssignmentStatus implements ModelInterface, ArrayAccess
+class AssignmentStatus implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'AssignmentStatus';
 
     /**
@@ -194,11 +192,11 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
-        $this->container['is_done'] = isset($data['is_done']) ? $data['is_done'] : null;
-        $this->container['is_blocked'] = isset($data['is_blocked']) ? $data['is_blocked'] : null;
-        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['color'] = $data['color'] ?? null;
+        $this->container['is_done'] = $data['is_done'] ?? null;
+        $this->container['is_blocked'] = $data['is_blocked'] ?? null;
+        $this->container['order'] = $data['order'] ?? null;
     }
 
     /**
@@ -208,9 +206,7 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -367,7 +363,7 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -403,18 +399,16 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class RestBatchValidationError implements ModelInterface, ArrayAccess
+class RestBatchValidationError implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'RestBatchValidationError';
 
     /**
@@ -58,7 +56,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $swaggerTypes = [
-        'error' => '\Paqtcom\Simplicate\Model\RestError',
+        'error' => \Paqtcom\Simplicate\Model\RestError::class,
         'submitted_data' => 'object',
     ];
 
@@ -179,8 +177,8 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
-        $this->container['submitted_data'] = isset($data['submitted_data']) ? $data['submitted_data'] : null;
+        $this->container['error'] = $data['error'] ?? null;
+        $this->container['submitted_data'] = $data['submitted_data'] ?? null;
     }
 
     /**
@@ -190,9 +188,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -277,7 +273,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -313,18 +309,16 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

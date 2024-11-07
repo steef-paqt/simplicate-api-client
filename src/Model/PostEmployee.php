@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostEmployee implements ModelInterface, ArrayAccess
+class PostEmployee implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'PostEmployee';
 
     /**
@@ -59,8 +57,8 @@ class PostEmployee implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'person_id' => 'string',
-        'supervisor' => '\Paqtcom\Simplicate\Model\PostEmployeeFk',
-        'status' => '\Paqtcom\Simplicate\Model\PostEmployeeStatusFk',
+        'supervisor' => \Paqtcom\Simplicate\Model\PostEmployeeFk::class,
+        'status' => \Paqtcom\Simplicate\Model\PostEmployeeStatusFk::class,
         'custom_fields' => '\Paqtcom\Simplicate\Model\PostCustomFieldValue[]',
     ];
 
@@ -189,10 +187,10 @@ class PostEmployee implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_id'] = isset($data['person_id']) ? $data['person_id'] : null;
-        $this->container['supervisor'] = isset($data['supervisor']) ? $data['supervisor'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['custom_fields'] = isset($data['custom_fields']) ? $data['custom_fields'] : null;
+        $this->container['person_id'] = $data['person_id'] ?? null;
+        $this->container['supervisor'] = $data['supervisor'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['custom_fields'] = $data['custom_fields'] ?? null;
     }
 
     /**
@@ -202,9 +200,7 @@ class PostEmployee implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -337,7 +333,7 @@ class PostEmployee implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -373,18 +369,16 @@ class PostEmployee implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

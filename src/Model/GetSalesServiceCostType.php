@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetSalesServiceCostType implements ModelInterface, ArrayAccess
+class GetSalesServiceCostType implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetSalesServiceCostType';
 
     /**
@@ -60,7 +58,7 @@ class GetSalesServiceCostType implements ModelInterface, ArrayAccess
     protected static array $swaggerTypes = [
         'label' => 'string',
         'id' => 'string',
-        'costtype' => '\Paqtcom\Simplicate\Model\GetPurchaseType',
+        'costtype' => \Paqtcom\Simplicate\Model\GetPurchaseType::class,
         'budgeted_amount' => 'float',
         'tariff' => 'float',
         'purchase_margin' => 'float',
@@ -204,13 +202,13 @@ class GetSalesServiceCostType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['costtype'] = isset($data['costtype']) ? $data['costtype'] : null;
-        $this->container['budgeted_amount'] = isset($data['budgeted_amount']) ? $data['budgeted_amount'] : null;
-        $this->container['tariff'] = isset($data['tariff']) ? $data['tariff'] : null;
-        $this->container['purchase_margin'] = isset($data['purchase_margin']) ? $data['purchase_margin'] : null;
-        $this->container['purchase_tariff'] = isset($data['purchase_tariff']) ? $data['purchase_tariff'] : null;
+        $this->container['label'] = $data['label'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['costtype'] = $data['costtype'] ?? null;
+        $this->container['budgeted_amount'] = $data['budgeted_amount'] ?? null;
+        $this->container['tariff'] = $data['tariff'] ?? null;
+        $this->container['purchase_margin'] = $data['purchase_margin'] ?? null;
+        $this->container['purchase_tariff'] = $data['purchase_tariff'] ?? null;
     }
 
     /**
@@ -220,9 +218,7 @@ class GetSalesServiceCostType implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -427,7 +423,7 @@ class GetSalesServiceCostType implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -463,18 +459,16 @@ class GetSalesServiceCostType implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

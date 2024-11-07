@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class RecentSalesQuote implements ModelInterface, ArrayAccess
+class RecentSalesQuote implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'RecentSalesQuote';
 
     /**
@@ -59,7 +57,7 @@ class RecentSalesQuote implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'quote_number' => 'string',
-        'status' => '\Paqtcom\Simplicate\Model\RecentSalesQuoteStatus',
+        'status' => \Paqtcom\Simplicate\Model\RecentSalesQuoteStatus::class,
     ];
 
     /**
@@ -179,8 +177,8 @@ class RecentSalesQuote implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['quote_number'] = isset($data['quote_number']) ? $data['quote_number'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['quote_number'] = $data['quote_number'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
     }
 
     /**
@@ -190,9 +188,7 @@ class RecentSalesQuote implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -277,7 +273,7 @@ class RecentSalesQuote implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -313,18 +309,16 @@ class RecentSalesQuote implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

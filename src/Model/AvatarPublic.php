@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AvatarPublic implements ModelInterface, ArrayAccess
+class AvatarPublic implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'AvatarPublic';
 
     /**
@@ -194,11 +192,11 @@ class AvatarPublic implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
-        $this->container['url_small'] = isset($data['url_small']) ? $data['url_small'] : null;
-        $this->container['url_large'] = isset($data['url_large']) ? $data['url_large'] : null;
-        $this->container['initials'] = isset($data['initials']) ? $data['initials'] : null;
-        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
+        $this->container['full_name'] = $data['full_name'] ?? null;
+        $this->container['url_small'] = $data['url_small'] ?? null;
+        $this->container['url_large'] = $data['url_large'] ?? null;
+        $this->container['initials'] = $data['initials'] ?? null;
+        $this->container['color'] = $data['color'] ?? null;
     }
 
     /**
@@ -208,9 +206,7 @@ class AvatarPublic implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -367,7 +363,7 @@ class AvatarPublic implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -403,18 +399,16 @@ class AvatarPublic implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

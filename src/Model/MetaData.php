@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MetaData implements ModelInterface, ArrayAccess
+class MetaData implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'MetaData';
 
     /**
@@ -204,13 +202,13 @@ class MetaData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['total_count'] = isset($data['total_count']) ? $data['total_count'] : null;
-        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
-        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
-        $this->container['upper_limit'] = isset($data['upper_limit']) ? $data['upper_limit'] : null;
-        $this->container['nocleanup'] = isset($data['nocleanup']) ? $data['nocleanup'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['count'] = $data['count'] ?? null;
+        $this->container['total_count'] = $data['total_count'] ?? null;
+        $this->container['offset'] = $data['offset'] ?? null;
+        $this->container['limit'] = $data['limit'] ?? null;
+        $this->container['upper_limit'] = $data['upper_limit'] ?? null;
+        $this->container['nocleanup'] = $data['nocleanup'] ?? null;
+        $this->container['checksum'] = $data['checksum'] ?? null;
     }
 
     /**
@@ -220,9 +218,7 @@ class MetaData implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -427,7 +423,7 @@ class MetaData implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -463,18 +459,16 @@ class MetaData implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

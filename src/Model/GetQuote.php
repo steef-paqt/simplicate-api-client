@@ -41,15 +41,13 @@ use Paqtcom\Simplicate\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetQuote implements ModelInterface, ArrayAccess
+class GetQuote implements ModelInterface, ArrayAccess, \Stringable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     */
     protected static string $swaggerModelName = 'GetQuote';
 
     /**
@@ -59,11 +57,11 @@ class GetQuote implements ModelInterface, ArrayAccess
       */
     protected static array $swaggerTypes = [
         'id' => 'string',
-        'quotetemplate' => '\Paqtcom\Simplicate\Model\QuoteTemplate',
+        'quotetemplate' => \Paqtcom\Simplicate\Model\QuoteTemplate::class,
         'send_type' => 'string',
         'quote_number' => 'string',
         'quote_date' => 'string',
-        'quotestatus' => '\Paqtcom\Simplicate\Model\QuoteStatus',
+        'quotestatus' => \Paqtcom\Simplicate\Model\QuoteStatus::class,
         'json' => 'string',
         'services' => '\Paqtcom\Simplicate\Model\QuoteSalesService[]',
         'total_excl' => 'string',
@@ -327,34 +325,34 @@ class GetQuote implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['quotetemplate'] = isset($data['quotetemplate']) ? $data['quotetemplate'] : null;
-        $this->container['send_type'] = isset($data['send_type']) ? $data['send_type'] : null;
-        $this->container['quote_number'] = isset($data['quote_number']) ? $data['quote_number'] : null;
-        $this->container['quote_date'] = isset($data['quote_date']) ? $data['quote_date'] : null;
-        $this->container['quotestatus'] = isset($data['quotestatus']) ? $data['quotestatus'] : null;
-        $this->container['json'] = isset($data['json']) ? $data['json'] : null;
-        $this->container['services'] = isset($data['services']) ? $data['services'] : null;
-        $this->container['total_excl'] = isset($data['total_excl']) ? $data['total_excl'] : null;
-        $this->container['total_incl'] = isset($data['total_incl']) ? $data['total_incl'] : null;
-        $this->container['total_vat'] = isset($data['total_vat']) ? $data['total_vat'] : null;
-        $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
-        $this->container['grand_totals'] = isset($data['grand_totals']) ? $data['grand_totals'] : null;
-        $this->container['receivers'] = isset($data['receivers']) ? $data['receivers'] : null;
-        $this->container['valid_days'] = isset($data['valid_days']) ? $data['valid_days'] : null;
-        $this->container['payment_term'] = isset($data['payment_term']) ? $data['payment_term'] : null;
-        $this->container['download_url'] = isset($data['download_url']) ? $data['download_url'] : null;
-        $this->container['is_sepa_authorization'] = isset($data['is_sepa_authorization']) ? $data['is_sepa_authorization'] : null;
-        $this->container['is_outdated'] = isset($data['is_outdated']) ? $data['is_outdated'] : null;
-        $this->container['is_blocked'] = isset($data['is_blocked']) ? $data['is_blocked'] : null;
-        $this->container['created_by'] = isset($data['created_by']) ? $data['created_by'] : null;
-        $this->container['last_updated_approval_status'] = isset($data['last_updated_approval_status']) ? $data['last_updated_approval_status'] : null;
-        $this->container['sent_at'] = isset($data['sent_at']) ? $data['sent_at'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['sales_id'] = isset($data['sales_id']) ? $data['sales_id'] : null;
-        $this->container['quote_subject'] = isset($data['quote_subject']) ? $data['quote_subject'] : null;
-        $this->container['customer_reference'] = isset($data['customer_reference']) ? $data['customer_reference'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['quotetemplate'] = $data['quotetemplate'] ?? null;
+        $this->container['send_type'] = $data['send_type'] ?? null;
+        $this->container['quote_number'] = $data['quote_number'] ?? null;
+        $this->container['quote_date'] = $data['quote_date'] ?? null;
+        $this->container['quotestatus'] = $data['quotestatus'] ?? null;
+        $this->container['json'] = $data['json'] ?? null;
+        $this->container['services'] = $data['services'] ?? null;
+        $this->container['total_excl'] = $data['total_excl'] ?? null;
+        $this->container['total_incl'] = $data['total_incl'] ?? null;
+        $this->container['total_vat'] = $data['total_vat'] ?? null;
+        $this->container['vat'] = $data['vat'] ?? null;
+        $this->container['grand_totals'] = $data['grand_totals'] ?? null;
+        $this->container['receivers'] = $data['receivers'] ?? null;
+        $this->container['valid_days'] = $data['valid_days'] ?? null;
+        $this->container['payment_term'] = $data['payment_term'] ?? null;
+        $this->container['download_url'] = $data['download_url'] ?? null;
+        $this->container['is_sepa_authorization'] = $data['is_sepa_authorization'] ?? null;
+        $this->container['is_outdated'] = $data['is_outdated'] ?? null;
+        $this->container['is_blocked'] = $data['is_blocked'] ?? null;
+        $this->container['created_by'] = $data['created_by'] ?? null;
+        $this->container['last_updated_approval_status'] = $data['last_updated_approval_status'] ?? null;
+        $this->container['sent_at'] = $data['sent_at'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['sales_id'] = $data['sales_id'] ?? null;
+        $this->container['quote_subject'] = $data['quote_subject'] ?? null;
+        $this->container['customer_reference'] = $data['customer_reference'] ?? null;
     }
 
     /**
@@ -1092,7 +1090,7 @@ class GetQuote implements ModelInterface, ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -1128,18 +1126,16 @@ class GetQuote implements ModelInterface, ArrayAccess
 
     /**
      * Gets the string presentation of the object
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
+            return (string) json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
 
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return (string) json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
