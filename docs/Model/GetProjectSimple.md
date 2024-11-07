@@ -13,6 +13,6 @@
  **separate_invoice_recipient**   | **object**                                                                  |             | [optional]                                
  **has_register_mileage_enabled** | **bool**                                                                    |             | [optional]                                
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

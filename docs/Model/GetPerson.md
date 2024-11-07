@@ -41,6 +41,6 @@
  **mailing_list_email**                | **string**                                                                |             | [optional] 
  **mailing_lists**                     | [**\Swagger\Client\Model\PersonMailingList[]**](PersonMailingList.md)     |             | [optional] 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

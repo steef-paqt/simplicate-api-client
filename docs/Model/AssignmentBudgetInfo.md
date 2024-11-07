@@ -12,6 +12,6 @@
  **assignments_hours_corrections** | [**\Swagger\Client\Model\AssignmentBudgetInfoFuturePast**](AssignmentBudgetInfoFuturePast.md) |             | [optional]                                     
  **itemtypes_hours_corrections**   | [**\Swagger\Client\Model\AssignmentBudgetInfoFuturePast**](AssignmentBudgetInfoFuturePast.md) |             | [optional]                                     
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

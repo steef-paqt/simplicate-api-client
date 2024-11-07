@@ -13,6 +13,6 @@
  **spent_amount**       | **object** | Spent amount in given range. Returns float by default; if &#39;experimental&#39; header is sent, returns string using ISO 8601 duration format.                                                 | [optional]                           
  **hours_type**         | **string** |                                                                                                                                                                                                 | [optional]                           
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

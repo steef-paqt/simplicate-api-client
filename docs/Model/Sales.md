@@ -18,6 +18,6 @@
  **chance_to_score**            | **int**                                                           |             | [optional] 
  **lost_to_competitor**         | [**\Swagger\Client\Model\LostToCompetitor**](LostToCompetitor.md) |             | [optional] 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

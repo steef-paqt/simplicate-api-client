@@ -11,6 +11,6 @@
  **default_service_id** | **string** |                       | [optional] [default to 'defaultservice:abc123'] 
  **revenue_group_id**   | **string** |                       | [optional] [default to 'revenuegroup:abc123']   
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

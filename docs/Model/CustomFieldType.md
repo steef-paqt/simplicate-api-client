@@ -13,6 +13,6 @@
  **is_filterable_configurable**           | **bool**   |             | [optional] 
  **is_collective_mutatable_configurable** | **bool**   |             | [optional] 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 
