@@ -83,817 +83,817 @@ try {
 
 All URIs are relative to *http://localhost/api/v2*
 
-| Class             | Method                                                                                                                       | HTTP request                                              | Description                                                                                                     |
-|-------------------|------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| *CRMApi*          | [**crmContactpersonGet**](docs/Api/CRMApi.md#crmcontactpersonget)                                                            | **GET** /crm/contactperson                                | Fetches all contact persons                                                                                     |
-| *CRMApi*          | [**crmContactpersonIdDelete**](docs/Api/CRMApi.md#crmcontactpersoniddelete)                                                  | **DELETE** /crm/contactperson/{id}                        | Deletes the contact person for the given id                                                                     |
-| *CRMApi*          | [**crmContactpersonIdGet**](docs/Api/CRMApi.md#crmcontactpersonidget)                                                        | **GET** /crm/contactperson/{id}                           | Fetches a single contact person by id                                                                           |
-| *CRMApi*          | [**crmCountryGet**](docs/Api/CRMApi.md#crmcountryget)                                                                        | **GET** /crm/country                                      | Fetches all available countries                                                                                 |
-| *CRMApi*          | [**crmCountryIdGet**](docs/Api/CRMApi.md#crmcountryidget)                                                                    | **GET** /crm/country/{id}                                 | Fetches a single country by id                                                                                  |
-| *CRMApi*          | [**crmDebtorGet**](docs/Api/CRMApi.md#crmdebtorget)                                                                          | **GET** /crm/debtor                                       | Fetches all debtors available (organization and if business to consumer is enabled person also                  |
-| *CRMApi*          | [**crmDocumentGet**](docs/Api/CRMApi.md#crmdocumentget)                                                                      | **GET** /crm/document                                     | Fetches all available documents for CRM                                                                         |
-| *CRMApi*          | [**crmDocumentIdDelete**](docs/Api/CRMApi.md#crmdocumentiddelete)                                                            | **DELETE** /crm/document/{id}                             | Deletes the document with the given id                                                                          |
-| *CRMApi*          | [**crmDocumentIdGet**](docs/Api/CRMApi.md#crmdocumentidget)                                                                  | **GET** /crm/document/{id}                                | Fetches a single document for CRM by its id                                                                     |
-| *CRMApi*          | [**crmDocumentPost**](docs/Api/CRMApi.md#crmdocumentpost)                                                                    | **POST** /crm/document                                    | update a document                                                                                               |
-| *CRMApi*          | [**crmDocumentPut**](docs/Api/CRMApi.md#crmdocumentput)                                                                      | **PUT** /crm/document                                     | update a document                                                                                               |
-| *CRMApi*          | [**crmDocumenttypeGet**](docs/Api/CRMApi.md#crmdocumenttypeget)                                                              | **GET** /crm/documenttype                                 | Fetches all available document types for CRM                                                                    |
-| *CRMApi*          | [**crmDocumenttypeIdGet**](docs/Api/CRMApi.md#crmdocumenttypeidget)                                                          | **GET** /crm/documenttype/{id}                            | Fetches a single document type for CRM by its id                                                                |
-| *CRMApi*          | [**crmGenderGet**](docs/Api/CRMApi.md#crmgenderget)                                                                          | **GET** /crm/gender                                       | Fetches all available genders                                                                                   |
-| *CRMApi*          | [**crmGenderIdGet**](docs/Api/CRMApi.md#crmgenderidget)                                                                      | **GET** /crm/gender/{id}                                  | Fetches a single gender by id                                                                                   |
-| *CRMApi*          | [**crmIndustryGet**](docs/Api/CRMApi.md#crmindustryget)                                                                      | **GET** /crm/industry                                     | Fetches all industry types                                                                                      |
-| *CRMApi*          | [**crmIndustryIdGet**](docs/Api/CRMApi.md#crmindustryidget)                                                                  | **GET** /crm/industry/{id}                                | Fetches a industry type by id                                                                                   |
-| *CRMApi*          | [**crmInterestsGet**](docs/Api/CRMApi.md#crminterestsget)                                                                    | **GET** /crm/interests                                    | Fetches all interests available                                                                                 |
-| *CRMApi*          | [**crmInterestsIdGet**](docs/Api/CRMApi.md#crminterestsidget)                                                                | **GET** /crm/interests/{id}                               | Fetches a single interest by id                                                                                 |
-| *CRMApi*          | [**crmMyorganizationprofileGet**](docs/Api/CRMApi.md#crmmyorganizationprofileget)                                            | **GET** /crm/myorganizationprofile                        | Fetches all my organization profiles                                                                            |
-| *CRMApi*          | [**crmMyorganizationprofileIdGet**](docs/Api/CRMApi.md#crmmyorganizationprofileidget)                                        | **GET** /crm/myorganizationprofile/{id}                   | Fetches a single my organization profile by id                                                                  |
-| *CRMApi*          | [**crmOrganizationGet**](docs/Api/CRMApi.md#crmorganizationget)                                                              | **GET** /crm/organization                                 | Fetches all organizations                                                                                       |
-| *CRMApi*          | [**crmOrganizationIdDelete**](docs/Api/CRMApi.md#crmorganizationiddelete)                                                    | **DELETE** /crm/organization/{id}                         | Deletes the organization for the given id                                                                       |
-| *CRMApi*          | [**crmOrganizationIdGet**](docs/Api/CRMApi.md#crmorganizationidget)                                                          | **GET** /crm/organization/{id}                            | Fetches a single organization by id                                                                             |
-| *CRMApi*          | [**crmOrganizationIdPut**](docs/Api/CRMApi.md#crmorganizationidput)                                                          | **PUT** /crm/organization/{id}                            | Updates an organization for the given id                                                                        |
-| *CRMApi*          | [**crmOrganizationPost**](docs/Api/CRMApi.md#crmorganizationpost)                                                            | **POST** /crm/organization                                | Add a new organization                                                                                          |
-| *CRMApi*          | [**crmOrganizationcustomfieldgroupsGet**](docs/Api/CRMApi.md#crmorganizationcustomfieldgroupsget)                            | **GET** /crm/organizationcustomfieldgroups                | Fetches all custom field groups available for organizations                                                     |
-| *CRMApi*          | [**crmOrganizationcustomfieldgroupsIdGet**](docs/Api/CRMApi.md#crmorganizationcustomfieldgroupsidget)                        | **GET** /crm/organizationcustomfieldgroups/{id}           | Fetches a single custom field group available for organization                                                  |
-| *CRMApi*          | [**crmOrganizationcustomfieldsGet**](docs/Api/CRMApi.md#crmorganizationcustomfieldsget)                                      | **GET** /crm/organizationcustomfields                     | Fetches all custom fields available for organizations                                                           |
-| *CRMApi*          | [**crmOrganizationcustomfieldsIdGet**](docs/Api/CRMApi.md#crmorganizationcustomfieldsidget)                                  | **GET** /crm/organizationcustomfields/{id}                | Fetches a single custom field available for organization                                                        |
-| *CRMApi*          | [**crmOrganizationsizeGet**](docs/Api/CRMApi.md#crmorganizationsizeget)                                                      | **GET** /crm/organizationsize                             | Fetches all available organization sizes                                                                        |
-| *CRMApi*          | [**crmOrganizationsizeIdGet**](docs/Api/CRMApi.md#crmorganizationsizeidget)                                                  | **GET** /crm/organizationsize/{id}                        | Fetches a single organization size by id                                                                        |
-| *CRMApi*          | [**crmPersonGet**](docs/Api/CRMApi.md#crmpersonget)                                                                          | **GET** /crm/person                                       | Fetches all persons                                                                                             |
-| *CRMApi*          | [**crmPersonIdDelete**](docs/Api/CRMApi.md#crmpersoniddelete)                                                                | **DELETE** /crm/person/{id}                               | Deletes the person for the given id                                                                             |
-| *CRMApi*          | [**crmPersonIdGet**](docs/Api/CRMApi.md#crmpersonidget)                                                                      | **GET** /crm/person/{id}                                  | Fetches a single person by id                                                                                   |
-| *CRMApi*          | [**crmPersonIdPut**](docs/Api/CRMApi.md#crmpersonidput)                                                                      | **PUT** /crm/person/{id}                                  | Updates a person for the given id                                                                               |
-| *CRMApi*          | [**crmPersonPost**](docs/Api/CRMApi.md#crmpersonpost)                                                                        | **POST** /crm/person                                      | Add a new person                                                                                                |
-| *CRMApi*          | [**crmPersoncustomfieldgroupsGet**](docs/Api/CRMApi.md#crmpersoncustomfieldgroupsget)                                        | **GET** /crm/personcustomfieldgroups                      | Fetches all custom field groups available for persons                                                           |
-| *CRMApi*          | [**crmPersoncustomfieldgroupsIdGet**](docs/Api/CRMApi.md#crmpersoncustomfieldgroupsidget)                                    | **GET** /crm/personcustomfieldgroups/{id}                 | Fetches a single custom field group available for person                                                        |
-| *CRMApi*          | [**crmPersoncustomfieldsGet**](docs/Api/CRMApi.md#crmpersoncustomfieldsget)                                                  | **GET** /crm/personcustomfields                           | Fetches all custom fields available for persons                                                                 |
-| *CRMApi*          | [**crmPersoncustomfieldsIdGet**](docs/Api/CRMApi.md#crmpersoncustomfieldsidget)                                              | **GET** /crm/personcustomfields/{id}                      | Fetches a single custom field available for person                                                              |
-| *CRMApi*          | [**crmRelationtypeGet**](docs/Api/CRMApi.md#crmrelationtypeget)                                                              | **GET** /crm/relationtype                                 | Fetches all relation types                                                                                      |
-| *CRMApi*          | [**crmRelationtypeIdGet**](docs/Api/CRMApi.md#crmrelationtypeidget)                                                          | **GET** /crm/relationtype/{id}                            | Fetches a single relation type by id                                                                            |
-| *CostsApi*        | [**costsCoststypeGet**](docs/Api/CostsApi.md#costscoststypeget)                                                              | **GET** /costs/coststype                                  | Fetches all cost types                                                                                          |
-| *CostsApi*        | [**costsCoststypeIdGet**](docs/Api/CostsApi.md#costscoststypeidget)                                                          | **GET** /costs/coststype/{id}                             | Fetches a single cost type by cost type id                                                                      |
-| *CostsApi*        | [**costsExpenseGet**](docs/Api/CostsApi.md#costsexpenseget)                                                                  | **GET** /costs/expense                                    | Fetches the expenses of employees                                                                               |
-| *CostsApi*        | [**costsExpenseIdGet**](docs/Api/CostsApi.md#costsexpenseidget)                                                              | **GET** /costs/expense/{id}                               | Fetches a single expense for an employee                                                                        |
-| *CustomFieldsApi* | [**customfieldsGroupGet**](docs/Api/CustomFieldsApi.md#customfieldsgroupget)                                                 | **GET** /customfields/group                               | Fetches all custom field groups                                                                                 |
-| *CustomFieldsApi* | [**customfieldsGroupIdDelete**](docs/Api/CustomFieldsApi.md#customfieldsgroupiddelete)                                       | **DELETE** /customfields/group/{id}                       | Deletes the customfield group for the given id                                                                  |
-| *CustomFieldsApi* | [**customfieldsGroupIdGet**](docs/Api/CustomFieldsApi.md#customfieldsgroupidget)                                             | **GET** /customfields/group/{id}                          | Fetches single custom field group                                                                               |
-| *CustomFieldsApi* | [**customfieldsGroupIdPost**](docs/Api/CustomFieldsApi.md#customfieldsgroupidpost)                                           | **POST** /customfields/group/{id}                         | Updates an group for the given id                                                                               |
-| *CustomFieldsApi* | [**customfieldsGroupIdPut**](docs/Api/CustomFieldsApi.md#customfieldsgroupidput)                                             | **PUT** /customfields/group/{id}                          | Updates an group for the given id                                                                               |
-| *CustomFieldsApi* | [**customfieldsModelGet**](docs/Api/CustomFieldsApi.md#customfieldsmodelget)                                                 | **GET** /customfields/model                               | Fetches all custom field models                                                                                 |
-| *CustomFieldsApi* | [**customfieldsModelIdGet**](docs/Api/CustomFieldsApi.md#customfieldsmodelidget)                                             | **GET** /customfields/model/{id}                          | Fetches all custom field models                                                                                 |
-| *CustomFieldsApi* | [**customfieldsOptionGet**](docs/Api/CustomFieldsApi.md#customfieldsoptionget)                                               | **GET** /customfields/option                              | Fetches all custom field options                                                                                |
-| *CustomFieldsApi* | [**customfieldsOptionIdDelete**](docs/Api/CustomFieldsApi.md#customfieldsoptioniddelete)                                     | **DELETE** /customfields/option/{id}                      | Deletes the customfield option for the given id                                                                 |
-| *CustomFieldsApi* | [**customfieldsOptionIdGet**](docs/Api/CustomFieldsApi.md#customfieldsoptionidget)                                           | **GET** /customfields/option/{id}                         | Fetches single custom field option                                                                              |
-| *CustomFieldsApi* | [**customfieldsOptionIdPost**](docs/Api/CustomFieldsApi.md#customfieldsoptionidpost)                                         | **POST** /customfields/option/{id}                        | Creates an option                                                                                               |
-| *CustomFieldsApi* | [**customfieldsOptionIdPut**](docs/Api/CustomFieldsApi.md#customfieldsoptionidput)                                           | **PUT** /customfields/option/{id}                         | Updates an option                                                                                               |
-| *CustomFieldsApi* | [**customfieldsTypeGet**](docs/Api/CustomFieldsApi.md#customfieldstypeget)                                                   | **GET** /customfields/type                                | Fetches all custom field types                                                                                  |
-| *CustomFieldsApi* | [**customfieldsTypeIdGet**](docs/Api/CustomFieldsApi.md#customfieldstypeidget)                                               | **GET** /customfields/type/{id}                           | Fetches single custom field type                                                                                |
-| *DocumentsApi*    | [**documentsDocumentGet**](docs/Api/DocumentsApi.md#documentsdocumentget)                                                    | **GET** /documents/document                               | Fetches all documents                                                                                           |
-| *DocumentsApi*    | [**documentsDocumentIdDelete**](docs/Api/DocumentsApi.md#documentsdocumentiddelete)                                          | **DELETE** /documents/document/{id}                       | Deletes the document with the given id                                                                          |
-| *DocumentsApi*    | [**documentsDocumentIdGet**](docs/Api/DocumentsApi.md#documentsdocumentidget)                                                | **GET** /documents/document/{id}                          | Fetches a single document by its id                                                                             |
-| *DocumentsApi*    | [**documentsDocumentPost**](docs/Api/DocumentsApi.md#documentsdocumentpost)                                                  | **POST** /documents/document                              | Add a new document                                                                                              |
-| *DocumentsApi*    | [**documentsDocumentPut**](docs/Api/DocumentsApi.md#documentsdocumentput)                                                    | **PUT** /documents/document                               | Add a new document                                                                                              |
-| *DocumentsApi*    | [**documentsDocumenttypeGet**](docs/Api/DocumentsApi.md#documentsdocumenttypeget)                                            | **GET** /documents/documenttype                           | Fetches all available document types                                                                            |
-| *DocumentsApi*    | [**documentsDocumenttypeIdGet**](docs/Api/DocumentsApi.md#documentsdocumenttypeidget)                                        | **GET** /documents/documenttype/{id}                      | Fetches a single document type by its id                                                                        |
-| *DocumentsApi*    | [**documentsDownloadIdGet**](docs/Api/DocumentsApi.md#documentsdownloadidget)                                                | **GET** /documents/download/{id}                          | Fetches a single file by document id                                                                            |
-| *HRMApi*          | [**hrmAbsenceGet**](docs/Api/HRMApi.md#hrmabsenceget)                                                                        | **GET** /hrm/absence                                      | Fetches all absence for employees                                                                               |
-| *HRMApi*          | [**hrmAbsenceIdDelete**](docs/Api/HRMApi.md#hrmabsenceiddelete)                                                              | **DELETE** /hrm/absence/{id}                              | Deletes the absence for the given id                                                                            |
-| *HRMApi*          | [**hrmAbsenceIdGet**](docs/Api/HRMApi.md#hrmabsenceidget)                                                                    | **GET** /hrm/absence/{id}                                 | Fetches a single absence by its id                                                                              |
-| *HRMApi*          | [**hrmAbsenceIdPut**](docs/Api/HRMApi.md#hrmabsenceidput)                                                                    | **PUT** /hrm/absence/{id}                                 | Updates an absence for the given id                                                                             |
-| *HRMApi*          | [**hrmAbsencePost**](docs/Api/HRMApi.md#hrmabsencepost)                                                                      | **POST** /hrm/absence                                     | Add a new absence entity                                                                                        |
-| *HRMApi*          | [**hrmAbsencetypeGet**](docs/Api/HRMApi.md#hrmabsencetypeget)                                                                | **GET** /hrm/absencetype                                  | Fetches all absence types                                                                                       |
-| *HRMApi*          | [**hrmAbsencetypeIdGet**](docs/Api/HRMApi.md#hrmabsencetypeidget)                                                            | **GET** /hrm/absencetype/{id}                             | Fetches a single absence type by absence type id                                                                |
-| *HRMApi*          | [**hrmCivilstatusGet**](docs/Api/HRMApi.md#hrmcivilstatusget)                                                                | **GET** /hrm/civilstatus                                  | Fetches all available civil statuses                                                                            |
-| *HRMApi*          | [**hrmCivilstatusIdGet**](docs/Api/HRMApi.md#hrmcivilstatusidget)                                                            | **GET** /hrm/civilstatus/{id}                             | Fetches a single contract type by id                                                                            |
-| *HRMApi*          | [**hrmContractGet**](docs/Api/HRMApi.md#hrmcontractget)                                                                      | **GET** /hrm/contract                                     | Fetches all contracts                                                                                           |
-| *HRMApi*          | [**hrmContractIdGet**](docs/Api/HRMApi.md#hrmcontractidget)                                                                  | **GET** /hrm/contract/{id}                                | Fetches a single contract by id                                                                                 |
-| *HRMApi*          | [**hrmContracttypeGet**](docs/Api/HRMApi.md#hrmcontracttypeget)                                                              | **GET** /hrm/contracttype                                 | Fetches all available contract types                                                                            |
-| *HRMApi*          | [**hrmContracttypeIdGet**](docs/Api/HRMApi.md#hrmcontracttypeidget)                                                          | **GET** /hrm/contracttype/{id}                            | Fetches a single contract type by id                                                                            |
-| *HRMApi*          | [**hrmDocumentGet**](docs/Api/HRMApi.md#hrmdocumentget)                                                                      | **GET** /hrm/document                                     | Fetches all available documents for HRM                                                                         |
-| *HRMApi*          | [**hrmDocumentIdDelete**](docs/Api/HRMApi.md#hrmdocumentiddelete)                                                            | **DELETE** /hrm/document/{id}                             | Deletes the document with the given id                                                                          |
-| *HRMApi*          | [**hrmDocumentIdGet**](docs/Api/HRMApi.md#hrmdocumentidget)                                                                  | **GET** /hrm/document/{id}                                | Fetches a single document for HRM by its id                                                                     |
-| *HRMApi*          | [**hrmDocumentPost**](docs/Api/HRMApi.md#hrmdocumentpost)                                                                    | **POST** /hrm/document                                    | create a document                                                                                               |
-| *HRMApi*          | [**hrmDocumentPut**](docs/Api/HRMApi.md#hrmdocumentput)                                                                      | **PUT** /hrm/document                                     | update a document                                                                                               |
-| *HRMApi*          | [**hrmDocumenttypeGet**](docs/Api/HRMApi.md#hrmdocumenttypeget)                                                              | **GET** /hrm/documenttype                                 | Fetches all available document types for HRM                                                                    |
-| *HRMApi*          | [**hrmDocumenttypeIdGet**](docs/Api/HRMApi.md#hrmdocumenttypeidget)                                                          | **GET** /hrm/documenttype/{id}                            | Fetches a single document type for HRM by its id                                                                |
-| *HRMApi*          | [**hrmEmployeeGet**](docs/Api/HRMApi.md#hrmemployeeget)                                                                      | **GET** /hrm/employee                                     | Fetches all employees                                                                                           |
-| *HRMApi*          | [**hrmEmployeeIdGet**](docs/Api/HRMApi.md#hrmemployeeidget)                                                                  | **GET** /hrm/employee/{id}                                | Fetches a single employee by id                                                                                 |
-| *HRMApi*          | [**hrmEmployeeIdPut**](docs/Api/HRMApi.md#hrmemployeeidput)                                                                  | **PUT** /hrm/employee/{id}                                | Updates an existing employee                                                                                    |
-| *HRMApi*          | [**hrmEmployeePost**](docs/Api/HRMApi.md#hrmemployeepost)                                                                    | **POST** /hrm/employee                                    | Add a new employee                                                                                              |
-| *HRMApi*          | [**hrmEmployeecustomfieldgroupsGet**](docs/Api/HRMApi.md#hrmemployeecustomfieldgroupsget)                                    | **GET** /hrm/employeecustomfieldgroups                    | Fetches all custom field groups available for employees                                                         |
-| *HRMApi*          | [**hrmEmployeecustomfieldgroupsIdGet**](docs/Api/HRMApi.md#hrmemployeecustomfieldgroupsidget)                                | **GET** /hrm/employeecustomfieldgroups/{id}               | Fetches a single custom field group available for employee                                                      |
-| *HRMApi*          | [**hrmEmployeecustomfieldsGet**](docs/Api/HRMApi.md#hrmemployeecustomfieldsget)                                              | **GET** /hrm/employeecustomfields                         | Fetches all custom fields available for employees                                                               |
-| *HRMApi*          | [**hrmEmployeecustomfieldsIdGet**](docs/Api/HRMApi.md#hrmemployeecustomfieldsidget)                                          | **GET** /hrm/employeecustomfields/{id}                    | Fetches a single custom field available for employee                                                            |
-| *HRMApi*          | [**hrmEmployeetypeGet**](docs/Api/HRMApi.md#hrmemployeetypeget)                                                              | **GET** /hrm/employeetype                                 | Fetches all available employee types                                                                            |
-| *HRMApi*          | [**hrmEmployeetypeIdGet**](docs/Api/HRMApi.md#hrmemployeetypeidget)                                                          | **GET** /hrm/employeetype/{id}                            | Fetches a single employee type by id                                                                            |
-| *HRMApi*          | [**hrmEmploymenttypeGet**](docs/Api/HRMApi.md#hrmemploymenttypeget)                                                          | **GET** /hrm/employmenttype                               | Fetches all available contract types                                                                            |
-| *HRMApi*          | [**hrmEmploymenttypeIdGet**](docs/Api/HRMApi.md#hrmemploymenttypeidget)                                                      | **GET** /hrm/employmenttype/{id}                          | Fetches a single contract type by id                                                                            |
-| *HRMApi*          | [**hrmLeaveGet**](docs/Api/HRMApi.md#hrmleaveget)                                                                            | **GET** /hrm/leave                                        | Fetches all leave for employees                                                                                 |
-| *HRMApi*          | [**hrmLeaveIdGet**](docs/Api/HRMApi.md#hrmleaveidget)                                                                        | **GET** /hrm/leave/{id}                                   | Fetches a single leave by its id                                                                                |
-| *HRMApi*          | [**hrmLeaveIdPut**](docs/Api/HRMApi.md#hrmleaveidput)                                                                        | **PUT** /hrm/leave/{id}                                   | Updates an leave for the given id                                                                               |
-| *HRMApi*          | [**hrmLeavePost**](docs/Api/HRMApi.md#hrmleavepost)                                                                          | **POST** /hrm/leave                                       | Add a new leave entity                                                                                          |
-| *HRMApi*          | [**hrmLeavebalanceGet**](docs/Api/HRMApi.md#hrmleavebalanceget)                                                              | **GET** /hrm/leavebalance                                 | Fetches all leave balances for employees                                                                        |
-| *HRMApi*          | [**hrmLeavetypeGet**](docs/Api/HRMApi.md#hrmleavetypeget)                                                                    | **GET** /hrm/leavetype                                    | Fetches all leave types                                                                                         |
-| *HRMApi*          | [**hrmLeavetypeIdGet**](docs/Api/HRMApi.md#hrmleavetypeidget)                                                                | **GET** /hrm/leavetype/{id}                               | Fetches a single leave type by leave type id                                                                    |
-| *HRMApi*          | [**hrmTeamGet**](docs/Api/HRMApi.md#hrmteamget)                                                                              | **GET** /hrm/team                                         | Fetches all teams                                                                                               |
-| *HRMApi*          | [**hrmTeamIdGet**](docs/Api/HRMApi.md#hrmteamidget)                                                                          | **GET** /hrm/team/{id}                                    | Fetches a single team by id                                                                                     |
-| *HRMApi*          | [**hrmTimetableGet**](docs/Api/HRMApi.md#hrmtimetableget)                                                                    | **GET** /hrm/timetable                                    | Fetches all available timetables                                                                                |
-| *HRMApi*          | [**hrmTimetableIdDelete**](docs/Api/HRMApi.md#hrmtimetableiddelete)                                                          | **DELETE** /hrm/timetable/{id}                            | Deletes the timetable with given id                                                                             |
-| *HRMApi*          | [**hrmTimetableIdPut**](docs/Api/HRMApi.md#hrmtimetableidput)                                                                | **PUT** /hrm/timetable/{id}                               | Updates an existing timetable                                                                                   |
-| *HRMApi*          | [**hrmTimetablePost**](docs/Api/HRMApi.md#hrmtimetablepost)                                                                  | **POST** /hrm/timetable                                   | Add a new timetable                                                                                             |
-| *HoursApi*        | [**hoursAbsenceIdPut**](docs/Api/HoursApi.md#hoursabsenceidput)                                                              | **PUT** /hours/absence/{id}                               | Updates an hour entity for absence for the given id                                                             |
-| *HoursApi*        | [**hoursAbsencePost**](docs/Api/HoursApi.md#hoursabsencepost)                                                                | **POST** /hours/absence                                   | Add a new hours entity for absence                                                                              |
-| *HoursApi*        | [**hoursApprovalGet**](docs/Api/HoursApi.md#hoursapprovalget)                                                                | **GET** /hours/approval                                   | Fetches the approval status of each day for each employee                                                       |
-| *HoursApi*        | [**hoursApprovalIdDelete**](docs/Api/HoursApi.md#hoursapprovaliddelete)                                                      | **DELETE** /hours/approval/{id}                           | Deletes the hours approval with the given approval id                                                           |
-| *HoursApi*        | [**hoursApprovalIdGet**](docs/Api/HoursApi.md#hoursapprovalidget)                                                            | **GET** /hours/approval/{id}                              | Fetches a single approval status for a day for an employee                                                      |
-| *HoursApi*        | [**hoursApprovalIdPut**](docs/Api/HoursApi.md#hoursapprovalidput)                                                            | **PUT** /hours/approval/{id}                              | Updates a hours approval for the given approval id                                                              |
-| *HoursApi*        | [**hoursApprovalPost**](docs/Api/HoursApi.md#hoursapprovalpost)                                                              | **POST** /hours/approval                                  | Add a new hours approval                                                                                        |
-| *HoursApi*        | [**hoursApprovalstatusGet**](docs/Api/HoursApi.md#hoursapprovalstatusget)                                                    | **GET** /hours/approvalstatus                             | Fetches all hour types                                                                                          |
-| *HoursApi*        | [**hoursApprovalstatusIdGet**](docs/Api/HoursApi.md#hoursapprovalstatusidget)                                                | **GET** /hours/approvalstatus/{id}                        | Fetches a single hour status by hour type id                                                                    |
-| *HoursApi*        | [**hoursEmployeeexpenseIdGet**](docs/Api/HoursApi.md#hoursemployeeexpenseidget)                                              | **GET** /hours/employeeexpense/{id}                       | Fetches a single expense for an employee                                                                        |
-| *HoursApi*        | [**hoursEmployeeexpensesGet**](docs/Api/HoursApi.md#hoursemployeeexpensesget)                                                | **GET** /hours/employeeexpenses                           | Fetches the expenses of employees                                                                               |
-| *HoursApi*        | [**hoursHoursGet**](docs/Api/HoursApi.md#hourshoursget)                                                                      | **GET** /hours/hours                                      | Fetches all hours                                                                                               |
-| *HoursApi*        | [**hoursHoursIdDelete**](docs/Api/HoursApi.md#hourshoursiddelete)                                                            | **DELETE** /hours/hours/{id}                              | Deletes the hours registration with the given hours id                                                          |
-| *HoursApi*        | [**hoursHoursIdGet**](docs/Api/HoursApi.md#hourshoursidget)                                                                  | **GET** /hours/hours/{id}                                 | Fetches a single hours by hours id                                                                              |
-| *HoursApi*        | [**hoursHoursIdPut**](docs/Api/HoursApi.md#hourshoursidput)                                                                  | **PUT** /hours/hours/{id}                                 | Updates a hours registration for the given hours id                                                             |
-| *HoursApi*        | [**hoursHoursPost**](docs/Api/HoursApi.md#hourshourspost)                                                                    | **POST** /hours/hours                                     | Add a new hours registration                                                                                    |
-| *HoursApi*        | [**hoursHourstypeGet**](docs/Api/HoursApi.md#hourshourstypeget)                                                              | **GET** /hours/hourstype                                  | Fetches all hour types                                                                                          |
-| *HoursApi*        | [**hoursHourstypeIdGet**](docs/Api/HoursApi.md#hourshourstypeidget)                                                          | **GET** /hours/hourstype/{id}                             | Fetches a single hour type by hour type id                                                                      |
-| *HoursApi*        | [**hoursHourstypeIdPut**](docs/Api/HoursApi.md#hourshourstypeidput)                                                          | **PUT** /hours/hourstype/{id}                             | Updates a hour type registration for the given hour type id                                                     |
-| *HoursApi*        | [**hoursHourstypePost**](docs/Api/HoursApi.md#hourshourstypepost)                                                            | **POST** /hours/hourstype                                 | Add a new hour type                                                                                             |
-| *HoursApi*        | [**hoursLeaveIdPut**](docs/Api/HoursApi.md#hoursleaveidput)                                                                  | **PUT** /hours/leave/{id}                                 | Updates an hour entity for leave for the given id                                                               |
-| *HoursApi*        | [**hoursLeavePost**](docs/Api/HoursApi.md#hoursleavepost)                                                                    | **POST** /hours/leave                                     | Add a new hours entity for leave                                                                                |
-| *HoursApi*        | [**hoursSubmissionGet**](docs/Api/HoursApi.md#hourssubmissionget)                                                            | **GET** /hours/submission                                 | Fetches hours submission status, by date, for an employee                                                       |
-| *HoursApi*        | [**hoursSubmissionPost**](docs/Api/HoursApi.md#hourssubmissionpost)                                                          | **POST** /hours/submission                                | Submit all the employee&#39;s hours between the start and end date.                                             |
-| *HoursApi*        | [**hoursSubmitPost**](docs/Api/HoursApi.md#hourssubmitpost)                                                                  | **POST** /hours/submit                                    | Submit hours for approval                                                                                       |
-| *HoursApi*        | [**hoursTimesheetrowGet**](docs/Api/HoursApi.md#hourstimesheetrowget)                                                        | **GET** /hours/timesheetrow                               | Fetches timesheet rows, by date, for an employee                                                                |
-| *HoursApi*        | [**hoursTimesheetrowIdDelete**](docs/Api/HoursApi.md#hourstimesheetrowiddelete)                                              | **DELETE** /hours/timesheetrow/{id}                       | Deletes the timesheet row with the supplied timesheetrow id                                                     |
-| *HoursApi*        | [**hoursTimesheetrowMostrecentGet**](docs/Api/HoursApi.md#hourstimesheetrowmostrecentget)                                    | **GET** /hours/timesheetrow/mostrecent                    | Find the most recent timesheet row                                                                              |
-| *HoursApi*        | [**hoursTimesheetrowOrderPut**](docs/Api/HoursApi.md#hourstimesheetroworderput)                                              | **PUT** /hours/timesheetrow/order                         | Change order for timesheetrows.                                                                                 |
-| *HoursApi*        | [**hoursTimesheetrowPost**](docs/Api/HoursApi.md#hourstimesheetrowpost)                                                      | **POST** /hours/timesheetrow                              | Submit a timesheet week row for the given employee.                                                             |
-| *HoursApi*        | [**timersTimerGet**](docs/Api/HoursApi.md#timerstimerget)                                                                    | **GET** /timers/timer                                     | Fetches all timers                                                                                              |
-| *HoursApi*        | [**timersTimerIdDelete**](docs/Api/HoursApi.md#timerstimeriddelete)                                                          | **DELETE** /timers/timer/{id}                             | Deletes the timer with the given timer id                                                                       |
-| *HoursApi*        | [**timersTimerIdGet**](docs/Api/HoursApi.md#timerstimeridget)                                                                | **GET** /timers/timer/{id}                                | Fetches a single timer by its id                                                                                |
-| *HoursApi*        | [**timersTimerIdPut**](docs/Api/HoursApi.md#timerstimeridput)                                                                | **PUT** /timers/timer/{id}                                | Updates a timer for the given timer id                                                                          |
-| *HoursApi*        | [**timersTimerPost**](docs/Api/HoursApi.md#timerstimerpost)                                                                  | **POST** /timers/timer                                    | Add a new timer                                                                                                 |
-| *InvoicesApi*     | [**invoicesDocumentGet**](docs/Api/InvoicesApi.md#invoicesdocumentget)                                                       | **GET** /invoices/document                                | Fetches all available documents for invoices                                                                    |
-| *InvoicesApi*     | [**invoicesDocumentIdDelete**](docs/Api/InvoicesApi.md#invoicesdocumentiddelete)                                             | **DELETE** /invoices/document/{id}                        | Deletes the document with the given id                                                                          |
-| *InvoicesApi*     | [**invoicesDocumentIdGet**](docs/Api/InvoicesApi.md#invoicesdocumentidget)                                                   | **GET** /invoices/document/{id}                           | Fetches a single document for invoices by its id                                                                |
-| *InvoicesApi*     | [**invoicesDocumentPost**](docs/Api/InvoicesApi.md#invoicesdocumentpost)                                                     | **POST** /invoices/document                               | create a document                                                                                               |
-| *InvoicesApi*     | [**invoicesDocumentPut**](docs/Api/InvoicesApi.md#invoicesdocumentput)                                                       | **PUT** /invoices/document                                | update a document                                                                                               |
-| *InvoicesApi*     | [**invoicesDocumenttypeGet**](docs/Api/InvoicesApi.md#invoicesdocumenttypeget)                                               | **GET** /invoices/documenttype                            | Fetches all available document types for Invoices                                                               |
-| *InvoicesApi*     | [**invoicesDocumenttypeIdGet**](docs/Api/InvoicesApi.md#invoicesdocumenttypeidget)                                           | **GET** /invoices/documenttype/{id}                       | Fetches a single document type for Invoices by its id                                                           |
-| *InvoicesApi*     | [**invoicesInvoiceGet**](docs/Api/InvoicesApi.md#invoicesinvoiceget)                                                         | **GET** /invoices/invoice                                 | Fetches all invoices                                                                                            |
-| *InvoicesApi*     | [**invoicesInvoiceIdDelete**](docs/Api/InvoicesApi.md#invoicesinvoiceiddelete)                                               | **DELETE** /invoices/invoice/{id}                         | Deletes the invoice for the given id                                                                            |
-| *InvoicesApi*     | [**invoicesInvoiceIdGet**](docs/Api/InvoicesApi.md#invoicesinvoiceidget)                                                     | **GET** /invoices/invoice/{id}                            | Fetches a single invoice by id                                                                                  |
-| *InvoicesApi*     | [**invoicesInvoiceIdPut**](docs/Api/InvoicesApi.md#invoicesinvoiceidput)                                                     | **PUT** /invoices/invoice/{id}                            | Updates a invoice for the given id                                                                              |
-| *InvoicesApi*     | [**invoicesInvoicePost**](docs/Api/InvoicesApi.md#invoicesinvoicepost)                                                       | **POST** /invoices/invoice                                | Add a new invoice                                                                                               |
-| *InvoicesApi*     | [**invoicesInvoicestatusGet**](docs/Api/InvoicesApi.md#invoicesinvoicestatusget)                                             | **GET** /invoices/invoicestatus                           | Fetches all invoice status                                                                                      |
-| *InvoicesApi*     | [**invoicesInvoicestatusIdGet**](docs/Api/InvoicesApi.md#invoicesinvoicestatusidget)                                         | **GET** /invoices/invoicestatus/{id}                      | Fetches a single invoice status by id                                                                           |
-| *InvoicesApi*     | [**invoicesPaymentGet**](docs/Api/InvoicesApi.md#invoicespaymentget)                                                         | **GET** /invoices/payment                                 | Fetches all payments                                                                                            |
-| *InvoicesApi*     | [**invoicesPaymentIdGet**](docs/Api/InvoicesApi.md#invoicespaymentidget)                                                     | **GET** /invoices/payment/{id}                            | Fetches a single payment by id                                                                                  |
-| *InvoicesApi*     | [**invoicesPaymentIdPut**](docs/Api/InvoicesApi.md#invoicespaymentidput)                                                     | **PUT** /invoices/payment/{id}                            | Updates a payment for the given id                                                                              |
-| *InvoicesApi*     | [**invoicesPaymentPost**](docs/Api/InvoicesApi.md#invoicespaymentpost)                                                       | **POST** /invoices/payment                                | Add a new payment                                                                                               |
-| *InvoicesApi*     | [**invoicesPaymenttermGet**](docs/Api/InvoicesApi.md#invoicespaymenttermget)                                                 | **GET** /invoices/paymentterm                             | Fetches all paymentterms                                                                                        |
-| *InvoicesApi*     | [**invoicesPaymenttermIdGet**](docs/Api/InvoicesApi.md#invoicespaymenttermidget)                                             | **GET** /invoices/paymentterm/{id}                        | Fetches a single payment term by id                                                                             |
-| *InvoicesApi*     | [**invoicesPropositionGet**](docs/Api/InvoicesApi.md#invoicespropositionget)                                                 | **GET** /invoices/proposition                             | Show all available propositions                                                                                 |
-| *InvoicesApi*     | [**invoicesRemindersetGet**](docs/Api/InvoicesApi.md#invoicesremindersetget)                                                 | **GET** /invoices/reminderset                             | Fetches all invoice reminder sets                                                                               |
-| *InvoicesApi*     | [**invoicesRemindersetIdGet**](docs/Api/InvoicesApi.md#invoicesremindersetidget)                                             | **GET** /invoices/reminderset/{id}                        | Fetches a single invoice reminder set by id                                                                     |
-| *InvoicesApi*     | [**invoicesRemindertemplateGet**](docs/Api/InvoicesApi.md#invoicesremindertemplateget)                                       | **GET** /invoices/remindertemplate                        | Fetches all invoice reminder templates                                                                          |
-| *InvoicesApi*     | [**invoicesRemindertemplateIdGet**](docs/Api/InvoicesApi.md#invoicesremindertemplateidget)                                   | **GET** /invoices/remindertemplate/{id}                   | Fetches a single invoice reminder template by id                                                                |
-| *InvoicesApi*     | [**invoicesVatclassGet**](docs/Api/InvoicesApi.md#invoicesvatclassget)                                                       | **GET** /invoices/vatclass                                | Fetches all to vat class                                                                                        |
-| *InvoicesApi*     | [**invoicesVatclassIdGet**](docs/Api/InvoicesApi.md#invoicesvatclassidget)                                                   | **GET** /invoices/vatclass/{id}                           | Fetches a single vat class by id                                                                                |
-| *MergerApi*       | [**crmMergeorganizationPost**](docs/Api/MergerApi.md#crmmergeorganizationpost)                                               | **POST** /crm/mergeorganization                           | Merge two organizations by a given source and target id                                                         |
-| *MergerApi*       | [**crmMergepersonPost**](docs/Api/MergerApi.md#crmmergepersonpost)                                                           | **POST** /crm/mergeperson                                 | Merge two people by a given source and target id                                                                |
-| *MergerApi*       | [**mergerCompareorganizationPost**](docs/Api/MergerApi.md#mergercompareorganizationpost)                                     | **POST** /merger/compareorganization                      | Compare two organizations by a given source and target id                                                       |
-| *MergerApi*       | [**mergerComparepersonPost**](docs/Api/MergerApi.md#mergercomparepersonpost)                                                 | **POST** /merger/compareperson                            | Compare two persons by a given source and target id                                                             |
-| *MileageApi*      | [**mileageMileageGet**](docs/Api/MileageApi.md#mileagemileageget)                                                            | **GET** /mileage/mileage                                  | Fetches all mileages                                                                                            |
-| *MileageApi*      | [**mileageMileageIdDelete**](docs/Api/MileageApi.md#mileagemileageiddelete)                                                  | **DELETE** /mileage/mileage/{id}                          | Deletes the mileage registration with the given mileage id                                                      |
-| *MileageApi*      | [**mileageMileageIdGet**](docs/Api/MileageApi.md#mileagemileageidget)                                                        | **GET** /mileage/mileage/{id}                             | Fetches a single mileage by mileage id                                                                          |
-| *MileageApi*      | [**mileageMileageIdPut**](docs/Api/MileageApi.md#mileagemileageidput)                                                        | **PUT** /mileage/mileage/{id}                             | Updates a mileage registration for the given mileage id                                                         |
-| *MileageApi*      | [**mileageMileagePost**](docs/Api/MileageApi.md#mileagemileagepost)                                                          | **POST** /mileage/mileage                                 | Add a new mileage registration                                                                                  |
-| *ProjectsApi*     | [**projectsAssignmentGet**](docs/Api/ProjectsApi.md#projectsassignmentget)                                                   | **GET** /projects/assignment                              | Fetches all available assignments for projects                                                                  |
-| *ProjectsApi*     | [**projectsAssignmentIdGet**](docs/Api/ProjectsApi.md#projectsassignmentidget)                                               | **GET** /projects/assignment/{id}                         | Fetches all a single assignment by its id                                                                       |
-| *ProjectsApi*     | [**projectsAssignmentIdPut**](docs/Api/ProjectsApi.md#projectsassignmentidput)                                               | **PUT** /projects/assignment/{id}                         | Updates a project assignment for the given id                                                                   |
-| *ProjectsApi*     | [**projectsAssignmentPost**](docs/Api/ProjectsApi.md#projectsassignmentpost)                                                 | **POST** /projects/assignment                             | Creates a new project assignment                                                                                |
-| *ProjectsApi*     | [**projectsAssignmentbudgetGet**](docs/Api/ProjectsApi.md#projectsassignmentbudgetget)                                       | **GET** /projects/assignmentbudget                        | Get budget information (planned amount, spent amount etc.) of assignment within given date range                |
-| *ProjectsApi*     | [**projectsAssignmentstatusGet**](docs/Api/ProjectsApi.md#projectsassignmentstatusget)                                       | **GET** /projects/assignmentstatus                        | Fetches all available assignment statuses for projects                                                          |
-| *ProjectsApi*     | [**projectsAssignmentstatusIdGet**](docs/Api/ProjectsApi.md#projectsassignmentstatusidget)                                   | **GET** /projects/assignmentstatus/{id}                   | Fetches a single assignment status by its id                                                                    |
-| *ProjectsApi*     | [**projectsAssignmentstatusIdPut**](docs/Api/ProjectsApi.md#projectsassignmentstatusidput)                                   | **PUT** /projects/assignmentstatus/{id}                   | Updates a project assignment status for the given id                                                            |
-| *ProjectsApi*     | [**projectsAssignmentstatusPost**](docs/Api/ProjectsApi.md#projectsassignmentstatuspost)                                     | **POST** /projects/assignmentstatus                       | Creates a new project assignment status                                                                         |
-| *ProjectsApi*     | [**projectsDocumentGet**](docs/Api/ProjectsApi.md#projectsdocumentget)                                                       | **GET** /projects/document                                | Fetches all available documents for projects                                                                    |
-| *ProjectsApi*     | [**projectsDocumentIdDelete**](docs/Api/ProjectsApi.md#projectsdocumentiddelete)                                             | **DELETE** /projects/document/{id}                        | Deletes the document with the given id                                                                          |
-| *ProjectsApi*     | [**projectsDocumentIdGet**](docs/Api/ProjectsApi.md#projectsdocumentidget)                                                   | **GET** /projects/document/{id}                           | Fetches a single document for projects by its id                                                                |
-| *ProjectsApi*     | [**projectsDocumentPost**](docs/Api/ProjectsApi.md#projectsdocumentpost)                                                     | **POST** /projects/document                               | create a document                                                                                               |
-| *ProjectsApi*     | [**projectsDocumentPut**](docs/Api/ProjectsApi.md#projectsdocumentput)                                                       | **PUT** /projects/document                                | update a document                                                                                               |
-| *ProjectsApi*     | [**projectsDocumenttypeGet**](docs/Api/ProjectsApi.md#projectsdocumenttypeget)                                               | **GET** /projects/documenttype                            | Fetches all available document types for Projects                                                               |
-| *ProjectsApi*     | [**projectsDocumenttypeIdGet**](docs/Api/ProjectsApi.md#projectsdocumenttypeidget)                                           | **GET** /projects/documenttype/{id}                       | Fetches a single document type for Projects by its id                                                           |
-| *ProjectsApi*     | [**projectsProjectGet**](docs/Api/ProjectsApi.md#projectsprojectget)                                                         | **GET** /projects/project                                 | Fetches all projects                                                                                            |
-| *ProjectsApi*     | [**projectsProjectIdDelete**](docs/Api/ProjectsApi.md#projectsprojectiddelete)                                               | **DELETE** /projects/project/{id}                         | Deletes the project with the given id                                                                           |
-| *ProjectsApi*     | [**projectsProjectIdGet**](docs/Api/ProjectsApi.md#projectsprojectidget)                                                     | **GET** /projects/project/{id}                            | Fetches a single project by id                                                                                  |
-| *ProjectsApi*     | [**projectsProjectIdPlanningBudgetGet**](docs/Api/ProjectsApi.md#projectsprojectidplanningbudgetget)                         | **GET** /projects/project/{id}/planningBudget             | Fetches the assignment budget info of a project                                                                 |
-| *ProjectsApi*     | [**projectsProjectIdPut**](docs/Api/ProjectsApi.md#projectsprojectidput)                                                     | **PUT** /projects/project/{id}                            | Updates a project for the given id                                                                              |
-| *ProjectsApi*     | [**projectsProjectPost**](docs/Api/ProjectsApi.md#projectsprojectpost)                                                       | **POST** /projects/project                                | Add a new project                                                                                               |
-| *ProjectsApi*     | [**projectsProjectcustomfieldgroupsGet**](docs/Api/ProjectsApi.md#projectsprojectcustomfieldgroupsget)                       | **GET** /projects/projectcustomfieldgroups                | Fetches all custom field groups available for projects                                                          |
-| *ProjectsApi*     | [**projectsProjectcustomfieldgroupsIdGet**](docs/Api/ProjectsApi.md#projectsprojectcustomfieldgroupsidget)                   | **GET** /projects/projectcustomfieldgroups/{id}           | Fetches a single custom field group available for project                                                       |
-| *ProjectsApi*     | [**projectsProjectcustomfieldsGet**](docs/Api/ProjectsApi.md#projectsprojectcustomfieldsget)                                 | **GET** /projects/projectcustomfields                     | Fetches all custom fields available for projects                                                                |
-| *ProjectsApi*     | [**projectsProjectcustomfieldsIdGet**](docs/Api/ProjectsApi.md#projectsprojectcustomfieldsidget)                             | **GET** /projects/projectcustomfields/{id}                | Fetches a single custom field available for projects                                                            |
-| *ProjectsApi*     | [**projectsProjectemployeePost**](docs/Api/ProjectsApi.md#projectsprojectemployeepost)                                       | **POST** projects/projectemployee                         | Add an employee to a project                                                                                    |
-| *ProjectsApi*     | [**projectsProjectemployeeProjectEmployeeIdDelete**](docs/Api/ProjectsApi.md#projectsprojectemployeeprojectemployeeiddelete) | **DELETE** projects/projectemployee/{project_employee_id} | Remove an employee from a project                                                                               |
-| *ProjectsApi*     | [**projectsProjectfiltersGet**](docs/Api/ProjectsApi.md#projectsprojectfiltersget)                                           | **GET** /projects/projectfilters                          | Fetches all filters available for projects                                                                      |
-| *ProjectsApi*     | [**projectsProjectfiltersIdGet**](docs/Api/ProjectsApi.md#projectsprojectfiltersidget)                                       | **GET** /projects/projectfilters/{id}                     | Fetches a single filter available for projects                                                                  |
-| *ProjectsApi*     | [**projectsProjectstatusGet**](docs/Api/ProjectsApi.md#projectsprojectstatusget)                                             | **GET** /projects/projectstatus                           | Fetches all projects statusses                                                                                  |
-| *ProjectsApi*     | [**projectsProjectstatusIdGet**](docs/Api/ProjectsApi.md#projectsprojectstatusidget)                                         | **GET** /projects/projectstatus/{id}                      | Fetches a single projects status by id                                                                          |
-| *ProjectsApi*     | [**projectsPurchaseGet**](docs/Api/ProjectsApi.md#projectspurchaseget)                                                       | **GET** /projects/purchase                                | Fetches all project purchase records                                                                            |
-| *ProjectsApi*     | [**projectsPurchaseIdGet**](docs/Api/ProjectsApi.md#projectspurchaseidget)                                                   | **GET** /projects/purchase/{id}                           | Fetches a single project purchase record                                                                        |
-| *ProjectsApi*     | [**projectsPurchasetypeGet**](docs/Api/ProjectsApi.md#projectspurchasetypeget)                                               | **GET** /projects/purchasetype                            | Fetches all purchase types                                                                                      |
-| *ProjectsApi*     | [**projectsPurchasetypeIdGet**](docs/Api/ProjectsApi.md#projectspurchasetypeidget)                                           | **GET** /projects/purchasetype/{id}                       | Fetches a single purchase type by id                                                                            |
-| *ProjectsApi*     | [**projectsReverseinvoiceGet**](docs/Api/ProjectsApi.md#projectsreverseinvoiceget)                                           | **GET** /projects/reverseinvoice                          | Fetches all reverse invoice records                                                                             |
-| *ProjectsApi*     | [**projectsReverseinvoiceIdGet**](docs/Api/ProjectsApi.md#projectsreverseinvoiceidget)                                       | **GET** /projects/reverseinvoice/{id}                     | Fetches a single project reverse invoice                                                                        |
-| *ProjectsApi*     | [**projectsServiceGet**](docs/Api/ProjectsApi.md#projectsserviceget)                                                         | **GET** /projects/service                                 | Fetches all services                                                                                            |
-| *ProjectsApi*     | [**projectsServiceIdDelete**](docs/Api/ProjectsApi.md#projectsserviceiddelete)                                               | **DELETE** /projects/service/{id}                         | Deletes the service with the given id                                                                           |
-| *ProjectsApi*     | [**projectsServiceIdDuplicatePost**](docs/Api/ProjectsApi.md#projectsserviceidduplicatepost)                                 | **POST** /projects/service/{id}/duplicate                 | Duplicates a service on base of the id                                                                          |
-| *ProjectsApi*     | [**projectsServiceIdGet**](docs/Api/ProjectsApi.md#projectsserviceidget)                                                     | **GET** /projects/service/{id}                            | Fetches a single service by id                                                                                  |
-| *ProjectsApi*     | [**projectsServiceIdPlanningBudgetGet**](docs/Api/ProjectsApi.md#projectsserviceidplanningbudgetget)                         | **GET** /projects/service/{id}/planningBudget             | Fetches the assignment budget info of a project service                                                         |
-| *ProjectsApi*     | [**projectsServiceIdPut**](docs/Api/ProjectsApi.md#projectsserviceidput)                                                     | **PUT** /projects/service/{id}                            | Updates a service for the given id                                                                              |
-| *ProjectsApi*     | [**projectsServicePost**](docs/Api/ProjectsApi.md#projectsservicepost)                                                       | **POST** /projects/service                                | Add a new service                                                                                               |
-| *SalesApi*        | [**salesConverttoprojectIdGet**](docs/Api/SalesApi.md#salesconverttoprojectidget)                                            | **GET** /sales/converttoproject/{id}                      | Shows if the provided sale id can be converted to a project                                                     |
-| *SalesApi*        | [**salesDocumentGet**](docs/Api/SalesApi.md#salesdocumentget)                                                                | **GET** /sales/document                                   | Fetches all available documents for sales                                                                       |
-| *SalesApi*        | [**salesDocumentIdDelete**](docs/Api/SalesApi.md#salesdocumentiddelete)                                                      | **DELETE** /sales/document/{id}                           | Deletes the document with the given id                                                                          |
-| *SalesApi*        | [**salesDocumentIdGet**](docs/Api/SalesApi.md#salesdocumentidget)                                                            | **GET** /sales/document/{id}                              | Fetches a single document for sales by its id                                                                   |
-| *SalesApi*        | [**salesDocumentPost**](docs/Api/SalesApi.md#salesdocumentpost)                                                              | **POST** /sales/document                                  | create a document                                                                                               |
-| *SalesApi*        | [**salesDocumentPut**](docs/Api/SalesApi.md#salesdocumentput)                                                                | **PUT** /sales/document                                   | update a document                                                                                               |
-| *SalesApi*        | [**salesDocumenttypeGet**](docs/Api/SalesApi.md#salesdocumenttypeget)                                                        | **GET** /sales/documenttype                               | Fetches all available document types for Sales                                                                  |
-| *SalesApi*        | [**salesDocumenttypeIdGet**](docs/Api/SalesApi.md#salesdocumenttypeidget)                                                    | **GET** /sales/documenttype/{id}                          | Fetches a single document type for Sales by its id                                                              |
-| *SalesApi*        | [**salesQuoteGet**](docs/Api/SalesApi.md#salesquoteget)                                                                      | **GET** /sales/quote                                      | Fetches all available quote templates for sales                                                                 |
-| *SalesApi*        | [**salesQuoteIdDelete**](docs/Api/SalesApi.md#salesquoteiddelete)                                                            | **DELETE** /sales/quote/{id}                              | Deletes the quote template with the given id                                                                    |
-| *SalesApi*        | [**salesQuoteIdGet**](docs/Api/SalesApi.md#salesquoteidget)                                                                  | **GET** /sales/quote/{id}                                 | Fetches a single quote template for sales by its id                                                             |
-| *SalesApi*        | [**salesQuoteIdPut**](docs/Api/SalesApi.md#salesquoteidput)                                                                  | **PUT** /sales/quote/{id}                                 | update a quote template                                                                                         |
-| *SalesApi*        | [**salesQuotePost**](docs/Api/SalesApi.md#salesquotepost)                                                                    | **POST** /sales/quote                                     | create a quote template                                                                                         |
-| *SalesApi*        | [**salesQuoteemailIdPut**](docs/Api/SalesApi.md#salesquoteemailidput)                                                        | **PUT** /sales/quoteemail/{id}                            | append only a single email to the emails collection quote                                                       |
-| *SalesApi*        | [**salesQuotestatusGet**](docs/Api/SalesApi.md#salesquotestatusget)                                                          | **GET** /sales/quotestatus                                | Fetches all quote statuses                                                                                      |
-| *SalesApi*        | [**salesQuotestatusIdGet**](docs/Api/SalesApi.md#salesquotestatusidget)                                                      | **GET** /sales/quotestatus/{id}                           | Fetches a single quote status for quotes by its id                                                              |
-| *SalesApi*        | [**salesQuotetemplateGet**](docs/Api/SalesApi.md#salesquotetemplateget)                                                      | **GET** /sales/quotetemplate                              | Fetches all available quote templates for sales                                                                 |
-| *SalesApi*        | [**salesQuotetemplateIdDelete**](docs/Api/SalesApi.md#salesquotetemplateiddelete)                                            | **DELETE** /sales/quotetemplate/{id}                      | Deletes the quote template with the given id                                                                    |
-| *SalesApi*        | [**salesQuotetemplateIdGet**](docs/Api/SalesApi.md#salesquotetemplateidget)                                                  | **GET** /sales/quotetemplate/{id}                         | Fetches a single quote template for sales by its id                                                             |
-| *SalesApi*        | [**salesQuotetemplateIdPut**](docs/Api/SalesApi.md#salesquotetemplateidput)                                                  | **PUT** /sales/quotetemplate/{id}                         | update a quote template                                                                                         |
-| *SalesApi*        | [**salesQuotetemplatePost**](docs/Api/SalesApi.md#salesquotetemplatepost)                                                    | **POST** /sales/quotetemplate                             | create a quote template                                                                                         |
-| *SalesApi*        | [**salesRevenuegroupGet**](docs/Api/SalesApi.md#salesrevenuegroupget)                                                        | **GET** /sales/revenuegroup                               | Fetches all revenue groups                                                                                      |
-| *SalesApi*        | [**salesRevenuegroupIdGet**](docs/Api/SalesApi.md#salesrevenuegroupidget)                                                    | **GET** /sales/revenuegroup/{id}                          | Fetches a single revenue group by id                                                                            |
-| *SalesApi*        | [**salesSalesGet**](docs/Api/SalesApi.md#salessalesget)                                                                      | **GET** /sales/sales                                      | Fetches all sales                                                                                               |
-| *SalesApi*        | [**salesSalesIdDuplicatePost**](docs/Api/SalesApi.md#salessalesidduplicatepost)                                              | **POST** /sales/sales/{id}/duplicate                      | Duplicates a sales deal on base of the id                                                                       |
-| *SalesApi*        | [**salesSalesIdGet**](docs/Api/SalesApi.md#salessalesidget)                                                                  | **GET** /sales/sales/{id}                                 | Fetches a single sales by id                                                                                    |
-| *SalesApi*        | [**salesSalesIdPut**](docs/Api/SalesApi.md#salessalesidput)                                                                  | **PUT** /sales/sales/{id}                                 | Updates a sales for the given id                                                                                |
-| *SalesApi*        | [**salesSalesPost**](docs/Api/SalesApi.md#salessalespost)                                                                    | **POST** /sales/sales                                     | Add a new sales                                                                                                 |
-| *SalesApi*        | [**salesSalescustomfieldgroupsGet**](docs/Api/SalesApi.md#salessalescustomfieldgroupsget)                                    | **GET** /sales/salescustomfieldgroups                     | Fetches all custom field groups available for sales                                                             |
-| *SalesApi*        | [**salesSalescustomfieldgroupsIdGet**](docs/Api/SalesApi.md#salessalescustomfieldgroupsidget)                                | **GET** /sales/salescustomfieldgroups/{id}                | Fetches a single custom field group available for project                                                       |
-| *SalesApi*        | [**salesSalescustomfieldsGet**](docs/Api/SalesApi.md#salessalescustomfieldsget)                                              | **GET** /sales/salescustomfields                          | Fetches all custom fields available for sales                                                                   |
-| *SalesApi*        | [**salesSalescustomfieldsIdGet**](docs/Api/SalesApi.md#salessalescustomfieldsidget)                                          | **GET** /sales/salescustomfields/{id}                     | Fetches a single custom field available for sales                                                               |
-| *SalesApi*        | [**salesSalesfiltersGet**](docs/Api/SalesApi.md#salessalesfiltersget)                                                        | **GET** /sales/salesfilters                               | Fetches all filters available for sales                                                                         |
-| *SalesApi*        | [**salesSalesfiltersIdGet**](docs/Api/SalesApi.md#salessalesfiltersidget)                                                    | **GET** /sales/salesfilters/{id}                          | Fetches a single filter available for sales                                                                     |
-| *SalesApi*        | [**salesSalesprogressGet**](docs/Api/SalesApi.md#salessalesprogressget)                                                      | **GET** /sales/salesprogress                              | Fetches all sales progresses                                                                                    |
-| *SalesApi*        | [**salesSalesprogressIdGet**](docs/Api/SalesApi.md#salessalesprogressidget)                                                  | **GET** /sales/salesprogress/{id}                         | Fetches a single sales progress by id                                                                           |
-| *SalesApi*        | [**salesSalesreasonGet**](docs/Api/SalesApi.md#salessalesreasonget)                                                          | **GET** /sales/salesreason                                | Fetches all sales reasons                                                                                       |
-| *SalesApi*        | [**salesSalesreasonIdGet**](docs/Api/SalesApi.md#salessalesreasonidget)                                                      | **GET** /sales/salesreason/{id}                           | Fetches a single sales reason by id                                                                             |
-| *SalesApi*        | [**salesSalessourceGet**](docs/Api/SalesApi.md#salessalessourceget)                                                          | **GET** /sales/salessource                                | Fetches all sales source                                                                                        |
-| *SalesApi*        | [**salesSalessourceIdGet**](docs/Api/SalesApi.md#salessalessourceidget)                                                      | **GET** /sales/salessource/{id}                           | Fetches a single sales source by id                                                                             |
-| *SalesApi*        | [**salesSalesstatusGet**](docs/Api/SalesApi.md#salessalesstatusget)                                                          | **GET** /sales/salesstatus                                | Fetches all sales statusses                                                                                     |
-| *SalesApi*        | [**salesSalesstatusIdGet**](docs/Api/SalesApi.md#salessalesstatusidget)                                                      | **GET** /sales/salesstatus/{id}                           | Fetches a single sales status by id                                                                             |
-| *SalesApi*        | [**salesServiceGet**](docs/Api/SalesApi.md#salesserviceget)                                                                  | **GET** /sales/service                                    | Fetches all services                                                                                            |
-| *SalesApi*        | [**salesServiceIdDelete**](docs/Api/SalesApi.md#salesserviceiddelete)                                                        | **DELETE** /sales/service/{id}                            | Deletes the service with the given id                                                                           |
-| *SalesApi*        | [**salesServiceIdDuplicatePost**](docs/Api/SalesApi.md#salesserviceidduplicatepost)                                          | **POST** /sales/service/{id}/duplicate                    | Duplicates a service on base of the id                                                                          |
-| *SalesApi*        | [**salesServiceIdGet**](docs/Api/SalesApi.md#salesserviceidget)                                                              | **GET** /sales/service/{id}                               | Fetches a single service by id                                                                                  |
-| *SalesApi*        | [**salesServiceIdPut**](docs/Api/SalesApi.md#salesserviceidput)                                                              | **PUT** /sales/service/{id}                               | Updates a service for the given id                                                                              |
-| *SalesApi*        | [**salesServicePost**](docs/Api/SalesApi.md#salesservicepost)                                                                | **POST** /sales/service                                   | Add a new service                                                                                               |
-| *ServicesApi*     | [**servicesDefaultserviceGet**](docs/Api/ServicesApi.md#servicesdefaultserviceget)                                           | **GET** /services/defaultservice                          | Fetches all default services                                                                                    |
-| *ServicesApi*     | [**servicesDefaultserviceIdDelete**](docs/Api/ServicesApi.md#servicesdefaultserviceiddelete)                                 | **DELETE** /services/defaultservice/{id}                  | Deletes the default service with the given id                                                                   |
-| *ServicesApi*     | [**servicesDefaultserviceIdGet**](docs/Api/ServicesApi.md#servicesdefaultserviceidget)                                       | **GET** /services/defaultservice/{id}                     | Fetches a single default service by id                                                                          |
-| *ServicesApi*     | [**servicesDefaultserviceIdPut**](docs/Api/ServicesApi.md#servicesdefaultserviceidput)                                       | **PUT** /services/defaultservice/{id}                     | Updates a default service for the given id                                                                      |
-| *ServicesApi*     | [**servicesDefaultservicePost**](docs/Api/ServicesApi.md#servicesdefaultservicepost)                                         | **POST** /services/defaultservice                         | Add a new default service                                                                                       |
-| *SharedApi*       | [**sharedItemGet**](docs/Api/SharedApi.md#shareditemget)                                                                     | **GET** /shared/item                                      | Fetches all shared items                                                                                        |
-| *SharedApi*       | [**sharedItemIdDelete**](docs/Api/SharedApi.md#shareditemiddelete)                                                           | **DELETE** /shared/item/{id}                              | Deletes the shared item with the given id                                                                       |
-| *SharedApi*       | [**sharedItemIdGet**](docs/Api/SharedApi.md#shareditemidget)                                                                 | **GET** /shared/item/{id}                                 | Fetches a single shared item  by id                                                                             |
-| *SharedApi*       | [**sharedItemIdPut**](docs/Api/SharedApi.md#shareditemidput)                                                                 | **PUT** /shared/item/{id}                                 | Updates an existing shared item                                                                                 |
-| *SharedApi*       | [**sharedItemPost**](docs/Api/SharedApi.md#shareditempost)                                                                   | **POST** /shared/item                                     | Add a new shared item                                                                                           |
-| *TimelineApi*     | [**timelineAttachmentIdDelete**](docs/Api/TimelineApi.md#timelineattachmentiddelete)                                         | **DELETE** /timeline/attachment/{id}                      | Deletes the timeline message attachment for the given id                                                        |
-| *TimelineApi*     | [**timelineAttachmentPost**](docs/Api/TimelineApi.md#timelineattachmentpost)                                                 | **POST** /timeline/attachment                             | Creates a new timeline message attachment - which is the link between /timeline/message and /documents/document |
-| *TimelineApi*     | [**timelineMessageGet**](docs/Api/TimelineApi.md#timelinemessageget)                                                         | **GET** /timeline/message                                 | Fetches all messages                                                                                            |
-| *TimelineApi*     | [**timelineMessageIdDelete**](docs/Api/TimelineApi.md#timelinemessageiddelete)                                               | **DELETE** /timeline/message/{id}                         | Deletes the timeline message for the given id                                                                   |
-| *TimelineApi*     | [**timelineMessageIdGet**](docs/Api/TimelineApi.md#timelinemessageidget)                                                     | **GET** /timeline/message/{id}                            | Fetches a single time line message by id                                                                        |
-| *TimelineApi*     | [**timelineMessagePost**](docs/Api/TimelineApi.md#timelinemessagepost)                                                       | **POST** /timeline/message                                | Add a new timeline message                                                                                      |
-| *TimelineApi*     | [**timelineMessagetypeGet**](docs/Api/TimelineApi.md#timelinemessagetypeget)                                                 | **GET** /timeline/messagetype                             | Fetches all message types                                                                                       |
-| *TimelineApi*     | [**timelineMessagetypeIdGet**](docs/Api/TimelineApi.md#timelinemessagetypeidget)                                             | **GET** /timeline/messagetype/{id}                        | Fetches a single timeline message type by id                                                                    |
-| *UploadApi*       | [**uploadChunkedIdPut**](docs/Api/UploadApi.md#uploadchunkedidput)                                                           | **PUT** /upload/chunked/{id}                              | Upload next chunk to specific chunked_upload                                                                    |
-| *UploadApi*       | [**uploadChunkedPost**](docs/Api/UploadApi.md#uploadchunkedpost)                                                             | **POST** /upload/chunked                                  | Create an upload record to upload a file                                                                        |
+| Class             | Method                                                                                                                  | HTTP request                                              | Description                                                                                                     |
+|-------------------|-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| *CRMApi*          | [**crmContactpersonGet**](Api/CRMApi.md#crmcontactpersonget)                                                            | **GET** /crm/contactperson                                | Fetches all contact persons                                                                                     |
+| *CRMApi*          | [**crmContactpersonIdDelete**](Api/CRMApi.md#crmcontactpersoniddelete)                                                  | **DELETE** /crm/contactperson/{id}                        | Deletes the contact person for the given id                                                                     |
+| *CRMApi*          | [**crmContactpersonIdGet**](Api/CRMApi.md#crmcontactpersonidget)                                                        | **GET** /crm/contactperson/{id}                           | Fetches a single contact person by id                                                                           |
+| *CRMApi*          | [**crmCountryGet**](Api/CRMApi.md#crmcountryget)                                                                        | **GET** /crm/country                                      | Fetches all available countries                                                                                 |
+| *CRMApi*          | [**crmCountryIdGet**](Api/CRMApi.md#crmcountryidget)                                                                    | **GET** /crm/country/{id}                                 | Fetches a single country by id                                                                                  |
+| *CRMApi*          | [**crmDebtorGet**](Api/CRMApi.md#crmdebtorget)                                                                          | **GET** /crm/debtor                                       | Fetches all debtors available (organization and if business to consumer is enabled person also                  |
+| *CRMApi*          | [**crmDocumentGet**](Api/CRMApi.md#crmdocumentget)                                                                      | **GET** /crm/document                                     | Fetches all available documents for CRM                                                                         |
+| *CRMApi*          | [**crmDocumentIdDelete**](Api/CRMApi.md#crmdocumentiddelete)                                                            | **DELETE** /crm/document/{id}                             | Deletes the document with the given id                                                                          |
+| *CRMApi*          | [**crmDocumentIdGet**](Api/CRMApi.md#crmdocumentidget)                                                                  | **GET** /crm/document/{id}                                | Fetches a single document for CRM by its id                                                                     |
+| *CRMApi*          | [**crmDocumentPost**](Api/CRMApi.md#crmdocumentpost)                                                                    | **POST** /crm/document                                    | update a document                                                                                               |
+| *CRMApi*          | [**crmDocumentPut**](Api/CRMApi.md#crmdocumentput)                                                                      | **PUT** /crm/document                                     | update a document                                                                                               |
+| *CRMApi*          | [**crmDocumenttypeGet**](Api/CRMApi.md#crmdocumenttypeget)                                                              | **GET** /crm/documenttype                                 | Fetches all available document types for CRM                                                                    |
+| *CRMApi*          | [**crmDocumenttypeIdGet**](Api/CRMApi.md#crmdocumenttypeidget)                                                          | **GET** /crm/documenttype/{id}                            | Fetches a single document type for CRM by its id                                                                |
+| *CRMApi*          | [**crmGenderGet**](Api/CRMApi.md#crmgenderget)                                                                          | **GET** /crm/gender                                       | Fetches all available genders                                                                                   |
+| *CRMApi*          | [**crmGenderIdGet**](Api/CRMApi.md#crmgenderidget)                                                                      | **GET** /crm/gender/{id}                                  | Fetches a single gender by id                                                                                   |
+| *CRMApi*          | [**crmIndustryGet**](Api/CRMApi.md#crmindustryget)                                                                      | **GET** /crm/industry                                     | Fetches all industry types                                                                                      |
+| *CRMApi*          | [**crmIndustryIdGet**](Api/CRMApi.md#crmindustryidget)                                                                  | **GET** /crm/industry/{id}                                | Fetches a industry type by id                                                                                   |
+| *CRMApi*          | [**crmInterestsGet**](Api/CRMApi.md#crminterestsget)                                                                    | **GET** /crm/interests                                    | Fetches all interests available                                                                                 |
+| *CRMApi*          | [**crmInterestsIdGet**](Api/CRMApi.md#crminterestsidget)                                                                | **GET** /crm/interests/{id}                               | Fetches a single interest by id                                                                                 |
+| *CRMApi*          | [**crmMyorganizationprofileGet**](Api/CRMApi.md#crmmyorganizationprofileget)                                            | **GET** /crm/myorganizationprofile                        | Fetches all my organization profiles                                                                            |
+| *CRMApi*          | [**crmMyorganizationprofileIdGet**](Api/CRMApi.md#crmmyorganizationprofileidget)                                        | **GET** /crm/myorganizationprofile/{id}                   | Fetches a single my organization profile by id                                                                  |
+| *CRMApi*          | [**crmOrganizationGet**](Api/CRMApi.md#crmorganizationget)                                                              | **GET** /crm/organization                                 | Fetches all organizations                                                                                       |
+| *CRMApi*          | [**crmOrganizationIdDelete**](Api/CRMApi.md#crmorganizationiddelete)                                                    | **DELETE** /crm/organization/{id}                         | Deletes the organization for the given id                                                                       |
+| *CRMApi*          | [**crmOrganizationIdGet**](Api/CRMApi.md#crmorganizationidget)                                                          | **GET** /crm/organization/{id}                            | Fetches a single organization by id                                                                             |
+| *CRMApi*          | [**crmOrganizationIdPut**](Api/CRMApi.md#crmorganizationidput)                                                          | **PUT** /crm/organization/{id}                            | Updates an organization for the given id                                                                        |
+| *CRMApi*          | [**crmOrganizationPost**](Api/CRMApi.md#crmorganizationpost)                                                            | **POST** /crm/organization                                | Add a new organization                                                                                          |
+| *CRMApi*          | [**crmOrganizationcustomfieldgroupsGet**](Api/CRMApi.md#crmorganizationcustomfieldgroupsget)                            | **GET** /crm/organizationcustomfieldgroups                | Fetches all custom field groups available for organizations                                                     |
+| *CRMApi*          | [**crmOrganizationcustomfieldgroupsIdGet**](Api/CRMApi.md#crmorganizationcustomfieldgroupsidget)                        | **GET** /crm/organizationcustomfieldgroups/{id}           | Fetches a single custom field group available for organization                                                  |
+| *CRMApi*          | [**crmOrganizationcustomfieldsGet**](Api/CRMApi.md#crmorganizationcustomfieldsget)                                      | **GET** /crm/organizationcustomfields                     | Fetches all custom fields available for organizations                                                           |
+| *CRMApi*          | [**crmOrganizationcustomfieldsIdGet**](Api/CRMApi.md#crmorganizationcustomfieldsidget)                                  | **GET** /crm/organizationcustomfields/{id}                | Fetches a single custom field available for organization                                                        |
+| *CRMApi*          | [**crmOrganizationsizeGet**](Api/CRMApi.md#crmorganizationsizeget)                                                      | **GET** /crm/organizationsize                             | Fetches all available organization sizes                                                                        |
+| *CRMApi*          | [**crmOrganizationsizeIdGet**](Api/CRMApi.md#crmorganizationsizeidget)                                                  | **GET** /crm/organizationsize/{id}                        | Fetches a single organization size by id                                                                        |
+| *CRMApi*          | [**crmPersonGet**](Api/CRMApi.md#crmpersonget)                                                                          | **GET** /crm/person                                       | Fetches all persons                                                                                             |
+| *CRMApi*          | [**crmPersonIdDelete**](Api/CRMApi.md#crmpersoniddelete)                                                                | **DELETE** /crm/person/{id}                               | Deletes the person for the given id                                                                             |
+| *CRMApi*          | [**crmPersonIdGet**](Api/CRMApi.md#crmpersonidget)                                                                      | **GET** /crm/person/{id}                                  | Fetches a single person by id                                                                                   |
+| *CRMApi*          | [**crmPersonIdPut**](Api/CRMApi.md#crmpersonidput)                                                                      | **PUT** /crm/person/{id}                                  | Updates a person for the given id                                                                               |
+| *CRMApi*          | [**crmPersonPost**](Api/CRMApi.md#crmpersonpost)                                                                        | **POST** /crm/person                                      | Add a new person                                                                                                |
+| *CRMApi*          | [**crmPersoncustomfieldgroupsGet**](Api/CRMApi.md#crmpersoncustomfieldgroupsget)                                        | **GET** /crm/personcustomfieldgroups                      | Fetches all custom field groups available for persons                                                           |
+| *CRMApi*          | [**crmPersoncustomfieldgroupsIdGet**](Api/CRMApi.md#crmpersoncustomfieldgroupsidget)                                    | **GET** /crm/personcustomfieldgroups/{id}                 | Fetches a single custom field group available for person                                                        |
+| *CRMApi*          | [**crmPersoncustomfieldsGet**](Api/CRMApi.md#crmpersoncustomfieldsget)                                                  | **GET** /crm/personcustomfields                           | Fetches all custom fields available for persons                                                                 |
+| *CRMApi*          | [**crmPersoncustomfieldsIdGet**](Api/CRMApi.md#crmpersoncustomfieldsidget)                                              | **GET** /crm/personcustomfields/{id}                      | Fetches a single custom field available for person                                                              |
+| *CRMApi*          | [**crmRelationtypeGet**](Api/CRMApi.md#crmrelationtypeget)                                                              | **GET** /crm/relationtype                                 | Fetches all relation types                                                                                      |
+| *CRMApi*          | [**crmRelationtypeIdGet**](Api/CRMApi.md#crmrelationtypeidget)                                                          | **GET** /crm/relationtype/{id}                            | Fetches a single relation type by id                                                                            |
+| *CostsApi*        | [**costsCoststypeGet**](Api/CostsApi.md#costscoststypeget)                                                              | **GET** /costs/coststype                                  | Fetches all cost types                                                                                          |
+| *CostsApi*        | [**costsCoststypeIdGet**](Api/CostsApi.md#costscoststypeidget)                                                          | **GET** /costs/coststype/{id}                             | Fetches a single cost type by cost type id                                                                      |
+| *CostsApi*        | [**costsExpenseGet**](Api/CostsApi.md#costsexpenseget)                                                                  | **GET** /costs/expense                                    | Fetches the expenses of employees                                                                               |
+| *CostsApi*        | [**costsExpenseIdGet**](Api/CostsApi.md#costsexpenseidget)                                                              | **GET** /costs/expense/{id}                               | Fetches a single expense for an employee                                                                        |
+| *CustomFieldsApi* | [**customfieldsGroupGet**](Api/CustomFieldsApi.md#customfieldsgroupget)                                                 | **GET** /customfields/group                               | Fetches all custom field groups                                                                                 |
+| *CustomFieldsApi* | [**customfieldsGroupIdDelete**](Api/CustomFieldsApi.md#customfieldsgroupiddelete)                                       | **DELETE** /customfields/group/{id}                       | Deletes the customfield group for the given id                                                                  |
+| *CustomFieldsApi* | [**customfieldsGroupIdGet**](Api/CustomFieldsApi.md#customfieldsgroupidget)                                             | **GET** /customfields/group/{id}                          | Fetches single custom field group                                                                               |
+| *CustomFieldsApi* | [**customfieldsGroupIdPost**](Api/CustomFieldsApi.md#customfieldsgroupidpost)                                           | **POST** /customfields/group/{id}                         | Updates an group for the given id                                                                               |
+| *CustomFieldsApi* | [**customfieldsGroupIdPut**](Api/CustomFieldsApi.md#customfieldsgroupidput)                                             | **PUT** /customfields/group/{id}                          | Updates an group for the given id                                                                               |
+| *CustomFieldsApi* | [**customfieldsModelGet**](Api/CustomFieldsApi.md#customfieldsmodelget)                                                 | **GET** /customfields/model                               | Fetches all custom field models                                                                                 |
+| *CustomFieldsApi* | [**customfieldsModelIdGet**](Api/CustomFieldsApi.md#customfieldsmodelidget)                                             | **GET** /customfields/model/{id}                          | Fetches all custom field models                                                                                 |
+| *CustomFieldsApi* | [**customfieldsOptionGet**](Api/CustomFieldsApi.md#customfieldsoptionget)                                               | **GET** /customfields/option                              | Fetches all custom field options                                                                                |
+| *CustomFieldsApi* | [**customfieldsOptionIdDelete**](Api/CustomFieldsApi.md#customfieldsoptioniddelete)                                     | **DELETE** /customfields/option/{id}                      | Deletes the customfield option for the given id                                                                 |
+| *CustomFieldsApi* | [**customfieldsOptionIdGet**](Api/CustomFieldsApi.md#customfieldsoptionidget)                                           | **GET** /customfields/option/{id}                         | Fetches single custom field option                                                                              |
+| *CustomFieldsApi* | [**customfieldsOptionIdPost**](Api/CustomFieldsApi.md#customfieldsoptionidpost)                                         | **POST** /customfields/option/{id}                        | Creates an option                                                                                               |
+| *CustomFieldsApi* | [**customfieldsOptionIdPut**](Api/CustomFieldsApi.md#customfieldsoptionidput)                                           | **PUT** /customfields/option/{id}                         | Updates an option                                                                                               |
+| *CustomFieldsApi* | [**customfieldsTypeGet**](Api/CustomFieldsApi.md#customfieldstypeget)                                                   | **GET** /customfields/type                                | Fetches all custom field types                                                                                  |
+| *CustomFieldsApi* | [**customfieldsTypeIdGet**](Api/CustomFieldsApi.md#customfieldstypeidget)                                               | **GET** /customfields/type/{id}                           | Fetches single custom field type                                                                                |
+| *DocumentsApi*    | [**documentsDocumentGet**](Api/DocumentsApi.md#documentsdocumentget)                                                    | **GET** /documents/document                               | Fetches all documents                                                                                           |
+| *DocumentsApi*    | [**documentsDocumentIdDelete**](Api/DocumentsApi.md#documentsdocumentiddelete)                                          | **DELETE** /documents/document/{id}                       | Deletes the document with the given id                                                                          |
+| *DocumentsApi*    | [**documentsDocumentIdGet**](Api/DocumentsApi.md#documentsdocumentidget)                                                | **GET** /documents/document/{id}                          | Fetches a single document by its id                                                                             |
+| *DocumentsApi*    | [**documentsDocumentPost**](Api/DocumentsApi.md#documentsdocumentpost)                                                  | **POST** /documents/document                              | Add a new document                                                                                              |
+| *DocumentsApi*    | [**documentsDocumentPut**](Api/DocumentsApi.md#documentsdocumentput)                                                    | **PUT** /documents/document                               | Add a new document                                                                                              |
+| *DocumentsApi*    | [**documentsDocumenttypeGet**](Api/DocumentsApi.md#documentsdocumenttypeget)                                            | **GET** /documents/documenttype                           | Fetches all available document types                                                                            |
+| *DocumentsApi*    | [**documentsDocumenttypeIdGet**](Api/DocumentsApi.md#documentsdocumenttypeidget)                                        | **GET** /documents/documenttype/{id}                      | Fetches a single document type by its id                                                                        |
+| *DocumentsApi*    | [**documentsDownloadIdGet**](Api/DocumentsApi.md#documentsdownloadidget)                                                | **GET** /documents/download/{id}                          | Fetches a single file by document id                                                                            |
+| *HRMApi*          | [**hrmAbsenceGet**](Api/HRMApi.md#hrmabsenceget)                                                                        | **GET** /hrm/absence                                      | Fetches all absence for employees                                                                               |
+| *HRMApi*          | [**hrmAbsenceIdDelete**](Api/HRMApi.md#hrmabsenceiddelete)                                                              | **DELETE** /hrm/absence/{id}                              | Deletes the absence for the given id                                                                            |
+| *HRMApi*          | [**hrmAbsenceIdGet**](Api/HRMApi.md#hrmabsenceidget)                                                                    | **GET** /hrm/absence/{id}                                 | Fetches a single absence by its id                                                                              |
+| *HRMApi*          | [**hrmAbsenceIdPut**](Api/HRMApi.md#hrmabsenceidput)                                                                    | **PUT** /hrm/absence/{id}                                 | Updates an absence for the given id                                                                             |
+| *HRMApi*          | [**hrmAbsencePost**](Api/HRMApi.md#hrmabsencepost)                                                                      | **POST** /hrm/absence                                     | Add a new absence entity                                                                                        |
+| *HRMApi*          | [**hrmAbsencetypeGet**](Api/HRMApi.md#hrmabsencetypeget)                                                                | **GET** /hrm/absencetype                                  | Fetches all absence types                                                                                       |
+| *HRMApi*          | [**hrmAbsencetypeIdGet**](Api/HRMApi.md#hrmabsencetypeidget)                                                            | **GET** /hrm/absencetype/{id}                             | Fetches a single absence type by absence type id                                                                |
+| *HRMApi*          | [**hrmCivilstatusGet**](Api/HRMApi.md#hrmcivilstatusget)                                                                | **GET** /hrm/civilstatus                                  | Fetches all available civil statuses                                                                            |
+| *HRMApi*          | [**hrmCivilstatusIdGet**](Api/HRMApi.md#hrmcivilstatusidget)                                                            | **GET** /hrm/civilstatus/{id}                             | Fetches a single contract type by id                                                                            |
+| *HRMApi*          | [**hrmContractGet**](Api/HRMApi.md#hrmcontractget)                                                                      | **GET** /hrm/contract                                     | Fetches all contracts                                                                                           |
+| *HRMApi*          | [**hrmContractIdGet**](Api/HRMApi.md#hrmcontractidget)                                                                  | **GET** /hrm/contract/{id}                                | Fetches a single contract by id                                                                                 |
+| *HRMApi*          | [**hrmContracttypeGet**](Api/HRMApi.md#hrmcontracttypeget)                                                              | **GET** /hrm/contracttype                                 | Fetches all available contract types                                                                            |
+| *HRMApi*          | [**hrmContracttypeIdGet**](Api/HRMApi.md#hrmcontracttypeidget)                                                          | **GET** /hrm/contracttype/{id}                            | Fetches a single contract type by id                                                                            |
+| *HRMApi*          | [**hrmDocumentGet**](Api/HRMApi.md#hrmdocumentget)                                                                      | **GET** /hrm/document                                     | Fetches all available documents for HRM                                                                         |
+| *HRMApi*          | [**hrmDocumentIdDelete**](Api/HRMApi.md#hrmdocumentiddelete)                                                            | **DELETE** /hrm/document/{id}                             | Deletes the document with the given id                                                                          |
+| *HRMApi*          | [**hrmDocumentIdGet**](Api/HRMApi.md#hrmdocumentidget)                                                                  | **GET** /hrm/document/{id}                                | Fetches a single document for HRM by its id                                                                     |
+| *HRMApi*          | [**hrmDocumentPost**](Api/HRMApi.md#hrmdocumentpost)                                                                    | **POST** /hrm/document                                    | create a document                                                                                               |
+| *HRMApi*          | [**hrmDocumentPut**](Api/HRMApi.md#hrmdocumentput)                                                                      | **PUT** /hrm/document                                     | update a document                                                                                               |
+| *HRMApi*          | [**hrmDocumenttypeGet**](Api/HRMApi.md#hrmdocumenttypeget)                                                              | **GET** /hrm/documenttype                                 | Fetches all available document types for HRM                                                                    |
+| *HRMApi*          | [**hrmDocumenttypeIdGet**](Api/HRMApi.md#hrmdocumenttypeidget)                                                          | **GET** /hrm/documenttype/{id}                            | Fetches a single document type for HRM by its id                                                                |
+| *HRMApi*          | [**hrmEmployeeGet**](Api/HRMApi.md#hrmemployeeget)                                                                      | **GET** /hrm/employee                                     | Fetches all employees                                                                                           |
+| *HRMApi*          | [**hrmEmployeeIdGet**](Api/HRMApi.md#hrmemployeeidget)                                                                  | **GET** /hrm/employee/{id}                                | Fetches a single employee by id                                                                                 |
+| *HRMApi*          | [**hrmEmployeeIdPut**](Api/HRMApi.md#hrmemployeeidput)                                                                  | **PUT** /hrm/employee/{id}                                | Updates an existing employee                                                                                    |
+| *HRMApi*          | [**hrmEmployeePost**](Api/HRMApi.md#hrmemployeepost)                                                                    | **POST** /hrm/employee                                    | Add a new employee                                                                                              |
+| *HRMApi*          | [**hrmEmployeecustomfieldgroupsGet**](Api/HRMApi.md#hrmemployeecustomfieldgroupsget)                                    | **GET** /hrm/employeecustomfieldgroups                    | Fetches all custom field groups available for employees                                                         |
+| *HRMApi*          | [**hrmEmployeecustomfieldgroupsIdGet**](Api/HRMApi.md#hrmemployeecustomfieldgroupsidget)                                | **GET** /hrm/employeecustomfieldgroups/{id}               | Fetches a single custom field group available for employee                                                      |
+| *HRMApi*          | [**hrmEmployeecustomfieldsGet**](Api/HRMApi.md#hrmemployeecustomfieldsget)                                              | **GET** /hrm/employeecustomfields                         | Fetches all custom fields available for employees                                                               |
+| *HRMApi*          | [**hrmEmployeecustomfieldsIdGet**](Api/HRMApi.md#hrmemployeecustomfieldsidget)                                          | **GET** /hrm/employeecustomfields/{id}                    | Fetches a single custom field available for employee                                                            |
+| *HRMApi*          | [**hrmEmployeetypeGet**](Api/HRMApi.md#hrmemployeetypeget)                                                              | **GET** /hrm/employeetype                                 | Fetches all available employee types                                                                            |
+| *HRMApi*          | [**hrmEmployeetypeIdGet**](Api/HRMApi.md#hrmemployeetypeidget)                                                          | **GET** /hrm/employeetype/{id}                            | Fetches a single employee type by id                                                                            |
+| *HRMApi*          | [**hrmEmploymenttypeGet**](Api/HRMApi.md#hrmemploymenttypeget)                                                          | **GET** /hrm/employmenttype                               | Fetches all available contract types                                                                            |
+| *HRMApi*          | [**hrmEmploymenttypeIdGet**](Api/HRMApi.md#hrmemploymenttypeidget)                                                      | **GET** /hrm/employmenttype/{id}                          | Fetches a single contract type by id                                                                            |
+| *HRMApi*          | [**hrmLeaveGet**](Api/HRMApi.md#hrmleaveget)                                                                            | **GET** /hrm/leave                                        | Fetches all leave for employees                                                                                 |
+| *HRMApi*          | [**hrmLeaveIdGet**](Api/HRMApi.md#hrmleaveidget)                                                                        | **GET** /hrm/leave/{id}                                   | Fetches a single leave by its id                                                                                |
+| *HRMApi*          | [**hrmLeaveIdPut**](Api/HRMApi.md#hrmleaveidput)                                                                        | **PUT** /hrm/leave/{id}                                   | Updates an leave for the given id                                                                               |
+| *HRMApi*          | [**hrmLeavePost**](Api/HRMApi.md#hrmleavepost)                                                                          | **POST** /hrm/leave                                       | Add a new leave entity                                                                                          |
+| *HRMApi*          | [**hrmLeavebalanceGet**](Api/HRMApi.md#hrmleavebalanceget)                                                              | **GET** /hrm/leavebalance                                 | Fetches all leave balances for employees                                                                        |
+| *HRMApi*          | [**hrmLeavetypeGet**](Api/HRMApi.md#hrmleavetypeget)                                                                    | **GET** /hrm/leavetype                                    | Fetches all leave types                                                                                         |
+| *HRMApi*          | [**hrmLeavetypeIdGet**](Api/HRMApi.md#hrmleavetypeidget)                                                                | **GET** /hrm/leavetype/{id}                               | Fetches a single leave type by leave type id                                                                    |
+| *HRMApi*          | [**hrmTeamGet**](Api/HRMApi.md#hrmteamget)                                                                              | **GET** /hrm/team                                         | Fetches all teams                                                                                               |
+| *HRMApi*          | [**hrmTeamIdGet**](Api/HRMApi.md#hrmteamidget)                                                                          | **GET** /hrm/team/{id}                                    | Fetches a single team by id                                                                                     |
+| *HRMApi*          | [**hrmTimetableGet**](Api/HRMApi.md#hrmtimetableget)                                                                    | **GET** /hrm/timetable                                    | Fetches all available timetables                                                                                |
+| *HRMApi*          | [**hrmTimetableIdDelete**](Api/HRMApi.md#hrmtimetableiddelete)                                                          | **DELETE** /hrm/timetable/{id}                            | Deletes the timetable with given id                                                                             |
+| *HRMApi*          | [**hrmTimetableIdPut**](Api/HRMApi.md#hrmtimetableidput)                                                                | **PUT** /hrm/timetable/{id}                               | Updates an existing timetable                                                                                   |
+| *HRMApi*          | [**hrmTimetablePost**](Api/HRMApi.md#hrmtimetablepost)                                                                  | **POST** /hrm/timetable                                   | Add a new timetable                                                                                             |
+| *HoursApi*        | [**hoursAbsenceIdPut**](Api/HoursApi.md#hoursabsenceidput)                                                              | **PUT** /hours/absence/{id}                               | Updates an hour entity for absence for the given id                                                             |
+| *HoursApi*        | [**hoursAbsencePost**](Api/HoursApi.md#hoursabsencepost)                                                                | **POST** /hours/absence                                   | Add a new hours entity for absence                                                                              |
+| *HoursApi*        | [**hoursApprovalGet**](Api/HoursApi.md#hoursapprovalget)                                                                | **GET** /hours/approval                                   | Fetches the approval status of each day for each employee                                                       |
+| *HoursApi*        | [**hoursApprovalIdDelete**](Api/HoursApi.md#hoursapprovaliddelete)                                                      | **DELETE** /hours/approval/{id}                           | Deletes the hours approval with the given approval id                                                           |
+| *HoursApi*        | [**hoursApprovalIdGet**](Api/HoursApi.md#hoursapprovalidget)                                                            | **GET** /hours/approval/{id}                              | Fetches a single approval status for a day for an employee                                                      |
+| *HoursApi*        | [**hoursApprovalIdPut**](Api/HoursApi.md#hoursapprovalidput)                                                            | **PUT** /hours/approval/{id}                              | Updates a hours approval for the given approval id                                                              |
+| *HoursApi*        | [**hoursApprovalPost**](Api/HoursApi.md#hoursapprovalpost)                                                              | **POST** /hours/approval                                  | Add a new hours approval                                                                                        |
+| *HoursApi*        | [**hoursApprovalstatusGet**](Api/HoursApi.md#hoursapprovalstatusget)                                                    | **GET** /hours/approvalstatus                             | Fetches all hour types                                                                                          |
+| *HoursApi*        | [**hoursApprovalstatusIdGet**](Api/HoursApi.md#hoursapprovalstatusidget)                                                | **GET** /hours/approvalstatus/{id}                        | Fetches a single hour status by hour type id                                                                    |
+| *HoursApi*        | [**hoursEmployeeexpenseIdGet**](Api/HoursApi.md#hoursemployeeexpenseidget)                                              | **GET** /hours/employeeexpense/{id}                       | Fetches a single expense for an employee                                                                        |
+| *HoursApi*        | [**hoursEmployeeexpensesGet**](Api/HoursApi.md#hoursemployeeexpensesget)                                                | **GET** /hours/employeeexpenses                           | Fetches the expenses of employees                                                                               |
+| *HoursApi*        | [**hoursHoursGet**](Api/HoursApi.md#hourshoursget)                                                                      | **GET** /hours/hours                                      | Fetches all hours                                                                                               |
+| *HoursApi*        | [**hoursHoursIdDelete**](Api/HoursApi.md#hourshoursiddelete)                                                            | **DELETE** /hours/hours/{id}                              | Deletes the hours registration with the given hours id                                                          |
+| *HoursApi*        | [**hoursHoursIdGet**](Api/HoursApi.md#hourshoursidget)                                                                  | **GET** /hours/hours/{id}                                 | Fetches a single hours by hours id                                                                              |
+| *HoursApi*        | [**hoursHoursIdPut**](Api/HoursApi.md#hourshoursidput)                                                                  | **PUT** /hours/hours/{id}                                 | Updates a hours registration for the given hours id                                                             |
+| *HoursApi*        | [**hoursHoursPost**](Api/HoursApi.md#hourshourspost)                                                                    | **POST** /hours/hours                                     | Add a new hours registration                                                                                    |
+| *HoursApi*        | [**hoursHourstypeGet**](Api/HoursApi.md#hourshourstypeget)                                                              | **GET** /hours/hourstype                                  | Fetches all hour types                                                                                          |
+| *HoursApi*        | [**hoursHourstypeIdGet**](Api/HoursApi.md#hourshourstypeidget)                                                          | **GET** /hours/hourstype/{id}                             | Fetches a single hour type by hour type id                                                                      |
+| *HoursApi*        | [**hoursHourstypeIdPut**](Api/HoursApi.md#hourshourstypeidput)                                                          | **PUT** /hours/hourstype/{id}                             | Updates a hour type registration for the given hour type id                                                     |
+| *HoursApi*        | [**hoursHourstypePost**](Api/HoursApi.md#hourshourstypepost)                                                            | **POST** /hours/hourstype                                 | Add a new hour type                                                                                             |
+| *HoursApi*        | [**hoursLeaveIdPut**](Api/HoursApi.md#hoursleaveidput)                                                                  | **PUT** /hours/leave/{id}                                 | Updates an hour entity for leave for the given id                                                               |
+| *HoursApi*        | [**hoursLeavePost**](Api/HoursApi.md#hoursleavepost)                                                                    | **POST** /hours/leave                                     | Add a new hours entity for leave                                                                                |
+| *HoursApi*        | [**hoursSubmissionGet**](Api/HoursApi.md#hourssubmissionget)                                                            | **GET** /hours/submission                                 | Fetches hours submission status, by date, for an employee                                                       |
+| *HoursApi*        | [**hoursSubmissionPost**](Api/HoursApi.md#hourssubmissionpost)                                                          | **POST** /hours/submission                                | Submit all the employee&#39;s hours between the start and end date.                                             |
+| *HoursApi*        | [**hoursSubmitPost**](Api/HoursApi.md#hourssubmitpost)                                                                  | **POST** /hours/submit                                    | Submit hours for approval                                                                                       |
+| *HoursApi*        | [**hoursTimesheetrowGet**](Api/HoursApi.md#hourstimesheetrowget)                                                        | **GET** /hours/timesheetrow                               | Fetches timesheet rows, by date, for an employee                                                                |
+| *HoursApi*        | [**hoursTimesheetrowIdDelete**](Api/HoursApi.md#hourstimesheetrowiddelete)                                              | **DELETE** /hours/timesheetrow/{id}                       | Deletes the timesheet row with the supplied timesheetrow id                                                     |
+| *HoursApi*        | [**hoursTimesheetrowMostrecentGet**](Api/HoursApi.md#hourstimesheetrowmostrecentget)                                    | **GET** /hours/timesheetrow/mostrecent                    | Find the most recent timesheet row                                                                              |
+| *HoursApi*        | [**hoursTimesheetrowOrderPut**](Api/HoursApi.md#hourstimesheetroworderput)                                              | **PUT** /hours/timesheetrow/order                         | Change order for timesheetrows.                                                                                 |
+| *HoursApi*        | [**hoursTimesheetrowPost**](Api/HoursApi.md#hourstimesheetrowpost)                                                      | **POST** /hours/timesheetrow                              | Submit a timesheet week row for the given employee.                                                             |
+| *HoursApi*        | [**timersTimerGet**](Api/HoursApi.md#timerstimerget)                                                                    | **GET** /timers/timer                                     | Fetches all timers                                                                                              |
+| *HoursApi*        | [**timersTimerIdDelete**](Api/HoursApi.md#timerstimeriddelete)                                                          | **DELETE** /timers/timer/{id}                             | Deletes the timer with the given timer id                                                                       |
+| *HoursApi*        | [**timersTimerIdGet**](Api/HoursApi.md#timerstimeridget)                                                                | **GET** /timers/timer/{id}                                | Fetches a single timer by its id                                                                                |
+| *HoursApi*        | [**timersTimerIdPut**](Api/HoursApi.md#timerstimeridput)                                                                | **PUT** /timers/timer/{id}                                | Updates a timer for the given timer id                                                                          |
+| *HoursApi*        | [**timersTimerPost**](Api/HoursApi.md#timerstimerpost)                                                                  | **POST** /timers/timer                                    | Add a new timer                                                                                                 |
+| *InvoicesApi*     | [**invoicesDocumentGet**](Api/InvoicesApi.md#invoicesdocumentget)                                                       | **GET** /invoices/document                                | Fetches all available documents for invoices                                                                    |
+| *InvoicesApi*     | [**invoicesDocumentIdDelete**](Api/InvoicesApi.md#invoicesdocumentiddelete)                                             | **DELETE** /invoices/document/{id}                        | Deletes the document with the given id                                                                          |
+| *InvoicesApi*     | [**invoicesDocumentIdGet**](Api/InvoicesApi.md#invoicesdocumentidget)                                                   | **GET** /invoices/document/{id}                           | Fetches a single document for invoices by its id                                                                |
+| *InvoicesApi*     | [**invoicesDocumentPost**](Api/InvoicesApi.md#invoicesdocumentpost)                                                     | **POST** /invoices/document                               | create a document                                                                                               |
+| *InvoicesApi*     | [**invoicesDocumentPut**](Api/InvoicesApi.md#invoicesdocumentput)                                                       | **PUT** /invoices/document                                | update a document                                                                                               |
+| *InvoicesApi*     | [**invoicesDocumenttypeGet**](Api/InvoicesApi.md#invoicesdocumenttypeget)                                               | **GET** /invoices/documenttype                            | Fetches all available document types for Invoices                                                               |
+| *InvoicesApi*     | [**invoicesDocumenttypeIdGet**](Api/InvoicesApi.md#invoicesdocumenttypeidget)                                           | **GET** /invoices/documenttype/{id}                       | Fetches a single document type for Invoices by its id                                                           |
+| *InvoicesApi*     | [**invoicesInvoiceGet**](Api/InvoicesApi.md#invoicesinvoiceget)                                                         | **GET** /invoices/invoice                                 | Fetches all invoices                                                                                            |
+| *InvoicesApi*     | [**invoicesInvoiceIdDelete**](Api/InvoicesApi.md#invoicesinvoiceiddelete)                                               | **DELETE** /invoices/invoice/{id}                         | Deletes the invoice for the given id                                                                            |
+| *InvoicesApi*     | [**invoicesInvoiceIdGet**](Api/InvoicesApi.md#invoicesinvoiceidget)                                                     | **GET** /invoices/invoice/{id}                            | Fetches a single invoice by id                                                                                  |
+| *InvoicesApi*     | [**invoicesInvoiceIdPut**](Api/InvoicesApi.md#invoicesinvoiceidput)                                                     | **PUT** /invoices/invoice/{id}                            | Updates a invoice for the given id                                                                              |
+| *InvoicesApi*     | [**invoicesInvoicePost**](Api/InvoicesApi.md#invoicesinvoicepost)                                                       | **POST** /invoices/invoice                                | Add a new invoice                                                                                               |
+| *InvoicesApi*     | [**invoicesInvoicestatusGet**](Api/InvoicesApi.md#invoicesinvoicestatusget)                                             | **GET** /invoices/invoicestatus                           | Fetches all invoice status                                                                                      |
+| *InvoicesApi*     | [**invoicesInvoicestatusIdGet**](Api/InvoicesApi.md#invoicesinvoicestatusidget)                                         | **GET** /invoices/invoicestatus/{id}                      | Fetches a single invoice status by id                                                                           |
+| *InvoicesApi*     | [**invoicesPaymentGet**](Api/InvoicesApi.md#invoicespaymentget)                                                         | **GET** /invoices/payment                                 | Fetches all payments                                                                                            |
+| *InvoicesApi*     | [**invoicesPaymentIdGet**](Api/InvoicesApi.md#invoicespaymentidget)                                                     | **GET** /invoices/payment/{id}                            | Fetches a single payment by id                                                                                  |
+| *InvoicesApi*     | [**invoicesPaymentIdPut**](Api/InvoicesApi.md#invoicespaymentidput)                                                     | **PUT** /invoices/payment/{id}                            | Updates a payment for the given id                                                                              |
+| *InvoicesApi*     | [**invoicesPaymentPost**](Api/InvoicesApi.md#invoicespaymentpost)                                                       | **POST** /invoices/payment                                | Add a new payment                                                                                               |
+| *InvoicesApi*     | [**invoicesPaymenttermGet**](Api/InvoicesApi.md#invoicespaymenttermget)                                                 | **GET** /invoices/paymentterm                             | Fetches all paymentterms                                                                                        |
+| *InvoicesApi*     | [**invoicesPaymenttermIdGet**](Api/InvoicesApi.md#invoicespaymenttermidget)                                             | **GET** /invoices/paymentterm/{id}                        | Fetches a single payment term by id                                                                             |
+| *InvoicesApi*     | [**invoicesPropositionGet**](Api/InvoicesApi.md#invoicespropositionget)                                                 | **GET** /invoices/proposition                             | Show all available propositions                                                                                 |
+| *InvoicesApi*     | [**invoicesRemindersetGet**](Api/InvoicesApi.md#invoicesremindersetget)                                                 | **GET** /invoices/reminderset                             | Fetches all invoice reminder sets                                                                               |
+| *InvoicesApi*     | [**invoicesRemindersetIdGet**](Api/InvoicesApi.md#invoicesremindersetidget)                                             | **GET** /invoices/reminderset/{id}                        | Fetches a single invoice reminder set by id                                                                     |
+| *InvoicesApi*     | [**invoicesRemindertemplateGet**](Api/InvoicesApi.md#invoicesremindertemplateget)                                       | **GET** /invoices/remindertemplate                        | Fetches all invoice reminder templates                                                                          |
+| *InvoicesApi*     | [**invoicesRemindertemplateIdGet**](Api/InvoicesApi.md#invoicesremindertemplateidget)                                   | **GET** /invoices/remindertemplate/{id}                   | Fetches a single invoice reminder template by id                                                                |
+| *InvoicesApi*     | [**invoicesVatclassGet**](Api/InvoicesApi.md#invoicesvatclassget)                                                       | **GET** /invoices/vatclass                                | Fetches all to vat class                                                                                        |
+| *InvoicesApi*     | [**invoicesVatclassIdGet**](Api/InvoicesApi.md#invoicesvatclassidget)                                                   | **GET** /invoices/vatclass/{id}                           | Fetches a single vat class by id                                                                                |
+| *MergerApi*       | [**crmMergeorganizationPost**](Api/MergerApi.md#crmmergeorganizationpost)                                               | **POST** /crm/mergeorganization                           | Merge two organizations by a given source and target id                                                         |
+| *MergerApi*       | [**crmMergepersonPost**](Api/MergerApi.md#crmmergepersonpost)                                                           | **POST** /crm/mergeperson                                 | Merge two people by a given source and target id                                                                |
+| *MergerApi*       | [**mergerCompareorganizationPost**](Api/MergerApi.md#mergercompareorganizationpost)                                     | **POST** /merger/compareorganization                      | Compare two organizations by a given source and target id                                                       |
+| *MergerApi*       | [**mergerComparepersonPost**](Api/MergerApi.md#mergercomparepersonpost)                                                 | **POST** /merger/compareperson                            | Compare two persons by a given source and target id                                                             |
+| *MileageApi*      | [**mileageMileageGet**](Api/MileageApi.md#mileagemileageget)                                                            | **GET** /mileage/mileage                                  | Fetches all mileages                                                                                            |
+| *MileageApi*      | [**mileageMileageIdDelete**](Api/MileageApi.md#mileagemileageiddelete)                                                  | **DELETE** /mileage/mileage/{id}                          | Deletes the mileage registration with the given mileage id                                                      |
+| *MileageApi*      | [**mileageMileageIdGet**](Api/MileageApi.md#mileagemileageidget)                                                        | **GET** /mileage/mileage/{id}                             | Fetches a single mileage by mileage id                                                                          |
+| *MileageApi*      | [**mileageMileageIdPut**](Api/MileageApi.md#mileagemileageidput)                                                        | **PUT** /mileage/mileage/{id}                             | Updates a mileage registration for the given mileage id                                                         |
+| *MileageApi*      | [**mileageMileagePost**](Api/MileageApi.md#mileagemileagepost)                                                          | **POST** /mileage/mileage                                 | Add a new mileage registration                                                                                  |
+| *ProjectsApi*     | [**projectsAssignmentGet**](Api/ProjectsApi.md#projectsassignmentget)                                                   | **GET** /projects/assignment                              | Fetches all available assignments for projects                                                                  |
+| *ProjectsApi*     | [**projectsAssignmentIdGet**](Api/ProjectsApi.md#projectsassignmentidget)                                               | **GET** /projects/assignment/{id}                         | Fetches all a single assignment by its id                                                                       |
+| *ProjectsApi*     | [**projectsAssignmentIdPut**](Api/ProjectsApi.md#projectsassignmentidput)                                               | **PUT** /projects/assignment/{id}                         | Updates a project assignment for the given id                                                                   |
+| *ProjectsApi*     | [**projectsAssignmentPost**](Api/ProjectsApi.md#projectsassignmentpost)                                                 | **POST** /projects/assignment                             | Creates a new project assignment                                                                                |
+| *ProjectsApi*     | [**projectsAssignmentbudgetGet**](Api/ProjectsApi.md#projectsassignmentbudgetget)                                       | **GET** /projects/assignmentbudget                        | Get budget information (planned amount, spent amount etc.) of assignment within given date range                |
+| *ProjectsApi*     | [**projectsAssignmentstatusGet**](Api/ProjectsApi.md#projectsassignmentstatusget)                                       | **GET** /projects/assignmentstatus                        | Fetches all available assignment statuses for projects                                                          |
+| *ProjectsApi*     | [**projectsAssignmentstatusIdGet**](Api/ProjectsApi.md#projectsassignmentstatusidget)                                   | **GET** /projects/assignmentstatus/{id}                   | Fetches a single assignment status by its id                                                                    |
+| *ProjectsApi*     | [**projectsAssignmentstatusIdPut**](Api/ProjectsApi.md#projectsassignmentstatusidput)                                   | **PUT** /projects/assignmentstatus/{id}                   | Updates a project assignment status for the given id                                                            |
+| *ProjectsApi*     | [**projectsAssignmentstatusPost**](Api/ProjectsApi.md#projectsassignmentstatuspost)                                     | **POST** /projects/assignmentstatus                       | Creates a new project assignment status                                                                         |
+| *ProjectsApi*     | [**projectsDocumentGet**](Api/ProjectsApi.md#projectsdocumentget)                                                       | **GET** /projects/document                                | Fetches all available documents for projects                                                                    |
+| *ProjectsApi*     | [**projectsDocumentIdDelete**](Api/ProjectsApi.md#projectsdocumentiddelete)                                             | **DELETE** /projects/document/{id}                        | Deletes the document with the given id                                                                          |
+| *ProjectsApi*     | [**projectsDocumentIdGet**](Api/ProjectsApi.md#projectsdocumentidget)                                                   | **GET** /projects/document/{id}                           | Fetches a single document for projects by its id                                                                |
+| *ProjectsApi*     | [**projectsDocumentPost**](Api/ProjectsApi.md#projectsdocumentpost)                                                     | **POST** /projects/document                               | create a document                                                                                               |
+| *ProjectsApi*     | [**projectsDocumentPut**](Api/ProjectsApi.md#projectsdocumentput)                                                       | **PUT** /projects/document                                | update a document                                                                                               |
+| *ProjectsApi*     | [**projectsDocumenttypeGet**](Api/ProjectsApi.md#projectsdocumenttypeget)                                               | **GET** /projects/documenttype                            | Fetches all available document types for Projects                                                               |
+| *ProjectsApi*     | [**projectsDocumenttypeIdGet**](Api/ProjectsApi.md#projectsdocumenttypeidget)                                           | **GET** /projects/documenttype/{id}                       | Fetches a single document type for Projects by its id                                                           |
+| *ProjectsApi*     | [**projectsProjectGet**](Api/ProjectsApi.md#projectsprojectget)                                                         | **GET** /projects/project                                 | Fetches all projects                                                                                            |
+| *ProjectsApi*     | [**projectsProjectIdDelete**](Api/ProjectsApi.md#projectsprojectiddelete)                                               | **DELETE** /projects/project/{id}                         | Deletes the project with the given id                                                                           |
+| *ProjectsApi*     | [**projectsProjectIdGet**](Api/ProjectsApi.md#projectsprojectidget)                                                     | **GET** /projects/project/{id}                            | Fetches a single project by id                                                                                  |
+| *ProjectsApi*     | [**projectsProjectIdPlanningBudgetGet**](Api/ProjectsApi.md#projectsprojectidplanningbudgetget)                         | **GET** /projects/project/{id}/planningBudget             | Fetches the assignment budget info of a project                                                                 |
+| *ProjectsApi*     | [**projectsProjectIdPut**](Api/ProjectsApi.md#projectsprojectidput)                                                     | **PUT** /projects/project/{id}                            | Updates a project for the given id                                                                              |
+| *ProjectsApi*     | [**projectsProjectPost**](Api/ProjectsApi.md#projectsprojectpost)                                                       | **POST** /projects/project                                | Add a new project                                                                                               |
+| *ProjectsApi*     | [**projectsProjectcustomfieldgroupsGet**](Api/ProjectsApi.md#projectsprojectcustomfieldgroupsget)                       | **GET** /projects/projectcustomfieldgroups                | Fetches all custom field groups available for projects                                                          |
+| *ProjectsApi*     | [**projectsProjectcustomfieldgroupsIdGet**](Api/ProjectsApi.md#projectsprojectcustomfieldgroupsidget)                   | **GET** /projects/projectcustomfieldgroups/{id}           | Fetches a single custom field group available for project                                                       |
+| *ProjectsApi*     | [**projectsProjectcustomfieldsGet**](Api/ProjectsApi.md#projectsprojectcustomfieldsget)                                 | **GET** /projects/projectcustomfields                     | Fetches all custom fields available for projects                                                                |
+| *ProjectsApi*     | [**projectsProjectcustomfieldsIdGet**](Api/ProjectsApi.md#projectsprojectcustomfieldsidget)                             | **GET** /projects/projectcustomfields/{id}                | Fetches a single custom field available for projects                                                            |
+| *ProjectsApi*     | [**projectsProjectemployeePost**](Api/ProjectsApi.md#projectsprojectemployeepost)                                       | **POST** projects/projectemployee                         | Add an employee to a project                                                                                    |
+| *ProjectsApi*     | [**projectsProjectemployeeProjectEmployeeIdDelete**](Api/ProjectsApi.md#projectsprojectemployeeprojectemployeeiddelete) | **DELETE** projects/projectemployee/{project_employee_id} | Remove an employee from a project                                                                               |
+| *ProjectsApi*     | [**projectsProjectfiltersGet**](Api/ProjectsApi.md#projectsprojectfiltersget)                                           | **GET** /projects/projectfilters                          | Fetches all filters available for projects                                                                      |
+| *ProjectsApi*     | [**projectsProjectfiltersIdGet**](Api/ProjectsApi.md#projectsprojectfiltersidget)                                       | **GET** /projects/projectfilters/{id}                     | Fetches a single filter available for projects                                                                  |
+| *ProjectsApi*     | [**projectsProjectstatusGet**](Api/ProjectsApi.md#projectsprojectstatusget)                                             | **GET** /projects/projectstatus                           | Fetches all projects statusses                                                                                  |
+| *ProjectsApi*     | [**projectsProjectstatusIdGet**](Api/ProjectsApi.md#projectsprojectstatusidget)                                         | **GET** /projects/projectstatus/{id}                      | Fetches a single projects status by id                                                                          |
+| *ProjectsApi*     | [**projectsPurchaseGet**](Api/ProjectsApi.md#projectspurchaseget)                                                       | **GET** /projects/purchase                                | Fetches all project purchase records                                                                            |
+| *ProjectsApi*     | [**projectsPurchaseIdGet**](Api/ProjectsApi.md#projectspurchaseidget)                                                   | **GET** /projects/purchase/{id}                           | Fetches a single project purchase record                                                                        |
+| *ProjectsApi*     | [**projectsPurchasetypeGet**](Api/ProjectsApi.md#projectspurchasetypeget)                                               | **GET** /projects/purchasetype                            | Fetches all purchase types                                                                                      |
+| *ProjectsApi*     | [**projectsPurchasetypeIdGet**](Api/ProjectsApi.md#projectspurchasetypeidget)                                           | **GET** /projects/purchasetype/{id}                       | Fetches a single purchase type by id                                                                            |
+| *ProjectsApi*     | [**projectsReverseinvoiceGet**](Api/ProjectsApi.md#projectsreverseinvoiceget)                                           | **GET** /projects/reverseinvoice                          | Fetches all reverse invoice records                                                                             |
+| *ProjectsApi*     | [**projectsReverseinvoiceIdGet**](Api/ProjectsApi.md#projectsreverseinvoiceidget)                                       | **GET** /projects/reverseinvoice/{id}                     | Fetches a single project reverse invoice                                                                        |
+| *ProjectsApi*     | [**projectsServiceGet**](Api/ProjectsApi.md#projectsserviceget)                                                         | **GET** /projects/service                                 | Fetches all services                                                                                            |
+| *ProjectsApi*     | [**projectsServiceIdDelete**](Api/ProjectsApi.md#projectsserviceiddelete)                                               | **DELETE** /projects/service/{id}                         | Deletes the service with the given id                                                                           |
+| *ProjectsApi*     | [**projectsServiceIdDuplicatePost**](Api/ProjectsApi.md#projectsserviceidduplicatepost)                                 | **POST** /projects/service/{id}/duplicate                 | Duplicates a service on base of the id                                                                          |
+| *ProjectsApi*     | [**projectsServiceIdGet**](Api/ProjectsApi.md#projectsserviceidget)                                                     | **GET** /projects/service/{id}                            | Fetches a single service by id                                                                                  |
+| *ProjectsApi*     | [**projectsServiceIdPlanningBudgetGet**](Api/ProjectsApi.md#projectsserviceidplanningbudgetget)                         | **GET** /projects/service/{id}/planningBudget             | Fetches the assignment budget info of a project service                                                         |
+| *ProjectsApi*     | [**projectsServiceIdPut**](Api/ProjectsApi.md#projectsserviceidput)                                                     | **PUT** /projects/service/{id}                            | Updates a service for the given id                                                                              |
+| *ProjectsApi*     | [**projectsServicePost**](Api/ProjectsApi.md#projectsservicepost)                                                       | **POST** /projects/service                                | Add a new service                                                                                               |
+| *SalesApi*        | [**salesConverttoprojectIdGet**](Api/SalesApi.md#salesconverttoprojectidget)                                            | **GET** /sales/converttoproject/{id}                      | Shows if the provided sale id can be converted to a project                                                     |
+| *SalesApi*        | [**salesDocumentGet**](Api/SalesApi.md#salesdocumentget)                                                                | **GET** /sales/document                                   | Fetches all available documents for sales                                                                       |
+| *SalesApi*        | [**salesDocumentIdDelete**](Api/SalesApi.md#salesdocumentiddelete)                                                      | **DELETE** /sales/document/{id}                           | Deletes the document with the given id                                                                          |
+| *SalesApi*        | [**salesDocumentIdGet**](Api/SalesApi.md#salesdocumentidget)                                                            | **GET** /sales/document/{id}                              | Fetches a single document for sales by its id                                                                   |
+| *SalesApi*        | [**salesDocumentPost**](Api/SalesApi.md#salesdocumentpost)                                                              | **POST** /sales/document                                  | create a document                                                                                               |
+| *SalesApi*        | [**salesDocumentPut**](Api/SalesApi.md#salesdocumentput)                                                                | **PUT** /sales/document                                   | update a document                                                                                               |
+| *SalesApi*        | [**salesDocumenttypeGet**](Api/SalesApi.md#salesdocumenttypeget)                                                        | **GET** /sales/documenttype                               | Fetches all available document types for Sales                                                                  |
+| *SalesApi*        | [**salesDocumenttypeIdGet**](Api/SalesApi.md#salesdocumenttypeidget)                                                    | **GET** /sales/documenttype/{id}                          | Fetches a single document type for Sales by its id                                                              |
+| *SalesApi*        | [**salesQuoteGet**](Api/SalesApi.md#salesquoteget)                                                                      | **GET** /sales/quote                                      | Fetches all available quote templates for sales                                                                 |
+| *SalesApi*        | [**salesQuoteIdDelete**](Api/SalesApi.md#salesquoteiddelete)                                                            | **DELETE** /sales/quote/{id}                              | Deletes the quote template with the given id                                                                    |
+| *SalesApi*        | [**salesQuoteIdGet**](Api/SalesApi.md#salesquoteidget)                                                                  | **GET** /sales/quote/{id}                                 | Fetches a single quote template for sales by its id                                                             |
+| *SalesApi*        | [**salesQuoteIdPut**](Api/SalesApi.md#salesquoteidput)                                                                  | **PUT** /sales/quote/{id}                                 | update a quote template                                                                                         |
+| *SalesApi*        | [**salesQuotePost**](Api/SalesApi.md#salesquotepost)                                                                    | **POST** /sales/quote                                     | create a quote template                                                                                         |
+| *SalesApi*        | [**salesQuoteemailIdPut**](Api/SalesApi.md#salesquoteemailidput)                                                        | **PUT** /sales/quoteemail/{id}                            | append only a single email to the emails collection quote                                                       |
+| *SalesApi*        | [**salesQuotestatusGet**](Api/SalesApi.md#salesquotestatusget)                                                          | **GET** /sales/quotestatus                                | Fetches all quote statuses                                                                                      |
+| *SalesApi*        | [**salesQuotestatusIdGet**](Api/SalesApi.md#salesquotestatusidget)                                                      | **GET** /sales/quotestatus/{id}                           | Fetches a single quote status for quotes by its id                                                              |
+| *SalesApi*        | [**salesQuotetemplateGet**](Api/SalesApi.md#salesquotetemplateget)                                                      | **GET** /sales/quotetemplate                              | Fetches all available quote templates for sales                                                                 |
+| *SalesApi*        | [**salesQuotetemplateIdDelete**](Api/SalesApi.md#salesquotetemplateiddelete)                                            | **DELETE** /sales/quotetemplate/{id}                      | Deletes the quote template with the given id                                                                    |
+| *SalesApi*        | [**salesQuotetemplateIdGet**](Api/SalesApi.md#salesquotetemplateidget)                                                  | **GET** /sales/quotetemplate/{id}                         | Fetches a single quote template for sales by its id                                                             |
+| *SalesApi*        | [**salesQuotetemplateIdPut**](Api/SalesApi.md#salesquotetemplateidput)                                                  | **PUT** /sales/quotetemplate/{id}                         | update a quote template                                                                                         |
+| *SalesApi*        | [**salesQuotetemplatePost**](Api/SalesApi.md#salesquotetemplatepost)                                                    | **POST** /sales/quotetemplate                             | create a quote template                                                                                         |
+| *SalesApi*        | [**salesRevenuegroupGet**](Api/SalesApi.md#salesrevenuegroupget)                                                        | **GET** /sales/revenuegroup                               | Fetches all revenue groups                                                                                      |
+| *SalesApi*        | [**salesRevenuegroupIdGet**](Api/SalesApi.md#salesrevenuegroupidget)                                                    | **GET** /sales/revenuegroup/{id}                          | Fetches a single revenue group by id                                                                            |
+| *SalesApi*        | [**salesSalesGet**](Api/SalesApi.md#salessalesget)                                                                      | **GET** /sales/sales                                      | Fetches all sales                                                                                               |
+| *SalesApi*        | [**salesSalesIdDuplicatePost**](Api/SalesApi.md#salessalesidduplicatepost)                                              | **POST** /sales/sales/{id}/duplicate                      | Duplicates a sales deal on base of the id                                                                       |
+| *SalesApi*        | [**salesSalesIdGet**](Api/SalesApi.md#salessalesidget)                                                                  | **GET** /sales/sales/{id}                                 | Fetches a single sales by id                                                                                    |
+| *SalesApi*        | [**salesSalesIdPut**](Api/SalesApi.md#salessalesidput)                                                                  | **PUT** /sales/sales/{id}                                 | Updates a sales for the given id                                                                                |
+| *SalesApi*        | [**salesSalesPost**](Api/SalesApi.md#salessalespost)                                                                    | **POST** /sales/sales                                     | Add a new sales                                                                                                 |
+| *SalesApi*        | [**salesSalescustomfieldgroupsGet**](Api/SalesApi.md#salessalescustomfieldgroupsget)                                    | **GET** /sales/salescustomfieldgroups                     | Fetches all custom field groups available for sales                                                             |
+| *SalesApi*        | [**salesSalescustomfieldgroupsIdGet**](Api/SalesApi.md#salessalescustomfieldgroupsidget)                                | **GET** /sales/salescustomfieldgroups/{id}                | Fetches a single custom field group available for project                                                       |
+| *SalesApi*        | [**salesSalescustomfieldsGet**](Api/SalesApi.md#salessalescustomfieldsget)                                              | **GET** /sales/salescustomfields                          | Fetches all custom fields available for sales                                                                   |
+| *SalesApi*        | [**salesSalescustomfieldsIdGet**](Api/SalesApi.md#salessalescustomfieldsidget)                                          | **GET** /sales/salescustomfields/{id}                     | Fetches a single custom field available for sales                                                               |
+| *SalesApi*        | [**salesSalesfiltersGet**](Api/SalesApi.md#salessalesfiltersget)                                                        | **GET** /sales/salesfilters                               | Fetches all filters available for sales                                                                         |
+| *SalesApi*        | [**salesSalesfiltersIdGet**](Api/SalesApi.md#salessalesfiltersidget)                                                    | **GET** /sales/salesfilters/{id}                          | Fetches a single filter available for sales                                                                     |
+| *SalesApi*        | [**salesSalesprogressGet**](Api/SalesApi.md#salessalesprogressget)                                                      | **GET** /sales/salesprogress                              | Fetches all sales progresses                                                                                    |
+| *SalesApi*        | [**salesSalesprogressIdGet**](Api/SalesApi.md#salessalesprogressidget)                                                  | **GET** /sales/salesprogress/{id}                         | Fetches a single sales progress by id                                                                           |
+| *SalesApi*        | [**salesSalesreasonGet**](Api/SalesApi.md#salessalesreasonget)                                                          | **GET** /sales/salesreason                                | Fetches all sales reasons                                                                                       |
+| *SalesApi*        | [**salesSalesreasonIdGet**](Api/SalesApi.md#salessalesreasonidget)                                                      | **GET** /sales/salesreason/{id}                           | Fetches a single sales reason by id                                                                             |
+| *SalesApi*        | [**salesSalessourceGet**](Api/SalesApi.md#salessalessourceget)                                                          | **GET** /sales/salessource                                | Fetches all sales source                                                                                        |
+| *SalesApi*        | [**salesSalessourceIdGet**](Api/SalesApi.md#salessalessourceidget)                                                      | **GET** /sales/salessource/{id}                           | Fetches a single sales source by id                                                                             |
+| *SalesApi*        | [**salesSalesstatusGet**](Api/SalesApi.md#salessalesstatusget)                                                          | **GET** /sales/salesstatus                                | Fetches all sales statusses                                                                                     |
+| *SalesApi*        | [**salesSalesstatusIdGet**](Api/SalesApi.md#salessalesstatusidget)                                                      | **GET** /sales/salesstatus/{id}                           | Fetches a single sales status by id                                                                             |
+| *SalesApi*        | [**salesServiceGet**](Api/SalesApi.md#salesserviceget)                                                                  | **GET** /sales/service                                    | Fetches all services                                                                                            |
+| *SalesApi*        | [**salesServiceIdDelete**](Api/SalesApi.md#salesserviceiddelete)                                                        | **DELETE** /sales/service/{id}                            | Deletes the service with the given id                                                                           |
+| *SalesApi*        | [**salesServiceIdDuplicatePost**](Api/SalesApi.md#salesserviceidduplicatepost)                                          | **POST** /sales/service/{id}/duplicate                    | Duplicates a service on base of the id                                                                          |
+| *SalesApi*        | [**salesServiceIdGet**](Api/SalesApi.md#salesserviceidget)                                                              | **GET** /sales/service/{id}                               | Fetches a single service by id                                                                                  |
+| *SalesApi*        | [**salesServiceIdPut**](Api/SalesApi.md#salesserviceidput)                                                              | **PUT** /sales/service/{id}                               | Updates a service for the given id                                                                              |
+| *SalesApi*        | [**salesServicePost**](Api/SalesApi.md#salesservicepost)                                                                | **POST** /sales/service                                   | Add a new service                                                                                               |
+| *ServicesApi*     | [**servicesDefaultserviceGet**](Api/ServicesApi.md#servicesdefaultserviceget)                                           | **GET** /services/defaultservice                          | Fetches all default services                                                                                    |
+| *ServicesApi*     | [**servicesDefaultserviceIdDelete**](Api/ServicesApi.md#servicesdefaultserviceiddelete)                                 | **DELETE** /services/defaultservice/{id}                  | Deletes the default service with the given id                                                                   |
+| *ServicesApi*     | [**servicesDefaultserviceIdGet**](Api/ServicesApi.md#servicesdefaultserviceidget)                                       | **GET** /services/defaultservice/{id}                     | Fetches a single default service by id                                                                          |
+| *ServicesApi*     | [**servicesDefaultserviceIdPut**](Api/ServicesApi.md#servicesdefaultserviceidput)                                       | **PUT** /services/defaultservice/{id}                     | Updates a default service for the given id                                                                      |
+| *ServicesApi*     | [**servicesDefaultservicePost**](Api/ServicesApi.md#servicesdefaultservicepost)                                         | **POST** /services/defaultservice                         | Add a new default service                                                                                       |
+| *SharedApi*       | [**sharedItemGet**](Api/SharedApi.md#shareditemget)                                                                     | **GET** /shared/item                                      | Fetches all shared items                                                                                        |
+| *SharedApi*       | [**sharedItemIdDelete**](Api/SharedApi.md#shareditemiddelete)                                                           | **DELETE** /shared/item/{id}                              | Deletes the shared item with the given id                                                                       |
+| *SharedApi*       | [**sharedItemIdGet**](Api/SharedApi.md#shareditemidget)                                                                 | **GET** /shared/item/{id}                                 | Fetches a single shared item  by id                                                                             |
+| *SharedApi*       | [**sharedItemIdPut**](Api/SharedApi.md#shareditemidput)                                                                 | **PUT** /shared/item/{id}                                 | Updates an existing shared item                                                                                 |
+| *SharedApi*       | [**sharedItemPost**](Api/SharedApi.md#shareditempost)                                                                   | **POST** /shared/item                                     | Add a new shared item                                                                                           |
+| *TimelineApi*     | [**timelineAttachmentIdDelete**](Api/TimelineApi.md#timelineattachmentiddelete)                                         | **DELETE** /timeline/attachment/{id}                      | Deletes the timeline message attachment for the given id                                                        |
+| *TimelineApi*     | [**timelineAttachmentPost**](Api/TimelineApi.md#timelineattachmentpost)                                                 | **POST** /timeline/attachment                             | Creates a new timeline message attachment - which is the link between /timeline/message and /documents/document |
+| *TimelineApi*     | [**timelineMessageGet**](Api/TimelineApi.md#timelinemessageget)                                                         | **GET** /timeline/message                                 | Fetches all messages                                                                                            |
+| *TimelineApi*     | [**timelineMessageIdDelete**](Api/TimelineApi.md#timelinemessageiddelete)                                               | **DELETE** /timeline/message/{id}                         | Deletes the timeline message for the given id                                                                   |
+| *TimelineApi*     | [**timelineMessageIdGet**](Api/TimelineApi.md#timelinemessageidget)                                                     | **GET** /timeline/message/{id}                            | Fetches a single time line message by id                                                                        |
+| *TimelineApi*     | [**timelineMessagePost**](Api/TimelineApi.md#timelinemessagepost)                                                       | **POST** /timeline/message                                | Add a new timeline message                                                                                      |
+| *TimelineApi*     | [**timelineMessagetypeGet**](Api/TimelineApi.md#timelinemessagetypeget)                                                 | **GET** /timeline/messagetype                             | Fetches all message types                                                                                       |
+| *TimelineApi*     | [**timelineMessagetypeIdGet**](Api/TimelineApi.md#timelinemessagetypeidget)                                             | **GET** /timeline/messagetype/{id}                        | Fetches a single timeline message type by id                                                                    |
+| *UploadApi*       | [**uploadChunkedIdPut**](Api/UploadApi.md#uploadchunkedidput)                                                           | **PUT** /upload/chunked/{id}                              | Upload next chunk to specific chunked_upload                                                                    |
+| *UploadApi*       | [**uploadChunkedPost**](Api/UploadApi.md#uploadchunkedpost)                                                             | **POST** /upload/chunked                                  | Create an upload record to upload a file                                                                        |
 
 ## Documentation For Models
 
-- [Absence](docs/Model/Absence.md)
-- [AbsenceType](docs/Model/AbsenceType.md)
-- [Accountancy](docs/Model/Accountancy.md)
-- [Address](docs/Model/Address.md)
-- [Administration](docs/Model/Administration.md)
-- [App](docs/Model/App.md)
-- [AppReceiverSetting](docs/Model/AppReceiverSetting.md)
-- [AppReceivers](docs/Model/AppReceivers.md)
-- [Approval](docs/Model/Approval.md)
-- [ApprovalStatus](docs/Model/ApprovalStatus.md)
-- [Assignment](docs/Model/Assignment.md)
-- [AssignmentBudget](docs/Model/AssignmentBudget.md)
-- [AssignmentBudgetInfo](docs/Model/AssignmentBudgetInfo.md)
-- [AssignmentBudgetInfoFuturePast](docs/Model/AssignmentBudgetInfoFuturePast.md)
-- [AssignmentBudgetInfoMetaData](docs/Model/AssignmentBudgetInfoMetaData.md)
-- [AssignmentStatus](docs/Model/AssignmentStatus.md)
-- [Attachment](docs/Model/Attachment.md)
-- [AttachmentType](docs/Model/AttachmentType.md)
-- [Avatar](docs/Model/Avatar.md)
-- [AvatarPublic](docs/Model/AvatarPublic.md)
-- [AvatarSimple](docs/Model/AvatarSimple.md)
-- [BaseHours](docs/Model/BaseHours.md)
-- [BaseSetting](docs/Model/BaseSetting.md)
-- [Body](docs/Model/Body.md)
-- [Budget](docs/Model/Budget.md)
-- [BudgetCosts](docs/Model/BudgetCosts.md)
-- [BudgetHours](docs/Model/BudgetHours.md)
-- [BudgetTotal](docs/Model/BudgetTotal.md)
-- [CalendarItem](docs/Model/CalendarItem.md)
-- [CivilStatus](docs/Model/CivilStatus.md)
-- [Comment](docs/Model/Comment.md)
-- [ContactPerson](docs/Model/ContactPerson.md)
-- [ContentField](docs/Model/ContentField.md)
-- [Contract](docs/Model/Contract.md)
-- [ContractType](docs/Model/ContractType.md)
-- [Correction](docs/Model/Correction.md)
-- [Country](docs/Model/Country.md)
-- [CreatedBy](docs/Model/CreatedBy.md)
-- [Creator](docs/Model/Creator.md)
-- [CurrentTask](docs/Model/CurrentTask.md)
-- [CurrentTaskEmployee](docs/Model/CurrentTaskEmployee.md)
-- [CustomField](docs/Model/CustomField.md)
-- [CustomFieldGroup](docs/Model/CustomFieldGroup.md)
-- [CustomFieldModel](docs/Model/CustomFieldModel.md)
-- [CustomFieldOption](docs/Model/CustomFieldOption.md)
-- [CustomFieldType](docs/Model/CustomFieldType.md)
-- [CustomerGroup](docs/Model/CustomerGroup.md)
-- [DateTimeRange](docs/Model/DateTimeRange.md)
-- [Debtor](docs/Model/Debtor.md)
-- [DebtorList](docs/Model/DebtorList.md)
-- [DefaultAction](docs/Model/DefaultAction.md)
-- [DefaultService](docs/Model/DefaultService.md)
-- [DefaultTask](docs/Model/DefaultTask.md)
-- [DefaultWorkflow](docs/Model/DefaultWorkflow.md)
-- [DefaultWorkflowGroup](docs/Model/DefaultWorkflowGroup.md)
-- [Document](docs/Model/Document.md)
-- [DocumentType](docs/Model/DocumentType.md)
-- [DocumentTypeSimple](docs/Model/DocumentTypeSimple.md)
-- [DuplicateProjectService](docs/Model/DuplicateProjectService.md)
-- [DuplicateSalesService](docs/Model/DuplicateSalesService.md)
-- [EmailAttachment](docs/Model/EmailAttachment.md)
-- [EmailMessage](docs/Model/EmailMessage.md)
-- [Employee](docs/Model/Employee.md)
-- [EmployeeStatus](docs/Model/EmployeeStatus.md)
-- [EmployeeType](docs/Model/EmployeeType.md)
-- [EmploymentType](docs/Model/EmploymentType.md)
-- [EmptyRestResult](docs/Model/EmptyRestResult.md)
-- [Expense](docs/Model/Expense.md)
-- [ExpenseAttachment](docs/Model/ExpenseAttachment.md)
-- [ExternalItemMetadata](docs/Model/ExternalItemMetadata.md)
-- [ExternalItemMetadataConfiguration](docs/Model/ExternalItemMetadataConfiguration.md)
-- [ExternalList](docs/Model/ExternalList.md)
-- [ExternalListTag](docs/Model/ExternalListTag.md)
-- [Feature](docs/Model/Feature.md)
-- [Filter](docs/Model/Filter.md)
-- [Gender](docs/Model/Gender.md)
-- [GetAbsence](docs/Model/GetAbsence.md)
-- [GetAbsenceType](docs/Model/GetAbsenceType.md)
-- [GetAddress](docs/Model/GetAddress.md)
-- [GetApproval](docs/Model/GetApproval.md)
-- [GetApprovalStatus](docs/Model/GetApprovalStatus.md)
-- [GetAssignment](docs/Model/GetAssignment.md)
-- [GetAssignmentSimple](docs/Model/GetAssignmentSimple.md)
-- [GetAssignmentStatus](docs/Model/GetAssignmentStatus.md)
-- [GetBasicPersonSimple](docs/Model/GetBasicPersonSimple.md)
-- [GetCivilStatus](docs/Model/GetCivilStatus.md)
-- [GetContactPerson](docs/Model/GetContactPerson.md)
-- [GetContactSimple](docs/Model/GetContactSimple.md)
-- [GetContract](docs/Model/GetContract.md)
-- [GetCustomField](docs/Model/GetCustomField.md)
-- [GetDebtor](docs/Model/GetDebtor.md)
-- [GetDefaultAction](docs/Model/GetDefaultAction.md)
-- [GetDefaultService](docs/Model/GetDefaultService.md)
-- [GetDefaultTask](docs/Model/GetDefaultTask.md)
-- [GetDefaultWorkflow](docs/Model/GetDefaultWorkflow.md)
-- [GetDefaultWorkflowGroup](docs/Model/GetDefaultWorkflowGroup.md)
-- [GetDocument](docs/Model/GetDocument.md)
-- [GetDocumentType](docs/Model/GetDocumentType.md)
-- [GetEmployee](docs/Model/GetEmployee.md)
-- [GetEmployeeSimple](docs/Model/GetEmployeeSimple.md)
-- [GetHours](docs/Model/GetHours.md)
-- [GetHoursHoursProjectService](docs/Model/GetHoursHoursProjectService.md)
-- [GetHoursProjectService](docs/Model/GetHoursProjectService.md)
-- [GetHoursSimple](docs/Model/GetHoursSimple.md)
-- [GetHoursType](docs/Model/GetHoursType.md)
-- [GetInterest](docs/Model/GetInterest.md)
-- [GetInvoice](docs/Model/GetInvoice.md)
-- [GetInvoiceLine](docs/Model/GetInvoiceLine.md)
-- [GetInvoiceReminder](docs/Model/GetInvoiceReminder.md)
-- [GetInvoiceSimple](docs/Model/GetInvoiceSimple.md)
-- [GetLeave](docs/Model/GetLeave.md)
-- [GetLeaveType](docs/Model/GetLeaveType.md)
-- [GetMessage](docs/Model/GetMessage.md)
-- [GetMileage](docs/Model/GetMileage.md)
-- [GetMileageSimple](docs/Model/GetMileageSimple.md)
-- [GetMyOrganizationProfileSimple](docs/Model/GetMyOrganizationProfileSimple.md)
-- [GetOrganization](docs/Model/GetOrganization.md)
-- [GetOrganizationDebtorSimple](docs/Model/GetOrganizationDebtorSimple.md)
-- [GetOrganizationSimple](docs/Model/GetOrganizationSimple.md)
-- [GetPayment](docs/Model/GetPayment.md)
-- [GetPaymentTerm](docs/Model/GetPaymentTerm.md)
-- [GetPerson](docs/Model/GetPerson.md)
-- [GetPersonDebtorSimple](docs/Model/GetPersonDebtorSimple.md)
-- [GetPersonSimple](docs/Model/GetPersonSimple.md)
-- [GetProject](docs/Model/GetProject.md)
-- [GetProjectService](docs/Model/GetProjectService.md)
-- [GetProjectServiceCostType](docs/Model/GetProjectServiceCostType.md)
-- [GetProjectServiceHoursType](docs/Model/GetProjectServiceHoursType.md)
-- [GetProjectServiceSimple](docs/Model/GetProjectServiceSimple.md)
-- [GetProjectSimple](docs/Model/GetProjectSimple.md)
-- [GetProposition](docs/Model/GetProposition.md)
-- [GetPurchaseType](docs/Model/GetPurchaseType.md)
-- [GetQuote](docs/Model/GetQuote.md)
-- [GetReminderSet](docs/Model/GetReminderSet.md)
-- [GetReminderSetSimple](docs/Model/GetReminderSetSimple.md)
-- [GetReviewByWeek](docs/Model/GetReviewByWeek.md)
-- [GetReviewByWeekDetails](docs/Model/GetReviewByWeekDetails.md)
-- [GetReviewByWeekId](docs/Model/GetReviewByWeekId.md)
-- [GetSales](docs/Model/GetSales.md)
-- [GetSalesService](docs/Model/GetSalesService.md)
-- [GetSalesServiceCostType](docs/Model/GetSalesServiceCostType.md)
-- [GetSalesServiceHoursType](docs/Model/GetSalesServiceHoursType.md)
-- [GetSeparateInvoiceRecipient](docs/Model/GetSeparateInvoiceRecipient.md)
-- [GetService](docs/Model/GetService.md)
-- [GetServiceCostType](docs/Model/GetServiceCostType.md)
-- [GetSharedItem](docs/Model/GetSharedItem.md)
-- [GetSimpleDefaultTask](docs/Model/GetSimpleDefaultTask.md)
-- [GetSimpleDefaultWorkflow](docs/Model/GetSimpleDefaultWorkflow.md)
-- [GetTeam](docs/Model/GetTeam.md)
-- [GetTeamSimple](docs/Model/GetTeamSimple.md)
-- [GetTimer](docs/Model/GetTimer.md)
-- [GetTimesheetRow](docs/Model/GetTimesheetRow.md)
-- [GetTimesheetRowItemtype](docs/Model/GetTimesheetRowItemtype.md)
-- [GetTimesheetRowOrganizationRelation](docs/Model/GetTimesheetRowOrganizationRelation.md)
-- [GetTimesheetRowPersonRelation](docs/Model/GetTimesheetRowPersonRelation.md)
-- [GetTimesheetRowProject](docs/Model/GetTimesheetRowProject.md)
-- [GetTimesheetRowProjectService](docs/Model/GetTimesheetRowProjectService.md)
-- [GetTimetable](docs/Model/GetTimetable.md)
-- [GetWorkflow](docs/Model/GetWorkflow.md)
-- [Hours](docs/Model/Hours.md)
-- [HoursType](docs/Model/HoursType.md)
-- [HrmGetLeaveType](docs/Model/HrmGetLeaveType.md)
-- [HrmPostTeam](docs/Model/HrmPostTeam.md)
-- [Inbox](docs/Model/Inbox.md)
-- [Industry](docs/Model/Industry.md)
-- [Installment](docs/Model/Installment.md)
-- [Interest](docs/Model/Interest.md)
-- [Invoice](docs/Model/Invoice.md)
-- [InvoiceLine](docs/Model/InvoiceLine.md)
-- [InvoiceStatus](docs/Model/InvoiceStatus.md)
-- [InvoiceTemplate](docs/Model/InvoiceTemplate.md)
-- [IsSatisfied](docs/Model/IsSatisfied.md)
-- [IsSatisfiedReason](docs/Model/IsSatisfiedReason.md)
-- [Journal](docs/Model/Journal.md)
-- [JournalLine](docs/Model/JournalLine.md)
-- [JournalVat](docs/Model/JournalVat.md)
-- [Leave](docs/Model/Leave.md)
-- [LeaveBalance](docs/Model/LeaveBalance.md)
-- [LeaveStatus](docs/Model/LeaveStatus.md)
-- [LeaveType](docs/Model/LeaveType.md)
-- [LinkedTo](docs/Model/LinkedTo.md)
-- [LinkedToEntity](docs/Model/LinkedToEntity.md)
-- [Log](docs/Model/Log.md)
-- [LostToCompetitor](docs/Model/LostToCompetitor.md)
-- [MailingList](docs/Model/MailingList.md)
-- [Message](docs/Model/Message.md)
-- [MessageType](docs/Model/MessageType.md)
-- [MetaData](docs/Model/MetaData.md)
-- [Mileage](docs/Model/Mileage.md)
-- [MileageType](docs/Model/MileageType.md)
-- [MyOrganizationProfile](docs/Model/MyOrganizationProfile.md)
-- [Organization](docs/Model/Organization.md)
-- [OrganizationContact](docs/Model/OrganizationContact.md)
-- [OrganizationSize](docs/Model/OrganizationSize.md)
-- [Payment](docs/Model/Payment.md)
-- [PaymentTerm](docs/Model/PaymentTerm.md)
-- [Person](docs/Model/Person.md)
-- [PersonContact](docs/Model/PersonContact.md)
-- [PersonMailingList](docs/Model/PersonMailingList.md)
-- [PkRestResult](docs/Model/PkRestResult.md)
-- [PostAbsence](docs/Model/PostAbsence.md)
-- [PostAddress](docs/Model/PostAddress.md)
-- [PostApproval](docs/Model/PostApproval.md)
-- [PostAssignment](docs/Model/PostAssignment.md)
-- [PostAttachment](docs/Model/PostAttachment.md)
-- [PostCalendarItem](docs/Model/PostCalendarItem.md)
-- [PostChunked](docs/Model/PostChunked.md)
-- [PostContactOrganizationFk](docs/Model/PostContactOrganizationFk.md)
-- [PostContactPerson](docs/Model/PostContactPerson.md)
-- [PostContactPersonFk](docs/Model/PostContactPersonFk.md)
-- [PostContactPersonProperties](docs/Model/PostContactPersonProperties.md)
-- [PostCustomFieldValue](docs/Model/PostCustomFieldValue.md)
-- [PostDebtor](docs/Model/PostDebtor.md)
-- [PostDefaultService](docs/Model/PostDefaultService.md)
-- [PostDocument](docs/Model/PostDocument.md)
-- [PostDocumentLinkedTo](docs/Model/PostDocumentLinkedTo.md)
-- [PostDuplicateSales](docs/Model/PostDuplicateSales.md)
-- [PostEmployee](docs/Model/PostEmployee.md)
-- [PostEmployeeFk](docs/Model/PostEmployeeFk.md)
-- [PostEmployeeStatusFk](docs/Model/PostEmployeeStatusFk.md)
-- [PostExpense](docs/Model/PostExpense.md)
-- [PostHours](docs/Model/PostHours.md)
-- [PostHoursType](docs/Model/PostHoursType.md)
-- [PostInterest](docs/Model/PostInterest.md)
-- [PostInvoice](docs/Model/PostInvoice.md)
-- [PostInvoiceLine](docs/Model/PostInvoiceLine.md)
-- [PostLeave](docs/Model/PostLeave.md)
-- [PostMerger](docs/Model/PostMerger.md)
-- [PostMergerCompare](docs/Model/PostMergerCompare.md)
-- [PostMessage](docs/Model/PostMessage.md)
-- [PostMessageLinkedTo](docs/Model/PostMessageLinkedTo.md)
-- [PostMileage](docs/Model/PostMileage.md)
-- [PostOrganization](docs/Model/PostOrganization.md)
-- [PostOrganizationFk](docs/Model/PostOrganizationFk.md)
-- [PostPerson](docs/Model/PostPerson.md)
-- [PostProject](docs/Model/PostProject.md)
-- [PostProjectService](docs/Model/PostProjectService.md)
-- [PostProjectServiceHoursType](docs/Model/PostProjectServiceHoursType.md)
-- [PostPurchaseType](docs/Model/PostPurchaseType.md)
-- [PostQuote](docs/Model/PostQuote.md)
-- [PostQuoteTemplate](docs/Model/PostQuoteTemplate.md)
-- [PostSales](docs/Model/PostSales.md)
-- [PostSalesService](docs/Model/PostSalesService.md)
-- [PostSeparateInvoiceRecipient](docs/Model/PostSeparateInvoiceRecipient.md)
-- [PostService](docs/Model/PostService.md)
-- [PostSharedItem](docs/Model/PostSharedItem.md)
-- [PostSubmission](docs/Model/PostSubmission.md)
-- [PostTeam](docs/Model/PostTeam.md)
-- [PostTimer](docs/Model/PostTimer.md)
-- [PostTimesheetRow](docs/Model/PostTimesheetRow.md)
-- [PostTimetable](docs/Model/PostTimetable.md)
-- [PostVatClassFk](docs/Model/PostVatClassFk.md)
-- [PostWorkflow](docs/Model/PostWorkflow.md)
-- [Project](docs/Model/Project.md)
-- [ProjectAssignmentDeleteResultRest](docs/Model/ProjectAssignmentDeleteResultRest.md)
-- [ProjectEmployee](docs/Model/ProjectEmployee.md)
-- [ProjectManager](docs/Model/ProjectManager.md)
-- [ProjectServiceCostType](docs/Model/ProjectServiceCostType.md)
-- [ProjectServiceHoursType](docs/Model/ProjectServiceHoursType.md)
-- [ProjectStatus](docs/Model/ProjectStatus.md)
-- [Proposition](docs/Model/Proposition.md)
-- [Purchase](docs/Model/Purchase.md)
-- [PurchaseType](docs/Model/PurchaseType.md)
-- [PutAssignment](docs/Model/PutAssignment.md)
-- [PutChunked](docs/Model/PutChunked.md)
-- [PutContactPerson](docs/Model/PutContactPerson.md)
-- [PutDocument](docs/Model/PutDocument.md)
-- [PutEmployee](docs/Model/PutEmployee.md)
-- [PutMileage](docs/Model/PutMileage.md)
-- [PutProjectService](docs/Model/PutProjectService.md)
-- [PutQuoteEmail](docs/Model/PutQuoteEmail.md)
-- [PutTimer](docs/Model/PutTimer.md)
-- [PutTimetable](docs/Model/PutTimetable.md)
-- [Quote](docs/Model/Quote.md)
-- [QuoteContentBlock](docs/Model/QuoteContentBlock.md)
-- [QuotePortalLabel](docs/Model/QuotePortalLabel.md)
-- [QuoteSalesService](docs/Model/QuoteSalesService.md)
-- [QuoteStatus](docs/Model/QuoteStatus.md)
-- [QuoteTemplate](docs/Model/QuoteTemplate.md)
-- [QuotetemplateConfigurationMetaData](docs/Model/QuotetemplateConfigurationMetaData.md)
-- [QuotetemplateMetaData](docs/Model/QuotetemplateMetaData.md)
-- [RecentSalesQuote](docs/Model/RecentSalesQuote.md)
-- [RecentSalesQuoteStatus](docs/Model/RecentSalesQuoteStatus.md)
-- [Recurrence](docs/Model/Recurrence.md)
-- [RelationType](docs/Model/RelationType.md)
-- [ReminderSet](docs/Model/ReminderSet.md)
-- [ReminderSetTemplate](docs/Model/ReminderSetTemplate.md)
-- [ReminderTemplate](docs/Model/ReminderTemplate.md)
-- [RestBatchValidationError](docs/Model/RestBatchValidationError.md)
-- [RestError](docs/Model/RestError.md)
-- [RestResultAbsence](docs/Model/RestResultAbsence.md)
-- [RestResultAbsenceMultiple](docs/Model/RestResultAbsenceMultiple.md)
-- [RestResultAbsenceType](docs/Model/RestResultAbsenceType.md)
-- [RestResultAbsenceTypes](docs/Model/RestResultAbsenceTypes.md)
-- [RestResultAdministration](docs/Model/RestResultAdministration.md)
-- [RestResultAdministrations](docs/Model/RestResultAdministrations.md)
-- [RestResultApp](docs/Model/RestResultApp.md)
-- [RestResultApplicationFeature](docs/Model/RestResultApplicationFeature.md)
-- [RestResultApplicationFeatures](docs/Model/RestResultApplicationFeatures.md)
-- [RestResultApplicationSetting](docs/Model/RestResultApplicationSetting.md)
-- [RestResultApplicationSettings](docs/Model/RestResultApplicationSettings.md)
-- [RestResultApproval](docs/Model/RestResultApproval.md)
-- [RestResultApprovalStatus](docs/Model/RestResultApprovalStatus.md)
-- [RestResultApprovalStatusList](docs/Model/RestResultApprovalStatusList.md)
-- [RestResultApprovals](docs/Model/RestResultApprovals.md)
-- [RestResultApps](docs/Model/RestResultApps.md)
-- [RestResultCache](docs/Model/RestResultCache.md)
-- [RestResultCivilStatus](docs/Model/RestResultCivilStatus.md)
-- [RestResultCivilStatuses](docs/Model/RestResultCivilStatuses.md)
-- [RestResultContact](docs/Model/RestResultContact.md)
-- [RestResultContactPerson](docs/Model/RestResultContactPerson.md)
-- [RestResultContactPersons](docs/Model/RestResultContactPersons.md)
-- [RestResultContacts](docs/Model/RestResultContacts.md)
-- [RestResultContract](docs/Model/RestResultContract.md)
-- [RestResultContractType](docs/Model/RestResultContractType.md)
-- [RestResultContractTypes](docs/Model/RestResultContractTypes.md)
-- [RestResultContracts](docs/Model/RestResultContracts.md)
-- [RestResultCountries](docs/Model/RestResultCountries.md)
-- [RestResultCountry](docs/Model/RestResultCountry.md)
-- [RestResultCustomField](docs/Model/RestResultCustomField.md)
-- [RestResultCustomFieldGroup](docs/Model/RestResultCustomFieldGroup.md)
-- [RestResultCustomFieldGroups](docs/Model/RestResultCustomFieldGroups.md)
-- [RestResultCustomFieldModel](docs/Model/RestResultCustomFieldModel.md)
-- [RestResultCustomFieldModels](docs/Model/RestResultCustomFieldModels.md)
-- [RestResultCustomFieldOption](docs/Model/RestResultCustomFieldOption.md)
-- [RestResultCustomFieldOptions](docs/Model/RestResultCustomFieldOptions.md)
-- [RestResultCustomFieldType](docs/Model/RestResultCustomFieldType.md)
-- [RestResultCustomFieldTypes](docs/Model/RestResultCustomFieldTypes.md)
-- [RestResultCustomFields](docs/Model/RestResultCustomFields.md)
-- [RestResultDateTimeRange](docs/Model/RestResultDateTimeRange.md)
-- [RestResultDebtorList](docs/Model/RestResultDebtorList.md)
-- [RestResultDefaultService](docs/Model/RestResultDefaultService.md)
-- [RestResultDefaultServices](docs/Model/RestResultDefaultServices.md)
-- [RestResultDocument](docs/Model/RestResultDocument.md)
-- [RestResultDocumentType](docs/Model/RestResultDocumentType.md)
-- [RestResultDocumentTypes](docs/Model/RestResultDocumentTypes.md)
-- [RestResultDocuments](docs/Model/RestResultDocuments.md)
-- [RestResultEmployee](docs/Model/RestResultEmployee.md)
-- [RestResultEmployeeExpense](docs/Model/RestResultEmployeeExpense.md)
-- [RestResultEmployeeExpenseList](docs/Model/RestResultEmployeeExpenseList.md)
-- [RestResultEmployeeType](docs/Model/RestResultEmployeeType.md)
-- [RestResultEmployeeTypes](docs/Model/RestResultEmployeeTypes.md)
-- [RestResultEmployees](docs/Model/RestResultEmployees.md)
-- [RestResultEmploymentType](docs/Model/RestResultEmploymentType.md)
-- [RestResultEmploymentTypes](docs/Model/RestResultEmploymentTypes.md)
-- [RestResultExternalItems](docs/Model/RestResultExternalItems.md)
-- [RestResultGender](docs/Model/RestResultGender.md)
-- [RestResultGenders](docs/Model/RestResultGenders.md)
-- [RestResultHour](docs/Model/RestResultHour.md)
-- [RestResultHourType](docs/Model/RestResultHourType.md)
-- [RestResultHourTypes](docs/Model/RestResultHourTypes.md)
-- [RestResultHours](docs/Model/RestResultHours.md)
-- [RestResultHoursSubmissions](docs/Model/RestResultHoursSubmissions.md)
-- [RestResultHoursTimesheetRow](docs/Model/RestResultHoursTimesheetRow.md)
-- [RestResultHoursTimesheetRows](docs/Model/RestResultHoursTimesheetRows.md)
-- [RestResultIndustries](docs/Model/RestResultIndustries.md)
-- [RestResultIndustry](docs/Model/RestResultIndustry.md)
-- [RestResultInterest](docs/Model/RestResultInterest.md)
-- [RestResultInterests](docs/Model/RestResultInterests.md)
-- [RestResultInvoice](docs/Model/RestResultInvoice.md)
-- [RestResultInvoiceStatus](docs/Model/RestResultInvoiceStatus.md)
-- [RestResultInvoiceStatuses](docs/Model/RestResultInvoiceStatuses.md)
-- [RestResultInvoices](docs/Model/RestResultInvoices.md)
-- [RestResultJournal](docs/Model/RestResultJournal.md)
-- [RestResultJournals](docs/Model/RestResultJournals.md)
-- [RestResultLeave](docs/Model/RestResultLeave.md)
-- [RestResultLeaveBalances](docs/Model/RestResultLeaveBalances.md)
-- [RestResultLeaveMultiple](docs/Model/RestResultLeaveMultiple.md)
-- [RestResultLeaveType](docs/Model/RestResultLeaveType.md)
-- [RestResultLeaveTypes](docs/Model/RestResultLeaveTypes.md)
-- [RestResultLog](docs/Model/RestResultLog.md)
-- [RestResultLogs](docs/Model/RestResultLogs.md)
-- [RestResultMerger](docs/Model/RestResultMerger.md)
-- [RestResultMergerCompare](docs/Model/RestResultMergerCompare.md)
-- [RestResultMileage](docs/Model/RestResultMileage.md)
-- [RestResultMileageList](docs/Model/RestResultMileageList.md)
-- [RestResultMyOrganizationProfile](docs/Model/RestResultMyOrganizationProfile.md)
-- [RestResultMyOrganizationProfiles](docs/Model/RestResultMyOrganizationProfiles.md)
-- [RestResultOrganization](docs/Model/RestResultOrganization.md)
-- [RestResultOrganizationSize](docs/Model/RestResultOrganizationSize.md)
-- [RestResultOrganizationSizes](docs/Model/RestResultOrganizationSizes.md)
-- [RestResultOrganizations](docs/Model/RestResultOrganizations.md)
-- [RestResultPayment](docs/Model/RestResultPayment.md)
-- [RestResultPaymentTerm](docs/Model/RestResultPaymentTerm.md)
-- [RestResultPaymentTerms](docs/Model/RestResultPaymentTerms.md)
-- [RestResultPayments](docs/Model/RestResultPayments.md)
-- [RestResultPerson](docs/Model/RestResultPerson.md)
-- [RestResultPersons](docs/Model/RestResultPersons.md)
-- [RestResultProject](docs/Model/RestResultProject.md)
-- [RestResultProjectAssignment](docs/Model/RestResultProjectAssignment.md)
-- [RestResultProjectAssignmentStatus](docs/Model/RestResultProjectAssignmentStatus.md)
-- [RestResultProjectAssignmentStatuses](docs/Model/RestResultProjectAssignmentStatuses.md)
-- [RestResultProjectAssignmentbudget](docs/Model/RestResultProjectAssignmentbudget.md)
-- [RestResultProjectAssignments](docs/Model/RestResultProjectAssignments.md)
-- [RestResultProjectEmployee](docs/Model/RestResultProjectEmployee.md)
-- [RestResultProjectEmployees](docs/Model/RestResultProjectEmployees.md)
-- [RestResultProjectService](docs/Model/RestResultProjectService.md)
-- [RestResultProjectServices](docs/Model/RestResultProjectServices.md)
-- [RestResultProjectStatus](docs/Model/RestResultProjectStatus.md)
-- [RestResultProjectStatusses](docs/Model/RestResultProjectStatusses.md)
-- [RestResultProjects](docs/Model/RestResultProjects.md)
-- [RestResultProposition](docs/Model/RestResultProposition.md)
-- [RestResultPropositions](docs/Model/RestResultPropositions.md)
-- [RestResultPurchase](docs/Model/RestResultPurchase.md)
-- [RestResultPurchaseType](docs/Model/RestResultPurchaseType.md)
-- [RestResultPurchaseTypes](docs/Model/RestResultPurchaseTypes.md)
-- [RestResultPurchases](docs/Model/RestResultPurchases.md)
-- [RestResultQuote](docs/Model/RestResultQuote.md)
-- [RestResultQuoteStatus](docs/Model/RestResultQuoteStatus.md)
-- [RestResultQuoteStatuses](docs/Model/RestResultQuoteStatuses.md)
-- [RestResultQuoteTemplate](docs/Model/RestResultQuoteTemplate.md)
-- [RestResultQuoteTemplates](docs/Model/RestResultQuoteTemplates.md)
-- [RestResultQuotes](docs/Model/RestResultQuotes.md)
-- [RestResultRelation](docs/Model/RestResultRelation.md)
-- [RestResultRelationType](docs/Model/RestResultRelationType.md)
-- [RestResultRelationTypes](docs/Model/RestResultRelationTypes.md)
-- [RestResultRelations](docs/Model/RestResultRelations.md)
-- [RestResultReminderSet](docs/Model/RestResultReminderSet.md)
-- [RestResultReminderSets](docs/Model/RestResultReminderSets.md)
-- [RestResultReminderTemplate](docs/Model/RestResultReminderTemplate.md)
-- [RestResultReminderTemplates](docs/Model/RestResultReminderTemplates.md)
-- [RestResultRevenueGroup](docs/Model/RestResultRevenueGroup.md)
-- [RestResultRevenueGroups](docs/Model/RestResultRevenueGroups.md)
-- [RestResultReverseInvoice](docs/Model/RestResultReverseInvoice.md)
-- [RestResultReverseInvoices](docs/Model/RestResultReverseInvoices.md)
-- [RestResultSale](docs/Model/RestResultSale.md)
-- [RestResultSales](docs/Model/RestResultSales.md)
-- [RestResultSalesProgress](docs/Model/RestResultSalesProgress.md)
-- [RestResultSalesProgressHistories](docs/Model/RestResultSalesProgressHistories.md)
-- [RestResultSalesProgressHistory](docs/Model/RestResultSalesProgressHistory.md)
-- [RestResultSalesProgresses](docs/Model/RestResultSalesProgresses.md)
-- [RestResultSalesReason](docs/Model/RestResultSalesReason.md)
-- [RestResultSalesReasons](docs/Model/RestResultSalesReasons.md)
-- [RestResultSalesService](docs/Model/RestResultSalesService.md)
-- [RestResultSalesServices](docs/Model/RestResultSalesServices.md)
-- [RestResultSalesSource](docs/Model/RestResultSalesSource.md)
-- [RestResultSalesSources](docs/Model/RestResultSalesSources.md)
-- [RestResultSalesStatus](docs/Model/RestResultSalesStatus.md)
-- [RestResultSalesStatusses](docs/Model/RestResultSalesStatusses.md)
-- [RestResultService](docs/Model/RestResultService.md)
-- [RestResultServiceGroup](docs/Model/RestResultServiceGroup.md)
-- [RestResultServiceGroups](docs/Model/RestResultServiceGroups.md)
-- [RestResultServices](docs/Model/RestResultServices.md)
-- [RestResultSetting](docs/Model/RestResultSetting.md)
-- [RestResultSettings](docs/Model/RestResultSettings.md)
-- [RestResultSharedItem](docs/Model/RestResultSharedItem.md)
-- [RestResultSharedItems](docs/Model/RestResultSharedItems.md)
-- [RestResultTask](docs/Model/RestResultTask.md)
-- [RestResultTasks](docs/Model/RestResultTasks.md)
-- [RestResultTeam](docs/Model/RestResultTeam.md)
-- [RestResultTeams](docs/Model/RestResultTeams.md)
-- [RestResultTimelineMessage](docs/Model/RestResultTimelineMessage.md)
-- [RestResultTimelineMessageType](docs/Model/RestResultTimelineMessageType.md)
-- [RestResultTimelineMessageTypes](docs/Model/RestResultTimelineMessageTypes.md)
-- [RestResultTimelineMessages](docs/Model/RestResultTimelineMessages.md)
-- [RestResultTimer](docs/Model/RestResultTimer.md)
-- [RestResultTimers](docs/Model/RestResultTimers.md)
-- [RestResultTimetable](docs/Model/RestResultTimetable.md)
-- [RestResultTimetables](docs/Model/RestResultTimetables.md)
-- [RestResultTojournalize](docs/Model/RestResultTojournalize.md)
-- [RestResultTojournalizes](docs/Model/RestResultTojournalizes.md)
-- [RestResultVatClass](docs/Model/RestResultVatClass.md)
-- [RestResultVatClasses](docs/Model/RestResultVatClasses.md)
-- [RestResultWorkflow](docs/Model/RestResultWorkflow.md)
-- [RestResultWorkflowItem](docs/Model/RestResultWorkflowItem.md)
-- [RestResultWorkflowItemType](docs/Model/RestResultWorkflowItemType.md)
-- [RestResultWorkflowItemTypes](docs/Model/RestResultWorkflowItemTypes.md)
-- [RestResultWorkflowItems](docs/Model/RestResultWorkflowItems.md)
-- [RestResultWorkflows](docs/Model/RestResultWorkflows.md)
-- [ResultMergerMerge](docs/Model/ResultMergerMerge.md)
-- [ResultPostMergerCompare](docs/Model/ResultPostMergerCompare.md)
-- [RevenueGroup](docs/Model/RevenueGroup.md)
-- [ReverseInvoice](docs/Model/ReverseInvoice.md)
-- [ReviewByWeekMetaData](docs/Model/ReviewByWeekMetaData.md)
-- [Right](docs/Model/Right.md)
-- [Rrule](docs/Model/Rrule.md)
-- [Sales](docs/Model/Sales.md)
-- [SalesProgress](docs/Model/SalesProgress.md)
-- [SalesProgressHistory](docs/Model/SalesProgressHistory.md)
-- [SalesReason](docs/Model/SalesReason.md)
-- [SalesService](docs/Model/SalesService.md)
-- [SalesServiceCostType](docs/Model/SalesServiceCostType.md)
-- [SalesServiceHoursType](docs/Model/SalesServiceHoursType.md)
-- [SalesSource](docs/Model/SalesSource.md)
-- [SalesStatus](docs/Model/SalesStatus.md)
-- [SbiCode](docs/Model/SbiCode.md)
-- [SeparateInvoiceRecipient](docs/Model/SeparateInvoiceRecipient.md)
-- [Service](docs/Model/Service.md)
-- [ServiceCostType](docs/Model/ServiceCostType.md)
-- [ServiceGroup](docs/Model/ServiceGroup.md)
-- [Setting](docs/Model/Setting.md)
-- [SubmissionStatus](docs/Model/SubmissionStatus.md)
-- [Submit](docs/Model/Submit.md)
-- [SubscriptionCycle](docs/Model/SubscriptionCycle.md)
-- [Task](docs/Model/Task.md)
-- [Team](docs/Model/Team.md)
-- [Timer](docs/Model/Timer.md)
-- [TimesheetRow](docs/Model/TimesheetRow.md)
-- [Timetable](docs/Model/Timetable.md)
-- [TimetableWeek](docs/Model/TimetableWeek.md)
-- [TimetableWeekDay](docs/Model/TimetableWeekDay.md)
-- [Timezone](docs/Model/Timezone.md)
-- [User](docs/Model/User.md)
-- [UserBetaFeatureRequest](docs/Model/UserBetaFeatureRequest.md)
-- [VatClass](docs/Model/VatClass.md)
-- [Workflow](docs/Model/Workflow.md)
-- [WorkflowItem](docs/Model/WorkflowItem.md)
-- [WorkflowItemType](docs/Model/WorkflowItemType.md)
+- [Absence](Model/Absence.md)
+- [AbsenceType](Model/AbsenceType.md)
+- [Accountancy](Model/Accountancy.md)
+- [Address](Model/Address.md)
+- [Administration](Model/Administration.md)
+- [App](Model/App.md)
+- [AppReceiverSetting](Model/AppReceiverSetting.md)
+- [AppReceivers](Model/AppReceivers.md)
+- [Approval](Model/Approval.md)
+- [ApprovalStatus](Model/ApprovalStatus.md)
+- [Assignment](Model/Assignment.md)
+- [AssignmentBudget](Model/AssignmentBudget.md)
+- [AssignmentBudgetInfo](Model/AssignmentBudgetInfo.md)
+- [AssignmentBudgetInfoFuturePast](Model/AssignmentBudgetInfoFuturePast.md)
+- [AssignmentBudgetInfoMetaData](Model/AssignmentBudgetInfoMetaData.md)
+- [AssignmentStatus](Model/AssignmentStatus.md)
+- [Attachment](Model/Attachment.md)
+- [AttachmentType](Model/AttachmentType.md)
+- [Avatar](Model/Avatar.md)
+- [AvatarPublic](Model/AvatarPublic.md)
+- [AvatarSimple](Model/AvatarSimple.md)
+- [BaseHours](Model/BaseHours.md)
+- [BaseSetting](Model/BaseSetting.md)
+- [Body](Model/Body.md)
+- [Budget](Model/Budget.md)
+- [BudgetCosts](Model/BudgetCosts.md)
+- [BudgetHours](Model/BudgetHours.md)
+- [BudgetTotal](Model/BudgetTotal.md)
+- [CalendarItem](Model/CalendarItem.md)
+- [CivilStatus](Model/CivilStatus.md)
+- [Comment](Model/Comment.md)
+- [ContactPerson](Model/ContactPerson.md)
+- [ContentField](Model/ContentField.md)
+- [Contract](Model/Contract.md)
+- [ContractType](Model/ContractType.md)
+- [Correction](Model/Correction.md)
+- [Country](Model/Country.md)
+- [CreatedBy](Model/CreatedBy.md)
+- [Creator](Model/Creator.md)
+- [CurrentTask](Model/CurrentTask.md)
+- [CurrentTaskEmployee](Model/CurrentTaskEmployee.md)
+- [CustomField](Model/CustomField.md)
+- [CustomFieldGroup](Model/CustomFieldGroup.md)
+- [CustomFieldModel](Model/CustomFieldModel.md)
+- [CustomFieldOption](Model/CustomFieldOption.md)
+- [CustomFieldType](Model/CustomFieldType.md)
+- [CustomerGroup](Model/CustomerGroup.md)
+- [DateTimeRange](Model/DateTimeRange.md)
+- [Debtor](Model/Debtor.md)
+- [DebtorList](Model/DebtorList.md)
+- [DefaultAction](Model/DefaultAction.md)
+- [DefaultService](Model/DefaultService.md)
+- [DefaultTask](Model/DefaultTask.md)
+- [DefaultWorkflow](Model/DefaultWorkflow.md)
+- [DefaultWorkflowGroup](Model/DefaultWorkflowGroup.md)
+- [Document](Model/Document.md)
+- [DocumentType](Model/DocumentType.md)
+- [DocumentTypeSimple](Model/DocumentTypeSimple.md)
+- [DuplicateProjectService](Model/DuplicateProjectService.md)
+- [DuplicateSalesService](Model/DuplicateSalesService.md)
+- [EmailAttachment](Model/EmailAttachment.md)
+- [EmailMessage](Model/EmailMessage.md)
+- [Employee](Model/Employee.md)
+- [EmployeeStatus](Model/EmployeeStatus.md)
+- [EmployeeType](Model/EmployeeType.md)
+- [EmploymentType](Model/EmploymentType.md)
+- [EmptyRestResult](Model/EmptyRestResult.md)
+- [Expense](Model/Expense.md)
+- [ExpenseAttachment](Model/ExpenseAttachment.md)
+- [ExternalItemMetadata](Model/ExternalItemMetadata.md)
+- [ExternalItemMetadataConfiguration](Model/ExternalItemMetadataConfiguration.md)
+- [ExternalList](Model/ExternalList.md)
+- [ExternalListTag](Model/ExternalListTag.md)
+- [Feature](Model/Feature.md)
+- [Filter](Model/Filter.md)
+- [Gender](Model/Gender.md)
+- [GetAbsence](Model/GetAbsence.md)
+- [GetAbsenceType](Model/GetAbsenceType.md)
+- [GetAddress](Model/GetAddress.md)
+- [GetApproval](Model/GetApproval.md)
+- [GetApprovalStatus](Model/GetApprovalStatus.md)
+- [GetAssignment](Model/GetAssignment.md)
+- [GetAssignmentSimple](Model/GetAssignmentSimple.md)
+- [GetAssignmentStatus](Model/GetAssignmentStatus.md)
+- [GetBasicPersonSimple](Model/GetBasicPersonSimple.md)
+- [GetCivilStatus](Model/GetCivilStatus.md)
+- [GetContactPerson](Model/GetContactPerson.md)
+- [GetContactSimple](Model/GetContactSimple.md)
+- [GetContract](Model/GetContract.md)
+- [GetCustomField](Model/GetCustomField.md)
+- [GetDebtor](Model/GetDebtor.md)
+- [GetDefaultAction](Model/GetDefaultAction.md)
+- [GetDefaultService](Model/GetDefaultService.md)
+- [GetDefaultTask](Model/GetDefaultTask.md)
+- [GetDefaultWorkflow](Model/GetDefaultWorkflow.md)
+- [GetDefaultWorkflowGroup](Model/GetDefaultWorkflowGroup.md)
+- [GetDocument](Model/GetDocument.md)
+- [GetDocumentType](Model/GetDocumentType.md)
+- [GetEmployee](Model/GetEmployee.md)
+- [GetEmployeeSimple](Model/GetEmployeeSimple.md)
+- [GetHours](Model/GetHours.md)
+- [GetHoursHoursProjectService](Model/GetHoursHoursProjectService.md)
+- [GetHoursProjectService](Model/GetHoursProjectService.md)
+- [GetHoursSimple](Model/GetHoursSimple.md)
+- [GetHoursType](Model/GetHoursType.md)
+- [GetInterest](Model/GetInterest.md)
+- [GetInvoice](Model/GetInvoice.md)
+- [GetInvoiceLine](Model/GetInvoiceLine.md)
+- [GetInvoiceReminder](Model/GetInvoiceReminder.md)
+- [GetInvoiceSimple](Model/GetInvoiceSimple.md)
+- [GetLeave](Model/GetLeave.md)
+- [GetLeaveType](Model/GetLeaveType.md)
+- [GetMessage](Model/GetMessage.md)
+- [GetMileage](Model/GetMileage.md)
+- [GetMileageSimple](Model/GetMileageSimple.md)
+- [GetMyOrganizationProfileSimple](Model/GetMyOrganizationProfileSimple.md)
+- [GetOrganization](Model/GetOrganization.md)
+- [GetOrganizationDebtorSimple](Model/GetOrganizationDebtorSimple.md)
+- [GetOrganizationSimple](Model/GetOrganizationSimple.md)
+- [GetPayment](Model/GetPayment.md)
+- [GetPaymentTerm](Model/GetPaymentTerm.md)
+- [GetPerson](Model/GetPerson.md)
+- [GetPersonDebtorSimple](Model/GetPersonDebtorSimple.md)
+- [GetPersonSimple](Model/GetPersonSimple.md)
+- [GetProject](Model/GetProject.md)
+- [GetProjectService](Model/GetProjectService.md)
+- [GetProjectServiceCostType](Model/GetProjectServiceCostType.md)
+- [GetProjectServiceHoursType](Model/GetProjectServiceHoursType.md)
+- [GetProjectServiceSimple](Model/GetProjectServiceSimple.md)
+- [GetProjectSimple](Model/GetProjectSimple.md)
+- [GetProposition](Model/GetProposition.md)
+- [GetPurchaseType](Model/GetPurchaseType.md)
+- [GetQuote](Model/GetQuote.md)
+- [GetReminderSet](Model/GetReminderSet.md)
+- [GetReminderSetSimple](Model/GetReminderSetSimple.md)
+- [GetReviewByWeek](Model/GetReviewByWeek.md)
+- [GetReviewByWeekDetails](Model/GetReviewByWeekDetails.md)
+- [GetReviewByWeekId](Model/GetReviewByWeekId.md)
+- [GetSales](Model/GetSales.md)
+- [GetSalesService](Model/GetSalesService.md)
+- [GetSalesServiceCostType](Model/GetSalesServiceCostType.md)
+- [GetSalesServiceHoursType](Model/GetSalesServiceHoursType.md)
+- [GetSeparateInvoiceRecipient](Model/GetSeparateInvoiceRecipient.md)
+- [GetService](Model/GetService.md)
+- [GetServiceCostType](Model/GetServiceCostType.md)
+- [GetSharedItem](Model/GetSharedItem.md)
+- [GetSimpleDefaultTask](Model/GetSimpleDefaultTask.md)
+- [GetSimpleDefaultWorkflow](Model/GetSimpleDefaultWorkflow.md)
+- [GetTeam](Model/GetTeam.md)
+- [GetTeamSimple](Model/GetTeamSimple.md)
+- [GetTimer](Model/GetTimer.md)
+- [GetTimesheetRow](Model/GetTimesheetRow.md)
+- [GetTimesheetRowItemtype](Model/GetTimesheetRowItemtype.md)
+- [GetTimesheetRowOrganizationRelation](Model/GetTimesheetRowOrganizationRelation.md)
+- [GetTimesheetRowPersonRelation](Model/GetTimesheetRowPersonRelation.md)
+- [GetTimesheetRowProject](Model/GetTimesheetRowProject.md)
+- [GetTimesheetRowProjectService](Model/GetTimesheetRowProjectService.md)
+- [GetTimetable](Model/GetTimetable.md)
+- [GetWorkflow](Model/GetWorkflow.md)
+- [Hours](Model/Hours.md)
+- [HoursType](Model/HoursType.md)
+- [HrmGetLeaveType](Model/HrmGetLeaveType.md)
+- [HrmPostTeam](Model/HrmPostTeam.md)
+- [Inbox](Model/Inbox.md)
+- [Industry](Model/Industry.md)
+- [Installment](Model/Installment.md)
+- [Interest](Model/Interest.md)
+- [Invoice](Model/Invoice.md)
+- [InvoiceLine](Model/InvoiceLine.md)
+- [InvoiceStatus](Model/InvoiceStatus.md)
+- [InvoiceTemplate](Model/InvoiceTemplate.md)
+- [IsSatisfied](Model/IsSatisfied.md)
+- [IsSatisfiedReason](Model/IsSatisfiedReason.md)
+- [Journal](Model/Journal.md)
+- [JournalLine](Model/JournalLine.md)
+- [JournalVat](Model/JournalVat.md)
+- [Leave](Model/Leave.md)
+- [LeaveBalance](Model/LeaveBalance.md)
+- [LeaveStatus](Model/LeaveStatus.md)
+- [LeaveType](Model/LeaveType.md)
+- [LinkedTo](Model/LinkedTo.md)
+- [LinkedToEntity](Model/LinkedToEntity.md)
+- [Log](Model/Log.md)
+- [LostToCompetitor](Model/LostToCompetitor.md)
+- [MailingList](Model/MailingList.md)
+- [Message](Model/Message.md)
+- [MessageType](Model/MessageType.md)
+- [MetaData](Model/MetaData.md)
+- [Mileage](Model/Mileage.md)
+- [MileageType](Model/MileageType.md)
+- [MyOrganizationProfile](Model/MyOrganizationProfile.md)
+- [Organization](Model/Organization.md)
+- [OrganizationContact](Model/OrganizationContact.md)
+- [OrganizationSize](Model/OrganizationSize.md)
+- [Payment](Model/Payment.md)
+- [PaymentTerm](Model/PaymentTerm.md)
+- [Person](Model/Person.md)
+- [PersonContact](Model/PersonContact.md)
+- [PersonMailingList](Model/PersonMailingList.md)
+- [PkRestResult](Model/PkRestResult.md)
+- [PostAbsence](Model/PostAbsence.md)
+- [PostAddress](Model/PostAddress.md)
+- [PostApproval](Model/PostApproval.md)
+- [PostAssignment](Model/PostAssignment.md)
+- [PostAttachment](Model/PostAttachment.md)
+- [PostCalendarItem](Model/PostCalendarItem.md)
+- [PostChunked](Model/PostChunked.md)
+- [PostContactOrganizationFk](Model/PostContactOrganizationFk.md)
+- [PostContactPerson](Model/PostContactPerson.md)
+- [PostContactPersonFk](Model/PostContactPersonFk.md)
+- [PostContactPersonProperties](Model/PostContactPersonProperties.md)
+- [PostCustomFieldValue](Model/PostCustomFieldValue.md)
+- [PostDebtor](Model/PostDebtor.md)
+- [PostDefaultService](Model/PostDefaultService.md)
+- [PostDocument](Model/PostDocument.md)
+- [PostDocumentLinkedTo](Model/PostDocumentLinkedTo.md)
+- [PostDuplicateSales](Model/PostDuplicateSales.md)
+- [PostEmployee](Model/PostEmployee.md)
+- [PostEmployeeFk](Model/PostEmployeeFk.md)
+- [PostEmployeeStatusFk](Model/PostEmployeeStatusFk.md)
+- [PostExpense](Model/PostExpense.md)
+- [PostHours](Model/PostHours.md)
+- [PostHoursType](Model/PostHoursType.md)
+- [PostInterest](Model/PostInterest.md)
+- [PostInvoice](Model/PostInvoice.md)
+- [PostInvoiceLine](Model/PostInvoiceLine.md)
+- [PostLeave](Model/PostLeave.md)
+- [PostMerger](Model/PostMerger.md)
+- [PostMergerCompare](Model/PostMergerCompare.md)
+- [PostMessage](Model/PostMessage.md)
+- [PostMessageLinkedTo](Model/PostMessageLinkedTo.md)
+- [PostMileage](Model/PostMileage.md)
+- [PostOrganization](Model/PostOrganization.md)
+- [PostOrganizationFk](Model/PostOrganizationFk.md)
+- [PostPerson](Model/PostPerson.md)
+- [PostProject](Model/PostProject.md)
+- [PostProjectService](Model/PostProjectService.md)
+- [PostProjectServiceHoursType](Model/PostProjectServiceHoursType.md)
+- [PostPurchaseType](Model/PostPurchaseType.md)
+- [PostQuote](Model/PostQuote.md)
+- [PostQuoteTemplate](Model/PostQuoteTemplate.md)
+- [PostSales](Model/PostSales.md)
+- [PostSalesService](Model/PostSalesService.md)
+- [PostSeparateInvoiceRecipient](Model/PostSeparateInvoiceRecipient.md)
+- [PostService](Model/PostService.md)
+- [PostSharedItem](Model/PostSharedItem.md)
+- [PostSubmission](Model/PostSubmission.md)
+- [PostTeam](Model/PostTeam.md)
+- [PostTimer](Model/PostTimer.md)
+- [PostTimesheetRow](Model/PostTimesheetRow.md)
+- [PostTimetable](Model/PostTimetable.md)
+- [PostVatClassFk](Model/PostVatClassFk.md)
+- [PostWorkflow](Model/PostWorkflow.md)
+- [Project](Model/Project.md)
+- [ProjectAssignmentDeleteResultRest](Model/ProjectAssignmentDeleteResultRest.md)
+- [ProjectEmployee](Model/ProjectEmployee.md)
+- [ProjectManager](Model/ProjectManager.md)
+- [ProjectServiceCostType](Model/ProjectServiceCostType.md)
+- [ProjectServiceHoursType](Model/ProjectServiceHoursType.md)
+- [ProjectStatus](Model/ProjectStatus.md)
+- [Proposition](Model/Proposition.md)
+- [Purchase](Model/Purchase.md)
+- [PurchaseType](Model/PurchaseType.md)
+- [PutAssignment](Model/PutAssignment.md)
+- [PutChunked](Model/PutChunked.md)
+- [PutContactPerson](Model/PutContactPerson.md)
+- [PutDocument](Model/PutDocument.md)
+- [PutEmployee](Model/PutEmployee.md)
+- [PutMileage](Model/PutMileage.md)
+- [PutProjectService](Model/PutProjectService.md)
+- [PutQuoteEmail](Model/PutQuoteEmail.md)
+- [PutTimer](Model/PutTimer.md)
+- [PutTimetable](Model/PutTimetable.md)
+- [Quote](Model/Quote.md)
+- [QuoteContentBlock](Model/QuoteContentBlock.md)
+- [QuotePortalLabel](Model/QuotePortalLabel.md)
+- [QuoteSalesService](Model/QuoteSalesService.md)
+- [QuoteStatus](Model/QuoteStatus.md)
+- [QuoteTemplate](Model/QuoteTemplate.md)
+- [QuotetemplateConfigurationMetaData](Model/QuotetemplateConfigurationMetaData.md)
+- [QuotetemplateMetaData](Model/QuotetemplateMetaData.md)
+- [RecentSalesQuote](Model/RecentSalesQuote.md)
+- [RecentSalesQuoteStatus](Model/RecentSalesQuoteStatus.md)
+- [Recurrence](Model/Recurrence.md)
+- [RelationType](Model/RelationType.md)
+- [ReminderSet](Model/ReminderSet.md)
+- [ReminderSetTemplate](Model/ReminderSetTemplate.md)
+- [ReminderTemplate](Model/ReminderTemplate.md)
+- [RestBatchValidationError](Model/RestBatchValidationError.md)
+- [RestError](Model/RestError.md)
+- [RestResultAbsence](Model/RestResultAbsence.md)
+- [RestResultAbsenceMultiple](Model/RestResultAbsenceMultiple.md)
+- [RestResultAbsenceType](Model/RestResultAbsenceType.md)
+- [RestResultAbsenceTypes](Model/RestResultAbsenceTypes.md)
+- [RestResultAdministration](Model/RestResultAdministration.md)
+- [RestResultAdministrations](Model/RestResultAdministrations.md)
+- [RestResultApp](Model/RestResultApp.md)
+- [RestResultApplicationFeature](Model/RestResultApplicationFeature.md)
+- [RestResultApplicationFeatures](Model/RestResultApplicationFeatures.md)
+- [RestResultApplicationSetting](Model/RestResultApplicationSetting.md)
+- [RestResultApplicationSettings](Model/RestResultApplicationSettings.md)
+- [RestResultApproval](Model/RestResultApproval.md)
+- [RestResultApprovalStatus](Model/RestResultApprovalStatus.md)
+- [RestResultApprovalStatusList](Model/RestResultApprovalStatusList.md)
+- [RestResultApprovals](Model/RestResultApprovals.md)
+- [RestResultApps](Model/RestResultApps.md)
+- [RestResultCache](Model/RestResultCache.md)
+- [RestResultCivilStatus](Model/RestResultCivilStatus.md)
+- [RestResultCivilStatuses](Model/RestResultCivilStatuses.md)
+- [RestResultContact](Model/RestResultContact.md)
+- [RestResultContactPerson](Model/RestResultContactPerson.md)
+- [RestResultContactPersons](Model/RestResultContactPersons.md)
+- [RestResultContacts](Model/RestResultContacts.md)
+- [RestResultContract](Model/RestResultContract.md)
+- [RestResultContractType](Model/RestResultContractType.md)
+- [RestResultContractTypes](Model/RestResultContractTypes.md)
+- [RestResultContracts](Model/RestResultContracts.md)
+- [RestResultCountries](Model/RestResultCountries.md)
+- [RestResultCountry](Model/RestResultCountry.md)
+- [RestResultCustomField](Model/RestResultCustomField.md)
+- [RestResultCustomFieldGroup](Model/RestResultCustomFieldGroup.md)
+- [RestResultCustomFieldGroups](Model/RestResultCustomFieldGroups.md)
+- [RestResultCustomFieldModel](Model/RestResultCustomFieldModel.md)
+- [RestResultCustomFieldModels](Model/RestResultCustomFieldModels.md)
+- [RestResultCustomFieldOption](Model/RestResultCustomFieldOption.md)
+- [RestResultCustomFieldOptions](Model/RestResultCustomFieldOptions.md)
+- [RestResultCustomFieldType](Model/RestResultCustomFieldType.md)
+- [RestResultCustomFieldTypes](Model/RestResultCustomFieldTypes.md)
+- [RestResultCustomFields](Model/RestResultCustomFields.md)
+- [RestResultDateTimeRange](Model/RestResultDateTimeRange.md)
+- [RestResultDebtorList](Model/RestResultDebtorList.md)
+- [RestResultDefaultService](Model/RestResultDefaultService.md)
+- [RestResultDefaultServices](Model/RestResultDefaultServices.md)
+- [RestResultDocument](Model/RestResultDocument.md)
+- [RestResultDocumentType](Model/RestResultDocumentType.md)
+- [RestResultDocumentTypes](Model/RestResultDocumentTypes.md)
+- [RestResultDocuments](Model/RestResultDocuments.md)
+- [RestResultEmployee](Model/RestResultEmployee.md)
+- [RestResultEmployeeExpense](Model/RestResultEmployeeExpense.md)
+- [RestResultEmployeeExpenseList](Model/RestResultEmployeeExpenseList.md)
+- [RestResultEmployeeType](Model/RestResultEmployeeType.md)
+- [RestResultEmployeeTypes](Model/RestResultEmployeeTypes.md)
+- [RestResultEmployees](Model/RestResultEmployees.md)
+- [RestResultEmploymentType](Model/RestResultEmploymentType.md)
+- [RestResultEmploymentTypes](Model/RestResultEmploymentTypes.md)
+- [RestResultExternalItems](Model/RestResultExternalItems.md)
+- [RestResultGender](Model/RestResultGender.md)
+- [RestResultGenders](Model/RestResultGenders.md)
+- [RestResultHour](Model/RestResultHour.md)
+- [RestResultHourType](Model/RestResultHourType.md)
+- [RestResultHourTypes](Model/RestResultHourTypes.md)
+- [RestResultHours](Model/RestResultHours.md)
+- [RestResultHoursSubmissions](Model/RestResultHoursSubmissions.md)
+- [RestResultHoursTimesheetRow](Model/RestResultHoursTimesheetRow.md)
+- [RestResultHoursTimesheetRows](Model/RestResultHoursTimesheetRows.md)
+- [RestResultIndustries](Model/RestResultIndustries.md)
+- [RestResultIndustry](Model/RestResultIndustry.md)
+- [RestResultInterest](Model/RestResultInterest.md)
+- [RestResultInterests](Model/RestResultInterests.md)
+- [RestResultInvoice](Model/RestResultInvoice.md)
+- [RestResultInvoiceStatus](Model/RestResultInvoiceStatus.md)
+- [RestResultInvoiceStatuses](Model/RestResultInvoiceStatuses.md)
+- [RestResultInvoices](Model/RestResultInvoices.md)
+- [RestResultJournal](Model/RestResultJournal.md)
+- [RestResultJournals](Model/RestResultJournals.md)
+- [RestResultLeave](Model/RestResultLeave.md)
+- [RestResultLeaveBalances](Model/RestResultLeaveBalances.md)
+- [RestResultLeaveMultiple](Model/RestResultLeaveMultiple.md)
+- [RestResultLeaveType](Model/RestResultLeaveType.md)
+- [RestResultLeaveTypes](Model/RestResultLeaveTypes.md)
+- [RestResultLog](Model/RestResultLog.md)
+- [RestResultLogs](Model/RestResultLogs.md)
+- [RestResultMerger](Model/RestResultMerger.md)
+- [RestResultMergerCompare](Model/RestResultMergerCompare.md)
+- [RestResultMileage](Model/RestResultMileage.md)
+- [RestResultMileageList](Model/RestResultMileageList.md)
+- [RestResultMyOrganizationProfile](Model/RestResultMyOrganizationProfile.md)
+- [RestResultMyOrganizationProfiles](Model/RestResultMyOrganizationProfiles.md)
+- [RestResultOrganization](Model/RestResultOrganization.md)
+- [RestResultOrganizationSize](Model/RestResultOrganizationSize.md)
+- [RestResultOrganizationSizes](Model/RestResultOrganizationSizes.md)
+- [RestResultOrganizations](Model/RestResultOrganizations.md)
+- [RestResultPayment](Model/RestResultPayment.md)
+- [RestResultPaymentTerm](Model/RestResultPaymentTerm.md)
+- [RestResultPaymentTerms](Model/RestResultPaymentTerms.md)
+- [RestResultPayments](Model/RestResultPayments.md)
+- [RestResultPerson](Model/RestResultPerson.md)
+- [RestResultPersons](Model/RestResultPersons.md)
+- [RestResultProject](Model/RestResultProject.md)
+- [RestResultProjectAssignment](Model/RestResultProjectAssignment.md)
+- [RestResultProjectAssignmentStatus](Model/RestResultProjectAssignmentStatus.md)
+- [RestResultProjectAssignmentStatuses](Model/RestResultProjectAssignmentStatuses.md)
+- [RestResultProjectAssignmentbudget](Model/RestResultProjectAssignmentbudget.md)
+- [RestResultProjectAssignments](Model/RestResultProjectAssignments.md)
+- [RestResultProjectEmployee](Model/RestResultProjectEmployee.md)
+- [RestResultProjectEmployees](Model/RestResultProjectEmployees.md)
+- [RestResultProjectService](Model/RestResultProjectService.md)
+- [RestResultProjectServices](Model/RestResultProjectServices.md)
+- [RestResultProjectStatus](Model/RestResultProjectStatus.md)
+- [RestResultProjectStatusses](Model/RestResultProjectStatusses.md)
+- [RestResultProjects](Model/RestResultProjects.md)
+- [RestResultProposition](Model/RestResultProposition.md)
+- [RestResultPropositions](Model/RestResultPropositions.md)
+- [RestResultPurchase](Model/RestResultPurchase.md)
+- [RestResultPurchaseType](Model/RestResultPurchaseType.md)
+- [RestResultPurchaseTypes](Model/RestResultPurchaseTypes.md)
+- [RestResultPurchases](Model/RestResultPurchases.md)
+- [RestResultQuote](Model/RestResultQuote.md)
+- [RestResultQuoteStatus](Model/RestResultQuoteStatus.md)
+- [RestResultQuoteStatuses](Model/RestResultQuoteStatuses.md)
+- [RestResultQuoteTemplate](Model/RestResultQuoteTemplate.md)
+- [RestResultQuoteTemplates](Model/RestResultQuoteTemplates.md)
+- [RestResultQuotes](Model/RestResultQuotes.md)
+- [RestResultRelation](Model/RestResultRelation.md)
+- [RestResultRelationType](Model/RestResultRelationType.md)
+- [RestResultRelationTypes](Model/RestResultRelationTypes.md)
+- [RestResultRelations](Model/RestResultRelations.md)
+- [RestResultReminderSet](Model/RestResultReminderSet.md)
+- [RestResultReminderSets](Model/RestResultReminderSets.md)
+- [RestResultReminderTemplate](Model/RestResultReminderTemplate.md)
+- [RestResultReminderTemplates](Model/RestResultReminderTemplates.md)
+- [RestResultRevenueGroup](Model/RestResultRevenueGroup.md)
+- [RestResultRevenueGroups](Model/RestResultRevenueGroups.md)
+- [RestResultReverseInvoice](Model/RestResultReverseInvoice.md)
+- [RestResultReverseInvoices](Model/RestResultReverseInvoices.md)
+- [RestResultSale](Model/RestResultSale.md)
+- [RestResultSales](Model/RestResultSales.md)
+- [RestResultSalesProgress](Model/RestResultSalesProgress.md)
+- [RestResultSalesProgressHistories](Model/RestResultSalesProgressHistories.md)
+- [RestResultSalesProgressHistory](Model/RestResultSalesProgressHistory.md)
+- [RestResultSalesProgresses](Model/RestResultSalesProgresses.md)
+- [RestResultSalesReason](Model/RestResultSalesReason.md)
+- [RestResultSalesReasons](Model/RestResultSalesReasons.md)
+- [RestResultSalesService](Model/RestResultSalesService.md)
+- [RestResultSalesServices](Model/RestResultSalesServices.md)
+- [RestResultSalesSource](Model/RestResultSalesSource.md)
+- [RestResultSalesSources](Model/RestResultSalesSources.md)
+- [RestResultSalesStatus](Model/RestResultSalesStatus.md)
+- [RestResultSalesStatusses](Model/RestResultSalesStatusses.md)
+- [RestResultService](Model/RestResultService.md)
+- [RestResultServiceGroup](Model/RestResultServiceGroup.md)
+- [RestResultServiceGroups](Model/RestResultServiceGroups.md)
+- [RestResultServices](Model/RestResultServices.md)
+- [RestResultSetting](Model/RestResultSetting.md)
+- [RestResultSettings](Model/RestResultSettings.md)
+- [RestResultSharedItem](Model/RestResultSharedItem.md)
+- [RestResultSharedItems](Model/RestResultSharedItems.md)
+- [RestResultTask](Model/RestResultTask.md)
+- [RestResultTasks](Model/RestResultTasks.md)
+- [RestResultTeam](Model/RestResultTeam.md)
+- [RestResultTeams](Model/RestResultTeams.md)
+- [RestResultTimelineMessage](Model/RestResultTimelineMessage.md)
+- [RestResultTimelineMessageType](Model/RestResultTimelineMessageType.md)
+- [RestResultTimelineMessageTypes](Model/RestResultTimelineMessageTypes.md)
+- [RestResultTimelineMessages](Model/RestResultTimelineMessages.md)
+- [RestResultTimer](Model/RestResultTimer.md)
+- [RestResultTimers](Model/RestResultTimers.md)
+- [RestResultTimetable](Model/RestResultTimetable.md)
+- [RestResultTimetables](Model/RestResultTimetables.md)
+- [RestResultTojournalize](Model/RestResultTojournalize.md)
+- [RestResultTojournalizes](Model/RestResultTojournalizes.md)
+- [RestResultVatClass](Model/RestResultVatClass.md)
+- [RestResultVatClasses](Model/RestResultVatClasses.md)
+- [RestResultWorkflow](Model/RestResultWorkflow.md)
+- [RestResultWorkflowItem](Model/RestResultWorkflowItem.md)
+- [RestResultWorkflowItemType](Model/RestResultWorkflowItemType.md)
+- [RestResultWorkflowItemTypes](Model/RestResultWorkflowItemTypes.md)
+- [RestResultWorkflowItems](Model/RestResultWorkflowItems.md)
+- [RestResultWorkflows](Model/RestResultWorkflows.md)
+- [ResultMergerMerge](Model/ResultMergerMerge.md)
+- [ResultPostMergerCompare](Model/ResultPostMergerCompare.md)
+- [RevenueGroup](Model/RevenueGroup.md)
+- [ReverseInvoice](Model/ReverseInvoice.md)
+- [ReviewByWeekMetaData](Model/ReviewByWeekMetaData.md)
+- [Right](Model/Right.md)
+- [Rrule](Model/Rrule.md)
+- [Sales](Model/Sales.md)
+- [SalesProgress](Model/SalesProgress.md)
+- [SalesProgressHistory](Model/SalesProgressHistory.md)
+- [SalesReason](Model/SalesReason.md)
+- [SalesService](Model/SalesService.md)
+- [SalesServiceCostType](Model/SalesServiceCostType.md)
+- [SalesServiceHoursType](Model/SalesServiceHoursType.md)
+- [SalesSource](Model/SalesSource.md)
+- [SalesStatus](Model/SalesStatus.md)
+- [SbiCode](Model/SbiCode.md)
+- [SeparateInvoiceRecipient](Model/SeparateInvoiceRecipient.md)
+- [Service](Model/Service.md)
+- [ServiceCostType](Model/ServiceCostType.md)
+- [ServiceGroup](Model/ServiceGroup.md)
+- [Setting](Model/Setting.md)
+- [SubmissionStatus](Model/SubmissionStatus.md)
+- [Submit](Model/Submit.md)
+- [SubscriptionCycle](Model/SubscriptionCycle.md)
+- [Task](Model/Task.md)
+- [Team](Model/Team.md)
+- [Timer](Model/Timer.md)
+- [TimesheetRow](Model/TimesheetRow.md)
+- [Timetable](Model/Timetable.md)
+- [TimetableWeek](Model/TimetableWeek.md)
+- [TimetableWeekDay](Model/TimetableWeekDay.md)
+- [Timezone](Model/Timezone.md)
+- [User](Model/User.md)
+- [UserBetaFeatureRequest](Model/UserBetaFeatureRequest.md)
+- [VatClass](Model/VatClass.md)
+- [Workflow](Model/Workflow.md)
+- [WorkflowItem](Model/WorkflowItem.md)
+- [WorkflowItemType](Model/WorkflowItemType.md)
 
 ## Documentation For Authorization
 
