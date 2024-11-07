@@ -50,19 +50,10 @@ use Paqtcom\Simplicate\ObjectSerializer;
  */
 class HoursApi
 {
-    /**
-     * @var ClientInterface
-     */
     protected ClientInterface|Client $client;
 
-    /**
-     * @var Configuration
-     */
     protected Configuration $config;
 
-    /**
-     * @var HeaderSelector
-     */
     protected HeaderSelector $headerSelector;
 
     public function __construct(

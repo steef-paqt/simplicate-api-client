@@ -58,57 +58,41 @@ class Configuration
 
     /**
      * Access token for OAuth
-     *
-     * @var string
      */
     protected string $accessToken = '';
 
     /**
      * Username for HTTP basic authentication
-     *
-     * @var string
      */
     protected string $username = '';
 
     /**
      * Password for HTTP basic authentication
-     *
-     * @var string
      */
     protected string $password = '';
 
     /**
      * The host
-     *
-     * @var string
      */
     protected string $host = 'http://localhost/api/v2';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default
-     *
-     * @var string
      */
     protected string $userAgent = 'Swagger-Codegen/1.0.0/php';
 
     /**
      * Debug switch (default set to false)
-     *
-     * @var bool
      */
     protected bool $debug = false;
 
     /**
      * Debug file location (log to STDOUT by default)
-     *
-     * @var string
      */
     protected string $debugFile = 'php://output';
 
     /**
      * Debug file location (log to STDOUT by default)
-     *
-     * @var string
      */
     protected string $tempFolderPath;
 
