@@ -12,7 +12,7 @@
  **send_invoice_email_to_fixed_email**     | **bool**                                                      |                 | [optional] 
  **send_email_email**                      | **string**                                                    |                 | [optional] 
  **send_invoice_email_to_cc**              | **bool**                                                      |                 | [optional] 
- **cc**                                    | [**null[]**](.md)                                             |                 | [optional] 
+ **cc**                                    | **null[]**                                                    |                 | [optional] 
  **attention_to**                          | **string**                                                    |                 | [optional] 
  **attention_to_person_id**                | **string**                                                    | See /crm/person | [optional] 
  **attention_to_fixed**                    | **string**                                                    |                 | [optional] 
