@@ -55,7 +55,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\PostAbsence(); // \Paqtcom\Simplicate\Model\PostAbsence | Absence object containing data that with the new values
@@ -105,7 +105,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $body = new \Paqtcom\Simplicate\Model\PostAbsence(); // \Paqtcom\Simplicate\Model\PostAbsence | absence object containing data
 
@@ -153,7 +153,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -206,7 +206,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 
@@ -254,7 +254,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 
@@ -303,7 +303,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\PostApproval(); // \Paqtcom\Simplicate\Model\PostApproval | Approval object that needs to be updated
@@ -353,7 +353,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $body = new \Paqtcom\Simplicate\Model\PostApproval(); // \Paqtcom\Simplicate\Model\PostApproval | Approval object that needs to be added
 
@@ -401,7 +401,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -454,7 +454,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 
@@ -503,7 +503,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 
@@ -552,7 +552,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -605,7 +605,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -658,7 +658,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 
@@ -706,7 +706,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 
@@ -755,7 +755,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\PostHours(); // \Paqtcom\Simplicate\Model\PostHours | Hours object that needs to be updated
@@ -805,7 +805,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $body = new \Paqtcom\Simplicate\Model\PostHours(); // \Paqtcom\Simplicate\Model\PostHours | Hours object that needs to be added
 
@@ -853,7 +853,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -906,7 +906,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 
@@ -955,7 +955,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\PostHoursType(); // \Paqtcom\Simplicate\Model\PostHoursType | Hours type object that needs to be updated
@@ -1005,7 +1005,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $body = new \Paqtcom\Simplicate\Model\PostHoursType(); // \Paqtcom\Simplicate\Model\PostHoursType | Hour type object that needs to be added
 
@@ -1053,7 +1053,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\PostLeave(); // \Paqtcom\Simplicate\Model\PostLeave | Leave object containing data that with the new values
@@ -1103,7 +1103,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $body = new \Paqtcom\Simplicate\Model\PostLeave(); // \Paqtcom\Simplicate\Model\PostLeave | leave object containing data
 
@@ -1151,7 +1151,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $q_start_date = "q_start_date_example"; // string | 
 $q_end_date = "q_end_date_example"; // string | 
@@ -1204,7 +1204,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $body = new \Paqtcom\Simplicate\Model\PostSubmission(); // \Paqtcom\Simplicate\Model\PostSubmission | Description of hours that need to be submitted.
 
@@ -1252,7 +1252,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $body = new \Paqtcom\Simplicate\Model\Submit(); // \Paqtcom\Simplicate\Model\Submit | Data that is needed to submit hours
 
@@ -1300,7 +1300,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $q_start_date = "q_start_date_example"; // string | Y-m-d, must be a Monday
 $q_end_date = "q_end_date_example"; // string | Y-m-d, must be the Sunday after the Monday of the start_date
@@ -1353,7 +1353,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 
@@ -1401,7 +1401,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $q_before_date = "q_before_date_example"; // string | 
 $q_employee_id = "q_employee_id_example"; // string | 
@@ -1454,7 +1454,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $body = array(new \Paqtcom\Simplicate\Model\string[]()); // string[] | List of external ids for timesheetrows that need to be ordered.
 
@@ -1502,7 +1502,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $body = new \Paqtcom\Simplicate\Model\PostTimesheetRow(); // \Paqtcom\Simplicate\Model\PostTimesheetRow | Description of timesheetrow that is submitted.
 
@@ -1550,7 +1550,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -1603,7 +1603,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 
@@ -1651,7 +1651,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 
@@ -1700,7 +1700,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\PutTimer(); // \Paqtcom\Simplicate\Model\PutTimer | Timer object that needs to be updated
@@ -1750,7 +1750,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\HoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $body = new \Paqtcom\Simplicate\Model\PostTimer(); // \Paqtcom\Simplicate\Model\PostTimer | Timer object that needs to be added
 

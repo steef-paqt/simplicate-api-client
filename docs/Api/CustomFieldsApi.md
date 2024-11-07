@@ -34,7 +34,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -87,7 +87,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 
@@ -135,7 +135,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -188,7 +188,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\CustomFieldGroup(); // \Paqtcom\Simplicate\Model\CustomFieldGroup | Organization object containing data that with the new values
@@ -238,7 +238,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\CustomFieldGroup(); // \Paqtcom\Simplicate\Model\CustomFieldGroup | Organization object containing data that with the new values
@@ -288,7 +288,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -341,7 +341,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -394,7 +394,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -447,7 +447,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 
@@ -495,7 +495,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 $offset = 56; // int | The offset to search from
@@ -550,7 +550,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $body = new \Paqtcom\Simplicate\Model\CustomFieldOption(); // \Paqtcom\Simplicate\Model\CustomFieldOption | CustomFieldOption object containing data
 
@@ -598,7 +598,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $id = "id_example"; // string | The template's id
 $body = new \Paqtcom\Simplicate\Model\CustomFieldOption(); // \Paqtcom\Simplicate\Model\CustomFieldOption | CustomFieldOption object containing data
@@ -648,7 +648,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results
@@ -701,7 +701,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Paqtcom\Simplicate\Api\CustomFieldsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new Paqtcom\Simplicate\ClientFactory::create("<key>", "<secret>", "<domain>")()
 );
 $offset = 56; // int | The offset to search from
 $limit = 5; // int | The limit of max allowed results

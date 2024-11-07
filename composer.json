@@ -24,16 +24,24 @@
         }
     ],
     "require": {
-        "php": "^8.3",
+        "php": "^8.2",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^6.2",
+        "symfony/http-client": "^7.1",
+        "php-http/discovery": "^1.20",
+        "php-http/client-common": "^2.7"
     },
     "autoload": {
         "psr-4": { "Paqtcom\\Simplicate\\" : "src/" }
     },
     "autoload-dev": {
         "psr-4": { "Swagger\\Client\\" : "test/" }
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
     }
 }
