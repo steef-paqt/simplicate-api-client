@@ -50,14 +50,14 @@ class BaseSetting implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BaseSetting';
+    protected static string $swaggerModelName = 'BaseSetting';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'timestamp' => 'string',
         'app_id' => 'string',
         'key' => 'string',
@@ -69,7 +69,7 @@ class BaseSetting implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'timestamp' => null,
         'app_id' => null,
         'key' => null,
@@ -102,7 +102,7 @@ class BaseSetting implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'timestamp' => 'timestamp',
         'app_id' => 'app_id',
         'key' => 'key',
@@ -114,7 +114,7 @@ class BaseSetting implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'timestamp' => 'setTimestamp',
         'app_id' => 'setAppId',
         'key' => 'setKey',
@@ -126,7 +126,7 @@ class BaseSetting implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'timestamp' => 'getTimestamp',
         'app_id' => 'getAppId',
         'key' => 'getKey',
@@ -179,7 +179,7 @@ class BaseSetting implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class EmailAttachment implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'EmailAttachment';
+    protected static string $swaggerModelName = 'EmailAttachment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'file_path' => 'string',
     ];
@@ -67,7 +67,7 @@ class EmailAttachment implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'file_path' => null,
     ];
@@ -98,7 +98,7 @@ class EmailAttachment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'file_path' => 'file_path',
     ];
@@ -108,7 +108,7 @@ class EmailAttachment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'file_path' => 'setFilePath',
     ];
@@ -118,7 +118,7 @@ class EmailAttachment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'file_path' => 'getFilePath',
     ];
@@ -169,7 +169,7 @@ class EmailAttachment implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class Feature implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Feature';
+    protected static string $swaggerModelName = 'Feature';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'identifier' => 'string',
         'name' => 'string',
         'is_enabled' => 'bool',
@@ -68,7 +68,7 @@ class Feature implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'identifier' => null,
         'name' => null,
         'is_enabled' => null,
@@ -100,7 +100,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'identifier' => 'identifier',
         'name' => 'name',
         'is_enabled' => 'is_enabled',
@@ -111,7 +111,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'identifier' => 'setIdentifier',
         'name' => 'setName',
         'is_enabled' => 'setIsEnabled',
@@ -122,7 +122,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'identifier' => 'getIdentifier',
         'name' => 'getName',
         'is_enabled' => 'getIsEnabled',
@@ -174,7 +174,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

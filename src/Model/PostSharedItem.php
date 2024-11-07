@@ -50,14 +50,14 @@ class PostSharedItem implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostSharedItem';
+    protected static string $swaggerModelName = 'PostSharedItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'tag' => 'string',
         'type' => 'string',
         'employee_id' => 'string',
@@ -70,7 +70,7 @@ class PostSharedItem implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'tag' => null,
         'type' => null,
         'employee_id' => null,
@@ -104,7 +104,7 @@ class PostSharedItem implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'tag' => 'tag',
         'type' => 'type',
         'employee_id' => 'employee_id',
@@ -117,7 +117,7 @@ class PostSharedItem implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'tag' => 'setTag',
         'type' => 'setType',
         'employee_id' => 'setEmployeeId',
@@ -130,7 +130,7 @@ class PostSharedItem implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'tag' => 'getTag',
         'type' => 'getType',
         'employee_id' => 'getEmployeeId',
@@ -184,7 +184,7 @@ class PostSharedItem implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

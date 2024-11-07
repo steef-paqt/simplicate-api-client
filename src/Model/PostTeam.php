@@ -50,14 +50,14 @@ class PostTeam implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostTeam';
+    protected static string $swaggerModelName = 'PostTeam';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'value' => 'bool',
     ];
@@ -67,7 +67,7 @@ class PostTeam implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'value' => null,
     ];
@@ -98,7 +98,7 @@ class PostTeam implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'value' => 'value',
     ];
@@ -108,7 +108,7 @@ class PostTeam implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'value' => 'setValue',
     ];
@@ -118,7 +118,7 @@ class PostTeam implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'value' => 'getValue',
     ];
@@ -169,7 +169,7 @@ class PostTeam implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

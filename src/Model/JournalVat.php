@@ -50,14 +50,14 @@ class JournalVat implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'JournalVat';
+    protected static string $swaggerModelName = 'JournalVat';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'vat_id' => 'string',
         'amount_vat' => 'float',
         'amount_excl' => 'float',
@@ -68,7 +68,7 @@ class JournalVat implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'vat_id' => null,
         'amount_vat' => 'float',
         'amount_excl' => 'float',
@@ -100,7 +100,7 @@ class JournalVat implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'vat_id' => 'vat_id',
         'amount_vat' => 'amount_vat',
         'amount_excl' => 'amount_excl',
@@ -111,7 +111,7 @@ class JournalVat implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'vat_id' => 'setVatId',
         'amount_vat' => 'setAmountVat',
         'amount_excl' => 'setAmountExcl',
@@ -122,7 +122,7 @@ class JournalVat implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'vat_id' => 'getVatId',
         'amount_vat' => 'getAmountVat',
         'amount_excl' => 'getAmountExcl',
@@ -174,7 +174,7 @@ class JournalVat implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

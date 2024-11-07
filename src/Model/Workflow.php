@@ -50,14 +50,14 @@ class Workflow implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Workflow';
+    protected static string $swaggerModelName = 'Workflow';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'title' => 'string',
         'description' => 'string',
         'deadline_date' => 'string',
@@ -68,7 +68,7 @@ class Workflow implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'title' => null,
         'description' => null,
         'deadline_date' => null,
@@ -100,7 +100,7 @@ class Workflow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'title' => 'title',
         'description' => 'description',
         'deadline_date' => 'deadline_date',
@@ -111,7 +111,7 @@ class Workflow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'title' => 'setTitle',
         'description' => 'setDescription',
         'deadline_date' => 'setDeadlineDate',
@@ -122,7 +122,7 @@ class Workflow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'title' => 'getTitle',
         'description' => 'getDescription',
         'deadline_date' => 'getDeadlineDate',
@@ -174,7 +174,7 @@ class Workflow implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

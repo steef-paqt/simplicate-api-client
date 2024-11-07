@@ -50,14 +50,14 @@ class GetTeam implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetTeam';
+    protected static string $swaggerModelName = 'GetTeam';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'employees' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple[]',
         'name' => 'string',
@@ -68,7 +68,7 @@ class GetTeam implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'employees' => null,
         'name' => null,
@@ -100,7 +100,7 @@ class GetTeam implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'employees' => 'employees',
         'name' => 'name',
@@ -111,7 +111,7 @@ class GetTeam implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'employees' => 'setEmployees',
         'name' => 'setName',
@@ -122,7 +122,7 @@ class GetTeam implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'employees' => 'getEmployees',
         'name' => 'getName',
@@ -174,7 +174,7 @@ class GetTeam implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class Creator implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Creator';
+    protected static string $swaggerModelName = 'Creator';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'type' => 'string',
         'label' => 'string',
@@ -69,7 +69,7 @@ class Creator implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'type' => null,
         'label' => null,
@@ -102,7 +102,7 @@ class Creator implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'type' => 'type',
         'label' => 'label',
@@ -114,7 +114,7 @@ class Creator implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'type' => 'setType',
         'label' => 'setLabel',
@@ -126,7 +126,7 @@ class Creator implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'type' => 'getType',
         'label' => 'getLabel',
@@ -179,7 +179,7 @@ class Creator implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

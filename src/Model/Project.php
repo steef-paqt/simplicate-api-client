@@ -50,14 +50,14 @@ class Project implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Project';
+    protected static string $swaggerModelName = 'Project';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'my_organization_profile_id' => 'string',
         'person_id' => 'string',
         'organization_id' => 'string',
@@ -77,7 +77,7 @@ class Project implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'my_organization_profile_id' => null,
         'person_id' => null,
         'organization_id' => null,
@@ -118,7 +118,7 @@ class Project implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'my_organization_profile_id' => 'my_organization_profile_id',
         'person_id' => 'person_id',
         'organization_id' => 'organization_id',
@@ -138,7 +138,7 @@ class Project implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'my_organization_profile_id' => 'setMyOrganizationProfileId',
         'person_id' => 'setPersonId',
         'organization_id' => 'setOrganizationId',
@@ -158,7 +158,7 @@ class Project implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'my_organization_profile_id' => 'getMyOrganizationProfileId',
         'person_id' => 'getPersonId',
         'organization_id' => 'getOrganizationId',
@@ -219,7 +219,7 @@ class Project implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

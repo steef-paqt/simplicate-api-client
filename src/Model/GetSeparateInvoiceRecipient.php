@@ -50,14 +50,14 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetSeparateInvoiceRecipient';
+    protected static string $swaggerModelName = 'GetSeparateInvoiceRecipient';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
         'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
         'contact' => '\Paqtcom\Simplicate\Model\GetContactSimple',
@@ -69,7 +69,7 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'organization' => null,
         'person' => null,
         'contact' => null,
@@ -102,7 +102,7 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'organization' => 'organization',
         'person' => 'person',
         'contact' => 'contact',
@@ -114,7 +114,7 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'organization' => 'setOrganization',
         'person' => 'setPerson',
         'contact' => 'setContact',
@@ -126,7 +126,7 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'organization' => 'getOrganization',
         'person' => 'getPerson',
         'contact' => 'getContact',
@@ -179,7 +179,7 @@ class GetSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

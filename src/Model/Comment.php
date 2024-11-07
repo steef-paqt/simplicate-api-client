@@ -50,14 +50,14 @@ class Comment implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Comment';
+    protected static string $swaggerModelName = 'Comment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'message' => 'string',
         'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
@@ -69,7 +69,7 @@ class Comment implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'message' => null,
         'employee' => null,
@@ -102,7 +102,7 @@ class Comment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'message' => 'message',
         'employee' => 'employee',
@@ -114,7 +114,7 @@ class Comment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'message' => 'setMessage',
         'employee' => 'setEmployee',
@@ -126,7 +126,7 @@ class Comment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'message' => 'getMessage',
         'employee' => 'getEmployee',
@@ -179,7 +179,7 @@ class Comment implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

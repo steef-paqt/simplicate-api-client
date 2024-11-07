@@ -50,14 +50,14 @@ class PostExpense implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostExpense';
+    protected static string $swaggerModelName = 'PostExpense';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'project_id' => 'string',
         'service_id' => 'string',
         'costtype_id' => 'string',
@@ -71,7 +71,7 @@ class PostExpense implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'project_id' => null,
         'service_id' => null,
         'costtype_id' => null,
@@ -106,7 +106,7 @@ class PostExpense implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'project_id' => 'project_id',
         'service_id' => 'service_id',
         'costtype_id' => 'costtype_id',
@@ -120,7 +120,7 @@ class PostExpense implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'project_id' => 'setProjectId',
         'service_id' => 'setServiceId',
         'costtype_id' => 'setCosttypeId',
@@ -134,7 +134,7 @@ class PostExpense implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'project_id' => 'getProjectId',
         'service_id' => 'getServiceId',
         'costtype_id' => 'getCosttypeId',
@@ -189,7 +189,7 @@ class PostExpense implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

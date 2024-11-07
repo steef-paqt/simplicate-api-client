@@ -50,14 +50,14 @@ class LinkedToEntity implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LinkedToEntity';
+    protected static string $swaggerModelName = 'LinkedToEntity';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'label' => 'string',
         'type' => 'string',
@@ -68,7 +68,7 @@ class LinkedToEntity implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'label' => null,
         'type' => null,
@@ -100,7 +100,7 @@ class LinkedToEntity implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'label' => 'label',
         'type' => 'type',
@@ -111,7 +111,7 @@ class LinkedToEntity implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'label' => 'setLabel',
         'type' => 'setType',
@@ -122,7 +122,7 @@ class LinkedToEntity implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'label' => 'getLabel',
         'type' => 'getType',
@@ -174,7 +174,7 @@ class LinkedToEntity implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

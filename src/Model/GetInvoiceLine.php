@@ -50,14 +50,14 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetInvoiceLine';
+    protected static string $swaggerModelName = 'GetInvoiceLine';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'revenue_group' => '\Paqtcom\Simplicate\Model\RevenueGroup',
         'default_service_id' => 'string',
@@ -77,7 +77,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'revenue_group' => null,
         'default_service_id' => null,
@@ -118,7 +118,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'revenue_group' => 'revenue_group',
         'default_service_id' => 'default_service_id',
@@ -138,7 +138,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'revenue_group' => 'setRevenueGroup',
         'default_service_id' => 'setDefaultServiceId',
@@ -158,7 +158,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'revenue_group' => 'getRevenueGroup',
         'default_service_id' => 'getDefaultServiceId',
@@ -219,7 +219,7 @@ class GetInvoiceLine implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

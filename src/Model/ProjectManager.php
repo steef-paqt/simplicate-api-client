@@ -50,14 +50,14 @@ class ProjectManager implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ProjectManager';
+    protected static string $swaggerModelName = 'ProjectManager';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'person_id' => 'string',
         'name' => 'string',
@@ -68,7 +68,7 @@ class ProjectManager implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'person_id' => null,
         'name' => null,
@@ -100,7 +100,7 @@ class ProjectManager implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'person_id' => 'person_id',
         'name' => 'name',
@@ -111,7 +111,7 @@ class ProjectManager implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'person_id' => 'setPersonId',
         'name' => 'setName',
@@ -122,7 +122,7 @@ class ProjectManager implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'person_id' => 'getPersonId',
         'name' => 'getName',
@@ -174,7 +174,7 @@ class ProjectManager implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

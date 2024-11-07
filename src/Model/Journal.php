@@ -50,14 +50,14 @@ class Journal implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Journal';
+    protected static string $swaggerModelName = 'Journal';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'journalize_date' => 'string',
         'invoice_date' => 'string',
         'invoice_number' => 'string',
@@ -77,7 +77,7 @@ class Journal implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'journalize_date' => null,
         'invoice_date' => null,
         'invoice_number' => null,
@@ -118,7 +118,7 @@ class Journal implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'journalize_date' => 'journalize_date',
         'invoice_date' => 'invoice_date',
         'invoice_number' => 'invoice_number',
@@ -138,7 +138,7 @@ class Journal implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'journalize_date' => 'setJournalizeDate',
         'invoice_date' => 'setInvoiceDate',
         'invoice_number' => 'setInvoiceNumber',
@@ -158,7 +158,7 @@ class Journal implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'journalize_date' => 'getJournalizeDate',
         'invoice_date' => 'getInvoiceDate',
         'invoice_number' => 'getInvoiceNumber',
@@ -219,7 +219,7 @@ class Journal implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

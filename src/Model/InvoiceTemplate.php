@@ -50,14 +50,14 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'InvoiceTemplate';
+    protected static string $swaggerModelName = 'InvoiceTemplate';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
         'hide_amount' => 'bool',
@@ -72,7 +72,7 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'name' => null,
         'hide_amount' => null,
@@ -108,7 +108,7 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'name' => 'name',
         'hide_amount' => 'hide_amount',
@@ -123,7 +123,7 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'name' => 'setName',
         'hide_amount' => 'setHideAmount',
@@ -138,7 +138,7 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'name' => 'getName',
         'hide_amount' => 'getHideAmount',
@@ -194,7 +194,7 @@ class InvoiceTemplate implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

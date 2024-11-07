@@ -50,14 +50,14 @@ class AbsenceType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AbsenceType';
+    protected static string $swaggerModelName = 'AbsenceType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'label' => 'string',
         'blocked' => 'bool',
         'color' => 'string',
@@ -68,7 +68,7 @@ class AbsenceType implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'label' => null,
         'blocked' => null,
         'color' => null,
@@ -100,7 +100,7 @@ class AbsenceType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'label' => 'label',
         'blocked' => 'blocked',
         'color' => 'color',
@@ -111,7 +111,7 @@ class AbsenceType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'label' => 'setLabel',
         'blocked' => 'setBlocked',
         'color' => 'setColor',
@@ -122,7 +122,7 @@ class AbsenceType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'label' => 'getLabel',
         'blocked' => 'getBlocked',
         'color' => 'getColor',
@@ -174,7 +174,7 @@ class AbsenceType implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

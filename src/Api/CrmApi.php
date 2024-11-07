@@ -53,17 +53,17 @@ class CrmApi
     /**
      * @var ClientInterface
      */
-    protected $client;
+    protected ClientInterface|Client $client;
 
     /**
      * @var Configuration
      */
-    protected $config;
+    protected Configuration $config;
 
     /**
      * @var HeaderSelector
      */
-    protected $headerSelector;
+    protected HeaderSelector $headerSelector;
 
     public function __construct(
         ClientInterface $client = null,

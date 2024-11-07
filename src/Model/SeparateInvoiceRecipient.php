@@ -50,14 +50,14 @@ class SeparateInvoiceRecipient implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SeparateInvoiceRecipient';
+    protected static string $swaggerModelName = 'SeparateInvoiceRecipient';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'is_separate_invoice_recipient' => 'bool',
     ];
 
@@ -66,7 +66,7 @@ class SeparateInvoiceRecipient implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'is_separate_invoice_recipient' => null,
     ];
 
@@ -96,7 +96,7 @@ class SeparateInvoiceRecipient implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'is_separate_invoice_recipient' => 'is_separate_invoice_recipient',
     ];
 
@@ -105,7 +105,7 @@ class SeparateInvoiceRecipient implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'is_separate_invoice_recipient' => 'setIsSeparateInvoiceRecipient',
     ];
 
@@ -114,7 +114,7 @@ class SeparateInvoiceRecipient implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'is_separate_invoice_recipient' => 'getIsSeparateInvoiceRecipient',
     ];
 
@@ -164,7 +164,7 @@ class SeparateInvoiceRecipient implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

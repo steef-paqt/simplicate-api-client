@@ -50,14 +50,14 @@ class GetProject implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetProject';
+    protected static string $swaggerModelName = 'GetProject';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'project_manager' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
         'project_status' => '\Paqtcom\Simplicate\Model\ProjectStatus',
@@ -101,7 +101,7 @@ class GetProject implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'project_manager' => null,
         'project_status' => null,
@@ -166,7 +166,7 @@ class GetProject implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'project_manager' => 'project_manager',
         'project_status' => 'project_status',
@@ -210,7 +210,7 @@ class GetProject implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'project_manager' => 'setProjectManager',
         'project_status' => 'setProjectStatus',
@@ -254,7 +254,7 @@ class GetProject implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'project_manager' => 'getProjectManager',
         'project_status' => 'getProjectStatus',
@@ -339,7 +339,7 @@ class GetProject implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

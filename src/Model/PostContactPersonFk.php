@@ -50,14 +50,14 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostContactPersonFk';
+    protected static string $swaggerModelName = 'PostContactPersonFk';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'person_id' => 'string',
         'work_function' => 'string',
         'work_email' => 'string',
@@ -69,7 +69,7 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'person_id' => null,
         'work_function' => null,
         'work_email' => null,
@@ -102,7 +102,7 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'person_id' => 'person_id',
         'work_function' => 'work_function',
         'work_email' => 'work_email',
@@ -114,7 +114,7 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'person_id' => 'setPersonId',
         'work_function' => 'setWorkFunction',
         'work_email' => 'setWorkEmail',
@@ -126,7 +126,7 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'person_id' => 'getPersonId',
         'work_function' => 'getWorkFunction',
         'work_email' => 'getWorkEmail',
@@ -179,7 +179,7 @@ class PostContactPersonFk implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

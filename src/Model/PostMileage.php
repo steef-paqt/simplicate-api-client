@@ -50,14 +50,14 @@ class PostMileage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostMileage';
+    protected static string $swaggerModelName = 'PostMileage';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'employee_id' => 'string',
         'project_id' => 'string',
         'approvalstatus_id' => 'string',
@@ -73,7 +73,7 @@ class PostMileage implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'employee_id' => null,
         'project_id' => null,
         'approvalstatus_id' => null,
@@ -110,7 +110,7 @@ class PostMileage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'employee_id' => 'employee_id',
         'project_id' => 'project_id',
         'approvalstatus_id' => 'approvalstatus_id',
@@ -126,7 +126,7 @@ class PostMileage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'employee_id' => 'setEmployeeId',
         'project_id' => 'setProjectId',
         'approvalstatus_id' => 'setApprovalstatusId',
@@ -142,7 +142,7 @@ class PostMileage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'employee_id' => 'getEmployeeId',
         'project_id' => 'getProjectId',
         'approvalstatus_id' => 'getApprovalstatusId',
@@ -217,7 +217,7 @@ class PostMileage implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

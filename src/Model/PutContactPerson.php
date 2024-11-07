@@ -50,14 +50,14 @@ class PutContactPerson implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PutContactPerson';
+    protected static string $swaggerModelName = 'PutContactPerson';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'is_active' => 'bool',
         'work_function' => 'string',
         'work_email' => 'string',
@@ -71,7 +71,7 @@ class PutContactPerson implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'is_active' => null,
         'work_function' => null,
         'work_email' => null,
@@ -106,7 +106,7 @@ class PutContactPerson implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'is_active' => 'is_active',
         'work_function' => 'work_function',
         'work_email' => 'work_email',
@@ -120,7 +120,7 @@ class PutContactPerson implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'is_active' => 'setIsActive',
         'work_function' => 'setWorkFunction',
         'work_email' => 'setWorkEmail',
@@ -134,7 +134,7 @@ class PutContactPerson implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'is_active' => 'getIsActive',
         'work_function' => 'getWorkFunction',
         'work_email' => 'getWorkEmail',
@@ -189,7 +189,7 @@ class PutContactPerson implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

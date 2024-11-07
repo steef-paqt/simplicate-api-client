@@ -50,14 +50,14 @@ class MetaData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'MetaData';
+    protected static string $swaggerModelName = 'MetaData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'count' => 'int',
         'total_count' => 'int',
         'offset' => 'int',
@@ -72,7 +72,7 @@ class MetaData implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'count' => null,
         'total_count' => null,
         'offset' => null,
@@ -108,7 +108,7 @@ class MetaData implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'count' => 'count',
         'total_count' => 'total_count',
         'offset' => 'offset',
@@ -123,7 +123,7 @@ class MetaData implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'count' => 'setCount',
         'total_count' => 'setTotalCount',
         'offset' => 'setOffset',
@@ -138,7 +138,7 @@ class MetaData implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'count' => 'getCount',
         'total_count' => 'getTotalCount',
         'offset' => 'getOffset',
@@ -194,7 +194,7 @@ class MetaData implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

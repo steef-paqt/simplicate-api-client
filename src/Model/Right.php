@@ -50,14 +50,14 @@ class Right implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Right';
+    protected static string $swaggerModelName = 'Right';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'module_key' => 'string',
         'module_label' => 'string',
         'right_key' => 'string',
@@ -70,7 +70,7 @@ class Right implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'module_key' => null,
         'module_label' => null,
         'right_key' => null,
@@ -104,7 +104,7 @@ class Right implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'module_key' => 'module_key',
         'module_label' => 'module_label',
         'right_key' => 'right_key',
@@ -117,7 +117,7 @@ class Right implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'module_key' => 'setModuleKey',
         'module_label' => 'setModuleLabel',
         'right_key' => 'setRightKey',
@@ -130,7 +130,7 @@ class Right implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'module_key' => 'getModuleKey',
         'module_label' => 'getModuleLabel',
         'right_key' => 'getRightKey',
@@ -184,7 +184,7 @@ class Right implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

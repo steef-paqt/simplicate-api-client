@@ -50,14 +50,14 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetTimesheetRowItemtype';
+    protected static string $swaggerModelName = 'GetTimesheetRowItemtype';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
         'unit_name' => 'string',
@@ -71,7 +71,7 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'name' => null,
         'unit_name' => null,
@@ -106,7 +106,7 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'name' => 'name',
         'unit_name' => 'unit_name',
@@ -120,7 +120,7 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'name' => 'setName',
         'unit_name' => 'setUnitName',
@@ -134,7 +134,7 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'name' => 'getName',
         'unit_name' => 'getUnitName',
@@ -189,7 +189,7 @@ class GetTimesheetRowItemtype implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

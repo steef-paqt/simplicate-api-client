@@ -50,14 +50,14 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostContactPersonProperties';
+    protected static string $swaggerModelName = 'PostContactPersonProperties';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'work_function' => 'string',
         'work_email' => 'string',
         'work_mobile' => 'string',
@@ -68,7 +68,7 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'work_function' => null,
         'work_email' => null,
         'work_mobile' => null,
@@ -100,7 +100,7 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'work_function' => 'work_function',
         'work_email' => 'work_email',
         'work_mobile' => 'work_mobile',
@@ -111,7 +111,7 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'work_function' => 'setWorkFunction',
         'work_email' => 'setWorkEmail',
         'work_mobile' => 'setWorkMobile',
@@ -122,7 +122,7 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'work_function' => 'getWorkFunction',
         'work_email' => 'getWorkEmail',
         'work_mobile' => 'getWorkMobile',
@@ -174,7 +174,7 @@ class PostContactPersonProperties implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

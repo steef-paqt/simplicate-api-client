@@ -50,14 +50,14 @@ class Organization implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Organization';
+    protected static string $swaggerModelName = 'Organization';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'name' => 'string',
         'coc_code' => 'string',
         'vat_number' => 'string',
@@ -81,7 +81,7 @@ class Organization implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'name' => null,
         'coc_code' => null,
         'vat_number' => null,
@@ -126,7 +126,7 @@ class Organization implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'name' => 'name',
         'coc_code' => 'coc_code',
         'vat_number' => 'vat_number',
@@ -150,7 +150,7 @@ class Organization implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'name' => 'setName',
         'coc_code' => 'setCocCode',
         'vat_number' => 'setVatNumber',
@@ -174,7 +174,7 @@ class Organization implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'name' => 'getName',
         'coc_code' => 'getCocCode',
         'vat_number' => 'getVatNumber',
@@ -239,7 +239,7 @@ class Organization implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

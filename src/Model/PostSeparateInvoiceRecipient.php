@@ -50,14 +50,14 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostSeparateInvoiceRecipient';
+    protected static string $swaggerModelName = 'PostSeparateInvoiceRecipient';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'organization_id' => 'string',
         'person_id' => 'string',
         'contact_id' => 'string',
@@ -69,7 +69,7 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'organization_id' => null,
         'person_id' => null,
         'contact_id' => null,
@@ -102,7 +102,7 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'organization_id' => 'organization_id',
         'person_id' => 'person_id',
         'contact_id' => 'contact_id',
@@ -114,7 +114,7 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'organization_id' => 'setOrganizationId',
         'person_id' => 'setPersonId',
         'contact_id' => 'setContactId',
@@ -126,7 +126,7 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'organization_id' => 'getOrganizationId',
         'person_id' => 'getPersonId',
         'contact_id' => 'getContactId',
@@ -179,7 +179,7 @@ class PostSeparateInvoiceRecipient implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

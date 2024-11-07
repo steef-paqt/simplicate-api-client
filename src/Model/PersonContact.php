@@ -50,14 +50,14 @@ class PersonContact implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PersonContact';
+    protected static string $swaggerModelName = 'PersonContact';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'person_id' => 'string',
         'first_name' => 'object',
@@ -76,7 +76,7 @@ class PersonContact implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'person_id' => null,
         'first_name' => null,
@@ -116,7 +116,7 @@ class PersonContact implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'person_id' => 'person_id',
         'first_name' => 'first_name',
@@ -135,7 +135,7 @@ class PersonContact implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'person_id' => 'setPersonId',
         'first_name' => 'setFirstName',
@@ -154,7 +154,7 @@ class PersonContact implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'person_id' => 'getPersonId',
         'first_name' => 'getFirstName',
@@ -214,7 +214,7 @@ class PersonContact implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

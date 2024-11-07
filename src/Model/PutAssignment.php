@@ -50,14 +50,14 @@ class PutAssignment implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PutAssignment';
+    protected static string $swaggerModelName = 'PutAssignment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'employees' => '\Paqtcom\Simplicate\Model\PostEmployeeFk[]',
         'status_id' => 'string',
         'name' => 'string',
@@ -73,7 +73,7 @@ class PutAssignment implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'employees' => null,
         'status_id' => null,
         'name' => null,
@@ -110,7 +110,7 @@ class PutAssignment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'employees' => 'employees',
         'status_id' => 'status_id',
         'name' => 'name',
@@ -126,7 +126,7 @@ class PutAssignment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'employees' => 'setEmployees',
         'status_id' => 'setStatusId',
         'name' => 'setName',
@@ -142,7 +142,7 @@ class PutAssignment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'employees' => 'getEmployees',
         'status_id' => 'getStatusId',
         'name' => 'getName',
@@ -215,7 +215,7 @@ class PutAssignment implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

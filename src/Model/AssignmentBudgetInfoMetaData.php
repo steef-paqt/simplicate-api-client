@@ -50,14 +50,14 @@ class AssignmentBudgetInfoMetaData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AssignmentBudgetInfoMetaData';
+    protected static string $swaggerModelName = 'AssignmentBudgetInfoMetaData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'until_and_including_date' => 'string',
         'count' => 'int',
         'total_count' => 'int',
@@ -73,7 +73,7 @@ class AssignmentBudgetInfoMetaData implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'until_and_including_date' => null,
         'count' => null,
         'total_count' => null,
@@ -110,7 +110,7 @@ class AssignmentBudgetInfoMetaData implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'until_and_including_date' => 'untilAndIncludingDate',
         'count' => 'count',
         'total_count' => 'total_count',
@@ -126,7 +126,7 @@ class AssignmentBudgetInfoMetaData implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'until_and_including_date' => 'setUntilAndIncludingDate',
         'count' => 'setCount',
         'total_count' => 'setTotalCount',
@@ -142,7 +142,7 @@ class AssignmentBudgetInfoMetaData implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'until_and_including_date' => 'getUntilAndIncludingDate',
         'count' => 'getCount',
         'total_count' => 'getTotalCount',
@@ -199,7 +199,7 @@ class AssignmentBudgetInfoMetaData implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetProjectSimple';
+    protected static string $swaggerModelName = 'GetProjectSimple';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
         'project_number' => 'string',
@@ -73,7 +73,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'name' => null,
         'project_number' => null,
@@ -110,7 +110,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'name' => 'name',
         'project_number' => 'project_number',
@@ -126,7 +126,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'name' => 'setName',
         'project_number' => 'setProjectNumber',
@@ -142,7 +142,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'name' => 'getName',
         'project_number' => 'getProjectNumber',
@@ -199,7 +199,7 @@ class GetProjectSimple implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

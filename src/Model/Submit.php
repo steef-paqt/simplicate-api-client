@@ -50,14 +50,14 @@ class Submit implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Submit';
+    protected static string $swaggerModelName = 'Submit';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'employee_id' => 'string',
         'start_date' => 'string',
         'end_date' => 'string',
@@ -68,7 +68,7 @@ class Submit implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'employee_id' => null,
         'start_date' => null,
         'end_date' => null,
@@ -100,7 +100,7 @@ class Submit implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'employee_id' => 'employee_id',
         'start_date' => 'start_date',
         'end_date' => 'end_date',
@@ -111,7 +111,7 @@ class Submit implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'employee_id' => 'setEmployeeId',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
@@ -122,7 +122,7 @@ class Submit implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'employee_id' => 'getEmployeeId',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
@@ -174,7 +174,7 @@ class Submit implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

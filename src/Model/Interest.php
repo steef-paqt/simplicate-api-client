@@ -50,14 +50,14 @@ class Interest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Interest';
+    protected static string $swaggerModelName = 'Interest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
         'api_name' => 'string',
@@ -71,7 +71,7 @@ class Interest implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'name' => null,
         'api_name' => null,
@@ -106,7 +106,7 @@ class Interest implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'name' => 'name',
         'api_name' => 'api_name',
@@ -120,7 +120,7 @@ class Interest implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'name' => 'setName',
         'api_name' => 'setApiName',
@@ -134,7 +134,7 @@ class Interest implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'name' => 'getName',
         'api_name' => 'getApiName',
@@ -189,7 +189,7 @@ class Interest implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

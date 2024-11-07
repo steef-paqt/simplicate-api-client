@@ -50,14 +50,14 @@ class PutTimer implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PutTimer';
+    protected static string $swaggerModelName = 'PutTimer';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'state' => 'string',
         'description' => 'string',
         'metadata' => 'string',
@@ -68,7 +68,7 @@ class PutTimer implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'state' => null,
         'description' => null,
         'metadata' => null,
@@ -100,7 +100,7 @@ class PutTimer implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'state' => 'state',
         'description' => 'description',
         'metadata' => 'metadata',
@@ -111,7 +111,7 @@ class PutTimer implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'state' => 'setState',
         'description' => 'setDescription',
         'metadata' => 'setMetadata',
@@ -122,7 +122,7 @@ class PutTimer implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'state' => 'getState',
         'description' => 'getDescription',
         'metadata' => 'getMetadata',
@@ -192,7 +192,7 @@ class PutTimer implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

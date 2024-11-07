@@ -50,14 +50,14 @@ class Absence implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Absence';
+    protected static string $swaggerModelName = 'Absence';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'start_date' => 'string',
         'end_date' => 'string',
         'description' => 'string',
@@ -68,7 +68,7 @@ class Absence implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'start_date' => null,
         'end_date' => null,
         'description' => null,
@@ -100,7 +100,7 @@ class Absence implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'start_date' => 'start_date',
         'end_date' => 'end_date',
         'description' => 'description',
@@ -111,7 +111,7 @@ class Absence implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'description' => 'setDescription',
@@ -122,7 +122,7 @@ class Absence implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'description' => 'getDescription',
@@ -174,7 +174,7 @@ class Absence implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

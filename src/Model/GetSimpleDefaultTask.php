@@ -50,14 +50,14 @@ class GetSimpleDefaultTask implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetSimpleDefaultTask';
+    protected static string $swaggerModelName = 'GetSimpleDefaultTask';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'description' => 'bool',
     ];
@@ -67,7 +67,7 @@ class GetSimpleDefaultTask implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'description' => null,
     ];
@@ -98,7 +98,7 @@ class GetSimpleDefaultTask implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'description' => 'description',
     ];
@@ -108,7 +108,7 @@ class GetSimpleDefaultTask implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'description' => 'setDescription',
     ];
@@ -118,7 +118,7 @@ class GetSimpleDefaultTask implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'description' => 'getDescription',
     ];
@@ -169,7 +169,7 @@ class GetSimpleDefaultTask implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

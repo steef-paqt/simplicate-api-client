@@ -50,14 +50,14 @@ class WorkflowItemType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'WorkflowItemType';
+    protected static string $swaggerModelName = 'WorkflowItemType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'type' => 'string',
     ];
 
@@ -66,7 +66,7 @@ class WorkflowItemType implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'type' => null,
     ];
 
@@ -96,7 +96,7 @@ class WorkflowItemType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'type' => 'type',
     ];
 
@@ -105,7 +105,7 @@ class WorkflowItemType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'type' => 'setType',
     ];
 
@@ -114,7 +114,7 @@ class WorkflowItemType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'type' => 'getType',
     ];
 
@@ -164,7 +164,7 @@ class WorkflowItemType implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class SbiCode implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SbiCode';
+    protected static string $swaggerModelName = 'SbiCode';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'code' => 'int',
         'description' => 'string',
@@ -68,7 +68,7 @@ class SbiCode implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'code' => null,
         'description' => null,
@@ -100,7 +100,7 @@ class SbiCode implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'code' => 'code',
         'description' => 'description',
@@ -111,7 +111,7 @@ class SbiCode implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'code' => 'setCode',
         'description' => 'setDescription',
@@ -122,7 +122,7 @@ class SbiCode implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'code' => 'getCode',
         'description' => 'getDescription',
@@ -174,7 +174,7 @@ class SbiCode implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

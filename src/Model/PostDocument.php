@@ -50,14 +50,14 @@ class PostDocument implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostDocument';
+    protected static string $swaggerModelName = 'PostDocument';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'linked_to' => '\Paqtcom\Simplicate\Model\PostDocumentLinkedTo[]',
         'document_type_id' => 'string',
         'upload_queue_id' => 'string',
@@ -70,7 +70,7 @@ class PostDocument implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'linked_to' => null,
         'document_type_id' => null,
         'upload_queue_id' => null,
@@ -104,7 +104,7 @@ class PostDocument implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'linked_to' => 'linked_to',
         'document_type_id' => 'document_type_id',
         'upload_queue_id' => 'upload_queue_id',
@@ -117,7 +117,7 @@ class PostDocument implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'linked_to' => 'setLinkedTo',
         'document_type_id' => 'setDocumentTypeId',
         'upload_queue_id' => 'setUploadQueueId',
@@ -130,7 +130,7 @@ class PostDocument implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'linked_to' => 'getLinkedTo',
         'document_type_id' => 'getDocumentTypeId',
         'upload_queue_id' => 'getUploadQueueId',
@@ -184,7 +184,7 @@ class PostDocument implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

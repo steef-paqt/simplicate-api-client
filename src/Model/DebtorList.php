@@ -50,14 +50,14 @@ class DebtorList implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'DebtorList';
+    protected static string $swaggerModelName = 'DebtorList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationDebtorSimple',
         'person' => '\Paqtcom\Simplicate\Model\GetPersonDebtorSimple',
     ];
@@ -67,7 +67,7 @@ class DebtorList implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'organization' => null,
         'person' => null,
     ];
@@ -98,7 +98,7 @@ class DebtorList implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'organization' => 'organization',
         'person' => 'person',
     ];
@@ -108,7 +108,7 @@ class DebtorList implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'organization' => 'setOrganization',
         'person' => 'setPerson',
     ];
@@ -118,7 +118,7 @@ class DebtorList implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'organization' => 'getOrganization',
         'person' => 'getPerson',
     ];
@@ -169,7 +169,7 @@ class DebtorList implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

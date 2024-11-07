@@ -50,14 +50,14 @@ class BudgetCosts implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BudgetCosts';
+    protected static string $swaggerModelName = 'BudgetCosts';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'value_budget' => 'float',
         'value_spent' => 'float',
     ];
@@ -67,7 +67,7 @@ class BudgetCosts implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'value_budget' => 'float',
         'value_spent' => 'float',
     ];
@@ -98,7 +98,7 @@ class BudgetCosts implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'value_budget' => 'value_budget',
         'value_spent' => 'value_spent',
     ];
@@ -108,7 +108,7 @@ class BudgetCosts implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'value_budget' => 'setValueBudget',
         'value_spent' => 'setValueSpent',
     ];
@@ -118,7 +118,7 @@ class BudgetCosts implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'value_budget' => 'getValueBudget',
         'value_spent' => 'getValueSpent',
     ];
@@ -169,7 +169,7 @@ class BudgetCosts implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

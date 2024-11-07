@@ -50,14 +50,14 @@ class GetPerson implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetPerson';
+    protected static string $swaggerModelName = 'GetPerson';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'gender_id' => 'string',
         'use_custom_salutation' => 'bool',
@@ -101,7 +101,7 @@ class GetPerson implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'gender_id' => null,
         'use_custom_salutation' => null,
@@ -166,7 +166,7 @@ class GetPerson implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'gender_id' => 'gender_id',
         'use_custom_salutation' => 'use_custom_salutation',
@@ -210,7 +210,7 @@ class GetPerson implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'gender_id' => 'setGenderId',
         'use_custom_salutation' => 'setUseCustomSalutation',
@@ -254,7 +254,7 @@ class GetPerson implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'gender_id' => 'getGenderId',
         'use_custom_salutation' => 'getUseCustomSalutation',
@@ -357,7 +357,7 @@ class GetPerson implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

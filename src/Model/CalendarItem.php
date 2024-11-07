@@ -50,14 +50,14 @@ class CalendarItem implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CalendarItem';
+    protected static string $swaggerModelName = 'CalendarItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
         'hours' => 'string',
@@ -82,7 +82,7 @@ class CalendarItem implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'employee' => null,
         'hours' => null,
@@ -128,7 +128,7 @@ class CalendarItem implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'employee' => 'employee',
         'hours' => 'hours',
@@ -153,7 +153,7 @@ class CalendarItem implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'employee' => 'setEmployee',
         'hours' => 'setHours',
@@ -178,7 +178,7 @@ class CalendarItem implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'employee' => 'getEmployee',
         'hours' => 'getHours',
@@ -244,7 +244,7 @@ class CalendarItem implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

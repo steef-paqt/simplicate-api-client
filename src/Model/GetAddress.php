@@ -50,14 +50,14 @@ class GetAddress implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetAddress';
+    protected static string $swaggerModelName = 'GetAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'country' => 'string',
         'type' => 'string',
@@ -75,7 +75,7 @@ class GetAddress implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'country' => null,
         'type' => null,
@@ -114,7 +114,7 @@ class GetAddress implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'country' => 'country',
         'type' => 'type',
@@ -132,7 +132,7 @@ class GetAddress implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'country' => 'setCountry',
         'type' => 'setType',
@@ -150,7 +150,7 @@ class GetAddress implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'country' => 'getCountry',
         'type' => 'getType',
@@ -209,7 +209,7 @@ class GetAddress implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

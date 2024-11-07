@@ -50,14 +50,14 @@ class GetAssignment implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetAssignment';
+    protected static string $swaggerModelName = 'GetAssignment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'start_date' => 'string',
         'end_date' => 'string',
@@ -84,7 +84,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'start_date' => null,
         'end_date' => null,
@@ -132,7 +132,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'start_date' => 'start_date',
         'end_date' => 'end_date',
@@ -159,7 +159,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
@@ -186,7 +186,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
@@ -254,7 +254,7 @@ class GetAssignment implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

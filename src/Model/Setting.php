@@ -50,14 +50,14 @@ class Setting implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Setting';
+    protected static string $swaggerModelName = 'Setting';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'module' => 'string',
         'settings' => 'null[]',
     ];
@@ -67,7 +67,7 @@ class Setting implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'module' => null,
         'settings' => null,
     ];
@@ -98,7 +98,7 @@ class Setting implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'module' => 'module',
         'settings' => 'settings',
     ];
@@ -108,7 +108,7 @@ class Setting implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'module' => 'setModule',
         'settings' => 'setSettings',
     ];
@@ -118,7 +118,7 @@ class Setting implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'module' => 'getModule',
         'settings' => 'getSettings',
     ];
@@ -169,7 +169,7 @@ class Setting implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

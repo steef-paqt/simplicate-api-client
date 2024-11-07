@@ -50,14 +50,14 @@ class PostLeave implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostLeave';
+    protected static string $swaggerModelName = 'PostLeave';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'employee_id' => 'string',
         'leave_type_id' => 'string',
         'is_time_defined' => 'bool',
@@ -73,7 +73,7 @@ class PostLeave implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'employee_id' => null,
         'leave_type_id' => null,
         'is_time_defined' => null,
@@ -110,7 +110,7 @@ class PostLeave implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'employee_id' => 'employee_id',
         'leave_type_id' => 'leave_type_id',
         'is_time_defined' => 'is_time_defined',
@@ -126,7 +126,7 @@ class PostLeave implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'employee_id' => 'setEmployeeId',
         'leave_type_id' => 'setLeaveTypeId',
         'is_time_defined' => 'setIsTimeDefined',
@@ -142,7 +142,7 @@ class PostLeave implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'employee_id' => 'getEmployeeId',
         'leave_type_id' => 'getLeaveTypeId',
         'is_time_defined' => 'getIsTimeDefined',
@@ -199,7 +199,7 @@ class PostLeave implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

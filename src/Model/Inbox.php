@@ -50,14 +50,14 @@ class Inbox implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Inbox';
+    protected static string $swaggerModelName = 'Inbox';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'employee' => '\Paqtcom\Simplicate\Model\Employee',
         'label' => 'string',
@@ -70,7 +70,7 @@ class Inbox implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'employee' => null,
         'label' => null,
@@ -104,7 +104,7 @@ class Inbox implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'employee' => 'employee',
         'label' => 'label',
@@ -117,7 +117,7 @@ class Inbox implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'employee' => 'setEmployee',
         'label' => 'setLabel',
@@ -130,7 +130,7 @@ class Inbox implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'employee' => 'getEmployee',
         'label' => 'getLabel',
@@ -184,7 +184,7 @@ class Inbox implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

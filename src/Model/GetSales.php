@@ -50,14 +50,14 @@ class GetSales implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetSales';
+    protected static string $swaggerModelName = 'GetSales';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'responsible_employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
         'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
@@ -93,7 +93,7 @@ class GetSales implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'responsible_employee' => null,
         'person' => null,
@@ -150,7 +150,7 @@ class GetSales implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'responsible_employee' => 'responsible_employee',
         'person' => 'person',
@@ -186,7 +186,7 @@ class GetSales implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'responsible_employee' => 'setResponsibleEmployee',
         'person' => 'setPerson',
@@ -222,7 +222,7 @@ class GetSales implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'responsible_employee' => 'getResponsibleEmployee',
         'person' => 'getPerson',
@@ -299,7 +299,7 @@ class GetSales implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

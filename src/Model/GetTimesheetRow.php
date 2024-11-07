@@ -50,14 +50,14 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetTimesheetRow';
+    protected static string $swaggerModelName = 'GetTimesheetRow';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'order' => 'int',
         'project' => '\Paqtcom\Simplicate\Model\GetTimesheetRowProject',
@@ -79,7 +79,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'order' => null,
         'project' => null,
@@ -122,7 +122,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'order' => 'order',
         'project' => 'project',
@@ -144,7 +144,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'order' => 'setOrder',
         'project' => 'setProject',
@@ -166,7 +166,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'order' => 'getOrder',
         'project' => 'getProject',
@@ -247,7 +247,7 @@ class GetTimesheetRow implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

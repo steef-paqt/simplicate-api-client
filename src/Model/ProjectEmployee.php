@@ -50,14 +50,14 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ProjectEmployee';
+    protected static string $swaggerModelName = 'ProjectEmployee';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'project_id' => 'string',
         'employee_id' => 'string',
@@ -69,7 +69,7 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'project_id' => null,
         'employee_id' => null,
@@ -102,7 +102,7 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'project_id' => 'project_id',
         'employee_id' => 'employee_id',
@@ -114,7 +114,7 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'project_id' => 'setProjectId',
         'employee_id' => 'setEmployeeId',
@@ -126,7 +126,7 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'project_id' => 'getProjectId',
         'employee_id' => 'getEmployeeId',
@@ -179,7 +179,7 @@ class ProjectEmployee implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

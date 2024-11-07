@@ -50,14 +50,14 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetPersonDebtorSimple';
+    protected static string $swaggerModelName = 'GetPersonDebtorSimple';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'relation_type' => '\Paqtcom\Simplicate\Model\RelationType',
         'id' => 'string',
         'full_name' => 'string',
@@ -69,7 +69,7 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'relation_type' => null,
         'id' => null,
         'full_name' => null,
@@ -102,7 +102,7 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'relation_type' => 'relation_type',
         'id' => 'id',
         'full_name' => 'full_name',
@@ -114,7 +114,7 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'relation_type' => 'setRelationType',
         'id' => 'setId',
         'full_name' => 'setFullName',
@@ -126,7 +126,7 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'relation_type' => 'getRelationType',
         'id' => 'getId',
         'full_name' => 'getFullName',
@@ -179,7 +179,7 @@ class GetPersonDebtorSimple implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

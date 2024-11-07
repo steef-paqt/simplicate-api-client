@@ -50,14 +50,14 @@ class LeaveBalance implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LeaveBalance';
+    protected static string $swaggerModelName = 'LeaveBalance';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
         'balance' => 'float',
         'first_change' => 'string',
@@ -71,7 +71,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'employee' => null,
         'balance' => 'float',
         'first_change' => null,
@@ -106,7 +106,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'employee' => 'employee',
         'balance' => 'balance',
         'first_change' => 'first_change',
@@ -120,7 +120,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'employee' => 'setEmployee',
         'balance' => 'setBalance',
         'first_change' => 'setFirstChange',
@@ -134,7 +134,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'employee' => 'getEmployee',
         'balance' => 'getBalance',
         'first_change' => 'getFirstChange',
@@ -189,7 +189,7 @@ class LeaveBalance implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

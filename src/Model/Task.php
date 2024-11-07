@@ -50,14 +50,14 @@ class Task implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Task';
+    protected static string $swaggerModelName = 'Task';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'status' => 'string',
     ];
 
@@ -66,7 +66,7 @@ class Task implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'status' => null,
     ];
 
@@ -96,7 +96,7 @@ class Task implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'status' => 'status',
     ];
 
@@ -105,7 +105,7 @@ class Task implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'status' => 'setStatus',
     ];
 
@@ -114,7 +114,7 @@ class Task implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'status' => 'getStatus',
     ];
 
@@ -164,7 +164,7 @@ class Task implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

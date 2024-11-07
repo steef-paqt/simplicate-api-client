@@ -50,14 +50,14 @@ class Quote implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Quote';
+    protected static string $swaggerModelName = 'Quote';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'sales_id' => 'string',
         'quote_subject' => 'string',
         'json' => 'string',
@@ -70,7 +70,7 @@ class Quote implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'sales_id' => null,
         'quote_subject' => null,
         'json' => null,
@@ -104,7 +104,7 @@ class Quote implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'sales_id' => 'sales_id',
         'quote_subject' => 'quote_subject',
         'json' => 'json',
@@ -117,7 +117,7 @@ class Quote implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'sales_id' => 'setSalesId',
         'quote_subject' => 'setQuoteSubject',
         'json' => 'setJson',
@@ -130,7 +130,7 @@ class Quote implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'sales_id' => 'getSalesId',
         'quote_subject' => 'getQuoteSubject',
         'json' => 'getJson',
@@ -184,7 +184,7 @@ class Quote implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

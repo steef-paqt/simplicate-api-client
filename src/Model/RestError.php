@@ -50,14 +50,14 @@ class RestError implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'RestError';
+    protected static string $swaggerModelName = 'RestError';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'code' => 'int',
         'type' => 'string',
         'message' => 'string',
@@ -70,7 +70,7 @@ class RestError implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'code' => null,
         'type' => null,
         'message' => null,
@@ -104,7 +104,7 @@ class RestError implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'code' => 'code',
         'type' => 'type',
         'message' => 'message',
@@ -117,7 +117,7 @@ class RestError implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'code' => 'setCode',
         'type' => 'setType',
         'message' => 'setMessage',
@@ -130,7 +130,7 @@ class RestError implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'code' => 'getCode',
         'type' => 'getType',
         'message' => 'getMessage',
@@ -202,7 +202,7 @@ class RestError implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class Approval implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Approval';
+    protected static string $swaggerModelName = 'Approval';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'date' => 'string',
     ];
 
@@ -66,7 +66,7 @@ class Approval implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'date' => null,
     ];
 
@@ -96,7 +96,7 @@ class Approval implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'date' => 'date',
     ];
 
@@ -105,7 +105,7 @@ class Approval implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'date' => 'setDate',
     ];
 
@@ -114,7 +114,7 @@ class Approval implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'date' => 'getDate',
     ];
 
@@ -164,7 +164,7 @@ class Approval implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

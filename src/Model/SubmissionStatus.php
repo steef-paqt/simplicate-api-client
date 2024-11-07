@@ -50,14 +50,14 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SubmissionStatus';
+    protected static string $swaggerModelName = 'SubmissionStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'employee_id' => 'string',
         'date' => 'string',
         'status' => 'string',
@@ -68,7 +68,7 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'employee_id' => null,
         'date' => null,
         'status' => null,
@@ -100,7 +100,7 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'employee_id' => 'employee_id',
         'date' => 'date',
         'status' => 'status',
@@ -111,7 +111,7 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'employee_id' => 'setEmployeeId',
         'date' => 'setDate',
         'status' => 'setStatus',
@@ -122,7 +122,7 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'employee_id' => 'getEmployeeId',
         'date' => 'getDate',
         'status' => 'getStatus',
@@ -192,7 +192,7 @@ class SubmissionStatus implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

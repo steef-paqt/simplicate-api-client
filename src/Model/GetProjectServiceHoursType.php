@@ -50,14 +50,14 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetProjectServiceHoursType';
+    protected static string $swaggerModelName = 'GetProjectServiceHoursType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'hourstype' => '\Paqtcom\Simplicate\Model\GetHoursType',
         'color' => 'string',
@@ -71,7 +71,7 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'hourstype' => null,
         'color' => null,
@@ -106,7 +106,7 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'hourstype' => 'hourstype',
         'color' => 'color',
@@ -120,7 +120,7 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'hourstype' => 'setHourstype',
         'color' => 'setColor',
@@ -134,7 +134,7 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'hourstype' => 'getHourstype',
         'color' => 'getColor',
@@ -189,7 +189,7 @@ class GetProjectServiceHoursType implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

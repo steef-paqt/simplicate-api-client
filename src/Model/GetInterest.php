@@ -50,14 +50,14 @@ class GetInterest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetInterest';
+    protected static string $swaggerModelName = 'GetInterest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'value' => 'string',
         'id' => 'string',
         'name' => 'string',
@@ -72,7 +72,7 @@ class GetInterest implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'value' => null,
         'id' => null,
         'name' => null,
@@ -108,7 +108,7 @@ class GetInterest implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'value' => 'value',
         'id' => 'id',
         'name' => 'name',
@@ -123,7 +123,7 @@ class GetInterest implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'value' => 'setValue',
         'id' => 'setId',
         'name' => 'setName',
@@ -138,7 +138,7 @@ class GetInterest implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'value' => 'getValue',
         'id' => 'getId',
         'name' => 'getName',
@@ -194,7 +194,7 @@ class GetInterest implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

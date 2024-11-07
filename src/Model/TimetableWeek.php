@@ -50,14 +50,14 @@ class TimetableWeek implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TimetableWeek';
+    protected static string $swaggerModelName = 'TimetableWeek';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'day_1' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
         'day_2' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
         'day_3' => '\Paqtcom\Simplicate\Model\TimetableWeekDay',
@@ -72,7 +72,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'day_1' => null,
         'day_2' => null,
         'day_3' => null,
@@ -108,7 +108,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'day_1' => 'day_1',
         'day_2' => 'day_2',
         'day_3' => 'day_3',
@@ -123,7 +123,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'day_1' => 'setDay1',
         'day_2' => 'setDay2',
         'day_3' => 'setDay3',
@@ -138,7 +138,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'day_1' => 'getDay1',
         'day_2' => 'getDay2',
         'day_3' => 'getDay3',
@@ -194,7 +194,7 @@ class TimetableWeek implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

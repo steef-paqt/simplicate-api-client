@@ -50,14 +50,14 @@ class ReviewByWeekMetaData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ReviewByWeekMetaData';
+    protected static string $swaggerModelName = 'ReviewByWeekMetaData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'is_out_of_date' => 'bool',
         'count' => 'int',
         'total_count' => 'int',
@@ -73,7 +73,7 @@ class ReviewByWeekMetaData implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'is_out_of_date' => null,
         'count' => null,
         'total_count' => null,
@@ -110,7 +110,7 @@ class ReviewByWeekMetaData implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'is_out_of_date' => 'is_out_of_date',
         'count' => 'count',
         'total_count' => 'total_count',
@@ -126,7 +126,7 @@ class ReviewByWeekMetaData implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'is_out_of_date' => 'setIsOutOfDate',
         'count' => 'setCount',
         'total_count' => 'setTotalCount',
@@ -142,7 +142,7 @@ class ReviewByWeekMetaData implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'is_out_of_date' => 'getIsOutOfDate',
         'count' => 'getCount',
         'total_count' => 'getTotalCount',
@@ -199,7 +199,7 @@ class ReviewByWeekMetaData implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

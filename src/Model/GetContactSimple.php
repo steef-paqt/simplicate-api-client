@@ -50,14 +50,14 @@ class GetContactSimple implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetContactSimple';
+    protected static string $swaggerModelName = 'GetContactSimple';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
         'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
@@ -68,7 +68,7 @@ class GetContactSimple implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'person' => null,
         'organization' => null,
@@ -100,7 +100,7 @@ class GetContactSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'person' => 'person',
         'organization' => 'organization',
@@ -111,7 +111,7 @@ class GetContactSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'person' => 'setPerson',
         'organization' => 'setOrganization',
@@ -122,7 +122,7 @@ class GetContactSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'person' => 'getPerson',
         'organization' => 'getOrganization',
@@ -174,7 +174,7 @@ class GetContactSimple implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

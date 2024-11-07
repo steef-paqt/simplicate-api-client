@@ -50,14 +50,14 @@ class GetWorkflow implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetWorkflow';
+    protected static string $swaggerModelName = 'GetWorkflow';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'defaultworkflow' => '\Paqtcom\Simplicate\Model\GetSimpleDefaultWorkflow',
         'current_task' => '\Paqtcom\Simplicate\Model\CurrentTask',
@@ -79,7 +79,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'defaultworkflow' => null,
         'current_task' => null,
@@ -122,7 +122,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'defaultworkflow' => 'defaultworkflow',
         'current_task' => 'current_task',
@@ -144,7 +144,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'defaultworkflow' => 'setDefaultworkflow',
         'current_task' => 'setCurrentTask',
@@ -166,7 +166,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'defaultworkflow' => 'getDefaultworkflow',
         'current_task' => 'getCurrentTask',
@@ -229,7 +229,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

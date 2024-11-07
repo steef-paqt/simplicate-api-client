@@ -50,14 +50,14 @@ class ContentField implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ContentField';
+    protected static string $swaggerModelName = 'ContentField';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'title' => 'string',
         'value' => 'string',
     ];
@@ -67,7 +67,7 @@ class ContentField implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'title' => null,
         'value' => null,
     ];
@@ -98,7 +98,7 @@ class ContentField implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'title' => 'title',
         'value' => 'value',
     ];
@@ -108,7 +108,7 @@ class ContentField implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'title' => 'setTitle',
         'value' => 'setValue',
     ];
@@ -118,7 +118,7 @@ class ContentField implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'title' => 'getTitle',
         'value' => 'getValue',
     ];
@@ -169,7 +169,7 @@ class ContentField implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

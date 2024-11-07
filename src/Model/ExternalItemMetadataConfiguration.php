@@ -50,14 +50,14 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ExternalItemMetadataConfiguration';
+    protected static string $swaggerModelName = 'ExternalItemMetadataConfiguration';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'employee_id' => 'string',
         'has_external_agenda_integration' => 'bool',
         'external_agenda_sync_method' => 'object',
@@ -68,7 +68,7 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'employee_id' => null,
         'has_external_agenda_integration' => null,
         'external_agenda_sync_method' => null,
@@ -100,7 +100,7 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'employee_id' => 'employee_id',
         'has_external_agenda_integration' => 'has_external_agenda_integration',
         'external_agenda_sync_method' => 'external_agenda_sync_method',
@@ -111,7 +111,7 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'employee_id' => 'setEmployeeId',
         'has_external_agenda_integration' => 'setHasExternalAgendaIntegration',
         'external_agenda_sync_method' => 'setExternalAgendaSyncMethod',
@@ -122,7 +122,7 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'employee_id' => 'getEmployeeId',
         'has_external_agenda_integration' => 'getHasExternalAgendaIntegration',
         'external_agenda_sync_method' => 'getExternalAgendaSyncMethod',
@@ -174,7 +174,7 @@ class ExternalItemMetadataConfiguration implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

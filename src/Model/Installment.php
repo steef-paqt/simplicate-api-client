@@ -50,14 +50,14 @@ class Installment implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Installment';
+    protected static string $swaggerModelName = 'Installment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'name' => 'string',
         'percentage' => 'double',
         'price' => 'double',
@@ -74,7 +74,7 @@ class Installment implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'name' => null,
         'percentage' => 'double',
         'price' => 'double',
@@ -112,7 +112,7 @@ class Installment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'name' => 'name',
         'percentage' => 'percentage',
         'price' => 'price',
@@ -129,7 +129,7 @@ class Installment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'name' => 'setName',
         'percentage' => 'setPercentage',
         'price' => 'setPrice',
@@ -146,7 +146,7 @@ class Installment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'name' => 'getName',
         'percentage' => 'getPercentage',
         'price' => 'getPrice',
@@ -222,7 +222,7 @@ class Installment implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

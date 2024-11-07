@@ -50,14 +50,14 @@ class PostDebtor implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostDebtor';
+    protected static string $swaggerModelName = 'PostDebtor';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'payment_term_id' => 'string',
         'provision_method' => 'string',
         'send_invoice_email_to_contact' => 'bool',
@@ -82,7 +82,7 @@ class PostDebtor implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'payment_term_id' => null,
         'provision_method' => null,
         'send_invoice_email_to_contact' => null,
@@ -128,7 +128,7 @@ class PostDebtor implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'payment_term_id' => 'payment_term_id',
         'provision_method' => 'provision_method',
         'send_invoice_email_to_contact' => 'send_invoice_email_to_contact',
@@ -153,7 +153,7 @@ class PostDebtor implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'payment_term_id' => 'setPaymentTermId',
         'provision_method' => 'setProvisionMethod',
         'send_invoice_email_to_contact' => 'setSendInvoiceEmailToContact',
@@ -178,7 +178,7 @@ class PostDebtor implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'payment_term_id' => 'getPaymentTermId',
         'provision_method' => 'getProvisionMethod',
         'send_invoice_email_to_contact' => 'getSendInvoiceEmailToContact',
@@ -292,7 +292,7 @@ class PostDebtor implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

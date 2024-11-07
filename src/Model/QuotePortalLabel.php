@@ -50,14 +50,14 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'QuotePortalLabel';
+    protected static string $swaggerModelName = 'QuotePortalLabel';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'quote_template_id' => 'string',
         'label' => 'string',
@@ -70,7 +70,7 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'quote_template_id' => null,
         'label' => null,
@@ -104,7 +104,7 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'quote_template_id' => 'quote_template_id',
         'label' => 'label',
@@ -117,7 +117,7 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'quote_template_id' => 'setQuoteTemplateId',
         'label' => 'setLabel',
@@ -130,7 +130,7 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'quote_template_id' => 'getQuoteTemplateId',
         'label' => 'getLabel',
@@ -184,7 +184,7 @@ class QuotePortalLabel implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

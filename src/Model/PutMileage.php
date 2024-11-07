@@ -50,14 +50,14 @@ class PutMileage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PutMileage';
+    protected static string $swaggerModelName = 'PutMileage';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'approvalstatus_id' => 'string',
         'mileage' => 'float',
         'related_hours_id' => 'string',
@@ -71,7 +71,7 @@ class PutMileage implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'approvalstatus_id' => null,
         'mileage' => 'float',
         'related_hours_id' => null,
@@ -106,7 +106,7 @@ class PutMileage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'approvalstatus_id' => 'approvalstatus_id',
         'mileage' => 'mileage',
         'related_hours_id' => 'related_hours_id',
@@ -120,7 +120,7 @@ class PutMileage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'approvalstatus_id' => 'setApprovalstatusId',
         'mileage' => 'setMileage',
         'related_hours_id' => 'setRelatedHoursId',
@@ -134,7 +134,7 @@ class PutMileage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'approvalstatus_id' => 'getApprovalstatusId',
         'mileage' => 'getMileage',
         'related_hours_id' => 'getRelatedHoursId',
@@ -207,7 +207,7 @@ class PutMileage implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

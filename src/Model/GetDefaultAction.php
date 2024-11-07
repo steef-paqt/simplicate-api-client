@@ -50,14 +50,14 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetDefaultAction';
+    protected static string $swaggerModelName = 'GetDefaultAction';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'task' => '\Paqtcom\Simplicate\Model\GetSimpleDefaultTask',
         'to_task' => '\Paqtcom\Simplicate\Model\GetSimpleDefaultTask',
@@ -71,7 +71,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'task' => null,
         'to_task' => null,
@@ -106,7 +106,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'task' => 'task',
         'to_task' => 'to_task',
@@ -120,7 +120,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'task' => 'setTask',
         'to_task' => 'setToTask',
@@ -134,7 +134,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'task' => 'getTask',
         'to_task' => 'getToTask',
@@ -189,7 +189,7 @@ class GetDefaultAction implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class VatClass implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'VatClass';
+    protected static string $swaggerModelName = 'VatClass';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'code' => 'string',
         'label' => 'string',
@@ -69,7 +69,7 @@ class VatClass implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'code' => null,
         'label' => null,
@@ -102,7 +102,7 @@ class VatClass implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'code' => 'code',
         'label' => 'label',
@@ -114,7 +114,7 @@ class VatClass implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'code' => 'setCode',
         'label' => 'setLabel',
@@ -126,7 +126,7 @@ class VatClass implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'code' => 'getCode',
         'label' => 'getLabel',
@@ -179,7 +179,7 @@ class VatClass implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

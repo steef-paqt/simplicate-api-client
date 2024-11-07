@@ -50,14 +50,14 @@ class GetQuote implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetQuote';
+    protected static string $swaggerModelName = 'GetQuote';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'quotetemplate' => '\Paqtcom\Simplicate\Model\QuoteTemplate',
         'send_type' => 'string',
@@ -93,7 +93,7 @@ class GetQuote implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'quotetemplate' => null,
         'send_type' => null,
@@ -150,7 +150,7 @@ class GetQuote implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'quotetemplate' => 'quotetemplate',
         'send_type' => 'send_type',
@@ -186,7 +186,7 @@ class GetQuote implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'quotetemplate' => 'setQuotetemplate',
         'send_type' => 'setSendType',
@@ -222,7 +222,7 @@ class GetQuote implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'quotetemplate' => 'getQuotetemplate',
         'send_type' => 'getSendType',
@@ -317,7 +317,7 @@ class GetQuote implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class AppReceivers implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AppReceivers';
+    protected static string $swaggerModelName = 'AppReceivers';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'type' => 'string',
         'channels' => '\Paqtcom\Simplicate\Model\AppReceiverSetting[]',
     ];
@@ -67,7 +67,7 @@ class AppReceivers implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'type' => null,
         'channels' => null,
     ];
@@ -98,7 +98,7 @@ class AppReceivers implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'type' => 'type',
         'channels' => 'channels',
     ];
@@ -108,7 +108,7 @@ class AppReceivers implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'type' => 'setType',
         'channels' => 'setChannels',
     ];
@@ -118,7 +118,7 @@ class AppReceivers implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'type' => 'getType',
         'channels' => 'getChannels',
     ];
@@ -169,7 +169,7 @@ class AppReceivers implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

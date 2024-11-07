@@ -50,14 +50,14 @@ class GetSalesServiceCostType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetSalesServiceCostType';
+    protected static string $swaggerModelName = 'GetSalesServiceCostType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'label' => 'string',
         'id' => 'string',
         'costtype' => '\Paqtcom\Simplicate\Model\GetPurchaseType',
@@ -72,7 +72,7 @@ class GetSalesServiceCostType implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'label' => null,
         'id' => null,
         'costtype' => null,
@@ -108,7 +108,7 @@ class GetSalesServiceCostType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'label' => 'label',
         'id' => 'id',
         'costtype' => 'costtype',
@@ -123,7 +123,7 @@ class GetSalesServiceCostType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'label' => 'setLabel',
         'id' => 'setId',
         'costtype' => 'setCosttype',
@@ -138,7 +138,7 @@ class GetSalesServiceCostType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'label' => 'getLabel',
         'id' => 'getId',
         'costtype' => 'getCosttype',
@@ -194,7 +194,7 @@ class GetSalesServiceCostType implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

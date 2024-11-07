@@ -50,14 +50,14 @@ class GetApproval implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetApproval';
+    protected static string $swaggerModelName = 'GetApproval';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
         'approvalstatus' => '\Paqtcom\Simplicate\Model\GetApprovalStatus',
@@ -69,7 +69,7 @@ class GetApproval implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'employee' => null,
         'approvalstatus' => null,
@@ -102,7 +102,7 @@ class GetApproval implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'employee' => 'employee',
         'approvalstatus' => 'approvalstatus',
@@ -114,7 +114,7 @@ class GetApproval implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'employee' => 'setEmployee',
         'approvalstatus' => 'setApprovalstatus',
@@ -126,7 +126,7 @@ class GetApproval implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'employee' => 'getEmployee',
         'approvalstatus' => 'getApprovalstatus',
@@ -179,7 +179,7 @@ class GetApproval implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

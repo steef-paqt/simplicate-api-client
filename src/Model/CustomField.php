@@ -50,14 +50,14 @@ class CustomField implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CustomField';
+    protected static string $swaggerModelName = 'CustomField';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'name' => 'string',
         'label' => 'string',
         'value' => 'string',
@@ -77,7 +77,7 @@ class CustomField implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'name' => null,
         'label' => null,
         'value' => null,
@@ -118,7 +118,7 @@ class CustomField implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'name' => 'name',
         'label' => 'label',
         'value' => 'value',
@@ -138,7 +138,7 @@ class CustomField implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'name' => 'setName',
         'label' => 'setLabel',
         'value' => 'setValue',
@@ -158,7 +158,7 @@ class CustomField implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'name' => 'getName',
         'label' => 'getLabel',
         'value' => 'getValue',
@@ -243,7 +243,7 @@ class CustomField implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

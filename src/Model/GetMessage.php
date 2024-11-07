@@ -50,14 +50,14 @@ class GetMessage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetMessage';
+    protected static string $swaggerModelName = 'GetMessage';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'attachments' => '\Paqtcom\Simplicate\Model\Attachment[]',
         'message_type' => '\Paqtcom\Simplicate\Model\MessageType',
@@ -76,7 +76,7 @@ class GetMessage implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'attachments' => null,
         'message_type' => null,
@@ -116,7 +116,7 @@ class GetMessage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'attachments' => 'attachments',
         'message_type' => 'message_type',
@@ -135,7 +135,7 @@ class GetMessage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'attachments' => 'setAttachments',
         'message_type' => 'setMessageType',
@@ -154,7 +154,7 @@ class GetMessage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'attachments' => 'getAttachments',
         'message_type' => 'getMessageType',
@@ -214,7 +214,7 @@ class GetMessage implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

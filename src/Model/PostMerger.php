@@ -50,14 +50,14 @@ class PostMerger implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostMerger';
+    protected static string $swaggerModelName = 'PostMerger';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'source_id' => 'string',
         'target_id' => 'string',
     ];
@@ -67,7 +67,7 @@ class PostMerger implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'source_id' => null,
         'target_id' => null,
     ];
@@ -98,7 +98,7 @@ class PostMerger implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'source_id' => 'source_id',
         'target_id' => 'target_id',
     ];
@@ -108,7 +108,7 @@ class PostMerger implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'source_id' => 'setSourceId',
         'target_id' => 'setTargetId',
     ];
@@ -118,7 +118,7 @@ class PostMerger implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'source_id' => 'getSourceId',
         'target_id' => 'getTargetId',
     ];
@@ -169,7 +169,7 @@ class PostMerger implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

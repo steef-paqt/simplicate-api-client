@@ -50,14 +50,14 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetReviewByWeekDetails';
+    protected static string $swaggerModelName = 'GetReviewByWeekDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
         'start_date' => 'string',
         'end_date' => 'string',
@@ -83,7 +83,7 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'employee' => null,
         'start_date' => null,
         'end_date' => null,
@@ -130,7 +130,7 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'employee' => 'employee',
         'start_date' => 'start_date',
         'end_date' => 'end_date',
@@ -156,7 +156,7 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'employee' => 'setEmployee',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
@@ -182,7 +182,7 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'employee' => 'getEmployee',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
@@ -249,7 +249,7 @@ class GetReviewByWeekDetails implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AssignmentStatus';
+    protected static string $swaggerModelName = 'AssignmentStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'name' => 'string',
         'color' => 'string',
         'is_done' => 'bool',
@@ -70,7 +70,7 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'name' => null,
         'color' => null,
         'is_done' => null,
@@ -104,7 +104,7 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'name' => 'name',
         'color' => 'color',
         'is_done' => 'is_done',
@@ -117,7 +117,7 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'name' => 'setName',
         'color' => 'setColor',
         'is_done' => 'setIsDone',
@@ -130,7 +130,7 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'name' => 'getName',
         'color' => 'getColor',
         'is_done' => 'getIsDone',
@@ -184,7 +184,7 @@ class AssignmentStatus implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

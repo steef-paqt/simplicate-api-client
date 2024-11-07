@@ -50,14 +50,14 @@ class Service implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Service';
+    protected static string $swaggerModelName = 'Service';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'default_service_id' => 'string',
         'name' => 'string',
         'explanation' => 'string',
@@ -73,7 +73,7 @@ class Service implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'default_service_id' => null,
         'name' => null,
         'explanation' => null,
@@ -110,7 +110,7 @@ class Service implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'default_service_id' => 'default_service_id',
         'name' => 'name',
         'explanation' => 'explanation',
@@ -126,7 +126,7 @@ class Service implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'default_service_id' => 'setDefaultServiceId',
         'name' => 'setName',
         'explanation' => 'setExplanation',
@@ -142,7 +142,7 @@ class Service implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'default_service_id' => 'getDefaultServiceId',
         'name' => 'getName',
         'explanation' => 'getExplanation',
@@ -217,7 +217,7 @@ class Service implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

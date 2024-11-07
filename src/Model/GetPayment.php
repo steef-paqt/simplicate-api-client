@@ -50,14 +50,14 @@ class GetPayment implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetPayment';
+    protected static string $swaggerModelName = 'GetPayment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'invoice_id' => 'string',
         'date' => 'string',
@@ -70,7 +70,7 @@ class GetPayment implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'invoice_id' => null,
         'date' => null,
@@ -104,7 +104,7 @@ class GetPayment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'invoice_id' => 'invoice_id',
         'date' => 'date',
@@ -117,7 +117,7 @@ class GetPayment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'invoice_id' => 'setInvoiceId',
         'date' => 'setDate',
@@ -130,7 +130,7 @@ class GetPayment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'invoice_id' => 'getInvoiceId',
         'date' => 'getDate',
@@ -184,7 +184,7 @@ class GetPayment implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

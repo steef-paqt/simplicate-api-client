@@ -50,14 +50,14 @@ class DefaultTask implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'DefaultTask';
+    protected static string $swaggerModelName = 'DefaultTask';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'order' => 'int',
         'description' => 'string',
         'can_change_destination' => 'bool',
@@ -72,7 +72,7 @@ class DefaultTask implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'order' => null,
         'description' => null,
         'can_change_destination' => null,
@@ -108,7 +108,7 @@ class DefaultTask implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'order' => 'order',
         'description' => 'description',
         'can_change_destination' => 'can_change_destination',
@@ -123,7 +123,7 @@ class DefaultTask implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'order' => 'setOrder',
         'description' => 'setDescription',
         'can_change_destination' => 'setCanChangeDestination',
@@ -138,7 +138,7 @@ class DefaultTask implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'order' => 'getOrder',
         'description' => 'getDescription',
         'can_change_destination' => 'getCanChangeDestination',
@@ -194,7 +194,7 @@ class DefaultTask implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

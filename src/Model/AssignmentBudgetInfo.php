@@ -50,14 +50,14 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AssignmentBudgetInfo';
+    protected static string $swaggerModelName = 'AssignmentBudgetInfo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'assignments_planned' => '\Paqtcom\Simplicate\Model\AssignmentBudgetInfoFuturePast',
         'assignments_unplanned' => 'string',
@@ -72,7 +72,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'assignments_planned' => null,
         'assignments_unplanned' => null,
@@ -108,7 +108,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'assignments_planned' => 'assignmentsPlanned',
         'assignments_unplanned' => 'assignmentsUnplanned',
@@ -123,7 +123,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'assignments_planned' => 'setAssignmentsPlanned',
         'assignments_unplanned' => 'setAssignmentsUnplanned',
@@ -138,7 +138,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'assignments_planned' => 'getAssignmentsPlanned',
         'assignments_unplanned' => 'getAssignmentsUnplanned',
@@ -194,7 +194,7 @@ class AssignmentBudgetInfo implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

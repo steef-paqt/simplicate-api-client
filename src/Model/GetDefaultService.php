@@ -50,14 +50,14 @@ class GetDefaultService implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetDefaultService';
+    protected static string $swaggerModelName = 'GetDefaultService';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'vat_class' => '\Paqtcom\Simplicate\Model\VatClass',
         'revenue_group' => '\Paqtcom\Simplicate\Model\RevenueGroup',
@@ -75,7 +75,7 @@ class GetDefaultService implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'vat_class' => null,
         'revenue_group' => null,
@@ -114,7 +114,7 @@ class GetDefaultService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'vat_class' => 'vat_class',
         'revenue_group' => 'revenue_group',
@@ -132,7 +132,7 @@ class GetDefaultService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'vat_class' => 'setVatClass',
         'revenue_group' => 'setRevenueGroup',
@@ -150,7 +150,7 @@ class GetDefaultService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'vat_class' => 'getVatClass',
         'revenue_group' => 'getRevenueGroup',
@@ -209,7 +209,7 @@ class GetDefaultService implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

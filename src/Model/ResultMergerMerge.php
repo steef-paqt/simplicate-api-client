@@ -50,14 +50,14 @@ class ResultMergerMerge implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ResultMergerMerge';
+    protected static string $swaggerModelName = 'ResultMergerMerge';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'success' => 'bool',
         'message' => 'string',
     ];
@@ -67,7 +67,7 @@ class ResultMergerMerge implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'success' => null,
         'message' => null,
     ];
@@ -98,7 +98,7 @@ class ResultMergerMerge implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'success' => 'success',
         'message' => 'message',
     ];
@@ -108,7 +108,7 @@ class ResultMergerMerge implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'success' => 'setSuccess',
         'message' => 'setMessage',
     ];
@@ -118,7 +118,7 @@ class ResultMergerMerge implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'success' => 'getSuccess',
         'message' => 'getMessage',
     ];
@@ -169,7 +169,7 @@ class ResultMergerMerge implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

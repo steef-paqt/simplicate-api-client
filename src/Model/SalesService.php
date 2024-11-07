@@ -50,14 +50,14 @@ class SalesService implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SalesService';
+    protected static string $swaggerModelName = 'SalesService';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'sales_id' => 'string',
         'default_service_id' => 'string',
         'name' => 'string',
@@ -78,7 +78,7 @@ class SalesService implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'sales_id' => null,
         'default_service_id' => null,
         'name' => null,
@@ -120,7 +120,7 @@ class SalesService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'sales_id' => 'sales_id',
         'default_service_id' => 'default_service_id',
         'name' => 'name',
@@ -141,7 +141,7 @@ class SalesService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'sales_id' => 'setSalesId',
         'default_service_id' => 'setDefaultServiceId',
         'name' => 'setName',
@@ -162,7 +162,7 @@ class SalesService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'sales_id' => 'getSalesId',
         'default_service_id' => 'getDefaultServiceId',
         'name' => 'getName',
@@ -257,7 +257,7 @@ class SalesService implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

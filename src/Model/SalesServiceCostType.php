@@ -50,14 +50,14 @@ class SalesServiceCostType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SalesServiceCostType';
+    protected static string $swaggerModelName = 'SalesServiceCostType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'budgeted_amount' => 'float',
         'tariff' => 'float',
         'purchase_margin' => 'float',
@@ -69,7 +69,7 @@ class SalesServiceCostType implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'budgeted_amount' => 'float',
         'tariff' => 'float',
         'purchase_margin' => 'float',
@@ -102,7 +102,7 @@ class SalesServiceCostType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'budgeted_amount' => 'budgeted_amount',
         'tariff' => 'tariff',
         'purchase_margin' => 'purchase_margin',
@@ -114,7 +114,7 @@ class SalesServiceCostType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'budgeted_amount' => 'setBudgetedAmount',
         'tariff' => 'setTariff',
         'purchase_margin' => 'setPurchaseMargin',
@@ -126,7 +126,7 @@ class SalesServiceCostType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'budgeted_amount' => 'getBudgetedAmount',
         'tariff' => 'getTariff',
         'purchase_margin' => 'getPurchaseMargin',
@@ -179,7 +179,7 @@ class SalesServiceCostType implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

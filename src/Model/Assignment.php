@@ -50,14 +50,14 @@ class Assignment implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Assignment';
+    protected static string $swaggerModelName = 'Assignment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'name' => 'string',
         'use_spread' => 'bool',
         'hours_type' => 'string',
@@ -71,7 +71,7 @@ class Assignment implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'name' => null,
         'use_spread' => null,
         'hours_type' => null,
@@ -106,7 +106,7 @@ class Assignment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'name' => 'name',
         'use_spread' => 'use_spread',
         'hours_type' => 'hours_type',
@@ -120,7 +120,7 @@ class Assignment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'name' => 'setName',
         'use_spread' => 'setUseSpread',
         'hours_type' => 'setHoursType',
@@ -134,7 +134,7 @@ class Assignment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'name' => 'getName',
         'use_spread' => 'getUseSpread',
         'hours_type' => 'getHoursType',
@@ -205,7 +205,7 @@ class Assignment implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

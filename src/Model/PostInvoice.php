@@ -50,14 +50,14 @@ class PostInvoice implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostInvoice';
+    protected static string $swaggerModelName = 'PostInvoice';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'payment_term_id' => 'string',
         'invoice_lines' => '\Paqtcom\Simplicate\Model\PostInvoiceLine[]',
         'status_id' => 'string',
@@ -76,7 +76,7 @@ class PostInvoice implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'payment_term_id' => null,
         'invoice_lines' => null,
         'status_id' => null,
@@ -116,7 +116,7 @@ class PostInvoice implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'payment_term_id' => 'payment_term_id',
         'invoice_lines' => 'invoice_lines',
         'status_id' => 'status_id',
@@ -135,7 +135,7 @@ class PostInvoice implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'payment_term_id' => 'setPaymentTermId',
         'invoice_lines' => 'setInvoiceLines',
         'status_id' => 'setStatusId',
@@ -154,7 +154,7 @@ class PostInvoice implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'payment_term_id' => 'getPaymentTermId',
         'invoice_lines' => 'getInvoiceLines',
         'status_id' => 'getStatusId',
@@ -214,7 +214,7 @@ class PostInvoice implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

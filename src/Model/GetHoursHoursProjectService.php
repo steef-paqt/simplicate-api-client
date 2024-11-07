@@ -50,14 +50,14 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetHoursHoursProjectService';
+    protected static string $swaggerModelName = 'GetHoursHoursProjectService';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
         'start_date' => 'string',
@@ -71,7 +71,7 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'name' => null,
         'start_date' => null,
@@ -106,7 +106,7 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'name' => 'name',
         'start_date' => 'start_date',
@@ -120,7 +120,7 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'name' => 'setName',
         'start_date' => 'setStartDate',
@@ -134,7 +134,7 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'name' => 'getName',
         'start_date' => 'getStartDate',
@@ -189,7 +189,7 @@ class GetHoursHoursProjectService implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

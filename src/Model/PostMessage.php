@@ -50,14 +50,14 @@ class PostMessage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostMessage';
+    protected static string $swaggerModelName = 'PostMessage';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'messagetype_id' => 'string',
         'linked_to' => '\Paqtcom\Simplicate\Model\PostMessageLinkedTo',
         'created_by_id' => 'string',
@@ -72,7 +72,7 @@ class PostMessage implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'messagetype_id' => null,
         'linked_to' => null,
         'created_by_id' => null,
@@ -108,7 +108,7 @@ class PostMessage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'messagetype_id' => 'messagetype_id',
         'linked_to' => 'linked_to',
         'created_by_id' => 'created_by_id',
@@ -123,7 +123,7 @@ class PostMessage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'messagetype_id' => 'setMessagetypeId',
         'linked_to' => 'setLinkedTo',
         'created_by_id' => 'setCreatedById',
@@ -138,7 +138,7 @@ class PostMessage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'messagetype_id' => 'getMessagetypeId',
         'linked_to' => 'getLinkedTo',
         'created_by_id' => 'getCreatedById',
@@ -194,7 +194,7 @@ class PostMessage implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

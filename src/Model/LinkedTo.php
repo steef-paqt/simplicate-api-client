@@ -50,14 +50,14 @@ class LinkedTo implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LinkedTo';
+    protected static string $swaggerModelName = 'LinkedTo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'organization_id' => 'string',
         'person_id' => 'string',
         'sales_id' => 'string',
@@ -72,7 +72,7 @@ class LinkedTo implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'organization_id' => null,
         'person_id' => null,
         'sales_id' => null,
@@ -108,7 +108,7 @@ class LinkedTo implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'organization_id' => 'organization_id',
         'person_id' => 'person_id',
         'sales_id' => 'sales_id',
@@ -123,7 +123,7 @@ class LinkedTo implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'organization_id' => 'setOrganizationId',
         'person_id' => 'setPersonId',
         'sales_id' => 'setSalesId',
@@ -138,7 +138,7 @@ class LinkedTo implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'organization_id' => 'getOrganizationId',
         'person_id' => 'getPersonId',
         'sales_id' => 'getSalesId',
@@ -194,7 +194,7 @@ class LinkedTo implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

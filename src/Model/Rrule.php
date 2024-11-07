@@ -50,14 +50,14 @@ class Rrule implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Rrule';
+    protected static string $swaggerModelName = 'Rrule';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'dtstart' => 'string',
         'freq' => 'int',
         'until' => 'string',
@@ -73,7 +73,7 @@ class Rrule implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'dtstart' => null,
         'freq' => null,
         'until' => null,
@@ -110,7 +110,7 @@ class Rrule implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'dtstart' => 'dtstart',
         'freq' => 'freq',
         'until' => 'until',
@@ -126,7 +126,7 @@ class Rrule implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'dtstart' => 'setDtstart',
         'freq' => 'setFreq',
         'until' => 'setUntil',
@@ -142,7 +142,7 @@ class Rrule implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'dtstart' => 'getDtstart',
         'freq' => 'getFreq',
         'until' => 'getUntil',
@@ -199,7 +199,7 @@ class Rrule implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

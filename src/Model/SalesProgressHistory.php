@@ -50,14 +50,14 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SalesProgressHistory';
+    protected static string $swaggerModelName = 'SalesProgressHistory';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'sales' => 'object',
         'sales_id' => 'string',
@@ -73,7 +73,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'sales' => null,
         'sales_id' => null,
@@ -110,7 +110,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'sales' => 'sales',
         'sales_id' => 'sales_id',
@@ -126,7 +126,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'sales' => 'setSales',
         'sales_id' => 'setSalesId',
@@ -142,7 +142,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'sales' => 'getSales',
         'sales_id' => 'getSalesId',
@@ -199,7 +199,7 @@ class SalesProgressHistory implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class CurrentTask implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CurrentTask';
+    protected static string $swaggerModelName = 'CurrentTask';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'description' => 'string',
         'can_change_destination' => 'bool',
@@ -73,7 +73,7 @@ class CurrentTask implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'description' => null,
         'can_change_destination' => null,
@@ -110,7 +110,7 @@ class CurrentTask implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'description' => 'description',
         'can_change_destination' => 'can_change_destination',
@@ -126,7 +126,7 @@ class CurrentTask implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'description' => 'setDescription',
         'can_change_destination' => 'setCanChangeDestination',
@@ -142,7 +142,7 @@ class CurrentTask implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'description' => 'getDescription',
         'can_change_destination' => 'getCanChangeDestination',
@@ -199,7 +199,7 @@ class CurrentTask implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

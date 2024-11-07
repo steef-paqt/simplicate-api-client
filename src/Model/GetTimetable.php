@@ -50,14 +50,14 @@ class GetTimetable implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetTimetable';
+    protected static string $swaggerModelName = 'GetTimetable';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'employee' => '\Paqtcom\Simplicate\Model\GetEmployeeSimple',
         'created_at' => 'string',
@@ -77,7 +77,7 @@ class GetTimetable implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'employee' => null,
         'created_at' => null,
@@ -118,7 +118,7 @@ class GetTimetable implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'employee' => 'employee',
         'created_at' => 'created_at',
@@ -138,7 +138,7 @@ class GetTimetable implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'employee' => 'setEmployee',
         'created_at' => 'setCreatedAt',
@@ -158,7 +158,7 @@ class GetTimetable implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'employee' => 'getEmployee',
         'created_at' => 'getCreatedAt',
@@ -219,7 +219,7 @@ class GetTimetable implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

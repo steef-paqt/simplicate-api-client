@@ -50,14 +50,14 @@ class Avatar implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Avatar';
+    protected static string $swaggerModelName = 'Avatar';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'url_small' => 'string',
         'url_large' => 'string',
         'initials' => 'string',
@@ -69,7 +69,7 @@ class Avatar implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'url_small' => null,
         'url_large' => null,
         'initials' => null,
@@ -102,7 +102,7 @@ class Avatar implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'url_small' => 'url_small',
         'url_large' => 'url_large',
         'initials' => 'initials',
@@ -114,7 +114,7 @@ class Avatar implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'url_small' => 'setUrlSmall',
         'url_large' => 'setUrlLarge',
         'initials' => 'setInitials',
@@ -126,7 +126,7 @@ class Avatar implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'url_small' => 'getUrlSmall',
         'url_large' => 'getUrlLarge',
         'initials' => 'getInitials',
@@ -179,7 +179,7 @@ class Avatar implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

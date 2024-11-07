@@ -50,14 +50,14 @@ class PostCustomFieldValue implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostCustomFieldValue';
+    protected static string $swaggerModelName = 'PostCustomFieldValue';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'name' => 'string',
         'value' => 'string',
     ];
@@ -67,7 +67,7 @@ class PostCustomFieldValue implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'name' => null,
         'value' => null,
     ];
@@ -98,7 +98,7 @@ class PostCustomFieldValue implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'name' => 'name',
         'value' => 'value',
     ];
@@ -108,7 +108,7 @@ class PostCustomFieldValue implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'name' => 'setName',
         'value' => 'setValue',
     ];
@@ -118,7 +118,7 @@ class PostCustomFieldValue implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'name' => 'getName',
         'value' => 'getValue',
     ];
@@ -169,7 +169,7 @@ class PostCustomFieldValue implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

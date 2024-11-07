@@ -50,14 +50,14 @@ class PostProjectService implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostProjectService';
+    protected static string $swaggerModelName = 'PostProjectService';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'project_id' => 'string',
         'use_in_resource_planner' => 'bool',
         'start_date' => 'string',
@@ -82,7 +82,7 @@ class PostProjectService implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'project_id' => null,
         'use_in_resource_planner' => null,
         'start_date' => null,
@@ -128,7 +128,7 @@ class PostProjectService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'project_id' => 'project_id',
         'use_in_resource_planner' => 'use_in_resource_planner',
         'start_date' => 'start_date',
@@ -153,7 +153,7 @@ class PostProjectService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'project_id' => 'setProjectId',
         'use_in_resource_planner' => 'setUseInResourcePlanner',
         'start_date' => 'setStartDate',
@@ -178,7 +178,7 @@ class PostProjectService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'project_id' => 'getProjectId',
         'use_in_resource_planner' => 'getUseInResourcePlanner',
         'start_date' => 'getStartDate',
@@ -258,7 +258,7 @@ class PostProjectService implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

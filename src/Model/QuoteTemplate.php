@@ -50,14 +50,14 @@ class QuoteTemplate implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'QuoteTemplate';
+    protected static string $swaggerModelName = 'QuoteTemplate';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'description' => 'string',
         'id' => 'string',
         'type' => 'string',
@@ -74,7 +74,7 @@ class QuoteTemplate implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'description' => null,
         'id' => null,
         'type' => null,
@@ -112,7 +112,7 @@ class QuoteTemplate implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'description' => 'description',
         'id' => 'id',
         'type' => 'type',
@@ -129,7 +129,7 @@ class QuoteTemplate implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'description' => 'setDescription',
         'id' => 'setId',
         'type' => 'setType',
@@ -146,7 +146,7 @@ class QuoteTemplate implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'description' => 'getDescription',
         'id' => 'getId',
         'type' => 'getType',
@@ -204,7 +204,7 @@ class QuoteTemplate implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

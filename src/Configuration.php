@@ -40,77 +40,77 @@ namespace Paqtcom\Simplicate;
  */
 class Configuration
 {
-    private static $defaultConfiguration;
+    private static Configuration $defaultConfiguration;
 
     /**
      * Associate array to store API key(s)
      *
      * @var string[]
      */
-    protected $apiKeys = [];
+    protected array $apiKeys = [];
 
     /**
      * Associate array to store API prefix (e.g. Bearer)
      *
      * @var string[]
      */
-    protected $apiKeyPrefixes = [];
+    protected array $apiKeyPrefixes = [];
 
     /**
      * Access token for OAuth
      *
      * @var string
      */
-    protected $accessToken = '';
+    protected string $accessToken = '';
 
     /**
      * Username for HTTP basic authentication
      *
      * @var string
      */
-    protected $username = '';
+    protected string $username = '';
 
     /**
      * Password for HTTP basic authentication
      *
      * @var string
      */
-    protected $password = '';
+    protected string $password = '';
 
     /**
      * The host
      *
      * @var string
      */
-    protected $host = 'http://localhost/api/v2';
+    protected string $host = 'http://localhost/api/v2';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default
      *
      * @var string
      */
-    protected $userAgent = 'Swagger-Codegen/1.0.0/php';
+    protected string $userAgent = 'Swagger-Codegen/1.0.0/php';
 
     /**
      * Debug switch (default set to false)
      *
      * @var bool
      */
-    protected $debug = false;
+    protected bool $debug = false;
 
     /**
      * Debug file location (log to STDOUT by default)
      *
      * @var string
      */
-    protected $debugFile = 'php://output';
+    protected string $debugFile = 'php://output';
 
     /**
      * Debug file location (log to STDOUT by default)
      *
      * @var string
      */
-    protected $tempFolderPath;
+    protected string $tempFolderPath;
 
     /**
      * Constructor

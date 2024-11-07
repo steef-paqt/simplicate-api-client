@@ -50,14 +50,14 @@ class GetLeaveType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetLeaveType';
+    protected static string $swaggerModelName = 'GetLeaveType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'has_workflow' => 'bool',
         'id' => 'string',
         'type' => 'string',
@@ -74,7 +74,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'has_workflow' => null,
         'id' => null,
         'type' => null,
@@ -112,7 +112,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'has_workflow' => 'has_workflow',
         'id' => 'id',
         'type' => 'type',
@@ -129,7 +129,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'has_workflow' => 'setHasWorkflow',
         'id' => 'setId',
         'type' => 'setType',
@@ -146,7 +146,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'has_workflow' => 'getHasWorkflow',
         'id' => 'getId',
         'type' => 'getType',
@@ -222,7 +222,7 @@ class GetLeaveType implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class AvatarSimple implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AvatarSimple';
+    protected static string $swaggerModelName = 'AvatarSimple';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'initials' => 'string',
         'color' => 'string',
     ];
@@ -67,7 +67,7 @@ class AvatarSimple implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'initials' => null,
         'color' => null,
     ];
@@ -98,7 +98,7 @@ class AvatarSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'initials' => 'initials',
         'color' => 'color',
     ];
@@ -108,7 +108,7 @@ class AvatarSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'initials' => 'setInitials',
         'color' => 'setColor',
     ];
@@ -118,7 +118,7 @@ class AvatarSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'initials' => 'getInitials',
         'color' => 'getColor',
     ];
@@ -169,7 +169,7 @@ class AvatarSimple implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

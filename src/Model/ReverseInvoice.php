@@ -50,14 +50,14 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ReverseInvoice';
+    protected static string $swaggerModelName = 'ReverseInvoice';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'status' => 'string',
         'date' => 'string',
@@ -72,7 +72,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'status' => null,
         'date' => null,
@@ -108,7 +108,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'status' => 'status',
         'date' => 'date',
@@ -123,7 +123,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'status' => 'setStatus',
         'date' => 'setDate',
@@ -138,7 +138,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'status' => 'getStatus',
         'date' => 'getDate',
@@ -212,7 +212,7 @@ class ReverseInvoice implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

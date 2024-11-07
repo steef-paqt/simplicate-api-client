@@ -50,14 +50,14 @@ class PostApproval implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostApproval';
+    protected static string $swaggerModelName = 'PostApproval';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'employee_id' => 'string',
         'approvalstatus_id' => 'string',
         'date' => 'string',
@@ -68,7 +68,7 @@ class PostApproval implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'employee_id' => null,
         'approvalstatus_id' => null,
         'date' => null,
@@ -100,7 +100,7 @@ class PostApproval implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'employee_id' => 'employee_id',
         'approvalstatus_id' => 'approvalstatus_id',
         'date' => 'date',
@@ -111,7 +111,7 @@ class PostApproval implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'employee_id' => 'setEmployeeId',
         'approvalstatus_id' => 'setApprovalstatusId',
         'date' => 'setDate',
@@ -122,7 +122,7 @@ class PostApproval implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'employee_id' => 'getEmployeeId',
         'approvalstatus_id' => 'getApprovalstatusId',
         'date' => 'getDate',
@@ -174,7 +174,7 @@ class PostApproval implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

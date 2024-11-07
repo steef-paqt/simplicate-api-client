@@ -50,14 +50,14 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SubscriptionCycle';
+    protected static string $swaggerModelName = 'SubscriptionCycle';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'start_date' => 'string',
         'end_date' => 'string',
         'is_invoiced' => 'bool',
@@ -68,7 +68,7 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'start_date' => null,
         'end_date' => null,
         'is_invoiced' => null,
@@ -100,7 +100,7 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'start_date' => 'start_date',
         'end_date' => 'end_date',
         'is_invoiced' => 'is_invoiced',
@@ -111,7 +111,7 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'is_invoiced' => 'setIsInvoiced',
@@ -122,7 +122,7 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'is_invoiced' => 'getIsInvoiced',
@@ -174,7 +174,7 @@ class SubscriptionCycle implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class BudgetHours implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BudgetHours';
+    protected static string $swaggerModelName = 'BudgetHours';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'amount_budget' => 'float',
         'amount_spent' => 'float',
         'value_budget' => 'float',
@@ -69,7 +69,7 @@ class BudgetHours implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'amount_budget' => 'float',
         'amount_spent' => 'float',
         'value_budget' => 'float',
@@ -102,7 +102,7 @@ class BudgetHours implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'amount_budget' => 'amount_budget',
         'amount_spent' => 'amount_spent',
         'value_budget' => 'value_budget',
@@ -114,7 +114,7 @@ class BudgetHours implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'amount_budget' => 'setAmountBudget',
         'amount_spent' => 'setAmountSpent',
         'value_budget' => 'setValueBudget',
@@ -126,7 +126,7 @@ class BudgetHours implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'amount_budget' => 'getAmountBudget',
         'amount_spent' => 'getAmountSpent',
         'value_budget' => 'getValueBudget',
@@ -179,7 +179,7 @@ class BudgetHours implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

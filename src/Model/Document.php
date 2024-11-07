@@ -50,14 +50,14 @@ class Document implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Document';
+    protected static string $swaggerModelName = 'Document';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'title' => 'string',
         'description' => 'string',
     ];
@@ -67,7 +67,7 @@ class Document implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'title' => null,
         'description' => null,
     ];
@@ -98,7 +98,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'title' => 'title',
         'description' => 'description',
     ];
@@ -108,7 +108,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'title' => 'setTitle',
         'description' => 'setDescription',
     ];
@@ -118,7 +118,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'title' => 'getTitle',
         'description' => 'getDescription',
     ];
@@ -169,7 +169,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

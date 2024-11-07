@@ -50,14 +50,14 @@ class PostAttachment implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostAttachment';
+    protected static string $swaggerModelName = 'PostAttachment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'message_id' => 'string',
         'document_id' => 'string',
     ];
@@ -67,7 +67,7 @@ class PostAttachment implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'message_id' => null,
         'document_id' => null,
     ];
@@ -98,7 +98,7 @@ class PostAttachment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'message_id' => 'message_id',
         'document_id' => 'document_id',
     ];
@@ -108,7 +108,7 @@ class PostAttachment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'message_id' => 'setMessageId',
         'document_id' => 'setDocumentId',
     ];
@@ -118,7 +118,7 @@ class PostAttachment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'message_id' => 'getMessageId',
         'document_id' => 'getDocumentId',
     ];
@@ -169,7 +169,7 @@ class PostAttachment implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

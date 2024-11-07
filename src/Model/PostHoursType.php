@@ -50,14 +50,14 @@ class PostHoursType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostHoursType';
+    protected static string $swaggerModelName = 'PostHoursType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'type' => 'string',
         'vatclass_id' => 'string',
         'label' => 'string',
@@ -71,7 +71,7 @@ class PostHoursType implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'type' => null,
         'vatclass_id' => null,
         'label' => null,
@@ -106,7 +106,7 @@ class PostHoursType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'type' => 'type',
         'vatclass_id' => 'vatclass_id',
         'label' => 'label',
@@ -120,7 +120,7 @@ class PostHoursType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'type' => 'setType',
         'vatclass_id' => 'setVatclassId',
         'label' => 'setLabel',
@@ -134,7 +134,7 @@ class PostHoursType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'type' => 'getType',
         'vatclass_id' => 'getVatclassId',
         'label' => 'getLabel',
@@ -203,7 +203,7 @@ class PostHoursType implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

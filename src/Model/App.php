@@ -50,14 +50,14 @@ class App implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'App';
+    protected static string $swaggerModelName = 'App';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'key' => 'string',
         'label' => 'string',
         'state' => 'string',
@@ -68,7 +68,7 @@ class App implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'key' => null,
         'label' => null,
         'state' => null,
@@ -100,7 +100,7 @@ class App implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'key' => 'key',
         'label' => 'label',
         'state' => 'state',
@@ -111,7 +111,7 @@ class App implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'key' => 'setKey',
         'label' => 'setLabel',
         'state' => 'setState',
@@ -122,7 +122,7 @@ class App implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'key' => 'getKey',
         'label' => 'getLabel',
         'state' => 'getState',
@@ -192,7 +192,7 @@ class App implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

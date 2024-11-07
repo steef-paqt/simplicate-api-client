@@ -50,14 +50,14 @@ class GetContract implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetContract';
+    protected static string $swaggerModelName = 'GetContract';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'employee' => '\Paqtcom\Simplicate\Model\GetEmployee',
         'employer' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
@@ -77,7 +77,7 @@ class GetContract implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'employee' => null,
         'employer' => null,
@@ -118,7 +118,7 @@ class GetContract implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'employee' => 'employee',
         'employer' => 'employer',
@@ -138,7 +138,7 @@ class GetContract implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'employee' => 'setEmployee',
         'employer' => 'setEmployer',
@@ -158,7 +158,7 @@ class GetContract implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'employee' => 'getEmployee',
         'employer' => 'getEmployer',
@@ -219,7 +219,7 @@ class GetContract implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

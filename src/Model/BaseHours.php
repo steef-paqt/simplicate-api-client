@@ -50,14 +50,14 @@ class BaseHours implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BaseHours';
+    protected static string $swaggerModelName = 'BaseHours';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'source' => 'string',
         'note' => 'string',
         'start_date' => 'string',
@@ -68,7 +68,7 @@ class BaseHours implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'source' => null,
         'note' => null,
         'start_date' => null,
@@ -100,7 +100,7 @@ class BaseHours implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'source' => 'source',
         'note' => 'note',
         'start_date' => 'start_date',
@@ -111,7 +111,7 @@ class BaseHours implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'source' => 'setSource',
         'note' => 'setNote',
         'start_date' => 'setStartDate',
@@ -122,7 +122,7 @@ class BaseHours implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'source' => 'getSource',
         'note' => 'getNote',
         'start_date' => 'getStartDate',
@@ -192,7 +192,7 @@ class BaseHours implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

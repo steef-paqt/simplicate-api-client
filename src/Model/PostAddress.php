@@ -50,14 +50,14 @@ class PostAddress implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostAddress';
+    protected static string $swaggerModelName = 'PostAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'type' => 'string',
         'line_1' => 'string',
         'line_2' => 'string',
@@ -73,7 +73,7 @@ class PostAddress implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'type' => null,
         'line_1' => null,
         'line_2' => null,
@@ -110,7 +110,7 @@ class PostAddress implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'type' => 'type',
         'line_1' => 'line_1',
         'line_2' => 'line_2',
@@ -126,7 +126,7 @@ class PostAddress implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'type' => 'setType',
         'line_1' => 'setLine1',
         'line_2' => 'setLine2',
@@ -142,7 +142,7 @@ class PostAddress implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'type' => 'getType',
         'line_1' => 'getLine1',
         'line_2' => 'getLine2',
@@ -199,7 +199,7 @@ class PostAddress implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class ReminderSet implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ReminderSet';
+    protected static string $swaggerModelName = 'ReminderSet';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'label' => 'string',
         'disabled' => 'bool',
     ];
@@ -67,7 +67,7 @@ class ReminderSet implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'label' => null,
         'disabled' => null,
     ];
@@ -98,7 +98,7 @@ class ReminderSet implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'label' => 'label',
         'disabled' => 'disabled',
     ];
@@ -108,7 +108,7 @@ class ReminderSet implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'label' => 'setLabel',
         'disabled' => 'setDisabled',
     ];
@@ -118,7 +118,7 @@ class ReminderSet implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'label' => 'getLabel',
         'disabled' => 'getDisabled',
     ];
@@ -169,7 +169,7 @@ class ReminderSet implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class GetInvoiceReminder implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetInvoiceReminder';
+    protected static string $swaggerModelName = 'GetInvoiceReminder';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'set' => '\Paqtcom\Simplicate\Model\ReminderSet',
         'status' => 'string',
         'paused' => 'bool',
@@ -69,7 +69,7 @@ class GetInvoiceReminder implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'set' => null,
         'status' => null,
         'paused' => null,
@@ -102,7 +102,7 @@ class GetInvoiceReminder implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'set' => 'set',
         'status' => 'status',
         'paused' => 'paused',
@@ -114,7 +114,7 @@ class GetInvoiceReminder implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'set' => 'setSet',
         'status' => 'setStatus',
         'paused' => 'setPaused',
@@ -126,7 +126,7 @@ class GetInvoiceReminder implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'set' => 'getSet',
         'status' => 'getStatus',
         'paused' => 'getPaused',
@@ -179,7 +179,7 @@ class GetInvoiceReminder implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

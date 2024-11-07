@@ -50,14 +50,14 @@ class Timetable implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Timetable';
+    protected static string $swaggerModelName = 'Timetable';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'even_week' => '\Paqtcom\Simplicate\Model\TimetableWeek',
         'odd_week' => '\Paqtcom\Simplicate\Model\TimetableWeek',
         'start_date' => 'string',
@@ -71,7 +71,7 @@ class Timetable implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'even_week' => null,
         'odd_week' => null,
         'start_date' => null,
@@ -106,7 +106,7 @@ class Timetable implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'even_week' => 'even_week',
         'odd_week' => 'odd_week',
         'start_date' => 'start_date',
@@ -120,7 +120,7 @@ class Timetable implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'even_week' => 'setEvenWeek',
         'odd_week' => 'setOddWeek',
         'start_date' => 'setStartDate',
@@ -134,7 +134,7 @@ class Timetable implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'even_week' => 'getEvenWeek',
         'odd_week' => 'getOddWeek',
         'start_date' => 'getStartDate',
@@ -189,7 +189,7 @@ class Timetable implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

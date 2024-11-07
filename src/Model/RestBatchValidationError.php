@@ -50,14 +50,14 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'RestBatchValidationError';
+    protected static string $swaggerModelName = 'RestBatchValidationError';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'error' => '\Paqtcom\Simplicate\Model\RestError',
         'submitted_data' => 'object',
     ];
@@ -67,7 +67,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'error' => null,
         'submitted_data' => null,
     ];
@@ -98,7 +98,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'error' => 'error',
         'submitted_data' => 'submitted_data',
     ];
@@ -108,7 +108,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'error' => 'setError',
         'submitted_data' => 'setSubmittedData',
     ];
@@ -118,7 +118,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'error' => 'getError',
         'submitted_data' => 'getSubmittedData',
     ];
@@ -169,7 +169,7 @@ class RestBatchValidationError implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

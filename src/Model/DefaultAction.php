@@ -50,14 +50,14 @@ class DefaultAction implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'DefaultAction';
+    protected static string $swaggerModelName = 'DefaultAction';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'name' => 'string',
         'is_response_required' => 'bool',
         'color' => 'string',
@@ -68,7 +68,7 @@ class DefaultAction implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'name' => null,
         'is_response_required' => null,
         'color' => null,
@@ -100,7 +100,7 @@ class DefaultAction implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'name' => 'name',
         'is_response_required' => 'is_response_required',
         'color' => 'color',
@@ -111,7 +111,7 @@ class DefaultAction implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'name' => 'setName',
         'is_response_required' => 'setIsResponseRequired',
         'color' => 'setColor',
@@ -122,7 +122,7 @@ class DefaultAction implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'name' => 'getName',
         'is_response_required' => 'getIsResponseRequired',
         'color' => 'getColor',
@@ -174,7 +174,7 @@ class DefaultAction implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

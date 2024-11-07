@@ -50,14 +50,14 @@ class Accountancy implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Accountancy';
+    protected static string $swaggerModelName = 'Accountancy';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'is_tax_unit_vat' => 'bool',
         'vat_number_fe' => 'string',
         'tax_unit_vat_role' => 'string',
@@ -70,7 +70,7 @@ class Accountancy implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'is_tax_unit_vat' => null,
         'vat_number_fe' => null,
         'tax_unit_vat_role' => null,
@@ -104,7 +104,7 @@ class Accountancy implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'is_tax_unit_vat' => 'is_tax_unit_vat',
         'vat_number_fe' => 'vat_number_fe',
         'tax_unit_vat_role' => 'tax_unit_vat_role',
@@ -117,7 +117,7 @@ class Accountancy implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'is_tax_unit_vat' => 'setIsTaxUnitVat',
         'vat_number_fe' => 'setVatNumberFe',
         'tax_unit_vat_role' => 'setTaxUnitVatRole',
@@ -130,7 +130,7 @@ class Accountancy implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'is_tax_unit_vat' => 'getIsTaxUnitVat',
         'vat_number_fe' => 'getVatNumberFe',
         'tax_unit_vat_role' => 'getTaxUnitVatRole',
@@ -219,7 +219,7 @@ class Accountancy implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

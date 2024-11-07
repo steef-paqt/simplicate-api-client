@@ -50,14 +50,14 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetInvoiceSimple';
+    protected static string $swaggerModelName = 'GetInvoiceSimple';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'invoice_number' => 'string',
         'invoice_date' => 'string',
@@ -69,7 +69,7 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'invoice_number' => null,
         'invoice_date' => null,
@@ -102,7 +102,7 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'invoice_number' => 'invoice_number',
         'invoice_date' => 'invoice_date',
@@ -114,7 +114,7 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'invoice_number' => 'setInvoiceNumber',
         'invoice_date' => 'setInvoiceDate',
@@ -126,7 +126,7 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'invoice_number' => 'getInvoiceNumber',
         'invoice_date' => 'getInvoiceDate',
@@ -179,7 +179,7 @@ class GetInvoiceSimple implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

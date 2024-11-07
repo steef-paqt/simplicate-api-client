@@ -50,14 +50,14 @@ class AvatarPublic implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AvatarPublic';
+    protected static string $swaggerModelName = 'AvatarPublic';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'full_name' => 'string',
         'url_small' => 'string',
         'url_large' => 'string',
@@ -70,7 +70,7 @@ class AvatarPublic implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'full_name' => null,
         'url_small' => null,
         'url_large' => null,
@@ -104,7 +104,7 @@ class AvatarPublic implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'full_name' => 'full_name',
         'url_small' => 'url_small',
         'url_large' => 'url_large',
@@ -117,7 +117,7 @@ class AvatarPublic implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'full_name' => 'setFullName',
         'url_small' => 'setUrlSmall',
         'url_large' => 'setUrlLarge',
@@ -130,7 +130,7 @@ class AvatarPublic implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'full_name' => 'getFullName',
         'url_small' => 'getUrlSmall',
         'url_large' => 'getUrlLarge',
@@ -184,7 +184,7 @@ class AvatarPublic implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

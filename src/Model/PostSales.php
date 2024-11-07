@@ -50,14 +50,14 @@ class PostSales implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostSales';
+    protected static string $swaggerModelName = 'PostSales';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'responsible_employee_id' => 'string',
         'progress_id' => 'string',
         'source_id' => 'string',
@@ -85,7 +85,7 @@ class PostSales implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'responsible_employee_id' => null,
         'progress_id' => null,
         'source_id' => null,
@@ -134,7 +134,7 @@ class PostSales implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'responsible_employee_id' => 'responsible_employee_id',
         'progress_id' => 'progress_id',
         'source_id' => 'source_id',
@@ -162,7 +162,7 @@ class PostSales implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'responsible_employee_id' => 'setResponsibleEmployeeId',
         'progress_id' => 'setProgressId',
         'source_id' => 'setSourceId',
@@ -190,7 +190,7 @@ class PostSales implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'responsible_employee_id' => 'getResponsibleEmployeeId',
         'progress_id' => 'getProgressId',
         'source_id' => 'getSourceId',
@@ -259,7 +259,7 @@ class PostSales implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ExternalItemMetadata';
+    protected static string $swaggerModelName = 'ExternalItemMetadata';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'configuration' => '\Paqtcom\Simplicate\Model\ExternalItemMetadataConfiguration',
         'count' => 'int',
         'total_count' => 'int',
@@ -73,7 +73,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'configuration' => null,
         'count' => null,
         'total_count' => null,
@@ -110,7 +110,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'configuration' => 'configuration',
         'count' => 'count',
         'total_count' => 'total_count',
@@ -126,7 +126,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'configuration' => 'setConfiguration',
         'count' => 'setCount',
         'total_count' => 'setTotalCount',
@@ -142,7 +142,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'configuration' => 'getConfiguration',
         'count' => 'getCount',
         'total_count' => 'getTotalCount',
@@ -199,7 +199,7 @@ class ExternalItemMetadata implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

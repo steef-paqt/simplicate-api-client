@@ -50,14 +50,14 @@ class PostContactOrganizationFk implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostContactOrganizationFk';
+    protected static string $swaggerModelName = 'PostContactOrganizationFk';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'organization_id' => 'string',
         'work_function' => 'string',
         'work_email' => 'string',
@@ -69,7 +69,7 @@ class PostContactOrganizationFk implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'organization_id' => null,
         'work_function' => null,
         'work_email' => null,
@@ -102,7 +102,7 @@ class PostContactOrganizationFk implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'organization_id' => 'organization_id',
         'work_function' => 'work_function',
         'work_email' => 'work_email',
@@ -114,7 +114,7 @@ class PostContactOrganizationFk implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'organization_id' => 'setOrganizationId',
         'work_function' => 'setWorkFunction',
         'work_email' => 'setWorkEmail',
@@ -126,7 +126,7 @@ class PostContactOrganizationFk implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'organization_id' => 'getOrganizationId',
         'work_function' => 'getWorkFunction',
         'work_email' => 'getWorkEmail',
@@ -179,7 +179,7 @@ class PostContactOrganizationFk implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

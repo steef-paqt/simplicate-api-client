@@ -50,14 +50,14 @@ class RecentSalesQuote implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'RecentSalesQuote';
+    protected static string $swaggerModelName = 'RecentSalesQuote';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'quote_number' => 'string',
         'status' => '\Paqtcom\Simplicate\Model\RecentSalesQuoteStatus',
     ];
@@ -67,7 +67,7 @@ class RecentSalesQuote implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'quote_number' => null,
         'status' => null,
     ];
@@ -98,7 +98,7 @@ class RecentSalesQuote implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'quote_number' => 'quote_number',
         'status' => 'status',
     ];
@@ -108,7 +108,7 @@ class RecentSalesQuote implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'quote_number' => 'setQuoteNumber',
         'status' => 'setStatus',
     ];
@@ -118,7 +118,7 @@ class RecentSalesQuote implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'quote_number' => 'getQuoteNumber',
         'status' => 'getStatus',
     ];
@@ -169,7 +169,7 @@ class RecentSalesQuote implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

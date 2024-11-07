@@ -50,14 +50,14 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ResultPostMergerCompare';
+    protected static string $swaggerModelName = 'ResultPostMergerCompare';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'is_valid' => 'bool',
         'token' => 'string',
         'message' => 'string',
@@ -71,7 +71,7 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'is_valid' => null,
         'token' => null,
         'message' => null,
@@ -106,7 +106,7 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'is_valid' => 'is_valid',
         'token' => 'token',
         'message' => 'message',
@@ -120,7 +120,7 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'is_valid' => 'setIsValid',
         'token' => 'setToken',
         'message' => 'setMessage',
@@ -134,7 +134,7 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'is_valid' => 'getIsValid',
         'token' => 'getToken',
         'message' => 'getMessage',
@@ -189,7 +189,7 @@ class ResultPostMergerCompare implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

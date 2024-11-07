@@ -50,14 +50,14 @@ class PostChunked implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostChunked';
+    protected static string $swaggerModelName = 'PostChunked';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'file_name' => 'string',
         'file_size' => 'string',
     ];
@@ -67,7 +67,7 @@ class PostChunked implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'file_name' => null,
         'file_size' => null,
     ];
@@ -98,7 +98,7 @@ class PostChunked implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'file_name' => 'file_name',
         'file_size' => 'file_size',
     ];
@@ -108,7 +108,7 @@ class PostChunked implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'file_name' => 'setFileName',
         'file_size' => 'setFileSize',
     ];
@@ -118,7 +118,7 @@ class PostChunked implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'file_name' => 'getFileName',
         'file_size' => 'getFileSize',
     ];
@@ -169,7 +169,7 @@ class PostChunked implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

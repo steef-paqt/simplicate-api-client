@@ -50,14 +50,14 @@ class PostContactPerson implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostContactPerson';
+    protected static string $swaggerModelName = 'PostContactPerson';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'organization_id' => 'string',
         'person_id' => 'string',
         'is_active' => 'bool',
@@ -72,7 +72,7 @@ class PostContactPerson implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'organization_id' => null,
         'person_id' => null,
         'is_active' => null,
@@ -108,7 +108,7 @@ class PostContactPerson implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'organization_id' => 'organization_id',
         'person_id' => 'person_id',
         'is_active' => 'is_active',
@@ -123,7 +123,7 @@ class PostContactPerson implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'organization_id' => 'setOrganizationId',
         'person_id' => 'setPersonId',
         'is_active' => 'setIsActive',
@@ -138,7 +138,7 @@ class PostContactPerson implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'organization_id' => 'getOrganizationId',
         'person_id' => 'getPersonId',
         'is_active' => 'getIsActive',
@@ -194,7 +194,7 @@ class PostContactPerson implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetBasicPersonSimple';
+    protected static string $swaggerModelName = 'GetBasicPersonSimple';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'date_of_birth' => 'string',
         'gender_id' => 'string',
         'gender' => 'string',
@@ -77,7 +77,7 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'date_of_birth' => null,
         'gender_id' => null,
         'gender' => null,
@@ -118,7 +118,7 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'date_of_birth' => 'date_of_birth',
         'gender_id' => 'gender_id',
         'gender' => 'gender',
@@ -138,7 +138,7 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'date_of_birth' => 'setDateOfBirth',
         'gender_id' => 'setGenderId',
         'gender' => 'setGender',
@@ -158,7 +158,7 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'date_of_birth' => 'getDateOfBirth',
         'gender_id' => 'getGenderId',
         'gender' => 'getGender',
@@ -219,7 +219,7 @@ class GetBasicPersonSimple implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

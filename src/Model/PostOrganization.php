@@ -50,14 +50,14 @@ class PostOrganization implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostOrganization';
+    protected static string $swaggerModelName = 'PostOrganization';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'visiting_address' => '\Paqtcom\Simplicate\Model\PostAddress',
         'postal_address' => '\Paqtcom\Simplicate\Model\PostAddress',
         'relation_type' => '\Paqtcom\Simplicate\Model\RelationType',
@@ -92,7 +92,7 @@ class PostOrganization implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'visiting_address' => null,
         'postal_address' => null,
         'relation_type' => null,
@@ -148,7 +148,7 @@ class PostOrganization implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'visiting_address' => 'visiting_address',
         'postal_address' => 'postal_address',
         'relation_type' => 'relation_type',
@@ -183,7 +183,7 @@ class PostOrganization implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'visiting_address' => 'setVisitingAddress',
         'postal_address' => 'setPostalAddress',
         'relation_type' => 'setRelationType',
@@ -218,7 +218,7 @@ class PostOrganization implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'visiting_address' => 'getVisitingAddress',
         'postal_address' => 'getPostalAddress',
         'relation_type' => 'getRelationType',
@@ -294,7 +294,7 @@ class PostOrganization implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class DateTimeRange implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'DateTimeRange';
+    protected static string $swaggerModelName = 'DateTimeRange';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'start_date' => 'string',
         'end_date' => 'string',
     ];
@@ -67,7 +67,7 @@ class DateTimeRange implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'start_date' => null,
         'end_date' => null,
     ];
@@ -98,7 +98,7 @@ class DateTimeRange implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'start_date' => 'start_date',
         'end_date' => 'end_date',
     ];
@@ -108,7 +108,7 @@ class DateTimeRange implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
     ];
@@ -118,7 +118,7 @@ class DateTimeRange implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
     ];
@@ -169,7 +169,7 @@ class DateTimeRange implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

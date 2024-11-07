@@ -50,14 +50,14 @@ class GetDocument implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetDocument';
+    protected static string $swaggerModelName = 'GetDocument';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'download_url' => 'string',
         'document_type' => '\Paqtcom\Simplicate\Model\DocumentTypeSimple',
@@ -74,7 +74,7 @@ class GetDocument implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'download_url' => null,
         'document_type' => null,
@@ -112,7 +112,7 @@ class GetDocument implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'download_url' => 'download_url',
         'document_type' => 'document_type',
@@ -129,7 +129,7 @@ class GetDocument implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'download_url' => 'setDownloadUrl',
         'document_type' => 'setDocumentType',
@@ -146,7 +146,7 @@ class GetDocument implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'download_url' => 'getDownloadUrl',
         'document_type' => 'getDocumentType',
@@ -204,7 +204,7 @@ class GetDocument implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

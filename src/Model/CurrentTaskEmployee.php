@@ -50,14 +50,14 @@ class CurrentTaskEmployee implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CurrentTaskEmployee';
+    protected static string $swaggerModelName = 'CurrentTaskEmployee';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'employee_id' => 'string',
     ];
 
@@ -66,7 +66,7 @@ class CurrentTaskEmployee implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'employee_id' => null,
     ];
 
@@ -96,7 +96,7 @@ class CurrentTaskEmployee implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'employee_id' => 'employee_id',
     ];
 
@@ -105,7 +105,7 @@ class CurrentTaskEmployee implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'employee_id' => 'setEmployeeId',
     ];
 
@@ -114,7 +114,7 @@ class CurrentTaskEmployee implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'employee_id' => 'getEmployeeId',
     ];
 
@@ -164,7 +164,7 @@ class CurrentTaskEmployee implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

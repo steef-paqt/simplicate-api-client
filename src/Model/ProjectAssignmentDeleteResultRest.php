@@ -50,14 +50,14 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ProjectAssignmentDeleteResultRest';
+    protected static string $swaggerModelName = 'ProjectAssignmentDeleteResultRest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'assignment_id' => 'object',
         'is_deleted' => 'bool',
     ];
@@ -67,7 +67,7 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'assignment_id' => null,
         'is_deleted' => null,
     ];
@@ -98,7 +98,7 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'assignment_id' => 'assignment_id',
         'is_deleted' => 'is_deleted',
     ];
@@ -108,7 +108,7 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'assignment_id' => 'setAssignmentId',
         'is_deleted' => 'setIsDeleted',
     ];
@@ -118,7 +118,7 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'assignment_id' => 'getAssignmentId',
         'is_deleted' => 'getIsDeleted',
     ];
@@ -169,7 +169,7 @@ class ProjectAssignmentDeleteResultRest implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

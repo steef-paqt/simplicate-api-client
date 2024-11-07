@@ -50,14 +50,14 @@ class QuotetemplateConfigurationMetaData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'QuotetemplateConfigurationMetaData';
+    protected static string $swaggerModelName = 'QuotetemplateConfigurationMetaData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'default_view_and_sign_button_text' => 'string',
         'default_view_and_sign_button_bg_color' => 'string',
         'default_view_and_sign_button_text_color' => 'string',
@@ -75,7 +75,7 @@ class QuotetemplateConfigurationMetaData implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'default_view_and_sign_button_text' => null,
         'default_view_and_sign_button_bg_color' => null,
         'default_view_and_sign_button_text_color' => null,
@@ -114,7 +114,7 @@ class QuotetemplateConfigurationMetaData implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'default_view_and_sign_button_text' => 'default_view_and_sign_button_text',
         'default_view_and_sign_button_bg_color' => 'default_view_and_sign_button_bg_color',
         'default_view_and_sign_button_text_color' => 'default_view_and_sign_button_text_color',
@@ -132,7 +132,7 @@ class QuotetemplateConfigurationMetaData implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'default_view_and_sign_button_text' => 'setDefaultViewAndSignButtonText',
         'default_view_and_sign_button_bg_color' => 'setDefaultViewAndSignButtonBgColor',
         'default_view_and_sign_button_text_color' => 'setDefaultViewAndSignButtonTextColor',
@@ -150,7 +150,7 @@ class QuotetemplateConfigurationMetaData implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'default_view_and_sign_button_text' => 'getDefaultViewAndSignButtonText',
         'default_view_and_sign_button_bg_color' => 'getDefaultViewAndSignButtonBgColor',
         'default_view_and_sign_button_text_color' => 'getDefaultViewAndSignButtonTextColor',
@@ -209,7 +209,7 @@ class QuotetemplateConfigurationMetaData implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

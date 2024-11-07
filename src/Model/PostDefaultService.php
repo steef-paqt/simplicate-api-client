@@ -50,14 +50,14 @@ class PostDefaultService implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostDefaultService';
+    protected static string $swaggerModelName = 'PostDefaultService';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'vat_class_id' => 'string',
         'revenue_group_id' => 'string',
         'my_organization_profile_id' => 'string',
@@ -71,7 +71,7 @@ class PostDefaultService implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'vat_class_id' => null,
         'revenue_group_id' => null,
         'my_organization_profile_id' => null,
@@ -106,7 +106,7 @@ class PostDefaultService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'vat_class_id' => 'vat_class_id',
         'revenue_group_id' => 'revenue_group_id',
         'my_organization_profile_id' => 'my_organization_profile_id',
@@ -120,7 +120,7 @@ class PostDefaultService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'vat_class_id' => 'setVatClassId',
         'revenue_group_id' => 'setRevenueGroupId',
         'my_organization_profile_id' => 'setMyOrganizationProfileId',
@@ -134,7 +134,7 @@ class PostDefaultService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'vat_class_id' => 'getVatClassId',
         'revenue_group_id' => 'getRevenueGroupId',
         'my_organization_profile_id' => 'getMyOrganizationProfileId',
@@ -189,7 +189,7 @@ class PostDefaultService implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

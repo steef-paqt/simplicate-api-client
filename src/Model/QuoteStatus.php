@@ -50,14 +50,14 @@ class QuoteStatus implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'QuoteStatus';
+    protected static string $swaggerModelName = 'QuoteStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'label' => 'string',
         'color' => 'string',
@@ -68,7 +68,7 @@ class QuoteStatus implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'label' => null,
         'color' => null,
@@ -100,7 +100,7 @@ class QuoteStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'label' => 'label',
         'color' => 'color',
@@ -111,7 +111,7 @@ class QuoteStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'label' => 'setLabel',
         'color' => 'setColor',
@@ -122,7 +122,7 @@ class QuoteStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'label' => 'getLabel',
         'color' => 'getColor',
@@ -174,7 +174,7 @@ class QuoteStatus implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

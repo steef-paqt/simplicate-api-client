@@ -50,14 +50,14 @@ class PutDocument implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PutDocument';
+    protected static string $swaggerModelName = 'PutDocument';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'document_type_id' => 'string',
         'upload_queue_id' => 'string',
         'title' => 'string',
@@ -69,7 +69,7 @@ class PutDocument implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'document_type_id' => null,
         'upload_queue_id' => null,
         'title' => null,
@@ -102,7 +102,7 @@ class PutDocument implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'document_type_id' => 'document_type_id',
         'upload_queue_id' => 'upload_queue_id',
         'title' => 'title',
@@ -114,7 +114,7 @@ class PutDocument implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'document_type_id' => 'setDocumentTypeId',
         'upload_queue_id' => 'setUploadQueueId',
         'title' => 'setTitle',
@@ -126,7 +126,7 @@ class PutDocument implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'document_type_id' => 'getDocumentTypeId',
         'upload_queue_id' => 'getUploadQueueId',
         'title' => 'getTitle',
@@ -179,7 +179,7 @@ class PutDocument implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

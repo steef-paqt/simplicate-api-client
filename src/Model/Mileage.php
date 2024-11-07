@@ -50,14 +50,14 @@ class Mileage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Mileage';
+    protected static string $swaggerModelName = 'Mileage';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'mileage' => 'float',
         'related_hours_id' => 'string',
         'source' => 'string',
@@ -70,7 +70,7 @@ class Mileage implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'mileage' => 'float',
         'related_hours_id' => null,
         'source' => null,
@@ -104,7 +104,7 @@ class Mileage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'mileage' => 'mileage',
         'related_hours_id' => 'related_hours_id',
         'source' => 'source',
@@ -117,7 +117,7 @@ class Mileage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'mileage' => 'setMileage',
         'related_hours_id' => 'setRelatedHoursId',
         'source' => 'setSource',
@@ -130,7 +130,7 @@ class Mileage implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'mileage' => 'getMileage',
         'related_hours_id' => 'getRelatedHoursId',
         'source' => 'getSource',
@@ -202,7 +202,7 @@ class Mileage implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

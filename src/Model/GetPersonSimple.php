@@ -50,14 +50,14 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetPersonSimple';
+    protected static string $swaggerModelName = 'GetPersonSimple';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'full_name' => 'string',
         'relation_number' => 'string',
@@ -68,7 +68,7 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'full_name' => null,
         'relation_number' => null,
@@ -100,7 +100,7 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'full_name' => 'full_name',
         'relation_number' => 'relation_number',
@@ -111,7 +111,7 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'full_name' => 'setFullName',
         'relation_number' => 'setRelationNumber',
@@ -122,7 +122,7 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'full_name' => 'getFullName',
         'relation_number' => 'getRelationNumber',
@@ -174,7 +174,7 @@ class GetPersonSimple implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

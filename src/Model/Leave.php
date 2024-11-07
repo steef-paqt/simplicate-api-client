@@ -50,14 +50,14 @@ class Leave implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Leave';
+    protected static string $swaggerModelName = 'Leave';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'start_date' => 'string',
         'end_date' => 'string',
         'year' => 'int',
@@ -70,7 +70,7 @@ class Leave implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'start_date' => null,
         'end_date' => null,
         'year' => null,
@@ -104,7 +104,7 @@ class Leave implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'start_date' => 'start_date',
         'end_date' => 'end_date',
         'year' => 'year',
@@ -117,7 +117,7 @@ class Leave implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'year' => 'setYear',
@@ -130,7 +130,7 @@ class Leave implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'year' => 'getYear',
@@ -184,7 +184,7 @@ class Leave implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

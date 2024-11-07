@@ -50,14 +50,14 @@ class IsSatisfied implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'IsSatisfied';
+    protected static string $swaggerModelName = 'IsSatisfied';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'value' => 'bool',
         'reason' => '\Paqtcom\Simplicate\Model\IsSatisfiedReason',
     ];
@@ -67,7 +67,7 @@ class IsSatisfied implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'value' => null,
         'reason' => null,
     ];
@@ -98,7 +98,7 @@ class IsSatisfied implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'value' => 'value',
         'reason' => 'reason',
     ];
@@ -108,7 +108,7 @@ class IsSatisfied implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'value' => 'setValue',
         'reason' => 'setReason',
     ];
@@ -118,7 +118,7 @@ class IsSatisfied implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'value' => 'getValue',
         'reason' => 'getReason',
     ];
@@ -169,7 +169,7 @@ class IsSatisfied implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

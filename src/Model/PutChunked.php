@@ -50,14 +50,14 @@ class PutChunked implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PutChunked';
+    protected static string $swaggerModelName = 'PutChunked';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'chunk' => 'string',
         'checksum' => 'string',
     ];
@@ -67,7 +67,7 @@ class PutChunked implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'chunk' => null,
         'checksum' => null,
     ];
@@ -98,7 +98,7 @@ class PutChunked implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'chunk' => 'chunk',
         'checksum' => 'checksum',
     ];
@@ -108,7 +108,7 @@ class PutChunked implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'chunk' => 'setChunk',
         'checksum' => 'setChecksum',
     ];
@@ -118,7 +118,7 @@ class PutChunked implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'chunk' => 'getChunk',
         'checksum' => 'getChecksum',
     ];
@@ -169,7 +169,7 @@ class PutChunked implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

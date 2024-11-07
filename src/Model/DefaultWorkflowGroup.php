@@ -50,14 +50,14 @@ class DefaultWorkflowGroup implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'DefaultWorkflowGroup';
+    protected static string $swaggerModelName = 'DefaultWorkflowGroup';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'name' => 'string',
         'is_blocked' => 'bool',
     ];
@@ -67,7 +67,7 @@ class DefaultWorkflowGroup implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'name' => null,
         'is_blocked' => null,
     ];
@@ -98,7 +98,7 @@ class DefaultWorkflowGroup implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'name' => 'name',
         'is_blocked' => 'is_blocked',
     ];
@@ -108,7 +108,7 @@ class DefaultWorkflowGroup implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'name' => 'setName',
         'is_blocked' => 'setIsBlocked',
     ];
@@ -118,7 +118,7 @@ class DefaultWorkflowGroup implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'name' => 'getName',
         'is_blocked' => 'getIsBlocked',
     ];
@@ -169,7 +169,7 @@ class DefaultWorkflowGroup implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

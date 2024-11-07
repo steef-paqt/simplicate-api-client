@@ -50,14 +50,14 @@ class PostQuote implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostQuote';
+    protected static string $swaggerModelName = 'PostQuote';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'quotetemplate_id' => 'string',
         'sales_id' => 'string',
         'quote_subject' => 'string',
@@ -71,7 +71,7 @@ class PostQuote implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'quotetemplate_id' => null,
         'sales_id' => null,
         'quote_subject' => null,
@@ -106,7 +106,7 @@ class PostQuote implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'quotetemplate_id' => 'quotetemplate_id',
         'sales_id' => 'sales_id',
         'quote_subject' => 'quote_subject',
@@ -120,7 +120,7 @@ class PostQuote implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'quotetemplate_id' => 'setQuotetemplateId',
         'sales_id' => 'setSalesId',
         'quote_subject' => 'setQuoteSubject',
@@ -134,7 +134,7 @@ class PostQuote implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'quotetemplate_id' => 'getQuotetemplateId',
         'sales_id' => 'getSalesId',
         'quote_subject' => 'getQuoteSubject',
@@ -189,7 +189,7 @@ class PostQuote implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'HrmPostTeam';
+    protected static string $swaggerModelName = 'HrmPostTeam';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'employee_ids' => 'null[]',
         'name' => 'string',
     ];
@@ -67,7 +67,7 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'employee_ids' => null,
         'name' => null,
     ];
@@ -98,7 +98,7 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'employee_ids' => 'employee_ids',
         'name' => 'name',
     ];
@@ -108,7 +108,7 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'employee_ids' => 'setEmployeeIds',
         'name' => 'setName',
     ];
@@ -118,7 +118,7 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'employee_ids' => 'getEmployeeIds',
         'name' => 'getName',
     ];
@@ -169,7 +169,7 @@ class HrmPostTeam implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

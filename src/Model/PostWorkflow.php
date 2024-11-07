@@ -50,14 +50,14 @@ class PostWorkflow implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostWorkflow';
+    protected static string $swaggerModelName = 'PostWorkflow';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'defaultworkflow_id' => 'string',
         'created_by' => '\Paqtcom\Simplicate\Model\CreatedBy',
         'linked_to' => '\Paqtcom\Simplicate\Model\LinkedTo[]',
@@ -76,7 +76,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'defaultworkflow_id' => null,
         'created_by' => null,
         'linked_to' => null,
@@ -116,7 +116,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'defaultworkflow_id' => 'defaultworkflow_id',
         'created_by' => 'created_by',
         'linked_to' => 'linked_to',
@@ -135,7 +135,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'defaultworkflow_id' => 'setDefaultworkflowId',
         'created_by' => 'setCreatedBy',
         'linked_to' => 'setLinkedTo',
@@ -154,7 +154,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'defaultworkflow_id' => 'getDefaultworkflowId',
         'created_by' => 'getCreatedBy',
         'linked_to' => 'getLinkedTo',
@@ -214,7 +214,7 @@ class PostWorkflow implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class Debtor implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Debtor';
+    protected static string $swaggerModelName = 'Debtor';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'provision_method' => 'string',
         'send_invoice_email_to_contact' => 'bool',
         'provision_contactperson_id' => 'string',
@@ -81,7 +81,7 @@ class Debtor implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'provision_method' => null,
         'send_invoice_email_to_contact' => null,
         'provision_contactperson_id' => null,
@@ -126,7 +126,7 @@ class Debtor implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'provision_method' => 'provision_method',
         'send_invoice_email_to_contact' => 'send_invoice_email_to_contact',
         'provision_contactperson_id' => 'provision_contactperson_id',
@@ -150,7 +150,7 @@ class Debtor implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'provision_method' => 'setProvisionMethod',
         'send_invoice_email_to_contact' => 'setSendInvoiceEmailToContact',
         'provision_contactperson_id' => 'setProvisionContactpersonId',
@@ -174,7 +174,7 @@ class Debtor implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'provision_method' => 'getProvisionMethod',
         'send_invoice_email_to_contact' => 'getSendInvoiceEmailToContact',
         'provision_contactperson_id' => 'getProvisionContactpersonId',
@@ -287,7 +287,7 @@ class Debtor implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

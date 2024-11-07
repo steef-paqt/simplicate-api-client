@@ -50,14 +50,14 @@ class PostPerson implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostPerson';
+    protected static string $swaggerModelName = 'PostPerson';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'interests' => '\Paqtcom\Simplicate\Model\PostInterest[]',
         'address' => '\Paqtcom\Simplicate\Model\PostAddress',
         'linked_as_contact_to_organization' => '\Paqtcom\Simplicate\Model\PostContactOrganizationFk[]',
@@ -93,7 +93,7 @@ class PostPerson implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'interests' => null,
         'address' => null,
         'linked_as_contact_to_organization' => null,
@@ -150,7 +150,7 @@ class PostPerson implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'interests' => 'interests',
         'address' => 'address',
         'linked_as_contact_to_organization' => 'linked_as_contact_to_organization',
@@ -186,7 +186,7 @@ class PostPerson implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'interests' => 'setInterests',
         'address' => 'setAddress',
         'linked_as_contact_to_organization' => 'setLinkedAsContactToOrganization',
@@ -222,7 +222,7 @@ class PostPerson implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'interests' => 'getInterests',
         'address' => 'getAddress',
         'linked_as_contact_to_organization' => 'getLinkedAsContactToOrganization',
@@ -317,7 +317,7 @@ class PostPerson implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

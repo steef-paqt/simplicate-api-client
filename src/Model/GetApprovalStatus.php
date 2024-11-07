@@ -50,14 +50,14 @@ class GetApprovalStatus implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetApprovalStatus';
+    protected static string $swaggerModelName = 'GetApprovalStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'label' => 'string',
         'description' => 'string',
@@ -68,7 +68,7 @@ class GetApprovalStatus implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'label' => null,
         'description' => null,
@@ -100,7 +100,7 @@ class GetApprovalStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'label' => 'label',
         'description' => 'description',
@@ -111,7 +111,7 @@ class GetApprovalStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'label' => 'setLabel',
         'description' => 'setDescription',
@@ -122,7 +122,7 @@ class GetApprovalStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'label' => 'getLabel',
         'description' => 'getDescription',
@@ -174,7 +174,7 @@ class GetApprovalStatus implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

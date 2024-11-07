@@ -50,14 +50,14 @@ class GetTimer implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetTimer';
+    protected static string $swaggerModelName = 'GetTimer';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'seconds_spent' => 'int',
         'min_seconds_step' => 'int',
@@ -78,7 +78,7 @@ class GetTimer implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'seconds_spent' => null,
         'min_seconds_step' => null,
@@ -120,7 +120,7 @@ class GetTimer implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'seconds_spent' => 'seconds_spent',
         'min_seconds_step' => 'min_seconds_step',
@@ -141,7 +141,7 @@ class GetTimer implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'seconds_spent' => 'setSecondsSpent',
         'min_seconds_step' => 'setMinSecondsStep',
@@ -162,7 +162,7 @@ class GetTimer implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'seconds_spent' => 'getSecondsSpent',
         'min_seconds_step' => 'getMinSecondsStep',
@@ -242,7 +242,7 @@ class GetTimer implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

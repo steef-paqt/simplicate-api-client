@@ -50,14 +50,14 @@ class JournalLine implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'JournalLine';
+    protected static string $swaggerModelName = 'JournalLine';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'vat_id' => 'string',
         'vat_included' => 'bool',
         'vat_percentage' => 'float',
@@ -71,7 +71,7 @@ class JournalLine implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'vat_id' => null,
         'vat_included' => null,
         'vat_percentage' => 'float',
@@ -106,7 +106,7 @@ class JournalLine implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'vat_id' => 'vat_id',
         'vat_included' => 'vat_included',
         'vat_percentage' => 'vat_percentage',
@@ -120,7 +120,7 @@ class JournalLine implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'vat_id' => 'setVatId',
         'vat_included' => 'setVatIncluded',
         'vat_percentage' => 'setVatPercentage',
@@ -134,7 +134,7 @@ class JournalLine implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'vat_id' => 'getVatId',
         'vat_included' => 'getVatIncluded',
         'vat_percentage' => 'getVatPercentage',
@@ -189,7 +189,7 @@ class JournalLine implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

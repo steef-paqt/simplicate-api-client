@@ -50,14 +50,14 @@ class ExpenseAttachment implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ExpenseAttachment';
+    protected static string $swaggerModelName = 'ExpenseAttachment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'file_hash' => 'string',
         'file_name' => 'string',
     ];
@@ -67,7 +67,7 @@ class ExpenseAttachment implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'file_hash' => null,
         'file_name' => null,
     ];
@@ -98,7 +98,7 @@ class ExpenseAttachment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'file_hash' => 'file_hash',
         'file_name' => 'file_name',
     ];
@@ -108,7 +108,7 @@ class ExpenseAttachment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'file_hash' => 'setFileHash',
         'file_name' => 'setFileName',
     ];
@@ -118,7 +118,7 @@ class ExpenseAttachment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'file_hash' => 'getFileHash',
         'file_name' => 'getFileName',
     ];
@@ -169,7 +169,7 @@ class ExpenseAttachment implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

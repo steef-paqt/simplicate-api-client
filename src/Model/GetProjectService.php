@@ -50,14 +50,14 @@ class GetProjectService implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetProjectService';
+    protected static string $swaggerModelName = 'GetProjectService';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'project_id' => 'string',
         'related_service_id' => 'string',
         'expected_invoice_date' => 'string',
@@ -96,7 +96,7 @@ class GetProjectService implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'project_id' => null,
         'related_service_id' => null,
         'expected_invoice_date' => null,
@@ -156,7 +156,7 @@ class GetProjectService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'project_id' => 'project_id',
         'related_service_id' => 'related_service_id',
         'expected_invoice_date' => 'expected_invoice_date',
@@ -195,7 +195,7 @@ class GetProjectService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'project_id' => 'setProjectId',
         'related_service_id' => 'setRelatedServiceId',
         'expected_invoice_date' => 'setExpectedInvoiceDate',
@@ -234,7 +234,7 @@ class GetProjectService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'project_id' => 'getProjectId',
         'related_service_id' => 'getRelatedServiceId',
         'expected_invoice_date' => 'getExpectedInvoiceDate',
@@ -351,7 +351,7 @@ class GetProjectService implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class QuoteContentBlock implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'QuoteContentBlock';
+    protected static string $swaggerModelName = 'QuoteContentBlock';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
         'json' => 'string',
@@ -70,7 +70,7 @@ class QuoteContentBlock implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'name' => null,
         'json' => null,
@@ -104,7 +104,7 @@ class QuoteContentBlock implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'name' => 'name',
         'json' => 'json',
@@ -117,7 +117,7 @@ class QuoteContentBlock implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'name' => 'setName',
         'json' => 'setJson',
@@ -130,7 +130,7 @@ class QuoteContentBlock implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'name' => 'getName',
         'json' => 'getJson',
@@ -184,7 +184,7 @@ class QuoteContentBlock implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

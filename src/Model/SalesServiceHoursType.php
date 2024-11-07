@@ -50,14 +50,14 @@ class SalesServiceHoursType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SalesServiceHoursType';
+    protected static string $swaggerModelName = 'SalesServiceHoursType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'budgeted_amount' => 'float',
         'tariff' => 'float',
         'billable' => 'bool',
@@ -68,7 +68,7 @@ class SalesServiceHoursType implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'budgeted_amount' => 'float',
         'tariff' => 'float',
         'billable' => null,
@@ -100,7 +100,7 @@ class SalesServiceHoursType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'budgeted_amount' => 'budgeted_amount',
         'tariff' => 'tariff',
         'billable' => 'billable',
@@ -111,7 +111,7 @@ class SalesServiceHoursType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'budgeted_amount' => 'setBudgetedAmount',
         'tariff' => 'setTariff',
         'billable' => 'setBillable',
@@ -122,7 +122,7 @@ class SalesServiceHoursType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'budgeted_amount' => 'getBudgetedAmount',
         'tariff' => 'getTariff',
         'billable' => 'getBillable',
@@ -174,7 +174,7 @@ class SalesServiceHoursType implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

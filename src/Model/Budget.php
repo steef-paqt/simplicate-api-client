@@ -50,14 +50,14 @@ class Budget implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Budget';
+    protected static string $swaggerModelName = 'Budget';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'hours' => '\Paqtcom\Simplicate\Model\BudgetHours',
         'costs' => '\Paqtcom\Simplicate\Model\BudgetCosts',
         'total' => '\Paqtcom\Simplicate\Model\BudgetTotal',
@@ -68,7 +68,7 @@ class Budget implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'hours' => null,
         'costs' => null,
         'total' => null,
@@ -100,7 +100,7 @@ class Budget implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'hours' => 'hours',
         'costs' => 'costs',
         'total' => 'total',
@@ -111,7 +111,7 @@ class Budget implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'hours' => 'setHours',
         'costs' => 'setCosts',
         'total' => 'setTotal',
@@ -122,7 +122,7 @@ class Budget implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'hours' => 'getHours',
         'costs' => 'getCosts',
         'total' => 'getTotal',
@@ -174,7 +174,7 @@ class Budget implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

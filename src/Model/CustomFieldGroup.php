@@ -50,14 +50,14 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CustomFieldGroup';
+    protected static string $swaggerModelName = 'CustomFieldGroup';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
         'position' => 'string',
@@ -70,7 +70,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'name' => null,
         'position' => null,
@@ -104,7 +104,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'name' => 'name',
         'position' => 'position',
@@ -117,7 +117,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'name' => 'setName',
         'position' => 'setPosition',
@@ -130,7 +130,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'name' => 'getName',
         'position' => 'getPosition',
@@ -184,7 +184,7 @@ class CustomFieldGroup implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

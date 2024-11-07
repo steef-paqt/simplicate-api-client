@@ -50,14 +50,14 @@ class Attachment implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Attachment';
+    protected static string $swaggerModelName = 'Attachment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'attachment_type' => '\Paqtcom\Simplicate\Model\AttachmentType',
         'title' => 'string',
@@ -70,7 +70,7 @@ class Attachment implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'attachment_type' => null,
         'title' => null,
@@ -104,7 +104,7 @@ class Attachment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'attachment_type' => 'attachment_type',
         'title' => 'title',
@@ -117,7 +117,7 @@ class Attachment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'attachment_type' => 'setAttachmentType',
         'title' => 'setTitle',
@@ -130,7 +130,7 @@ class Attachment implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'attachment_type' => 'getAttachmentType',
         'title' => 'getTitle',
@@ -184,7 +184,7 @@ class Attachment implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

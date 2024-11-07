@@ -50,14 +50,14 @@ class Timezone implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Timezone';
+    protected static string $swaggerModelName = 'Timezone';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'timezone' => 'string',
         'location' => 'string',
@@ -69,7 +69,7 @@ class Timezone implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'timezone' => null,
         'location' => null,
@@ -102,7 +102,7 @@ class Timezone implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'timezone' => 'timezone',
         'location' => 'location',
@@ -114,7 +114,7 @@ class Timezone implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'timezone' => 'setTimezone',
         'location' => 'setLocation',
@@ -126,7 +126,7 @@ class Timezone implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'timezone' => 'getTimezone',
         'location' => 'getLocation',
@@ -179,7 +179,7 @@ class Timezone implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

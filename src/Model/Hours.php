@@ -50,14 +50,14 @@ class Hours implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Hours';
+    protected static string $swaggerModelName = 'Hours';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'hours' => 'float',
         'duration_in_minutes' => 'int',
         'start_date' => 'string',
@@ -79,7 +79,7 @@ class Hours implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'hours' => 'float',
         'duration_in_minutes' => null,
         'start_date' => null,
@@ -122,7 +122,7 @@ class Hours implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'hours' => 'hours',
         'duration_in_minutes' => 'duration_in_minutes',
         'start_date' => 'start_date',
@@ -144,7 +144,7 @@ class Hours implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'hours' => 'setHours',
         'duration_in_minutes' => 'setDurationInMinutes',
         'start_date' => 'setStartDate',
@@ -166,7 +166,7 @@ class Hours implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'hours' => 'getHours',
         'duration_in_minutes' => 'getDurationInMinutes',
         'start_date' => 'getStartDate',
@@ -247,7 +247,7 @@ class Hours implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

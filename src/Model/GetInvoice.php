@@ -50,14 +50,14 @@ class GetInvoice implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetInvoice';
+    protected static string $swaggerModelName = 'GetInvoice';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'contact_id' => 'string',
         'payment_term' => '\Paqtcom\Simplicate\Model\PaymentTerm',
@@ -95,7 +95,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'contact_id' => null,
         'payment_term' => null,
@@ -154,7 +154,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'contact_id' => 'contact_id',
         'payment_term' => 'payment_term',
@@ -192,7 +192,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'contact_id' => 'setContactId',
         'payment_term' => 'setPaymentTerm',
@@ -230,7 +230,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'contact_id' => 'getContactId',
         'payment_term' => 'getPaymentTerm',
@@ -359,7 +359,7 @@ class GetInvoice implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

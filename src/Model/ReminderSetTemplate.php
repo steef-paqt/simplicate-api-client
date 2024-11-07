@@ -50,14 +50,14 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ReminderSetTemplate';
+    protected static string $swaggerModelName = 'ReminderSetTemplate';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'label' => 'string',
         'send_after' => 'int',
@@ -69,7 +69,7 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'label' => null,
         'send_after' => null,
@@ -102,7 +102,7 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'label' => 'label',
         'send_after' => 'send_after',
@@ -114,7 +114,7 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'label' => 'setLabel',
         'send_after' => 'setSendAfter',
@@ -126,7 +126,7 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'label' => 'getLabel',
         'send_after' => 'getSendAfter',
@@ -179,7 +179,7 @@ class ReminderSetTemplate implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

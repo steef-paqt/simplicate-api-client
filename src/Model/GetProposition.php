@@ -50,14 +50,14 @@ class GetProposition implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetProposition';
+    protected static string $swaggerModelName = 'GetProposition';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'total_hours' => 'float',
         'total_mileage' => 'float',
@@ -77,7 +77,7 @@ class GetProposition implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'total_hours' => 'float',
         'total_mileage' => 'float',
@@ -118,7 +118,7 @@ class GetProposition implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'total_hours' => 'total_hours',
         'total_mileage' => 'total_mileage',
@@ -138,7 +138,7 @@ class GetProposition implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'total_hours' => 'setTotalHours',
         'total_mileage' => 'setTotalMileage',
@@ -158,7 +158,7 @@ class GetProposition implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'total_hours' => 'getTotalHours',
         'total_mileage' => 'getTotalMileage',
@@ -219,7 +219,7 @@ class GetProposition implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class Expense implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Expense';
+    protected static string $swaggerModelName = 'Expense';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'project' => '\Paqtcom\Simplicate\Model\GetProjectSimple',
         'service_id' => 'string',
@@ -86,7 +86,7 @@ class Expense implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'project' => null,
         'service_id' => null,
@@ -136,7 +136,7 @@ class Expense implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'project' => 'project',
         'service_id' => 'service_id',
@@ -165,7 +165,7 @@ class Expense implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'project' => 'setProject',
         'service_id' => 'setServiceId',
@@ -194,7 +194,7 @@ class Expense implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'project' => 'getProject',
         'service_id' => 'getServiceId',
@@ -282,7 +282,7 @@ class Expense implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

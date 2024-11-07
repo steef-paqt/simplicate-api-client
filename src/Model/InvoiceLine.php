@@ -50,14 +50,14 @@ class InvoiceLine implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'InvoiceLine';
+    protected static string $swaggerModelName = 'InvoiceLine';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'date' => 'string',
         'description' => 'string',
         'amount' => 'float',
@@ -69,7 +69,7 @@ class InvoiceLine implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'date' => null,
         'description' => null,
         'amount' => 'float',
@@ -102,7 +102,7 @@ class InvoiceLine implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'date' => 'date',
         'description' => 'description',
         'amount' => 'amount',
@@ -114,7 +114,7 @@ class InvoiceLine implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'date' => 'setDate',
         'description' => 'setDescription',
         'amount' => 'setAmount',
@@ -126,7 +126,7 @@ class InvoiceLine implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'date' => 'getDate',
         'description' => 'getDescription',
         'amount' => 'getAmount',
@@ -179,7 +179,7 @@ class InvoiceLine implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

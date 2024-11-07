@@ -50,14 +50,14 @@ class Person implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Person';
+    protected static string $swaggerModelName = 'Person';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'relation_type' => '\Paqtcom\Simplicate\Model\RelationType',
         'gender' => 'string',
         'initials' => 'string',
@@ -88,7 +88,7 @@ class Person implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'relation_type' => null,
         'gender' => null,
         'initials' => null,
@@ -140,7 +140,7 @@ class Person implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'relation_type' => 'relation_type',
         'gender' => 'gender',
         'initials' => 'initials',
@@ -171,7 +171,7 @@ class Person implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'relation_type' => 'setRelationType',
         'gender' => 'setGender',
         'initials' => 'setInitials',
@@ -202,7 +202,7 @@ class Person implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'relation_type' => 'getRelationType',
         'gender' => 'getGender',
         'initials' => 'getInitials',
@@ -292,7 +292,7 @@ class Person implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

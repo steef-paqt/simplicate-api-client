@@ -50,14 +50,14 @@ class GetTimesheetRowProject implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetTimesheetRowProject';
+    protected static string $swaggerModelName = 'GetTimesheetRowProject';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
         'project_number' => 'string',
@@ -68,7 +68,7 @@ class GetTimesheetRowProject implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'name' => null,
         'project_number' => null,
@@ -100,7 +100,7 @@ class GetTimesheetRowProject implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'name' => 'name',
         'project_number' => 'project_number',
@@ -111,7 +111,7 @@ class GetTimesheetRowProject implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'name' => 'setName',
         'project_number' => 'setProjectNumber',
@@ -122,7 +122,7 @@ class GetTimesheetRowProject implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'name' => 'getName',
         'project_number' => 'getProjectNumber',
@@ -174,7 +174,7 @@ class GetTimesheetRowProject implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

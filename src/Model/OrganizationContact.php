@@ -50,14 +50,14 @@ class OrganizationContact implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrganizationContact';
+    protected static string $swaggerModelName = 'OrganizationContact';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'organization_id' => 'string',
         'name' => 'string',
@@ -74,7 +74,7 @@ class OrganizationContact implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'organization_id' => null,
         'name' => null,
@@ -112,7 +112,7 @@ class OrganizationContact implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'organization_id' => 'organization_id',
         'name' => 'name',
@@ -129,7 +129,7 @@ class OrganizationContact implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'organization_id' => 'setOrganizationId',
         'name' => 'setName',
@@ -146,7 +146,7 @@ class OrganizationContact implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'organization_id' => 'getOrganizationId',
         'name' => 'getName',
@@ -204,7 +204,7 @@ class OrganizationContact implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

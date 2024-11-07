@@ -50,14 +50,14 @@ class GetSalesService implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetSalesService';
+    protected static string $swaggerModelName = 'GetSalesService';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'invoice_date' => 'string',
         'hour_types' => '\Paqtcom\Simplicate\Model\GetSalesServiceHoursType[]',
@@ -85,7 +85,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'invoice_date' => null,
         'hour_types' => null,
@@ -134,7 +134,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'invoice_date' => 'invoice_date',
         'hour_types' => 'hour_types',
@@ -162,7 +162,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'invoice_date' => 'setInvoiceDate',
         'hour_types' => 'setHourTypes',
@@ -190,7 +190,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'invoice_date' => 'getInvoiceDate',
         'hour_types' => 'getHourTypes',
@@ -292,7 +292,7 @@ class GetSalesService implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

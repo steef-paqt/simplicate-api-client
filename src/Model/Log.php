@@ -50,14 +50,14 @@ class Log implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Log';
+    protected static string $swaggerModelName = 'Log';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'timestamp' => 'string',
         'message' => 'string',
     ];
@@ -67,7 +67,7 @@ class Log implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'timestamp' => null,
         'message' => null,
     ];
@@ -98,7 +98,7 @@ class Log implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'timestamp' => 'timestamp',
         'message' => 'message',
     ];
@@ -108,7 +108,7 @@ class Log implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'timestamp' => 'setTimestamp',
         'message' => 'setMessage',
     ];
@@ -118,7 +118,7 @@ class Log implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'timestamp' => 'getTimestamp',
         'message' => 'getMessage',
     ];
@@ -169,7 +169,7 @@ class Log implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

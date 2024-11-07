@@ -50,14 +50,14 @@ class Purchase implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Purchase';
+    protected static string $swaggerModelName = 'Purchase';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'organization' => '\Paqtcom\Simplicate\Model\GetOrganizationSimple',
         'person' => '\Paqtcom\Simplicate\Model\GetPersonSimple',
@@ -72,7 +72,7 @@ class Purchase implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'organization' => null,
         'person' => null,
@@ -108,7 +108,7 @@ class Purchase implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'organization' => 'organization',
         'person' => 'person',
@@ -123,7 +123,7 @@ class Purchase implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'organization' => 'setOrganization',
         'person' => 'setPerson',
@@ -138,7 +138,7 @@ class Purchase implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'organization' => 'getOrganization',
         'person' => 'getPerson',
@@ -212,7 +212,7 @@ class Purchase implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

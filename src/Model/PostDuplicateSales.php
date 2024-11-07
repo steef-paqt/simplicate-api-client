@@ -50,14 +50,14 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostDuplicateSales';
+    protected static string $swaggerModelName = 'PostDuplicateSales';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'is_new_subject' => 'bool',
         'subject' => 'string',
         'is_new_responsible_employee' => 'bool',
@@ -74,7 +74,7 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'is_new_subject' => null,
         'subject' => null,
         'is_new_responsible_employee' => null,
@@ -112,7 +112,7 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'is_new_subject' => 'is_new_subject',
         'subject' => 'subject',
         'is_new_responsible_employee' => 'is_new_responsible_employee',
@@ -129,7 +129,7 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'is_new_subject' => 'setIsNewSubject',
         'subject' => 'setSubject',
         'is_new_responsible_employee' => 'setIsNewResponsibleEmployee',
@@ -146,7 +146,7 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'is_new_subject' => 'getIsNewSubject',
         'subject' => 'getSubject',
         'is_new_responsible_employee' => 'getIsNewResponsibleEmployee',
@@ -204,7 +204,7 @@ class PostDuplicateSales implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

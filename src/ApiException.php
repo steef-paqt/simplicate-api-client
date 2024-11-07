@@ -46,7 +46,7 @@ class ApiException extends Exception
      *
      * @var $responseObject;
      */
-    protected $responseObject;
+    protected mixed $responseObject;
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostMergerCompare';
+    protected static string $swaggerModelName = 'PostMergerCompare';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'swap_lock' => 'bool',
         'source_id' => 'string',
         'target_id' => 'string',
@@ -68,7 +68,7 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'swap_lock' => null,
         'source_id' => null,
         'target_id' => null,
@@ -100,7 +100,7 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'swap_lock' => 'swap_lock',
         'source_id' => 'source_id',
         'target_id' => 'target_id',
@@ -111,7 +111,7 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'swap_lock' => 'setSwapLock',
         'source_id' => 'setSourceId',
         'target_id' => 'setTargetId',
@@ -122,7 +122,7 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'swap_lock' => 'getSwapLock',
         'source_id' => 'getSourceId',
         'target_id' => 'getTargetId',
@@ -174,7 +174,7 @@ class PostMergerCompare implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

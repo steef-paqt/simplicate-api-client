@@ -50,14 +50,14 @@ class PostService implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostService';
+    protected static string $swaggerModelName = 'PostService';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'vat_class_id' => 'string',
         'revenue_group_id' => 'string',
         'invoice_method' => 'string',
@@ -76,7 +76,7 @@ class PostService implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'vat_class_id' => null,
         'revenue_group_id' => null,
         'invoice_method' => null,
@@ -116,7 +116,7 @@ class PostService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'vat_class_id' => 'vat_class_id',
         'revenue_group_id' => 'revenue_group_id',
         'invoice_method' => 'invoice_method',
@@ -135,7 +135,7 @@ class PostService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'vat_class_id' => 'setVatClassId',
         'revenue_group_id' => 'setRevenueGroupId',
         'invoice_method' => 'setInvoiceMethod',
@@ -154,7 +154,7 @@ class PostService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'vat_class_id' => 'getVatClassId',
         'revenue_group_id' => 'getRevenueGroupId',
         'invoice_method' => 'getInvoiceMethod',
@@ -228,7 +228,7 @@ class PostService implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

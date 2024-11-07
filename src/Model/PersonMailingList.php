@@ -50,14 +50,14 @@ class PersonMailingList implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PersonMailingList';
+    protected static string $swaggerModelName = 'PersonMailingList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'value' => 'bool',
         'id' => 'string',
         'name' => 'string',
@@ -68,7 +68,7 @@ class PersonMailingList implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'value' => null,
         'id' => null,
         'name' => null,
@@ -100,7 +100,7 @@ class PersonMailingList implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'value' => 'value',
         'id' => 'id',
         'name' => 'name',
@@ -111,7 +111,7 @@ class PersonMailingList implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'value' => 'setValue',
         'id' => 'setId',
         'name' => 'setName',
@@ -122,7 +122,7 @@ class PersonMailingList implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'value' => 'getValue',
         'id' => 'getId',
         'name' => 'getName',
@@ -174,7 +174,7 @@ class PersonMailingList implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

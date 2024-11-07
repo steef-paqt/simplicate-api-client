@@ -50,14 +50,14 @@ class PostProject implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostProject';
+    protected static string $swaggerModelName = 'PostProject';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'project_manager_id' => 'string',
         'project_status_id' => 'string',
         'separate_invoice_recipient' => '\Paqtcom\Simplicate\Model\PostSeparateInvoiceRecipient',
@@ -83,7 +83,7 @@ class PostProject implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'project_manager_id' => null,
         'project_status_id' => null,
         'separate_invoice_recipient' => null,
@@ -130,7 +130,7 @@ class PostProject implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'project_manager_id' => 'project_manager_id',
         'project_status_id' => 'project_status_id',
         'separate_invoice_recipient' => 'separate_invoice_recipient',
@@ -156,7 +156,7 @@ class PostProject implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'project_manager_id' => 'setProjectManagerId',
         'project_status_id' => 'setProjectStatusId',
         'separate_invoice_recipient' => 'setSeparateInvoiceRecipient',
@@ -182,7 +182,7 @@ class PostProject implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'project_manager_id' => 'getProjectManagerId',
         'project_status_id' => 'getProjectStatusId',
         'separate_invoice_recipient' => 'getSeparateInvoiceRecipient',
@@ -249,7 +249,7 @@ class PostProject implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

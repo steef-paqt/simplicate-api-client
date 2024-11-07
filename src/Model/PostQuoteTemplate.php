@@ -50,14 +50,14 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostQuoteTemplate';
+    protected static string $swaggerModelName = 'PostQuoteTemplate';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'name' => 'string',
         'description' => 'string',
         'type' => 'string',
@@ -70,7 +70,7 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'name' => null,
         'description' => null,
         'type' => null,
@@ -104,7 +104,7 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'name' => 'name',
         'description' => 'description',
         'type' => 'type',
@@ -117,7 +117,7 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'name' => 'setName',
         'description' => 'setDescription',
         'type' => 'setType',
@@ -130,7 +130,7 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'name' => 'getName',
         'description' => 'getDescription',
         'type' => 'getType',
@@ -184,7 +184,7 @@ class PostQuoteTemplate implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

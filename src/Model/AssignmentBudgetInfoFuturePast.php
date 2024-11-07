@@ -50,14 +50,14 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AssignmentBudgetInfoFuturePast';
+    protected static string $swaggerModelName = 'AssignmentBudgetInfoFuturePast';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'past' => 'string',
         'future' => 'string',
     ];
@@ -67,7 +67,7 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'past' => null,
         'future' => null,
     ];
@@ -98,7 +98,7 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'past' => 'past',
         'future' => 'future',
     ];
@@ -108,7 +108,7 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'past' => 'setPast',
         'future' => 'setFuture',
     ];
@@ -118,7 +118,7 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'past' => 'getPast',
         'future' => 'getFuture',
     ];
@@ -169,7 +169,7 @@ class AssignmentBudgetInfoFuturePast implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

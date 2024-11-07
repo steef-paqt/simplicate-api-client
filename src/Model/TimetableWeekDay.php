@@ -50,14 +50,14 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TimetableWeekDay';
+    protected static string $swaggerModelName = 'TimetableWeekDay';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'start_time' => 'float',
         'end_time' => 'float',
         'hours' => 'float',
@@ -68,7 +68,7 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'start_time' => 'float',
         'end_time' => 'float',
         'hours' => 'float',
@@ -100,7 +100,7 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'start_time' => 'start_time',
         'end_time' => 'end_time',
         'hours' => 'hours',
@@ -111,7 +111,7 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'start_time' => 'setStartTime',
         'end_time' => 'setEndTime',
         'hours' => 'setHours',
@@ -122,7 +122,7 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'start_time' => 'getStartTime',
         'end_time' => 'getEndTime',
         'hours' => 'getHours',
@@ -174,7 +174,7 @@ class TimetableWeekDay implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

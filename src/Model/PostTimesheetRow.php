@@ -50,14 +50,14 @@ class PostTimesheetRow implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostTimesheetRow';
+    protected static string $swaggerModelName = 'PostTimesheetRow';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
     ];
 
     /**
@@ -65,7 +65,7 @@ class PostTimesheetRow implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
     ];
 
     /**
@@ -94,7 +94,7 @@ class PostTimesheetRow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
     ];
 
     /**
@@ -102,7 +102,7 @@ class PostTimesheetRow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
     ];
 
     /**
@@ -110,7 +110,7 @@ class PostTimesheetRow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
     ];
 
     /**
@@ -159,7 +159,7 @@ class PostTimesheetRow implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

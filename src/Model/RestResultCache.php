@@ -50,14 +50,14 @@ class RestResultCache implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'RestResultCache';
+    protected static string $swaggerModelName = 'RestResultCache';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'data' => '\Paqtcom\Simplicate\Model\Cache',
         'metadata' => '\Paqtcom\Simplicate\Model\MetaData',
         'errors' => 'object[]',
@@ -69,7 +69,7 @@ class RestResultCache implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'data' => null,
         'metadata' => null,
         'errors' => null,
@@ -102,7 +102,7 @@ class RestResultCache implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'data' => 'data',
         'metadata' => 'metadata',
         'errors' => 'errors',
@@ -114,7 +114,7 @@ class RestResultCache implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'data' => 'setData',
         'metadata' => 'setMetadata',
         'errors' => 'setErrors',
@@ -126,7 +126,7 @@ class RestResultCache implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'data' => 'getData',
         'metadata' => 'getMetadata',
         'errors' => 'getErrors',
@@ -179,7 +179,7 @@ class RestResultCache implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

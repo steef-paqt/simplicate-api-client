@@ -50,14 +50,14 @@ class Recurrence implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Recurrence';
+    protected static string $swaggerModelName = 'Recurrence';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'rrule' => '\Paqtcom\Simplicate\Model\Rrule',
         'update' => 'string',
@@ -68,7 +68,7 @@ class Recurrence implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'rrule' => null,
         'update' => null,
@@ -100,7 +100,7 @@ class Recurrence implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'rrule' => 'rrule',
         'update' => 'update',
@@ -111,7 +111,7 @@ class Recurrence implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'rrule' => 'setRrule',
         'update' => 'setUpdate',
@@ -122,7 +122,7 @@ class Recurrence implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'rrule' => 'getRrule',
         'update' => 'getUpdate',
@@ -174,7 +174,7 @@ class Recurrence implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

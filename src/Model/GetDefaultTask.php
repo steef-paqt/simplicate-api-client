@@ -50,14 +50,14 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetDefaultTask';
+    protected static string $swaggerModelName = 'GetDefaultTask';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'defaultworkflow' => '\Paqtcom\Simplicate\Model\GetSimpleDefaultWorkflow',
         'order' => 'int',
@@ -74,7 +74,7 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'defaultworkflow' => null,
         'order' => null,
@@ -112,7 +112,7 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'defaultworkflow' => 'defaultworkflow',
         'order' => 'order',
@@ -129,7 +129,7 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'defaultworkflow' => 'setDefaultworkflow',
         'order' => 'setOrder',
@@ -146,7 +146,7 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'defaultworkflow' => 'getDefaultworkflow',
         'order' => 'getOrder',
@@ -204,7 +204,7 @@ class GetDefaultTask implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetReviewByWeek';
+    protected static string $swaggerModelName = 'GetReviewByWeek';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'employee_id' => 'string',
         'employee_name' => 'string',
         'start_date' => 'string',
@@ -72,7 +72,7 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'employee_id' => null,
         'employee_name' => null,
         'start_date' => null,
@@ -108,7 +108,7 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'employee_id' => 'employee_id',
         'employee_name' => 'employee_name',
         'start_date' => 'start_date',
@@ -123,7 +123,7 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'employee_id' => 'setEmployeeId',
         'employee_name' => 'setEmployeeName',
         'start_date' => 'setStartDate',
@@ -138,7 +138,7 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'employee_id' => 'getEmployeeId',
         'employee_name' => 'getEmployeeName',
         'start_date' => 'getStartDate',
@@ -194,7 +194,7 @@ class GetReviewByWeek implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class DefaultWorkflow implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'DefaultWorkflow';
+    protected static string $swaggerModelName = 'DefaultWorkflow';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'title' => 'string',
         'description' => 'string',
         'can_have_attachment' => 'bool',
@@ -79,7 +79,7 @@ class DefaultWorkflow implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'title' => null,
         'description' => null,
         'can_have_attachment' => null,
@@ -122,7 +122,7 @@ class DefaultWorkflow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'title' => 'title',
         'description' => 'description',
         'can_have_attachment' => 'can_have_attachment',
@@ -144,7 +144,7 @@ class DefaultWorkflow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'title' => 'setTitle',
         'description' => 'setDescription',
         'can_have_attachment' => 'setCanHaveAttachment',
@@ -166,7 +166,7 @@ class DefaultWorkflow implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'title' => 'getTitle',
         'description' => 'getDescription',
         'can_have_attachment' => 'getCanHaveAttachment',
@@ -229,7 +229,7 @@ class DefaultWorkflow implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

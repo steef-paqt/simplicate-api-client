@@ -50,14 +50,14 @@ class DefaultService implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'DefaultService';
+    protected static string $swaggerModelName = 'DefaultService';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'my_organization_profile_id' => 'string',
         'name' => 'string',
         'price_editable' => 'bool',
@@ -69,7 +69,7 @@ class DefaultService implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'my_organization_profile_id' => null,
         'name' => null,
         'price_editable' => null,
@@ -102,7 +102,7 @@ class DefaultService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'my_organization_profile_id' => 'my_organization_profile_id',
         'name' => 'name',
         'price_editable' => 'price_editable',
@@ -114,7 +114,7 @@ class DefaultService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'my_organization_profile_id' => 'setMyOrganizationProfileId',
         'name' => 'setName',
         'price_editable' => 'setPriceEditable',
@@ -126,7 +126,7 @@ class DefaultService implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'my_organization_profile_id' => 'getMyOrganizationProfileId',
         'name' => 'getName',
         'price_editable' => 'getPriceEditable',
@@ -179,7 +179,7 @@ class DefaultService implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

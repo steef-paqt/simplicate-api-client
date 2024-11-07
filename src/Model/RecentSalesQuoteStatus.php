@@ -50,14 +50,14 @@ class RecentSalesQuoteStatus implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'RecentSalesQuoteStatus';
+    protected static string $swaggerModelName = 'RecentSalesQuoteStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'int',
         'status_label' => 'string',
     ];
@@ -67,7 +67,7 @@ class RecentSalesQuoteStatus implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'status_label' => null,
     ];
@@ -98,7 +98,7 @@ class RecentSalesQuoteStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'status_label' => 'status_label',
     ];
@@ -108,7 +108,7 @@ class RecentSalesQuoteStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'status_label' => 'setStatusLabel',
     ];
@@ -118,7 +118,7 @@ class RecentSalesQuoteStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'status_label' => 'getStatusLabel',
     ];
@@ -169,7 +169,7 @@ class RecentSalesQuoteStatus implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

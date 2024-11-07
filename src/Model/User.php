@@ -50,14 +50,14 @@ class User implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'User';
+    protected static string $swaggerModelName = 'User';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'username' => 'string',
         'email' => 'string',
         'gender' => 'string',
@@ -87,7 +87,7 @@ class User implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'username' => null,
         'email' => null,
         'gender' => null,
@@ -138,7 +138,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'username' => 'username',
         'email' => 'email',
         'gender' => 'gender',
@@ -168,7 +168,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'username' => 'setUsername',
         'email' => 'setEmail',
         'gender' => 'setGender',
@@ -198,7 +198,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'username' => 'getUsername',
         'email' => 'getEmail',
         'gender' => 'getGender',
@@ -287,7 +287,7 @@ class User implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

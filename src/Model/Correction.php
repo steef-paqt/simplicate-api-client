@@ -50,14 +50,14 @@ class Correction implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Correction';
+    protected static string $swaggerModelName = 'Correction';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'amount' => 'float',
         'value' => 'float',
         'last_correction_date' => 'string',
@@ -68,7 +68,7 @@ class Correction implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'amount' => 'float',
         'value' => 'float',
         'last_correction_date' => null,
@@ -100,7 +100,7 @@ class Correction implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'amount' => 'amount',
         'value' => 'value',
         'last_correction_date' => 'last_correction_date',
@@ -111,7 +111,7 @@ class Correction implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'amount' => 'setAmount',
         'value' => 'setValue',
         'last_correction_date' => 'setLastCorrectionDate',
@@ -122,7 +122,7 @@ class Correction implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'amount' => 'getAmount',
         'value' => 'getValue',
         'last_correction_date' => 'getLastCorrectionDate',
@@ -174,7 +174,7 @@ class Correction implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

@@ -50,14 +50,14 @@ class GetOrganizationDebtorSimple implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetOrganizationDebtorSimple';
+    protected static string $swaggerModelName = 'GetOrganizationDebtorSimple';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'relation_type' => '\Paqtcom\Simplicate\Model\RelationType',
         'id' => 'string',
         'name' => 'string',
@@ -69,7 +69,7 @@ class GetOrganizationDebtorSimple implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'relation_type' => null,
         'id' => null,
         'name' => null,
@@ -102,7 +102,7 @@ class GetOrganizationDebtorSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'relation_type' => 'relation_type',
         'id' => 'id',
         'name' => 'name',
@@ -114,7 +114,7 @@ class GetOrganizationDebtorSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'relation_type' => 'setRelationType',
         'id' => 'setId',
         'name' => 'setName',
@@ -126,7 +126,7 @@ class GetOrganizationDebtorSimple implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'relation_type' => 'getRelationType',
         'id' => 'getId',
         'name' => 'getName',
@@ -179,7 +179,7 @@ class GetOrganizationDebtorSimple implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

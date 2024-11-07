@@ -50,14 +50,14 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'IsSatisfiedReason';
+    protected static string $swaggerModelName = 'IsSatisfiedReason';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'message' => 'string',
         'translated_message' => 'string',
     ];
@@ -67,7 +67,7 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'message' => null,
         'translated_message' => null,
     ];
@@ -98,7 +98,7 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'message' => 'message',
         'translated_message' => 'translated_message',
     ];
@@ -108,7 +108,7 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'message' => 'setMessage',
         'translated_message' => 'setTranslatedMessage',
     ];
@@ -118,7 +118,7 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'message' => 'getMessage',
         'translated_message' => 'getTranslatedMessage',
     ];
@@ -169,7 +169,7 @@ class IsSatisfiedReason implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

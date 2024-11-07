@@ -50,14 +50,14 @@ class Message implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Message';
+    protected static string $swaggerModelName = 'Message';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'title' => 'string',
         'content_fields' => '\Paqtcom\Simplicate\Model\ContentField[]',
         'content' => 'string',
@@ -69,7 +69,7 @@ class Message implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'title' => null,
         'content_fields' => null,
         'content' => null,
@@ -102,7 +102,7 @@ class Message implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'title' => 'title',
         'content_fields' => 'content_fields',
         'content' => 'content',
@@ -114,7 +114,7 @@ class Message implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'title' => 'setTitle',
         'content_fields' => 'setContentFields',
         'content' => 'setContent',
@@ -126,7 +126,7 @@ class Message implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'title' => 'getTitle',
         'content_fields' => 'getContentFields',
         'content' => 'getContent',
@@ -179,7 +179,7 @@ class Message implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

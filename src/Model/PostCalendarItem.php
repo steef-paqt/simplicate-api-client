@@ -50,14 +50,14 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostCalendarItem';
+    protected static string $swaggerModelName = 'PostCalendarItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'id' => 'string',
         'location' => 'string',
     ];
@@ -67,7 +67,7 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'id' => null,
         'location' => null,
     ];
@@ -98,7 +98,7 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'id' => 'id',
         'location' => 'location',
     ];
@@ -108,7 +108,7 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'id' => 'setId',
         'location' => 'setLocation',
     ];
@@ -118,7 +118,7 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'id' => 'getId',
         'location' => 'getLocation',
     ];
@@ -169,7 +169,7 @@ class PostCalendarItem implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

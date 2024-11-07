@@ -50,14 +50,14 @@ class HoursType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'HoursType';
+    protected static string $swaggerModelName = 'HoursType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'label' => 'string',
         'tariff' => 'string',
         'blocked' => 'bool',
@@ -69,7 +69,7 @@ class HoursType implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'label' => null,
         'tariff' => null,
         'blocked' => null,
@@ -102,7 +102,7 @@ class HoursType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'label' => 'label',
         'tariff' => 'tariff',
         'blocked' => 'blocked',
@@ -114,7 +114,7 @@ class HoursType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'label' => 'setLabel',
         'tariff' => 'setTariff',
         'blocked' => 'setBlocked',
@@ -126,7 +126,7 @@ class HoursType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'label' => 'getLabel',
         'tariff' => 'getTariff',
         'blocked' => 'getBlocked',
@@ -179,7 +179,7 @@ class HoursType implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

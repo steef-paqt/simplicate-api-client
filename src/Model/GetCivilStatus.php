@@ -50,14 +50,14 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetCivilStatus';
+    protected static string $swaggerModelName = 'GetCivilStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'blocked' => 'bool',
         'id' => 'string',
         'label' => 'string',
@@ -68,7 +68,7 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'blocked' => null,
         'id' => null,
         'label' => null,
@@ -100,7 +100,7 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'blocked' => 'blocked',
         'id' => 'id',
         'label' => 'label',
@@ -111,7 +111,7 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'blocked' => 'setBlocked',
         'id' => 'setId',
         'label' => 'setLabel',
@@ -122,7 +122,7 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'blocked' => 'getBlocked',
         'id' => 'getId',
         'label' => 'getLabel',
@@ -174,7 +174,7 @@ class GetCivilStatus implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor

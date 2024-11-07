@@ -50,14 +50,14 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PostPurchaseType';
+    protected static string $swaggerModelName = 'PostPurchaseType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static $swaggerTypes = [
+    protected static array $swaggerTypes = [
         'label' => 'string',
         'blocked' => 'bool',
         'tariff' => 'float',
@@ -71,7 +71,7 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
       *
       * @var string[]
       */
-    protected static $swaggerFormats = [
+    protected static array $swaggerFormats = [
         'label' => null,
         'blocked' => null,
         'tariff' => 'float',
@@ -106,7 +106,7 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $attributeMap = [
+    protected static array $attributeMap = [
         'label' => 'label',
         'blocked' => 'blocked',
         'tariff' => 'tariff',
@@ -120,7 +120,7 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $setters = [
+    protected static array $setters = [
         'label' => 'setLabel',
         'blocked' => 'setBlocked',
         'tariff' => 'setTariff',
@@ -134,7 +134,7 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         'label' => 'getLabel',
         'blocked' => 'getBlocked',
         'tariff' => 'getTariff',
@@ -189,7 +189,7 @@ class PostPurchaseType implements ModelInterface, ArrayAccess
      *
      * @var mixed[]
      */
-    protected $container = [];
+    protected array $container = [];
 
     /**
      * Constructor
