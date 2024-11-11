@@ -48,7 +48,7 @@ class ContactPersonNormalizer implements DenormalizerInterface, NormalizerInterf
             return $object;
         }
         if (array_key_exists('is_active', $data)) {
-            $object->setIsActive($data['is_active']);
+            $object->setIsActive((bool) $data['is_active']);
         }
         if (array_key_exists('work_function', $data)) {
             $object->setWorkFunction($data['work_function']);

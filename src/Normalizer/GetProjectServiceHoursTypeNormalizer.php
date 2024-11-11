@@ -65,13 +65,13 @@ class GetProjectServiceHoursTypeNormalizer implements DenormalizerInterface, Nor
             $object->setColor($data['color']);
         }
         if (array_key_exists('budgeted_amount', $data)) {
-            $object->setBudgetedAmount($data['budgeted_amount']);
+            $object->setBudgetedAmount((float) $data['budgeted_amount']);
         }
         if (array_key_exists('tariff', $data)) {
-            $object->setTariff($data['tariff']);
+            $object->setTariff((float) $data['tariff']);
         }
         if (array_key_exists('billable', $data)) {
-            $object->setBillable($data['billable']);
+            $object->setBillable((bool) $data['billable']);
         }
 
         return $object;

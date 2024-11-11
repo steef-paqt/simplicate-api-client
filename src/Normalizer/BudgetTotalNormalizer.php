@@ -58,13 +58,13 @@ class BudgetTotalNormalizer implements DenormalizerInterface, NormalizerInterfac
             return $object;
         }
         if (array_key_exists('value_budget', $data)) {
-            $object->setValueBudget($data['value_budget']);
+            $object->setValueBudget((float) $data['value_budget']);
         }
         if (array_key_exists('value_spent', $data)) {
-            $object->setValueSpent($data['value_spent']);
+            $object->setValueSpent((float) $data['value_spent']);
         }
         if (array_key_exists('value_invoiced', $data)) {
-            $object->setValueInvoiced($data['value_invoiced']);
+            $object->setValueInvoiced((float) $data['value_invoiced']);
         }
 
         return $object;

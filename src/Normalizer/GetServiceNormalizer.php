@@ -70,7 +70,7 @@ class GetServiceNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setSubscriptionCycle($data['subscription_cycle']);
         }
         if (array_key_exists('budget', $data)) {
-            $object->setBudget($data['budget']);
+            $object->setBudget((float) $data['budget']);
         }
         if (array_key_exists('default_service_id', $data)) {
             $object->setDefaultServiceId($data['default_service_id']);
@@ -85,16 +85,16 @@ class GetServiceNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setInvoiceMethod($data['invoice_method']);
         }
         if (array_key_exists('amount', $data)) {
-            $object->setAmount($data['amount']);
+            $object->setAmount((float) $data['amount']);
         }
         if (array_key_exists('price', $data)) {
-            $object->setPrice($data['price']);
+            $object->setPrice((float) $data['price']);
         }
         if (array_key_exists('track_hours', $data)) {
-            $object->setTrackHours($data['track_hours']);
+            $object->setTrackHours((bool) $data['track_hours']);
         }
         if (array_key_exists('track_cost', $data)) {
-            $object->setTrackCost($data['track_cost']);
+            $object->setTrackCost((bool) $data['track_cost']);
         }
 
         return $object;

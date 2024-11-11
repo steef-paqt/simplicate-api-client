@@ -61,16 +61,16 @@ class BudgetHoursNormalizer implements DenormalizerInterface, NormalizerInterfac
             return $object;
         }
         if (array_key_exists('amount_budget', $data)) {
-            $object->setAmountBudget($data['amount_budget']);
+            $object->setAmountBudget((float) $data['amount_budget']);
         }
         if (array_key_exists('amount_spent', $data)) {
-            $object->setAmountSpent($data['amount_spent']);
+            $object->setAmountSpent((float) $data['amount_spent']);
         }
         if (array_key_exists('value_budget', $data)) {
-            $object->setValueBudget($data['value_budget']);
+            $object->setValueBudget((float) $data['value_budget']);
         }
         if (array_key_exists('value_spent', $data)) {
-            $object->setValueSpent($data['value_spent']);
+            $object->setValueSpent((float) $data['value_spent']);
         }
 
         return $object;

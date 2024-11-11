@@ -71,16 +71,16 @@ class GetProjectServiceCostTypeNormalizer implements DenormalizerInterface, Norm
             $object->setCosttype($this->denormalizer->denormalize($data['costtype'], GetPurchaseType::class, 'json', $context));
         }
         if (array_key_exists('budgeted_amount', $data)) {
-            $object->setBudgetedAmount($data['budgeted_amount']);
+            $object->setBudgetedAmount((float) $data['budgeted_amount']);
         }
         if (array_key_exists('tariff', $data)) {
-            $object->setTariff($data['tariff']);
+            $object->setTariff((float) $data['tariff']);
         }
         if (array_key_exists('purchase_margin', $data)) {
-            $object->setPurchaseMargin($data['purchase_margin']);
+            $object->setPurchaseMargin((float) $data['purchase_margin']);
         }
         if (array_key_exists('purchase_tariff', $data)) {
-            $object->setPurchaseTariff($data['purchase_tariff']);
+            $object->setPurchaseTariff((float) $data['purchase_tariff']);
         }
 
         return $object;
