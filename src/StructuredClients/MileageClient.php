@@ -8,13 +8,14 @@
 namespace Paqtcom\Simplicate\StructuredClients;
 
 use Paqtcom\Simplicate\Model;
+use Paqtcom\Simplicate\QueryBuilder;
 use Psr\Http\Message\ResponseInterface;
 
 class MileageClient extends AbstractStructuredClient
 {
-    public function getMileages(array $queryParameters = []): Model\RestResultMileageList|ResponseInterface|null
+    public function getMileages(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultMileageList|ResponseInterface|null
     {
-        return $this->client->getMileageMileage($queryParameters);
+        return $this->client->getMileageMileage($queryParameters->toArray());
     }
 
     public function getMileage(string $id): Model\RestResultMileage|ResponseInterface|null

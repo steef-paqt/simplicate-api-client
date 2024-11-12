@@ -8,13 +8,14 @@
 namespace Paqtcom\Simplicate\StructuredClients;
 
 use Paqtcom\Simplicate\Model;
+use Paqtcom\Simplicate\QueryBuilder;
 use Psr\Http\Message\ResponseInterface;
 
 class ServicesClient extends AbstractStructuredClient
 {
-    public function getDefaultServices(array $queryParameters = []): Model\RestResultDefaultServices|ResponseInterface|null
+    public function getDefaultServices(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultDefaultServices|ResponseInterface|null
     {
-        return $this->client->getServicesDefaultservice($queryParameters);
+        return $this->client->getServicesDefaultservice($queryParameters->toArray());
     }
 
     public function getDefaultService(string $id): Model\RestResultDefaultService|ResponseInterface|null

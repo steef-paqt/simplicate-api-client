@@ -8,13 +8,14 @@
 namespace Paqtcom\Simplicate\StructuredClients;
 
 use Paqtcom\Simplicate\Model;
+use Paqtcom\Simplicate\QueryBuilder;
 use Psr\Http\Message\ResponseInterface;
 
 class CrmClient extends AbstractStructuredClient
 {
-    public function getContactPersons(array $queryParameters = []): ResponseInterface|Model\RestResultContactPersons|null
+    public function getContactPersons(QueryBuilder $queryParameters = new QueryBuilder()): ResponseInterface|Model\RestResultContactPersons|null
     {
-        return $this->client->getCrmContactperson($queryParameters);
+        return $this->client->getCrmContactperson($queryParameters->toArray());
     }
 
     public function getContactPerson(string $id): Model\RestResultContactPerson|ResponseInterface|null
@@ -27,9 +28,9 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->deleteCrmContactpersonById($id);
     }
 
-    public function getCountries(array $queryParameters = []): ResponseInterface|Model\RestResultCountries|null
+    public function getCountries(QueryBuilder $queryParameters = new QueryBuilder()): ResponseInterface|Model\RestResultCountries|null
     {
-        return $this->client->getCrmCountry($queryParameters);
+        return $this->client->getCrmCountry($queryParameters->toArray());
     }
 
     public function getCountry(string $id): Model\RestResultCountry|ResponseInterface|null
@@ -37,14 +38,14 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmCountryById($id);
     }
 
-    public function getDebtors(array $queryParameters = []): Model\RestResultDebtorList|ResponseInterface|null
+    public function getDebtors(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultDebtorList|ResponseInterface|null
     {
-        return $this->client->getCrmDebtor($queryParameters);
+        return $this->client->getCrmDebtor($queryParameters->toArray());
     }
 
-    public function getDocuments(array $queryParameters = []): Model\RestResultDocuments|ResponseInterface|null
+    public function getDocuments(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultDocuments|ResponseInterface|null
     {
-        return $this->client->getCrmDocument($queryParameters);
+        return $this->client->getCrmDocument($queryParameters->toArray());
     }
 
     public function postDocument(Model\PostDocument $body): ?ResponseInterface
@@ -67,9 +68,9 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmDocumentById($id);
     }
 
-    public function getDocumentTypes(array $queryParameters = []): Model\RestResultDocumentTypes|ResponseInterface|null
+    public function getDocumentTypes(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultDocumentTypes|ResponseInterface|null
     {
-        return $this->client->getCrmDocumenttype($queryParameters);
+        return $this->client->getCrmDocumenttype($queryParameters->toArray());
     }
 
     public function getDocumentType(string $id): Model\RestResultDocumentType|ResponseInterface|null
@@ -77,9 +78,9 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmDocumenttypeById($id);
     }
 
-    public function getGenders(array $queryParameters = []): Model\RestResultGenders|ResponseInterface|null
+    public function getGenders(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultGenders|ResponseInterface|null
     {
-        return $this->client->getCrmGender($queryParameters);
+        return $this->client->getCrmGender($queryParameters->toArray());
     }
 
     public function getGender(string $id): Model\RestResultGender|ResponseInterface|null
@@ -87,9 +88,9 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmGenderById($id);
     }
 
-    public function getIndustries(array $queryParameters = []): Model\RestResultIndustries|ResponseInterface|null
+    public function getIndustries(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultIndustries|ResponseInterface|null
     {
-        return $this->client->getCrmIndustry($queryParameters);
+        return $this->client->getCrmIndustry($queryParameters->toArray());
     }
 
     public function getIndustry(string $id): ResponseInterface|Model\RestResultIndustry|null
@@ -97,9 +98,9 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmIndustryById($id);
     }
 
-    public function getInterests(array $queryParameters = []): Model\RestResultInterests|ResponseInterface|null
+    public function getInterests(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultInterests|ResponseInterface|null
     {
-        return $this->client->getCrmInterest($queryParameters);
+        return $this->client->getCrmInterest($queryParameters->toArray());
     }
 
     public function getInterest(string $id): ResponseInterface|Model\RestResultInterest|null
@@ -107,9 +108,9 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmInterestById($id);
     }
 
-    public function getMyOrganizationProfiles(array $queryParameters = []): ResponseInterface|Model\RestResultMyOrganizationProfiles|null
+    public function getMyOrganizationProfiles(QueryBuilder $queryParameters = new QueryBuilder()): ResponseInterface|Model\RestResultMyOrganizationProfiles|null
     {
-        return $this->client->getCrmMyorganizationprofile($queryParameters);
+        return $this->client->getCrmMyorganizationprofile($queryParameters->toArray());
     }
 
     public function getMyOrganizationProfile(string $id): Model\RestResultMyOrganizationProfile|ResponseInterface|null
@@ -117,9 +118,9 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmMyorganizationprofileById($id);
     }
 
-    public function getOrganizations(array $queryParameters = []): Model\RestResultOrganizations|ResponseInterface|null
+    public function getOrganizations(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultOrganizations|ResponseInterface|null
     {
-        return $this->client->getCrmOrganization($queryParameters);
+        return $this->client->getCrmOrganization($queryParameters->toArray());
     }
 
     public function getOrganization(string $id): Model\RestResultOrganization|ResponseInterface|null
@@ -142,9 +143,9 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->putCrmOrganizationById($id, $body);
     }
 
-    public function getOrganizationCustomFieldGroups(array $queryParameters = []): Model\RestResultCustomFieldGroups|ResponseInterface|null
+    public function getOrganizationCustomFieldGroups(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldGroups|ResponseInterface|null
     {
-        return $this->client->getCrmOrganizationcustomfieldgroup($queryParameters);
+        return $this->client->getCrmOrganizationcustomfieldgroup($queryParameters->toArray());
     }
 
     public function getOrganizationCustomFieldGroup(string $id): Model\RestResultCustomFieldGroup|ResponseInterface|null
@@ -152,9 +153,9 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmOrganizationcustomfieldgroupById($id);
     }
 
-    public function getOrganizationCustomFields(array $queryParameters = []): Model\RestResultCustomFields|ResponseInterface|null
+    public function getOrganizationCustomFields(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFields|ResponseInterface|null
     {
-        return $this->client->getCrmOrganizationcustomfield($queryParameters);
+        return $this->client->getCrmOrganizationcustomfield($queryParameters->toArray());
     }
 
     public function getOrganizationCustomField(string $id): Model\RestResultCustomField|ResponseInterface|null
@@ -162,9 +163,9 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmOrganizationcustomfieldById($id);
     }
 
-    public function getOrganizationSizes(array $queryParameters = []): ResponseInterface|Model\RestResultOrganizationSizes|null
+    public function getOrganizationSizes(QueryBuilder $queryParameters = new QueryBuilder()): ResponseInterface|Model\RestResultOrganizationSizes|null
     {
-        return $this->client->getCrmOrganizationsize($queryParameters);
+        return $this->client->getCrmOrganizationsize($queryParameters->toArray());
     }
 
     public function getOrganizationSize(string $id): Model\RestResultOrganizationSize|ResponseInterface|null
@@ -172,9 +173,9 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmOrganizationsizeById($id);
     }
 
-    public function getPersons(array $queryParameters = []): Model\RestResultPersons|ResponseInterface|null
+    public function getPersons(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultPersons|ResponseInterface|null
     {
-        return $this->client->getCrmPerson($queryParameters);
+        return $this->client->getCrmPerson($queryParameters->toArray());
     }
 
     public function postPerson(Model\PostPerson $body): ?ResponseInterface
@@ -197,9 +198,9 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->putCrmPersonById($id, $body);
     }
 
-    public function getPersonCustomFieldGroups(array $queryParameters = []): Model\RestResultCustomFieldGroups|ResponseInterface|null
+    public function getPersonCustomFieldGroups(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldGroups|ResponseInterface|null
     {
-        return $this->client->getCrmPersoncustomfieldgroup($queryParameters);
+        return $this->client->getCrmPersoncustomfieldgroup($queryParameters->toArray());
     }
 
     public function getPersonCustomFieldGroup(string $id): Model\RestResultCustomFieldGroup|ResponseInterface|null
@@ -207,9 +208,9 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmPersoncustomfieldgroupById($id);
     }
 
-    public function getPersonCustomFields(array $queryParameters = []): Model\RestResultCustomFields|ResponseInterface|null
+    public function getPersonCustomFields(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFields|ResponseInterface|null
     {
-        return $this->client->getCrmPersoncustomfield($queryParameters);
+        return $this->client->getCrmPersoncustomfield($queryParameters->toArray());
     }
 
     public function getPersonCustomField(string $id): Model\RestResultCustomField|ResponseInterface|null
@@ -217,9 +218,9 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmPersoncustomfieldById($id);
     }
 
-    public function getRelationTypes(array $queryParameters = []): Model\RestResultRelationTypes|ResponseInterface|null
+    public function getRelationTypes(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultRelationTypes|ResponseInterface|null
     {
-        return $this->client->getCrmRelationtype($queryParameters);
+        return $this->client->getCrmRelationtype($queryParameters->toArray());
     }
 
     public function getRelationType(string $id): Model\RestResultRelationType|ResponseInterface|null

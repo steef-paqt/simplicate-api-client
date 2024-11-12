@@ -8,13 +8,14 @@
 namespace Paqtcom\Simplicate\StructuredClients;
 
 use Paqtcom\Simplicate\Model;
+use Paqtcom\Simplicate\QueryBuilder;
 use Psr\Http\Message\ResponseInterface;
 
 class ProjectsClient extends AbstractStructuredClient
 {
-    public function getAssignments(array $queryParameters = []): Model\RestResultProjectAssignments|ResponseInterface|null
+    public function getAssignments(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultProjectAssignments|ResponseInterface|null
     {
-        return $this->client->getProjectsAssignment($queryParameters);
+        return $this->client->getProjectsAssignment($queryParameters->toArray());
     }
 
     public function getAssignment(string $id): ResponseInterface|Model\RestResultProjectAssignment|null
@@ -32,19 +33,19 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->putProjectsAssignmentById($id, $body);
     }
 
-    public function getAssignmentBudgets(array $queryParameters = []): ResponseInterface|Model\RestResultProjectAssignmentbudget|null
+    public function getAssignmentBudgets(QueryBuilder $queryParameters = new QueryBuilder()): ResponseInterface|Model\RestResultProjectAssignmentbudget|null
     {
-        return $this->client->getProjectsAssignmentbudget($queryParameters);
+        return $this->client->getProjectsAssignmentbudget($queryParameters->toArray());
     }
 
-    public function getAssignmentStatuses(array $queryParameters = []): ResponseInterface|Model\RestResultProjectAssignmentStatuses|null
+    public function getAssignmentStatuses(QueryBuilder $queryParameters = new QueryBuilder()): ResponseInterface|Model\RestResultProjectAssignmentStatuses|null
     {
-        return $this->client->getProjectsAssignmentstatus($queryParameters);
+        return $this->client->getProjectsAssignmentstatus($queryParameters->toArray());
     }
 
-    public function getAssignmentStatus(string $id, array $queryParameters = []): Model\RestResultProjectAssignmentStatus|ResponseInterface|null
+    public function getAssignmentStatus(string $id, QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultProjectAssignmentStatus|ResponseInterface|null
     {
-        return $this->client->getProjectsAssignmentstatusById($id, $queryParameters);
+        return $this->client->getProjectsAssignmentstatusById($id, $queryParameters->toArray());
     }
 
     public function postAssignmentStatus(Model\AssignmentStatus $body): ?ResponseInterface
@@ -57,9 +58,9 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->putProjectsAssignmentstatusById($id, $body);
     }
 
-    public function getDocuments(array $queryParameters = []): Model\RestResultDocuments|ResponseInterface|null
+    public function getDocuments(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultDocuments|ResponseInterface|null
     {
-        return $this->client->getProjectsDocument($queryParameters);
+        return $this->client->getProjectsDocument($queryParameters->toArray());
     }
 
     public function getDocument(string $id): Model\RestResultDocument|ResponseInterface|null
@@ -82,9 +83,9 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->deleteProjectsDocumentById($id);
     }
 
-    public function getDocumentTypes(array $queryParameters = []): Model\RestResultDocumentTypes|ResponseInterface|null
+    public function getDocumentTypes(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultDocumentTypes|ResponseInterface|null
     {
-        return $this->client->getProjectsDocumenttype($queryParameters);
+        return $this->client->getProjectsDocumenttype($queryParameters->toArray());
     }
 
     public function getDocumentType(string $id): Model\RestResultDocumentType|ResponseInterface|null
@@ -92,9 +93,9 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsDocumenttypeById($id);
     }
 
-    public function getProjects(array $queryParameters = []): Model\RestResultProjects|ResponseInterface|null
+    public function getProjects(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultProjects|ResponseInterface|null
     {
-        return $this->client->getProjectsProject($queryParameters);
+        return $this->client->getProjectsProject($queryParameters->toArray());
     }
 
     public function getProject(string $id): Model\RestResultProject|ResponseInterface|null
@@ -117,14 +118,14 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->putProjectsProjectById($id, $body);
     }
 
-    public function getProjectByIdPlanningBudget(string $id, array $queryParameters = []): ?ResponseInterface
+    public function getProjectByIdPlanningBudget(string $id, QueryBuilder $queryParameters = new QueryBuilder()): ?ResponseInterface
     {
-        return $this->client->getProjectsProjectByIdPlanningBudget($id, $queryParameters);
+        return $this->client->getProjectsProjectByIdPlanningBudget($id, $queryParameters->toArray());
     }
 
-    public function getProjectCustomFieldGroups(array $queryParameters = []): Model\RestResultCustomFieldGroups|ResponseInterface|null
+    public function getProjectCustomFieldGroups(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldGroups|ResponseInterface|null
     {
-        return $this->client->getProjectsProjectcustomfieldgroup($queryParameters);
+        return $this->client->getProjectsProjectcustomfieldgroup($queryParameters->toArray());
     }
 
     public function getProjectCustomFieldGroup(string $id): Model\RestResultCustomFieldGroup|ResponseInterface|null
@@ -132,9 +133,9 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsProjectcustomfieldgroupById($id);
     }
 
-    public function getProjectCustomFields(array $queryParameters = []): Model\RestResultCustomFields|ResponseInterface|null
+    public function getProjectCustomFields(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFields|ResponseInterface|null
     {
-        return $this->client->getProjectsProjectcustomfield($queryParameters);
+        return $this->client->getProjectsProjectcustomfield($queryParameters->toArray());
     }
 
     public function getProjectCustomField(string $id): Model\RestResultCustomField|ResponseInterface|null
@@ -142,9 +143,9 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsProjectcustomfieldById($id);
     }
 
-    public function getProjectFilters(array $queryParameters = []): ?ResponseInterface
+    public function getProjectFilters(QueryBuilder $queryParameters = new QueryBuilder()): ?ResponseInterface
     {
-        return $this->client->getProjectsProjectfilter($queryParameters);
+        return $this->client->getProjectsProjectfilter($queryParameters->toArray());
     }
 
     public function getProjectFilter(string $id): ?ResponseInterface
@@ -152,9 +153,9 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsProjectfilterById($id);
     }
 
-    public function getProjectStatuses(array $queryParameters = []): ResponseInterface|Model\RestResultProjectStatusses|null
+    public function getProjectStatuses(QueryBuilder $queryParameters = new QueryBuilder()): ResponseInterface|Model\RestResultProjectStatusses|null
     {
-        return $this->client->getProjectsProjectstatus($queryParameters);
+        return $this->client->getProjectsProjectstatus($queryParameters->toArray());
     }
 
     public function getProjectStatus(string $id): Model\RestResultProjectStatus|ResponseInterface|null
@@ -162,9 +163,9 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsProjectstatusById($id);
     }
 
-    public function getPurchases(array $queryParameters = []): ResponseInterface|Model\RestResultPurchases|null
+    public function getPurchases(QueryBuilder $queryParameters = new QueryBuilder()): ResponseInterface|Model\RestResultPurchases|null
     {
-        return $this->client->getProjectsPurchase($queryParameters);
+        return $this->client->getProjectsPurchase($queryParameters->toArray());
     }
 
     public function getPurchase(string $id): Model\RestResultPurchase|ResponseInterface|null
@@ -172,9 +173,9 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsPurchaseById($id);
     }
 
-    public function getPurchaseTypes(array $queryParameters = []): Model\RestResultPurchaseTypes|ResponseInterface|null
+    public function getPurchaseTypes(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultPurchaseTypes|ResponseInterface|null
     {
-        return $this->client->getProjectsPurchasetype($queryParameters);
+        return $this->client->getProjectsPurchasetype($queryParameters->toArray());
     }
 
     public function getPurchaseType(string $id): Model\RestResultPurchaseType|ResponseInterface|null
@@ -182,9 +183,9 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsPurchasetypeById($id);
     }
 
-    public function getReverseInvoices(array $queryParameters = []): ResponseInterface|Model\RestResultReverseInvoices|null
+    public function getReverseInvoices(QueryBuilder $queryParameters = new QueryBuilder()): ResponseInterface|Model\RestResultReverseInvoices|null
     {
-        return $this->client->getProjectsReverseinvoice($queryParameters);
+        return $this->client->getProjectsReverseinvoice($queryParameters->toArray());
     }
 
     public function getReverseInvoice(string $id): Model\RestResultReverseInvoice|ResponseInterface|null
@@ -197,9 +198,9 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->postProjectsServiceByIdDuplicate($id, $body);
     }
 
-    public function getServices(array $queryParameters = []): Model\RestResultProjectServices|ResponseInterface|null
+    public function getServices(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultProjectServices|ResponseInterface|null
     {
-        return $this->client->getProjectsService($queryParameters);
+        return $this->client->getProjectsService($queryParameters->toArray());
     }
 
     public function getService(string $id): ResponseInterface|Model\RestResultProjectService|null
@@ -222,8 +223,8 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->putProjectsServiceById($id, $body);
     }
 
-    public function getServiceByIdPlanningBudget(string $id, array $queryParameters = []): ?ResponseInterface
+    public function getServiceByIdPlanningBudget(string $id, QueryBuilder $queryParameters = new QueryBuilder()): ?ResponseInterface
     {
-        return $this->client->getProjectsServiceByIdPlanningBudget($id, $queryParameters);
+        return $this->client->getProjectsServiceByIdPlanningBudget($id, $queryParameters->toArray());
     }
 }

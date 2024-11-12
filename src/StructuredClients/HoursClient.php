@@ -8,6 +8,7 @@
 namespace Paqtcom\Simplicate\StructuredClients;
 
 use Paqtcom\Simplicate\Model;
+use Paqtcom\Simplicate\QueryBuilder;
 use Psr\Http\Message\ResponseInterface;
 
 class HoursClient extends AbstractStructuredClient
@@ -22,9 +23,9 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->putHoursAbsenceById($id, $body);
     }
 
-    public function getApprovals(array $queryParameters = []): Model\RestResultApprovals|ResponseInterface|null
+    public function getApprovals(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultApprovals|ResponseInterface|null
     {
-        return $this->client->getHoursApproval($queryParameters);
+        return $this->client->getHoursApproval($queryParameters->toArray());
     }
 
     public function postApproval(Model\PostApproval $body): ?ResponseInterface
@@ -47,9 +48,9 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->putHoursApprovalById($id, $body);
     }
 
-    public function getApprovalStatuses(array $queryParameters = []): Model\RestResultApprovalStatusList|ResponseInterface|null
+    public function getApprovalStatuses(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultApprovalStatusList|ResponseInterface|null
     {
-        return $this->client->getHoursApprovalstatus($queryParameters);
+        return $this->client->getHoursApprovalstatus($queryParameters->toArray());
     }
 
     public function getApprovalStatus(string $id): Model\RestResultApprovalStatus|ResponseInterface|null
@@ -57,9 +58,9 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->getHoursApprovalstatusById($id);
     }
 
-    public function getEmployeeExpenses(array $queryParameters = []): ResponseInterface|Model\RestResultEmployeeExpenseList|null
+    public function getEmployeeExpenses(QueryBuilder $queryParameters = new QueryBuilder()): ResponseInterface|Model\RestResultEmployeeExpenseList|null
     {
-        return $this->client->getHoursEmployeeexpense($queryParameters);
+        return $this->client->getHoursEmployeeexpense($queryParameters->toArray());
     }
 
     public function getEmployeeExpense(string $id): Model\RestResultEmployeeExpense|ResponseInterface|null
@@ -67,9 +68,9 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->getHoursEmployeeexpenseById($id);
     }
 
-    public function getHours(array $queryParameters = []): Model\RestResultHours|ResponseInterface|null
+    public function getHours(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultHours|ResponseInterface|null
     {
-        return $this->client->getHoursHour($queryParameters);
+        return $this->client->getHoursHour($queryParameters->toArray());
     }
 
     public function postHour(Model\PostHours $body): ?ResponseInterface
@@ -92,9 +93,9 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->putHoursHourById($id, $body);
     }
 
-    public function getHoursTypes(array $queryParameters = []): Model\RestResultHourTypes|ResponseInterface|null
+    public function getHoursTypes(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultHourTypes|ResponseInterface|null
     {
-        return $this->client->getHoursHourstype($queryParameters);
+        return $this->client->getHoursHourstype($queryParameters->toArray());
     }
 
     public function postHoursType(Model\PostHoursType $body): ?ResponseInterface
@@ -122,9 +123,9 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->putHoursLeaveById($id, $body);
     }
 
-    public function getSubmissions(array $queryParameters = []): Model\RestResultHoursSubmissions|ResponseInterface|null
+    public function getSubmissions(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultHoursSubmissions|ResponseInterface|null
     {
-        return $this->client->getHoursSubmission($queryParameters);
+        return $this->client->getHoursSubmission($queryParameters->toArray());
     }
 
     public function postSubmission(Model\PostSubmission $body): ?ResponseInterface
@@ -137,9 +138,9 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->postHoursSubmit($body);
     }
 
-    public function getTimesheetRows(array $queryParameters = []): Model\RestResultHoursTimesheetRows|ResponseInterface|null
+    public function getTimesheetRows(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultHoursTimesheetRows|ResponseInterface|null
     {
-        return $this->client->getHoursTimesheetrow($queryParameters);
+        return $this->client->getHoursTimesheetrow($queryParameters->toArray());
     }
 
     public function postTimesheetRow(Model\PostTimesheetRow $body): ?ResponseInterface
@@ -157,8 +158,8 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->putHoursTimesheetrowOrder($body);
     }
 
-    public function getTimesheetRowMostRecent(array $queryParameters = []): Model\RestResultDateTimeRange|ResponseInterface|null
+    public function getTimesheetRowMostRecent(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultDateTimeRange|ResponseInterface|null
     {
-        return $this->client->getHoursTimesheetrowMostrecent($queryParameters);
+        return $this->client->getHoursTimesheetrowMostrecent($queryParameters->toArray());
     }
 }

@@ -9,6 +9,7 @@ namespace Paqtcom\Simplicate\StructuredClients;
 
 use Paqtcom\Simplicate\Model;
 use Paqtcom\Simplicate\Model\PutTimer;
+use Paqtcom\Simplicate\QueryBuilder;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -16,9 +17,9 @@ use Psr\Http\Message\ResponseInterface;
  */
 class TimersClient extends AbstractStructuredClient
 {
-    public function getTimers(array $queryParameters = []): Model\RestResultTimers|ResponseInterface|null
+    public function getTimers(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultTimers|ResponseInterface|null
     {
-        return $this->client->getTimersTimer($queryParameters);
+        return $this->client->getTimersTimer($queryParameters->toArray());
     }
 
     public function getTimer(string $id): Model\RestResultTimer|ResponseInterface|null

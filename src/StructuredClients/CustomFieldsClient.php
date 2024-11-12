@@ -8,13 +8,14 @@
 namespace Paqtcom\Simplicate\StructuredClients;
 
 use Paqtcom\Simplicate\Model;
+use Paqtcom\Simplicate\QueryBuilder;
 use Psr\Http\Message\ResponseInterface;
 
 class CustomFieldsClient extends AbstractStructuredClient
 {
-    public function getGroups(array $queryParameters = []): Model\RestResultCustomFieldGroups|ResponseInterface|null
+    public function getGroups(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldGroups|ResponseInterface|null
     {
-        return $this->client->getCustomfieldsGroup($queryParameters);
+        return $this->client->getCustomfieldsGroup($queryParameters->toArray());
     }
 
     public function deleteGroup(string $id): ?ResponseInterface
@@ -22,9 +23,9 @@ class CustomFieldsClient extends AbstractStructuredClient
         return $this->client->deleteCustomfieldsGroupById($id);
     }
 
-    public function getGroup(array $queryParameters = []): Model\RestResultCustomFieldGroup|ResponseInterface|null
+    public function getGroup(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldGroup|ResponseInterface|null
     {
-        return $this->client->getCustomfieldsGroupById($queryParameters);
+        return $this->client->getCustomfieldsGroupById($queryParameters->toArray());
     }
 
     public function postGroup(string $id, Model\CustomFieldGroup $body): ?ResponseInterface
@@ -37,19 +38,19 @@ class CustomFieldsClient extends AbstractStructuredClient
         return $this->client->putCustomfieldsGroupById($id, $body);
     }
 
-    public function getModels(array $queryParameters = []): Model\RestResultCustomFieldModels|ResponseInterface|null
+    public function getModels(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldModels|ResponseInterface|null
     {
-        return $this->client->getCustomfieldsModel($queryParameters);
+        return $this->client->getCustomfieldsModel($queryParameters->toArray());
     }
 
-    public function getModel(array $queryParameters = []): Model\RestResultCustomFieldModel|ResponseInterface|null
+    public function getModel(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldModel|ResponseInterface|null
     {
-        return $this->client->getCustomfieldsModelById($queryParameters);
+        return $this->client->getCustomfieldsModelById($queryParameters->toArray());
     }
 
-    public function getOptions(array $queryParameters = []): Model\RestResultCustomFieldOptions|ResponseInterface|null
+    public function getOptions(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldOptions|ResponseInterface|null
     {
-        return $this->client->getCustomfieldsOption($queryParameters);
+        return $this->client->getCustomfieldsOption($queryParameters->toArray());
     }
 
     public function deleteOption(string $id): ?ResponseInterface
@@ -57,9 +58,9 @@ class CustomFieldsClient extends AbstractStructuredClient
         return $this->client->deleteCustomfieldsOptionById($id);
     }
 
-    public function getOption(string $id, array $queryParameters = []): Model\RestResultCustomFieldOption|ResponseInterface|null
+    public function getOption(string $id, QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldOption|ResponseInterface|null
     {
-        return $this->client->getCustomfieldsOptionById($id, $queryParameters);
+        return $this->client->getCustomfieldsOptionById($id, $queryParameters->toArray());
     }
 
     public function postOption(Model\CustomFieldOption $body): ?ResponseInterface
@@ -72,13 +73,13 @@ class CustomFieldsClient extends AbstractStructuredClient
         return $this->client->putCustomfieldsOptionById($id, $body);
     }
 
-    public function getTypes(array $queryParameters = []): Model\RestResultCustomFieldTypes|ResponseInterface|null
+    public function getTypes(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldTypes|ResponseInterface|null
     {
-        return $this->client->getCustomfieldsType($queryParameters);
+        return $this->client->getCustomfieldsType($queryParameters->toArray());
     }
 
-    public function getType(array $queryParameters = []): Model\RestResultCustomFieldType|ResponseInterface|null
+    public function getType(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldType|ResponseInterface|null
     {
-        return $this->client->getCustomfieldsTypeById($queryParameters);
+        return $this->client->getCustomfieldsTypeById($queryParameters->toArray());
     }
 }

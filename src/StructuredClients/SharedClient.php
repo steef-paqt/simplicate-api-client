@@ -8,13 +8,14 @@
 namespace Paqtcom\Simplicate\StructuredClients;
 
 use Paqtcom\Simplicate\Model;
+use Paqtcom\Simplicate\QueryBuilder;
 use Psr\Http\Message\ResponseInterface;
 
 class SharedClient extends AbstractStructuredClient
 {
-    public function getItems(array $queryParameters = []): Model\RestResultSharedItems|ResponseInterface|null
+    public function getItems(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultSharedItems|ResponseInterface|null
     {
-        return $this->client->getSharedItem($queryParameters);
+        return $this->client->getSharedItem($queryParameters->toArray());
     }
 
     public function getItem(string $id): Model\RestResultSharedItem|ResponseInterface|null

@@ -8,6 +8,7 @@
 namespace Paqtcom\Simplicate\StructuredClients;
 
 use Paqtcom\Simplicate\Model;
+use Paqtcom\Simplicate\QueryBuilder;
 use Psr\Http\Message\ResponseInterface;
 
 class TimelineClient extends AbstractStructuredClient
@@ -22,9 +23,9 @@ class TimelineClient extends AbstractStructuredClient
         return $this->client->deleteTimelineAttachmentById($id);
     }
 
-    public function getMessages(array $queryParameters = []): Model\RestResultTimelineMessages|ResponseInterface|null
+    public function getMessages(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultTimelineMessages|ResponseInterface|null
     {
-        return $this->client->getTimelineMessage($queryParameters);
+        return $this->client->getTimelineMessage($queryParameters->toArray());
     }
 
     public function getMessage(string $id): Model\RestResultTimelineMessage|ResponseInterface|null
@@ -42,9 +43,9 @@ class TimelineClient extends AbstractStructuredClient
         return $this->client->deleteTimelineMessageById($id);
     }
 
-    public function getMessageTypes(array $queryParameters = []): Model\RestResultTimelineMessageTypes|ResponseInterface|null
+    public function getMessageTypes(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultTimelineMessageTypes|ResponseInterface|null
     {
-        return $this->client->getTimelineMessagetype($queryParameters);
+        return $this->client->getTimelineMessagetype($queryParameters->toArray());
     }
 
     public function getMessageType(string $id): Model\RestResultTimelineMessageType|ResponseInterface|null

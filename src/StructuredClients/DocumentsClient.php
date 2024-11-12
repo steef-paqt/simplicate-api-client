@@ -8,13 +8,14 @@
 namespace Paqtcom\Simplicate\StructuredClients;
 
 use Paqtcom\Simplicate\Model;
+use Paqtcom\Simplicate\QueryBuilder;
 use Psr\Http\Message\ResponseInterface;
 
 class DocumentsClient extends AbstractStructuredClient
 {
-    public function getDocuments(array $queryParameters = []): Model\RestResultDocuments|ResponseInterface|null
+    public function getDocuments(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultDocuments|ResponseInterface|null
     {
-        return $this->client->getDocumentsDocument($queryParameters);
+        return $this->client->getDocumentsDocument($queryParameters->toArray());
     }
 
     public function postDocument(Model\PostDocument $body): ?ResponseInterface
@@ -37,9 +38,9 @@ class DocumentsClient extends AbstractStructuredClient
         return $this->client->getDocumentsDocumentById($id);
     }
 
-    public function getDocumentTypes(array $queryParameters = []): Model\RestResultDocumentTypes|ResponseInterface|null
+    public function getDocumentTypes(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultDocumentTypes|ResponseInterface|null
     {
-        return $this->client->getDocumentsDocumenttype($queryParameters);
+        return $this->client->getDocumentsDocumenttype($queryParameters->toArray());
     }
 
     public function getDocumentType(string $id): Model\RestResultDocumentType|ResponseInterface|null

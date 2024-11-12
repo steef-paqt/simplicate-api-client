@@ -8,6 +8,7 @@
 namespace Paqtcom\Simplicate\StructuredClients;
 
 use Paqtcom\Simplicate\Model;
+use Paqtcom\Simplicate\QueryBuilder;
 use Psr\Http\Message\ResponseInterface;
 
 class SalesClient extends AbstractStructuredClient
@@ -17,9 +18,9 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesConverttoprojectById($id);
     }
 
-    public function getDocuments(array $queryParameters = []): Model\RestResultDocuments|ResponseInterface|null
+    public function getDocuments(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultDocuments|ResponseInterface|null
     {
-        return $this->client->getSalesDocument($queryParameters);
+        return $this->client->getSalesDocument($queryParameters->toArray());
     }
 
     public function postDocument(Model\PostDocument $body): ?ResponseInterface
@@ -42,9 +43,9 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesDocumentById($id);
     }
 
-    public function getDocumentTypes(array $queryParameters = []): Model\RestResultDocumentTypes|ResponseInterface|null
+    public function getDocumentTypes(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultDocumentTypes|ResponseInterface|null
     {
-        return $this->client->getSalesDocumenttype($queryParameters);
+        return $this->client->getSalesDocumenttype($queryParameters->toArray());
     }
 
     public function getDocumentType(string $id): Model\RestResultDocumentType|ResponseInterface|null
@@ -52,9 +53,9 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesDocumenttypeById($id);
     }
 
-    public function getQuotes(array $queryParameters = []): Model\RestResultQuotes|ResponseInterface|null
+    public function getQuotes(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultQuotes|ResponseInterface|null
     {
-        return $this->client->getSalesQuote($queryParameters);
+        return $this->client->getSalesQuote($queryParameters->toArray());
     }
 
     public function postQuote(Model\PostQuote $body): ?ResponseInterface
@@ -92,9 +93,9 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesQuotestatusById($id);
     }
 
-    public function getQuoteTemplates(array $queryParameters = []): Model\RestResultQuoteTemplates|ResponseInterface|null
+    public function getQuoteTemplates(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultQuoteTemplates|ResponseInterface|null
     {
-        return $this->client->getSalesQuotetemplate($queryParameters);
+        return $this->client->getSalesQuotetemplate($queryParameters->toArray());
     }
 
     public function postQuoteTemplate(Model\PostQuoteTemplate $body): ?ResponseInterface
@@ -117,9 +118,9 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->putSalesQuotetemplateById($id, $body);
     }
 
-    public function getRevenueGroups(array $queryParameters = []): Model\RestResultRevenueGroups|ResponseInterface|null
+    public function getRevenueGroups(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultRevenueGroups|ResponseInterface|null
     {
-        return $this->client->getSalesRevenuegroup($queryParameters);
+        return $this->client->getSalesRevenuegroup($queryParameters->toArray());
     }
 
     public function getRevenueGroup(string $id): ResponseInterface|Model\RestResultRevenueGroup|null
@@ -127,9 +128,9 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesRevenuegroupById($id);
     }
 
-    public function getSales(array $queryParameters = []): ResponseInterface|Model\RestResultSales|null
+    public function getSales(QueryBuilder $queryParameters = new QueryBuilder()): ResponseInterface|Model\RestResultSales|null
     {
-        return $this->client->getSalesSale($queryParameters);
+        return $this->client->getSalesSale($queryParameters->toArray());
     }
 
     public function postSale(Model\PostSales $body): ?ResponseInterface
@@ -152,9 +153,9 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->postSalesSalesByIdDuplicate($id, $body);
     }
 
-    public function getSalesCustomFieldGroups(array $queryParameters = []): Model\RestResultCustomFieldGroups|ResponseInterface|null
+    public function getSalesCustomFieldGroups(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldGroups|ResponseInterface|null
     {
-        return $this->client->getSalesSalescustomfieldgroup($queryParameters);
+        return $this->client->getSalesSalescustomfieldgroup($queryParameters->toArray());
     }
 
     public function getSalesCustomFieldGroup(string $id): Model\RestResultCustomFieldGroup|ResponseInterface|null
@@ -162,9 +163,9 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesSalescustomfieldgroupById($id);
     }
 
-    public function getSalesCustomFields(array $queryParameters = []): Model\RestResultCustomFields|ResponseInterface|null
+    public function getSalesCustomFields(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFields|ResponseInterface|null
     {
-        return $this->client->getSalesSalescustomfield($queryParameters);
+        return $this->client->getSalesSalescustomfield($queryParameters->toArray());
     }
 
     public function getSalesCustomField(string $id): Model\RestResultCustomField|ResponseInterface|null
@@ -172,9 +173,9 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesSalescustomfieldById($id);
     }
 
-    public function getSalesFilters(array $queryParameters = []): ?ResponseInterface
+    public function getSalesFilters(QueryBuilder $queryParameters = new QueryBuilder()): ?ResponseInterface
     {
-        return $this->client->getSalesSalesfilter($queryParameters);
+        return $this->client->getSalesSalesfilter($queryParameters->toArray());
     }
 
     public function getSalesFilter(string $id): ?ResponseInterface
@@ -182,9 +183,9 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesSalesfilterById($id);
     }
 
-    public function getSalesProgresses(array $queryParameters = []): Model\RestResultSalesProgresses|ResponseInterface|null
+    public function getSalesProgresses(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultSalesProgresses|ResponseInterface|null
     {
-        return $this->client->getSalesSalesprogress($queryParameters);
+        return $this->client->getSalesSalesprogress($queryParameters->toArray());
     }
 
     public function getSalesProgress(string $id): Model\RestResultSalesProgress|ResponseInterface|null
@@ -192,9 +193,9 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesSalesprogressById($id);
     }
 
-    public function getSalesReasons(array $queryParameters = []): Model\RestResultSalesReasons|ResponseInterface|null
+    public function getSalesReasons(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultSalesReasons|ResponseInterface|null
     {
-        return $this->client->getSalesSalesreason($queryParameters);
+        return $this->client->getSalesSalesreason($queryParameters->toArray());
     }
 
     public function getSalesReason(string $id): Model\RestResultSalesReason|ResponseInterface|null
@@ -202,9 +203,9 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesSalesreasonById($id);
     }
 
-    public function getSalesSources(array $queryParameters = []): Model\RestResultSalesSources|ResponseInterface|null
+    public function getSalesSources(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultSalesSources|ResponseInterface|null
     {
-        return $this->client->getSalesSalessource($queryParameters);
+        return $this->client->getSalesSalessource($queryParameters->toArray());
     }
 
     public function getSalesSource(string $id): Model\RestResultSalesSource|ResponseInterface|null
@@ -212,9 +213,9 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesSalessourceById($id);
     }
 
-    public function getSalesStatuses(array $queryParameters = []): Model\RestResultSalesStatusses|ResponseInterface|null
+    public function getSalesStatuses(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultSalesStatusses|ResponseInterface|null
     {
-        return $this->client->getSalesSalesstatus($queryParameters);
+        return $this->client->getSalesSalesstatus($queryParameters->toArray());
     }
 
     public function getSalesStatus(string $id): ResponseInterface|Model\RestResultSalesStatus|null
@@ -227,9 +228,9 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->postSalesServiceByIdDuplicate($id, $body);
     }
 
-    public function getServices(array $queryParameters = []): Model\RestResultSalesServices|ResponseInterface|null
+    public function getServices(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultSalesServices|ResponseInterface|null
     {
-        return $this->client->getSalesService($queryParameters);
+        return $this->client->getSalesService($queryParameters->toArray());
     }
 
     public function postService(Model\PostSalesService $body): ?ResponseInterface

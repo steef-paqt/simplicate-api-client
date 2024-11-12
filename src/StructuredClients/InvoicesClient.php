@@ -8,13 +8,14 @@
 namespace Paqtcom\Simplicate\StructuredClients;
 
 use Paqtcom\Simplicate\Model;
+use Paqtcom\Simplicate\QueryBuilder;
 use Psr\Http\Message\ResponseInterface;
 
 class InvoicesClient extends AbstractStructuredClient
 {
-    public function getDocuments(array $queryParameters = []): Model\RestResultDocuments|ResponseInterface|null
+    public function getDocuments(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultDocuments|ResponseInterface|null
     {
-        return $this->client->getInvoicesDocument($queryParameters);
+        return $this->client->getInvoicesDocument($queryParameters->toArray());
     }
 
     public function postDocument(Model\PostDocument $body): ?ResponseInterface
@@ -37,9 +38,9 @@ class InvoicesClient extends AbstractStructuredClient
         return $this->client->getInvoicesDocumentById($id);
     }
 
-    public function getDocumentTypes(array $queryParameters = []): Model\RestResultDocumentTypes|ResponseInterface|null
+    public function getDocumentTypes(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultDocumentTypes|ResponseInterface|null
     {
-        return $this->client->getInvoicesDocumenttype($queryParameters);
+        return $this->client->getInvoicesDocumenttype($queryParameters->toArray());
     }
 
     public function getDocumentType(string $id): Model\RestResultDocumentType|ResponseInterface|null
@@ -47,9 +48,9 @@ class InvoicesClient extends AbstractStructuredClient
         return $this->client->getInvoicesDocumenttypeById($id);
     }
 
-    public function getInvoices(array $queryParameters = []): Model\RestResultInvoices|ResponseInterface|null
+    public function getInvoices(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultInvoices|ResponseInterface|null
     {
-        return $this->client->getInvoicesInvoice($queryParameters);
+        return $this->client->getInvoicesInvoice($queryParameters->toArray());
     }
 
     public function postInvoice(Model\PostInvoice $body): ?ResponseInterface
@@ -72,9 +73,9 @@ class InvoicesClient extends AbstractStructuredClient
         return $this->client->putInvoicesInvoiceById($id, $body);
     }
 
-    public function getInvoiceStatuses(array $queryParameters = []): Model\RestResultInvoiceStatuses|ResponseInterface|null
+    public function getInvoiceStatuses(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultInvoiceStatuses|ResponseInterface|null
     {
-        return $this->client->getInvoicesInvoicestatus($queryParameters);
+        return $this->client->getInvoicesInvoicestatus($queryParameters->toArray());
     }
 
     public function getInvoiceStatus(string $id): ResponseInterface|Model\RestResultInvoiceStatus|null
@@ -82,9 +83,9 @@ class InvoicesClient extends AbstractStructuredClient
         return $this->client->getInvoicesInvoicestatusById($id);
     }
 
-    public function getPayments(array $queryParameters = []): Model\RestResultPayments|ResponseInterface|null
+    public function getPayments(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultPayments|ResponseInterface|null
     {
-        return $this->client->getInvoicesPayment($queryParameters);
+        return $this->client->getInvoicesPayment($queryParameters->toArray());
     }
 
     public function postPayment(Model\Payment $body): ?ResponseInterface
@@ -102,9 +103,9 @@ class InvoicesClient extends AbstractStructuredClient
         return $this->client->putInvoicesPaymentById($id, $body);
     }
 
-    public function getPaymentTerms(array $queryParameters = []): Model\RestResultPaymentTerms|ResponseInterface|null
+    public function getPaymentTerms(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultPaymentTerms|ResponseInterface|null
     {
-        return $this->client->getInvoicesPaymentterm($queryParameters);
+        return $this->client->getInvoicesPaymentterm($queryParameters->toArray());
     }
 
     public function getPaymentTerm(string $id): Model\RestResultPaymentTerm|ResponseInterface|null
@@ -112,14 +113,14 @@ class InvoicesClient extends AbstractStructuredClient
         return $this->client->getInvoicesPaymenttermById($id);
     }
 
-    public function getPropositions(array $queryParameters = []): Model\RestResultPropositions|ResponseInterface|null
+    public function getPropositions(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultPropositions|ResponseInterface|null
     {
-        return $this->client->getInvoicesProposition($queryParameters);
+        return $this->client->getInvoicesProposition($queryParameters->toArray());
     }
 
-    public function getReminderSets(array $queryParameters = []): Model\RestResultReminderSets|ResponseInterface|null
+    public function getReminderSets(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultReminderSets|ResponseInterface|null
     {
-        return $this->client->getInvoicesReminderset($queryParameters);
+        return $this->client->getInvoicesReminderset($queryParameters->toArray());
     }
 
     public function getReminderSet(string $id): Model\RestResultReminderSet|ResponseInterface|null
@@ -127,9 +128,9 @@ class InvoicesClient extends AbstractStructuredClient
         return $this->client->getInvoicesRemindersetById($id);
     }
 
-    public function getReminderTemplates(array $queryParameters = []): Model\RestResultReminderTemplates|ResponseInterface|null
+    public function getReminderTemplates(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultReminderTemplates|ResponseInterface|null
     {
-        return $this->client->getInvoicesRemindertemplate($queryParameters);
+        return $this->client->getInvoicesRemindertemplate($queryParameters->toArray());
     }
 
     public function getReminderTemplate(string $id): Model\RestResultReminderTemplate|ResponseInterface|null
@@ -137,9 +138,9 @@ class InvoicesClient extends AbstractStructuredClient
         return $this->client->getInvoicesRemindertemplateById($id);
     }
 
-    public function getVatClasses(array $queryParameters = []): ResponseInterface|Model\RestResultVatClasses|null
+    public function getVatClasses(QueryBuilder $queryParameters = new QueryBuilder()): ResponseInterface|Model\RestResultVatClasses|null
     {
-        return $this->client->getInvoicesVatclass($queryParameters);
+        return $this->client->getInvoicesVatclass($queryParameters->toArray());
     }
 
     public function getVatClass(string $id): Model\RestResultVatClass|ResponseInterface|null
