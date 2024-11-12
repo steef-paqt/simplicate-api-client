@@ -65,7 +65,6 @@ class GetSalesSalescustomfield extends BaseEndpoint
 
     /**
      * {@inheritdoc}
-     * @return null|RestResultCustomFields
      * @throws GetSalesSalescustomfieldNotFoundException
      * @throws GetSalesSalescustomfieldInternalServerErrorException
      * @throws GetSalesSalescustomfieldUnauthorizedException

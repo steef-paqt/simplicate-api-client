@@ -86,6 +86,7 @@ class StructuredClient
     {
         return new TimersClient($this->client);
     }
+
     public function uploads(): UploadClient
     {
         return new UploadClient($this->client);
