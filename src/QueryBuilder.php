@@ -38,6 +38,46 @@ class QueryBuilder
     }
 
     /**
+     * Column with a value that matches one of the values in a comma separated list of values.
+     */
+    public function whereIn(string $key, array $value): self
+    {
+        $this->query[$key]['IN'] = implode(',', $value);
+
+        return $this;
+    }
+
+    /**
+     * Column with a value that does not match none of the values in a comma separated list of values.
+     */
+    public function whereNotIn(string $key, array $value): self
+    {
+        $this->query[$key]['NIN'] = implode(',', $value);
+
+        return $this;
+    }
+
+    /**
+     * Column with a value that matches one of the values in a comma separated list of values.
+     */
+    public function orWhereIn(string $key, array $value): self
+    {
+        $this->query[$key]['or']['IN'] = implode(',', $value);
+
+        return $this;
+    }
+
+    /**
+     * Column with a value that does not match none of the values in a comma separated list of values.
+     */
+    public function orWhereNotIn(string $key, array $value): self
+    {
+        $this->query[$key]['or']['NIN'] = implode(',', $value);
+
+        return $this;
+    }
+
+    /**
      * @return array<string, int|string>
      */
     public function toArray(): array
@@ -78,19 +118,17 @@ class QueryBuilder
     private function getOperator(string $operator): ?string
     {
         $operators = [
-            '=' => null, // default
+            '='  => null, // default
             '>=' => 'ge', // greater than or equals
-            '>' => 'gt', // greater than
+            '>'  => 'gt', // greater than
             '<=' => 'le', // less than or equals
-            '<' => 'lt', // less than
-            'IN' => 'in', // column with a value that matches one of the values in a comma separated list of values
-            'NOT IN' => 'nin', // same as above, but negating
+            '<'  => 'lt', // less than
         ];
-        if (!array_key_exists(strtoupper($operator), $operators)) {
+        if (!array_key_exists($operator, $operators)) {
             throw new \UnexpectedValueException('operator is not valid: ' . $operator);
         }
 
-        return $operators[strtoupper($operator)];
+        return $operators[$operator];
     }
 
     private function getValue(string $operatorOrValue, ?string $value): string|array
