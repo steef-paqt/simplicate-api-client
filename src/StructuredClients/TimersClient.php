@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @noinspection PhpUnused
+ * @noinspection UnknownInspectionInspection
+ */
+
+namespace Paqtcom\Simplicate\StructuredClients;
+
+use Paqtcom\Simplicate\Model;
+use Paqtcom\Simplicate\Model\PutTimer;
+use Psr\Http\Message\ResponseInterface;
+
+/**
+ * @see https://developer.simplicate.com/explore#/Hours
+ */
+class TimersClient extends AbstractStructuredClient
+{
+    public function getTimers(array $queryParameters = []): Model\RestResultTimers|ResponseInterface|null
+    {
+        return $this->client->getTimersTimer($queryParameters);
+    }
+
+    public function getTimer(string $id): Model\RestResultTimer|ResponseInterface|null
+    {
+        return $this->client->getTimersTimerById($id);
+    }
+
+    public function postTimer(Model\PostTimer $body): ?ResponseInterface
+    {
+        return $this->client->postTimersTimer($body);
+    }
+
+    public function deleteTimer(string $id): ?ResponseInterface
+    {
+        return $this->client->deleteTimersTimerById($id);
+    }
+
+    public function putTimer(string $id, PutTimer $body): ?ResponseInterface
+    {
+        return $this->client->putTimersTimerById($id, $body);
+    }
+}

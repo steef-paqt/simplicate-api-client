@@ -34,7 +34,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeInternalServerErrorException
@@ -48,7 +47,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCostsCoststypeByIdUnprocessableEntityException
@@ -67,7 +65,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCostsExpenseUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCostsExpenseNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCostsExpenseInternalServerErrorException
@@ -81,7 +78,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCostsExpenseByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCostsExpenseByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCostsExpenseByIdUnprocessableEntityException
@@ -101,7 +97,6 @@ class Client extends ParentClient
      *     @var string $sort Sort the result by column name
      *     @var string $select Select only specific fields to return
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmContactpersonUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmContactpersonNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmContactpersonInternalServerErrorException
@@ -115,7 +110,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteCrmContactpersonByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteCrmContactpersonByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteCrmContactpersonByIdInternalServerErrorException
@@ -129,7 +123,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmContactpersonByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmContactpersonByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmContactpersonByIdUnprocessableEntityException
@@ -148,7 +141,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmCountryUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmCountryNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmCountryInternalServerErrorException
@@ -162,7 +154,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmCountryByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmCountryByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmCountryByIdUnprocessableEntityException
@@ -181,7 +172,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDebtorUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDebtorNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDebtorInternalServerErrorException
@@ -199,7 +189,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumentNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumentInternalServerErrorException
@@ -213,7 +202,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostCrmDocumentBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostCrmDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostCrmDocumentInternalServerErrorException
@@ -227,7 +215,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutCrmDocumentBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutCrmDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutCrmDocumentInternalServerErrorException
@@ -241,7 +228,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteCrmDocumentByIdInternalServerErrorException
@@ -255,7 +241,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumentByIdUnprocessableEntityException
@@ -274,7 +259,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumenttypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumenttypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumenttypeInternalServerErrorException
@@ -288,7 +272,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumenttypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumenttypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmDocumenttypeByIdUnprocessableEntityException
@@ -307,7 +290,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderInternalServerErrorException
@@ -321,7 +303,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmGenderByIdUnprocessableEntityException
@@ -340,7 +321,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryInternalServerErrorException
@@ -354,7 +334,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmIndustryByIdUnprocessableEntityException
@@ -373,7 +352,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestInternalServerErrorException
@@ -387,7 +365,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmInterestByIdUnprocessableEntityException
@@ -406,7 +383,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileInternalServerErrorException
@@ -420,7 +396,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmMyorganizationprofileByIdUnprocessableEntityException
@@ -440,7 +415,6 @@ class Client extends ParentClient
      *     @var string $sort Sort the result by column name
      *     @var string $select Select only specific fields to return
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationInternalServerErrorException
@@ -454,7 +428,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostOrganization $body Organization object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostCrmOrganizationBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostCrmOrganizationUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostCrmOrganizationInternalServerErrorException
@@ -468,7 +441,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteCrmOrganizationByIdInternalServerErrorException
@@ -482,7 +454,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationByIdUnprocessableEntityException
@@ -498,7 +469,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostOrganization $body Organization object containing data that with the new values
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutCrmOrganizationByIdNotFoundException
@@ -517,7 +487,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldgroupUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldgroupNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldgroupInternalServerErrorException
@@ -531,7 +500,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldgroupByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldgroupByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldgroupByIdUnprocessableEntityException
@@ -550,7 +518,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldInternalServerErrorException
@@ -564,7 +531,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationcustomfieldByIdUnprocessableEntityException
@@ -583,7 +549,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationsizeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationsizeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationsizeInternalServerErrorException
@@ -597,7 +562,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationsizeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationsizeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmOrganizationsizeByIdUnprocessableEntityException
@@ -617,7 +581,6 @@ class Client extends ParentClient
      *     @var string $sort Sort the result by column name
      *     @var string $select Select only specific fields to return
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersonUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersonNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersonInternalServerErrorException
@@ -631,7 +594,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostCrmPersonUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostCrmPersonNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostCrmPersonInternalServerErrorException
@@ -645,7 +607,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteCrmPersonByIdInternalServerErrorException
@@ -659,7 +620,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersonByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersonByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersonByIdUnprocessableEntityException
@@ -675,7 +635,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostPerson $body Person object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutCrmPersonByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutCrmPersonByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutCrmPersonByIdNotFoundException
@@ -694,7 +653,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupInternalServerErrorException
@@ -708,7 +666,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldgroupByIdUnprocessableEntityException
@@ -727,7 +684,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldInternalServerErrorException
@@ -741,7 +697,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmPersoncustomfieldByIdUnprocessableEntityException
@@ -760,7 +715,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmRelationtypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmRelationtypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmRelationtypeInternalServerErrorException
@@ -774,7 +728,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCrmRelationtypeByIdUnprocessableEntityException
@@ -793,7 +746,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsGroupUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsGroupNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsGroupInternalServerErrorException
@@ -807,7 +759,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteCustomfieldsGroupByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteCustomfieldsGroupByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteCustomfieldsGroupByIdInternalServerErrorException
@@ -825,7 +776,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsGroupByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsGroupByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsGroupByIdInternalServerErrorException
@@ -840,7 +790,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostCustomfieldsGroupByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostCustomfieldsGroupByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostCustomfieldsGroupByIdNotFoundException
@@ -856,7 +805,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutCustomfieldsGroupByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutCustomfieldsGroupByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutCustomfieldsGroupByIdNotFoundException
@@ -875,7 +823,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsModelUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsModelNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsModelInternalServerErrorException
@@ -893,7 +840,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsModelByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsModelByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsModelByIdInternalServerErrorException
@@ -911,7 +857,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsOptionUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsOptionNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsOptionInternalServerErrorException
@@ -925,7 +870,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteCustomfieldsOptionByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteCustomfieldsOptionByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteCustomfieldsOptionByIdInternalServerErrorException
@@ -944,7 +888,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsOptionByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsOptionByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsOptionByIdInternalServerErrorException
@@ -958,7 +901,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostCustomfieldsOptionByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostCustomfieldsOptionByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostCustomfieldsOptionByIdNotFoundException
@@ -974,7 +916,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutCustomfieldsOptionByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutCustomfieldsOptionByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutCustomfieldsOptionByIdNotFoundException
@@ -993,7 +934,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsTypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsTypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsTypeInternalServerErrorException
@@ -1011,7 +951,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsTypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsTypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsTypeByIdInternalServerErrorException
@@ -1029,7 +968,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumentNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumentInternalServerErrorException
@@ -1043,7 +981,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostDocumentsDocumentBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostDocumentsDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostDocumentsDocumentInternalServerErrorException
@@ -1057,7 +994,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutDocumentsDocumentBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutDocumentsDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutDocumentsDocumentInternalServerErrorException
@@ -1071,7 +1007,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteDocumentsDocumentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteDocumentsDocumentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteDocumentsDocumentByIdInternalServerErrorException
@@ -1085,7 +1020,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumentByIdUnprocessableEntityException
@@ -1104,7 +1038,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeInternalServerErrorException
@@ -1118,7 +1051,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDocumenttypeByIdUnprocessableEntityException
@@ -1133,7 +1065,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetDocumentsDownloadByIdUnprocessableEntityException
@@ -1148,7 +1079,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostAbsence $body absence object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostHoursAbsenceBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursAbsenceUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursAbsenceInternalServerErrorException
@@ -1163,7 +1093,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutHoursAbsenceByIdNotFoundException
@@ -1182,7 +1111,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalInternalServerErrorException
@@ -1196,7 +1124,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostHoursApprovalUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursApprovalNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursApprovalInternalServerErrorException
@@ -1210,7 +1137,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteHoursApprovalByIdInternalServerErrorException
@@ -1224,7 +1150,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalByIdUnprocessableEntityException
@@ -1240,7 +1165,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostApproval $body Approval object that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutHoursApprovalByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutHoursApprovalByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutHoursApprovalByIdNotFoundException
@@ -1259,7 +1183,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusInternalServerErrorException
@@ -1273,7 +1196,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursApprovalstatusByIdUnprocessableEntityException
@@ -1292,7 +1214,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseInternalServerErrorException
@@ -1306,7 +1227,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursEmployeeexpenseByIdUnprocessableEntityException
@@ -1325,7 +1245,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHoursHourUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursHourNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursHourInternalServerErrorException
@@ -1339,7 +1258,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostHours $body Hours object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostHoursHourUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursHourNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursHourInternalServerErrorException
@@ -1353,7 +1271,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteHoursHourByIdInternalServerErrorException
@@ -1367,7 +1284,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHoursHourByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursHourByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursHourByIdUnprocessableEntityException
@@ -1383,7 +1299,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostHours $body Hours object that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutHoursHourByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutHoursHourByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutHoursHourByIdNotFoundException
@@ -1402,7 +1317,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHoursHourstypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursHourstypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursHourstypeInternalServerErrorException
@@ -1416,7 +1330,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostHoursType $body Hour type object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostHoursHourstypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursHourstypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursHourstypeInternalServerErrorException
@@ -1430,7 +1343,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHoursHourstypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursHourstypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursHourstypeByIdUnprocessableEntityException
@@ -1446,7 +1358,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostHoursType $body Hours type object that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutHoursHourstypeByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutHoursHourstypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutHoursHourstypeByIdNotFoundException
@@ -1461,7 +1372,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostLeave $body leave object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostHoursLeaveBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursLeaveUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursLeaveInternalServerErrorException
@@ -1476,7 +1386,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data that with the new values
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutHoursLeaveByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutHoursLeaveByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutHoursLeaveByIdNotFoundException
@@ -1495,7 +1404,6 @@ class Client extends ParentClient
      *     @var string $q[end_date]
      *     @var string $q[employee_id]
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHoursSubmissionUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursSubmissionNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursSubmissionInternalServerErrorException
@@ -1509,7 +1417,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostSubmission $body Description of hours that need to be submitted.
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostHoursSubmissionUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursSubmissionNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursSubmissionInternalServerErrorException
@@ -1523,7 +1430,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\Submit $body Data that is needed to submit hours
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostHoursSubmitUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursSubmitNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursSubmitInternalServerErrorException
@@ -1541,7 +1447,6 @@ class Client extends ParentClient
      *     @var string $q[end_date] Y-m-d, must be the Sunday after the Monday of the start_date
      *     @var string $q[employee_id]
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowInternalServerErrorException
@@ -1555,7 +1460,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostTimesheetRow $body Description of timesheetrow that is submitted.
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostHoursTimesheetrowInternalServerErrorException
@@ -1569,7 +1473,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteHoursTimesheetrowByIdNotFoundException
@@ -1584,7 +1487,6 @@ class Client extends ParentClient
 
     /**
      * @param array $body List of external ids for timesheetrows that need to be ordered.
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderNotFoundException
@@ -1603,7 +1505,6 @@ class Client extends ParentClient
      *     @var string $q[employee_id]
      *     @var string $q[type]
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHoursTimesheetrowMostrecentNotFoundException
@@ -1622,7 +1523,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsenceUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsenceNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsenceInternalServerErrorException
@@ -1636,7 +1536,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostAbsence $body absence object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostHrmAbsenceBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostHrmAbsenceUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostHrmAbsenceInternalServerErrorException
@@ -1650,7 +1549,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteHrmAbsenceByIdInternalServerErrorException
@@ -1664,7 +1562,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsenceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsenceByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsenceByIdInternalServerErrorException
@@ -1679,7 +1576,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostAbsence $body Absence object containing data that with the new values
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutHrmAbsenceByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutHrmAbsenceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutHrmAbsenceByIdNotFoundException
@@ -1698,7 +1594,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeInternalServerErrorException
@@ -1712,7 +1607,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmAbsencetypeByIdUnprocessableEntityException
@@ -1731,7 +1625,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmCivilstatusUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmCivilstatusNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmCivilstatusInternalServerErrorException
@@ -1745,7 +1638,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmCivilstatusByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmCivilstatusByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmCivilstatusByIdUnprocessableEntityException
@@ -1764,7 +1656,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmContractUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmContractNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmContractInternalServerErrorException
@@ -1778,7 +1669,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmContractByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmContractByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmContractByIdUnprocessableEntityException
@@ -1797,7 +1687,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmContracttypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmContracttypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmContracttypeInternalServerErrorException
@@ -1811,7 +1700,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmContracttypeByIdUnprocessableEntityException
@@ -1830,7 +1718,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentInternalServerErrorException
@@ -1844,7 +1731,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostHrmDocumentBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostHrmDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostHrmDocumentInternalServerErrorException
@@ -1858,7 +1744,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutHrmDocumentBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutHrmDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutHrmDocumentInternalServerErrorException
@@ -1872,7 +1757,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteHrmDocumentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteHrmDocumentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteHrmDocumentByIdInternalServerErrorException
@@ -1886,7 +1770,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumentByIdUnprocessableEntityException
@@ -1905,7 +1788,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumenttypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumenttypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumenttypeInternalServerErrorException
@@ -1919,7 +1801,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumenttypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumenttypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmDocumenttypeByIdUnprocessableEntityException
@@ -1938,7 +1819,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeeInternalServerErrorException
@@ -1952,7 +1832,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostEmployee $body Employee object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostHrmEmployeeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostHrmEmployeeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostHrmEmployeeInternalServerErrorException
@@ -1966,7 +1845,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeeByIdUnprocessableEntityException
@@ -1981,7 +1859,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PutEmployee $body Employee object that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutHrmEmployeeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutHrmEmployeeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PutHrmEmployeeByIdInternalServerErrorException
@@ -1999,7 +1876,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupInternalServerErrorException
@@ -2013,7 +1889,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldgroupByIdUnprocessableEntityException
@@ -2032,7 +1907,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldInternalServerErrorException
@@ -2046,7 +1920,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeecustomfieldByIdUnprocessableEntityException
@@ -2065,7 +1938,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeInternalServerErrorException
@@ -2079,7 +1951,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmployeetypeByIdUnprocessableEntityException
@@ -2098,7 +1969,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeInternalServerErrorException
@@ -2112,7 +1982,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmEmploymenttypeByIdUnprocessableEntityException
@@ -2131,7 +2000,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeaveUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeaveNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeaveInternalServerErrorException
@@ -2145,7 +2013,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostHrmLeaveBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostHrmLeaveUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostHrmLeaveInternalServerErrorException
@@ -2159,7 +2026,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeaveByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeaveByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeaveByIdInternalServerErrorException
@@ -2174,7 +2040,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostLeave $body Leave object containing data that with the new values
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutHrmLeaveByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutHrmLeaveByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutHrmLeaveByIdNotFoundException
@@ -2193,7 +2058,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavebalanceUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavebalanceNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavebalanceInternalServerErrorException
@@ -2211,7 +2075,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeInternalServerErrorException
@@ -2225,7 +2088,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmLeavetypeByIdUnprocessableEntityException
@@ -2244,7 +2106,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamInternalServerErrorException
@@ -2258,7 +2119,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmTeamByIdUnprocessableEntityException
@@ -2277,7 +2137,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetHrmTimetableUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmTimetableNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetHrmTimetableInternalServerErrorException
@@ -2291,7 +2150,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostTimetable $body Timetable object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostHrmTimetableUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostHrmTimetableNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostHrmTimetableInternalServerErrorException
@@ -2305,7 +2163,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteHrmTimetableByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteHrmTimetableByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteHrmTimetableByIdInternalServerErrorException
@@ -2319,7 +2176,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PutTimetable $body Timetable object that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PutHrmTimetableByIdInternalServerErrorException
@@ -2337,7 +2193,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumentNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumentInternalServerErrorException
@@ -2351,7 +2206,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostInvoicesDocumentBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostInvoicesDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostInvoicesDocumentInternalServerErrorException
@@ -2365,7 +2219,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutInvoicesDocumentBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutInvoicesDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutInvoicesDocumentInternalServerErrorException
@@ -2379,7 +2232,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteInvoicesDocumentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteInvoicesDocumentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteInvoicesDocumentByIdInternalServerErrorException
@@ -2393,7 +2245,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumentByIdUnprocessableEntityException
@@ -2412,7 +2263,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeInternalServerErrorException
@@ -2426,7 +2276,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesDocumenttypeByIdUnprocessableEntityException
@@ -2445,7 +2294,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoiceUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoiceNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoiceInternalServerErrorException
@@ -2459,7 +2307,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostInvoice $body Invoice object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostInvoicesInvoiceUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostInvoicesInvoiceNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostInvoicesInvoiceInternalServerErrorException
@@ -2473,7 +2320,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteInvoicesInvoiceByIdInternalServerErrorException
@@ -2487,7 +2333,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoiceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoiceByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoiceByIdUnprocessableEntityException
@@ -2503,7 +2348,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\Invoice $body template object that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutInvoicesInvoiceByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutInvoicesInvoiceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutInvoicesInvoiceByIdNotFoundException
@@ -2522,7 +2366,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusInternalServerErrorException
@@ -2536,7 +2379,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesInvoicestatusByIdUnprocessableEntityException
@@ -2555,7 +2397,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymentNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymentInternalServerErrorException
@@ -2569,7 +2410,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\Payment $body Payment object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostInvoicesPaymentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostInvoicesPaymentNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostInvoicesPaymentInternalServerErrorException
@@ -2583,7 +2423,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymentByIdUnprocessableEntityException
@@ -2599,7 +2438,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\Payment $body Payment object that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutInvoicesPaymentByIdNotFoundException
@@ -2618,7 +2456,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermInternalServerErrorException
@@ -2632,7 +2469,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPaymenttermByIdUnprocessableEntityException
@@ -2651,7 +2487,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPropositionUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPropositionNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesPropositionInternalServerErrorException
@@ -2669,7 +2504,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindersetUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindersetNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindersetInternalServerErrorException
@@ -2683,7 +2517,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindersetByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindersetByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindersetByIdUnprocessableEntityException
@@ -2702,7 +2535,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateInternalServerErrorException
@@ -2716,7 +2548,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesRemindertemplateByIdUnprocessableEntityException
@@ -2735,7 +2566,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesVatclassUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesVatclassNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesVatclassInternalServerErrorException
@@ -2749,7 +2579,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesVatclassByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesVatclassByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetInvoicesVatclassByIdUnprocessableEntityException
@@ -2764,7 +2593,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostMergerCompare $body Compare objects containing the source id and target id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostMergerCompareorganizationBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostMergerCompareorganizationUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostMergerCompareorganizationInternalServerErrorException
@@ -2778,7 +2606,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostMergerCompare $body Compare objects containing the source id and target id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostMergerComparepersonBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostMergerComparepersonUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostMergerComparepersonInternalServerErrorException
@@ -2792,7 +2619,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostMerger $body Merge object containing the source id and target id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostCrmMergeorganizationInternalServerErrorException
@@ -2806,7 +2632,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostMerger $body Merge object containing the source id and target id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostCrmMergepersonBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostCrmMergepersonUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostCrmMergepersonInternalServerErrorException
@@ -2824,7 +2649,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetMileageMileageUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetMileageMileageNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetMileageMileageInternalServerErrorException
@@ -2838,7 +2662,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostMileage $body Mileage object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostMileageMileageUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostMileageMileageNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostMileageMileageInternalServerErrorException
@@ -2852,7 +2675,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteMileageMileageByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteMileageMileageByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteMileageMileageByIdInternalServerErrorException
@@ -2866,7 +2688,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetMileageMileageByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetMileageMileageByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetMileageMileageByIdUnprocessableEntityException
@@ -2882,7 +2703,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PutMileage $body Mileage object that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutMileageMileageByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutMileageMileageByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutMileageMileageByIdNotFoundException
@@ -2901,7 +2721,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentInternalServerErrorException
@@ -2915,7 +2734,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostAssignment $body Project assignment POST body
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsAssignmentBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsAssignmentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsAssignmentNotFoundException
@@ -2930,7 +2748,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentByIdInternalServerErrorException
@@ -2945,7 +2762,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PutAssignment $body Project assignment PUT body
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentByIdNotFoundException
@@ -2967,7 +2783,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetPaymentRequiredException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentbudgetNotFoundException
@@ -2986,7 +2801,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusInternalServerErrorException
@@ -3000,7 +2814,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusNotFoundException
@@ -3020,7 +2833,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsAssignmentstatusByIdInternalServerErrorException
@@ -3035,7 +2847,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\AssignmentStatus $body Project assignment POST body
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdNotFoundException
@@ -3054,7 +2865,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumentNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumentInternalServerErrorException
@@ -3068,7 +2878,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsDocumentBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsDocumentInternalServerErrorException
@@ -3082,7 +2891,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsDocumentBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsDocumentInternalServerErrorException
@@ -3096,7 +2904,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsDocumentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsDocumentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsDocumentByIdInternalServerErrorException
@@ -3110,7 +2917,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumentByIdUnprocessableEntityException
@@ -3129,7 +2935,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumenttypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumenttypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumenttypeInternalServerErrorException
@@ -3143,7 +2948,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumenttypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumenttypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsDocumenttypeByIdUnprocessableEntityException
@@ -3162,7 +2966,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectInternalServerErrorException
@@ -3176,7 +2979,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostProject $body Project object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsProjectUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsProjectNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsProjectInternalServerErrorException
@@ -3190,7 +2992,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsProjectByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsProjectByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsProjectByIdInternalServerErrorException
@@ -3204,7 +3005,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectByIdUnprocessableEntityException
@@ -3220,7 +3020,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostProject $body project object that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsProjectByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsProjectByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsProjectByIdNotFoundException
@@ -3239,7 +3038,6 @@ class Client extends ParentClient
      *     @var string $by
      *     @var string $until_date Y-m-d
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectByIdPlanningBudgetUnprocessableEntityException
@@ -3258,7 +3056,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldgroupUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldgroupNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldgroupInternalServerErrorException
@@ -3272,7 +3069,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldgroupByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldgroupByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldgroupByIdUnprocessableEntityException
@@ -3291,7 +3087,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldInternalServerErrorException
@@ -3305,7 +3100,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectcustomfieldByIdUnprocessableEntityException
@@ -3324,7 +3118,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterInternalServerErrorException
@@ -3338,7 +3131,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectfilterByIdUnprocessableEntityException
@@ -3357,7 +3149,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusInternalServerErrorException
@@ -3371,7 +3162,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsProjectstatusByIdUnprocessableEntityException
@@ -3390,7 +3180,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchaseUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchaseNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchaseInternalServerErrorException
@@ -3404,7 +3193,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchaseByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchaseByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchaseByIdInternalServerErrorException
@@ -3422,7 +3210,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeInternalServerErrorException
@@ -3436,7 +3223,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsPurchasetypeByIdUnprocessableEntityException
@@ -3455,7 +3241,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceInternalServerErrorException
@@ -3469,7 +3254,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsReverseinvoiceByIdInternalServerErrorException
@@ -3484,7 +3268,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param string $body Optional parameters to overwrite
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceByIdDuplicateNotFoundException
@@ -3503,7 +3286,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceInternalServerErrorException
@@ -3517,7 +3299,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostProjectService $body template object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostProjectsServiceInternalServerErrorException
@@ -3531,7 +3312,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsServiceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsServiceByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteProjectsServiceByIdInternalServerErrorException
@@ -3545,7 +3325,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdUnprocessableEntityException
@@ -3561,7 +3340,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PutProjectService $body Service object that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsServiceByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsServiceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutProjectsServiceByIdNotFoundException
@@ -3580,7 +3358,6 @@ class Client extends ParentClient
      *     @var string $by
      *     @var string $until_date Y-m-d
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetProjectsServiceByIdPlanningBudgetUnprocessableEntityException
@@ -3595,7 +3372,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesConverttoprojectByIdUnprocessableEntityException
@@ -3614,7 +3390,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumentNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumentInternalServerErrorException
@@ -3628,7 +3403,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostDocument $body Document object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostSalesDocumentBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostSalesDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostSalesDocumentInternalServerErrorException
@@ -3642,7 +3416,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PutDocument $body Document object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutSalesDocumentBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutSalesDocumentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutSalesDocumentInternalServerErrorException
@@ -3656,7 +3429,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteSalesDocumentByIdInternalServerErrorException
@@ -3670,7 +3442,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumentByIdUnprocessableEntityException
@@ -3689,7 +3460,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeInternalServerErrorException
@@ -3703,7 +3473,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesDocumenttypeByIdUnprocessableEntityException
@@ -3722,7 +3491,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuoteUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuoteNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuoteInternalServerErrorException
@@ -3736,7 +3504,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostQuote $body Quote template object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostSalesQuoteBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostSalesQuoteUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostSalesQuoteInternalServerErrorException
@@ -3750,7 +3517,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuoteByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuoteByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuoteByIdInternalServerErrorException
@@ -3764,7 +3530,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuoteByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuoteByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuoteByIdUnprocessableEntityException
@@ -3780,7 +3545,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostQuote $body Quote template object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutSalesQuoteByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutSalesQuoteByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutSalesQuoteByIdInternalServerErrorException
@@ -3795,7 +3559,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PutQuoteEmail $body Document object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutSalesQuoteemailByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutSalesQuoteemailByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutSalesQuoteemailByIdInternalServerErrorException
@@ -3808,7 +3571,6 @@ class Client extends ParentClient
     }
 
     /**
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotestatusUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotestatusNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotestatusUnprocessableEntityException
@@ -3816,14 +3578,13 @@ class Client extends ParentClient
      *
      * @return null|\Paqtcom\Simplicate\Model\RestResultQuoteStatuses|\Psr\Http\Message\ResponseInterface
      */
-    public function getSalesQuotestatus(string $fetch = self::FETCH_OBJECT)
+    public function getSalesQuotestatus()
     {
         return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetSalesQuotestatus());
     }
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotestatusByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotestatusByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotestatusByIdUnprocessableEntityException
@@ -3842,7 +3603,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotetemplateUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotetemplateNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotetemplateInternalServerErrorException
@@ -3856,7 +3616,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostSalesQuotetemplateInternalServerErrorException
@@ -3870,7 +3629,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteSalesQuotetemplateByIdInternalServerErrorException
@@ -3884,7 +3642,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotetemplateByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotetemplateByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesQuotetemplateByIdUnprocessableEntityException
@@ -3900,7 +3657,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostQuoteTemplate $body Quote template object containing data
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutSalesQuotetemplateByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutSalesQuotetemplateByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutSalesQuotetemplateByIdInternalServerErrorException
@@ -3918,7 +3674,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupInternalServerErrorException
@@ -3932,7 +3687,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesRevenuegroupByIdUnprocessableEntityException
@@ -3951,7 +3705,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSaleUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSaleNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSaleInternalServerErrorException
@@ -3965,7 +3718,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostSales $body Sales object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostSalesSaleUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostSalesSaleNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostSalesSaleInternalServerErrorException
@@ -3979,7 +3731,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSaleByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSaleByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSaleByIdUnprocessableEntityException
@@ -3995,7 +3746,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostSales $body project object that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutSalesSaleByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutSalesSaleByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutSalesSaleByIdNotFoundException
@@ -4011,7 +3761,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostDuplicateSales $body Optional parameters to overwrite
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateNotFoundException
@@ -4030,7 +3779,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupInternalServerErrorException
@@ -4044,7 +3792,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldgroupByIdUnprocessableEntityException
@@ -4063,7 +3810,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldInternalServerErrorException
@@ -4077,7 +3823,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalescustomfieldByIdUnprocessableEntityException
@@ -4096,7 +3841,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterInternalServerErrorException
@@ -4110,7 +3854,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesfilterByIdUnprocessableEntityException
@@ -4129,7 +3872,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesprogressUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesprogressNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesprogressInternalServerErrorException
@@ -4143,7 +3885,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesprogressByIdUnprocessableEntityException
@@ -4163,7 +3904,6 @@ class Client extends ParentClient
      *     @var string $sort Sort the result by column name
      *     @var string $select Select only specific fields to return
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesreasonUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesreasonNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesreasonInternalServerErrorException
@@ -4177,7 +3917,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesreasonByIdUnprocessableEntityException
@@ -4196,7 +3935,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalessourceUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalessourceNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalessourceInternalServerErrorException
@@ -4210,7 +3948,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalessourceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalessourceByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalessourceByIdUnprocessableEntityException
@@ -4229,7 +3966,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesstatusUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesstatusNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesstatusInternalServerErrorException
@@ -4243,7 +3979,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesstatusByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesstatusByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesSalesstatusByIdUnprocessableEntityException
@@ -4259,7 +3994,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param string $body Optional parameters to overwrite
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceByIdDuplicateBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceByIdDuplicateUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceByIdDuplicateNotFoundException
@@ -4278,7 +4012,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesServiceUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesServiceNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesServiceInternalServerErrorException
@@ -4292,7 +4025,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostSalesService $body template object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostSalesServiceInternalServerErrorException
@@ -4306,7 +4038,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteSalesServiceByIdInternalServerErrorException
@@ -4320,7 +4051,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSalesServiceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesServiceByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSalesServiceByIdUnprocessableEntityException
@@ -4336,7 +4066,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostSalesService $body Service object that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutSalesServiceByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutSalesServiceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutSalesServiceByIdNotFoundException
@@ -4355,7 +4084,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceInternalServerErrorException
@@ -4369,7 +4097,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostDefaultService $body Default service object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostServicesDefaultserviceInternalServerErrorException
@@ -4383,7 +4110,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteServicesDefaultserviceByIdInternalServerErrorException
@@ -4397,7 +4123,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetServicesDefaultserviceByIdUnprocessableEntityException
@@ -4413,7 +4138,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostDefaultService $body default service object that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdNotFoundException
@@ -4432,7 +4156,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSharedItemUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSharedItemNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSharedItemInternalServerErrorException
@@ -4446,7 +4169,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostSharedItem $body Item object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostSharedItemUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostSharedItemNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostSharedItemInternalServerErrorException
@@ -4460,7 +4182,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteSharedItemByIdInternalServerErrorException
@@ -4474,7 +4195,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetSharedItemByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetSharedItemByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetSharedItemByIdUnprocessableEntityException
@@ -4490,7 +4210,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\PostSharedItem $body Shared item object that with the data that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutSharedItemByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutSharedItemByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PutSharedItemByIdInternalServerErrorException
@@ -4503,7 +4222,6 @@ class Client extends ParentClient
     }
 
     /**
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostTimelineAttachmentUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostTimelineAttachmentNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostTimelineAttachmentInternalServerErrorException
@@ -4516,7 +4234,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineAttachmentByIdInternalServerErrorException
@@ -4534,7 +4251,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessageUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessageNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessageInternalServerErrorException
@@ -4548,7 +4264,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostMessage $body Timeline message that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostTimelineMessageUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostTimelineMessageNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostTimelineMessageInternalServerErrorException
@@ -4562,7 +4277,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteTimelineMessageByIdInternalServerErrorException
@@ -4576,7 +4290,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessageByIdUnprocessableEntityException
@@ -4595,7 +4308,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeInternalServerErrorException
@@ -4609,7 +4321,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetTimelineMessagetypeByIdUnprocessableEntityException
@@ -4628,7 +4339,6 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetTimersTimerUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetTimersTimerNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetTimersTimerInternalServerErrorException
@@ -4642,7 +4352,6 @@ class Client extends ParentClient
 
     /**
      * @param \Paqtcom\Simplicate\Model\PostTimer $body Timer object that needs to be added
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostTimersTimerUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostTimersTimerNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\PostTimersTimerInternalServerErrorException
@@ -4656,7 +4365,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\DeleteTimersTimerByIdInternalServerErrorException
@@ -4670,7 +4378,6 @@ class Client extends ParentClient
 
     /**
      * @param string $id The template's id
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\GetTimersTimerByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetTimersTimerByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetTimersTimerByIdUnprocessableEntityException
@@ -4686,7 +4393,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param PutTimer $body Timer object that needs to be updated
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutTimersTimerByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutTimersTimerByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutTimersTimerByIdNotFoundException
@@ -4701,7 +4407,6 @@ class Client extends ParentClient
 
     /**
      * @param PostChunked $body Data required to initialize an upload
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PostUploadChunkedBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PostUploadChunkedUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PostUploadChunkedNotFoundException
@@ -4717,7 +4422,6 @@ class Client extends ParentClient
     /**
      * @param string $id The template's id
      * @param PutChunked $body Next chunk for a chunked_upload
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Paqtcom\Simplicate\Exception\PutUploadChunkedByIdBadRequestException
      * @throws \Paqtcom\Simplicate\Exception\PutUploadChunkedByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\PutUploadChunkedByIdNotFoundException

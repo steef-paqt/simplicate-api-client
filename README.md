@@ -38,7 +38,28 @@ $httpClient = new \Http\Client\Common\PluginClient($httpClient, $plugins);
 $client = \Paqtcom\Simplicate\Client::create($httpClient);
 
 // now you can run commands like:
-$client->getCrmOrganization();      // Paqtcom\Simplicate\Model\RestResultOrganizations
+$client->getCrmOrganization(); // Paqtcom\Simplicate\Model\RestResultOrganizations
+```
+
+## Example usage with the structured client:
+
+```php
+$curlClient = new \Symfony\Component\HttpClient\CurlHttpClient([
+    'auth_bearer' => config('simplicate.token'),
+]);
+$httpClient = new \Symfony\Component\HttpClient\Psr18Client($curlClient);
+$uri = \Http\Discovery\Psr17FactoryDiscovery::findUriFactory()->createUri('https://{yourdomain}.simplicate.nl/api/v2/');
+$plugins = [
+    new \Http\Client\Common\Plugin\AddHostPlugin($uri),
+    new \Http\Client\Common\Plugin\AddPathPlugin($uri),
+];
+$httpClient = new \Http\Client\Common\PluginClient($httpClient, $plugins);
+$client = \Paqtcom\Simplicate\Client::create($httpClient);
+$structuredClient = new \Paqtcom\Simplicate\StructuredClient($client);
+// now you can run commands like:
+$structuredClient->crm()->getCountries();     // Paqtcom\Simplicate\Model\RestResultCountries
+$structuredClient->crm()->getOrganizations(); // Paqtcom\Simplicate\Model\RestResultOrganizations
+$structuredClient->crm()->getOrganization('organisation:63467356236'); // Paqtcom\Simplicate\Model\RestResultOrganization
 ```
 
 ## Extra features on top of JanePHP generated code:
