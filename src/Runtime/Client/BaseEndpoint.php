@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Paqtcom\Simplicate\Runtime\Client;
 
 use Http\Message\MultipartStream\MultipartStreamBuilder;
+use Paqtcom\Simplicate\Model\AbstractModel;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -13,7 +14,8 @@ abstract class BaseEndpoint implements Endpoint
 {
     protected array $queryParameters = [];
     protected array $headerParameters = [];
-    protected array $body;
+    protected array $formParameters = [];
+    protected array|AbstractModel|string $body;
 
     abstract public function getMethod(): string;
 
