@@ -4,17 +4,8 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Model;
 
-class QuotetemplateConfigurationMetaData
+class QuotetemplateConfigurationMetaData extends AbstractModel
 {
-    /**
-     * @var array
-     */
-    protected $initialized = [];
-
-    public function isInitialized($property): bool
-    {
-        return array_key_exists($property, $this->initialized);
-    }
     /**
      * Default text for view_and_sign_button for the quotetemplate e-mail
      *

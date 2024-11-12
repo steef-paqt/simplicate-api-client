@@ -4,17 +4,8 @@ declare(strict_types=1);
 
 namespace Paqtcom\Simplicate\Model;
 
-class PutChunked
+class PutChunked extends AbstractModel
 {
-    /**
-     * @var array
-     */
-    protected $initialized = [];
-
-    public function isInitialized($property): bool
-    {
-        return array_key_exists($property, $this->initialized);
-    }
     /**
      * Base64 encoded string of data
      *
