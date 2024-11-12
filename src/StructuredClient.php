@@ -11,7 +11,10 @@ use Paqtcom\Simplicate\StructuredClients\CostsClient;
 use Paqtcom\Simplicate\StructuredClients\CrmClient;
 use Paqtcom\Simplicate\StructuredClients\CustomFieldsClient;
 use Paqtcom\Simplicate\StructuredClients\DocumentsClient;
+use Paqtcom\Simplicate\StructuredClients\HoursClient;
 use Paqtcom\Simplicate\StructuredClients\HrmClient;
+use Paqtcom\Simplicate\StructuredClients\InvoicesClient;
+use Paqtcom\Simplicate\StructuredClients\MergerClient;
 use Paqtcom\Simplicate\StructuredClients\MileageClient;
 use Paqtcom\Simplicate\StructuredClients\ProjectsClient;
 use Paqtcom\Simplicate\StructuredClients\SalesClient;
@@ -47,9 +50,24 @@ class StructuredClient
         return new DocumentsClient($this->client);
     }
 
+    public function hours(): HoursClient
+    {
+        return new HoursClient($this->client);
+    }
+
     public function hrm(): HrmClient
     {
         return new HrmClient($this->client);
+    }
+
+    public function invoices(): InvoicesClient
+    {
+        return new InvoicesClient($this->client);
+    }
+
+    public function mergers(): MergerClient
+    {
+        return new MergerClient($this->client);
     }
 
     public function mileages(): MileageClient
