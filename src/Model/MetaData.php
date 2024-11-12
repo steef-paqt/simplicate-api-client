@@ -9,7 +9,7 @@ class MetaData
     /**
      * @var array
      */
-    protected $initialized = [];
+    protected array $initialized = [];
 
     public function isInitialized($property): bool
     {
@@ -18,31 +18,15 @@ class MetaData
     /**
      * @var int
      */
-    protected $count;
+    protected int $count = 0;
     /**
      * @var int
      */
-    protected $totalCount;
+    protected int $offset = 0;
     /**
      * @var int
      */
-    protected $offset;
-    /**
-     * @var int
-     */
-    protected $limit;
-    /**
-     * @var int
-     */
-    protected $upperLimit;
-    /**
-     * @var bool
-     */
-    protected $nocleanup;
-    /**
-     * @var string
-     */
-    protected $checksum;
+    protected int $limit = 0;
 
     /**
      * @return int
@@ -61,27 +45,6 @@ class MetaData
     {
         $this->initialized['count'] = true;
         $this->count = $count;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getTotalCount(): int
-    {
-        return $this->totalCount;
-    }
-
-    /**
-     * @param int $totalCount
-     *
-     * @return self
-     */
-    public function setTotalCount(int $totalCount): self
-    {
-        $this->initialized['totalCount'] = true;
-        $this->totalCount = $totalCount;
 
         return $this;
     }
@@ -124,69 +87,6 @@ class MetaData
     {
         $this->initialized['limit'] = true;
         $this->limit = $limit;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getUpperLimit(): int
-    {
-        return $this->upperLimit;
-    }
-
-    /**
-     * @param int $upperLimit
-     *
-     * @return self
-     */
-    public function setUpperLimit(int $upperLimit): self
-    {
-        $this->initialized['upperLimit'] = true;
-        $this->upperLimit = $upperLimit;
-
-        return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getNocleanup(): bool
-    {
-        return $this->nocleanup;
-    }
-
-    /**
-     * @param bool $nocleanup
-     *
-     * @return self
-     */
-    public function setNocleanup(bool $nocleanup): self
-    {
-        $this->initialized['nocleanup'] = true;
-        $this->nocleanup = $nocleanup;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getChecksum(): string
-    {
-        return $this->checksum;
-    }
-
-    /**
-     * @param string $checksum
-     *
-     * @return self
-     */
-    public function setChecksum(string $checksum): self
-    {
-        $this->initialized['checksum'] = true;
-        $this->checksum = $checksum;
 
         return $this;
     }

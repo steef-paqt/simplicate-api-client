@@ -33,7 +33,7 @@ abstract class BaseEndpoint implements Endpoint
     public function getQueryString(): string
     {
         $optionsResolved = $this->getQueryOptionsResolver()->resolve($this->queryParameters);
-        $optionsResolved = array_map(function ($value) {
+        $optionsResolved = array_map(static function ($value) {
             return $value ?? '';
         }, $optionsResolved);
 
@@ -47,7 +47,10 @@ abstract class BaseEndpoint implements Endpoint
 
     protected function getQueryOptionsResolver(): OptionsResolver
     {
-        return new OptionsResolver();
+        return (new OptionsResolver())->setDefined([
+            'q',
+            'metadata',
+        ]);
     }
 
     protected function getHeadersOptionsResolver(): OptionsResolver

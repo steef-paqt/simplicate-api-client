@@ -51,23 +51,11 @@ class MetaDataNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (array_key_exists('count', $data)) {
             $object->setCount($data['count']);
         }
-        if (array_key_exists('total_count', $data)) {
-            $object->setTotalCount($data['total_count']);
-        }
         if (array_key_exists('offset', $data)) {
             $object->setOffset($data['offset']);
         }
         if (array_key_exists('limit', $data)) {
             $object->setLimit($data['limit']);
-        }
-        if (array_key_exists('upper_limit', $data)) {
-            $object->setUpperLimit($data['upper_limit']);
-        }
-        if (array_key_exists('nocleanup', $data)) {
-            $object->setNocleanup($data['nocleanup']);
-        }
-        if (array_key_exists('checksum', $data)) {
-            $object->setChecksum($data['checksum']);
         }
 
         return $object;
@@ -79,23 +67,11 @@ class MetaDataNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if ($object->isInitialized('count') && null !== $object->getCount()) {
             $data['count'] = $object->getCount();
         }
-        if ($object->isInitialized('totalCount') && null !== $object->getTotalCount()) {
-            $data['total_count'] = $object->getTotalCount();
-        }
         if ($object->isInitialized('offset') && null !== $object->getOffset()) {
             $data['offset'] = $object->getOffset();
         }
         if ($object->isInitialized('limit') && null !== $object->getLimit()) {
             $data['limit'] = $object->getLimit();
-        }
-        if ($object->isInitialized('upperLimit') && null !== $object->getUpperLimit()) {
-            $data['upper_limit'] = $object->getUpperLimit();
-        }
-        if ($object->isInitialized('nocleanup') && null !== $object->getNocleanup()) {
-            $data['nocleanup'] = $object->getNocleanup();
-        }
-        if ($object->isInitialized('checksum') && null !== $object->getChecksum()) {
-            $data['checksum'] = $object->getChecksum();
         }
 
         return $data;
