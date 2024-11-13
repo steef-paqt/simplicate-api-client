@@ -90,7 +90,7 @@ final class QueryBuilderTest extends TestCase
         $query = QueryBuilder::query()->whereIn('foo', ['bar', 'baz']);
         $queryString = $this->getQueryString($query);
 
-        $this->assertSame("limit=99&q[foo][IN]=bar,baz", $queryString);
+        $this->assertSame("limit=99&q[foo][in]=bar,baz", $queryString);
     }
 
     public function testQueryBuilderCanQueryWithNotInOperator(): void
@@ -98,7 +98,7 @@ final class QueryBuilderTest extends TestCase
         $query = QueryBuilder::query()->whereNotIn('foo', ['bar', 'baz']);
         $queryString = $this->getQueryString($query);
 
-        $this->assertSame("limit=99&q[foo][NIN]=bar,baz", $queryString);
+        $this->assertSame("limit=99&q[foo][nin]=bar,baz", $queryString);
     }
 
     public function testQueryBuilderCanQueryWithOrInOperator(): void
@@ -106,7 +106,7 @@ final class QueryBuilderTest extends TestCase
         $query = QueryBuilder::query()->orWhereIn('foo', ['bar', 'baz']);
         $queryString = $this->getQueryString($query);
 
-        $this->assertSame("limit=99&q[foo][or][IN]=bar,baz", $queryString);
+        $this->assertSame("limit=99&q[foo][or][in]=bar,baz", $queryString);
     }
 
     public function testQueryBuilderCanQueryWithOrNotInOperator(): void
@@ -114,7 +114,7 @@ final class QueryBuilderTest extends TestCase
         $query = QueryBuilder::query()->orWhereNotIn('foo', ['bar', 'baz']);
         $queryString = $this->getQueryString($query);
 
-        $this->assertSame("limit=99&q[foo][or][NIN]=bar,baz", $queryString);
+        $this->assertSame("limit=99&q[foo][or][nin]=bar,baz", $queryString);
     }
 
     public static function operationsProvider(): array

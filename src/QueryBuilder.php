@@ -42,7 +42,7 @@ class QueryBuilder
      */
     public function whereIn(string $key, array $value): self
     {
-        $this->query[$key]['IN'] = implode(',', $value);
+        $this->query[$key]['in'] = implode(',', $value);
 
         return $this;
     }
@@ -52,7 +52,7 @@ class QueryBuilder
      */
     public function whereNotIn(string $key, array $value): self
     {
-        $this->query[$key]['NIN'] = implode(',', $value);
+        $this->query[$key]['nin'] = implode(',', $value);
 
         return $this;
     }
@@ -62,7 +62,7 @@ class QueryBuilder
      */
     public function orWhereIn(string $key, array $value): self
     {
-        $this->query[$key]['or']['IN'] = implode(',', $value);
+        $this->query[$key]['or']['in'] = implode(',', $value);
 
         return $this;
     }
@@ -72,7 +72,7 @@ class QueryBuilder
      */
     public function orWhereNotIn(string $key, array $value): self
     {
-        $this->query[$key]['or']['NIN'] = implode(',', $value);
+        $this->query[$key]['or']['nin'] = implode(',', $value);
 
         return $this;
     }
