@@ -66,7 +66,7 @@ class GetHrmContract extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultContracts
-     *@throws GetHrmContractNotFoundException
+     * @throws GetHrmContractNotFoundException
      * @throws GetHrmContractInternalServerErrorException
      * @throws GetHrmContractUnauthorizedException
      */

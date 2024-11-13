@@ -47,7 +47,7 @@ class GetProjectsReverseinvoiceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultReverseInvoice
-     *@throws GetProjectsReverseinvoiceByIdNotFoundException
+     * @throws GetProjectsReverseinvoiceByIdNotFoundException
      * @throws GetProjectsReverseinvoiceByIdInternalServerErrorException
      * @throws GetProjectsReverseinvoiceByIdUnauthorizedException
      */

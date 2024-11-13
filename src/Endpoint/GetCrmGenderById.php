@@ -48,7 +48,7 @@ class GetCrmGenderById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultGender
-     *@throws GetCrmGenderByIdNotFoundException
+     * @throws GetCrmGenderByIdNotFoundException
      * @throws GetCrmGenderByIdUnprocessableEntityException
      * @throws GetCrmGenderByIdInternalServerErrorException
      * @throws GetCrmGenderByIdUnauthorizedException

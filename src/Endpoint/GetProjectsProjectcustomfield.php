@@ -66,7 +66,7 @@ class GetProjectsProjectcustomfield extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCustomFields
-     *@throws GetProjectsProjectcustomfieldNotFoundException
+     * @throws GetProjectsProjectcustomfieldNotFoundException
      * @throws GetProjectsProjectcustomfieldInternalServerErrorException
      * @throws GetProjectsProjectcustomfieldUnauthorizedException
      */

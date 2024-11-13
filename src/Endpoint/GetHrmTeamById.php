@@ -48,7 +48,7 @@ class GetHrmTeamById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultTeam
-     *@throws GetHrmTeamByIdNotFoundException
+     * @throws GetHrmTeamByIdNotFoundException
      * @throws GetHrmTeamByIdUnprocessableEntityException
      * @throws GetHrmTeamByIdInternalServerErrorException
      * @throws GetHrmTeamByIdUnauthorizedException

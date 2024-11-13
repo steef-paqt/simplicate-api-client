@@ -48,7 +48,7 @@ class GetHoursHourById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultHour
-     *@throws GetHoursHourByIdNotFoundException
+     * @throws GetHoursHourByIdNotFoundException
      * @throws GetHoursHourByIdUnprocessableEntityException
      * @throws GetHoursHourByIdInternalServerErrorException
      * @throws GetHoursHourByIdUnauthorizedException

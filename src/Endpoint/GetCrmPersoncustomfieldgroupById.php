@@ -48,7 +48,7 @@ class GetCrmPersoncustomfieldgroupById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCustomFieldGroup
-     *@throws GetCrmPersoncustomfieldgroupByIdNotFoundException
+     * @throws GetCrmPersoncustomfieldgroupByIdNotFoundException
      * @throws GetCrmPersoncustomfieldgroupByIdUnprocessableEntityException
      * @throws GetCrmPersoncustomfieldgroupByIdInternalServerErrorException
      * @throws GetCrmPersoncustomfieldgroupByIdUnauthorizedException

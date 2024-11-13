@@ -66,7 +66,7 @@ class GetHoursHour extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultHours
-     *@throws GetHoursHourNotFoundException
+     * @throws GetHoursHourNotFoundException
      * @throws GetHoursHourInternalServerErrorException
      * @throws GetHoursHourUnauthorizedException
      */

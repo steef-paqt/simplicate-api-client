@@ -48,7 +48,7 @@ class GetSalesQuotetemplateById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultQuoteTemplate
-     *@throws GetSalesQuotetemplateByIdNotFoundException
+     * @throws GetSalesQuotetemplateByIdNotFoundException
      * @throws GetSalesQuotetemplateByIdUnprocessableEntityException
      * @throws GetSalesQuotetemplateByIdInternalServerErrorException
      * @throws GetSalesQuotetemplateByIdUnauthorizedException

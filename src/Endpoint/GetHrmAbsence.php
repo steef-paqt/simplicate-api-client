@@ -66,7 +66,7 @@ class GetHrmAbsence extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultAbsenceMultiple
-     *@throws GetHrmAbsenceNotFoundException
+     * @throws GetHrmAbsenceNotFoundException
      * @throws GetHrmAbsenceInternalServerErrorException
      * @throws GetHrmAbsenceUnauthorizedException
      */

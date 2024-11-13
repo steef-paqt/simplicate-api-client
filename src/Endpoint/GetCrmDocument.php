@@ -66,7 +66,7 @@ class GetCrmDocument extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultDocuments
-     *@throws GetCrmDocumentNotFoundException
+     * @throws GetCrmDocumentNotFoundException
      * @throws GetCrmDocumentInternalServerErrorException
      * @throws GetCrmDocumentUnauthorizedException
      */

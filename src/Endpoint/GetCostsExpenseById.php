@@ -48,7 +48,7 @@ class GetCostsExpenseById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultEmployeeExpense
-     *@throws GetCostsExpenseByIdNotFoundException
+     * @throws GetCostsExpenseByIdNotFoundException
      * @throws GetCostsExpenseByIdUnprocessableEntityException
      * @throws GetCostsExpenseByIdInternalServerErrorException
      * @throws GetCostsExpenseByIdUnauthorizedException

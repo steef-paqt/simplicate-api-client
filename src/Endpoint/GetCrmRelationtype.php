@@ -66,7 +66,7 @@ class GetCrmRelationtype extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultRelationTypes
-     *@throws GetCrmRelationtypeNotFoundException
+     * @throws GetCrmRelationtypeNotFoundException
      * @throws GetCrmRelationtypeInternalServerErrorException
      * @throws GetCrmRelationtypeUnauthorizedException
      */

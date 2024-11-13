@@ -48,7 +48,7 @@ class GetCrmCountryById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCountry
-     *@throws GetCrmCountryByIdNotFoundException
+     * @throws GetCrmCountryByIdNotFoundException
      * @throws GetCrmCountryByIdUnprocessableEntityException
      * @throws GetCrmCountryByIdInternalServerErrorException
      * @throws GetCrmCountryByIdUnauthorizedException

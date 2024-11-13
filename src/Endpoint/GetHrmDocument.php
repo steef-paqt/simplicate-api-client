@@ -66,7 +66,7 @@ class GetHrmDocument extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultDocuments
-     *@throws GetHrmDocumentNotFoundException
+     * @throws GetHrmDocumentNotFoundException
      * @throws GetHrmDocumentInternalServerErrorException
      * @throws GetHrmDocumentUnauthorizedException
      */

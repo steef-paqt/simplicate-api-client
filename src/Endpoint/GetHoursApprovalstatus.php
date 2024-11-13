@@ -66,7 +66,7 @@ class GetHoursApprovalstatus extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultApprovalStatusList
-     *@throws GetHoursApprovalstatusNotFoundException
+     * @throws GetHoursApprovalstatusNotFoundException
      * @throws GetHoursApprovalstatusInternalServerErrorException
      * @throws GetHoursApprovalstatusUnauthorizedException
      */

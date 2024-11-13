@@ -48,7 +48,7 @@ class GetSalesSalesreasonById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultSalesReason
-     *@throws GetSalesSalesreasonByIdUnauthorizedException
+     * @throws GetSalesSalesreasonByIdUnauthorizedException
      * @throws GetSalesSalesreasonByIdUnprocessableEntityException
      * @throws GetSalesSalesreasonByIdInternalServerErrorException
      * @throws GetSalesSalesreasonByIdBadRequestException

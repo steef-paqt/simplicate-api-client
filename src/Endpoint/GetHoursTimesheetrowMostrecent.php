@@ -67,7 +67,7 @@ class GetHoursTimesheetrowMostrecent extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultDateTimeRange
-     *@throws GetHoursTimesheetrowMostrecentUnauthorizedException
+     * @throws GetHoursTimesheetrowMostrecentUnauthorizedException
      * @throws GetHoursTimesheetrowMostrecentNotFoundException
      * @throws GetHoursTimesheetrowMostrecentInternalServerErrorException
      * @throws GetHoursTimesheetrowMostrecentBadRequestException

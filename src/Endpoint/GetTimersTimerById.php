@@ -48,7 +48,7 @@ class GetTimersTimerById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultTimer
-     *@throws GetTimersTimerByIdNotFoundException
+     * @throws GetTimersTimerByIdNotFoundException
      * @throws GetTimersTimerByIdUnprocessableEntityException
      * @throws GetTimersTimerByIdInternalServerErrorException
      * @throws GetTimersTimerByIdUnauthorizedException

@@ -66,7 +66,7 @@ class GetSalesService extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultSalesServices
-     *@throws GetSalesServiceNotFoundException
+     * @throws GetSalesServiceNotFoundException
      * @throws GetSalesServiceInternalServerErrorException
      * @throws GetSalesServiceUnauthorizedException
      */

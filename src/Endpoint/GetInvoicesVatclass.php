@@ -66,7 +66,7 @@ class GetInvoicesVatclass extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultVatClasses
-     *@throws GetInvoicesVatclassNotFoundException
+     * @throws GetInvoicesVatclassNotFoundException
      * @throws GetInvoicesVatclassInternalServerErrorException
      * @throws GetInvoicesVatclassUnauthorizedException
      */

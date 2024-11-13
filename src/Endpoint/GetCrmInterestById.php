@@ -48,7 +48,7 @@ class GetCrmInterestById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultInterest
-     *@throws GetCrmInterestByIdNotFoundException
+     * @throws GetCrmInterestByIdNotFoundException
      * @throws GetCrmInterestByIdUnprocessableEntityException
      * @throws GetCrmInterestByIdInternalServerErrorException
      * @throws GetCrmInterestByIdUnauthorizedException

@@ -66,7 +66,7 @@ class GetProjectsReverseinvoice extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultReverseInvoices
-     *@throws GetProjectsReverseinvoiceNotFoundException
+     * @throws GetProjectsReverseinvoiceNotFoundException
      * @throws GetProjectsReverseinvoiceInternalServerErrorException
      * @throws GetProjectsReverseinvoiceUnauthorizedException
      */

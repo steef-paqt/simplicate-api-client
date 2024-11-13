@@ -48,7 +48,7 @@ class GetDocumentsDocumenttypeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultDocumentType
-     *@throws GetDocumentsDocumenttypeByIdNotFoundException
+     * @throws GetDocumentsDocumenttypeByIdNotFoundException
      * @throws GetDocumentsDocumenttypeByIdUnprocessableEntityException
      * @throws GetDocumentsDocumenttypeByIdInternalServerErrorException
      * @throws GetDocumentsDocumenttypeByIdUnauthorizedException

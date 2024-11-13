@@ -66,7 +66,7 @@ class GetCustomFieldsGroupById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCustomFieldGroup
-     *@throws GetCustomFieldsGroupByIdNotFoundException
+     * @throws GetCustomFieldsGroupByIdNotFoundException
      * @throws GetCustomFieldsGroupByIdInternalServerErrorException
      * @throws GetCustomFieldsGroupByIdUnauthorizedException
      */

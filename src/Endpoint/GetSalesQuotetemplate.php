@@ -66,7 +66,7 @@ class GetSalesQuotetemplate extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultQuoteTemplates
-     *@throws GetSalesQuotetemplateNotFoundException
+     * @throws GetSalesQuotetemplateNotFoundException
      * @throws GetSalesQuotetemplateInternalServerErrorException
      * @throws GetSalesQuotetemplateUnauthorizedException
      */

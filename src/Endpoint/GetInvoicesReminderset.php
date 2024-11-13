@@ -66,7 +66,7 @@ class GetInvoicesReminderset extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultReminderSets
-     *@throws GetInvoicesRemindersetNotFoundException
+     * @throws GetInvoicesRemindersetNotFoundException
      * @throws GetInvoicesRemindersetInternalServerErrorException
      * @throws GetInvoicesRemindersetUnauthorizedException
      */

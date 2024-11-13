@@ -48,7 +48,7 @@ class GetProjectsPurchasetypeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultPurchaseType
-     *@throws GetProjectsPurchasetypeByIdNotFoundException
+     * @throws GetProjectsPurchasetypeByIdNotFoundException
      * @throws GetProjectsPurchasetypeByIdUnprocessableEntityException
      * @throws GetProjectsPurchasetypeByIdInternalServerErrorException
      * @throws GetProjectsPurchasetypeByIdUnauthorizedException

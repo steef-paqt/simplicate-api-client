@@ -66,7 +66,7 @@ class GetInvoicesRemindertemplate extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultReminderTemplates
-     *@throws GetInvoicesRemindertemplateNotFoundException
+     * @throws GetInvoicesRemindertemplateNotFoundException
      * @throws GetInvoicesRemindertemplateInternalServerErrorException
      * @throws GetInvoicesRemindertemplateUnauthorizedException
      */

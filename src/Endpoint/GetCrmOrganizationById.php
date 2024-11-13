@@ -48,7 +48,7 @@ class GetCrmOrganizationById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultOrganization
-     *@throws GetCrmOrganizationByIdUnauthorizedException
+     * @throws GetCrmOrganizationByIdUnauthorizedException
      * @throws GetCrmOrganizationByIdUnprocessableEntityException
      * @throws GetCrmOrganizationByIdInternalServerErrorException
      * @throws GetCrmOrganizationByIdBadRequestException

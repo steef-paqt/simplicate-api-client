@@ -48,7 +48,7 @@ class GetServicesDefaultserviceById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultDefaultService
-     *@throws GetServicesDefaultserviceByIdNotFoundException
+     * @throws GetServicesDefaultserviceByIdNotFoundException
      * @throws GetServicesDefaultserviceByIdUnprocessableEntityException
      * @throws GetServicesDefaultserviceByIdInternalServerErrorException
      * @throws GetServicesDefaultserviceByIdUnauthorizedException

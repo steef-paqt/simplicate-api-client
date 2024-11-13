@@ -66,7 +66,7 @@ class GetCrmIndustry extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultIndustries
-     *@throws GetCrmIndustryNotFoundException
+     * @throws GetCrmIndustryNotFoundException
      * @throws GetCrmIndustryInternalServerErrorException
      * @throws GetCrmIndustryUnauthorizedException
      */

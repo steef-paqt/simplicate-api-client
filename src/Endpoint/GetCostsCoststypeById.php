@@ -48,7 +48,7 @@ class GetCostsCoststypeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultHourType
-     *@throws GetCostsCoststypeByIdNotFoundException
+     * @throws GetCostsCoststypeByIdNotFoundException
      * @throws GetCostsCoststypeByIdUnprocessableEntityException
      * @throws GetCostsCoststypeByIdInternalServerErrorException
      * @throws GetCostsCoststypeByIdUnauthorizedException

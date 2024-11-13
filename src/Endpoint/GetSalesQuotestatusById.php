@@ -48,7 +48,7 @@ class GetSalesQuotestatusById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultQuoteStatus
-     *@throws GetSalesQuotestatusByIdNotFoundException
+     * @throws GetSalesQuotestatusByIdNotFoundException
      * @throws GetSalesQuotestatusByIdUnprocessableEntityException
      * @throws GetSalesQuotestatusByIdInternalServerErrorException
      * @throws GetSalesQuotestatusByIdUnauthorizedException

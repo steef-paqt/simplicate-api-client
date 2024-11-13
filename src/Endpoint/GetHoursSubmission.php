@@ -66,7 +66,7 @@ class GetHoursSubmission extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultHoursSubmissions
-     *@throws GetHoursSubmissionNotFoundException
+     * @throws GetHoursSubmissionNotFoundException
      * @throws GetHoursSubmissionInternalServerErrorException
      * @throws GetHoursSubmissionUnauthorizedException
      */

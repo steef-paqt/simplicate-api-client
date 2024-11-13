@@ -66,7 +66,7 @@ class GetHrmEmploymenttype extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultEmploymentTypes
-     *@throws GetHrmEmploymenttypeNotFoundException
+     * @throws GetHrmEmploymenttypeNotFoundException
      * @throws GetHrmEmploymenttypeInternalServerErrorException
      * @throws GetHrmEmploymenttypeUnauthorizedException
      */

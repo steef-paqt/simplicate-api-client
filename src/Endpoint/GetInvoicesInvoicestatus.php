@@ -66,7 +66,7 @@ class GetInvoicesInvoicestatus extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultInvoiceStatuses
-     *@throws GetInvoicesInvoicestatusNotFoundException
+     * @throws GetInvoicesInvoicestatusNotFoundException
      * @throws GetInvoicesInvoicestatusInternalServerErrorException
      * @throws GetInvoicesInvoicestatusUnauthorizedException
      */

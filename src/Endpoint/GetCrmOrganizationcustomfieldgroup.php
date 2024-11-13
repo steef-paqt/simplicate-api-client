@@ -66,7 +66,7 @@ class GetCrmOrganizationcustomfieldgroup extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCustomFieldGroups
-     *@throws GetCrmOrganizationcustomfieldgroupNotFoundException
+     * @throws GetCrmOrganizationcustomfieldgroupNotFoundException
      * @throws GetCrmOrganizationcustomfieldgroupInternalServerErrorException
      * @throws GetCrmOrganizationcustomfieldgroupUnauthorizedException
      */

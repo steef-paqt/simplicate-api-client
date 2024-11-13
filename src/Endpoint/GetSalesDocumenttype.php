@@ -66,7 +66,7 @@ class GetSalesDocumenttype extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultDocumentTypes
-     *@throws GetSalesDocumenttypeNotFoundException
+     * @throws GetSalesDocumenttypeNotFoundException
      * @throws GetSalesDocumenttypeInternalServerErrorException
      * @throws GetSalesDocumenttypeUnauthorizedException
      */

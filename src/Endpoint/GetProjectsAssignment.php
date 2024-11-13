@@ -66,7 +66,7 @@ class GetProjectsAssignment extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultProjectAssignments
-     *@throws GetProjectsAssignmentNotFoundException
+     * @throws GetProjectsAssignmentNotFoundException
      * @throws GetProjectsAssignmentInternalServerErrorException
      * @throws GetProjectsAssignmentUnauthorizedException
      */

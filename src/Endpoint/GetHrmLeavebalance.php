@@ -66,7 +66,7 @@ class GetHrmLeavebalance extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultLeaveBalances
-     *@throws GetHrmLeavebalanceNotFoundException
+     * @throws GetHrmLeavebalanceNotFoundException
      * @throws GetHrmLeavebalanceInternalServerErrorException
      * @throws GetHrmLeavebalanceUnauthorizedException
      */

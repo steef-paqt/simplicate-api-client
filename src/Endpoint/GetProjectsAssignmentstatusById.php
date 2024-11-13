@@ -67,7 +67,7 @@ class GetProjectsAssignmentstatusById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultProjectAssignmentStatus
-     *@throws GetProjectsAssignmentstatusByIdNotFoundException
+     * @throws GetProjectsAssignmentstatusByIdNotFoundException
      * @throws GetProjectsAssignmentstatusByIdInternalServerErrorException
      * @throws GetProjectsAssignmentstatusByIdUnauthorizedException
      */

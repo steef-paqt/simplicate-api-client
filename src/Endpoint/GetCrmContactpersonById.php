@@ -48,7 +48,7 @@ class GetCrmContactpersonById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultContactPerson
-     *@throws GetCrmContactpersonByIdNotFoundException
+     * @throws GetCrmContactpersonByIdNotFoundException
      * @throws GetCrmContactpersonByIdUnprocessableEntityException
      * @throws GetCrmContactpersonByIdInternalServerErrorException
      * @throws GetCrmContactpersonByIdUnauthorizedException

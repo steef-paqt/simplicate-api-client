@@ -48,7 +48,7 @@ class GetMileageMileageById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultMileage
-     *@throws GetMileageMileageByIdNotFoundException
+     * @throws GetMileageMileageByIdNotFoundException
      * @throws GetMileageMileageByIdUnprocessableEntityException
      * @throws GetMileageMileageByIdInternalServerErrorException
      * @throws GetMileageMileageByIdUnauthorizedException

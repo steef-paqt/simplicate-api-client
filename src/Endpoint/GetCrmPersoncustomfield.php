@@ -66,7 +66,7 @@ class GetCrmPersoncustomfield extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCustomFields
-     *@throws GetCrmPersoncustomfieldNotFoundException
+     * @throws GetCrmPersoncustomfieldNotFoundException
      * @throws GetCrmPersoncustomfieldInternalServerErrorException
      * @throws GetCrmPersoncustomfieldUnauthorizedException
      */

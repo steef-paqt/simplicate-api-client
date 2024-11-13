@@ -48,7 +48,7 @@ class GetProjectsDocumentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultDocument
-     *@throws GetProjectsDocumentByIdNotFoundException
+     * @throws GetProjectsDocumentByIdNotFoundException
      * @throws GetProjectsDocumentByIdUnprocessableEntityException
      * @throws GetProjectsDocumentByIdInternalServerErrorException
      * @throws GetProjectsDocumentByIdUnauthorizedException

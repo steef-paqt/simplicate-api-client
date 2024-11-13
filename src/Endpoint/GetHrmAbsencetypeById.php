@@ -48,7 +48,7 @@ class GetHrmAbsencetypeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultAbsenceType
-     *@throws GetHrmAbsencetypeByIdNotFoundException
+     * @throws GetHrmAbsencetypeByIdNotFoundException
      * @throws GetHrmAbsencetypeByIdUnprocessableEntityException
      * @throws GetHrmAbsencetypeByIdInternalServerErrorException
      * @throws GetHrmAbsencetypeByIdUnauthorizedException

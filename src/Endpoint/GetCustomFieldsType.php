@@ -66,7 +66,7 @@ class GetCustomFieldsType extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCustomFieldTypes
-     *@throws GetCustomFieldsTypeNotFoundException
+     * @throws GetCustomFieldsTypeNotFoundException
      * @throws GetCustomFieldsTypeInternalServerErrorException
      * @throws GetCustomFieldsTypeUnauthorizedException
      */

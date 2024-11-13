@@ -48,7 +48,7 @@ class GetHrmCivilstatusById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCivilStatus
-     *@throws GetHrmCivilstatusByIdNotFoundException
+     * @throws GetHrmCivilstatusByIdNotFoundException
      * @throws GetHrmCivilstatusByIdUnprocessableEntityException
      * @throws GetHrmCivilstatusByIdInternalServerErrorException
      * @throws GetHrmCivilstatusByIdUnauthorizedException

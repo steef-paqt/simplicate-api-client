@@ -66,7 +66,7 @@ class GetCrmMyorganizationprofile extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultMyOrganizationProfiles
-     *@throws GetCrmMyorganizationprofileNotFoundException
+     * @throws GetCrmMyorganizationprofileNotFoundException
      * @throws GetCrmMyorganizationprofileInternalServerErrorException
      * @throws GetCrmMyorganizationprofileUnauthorizedException
      */

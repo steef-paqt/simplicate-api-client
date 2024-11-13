@@ -48,7 +48,7 @@ class GetInvoicesVatclassById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultVatClass
-     *@throws GetInvoicesVatclassByIdNotFoundException
+     * @throws GetInvoicesVatclassByIdNotFoundException
      * @throws GetInvoicesVatclassByIdUnprocessableEntityException
      * @throws GetInvoicesVatclassByIdInternalServerErrorException
      * @throws GetInvoicesVatclassByIdUnauthorizedException

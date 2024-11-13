@@ -67,7 +67,7 @@ class GetCustomFieldsOptionById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCustomFieldOption
-     *@throws GetCustomFieldsOptionByIdNotFoundException
+     * @throws GetCustomFieldsOptionByIdNotFoundException
      * @throws GetCustomFieldsOptionByIdInternalServerErrorException
      * @throws GetCustomFieldsOptionByIdUnauthorizedException
      */

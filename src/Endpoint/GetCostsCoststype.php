@@ -66,7 +66,7 @@ class GetCostsCoststype extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultHourTypes
-     *@throws GetCostsCoststypeNotFoundException
+     * @throws GetCostsCoststypeNotFoundException
      * @throws GetCostsCoststypeInternalServerErrorException
      * @throws GetCostsCoststypeUnauthorizedException
      */

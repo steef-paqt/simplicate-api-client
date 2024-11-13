@@ -68,7 +68,7 @@ class GetCrmOrganization extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultOrganizations
-     *@throws GetCrmOrganizationNotFoundException
+     * @throws GetCrmOrganizationNotFoundException
      * @throws GetCrmOrganizationInternalServerErrorException
      * @throws GetCrmOrganizationUnauthorizedException
      */

@@ -48,7 +48,7 @@ class GetHoursEmployeeexpenseById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultEmployeeExpense
-     *@throws GetHoursEmployeeexpenseByIdNotFoundException
+     * @throws GetHoursEmployeeexpenseByIdNotFoundException
      * @throws GetHoursEmployeeexpenseByIdUnprocessableEntityException
      * @throws GetHoursEmployeeexpenseByIdInternalServerErrorException
      * @throws GetHoursEmployeeexpenseByIdUnauthorizedException

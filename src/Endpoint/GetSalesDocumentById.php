@@ -48,7 +48,7 @@ class GetSalesDocumentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultDocument
-     *@throws GetSalesDocumentByIdNotFoundException
+     * @throws GetSalesDocumentByIdNotFoundException
      * @throws GetSalesDocumentByIdUnprocessableEntityException
      * @throws GetSalesDocumentByIdInternalServerErrorException
      * @throws GetSalesDocumentByIdUnauthorizedException

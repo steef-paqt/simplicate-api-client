@@ -48,7 +48,7 @@ class GetSalesConverttoprojectById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultSale
-     *@throws GetSalesConverttoprojectByIdNotFoundException
+     * @throws GetSalesConverttoprojectByIdNotFoundException
      * @throws GetSalesConverttoprojectByIdUnprocessableEntityException
      * @throws GetSalesConverttoprojectByIdInternalServerErrorException
      * @throws GetSalesConverttoprojectByIdUnauthorizedException

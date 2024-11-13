@@ -66,7 +66,7 @@ class GetHoursTimesheetrow extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultHoursTimesheetRows
-     *@throws GetHoursTimesheetrowUnauthorizedException
+     * @throws GetHoursTimesheetrowUnauthorizedException
      * @throws GetHoursTimesheetrowInternalServerErrorException
      * @throws GetHoursTimesheetrowBadRequestException
      */
