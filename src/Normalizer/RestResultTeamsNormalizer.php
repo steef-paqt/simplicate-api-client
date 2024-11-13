@@ -6,9 +6,9 @@ namespace Paqtcom\Simplicate\Normalizer;
 
 use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
+use Paqtcom\Simplicate\Model\GetTeam;
 use Paqtcom\Simplicate\Model\MetaData;
 use Paqtcom\Simplicate\Model\RestResultTeams;
-use Paqtcom\Simplicate\Model\Team;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -53,7 +53,7 @@ class RestResultTeamsNormalizer implements DenormalizerInterface, NormalizerInte
         if (array_key_exists('data', $data) && $data['data'] !== null) {
             $values = [];
             foreach ($data['data'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, Team::class, 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, GetTeam::class, 'json', $context);
             }
             $object->setData($values);
         }

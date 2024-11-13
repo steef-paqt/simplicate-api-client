@@ -7,12 +7,12 @@ namespace Paqtcom\Simplicate\Model;
 class RestResultTeams extends AbstractRestResult
 {
     /**
-     * @var Team[]
+     * @var GetTeam[]
      */
     protected $data;
 
     /**
-     * @return Team[]
+     * @return GetTeam[]
      */
     public function getData(): array
     {
@@ -20,7 +20,7 @@ class RestResultTeams extends AbstractRestResult
     }
 
     /**
-     * @param Team[] $data
+     * @param GetTeam[] $data
      *
      * @return self
      */
