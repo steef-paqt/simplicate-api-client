@@ -49,10 +49,10 @@ class PostTeam extends AbstractModel
      *
      * @return self
      */
-    public function setValue(bool $value): self
+    public function setValue($value): self
     {
         $this->initialized['value'] = true;
-        $this->value = $value;
+        $this->value = (bool) $value;
 
         return $this;
     }

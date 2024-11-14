@@ -99,10 +99,10 @@ class BaseSetting extends AbstractModel
      *
      * @return self
      */
-    public function setValue(string $value): self
+    public function setValue($value): self
     {
         $this->initialized['value'] = true;
-        $this->value = $value;
+        $this->value = (string) $value;
 
         return $this;
     }
