@@ -66,7 +66,7 @@ class GetDocumentsDocument extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultDocuments
-     *@throws GetDocumentsDocumentNotFoundException
+     * @throws GetDocumentsDocumentNotFoundException
      * @throws GetDocumentsDocumentInternalServerErrorException
      * @throws GetDocumentsDocumentUnauthorizedException
      */

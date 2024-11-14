@@ -66,7 +66,7 @@ class GetHrmLeavetype extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultLeaveTypes
-     *@throws GetHrmLeavetypeNotFoundException
+     * @throws GetHrmLeavetypeNotFoundException
      * @throws GetHrmLeavetypeInternalServerErrorException
      * @throws GetHrmLeavetypeUnauthorizedException
      */

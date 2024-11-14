@@ -47,7 +47,7 @@ class GetProjectsAssignmentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultProjectAssignment
-     *@throws GetProjectsAssignmentByIdNotFoundException
+     * @throws GetProjectsAssignmentByIdNotFoundException
      * @throws GetProjectsAssignmentByIdInternalServerErrorException
      * @throws GetProjectsAssignmentByIdUnauthorizedException
      */

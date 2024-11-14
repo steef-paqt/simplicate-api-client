@@ -66,7 +66,7 @@ class GetMileageMileage extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultMileageList
-     *@throws GetMileageMileageNotFoundException
+     * @throws GetMileageMileageNotFoundException
      * @throws GetMileageMileageInternalServerErrorException
      * @throws GetMileageMileageUnauthorizedException
      */

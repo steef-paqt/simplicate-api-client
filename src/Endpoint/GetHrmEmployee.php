@@ -66,7 +66,7 @@ class GetHrmEmployee extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultEmployees
-     *@throws GetHrmEmployeeNotFoundException
+     * @throws GetHrmEmployeeNotFoundException
      * @throws GetHrmEmployeeInternalServerErrorException
      * @throws GetHrmEmployeeUnauthorizedException
      */

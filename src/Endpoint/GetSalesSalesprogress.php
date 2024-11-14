@@ -66,7 +66,7 @@ class GetSalesSalesprogress extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultSalesProgresses
-     *@throws GetSalesSalesprogressNotFoundException
+     * @throws GetSalesSalesprogressNotFoundException
      * @throws GetSalesSalesprogressInternalServerErrorException
      * @throws GetSalesSalesprogressUnauthorizedException
      */

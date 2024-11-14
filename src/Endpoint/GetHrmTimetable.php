@@ -66,7 +66,7 @@ class GetHrmTimetable extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultTimetables
-     *@throws GetHrmTimetableNotFoundException
+     * @throws GetHrmTimetableNotFoundException
      * @throws GetHrmTimetableInternalServerErrorException
      * @throws GetHrmTimetableUnauthorizedException
      */

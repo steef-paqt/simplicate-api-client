@@ -66,7 +66,7 @@ class GetCrmDebtor extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultDebtorList
-     *@throws GetCrmDebtorNotFoundException
+     * @throws GetCrmDebtorNotFoundException
      * @throws GetCrmDebtorInternalServerErrorException
      * @throws GetCrmDebtorUnauthorizedException
      */

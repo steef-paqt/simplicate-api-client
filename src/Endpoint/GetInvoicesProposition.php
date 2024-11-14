@@ -66,7 +66,7 @@ class GetInvoicesProposition extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultPropositions
-     *@throws GetInvoicesPropositionNotFoundException
+     * @throws GetInvoicesPropositionNotFoundException
      * @throws GetInvoicesPropositionInternalServerErrorException
      * @throws GetInvoicesPropositionUnauthorizedException
      */

@@ -48,7 +48,7 @@ class GetSalesSalesprogressById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultSalesProgress
-     *@throws GetSalesSalesprogressByIdNotFoundException
+     * @throws GetSalesSalesprogressByIdNotFoundException
      * @throws GetSalesSalesprogressByIdUnprocessableEntityException
      * @throws GetSalesSalesprogressByIdInternalServerErrorException
      * @throws GetSalesSalesprogressByIdUnauthorizedException

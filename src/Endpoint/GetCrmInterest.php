@@ -66,7 +66,7 @@ class GetCrmInterest extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultInterests
-     *@throws GetCrmInterestNotFoundException
+     * @throws GetCrmInterestNotFoundException
      * @throws GetCrmInterestInternalServerErrorException
      * @throws GetCrmInterestUnauthorizedException
      */

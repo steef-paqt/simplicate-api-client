@@ -66,7 +66,7 @@ class GetCrmDocumenttype extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultDocumentTypes
-     *@throws GetCrmDocumenttypeNotFoundException
+     * @throws GetCrmDocumenttypeNotFoundException
      * @throws GetCrmDocumenttypeInternalServerErrorException
      * @throws GetCrmDocumenttypeUnauthorizedException
      */

@@ -68,7 +68,7 @@ class GetCrmPerson extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultPersons
-     *@throws GetCrmPersonNotFoundException
+     * @throws GetCrmPersonNotFoundException
      * @throws GetCrmPersonInternalServerErrorException
      * @throws GetCrmPersonUnauthorizedException
      */

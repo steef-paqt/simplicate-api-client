@@ -66,7 +66,7 @@ class GetHrmCivilstatus extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCivilStatuses
-     *@throws GetHrmCivilstatusNotFoundException
+     * @throws GetHrmCivilstatusNotFoundException
      * @throws GetHrmCivilstatusInternalServerErrorException
      * @throws GetHrmCivilstatusUnauthorizedException
      */

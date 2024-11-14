@@ -73,7 +73,7 @@ class GetProjectsAssignmentbudget extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultProjectAssignmentbudget
-     *@throws GetProjectsAssignmentbudgetPaymentRequiredException
+     * @throws GetProjectsAssignmentbudgetPaymentRequiredException
      * @throws GetProjectsAssignmentbudgetNotFoundException
      * @throws GetProjectsAssignmentbudgetInternalServerErrorException
      * @throws GetProjectsAssignmentbudgetUnauthorizedException

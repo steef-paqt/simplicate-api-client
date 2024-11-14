@@ -48,7 +48,7 @@ class GetTimelineMessageById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultTimelineMessage
-     *@throws GetTimelineMessageByIdNotFoundException
+     * @throws GetTimelineMessageByIdNotFoundException
      * @throws GetTimelineMessageByIdUnprocessableEntityException
      * @throws GetTimelineMessageByIdInternalServerErrorException
      * @throws GetTimelineMessageByIdUnauthorizedException

@@ -66,7 +66,7 @@ class GetSalesSalescustomfieldgroup extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCustomFieldGroups
-     *@throws GetSalesSalescustomfieldgroupNotFoundException
+     * @throws GetSalesSalescustomfieldgroupNotFoundException
      * @throws GetSalesSalescustomfieldgroupInternalServerErrorException
      * @throws GetSalesSalescustomfieldgroupUnauthorizedException
      */

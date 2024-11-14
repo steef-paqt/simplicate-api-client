@@ -48,7 +48,7 @@ class GetInvoicesDocumentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultDocument
-     *@throws GetInvoicesDocumentByIdNotFoundException
+     * @throws GetInvoicesDocumentByIdNotFoundException
      * @throws GetInvoicesDocumentByIdUnprocessableEntityException
      * @throws GetInvoicesDocumentByIdInternalServerErrorException
      * @throws GetInvoicesDocumentByIdUnauthorizedException

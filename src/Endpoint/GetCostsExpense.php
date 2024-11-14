@@ -66,7 +66,7 @@ class GetCostsExpense extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultEmployeeExpenseList
-     *@throws GetCostsExpenseNotFoundException
+     * @throws GetCostsExpenseNotFoundException
      * @throws GetCostsExpenseInternalServerErrorException
      * @throws GetCostsExpenseUnauthorizedException
      */

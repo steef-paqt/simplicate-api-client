@@ -66,7 +66,7 @@ class GetProjectsDocument extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultDocuments
-     *@throws GetProjectsDocumentNotFoundException
+     * @throws GetProjectsDocumentNotFoundException
      * @throws GetProjectsDocumentInternalServerErrorException
      * @throws GetProjectsDocumentUnauthorizedException
      */

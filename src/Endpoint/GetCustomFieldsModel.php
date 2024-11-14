@@ -66,7 +66,7 @@ class GetCustomFieldsModel extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCustomFieldModels
-     *@throws GetCustomFieldsModelNotFoundException
+     * @throws GetCustomFieldsModelNotFoundException
      * @throws GetCustomFieldsModelInternalServerErrorException
      * @throws GetCustomFieldsModelUnauthorizedException
      */

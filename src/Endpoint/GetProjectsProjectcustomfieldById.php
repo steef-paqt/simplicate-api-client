@@ -48,7 +48,7 @@ class GetProjectsProjectcustomfieldById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCustomField
-     *@throws GetProjectsProjectcustomfieldByIdNotFoundException
+     * @throws GetProjectsProjectcustomfieldByIdNotFoundException
      * @throws GetProjectsProjectcustomfieldByIdUnprocessableEntityException
      * @throws GetProjectsProjectcustomfieldByIdInternalServerErrorException
      * @throws GetProjectsProjectcustomfieldByIdUnauthorizedException

@@ -48,7 +48,7 @@ class GetInvoicesPaymentById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultPayment
-     *@throws GetInvoicesPaymentByIdNotFoundException
+     * @throws GetInvoicesPaymentByIdNotFoundException
      * @throws GetInvoicesPaymentByIdUnprocessableEntityException
      * @throws GetInvoicesPaymentByIdInternalServerErrorException
      * @throws GetInvoicesPaymentByIdUnauthorizedException

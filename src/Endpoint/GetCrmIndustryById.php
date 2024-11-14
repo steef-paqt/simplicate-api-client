@@ -48,7 +48,7 @@ class GetCrmIndustryById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultIndustry
-     *@throws GetCrmIndustryByIdNotFoundException
+     * @throws GetCrmIndustryByIdNotFoundException
      * @throws GetCrmIndustryByIdUnprocessableEntityException
      * @throws GetCrmIndustryByIdInternalServerErrorException
      * @throws GetCrmIndustryByIdUnauthorizedException

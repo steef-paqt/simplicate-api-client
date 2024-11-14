@@ -66,7 +66,7 @@ class GetHrmTeam extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultTeams
-     *@throws GetHrmTeamNotFoundException
+     * @throws GetHrmTeamNotFoundException
      * @throws GetHrmTeamInternalServerErrorException
      * @throws GetHrmTeamUnauthorizedException
      */

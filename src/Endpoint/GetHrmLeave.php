@@ -66,7 +66,7 @@ class GetHrmLeave extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultLeaveMultiple
-     *@throws GetHrmLeaveNotFoundException
+     * @throws GetHrmLeaveNotFoundException
      * @throws GetHrmLeaveInternalServerErrorException
      * @throws GetHrmLeaveUnauthorizedException
      */

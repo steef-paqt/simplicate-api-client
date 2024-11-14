@@ -48,7 +48,7 @@ class GetCrmOrganizationcustomfieldById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCustomField
-     *@throws GetCrmOrganizationcustomfieldByIdNotFoundException
+     * @throws GetCrmOrganizationcustomfieldByIdNotFoundException
      * @throws GetCrmOrganizationcustomfieldByIdUnprocessableEntityException
      * @throws GetCrmOrganizationcustomfieldByIdInternalServerErrorException
      * @throws GetCrmOrganizationcustomfieldByIdUnauthorizedException

@@ -66,7 +66,7 @@ class GetSharedItem extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultSharedItems
-     *@throws GetSharedItemNotFoundException
+     * @throws GetSharedItemNotFoundException
      * @throws GetSharedItemInternalServerErrorException
      * @throws GetSharedItemUnauthorizedException
      */

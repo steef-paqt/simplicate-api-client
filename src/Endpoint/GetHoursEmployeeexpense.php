@@ -66,7 +66,7 @@ class GetHoursEmployeeexpense extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultEmployeeExpenseList
-     *@throws GetHoursEmployeeexpenseNotFoundException
+     * @throws GetHoursEmployeeexpenseNotFoundException
      * @throws GetHoursEmployeeexpenseInternalServerErrorException
      * @throws GetHoursEmployeeexpenseUnauthorizedException
      */

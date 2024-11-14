@@ -49,7 +49,7 @@ class PostCrmMergeperson extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|ResultMergerMerge
-     *@throws PostCrmMergepersonUnauthorizedException
+     * @throws PostCrmMergepersonUnauthorizedException
      * @throws PostCrmMergepersonInternalServerErrorException
      * @throws PostCrmMergepersonBadRequestException
      */

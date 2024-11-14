@@ -49,7 +49,7 @@ class PostMergerCompareorganization extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultMergerCompare
-     *@throws PostMergerCompareorganizationUnauthorizedException
+     * @throws PostMergerCompareorganizationUnauthorizedException
      * @throws PostMergerCompareorganizationInternalServerErrorException
      * @throws PostMergerCompareorganizationBadRequestException
      */

@@ -655,10 +655,7 @@ class GetPerson extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
@@ -676,10 +673,7 @@ class GetPerson extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPhone(): string
+    public function getPhone(): ?string
     {
         return $this->phone;
     }

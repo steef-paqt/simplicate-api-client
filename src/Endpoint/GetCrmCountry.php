@@ -66,7 +66,7 @@ class GetCrmCountry extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCountries
-     *@throws GetCrmCountryNotFoundException
+     * @throws GetCrmCountryNotFoundException
      * @throws GetCrmCountryInternalServerErrorException
      * @throws GetCrmCountryUnauthorizedException
      */

@@ -48,7 +48,7 @@ class GetHrmEmployeecustomfieldgroupById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCustomFieldGroup
-     *@throws GetHrmEmployeecustomfieldgroupByIdNotFoundException
+     * @throws GetHrmEmployeecustomfieldgroupByIdNotFoundException
      * @throws GetHrmEmployeecustomfieldgroupByIdUnprocessableEntityException
      * @throws GetHrmEmployeecustomfieldgroupByIdInternalServerErrorException
      * @throws GetHrmEmployeecustomfieldgroupByIdUnauthorizedException

@@ -48,7 +48,7 @@ class GetSalesRevenuegroupById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultRevenueGroup
-     *@throws GetSalesRevenuegroupByIdNotFoundException
+     * @throws GetSalesRevenuegroupByIdNotFoundException
      * @throws GetSalesRevenuegroupByIdUnprocessableEntityException
      * @throws GetSalesRevenuegroupByIdInternalServerErrorException
      * @throws GetSalesRevenuegroupByIdUnauthorizedException

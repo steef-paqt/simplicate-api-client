@@ -66,7 +66,7 @@ class GetCustomFieldsGroup extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultCustomFieldGroups
-     *@throws GetCustomFieldsGroupNotFoundException
+     * @throws GetCustomFieldsGroupNotFoundException
      * @throws GetCustomFieldsGroupInternalServerErrorException
      * @throws GetCustomFieldsGroupUnauthorizedException
      */

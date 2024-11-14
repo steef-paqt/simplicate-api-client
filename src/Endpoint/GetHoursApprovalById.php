@@ -48,7 +48,7 @@ class GetHoursApprovalById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultApproval
-     *@throws GetHoursApprovalByIdNotFoundException
+     * @throws GetHoursApprovalByIdNotFoundException
      * @throws GetHoursApprovalByIdUnprocessableEntityException
      * @throws GetHoursApprovalByIdInternalServerErrorException
      * @throws GetHoursApprovalByIdUnauthorizedException

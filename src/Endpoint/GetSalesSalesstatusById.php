@@ -48,7 +48,7 @@ class GetSalesSalesstatusById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultSalesStatus
-     *@throws GetSalesSalesstatusByIdNotFoundException
+     * @throws GetSalesSalesstatusByIdNotFoundException
      * @throws GetSalesSalesstatusByIdUnprocessableEntityException
      * @throws GetSalesSalesstatusByIdInternalServerErrorException
      * @throws GetSalesSalesstatusByIdUnauthorizedException

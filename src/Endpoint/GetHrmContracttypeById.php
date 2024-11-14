@@ -48,7 +48,7 @@ class GetHrmContracttypeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultContractType
-     *@throws GetHrmContracttypeByIdNotFoundException
+     * @throws GetHrmContracttypeByIdNotFoundException
      * @throws GetHrmContracttypeByIdUnprocessableEntityException
      * @throws GetHrmContracttypeByIdInternalServerErrorException
      * @throws GetHrmContracttypeByIdUnauthorizedException

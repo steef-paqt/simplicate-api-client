@@ -48,7 +48,7 @@ class GetCrmOrganizationsizeById extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultOrganizationSize
-     *@throws GetCrmOrganizationsizeByIdNotFoundException
+     * @throws GetCrmOrganizationsizeByIdNotFoundException
      * @throws GetCrmOrganizationsizeByIdUnprocessableEntityException
      * @throws GetCrmOrganizationsizeByIdInternalServerErrorException
      * @throws GetCrmOrganizationsizeByIdUnauthorizedException

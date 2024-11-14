@@ -49,7 +49,7 @@ class PostMergerCompareperson extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultMergerCompare
-     *@throws PostMergerComparepersonUnauthorizedException
+     * @throws PostMergerComparepersonUnauthorizedException
      * @throws PostMergerComparepersonInternalServerErrorException
      * @throws PostMergerComparepersonBadRequestException
      */

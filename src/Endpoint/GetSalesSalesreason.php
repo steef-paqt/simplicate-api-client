@@ -68,7 +68,7 @@ class GetSalesSalesreason extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultSalesReasons
-     *@throws GetSalesSalesreasonNotFoundException
+     * @throws GetSalesSalesreasonNotFoundException
      * @throws GetSalesSalesreasonInternalServerErrorException
      * @throws GetSalesSalesreasonUnauthorizedException
      */

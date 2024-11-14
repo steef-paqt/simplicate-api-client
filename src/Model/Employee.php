@@ -243,10 +243,7 @@ class Employee extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getWorkPhone(): string
+    public function getWorkPhone(): ?string
     {
         return $this->workPhone;
     }
@@ -264,10 +261,7 @@ class Employee extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getWorkMobile(): string
+    public function getWorkMobile(): ?string
     {
         return $this->workMobile;
     }
@@ -285,10 +279,7 @@ class Employee extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getWorkEmail(): string
+    public function getWorkEmail(): ?string
     {
         return $this->workEmail;
     }
@@ -315,14 +306,14 @@ class Employee extends AbstractModel
     }
 
     /**
-     * @param float $hourlySalesTariff
+     * @param string|float $hourlySalesTariff
      *
      * @return self
      */
-    public function setHourlySalesTariff(float $hourlySalesTariff): self
+    public function setHourlySalesTariff($hourlySalesTariff): self
     {
         $this->initialized['hourlySalesTariff'] = true;
-        $this->hourlySalesTariff = $hourlySalesTariff;
+        $this->hourlySalesTariff = (float) $hourlySalesTariff;
 
         return $this;
     }
@@ -336,14 +327,14 @@ class Employee extends AbstractModel
     }
 
     /**
-     * @param float $hourlyCostTariff
+     * @param string|float $hourlyCostTariff
      *
      * @return self
      */
-    public function setHourlyCostTariff(float $hourlyCostTariff): self
+    public function setHourlyCostTariff($hourlyCostTariff): self
     {
         $this->initialized['hourlyCostTariff'] = true;
-        $this->hourlyCostTariff = $hourlyCostTariff;
+        $this->hourlyCostTariff = (float) $hourlyCostTariff;
 
         return $this;
     }

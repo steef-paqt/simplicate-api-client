@@ -66,7 +66,7 @@ class GetProjectsProjectstatus extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultProjectStatusses
-     *@throws GetProjectsProjectstatusNotFoundException
+     * @throws GetProjectsProjectstatusNotFoundException
      * @throws GetProjectsProjectstatusInternalServerErrorException
      * @throws GetProjectsProjectstatusUnauthorizedException
      */

@@ -66,7 +66,7 @@ class GetProjectsProject extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultProjects
-     *@throws GetProjectsProjectNotFoundException
+     * @throws GetProjectsProjectNotFoundException
      * @throws GetProjectsProjectInternalServerErrorException
      * @throws GetProjectsProjectUnauthorizedException
      */

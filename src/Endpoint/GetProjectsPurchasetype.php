@@ -66,7 +66,7 @@ class GetProjectsPurchasetype extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|RestResultPurchaseTypes
-     *@throws GetProjectsPurchasetypeNotFoundException
+     * @throws GetProjectsPurchasetypeNotFoundException
      * @throws GetProjectsPurchasetypeInternalServerErrorException
      * @throws GetProjectsPurchasetypeUnauthorizedException
      */

@@ -49,7 +49,7 @@ class PostCrmMergeorganization extends BaseEndpoint
     /**
      * {@inheritdoc}
      * @return null|ResultMergerMerge
-     *@throws PostCrmMergeorganizationUnauthorizedException
+     * @throws PostCrmMergeorganizationUnauthorizedException
      * @throws PostCrmMergeorganizationInternalServerErrorException
      * @throws PostCrmMergeorganizationBadRequestException
      */
