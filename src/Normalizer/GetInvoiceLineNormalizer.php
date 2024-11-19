@@ -73,7 +73,7 @@ class GetInvoiceLineNormalizer implements DenormalizerInterface, NormalizerInter
             $object->setVatClass($this->denormalizer->denormalize($data['vat_class'], VatClass::class, 'json', $context));
         }
         if (array_key_exists('total_vat', $data)) {
-            $object->setTotalVat($data['total_vat']);
+            $object->setTotalVat((float) $data['total_vat']);
         }
         if (array_key_exists('service_id', $data)) {
             $object->setServiceId($data['service_id']);
@@ -91,10 +91,10 @@ class GetInvoiceLineNormalizer implements DenormalizerInterface, NormalizerInter
             $object->setDescription($data['description']);
         }
         if (array_key_exists('amount', $data)) {
-            $object->setAmount($data['amount']);
+            $object->setAmount((float) $data['amount']);
         }
         if (array_key_exists('price', $data)) {
-            $object->setPrice($data['price']);
+            $object->setPrice((float) $data['price']);
         }
 
         return $object;

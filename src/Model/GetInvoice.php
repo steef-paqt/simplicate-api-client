@@ -27,7 +27,7 @@ class GetInvoice extends AbstractModel
      */
     protected $invoiceNumber;
     /**
-     * @var string
+     * @var InvoiceStatus
      */
     protected $status;
     /**
@@ -79,7 +79,7 @@ class GetInvoice extends AbstractModel
      */
     protected $createdAt;
     /**
-     * @var string
+     * @var ?string
      */
     protected $updatedAt;
     /**
@@ -107,7 +107,7 @@ class GetInvoice extends AbstractModel
      */
     protected $personId;
     /**
-     * @var string
+     * @var ?string
      */
     protected $date;
     /**
@@ -232,10 +232,7 @@ class GetInvoice extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStatus(): string
+    public function getStatus(): InvoiceStatus
     {
         return $this->status;
     }
@@ -245,10 +242,10 @@ class GetInvoice extends AbstractModel
      *
      * @return self
      */
-    public function setStatus(string $status): self
+    public function setStatus(string $id, string $label): self
     {
         $this->initialized['status'] = true;
-        $this->status = $status;
+        $this->status = (new InvoiceStatus())->setId($id)->setName($label);
 
         return $this;
     }
@@ -505,10 +502,7 @@ class GetInvoice extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getUpdatedAt(): string
+    public function getUpdatedAt(): ?string
     {
         return $this->updatedAt;
     }
@@ -652,10 +646,7 @@ class GetInvoice extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDate(): string
+    public function getDate(): ?string
     {
         return $this->date;
     }

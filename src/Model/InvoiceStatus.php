@@ -56,7 +56,9 @@ class InvoiceStatus extends AbstractModel
     public function setName(string $name): self
     {
         $this->initialized['name'] = true;
-        $this->name = $name;
+        $status = (string) current(array_reverse(explode('label_', $name, 2)));
+        /** @noinspection SpellCheckingInspection */
+        $this->name = str_replace('Sended', 'Sent', $status);
 
         return $this;
     }

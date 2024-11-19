@@ -89,19 +89,21 @@ class GetInvoiceNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setInvoiceNumber($data['invoice_number']);
         }
         if (array_key_exists('status', $data)) {
-            $object->setStatus($data['status']);
+            $id = $data['status']['id'] ?? '';
+            $label = $data['status']['name'] ?? (string) $data['status'];
+            $object->setStatus($id, $label);
         }
         if (array_key_exists('total_excluding_vat', $data)) {
-            $object->setTotalExcludingVat($data['total_excluding_vat']);
+            $object->setTotalExcludingVat((float) $data['total_excluding_vat']);
         }
         if (array_key_exists('total_vat', $data)) {
-            $object->setTotalVat($data['total_vat']);
+            $object->setTotalVat((float) $data['total_vat']);
         }
         if (array_key_exists('total_including_vat', $data)) {
-            $object->setTotalIncludingVat($data['total_including_vat']);
+            $object->setTotalIncludingVat((float) $data['total_including_vat']);
         }
         if (array_key_exists('total_outstanding', $data)) {
-            $object->setTotalOutstanding($data['total_outstanding']);
+            $object->setTotalOutstanding((float) $data['total_outstanding']);
         }
         if (array_key_exists('organization', $data)) {
             $object->setOrganization($this->denormalizer->denormalize($data['organization'], GetOrganizationSimple::class, 'json', $context));
