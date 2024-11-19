@@ -19,7 +19,7 @@ class GetCustomField extends AbstractModel
      */
     protected $label;
     /**
-     * @var string
+     * @var ?string
      */
     protected $value;
     /**
@@ -122,10 +122,7 @@ class GetCustomField extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getValue(): string
+    public function getValue(): ?string
     {
         return $this->value;
     }

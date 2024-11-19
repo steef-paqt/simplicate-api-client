@@ -13,9 +13,11 @@ class PostCustomFieldValue extends AbstractModel
      */
     protected $name;
     /**
-     * The value for the custom field. Type of value is dependent on the custom field. Can be a string, int, bool, float, or a reference to a customfieldoption:abcd
+     * The value for the custom field.
+     * Type of value is dependent on the custom field. Can be a string, int, bool, float, or a reference to a
+     * `customfieldoption:abcd`.
      *
-     * @var string
+     * @var ?string
      */
     protected $value;
 
@@ -45,11 +47,11 @@ class PostCustomFieldValue extends AbstractModel
     }
 
     /**
-     * The value for the custom field. Type of value is dependent on the custom field. Can be a string, int, bool, float, or a reference to a customfieldoption:abcd
-     *
-     * @return string
+     * The value for the custom field.
+     * Type of value is dependent on the custom field. Can be a string, int, bool, float, or a reference to a
+     * `customfieldoption:abcd`.
      */
-    public function getValue(): string
+    public function getValue(): ?string
     {
         return $this->value;
     }

@@ -19,7 +19,7 @@ class BaseSetting extends AbstractModel
      */
     protected $key;
     /**
-     * @var string
+     * @var ?string
      */
     protected $value;
 
@@ -86,10 +86,7 @@ class BaseSetting extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getValue(): string
+    public function getValue(): ?string
     {
         return $this->value;
     }
