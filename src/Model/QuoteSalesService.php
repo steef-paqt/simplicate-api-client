@@ -39,7 +39,7 @@ class QuoteSalesService extends AbstractModel
      */
     protected $price;
     /**
-     * @var int
+     * @var bool
      */
     protected $showItemtype;
     /**
@@ -235,20 +235,12 @@ class QuoteSalesService extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getShowItemtype(): int
+    public function getShowItemtype(): bool
     {
         return $this->showItemtype;
     }
 
-    /**
-     * @param int $showItemtype
-     *
-     * @return self
-     */
-    public function setShowItemtype(int $showItemtype): self
+    public function setShowItemtype(bool $showItemtype): self
     {
         $this->initialized['showItemtype'] = true;
         $this->showItemtype = $showItemtype;
@@ -265,14 +257,13 @@ class QuoteSalesService extends AbstractModel
     }
 
     /**
-     * @param string $total
-     *
+     * @param int|string $total
      * @return self
      */
-    public function setTotal(string $total): self
+    public function setTotal(int|string $total): self
     {
         $this->initialized['total'] = true;
-        $this->total = $total;
+        $this->total = (string) $total;
 
         return $this;
     }

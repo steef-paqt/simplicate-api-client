@@ -75,15 +75,15 @@ class GetQuote extends AbstractModel
      */
     protected $downloadUrl;
     /**
-     * @var int
+     * @var bool
      */
     protected $isSepaAuthorization;
     /**
-     * @var int
+     * @var bool
      */
     protected $isOutdated;
     /**
-     * @var int
+     * @var bool
      */
     protected $isBlocked;
     /**
@@ -295,15 +295,10 @@ class GetQuote extends AbstractModel
         return $this->totalExcl;
     }
 
-    /**
-     * @param string $totalExcl
-     *
-     * @return self
-     */
-    public function setTotalExcl(string $totalExcl): self
+    public function setTotalExcl(int|string $totalExcl): self
     {
         $this->initialized['totalExcl'] = true;
-        $this->totalExcl = $totalExcl;
+        $this->totalExcl = (string) $totalExcl;
 
         return $this;
     }
@@ -316,15 +311,10 @@ class GetQuote extends AbstractModel
         return $this->totalIncl;
     }
 
-    /**
-     * @param string $totalIncl
-     *
-     * @return self
-     */
-    public function setTotalIncl(string $totalIncl): self
+    public function setTotalIncl(int|string $totalIncl): self
     {
         $this->initialized['totalIncl'] = true;
-        $this->totalIncl = $totalIncl;
+        $this->totalIncl = (string) $totalIncl;
 
         return $this;
     }
@@ -337,15 +327,10 @@ class GetQuote extends AbstractModel
         return $this->totalVat;
     }
 
-    /**
-     * @param string $totalVat
-     *
-     * @return self
-     */
-    public function setTotalVat(string $totalVat): self
+    public function setTotalVat(int|string $totalVat): self
     {
         $this->initialized['totalVat'] = true;
-        $this->totalVat = $totalVat;
+        $this->totalVat = (string) $totalVat;
 
         return $this;
     }
@@ -476,44 +461,33 @@ class GetQuote extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getIsSepaAuthorization(): int
+    public function getIsSepaAuthorization(): bool
     {
         return $this->isSepaAuthorization;
     }
 
-    /**
-     * @param int $isSepaAuthorization
-     *
-     * @return self
-     */
-    public function setIsSepaAuthorization(int $isSepaAuthorization): self
+    public function setIsSepaAuthorization($isSepaAuthorization): self
     {
         $this->initialized['isSepaAuthorization'] = true;
-        $this->isSepaAuthorization = $isSepaAuthorization;
+        $this->isSepaAuthorization = (bool) $isSepaAuthorization;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getIsOutdated(): int
+    public function getIsOutdated(): bool
     {
         return $this->isOutdated;
     }
 
     /**
-     * @param int $isOutdated
+     * @param int|bool $isOutdated
      *
      * @return self
      */
-    public function setIsOutdated(int $isOutdated): self
+    public function setIsOutdated($isOutdated): self
     {
         $this->initialized['isOutdated'] = true;
-        $this->isOutdated = $isOutdated;
+        $this->isOutdated = (bool) $isOutdated;
 
         return $this;
     }
@@ -521,20 +495,20 @@ class GetQuote extends AbstractModel
     /**
      * @return int
      */
-    public function getIsBlocked(): int
+    public function getIsBlocked(): bool
     {
         return $this->isBlocked;
     }
 
     /**
-     * @param int $isBlocked
+     * @param int|bool $isBlocked
      *
      * @return self
      */
-    public function setIsBlocked(int $isBlocked): self
+    public function setIsBlocked($isBlocked): self
     {
         $this->initialized['isBlocked'] = true;
-        $this->isBlocked = $isBlocked;
+        $this->isBlocked = (bool) $isBlocked;
 
         return $this;
     }

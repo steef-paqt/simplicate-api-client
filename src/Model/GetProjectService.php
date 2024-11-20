@@ -39,7 +39,7 @@ class GetProjectService extends AbstractModel
      */
     protected $vatClass;
     /**
-     * @var RevenueGroup
+     * @var ?RevenueGroup
      */
     protected $revenueGroup;
     /**
@@ -299,10 +299,7 @@ class GetProjectService extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return RevenueGroup
-     */
-    public function getRevenueGroup(): RevenueGroup
+    public function getRevenueGroup(): ?RevenueGroup
     {
         return $this->revenueGroup;
     }
