@@ -29,11 +29,11 @@ class GetProjectService extends AbstractModel
     /**
      * @var GetProjectServiceHoursType[]
      */
-    protected $hourTypes;
+    protected $hourTypes = [];
     /**
      * @var GetProjectServiceCostType[]
      */
-    protected $costTypes;
+    protected $costTypes = [];
     /**
      * @var VatClass
      */
@@ -49,7 +49,7 @@ class GetProjectService extends AbstractModel
     /**
      * @var Installment[]
      */
-    protected $installments;
+    protected $installments = [];
     /**
      * @var string
      */
