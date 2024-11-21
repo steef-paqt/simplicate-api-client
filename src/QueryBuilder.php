@@ -23,6 +23,16 @@ class QueryBuilder
         return new self($offset, $limit, $select, $sort);
     }
 
+    /**
+     * @param string[] $values
+     */
+    public function select(array $values): self
+    {
+        $this->select = $values;
+
+        return $this;
+    }
+
     public function where(string $key, string $operatorOrValue, string $value = null): self
     {
         $this->query[$key] = $this->getValue($operatorOrValue, $value);

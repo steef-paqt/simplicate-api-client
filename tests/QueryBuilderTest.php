@@ -117,6 +117,14 @@ final class QueryBuilderTest extends TestCase
         $this->assertSame("limit=99&q[foo][or][nin]=bar,baz", $queryString);
     }
 
+    public function testQueryBuilderCanQueryWithSelect(): void
+    {
+        $query = QueryBuilder::query()->select(['foo', 'bar.', 'baz']);
+        echo $queryString = $this->getQueryString($query);
+
+        $this->assertSame("limit=99&select=foo,bar.,baz", $queryString);
+    }
+
     public static function operationsProvider(): array
     {
         return [

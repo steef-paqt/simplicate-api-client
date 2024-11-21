@@ -52,6 +52,7 @@ abstract class BaseEndpoint implements Endpoint
         return (new OptionsResolver())->setDefined([
             'q',
             'metadata',
+            'select',
         ]);
     }
 
