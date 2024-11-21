@@ -120,9 +120,36 @@ final class QueryBuilderTest extends TestCase
     public function testQueryBuilderCanQueryWithSelect(): void
     {
         $query = QueryBuilder::query()->select(['foo', 'bar.', 'baz']);
-        echo $queryString = $this->getQueryString($query);
+        $queryString = $this->getQueryString($query);
 
         $this->assertSame("limit=99&select=foo,bar.,baz", $queryString);
+    }
+
+    public function testQueryBuilderCanQueryWithMeta(): void
+    {
+        $query = QueryBuilder::query()->withMeta();
+        $queryString = $this->getQueryString($query);
+
+        $this->assertSame("limit=99&metadata=count,limit,offset", $queryString);
+    }
+
+    #[DataProvider('metaProvider')]
+    public function testQueryBuilderCanQueryWithSpecificMeta(array $values, string $expected): void
+    {
+        $query = QueryBuilder::query()->withMeta($values);
+        $queryString = $this->getQueryString($query);
+
+        $this->assertSame("limit=99$expected", $queryString);
+    }
+
+    public static function metaProvider(): array
+    {
+        return [
+            [['foo', 'bar'], ''],
+            [['count', 'foo'], '&metadata=count'],
+            [['count', 'offset'], '&metadata=count,offset'],
+            [['count', 'offset', 'limit'], '&metadata=count,offset,limit'],
+        ];
     }
 
     public static function operationsProvider(): array
