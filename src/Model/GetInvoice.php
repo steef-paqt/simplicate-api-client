@@ -63,7 +63,7 @@ class GetInvoice extends AbstractModel
      */
     protected $subscriptionCycle;
     /**
-     * @var GetProjectSimple
+     * @var ?GetProjectSimple
      */
     protected $project;
     /**
@@ -418,10 +418,7 @@ class GetInvoice extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return GetProjectSimple
-     */
-    public function getProject(): GetProjectSimple
+    public function getProject(): ?GetProjectSimple
     {
         return $this->project;
     }
