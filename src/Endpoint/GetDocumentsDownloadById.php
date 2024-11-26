@@ -55,9 +55,8 @@ class GetDocumentsDownloadById extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $body = (string) $response->getBody();
         if (200 === $status) {
-            return json_decode($body);
+            return $response;
         }
         if (401 === $status) {
             throw new GetDocumentsDownloadByIdUnauthorizedException($response);
@@ -71,6 +70,7 @@ class GetDocumentsDownloadById extends BaseEndpoint
         if (500 === $status) {
             throw new GetDocumentsDownloadByIdInternalServerErrorException($response);
         }
+        throw new \UnexpectedValueException('Received unknown status: ' . $status);
     }
 
     public function getAuthenticationScopes(): array

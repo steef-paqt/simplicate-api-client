@@ -39,7 +39,7 @@ class GetInvoiceLine extends AbstractModel
      */
     protected $updatedAt;
     /**
-     * @var string
+     * @var ?string
      */
     protected $date;
     /**
@@ -223,10 +223,7 @@ class GetInvoiceLine extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDate(): string
+    public function getDate(): ?string
     {
         return $this->date;
     }
