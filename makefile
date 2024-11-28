@@ -19,7 +19,7 @@ stan:
 
 ## Run all code-style fixers
 fix: fix-cs-fixer fix-phpcbf fix-rector
-validate: fix
+validate: fix stan test
 
 composer:
 	composer install

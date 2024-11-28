@@ -746,28 +746,28 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsGroupUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsGroupNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsGroupInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsGroupUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsGroupNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsGroupInternalServerErrorException
      *
      * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldGroups|\Psr\Http\Message\ResponseInterface
      */
-    public function getCustomfieldsGroup(array $queryParameters = [])
+    public function getCustomFieldsGroup(array $queryParameters = [])
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsGroup($queryParameters));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomFieldsGroup($queryParameters));
     }
 
     /**
      * @param string $id The template's id
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomfieldsGroupByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomfieldsGroupByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomfieldsGroupByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsGroupByIdInternalServerErrorException
      *
      * @return null|\Psr\Http\Message\ResponseInterface
      */
-    public function deleteCustomfieldsGroupById(string $id)
+    public function deleteCustomFieldsGroupById(string $id)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCustomfieldsGroupById($id));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCustomFieldsGroupById($id));
     }
 
     /**
@@ -776,45 +776,45 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsGroupByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsGroupByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsGroupByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsGroupByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsGroupByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsGroupByIdInternalServerErrorException
      *
      * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup|\Psr\Http\Message\ResponseInterface
      */
-    public function getCustomfieldsGroupById(array $queryParameters = [])
+    public function getCustomFieldsGroupById(array $queryParameters = [])
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsGroupById($queryParameters));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomFieldsGroupById($queryParameters));
     }
 
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values
-     * @throws \Paqtcom\Simplicate\Exception\PostCustomfieldsGroupByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostCustomfieldsGroupByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostCustomfieldsGroupByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostCustomfieldsGroupByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsGroupByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsGroupByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsGroupByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsGroupByIdInternalServerErrorException
      *
      * @return null|\Psr\Http\Message\ResponseInterface
      */
-    public function postCustomfieldsGroupById(string $id, \Paqtcom\Simplicate\Model\CustomFieldGroup $body)
+    public function postCustomFieldsGroupById(string $id, \Paqtcom\Simplicate\Model\CustomFieldGroup $body)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCustomfieldsGroupById($id, $body));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCustomFieldsGroupById($id, $body));
     }
 
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\CustomFieldGroup $body Organization object containing data that with the new values
-     * @throws \Paqtcom\Simplicate\Exception\PutCustomfieldsGroupByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutCustomfieldsGroupByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutCustomfieldsGroupByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutCustomfieldsGroupByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsGroupByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsGroupByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsGroupByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsGroupByIdInternalServerErrorException
      *
      * @return null|\Psr\Http\Message\ResponseInterface
      */
-    public function putCustomfieldsGroupById(string $id, \Paqtcom\Simplicate\Model\CustomFieldGroup $body)
+    public function putCustomFieldsGroupById(string $id, \Paqtcom\Simplicate\Model\CustomFieldGroup $body)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutCustomfieldsGroupById($id, $body));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutCustomFieldsGroupById($id, $body));
     }
 
     /**
@@ -823,15 +823,15 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsModelUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsModelNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsModelInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsModelUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsModelNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsModelInternalServerErrorException
      *
      * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldModels|\Psr\Http\Message\ResponseInterface
      */
-    public function getCustomfieldsModel(array $queryParameters = [])
+    public function getCustomFieldsModel(array $queryParameters = [])
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsModel($queryParameters));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomFieldsModel($queryParameters));
     }
 
     /**
@@ -840,15 +840,15 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsModelByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsModelByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsModelByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsModelByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsModelByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsModelByIdInternalServerErrorException
      *
      * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldModel|\Psr\Http\Message\ResponseInterface
      */
-    public function getCustomfieldsModelById(array $queryParameters = [])
+    public function getCustomFieldsModelById(array $queryParameters = [])
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsModelById($queryParameters));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomFieldsModelById($queryParameters));
     }
 
     /**
@@ -857,28 +857,28 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsOptionUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsOptionNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsOptionInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsOptionUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsOptionNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsOptionInternalServerErrorException
      *
      * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldOptions|\Psr\Http\Message\ResponseInterface
      */
-    public function getCustomfieldsOption(array $queryParameters = [])
+    public function getCustomFieldsOption(array $queryParameters = [])
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsOption($queryParameters));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomFieldsOption($queryParameters));
     }
 
     /**
      * @param string $id The template's id
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomfieldsOptionByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomfieldsOptionByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomfieldsOptionByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsOptionByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsOptionByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\DeleteCustomFieldsOptionByIdInternalServerErrorException
      *
      * @return null|\Psr\Http\Message\ResponseInterface
      */
-    public function deleteCustomfieldsOptionById(string $id)
+    public function deleteCustomFieldsOptionById(string $id)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCustomfieldsOptionById($id));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\DeleteCustomFieldsOptionById($id));
     }
 
     /**
@@ -888,44 +888,44 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsOptionByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsOptionByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsOptionByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsOptionByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsOptionByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsOptionByIdInternalServerErrorException
      *
      * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldOption|\Psr\Http\Message\ResponseInterface
      */
-    public function getCustomfieldsOptionById(string $id, array $queryParameters = [])
+    public function getCustomFieldsOptionById(string $id, array $queryParameters = [])
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsOptionById($id, $queryParameters));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomFieldsOptionById($id, $queryParameters));
     }
 
     /**
      * @param \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data
-     * @throws \Paqtcom\Simplicate\Exception\PostCustomfieldsOptionByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PostCustomfieldsOptionByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PostCustomfieldsOptionByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PostCustomfieldsOptionByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsOptionByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsOptionByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsOptionByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PostCustomFieldsOptionByIdInternalServerErrorException
      *
      * @return null|\Psr\Http\Message\ResponseInterface
      */
-    public function postCustomfieldsOptionById(\Paqtcom\Simplicate\Model\CustomFieldOption $body)
+    public function postCustomFieldsOptionById(\Paqtcom\Simplicate\Model\CustomFieldOption $body)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCustomfieldsOptionById($body));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCustomFieldsOptionById($body));
     }
 
     /**
      * @param string $id The template's id
      * @param \Paqtcom\Simplicate\Model\CustomFieldOption $body CustomFieldOption object containing data
-     * @throws \Paqtcom\Simplicate\Exception\PutCustomfieldsOptionByIdBadRequestException
-     * @throws \Paqtcom\Simplicate\Exception\PutCustomfieldsOptionByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\PutCustomfieldsOptionByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\PutCustomfieldsOptionByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdBadRequestException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdInternalServerErrorException
      *
      * @return null|\Psr\Http\Message\ResponseInterface
      */
-    public function putCustomfieldsOptionById(string $id, \Paqtcom\Simplicate\Model\CustomFieldOption $body)
+    public function putCustomFieldsOptionById(string $id, \Paqtcom\Simplicate\Model\CustomFieldOption $body)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutCustomfieldsOptionById($id, $body));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PutCustomFieldsOptionById($id, $body));
     }
 
     /**
@@ -934,15 +934,15 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsTypeUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsTypeNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsTypeInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeInternalServerErrorException
      *
      * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldTypes|\Psr\Http\Message\ResponseInterface
      */
-    public function getCustomfieldsType(array $queryParameters = [])
+    public function getCustomFieldsType(array $queryParameters = [])
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsType($queryParameters));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomFieldsType($queryParameters));
     }
 
     /**
@@ -951,15 +951,15 @@ class Client extends ParentClient
      *     @var int $limit The limit of max allowed results
      *     @var string $sort Sort the result by column name
      * }
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsTypeByIdUnauthorizedException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsTypeByIdNotFoundException
-     * @throws \Paqtcom\Simplicate\Exception\GetCustomfieldsTypeByIdInternalServerErrorException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeByIdUnauthorizedException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeByIdNotFoundException
+     * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeByIdInternalServerErrorException
      *
      * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldType|\Psr\Http\Message\ResponseInterface
      */
-    public function getCustomfieldsTypeById(array $queryParameters = [])
+    public function getCustomFieldsTypeById(array $queryParameters = [])
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomfieldsTypeById($queryParameters));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomFieldsTypeById($queryParameters));
     }
 
     /**

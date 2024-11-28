@@ -237,11 +237,6 @@ class GetInvoice extends AbstractModel
         return $this->status;
     }
 
-    /**
-     * @param string $status
-     *
-     * @return self
-     */
     public function setStatus(string $id, string $label): self
     {
         $this->initialized['status'] = true;

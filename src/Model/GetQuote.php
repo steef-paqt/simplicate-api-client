@@ -492,9 +492,6 @@ class GetQuote extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return int
-     */
     public function getIsBlocked(): bool
     {
         return $this->isBlocked;
