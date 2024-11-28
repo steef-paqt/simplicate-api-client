@@ -1,0 +1,13 @@
+parameters:
+    level: 4
+
+    tmpDir: /tmp/phpstan # https://phpstan.org/user-guide/result-cache
+
+    paths:
+        - ../../src/
+
+    excludePaths:
+        - ../../vendor/
+
+    ignoreErrors:
+        - '#PHPDoc tag \@var above a method has no effect\.#'

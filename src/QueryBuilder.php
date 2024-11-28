@@ -92,7 +92,8 @@ class QueryBuilder
     {
         $this->metaData = array_filter(
             array_map(
-                static fn ($item) => (in_array($item, ['count', 'limit', 'offset'])) ? $item : null, $values
+                static fn ($item) => (in_array($item, ['count', 'limit', 'offset'])) ? $item : null,
+                $values
             ),
             static fn ($item) => is_string($item)
         );
