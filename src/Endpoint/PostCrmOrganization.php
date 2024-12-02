@@ -55,9 +55,8 @@ class PostCrmOrganization extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
         if (200 === $status) {
-            return null;
+            return $response;
         }
         if (400 === $status) {
             throw new PostCrmOrganizationBadRequestException($response);
