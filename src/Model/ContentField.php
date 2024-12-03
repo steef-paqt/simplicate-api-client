@@ -11,7 +11,7 @@ class ContentField extends AbstractModel
      */
     protected $title;
     /**
-     * @var string
+     * @var ?string
      */
     protected $value;
 
@@ -36,10 +36,7 @@ class ContentField extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getValue(): string
+    public function getValue(): ?string
     {
         return $this->value;
     }
@@ -49,10 +46,10 @@ class ContentField extends AbstractModel
      *
      * @return self
      */
-    public function setValue(string $value): self
+    public function setValue($value): self
     {
         $this->initialized['value'] = true;
-        $this->value = $value;
+        $this->value = (string) $value;
 
         return $this;
     }

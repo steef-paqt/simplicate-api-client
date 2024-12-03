@@ -53,10 +53,10 @@ class Correction extends AbstractModel
      *
      * @return self
      */
-    public function setValue(float $value): self
+    public function setValue($value): self
     {
         $this->initialized['value'] = true;
-        $this->value = $value;
+        $this->value = (float) $value;
 
         return $this;
     }

@@ -48,13 +48,13 @@ class MetaDataNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (array_key_exists('count', $data)) {
+        if (array_key_exists('count', $data) && $data['count'] !== null) {
             $object->setCount($data['count']);
         }
-        if (array_key_exists('offset', $data)) {
+        if (array_key_exists('offset', $data) && $data['offset'] !== null) {
             $object->setOffset($data['offset']);
         }
-        if (array_key_exists('limit', $data)) {
+        if (array_key_exists('limit', $data) && $data['limit'] !== null) {
             $object->setLimit($data['limit']);
         }
 

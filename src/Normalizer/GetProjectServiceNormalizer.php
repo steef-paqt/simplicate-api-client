@@ -95,7 +95,7 @@ class GetProjectServiceNormalizer implements DenormalizerInterface, NormalizerIn
         if (array_key_exists('vat_class', $data)) {
             $object->setVatClass($this->denormalizer->denormalize($data['vat_class'], VatClass::class, 'json', $context));
         }
-        if (array_key_exists('revenue_group', $data)) {
+        if (!empty($data['revenue_group'])) {
             $object->setRevenueGroup($this->denormalizer->denormalize($data['revenue_group'], RevenueGroup::class, 'json', $context));
         }
         if (array_key_exists('invoice_in_installments', $data)) {

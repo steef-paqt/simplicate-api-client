@@ -5,6 +5,7 @@ namespace Paqtcom\Simplicate;
 class QueryBuilder
 {
     private array $query = [];
+    private array $metaData = [];
 
     public function __construct(
         public int $offset = 0, // https://developer.simplicate.com/getting-started#pagination
@@ -21,6 +22,16 @@ class QueryBuilder
         ?string $sort = null // https://developer.simplicate.com/getting-started#sorting
     ): self {
         return new self($offset, $limit, $select, $sort);
+    }
+
+    /**
+     * @param string[] $values
+     */
+    public function select(array $values): self
+    {
+        $this->select = $values;
+
+        return $this;
     }
 
     public function where(string $key, string $operatorOrValue, string $value = null): self
@@ -77,6 +88,19 @@ class QueryBuilder
         return $this;
     }
 
+    public function withMeta(array $values = ['count', 'limit', 'offset']): self
+    {
+        $this->metaData = array_filter(
+            array_map(
+                static fn ($item) => (in_array($item, ['count', 'limit', 'offset'])) ? $item : null,
+                $values
+            ),
+            static fn ($item) => is_string($item)
+        );
+
+        return $this;
+    }
+
     /**
      * @return array<string, int|string>
      */
@@ -93,6 +117,9 @@ class QueryBuilder
         }
         if ($this->sort) {
             $params['sort'] = $this->sort;
+        }
+        if ($this->metaData) {
+            $params['metadata'] = implode(',', $this->metaData);
         }
         if ($query = $this->buildQuery()) {
             $params['q'] = $query;

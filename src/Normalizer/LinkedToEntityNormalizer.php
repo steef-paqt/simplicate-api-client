@@ -48,14 +48,19 @@ class LinkedToEntityNormalizer implements DenormalizerInterface, NormalizerInter
         if (null === $data || false === is_array($data)) {
             return $object;
         }
-        if (array_key_exists('id', $data)) {
-            $object->setId($data['id']);
+
+        $idKey = null;
+        foreach (array_keys($data) as $key) {
+            if (str_ends_with($key, '_id')) {
+                $idKey = $key;
+            }
+        }
+        if ($idKey) {
+            $object->setId($data[$idKey]);
+            $object->setType(substr($idKey, 0, -3));
         }
         if (array_key_exists('label', $data)) {
             $object->setLabel($data['label']);
-        }
-        if (array_key_exists('type', $data)) {
-            $object->setType($data['type']);
         }
 
         return $object;

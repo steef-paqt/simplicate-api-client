@@ -52,7 +52,7 @@ class PaymentTermNormalizer implements DenormalizerInterface, NormalizerInterfac
             $object->setName($data['name']);
         }
         if (array_key_exists('days', $data)) {
-            $object->setDays($data['days']);
+            $object->setDays((int) $data['days']);
         }
         if (array_key_exists('method', $data)) {
             $object->setMethod($data['method']);

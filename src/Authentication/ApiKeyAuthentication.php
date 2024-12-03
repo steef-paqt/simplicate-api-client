@@ -7,7 +7,7 @@ namespace Paqtcom\Simplicate\Authentication;
 use Jane\Component\OpenApiRuntime\Client\AuthenticationPlugin;
 use Psr\Http\Message\RequestInterface;
 
-readonly class ApiKeyAuthentication implements AuthenticationPlugin
+class ApiKeyAuthentication implements AuthenticationPlugin
 {
     public function __construct(private string $apiKey)
     {

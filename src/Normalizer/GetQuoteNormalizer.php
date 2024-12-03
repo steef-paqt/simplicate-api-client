@@ -116,7 +116,7 @@ class GetQuoteNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setIsBlocked($data['is_blocked']);
         }
         if (array_key_exists('created_by', $data)) {
-            $object->setCreatedBy($data['created_by']);
+            $object->setCreatedBy($data['created_by']['id'] ?? $data['created_by']);
         }
         if (array_key_exists('last_updated_approval_status', $data)) {
             $object->setLastUpdatedApprovalStatus($data['last_updated_approval_status']);

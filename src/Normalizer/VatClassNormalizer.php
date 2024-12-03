@@ -62,7 +62,7 @@ class VatClassNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setLabel($data['label']);
         }
         if (array_key_exists('percentage', $data)) {
-            $object->setPercentage($data['percentage']);
+            $object->setPercentage((float) $data['percentage']);
         }
 
         return $object;
