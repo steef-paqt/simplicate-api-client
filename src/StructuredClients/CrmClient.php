@@ -128,7 +128,7 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmOrganizationById($id);
     }
 
-    public function postOrganization(Model\PostOrganization $body): ?ResponseInterface
+    public function postOrganization(Model\PostOrganization $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postCrmOrganization($body);
     }
