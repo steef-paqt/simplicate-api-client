@@ -57,7 +57,7 @@ class JaneObjectNormalizer implements DenormalizerInterface, NormalizerInterface
 
         $classes = [];
         $rootNamespace = 'Paqtcom\Simplicate\\';
-        foreach($phpFiles as $file) {
+        foreach ($phpFiles as $file) {
             /** @var \SplFileInfo $file */
             $class = substr($file->getFilename(), 0, strrpos("{$file->getFilename()}", '.php'));
             $namespace = $rootNamespace
