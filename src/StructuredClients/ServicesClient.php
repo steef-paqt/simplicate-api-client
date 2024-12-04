@@ -33,7 +33,7 @@ class ServicesClient extends AbstractStructuredClient
         return $this->client->deleteServicesDefaultserviceById($id);
     }
 
-    public function putDefaultService(string $id, Model\PostDefaultService $body): ?ResponseInterface
+    public function putDefaultService(string $id, Model\PostDefaultService $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putServicesDefaultserviceById($id, $body);
     }

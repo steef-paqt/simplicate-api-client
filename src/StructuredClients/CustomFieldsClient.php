@@ -33,7 +33,7 @@ class CustomFieldsClient extends AbstractStructuredClient
         return $this->client->postCustomfieldsGroupById($id, $body);
     }
 
-    public function putGroup(string $id, Model\CustomFieldGroup $body): ?ResponseInterface
+    public function putGroup(string $id, Model\CustomFieldGroup $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putCustomfieldsGroupById($id, $body);
     }
@@ -68,7 +68,7 @@ class CustomFieldsClient extends AbstractStructuredClient
         return $this->client->postCustomfieldsOptionById($body);
     }
 
-    public function putOption(string $id, Model\CustomFieldOption $body): ?ResponseInterface
+    public function putOption(string $id, Model\CustomFieldOption $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putCustomfieldsOptionById($id, $body);
     }

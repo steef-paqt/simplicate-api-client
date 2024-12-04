@@ -61,7 +61,7 @@ class PutUploadChunkedById extends BaseEndpoint
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, RestPutResult::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\PutChunked::class, 'json');
         }
         if (400 === $status) {
             throw new PutUploadChunkedByIdBadRequestException($response);

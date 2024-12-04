@@ -53,7 +53,7 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->postCrmDocument($body);
     }
 
-    public function putDocument(Model\PutDocument $body): ?ResponseInterface
+    public function putDocument(Model\PutDocument $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putCrmDocument($body);
     }
@@ -138,7 +138,7 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->deleteCrmOrganizationById($id);
     }
 
-    public function putOrganization(string $id, Model\PostOrganization $body): ?ResponseInterface
+    public function putOrganization(string $id, Model\PostOrganization $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putCrmOrganizationById($id, $body);
     }
@@ -193,7 +193,7 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmPersonById($id);
     }
 
-    public function putPerson(string $id, Model\PostPerson $body): ?ResponseInterface
+    public function putPerson(string $id, Model\PostPerson $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putCrmPersonById($id, $body);
     }

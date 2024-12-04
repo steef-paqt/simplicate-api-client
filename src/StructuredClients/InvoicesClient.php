@@ -23,7 +23,7 @@ class InvoicesClient extends AbstractStructuredClient
         return $this->client->postInvoicesDocument($body);
     }
 
-    public function putDocument(Model\PutDocument $body): ?ResponseInterface
+    public function putDocument(Model\PutDocument $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putInvoicesDocument($body);
     }
@@ -68,7 +68,7 @@ class InvoicesClient extends AbstractStructuredClient
         return $this->client->getInvoicesInvoiceById($id);
     }
 
-    public function putInvoice(string $id, Model\Invoice $body): ?ResponseInterface
+    public function putInvoice(string $id, Model\Invoice $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putInvoicesInvoiceById($id, $body);
     }
@@ -98,7 +98,7 @@ class InvoicesClient extends AbstractStructuredClient
         return $this->client->getInvoicesPaymentById($id);
     }
 
-    public function putPayment(string $id, Model\Payment $body): ?ResponseInterface
+    public function putPayment(string $id, Model\Payment $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putInvoicesPaymentById($id, $body);
     }

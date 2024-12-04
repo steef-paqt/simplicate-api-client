@@ -28,7 +28,7 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->postSalesDocument($body);
     }
 
-    public function putDocument(Model\PutDocument $body): ?ResponseInterface
+    public function putDocument(Model\PutDocument $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putSalesDocument($body);
     }
@@ -73,12 +73,12 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesQuoteById($id);
     }
 
-    public function putQuote(string $id, Model\PostQuote $body): ?ResponseInterface
+    public function putQuote(string $id, Model\PostQuote $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putSalesQuoteById($id, $body);
     }
 
-    public function putQuoteEmail(string $id, Model\PutQuoteEmail $body): ?ResponseInterface
+    public function putQuoteEmail(string $id, Model\PutQuoteEmail $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putSalesQuoteemailById($id, $body);
     }
@@ -113,7 +113,7 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesQuotetemplateById($id);
     }
 
-    public function putQuoteTemplate(string $id, Model\PostQuoteTemplate $body): ?ResponseInterface
+    public function putQuoteTemplate(string $id, Model\PostQuoteTemplate $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putSalesQuotetemplateById($id, $body);
     }
@@ -143,7 +143,7 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesSaleById($id);
     }
 
-    public function putSale(string $id, Model\PostSales $body): ?ResponseInterface
+    public function putSale(string $id, Model\PostSales $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putSalesSaleById($id, $body);
     }
@@ -248,7 +248,7 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesServiceById($id);
     }
 
-    public function putService(string $id, Model\PostSalesService $body): ?ResponseInterface
+    public function putService(string $id, Model\PostSalesService $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putSalesServiceById($id, $body);
     }

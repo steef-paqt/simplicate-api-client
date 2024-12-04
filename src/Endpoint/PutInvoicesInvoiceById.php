@@ -9,6 +9,7 @@ use Paqtcom\Simplicate\Exception\PutInvoicesInvoiceByIdInternalServerErrorExcept
 use Paqtcom\Simplicate\Exception\PutInvoicesInvoiceByIdNotFoundException;
 use Paqtcom\Simplicate\Exception\PutInvoicesInvoiceByIdUnauthorizedException;
 use Paqtcom\Simplicate\Model\Invoice;
+use Paqtcom\Simplicate\Model\PutChunked;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -58,9 +59,9 @@ class PutInvoicesInvoiceById extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, PutChunked::class, 'json');
         }
         if (400 === $status) {
             throw new PutInvoicesInvoiceByIdBadRequestException($response);

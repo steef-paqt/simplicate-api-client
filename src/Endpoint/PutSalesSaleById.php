@@ -9,6 +9,7 @@ use Paqtcom\Simplicate\Exception\PutSalesSaleByIdInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PutSalesSaleByIdNotFoundException;
 use Paqtcom\Simplicate\Exception\PutSalesSaleByIdUnauthorizedException;
 use Paqtcom\Simplicate\Model\PostSales;
+use Paqtcom\Simplicate\Model\PutChunked;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -58,9 +59,9 @@ class PutSalesSaleById extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, PutChunked::class, 'json');
         }
         if (400 === $status) {
             throw new PutSalesSaleByIdBadRequestException($response);

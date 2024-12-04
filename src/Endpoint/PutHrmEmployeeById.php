@@ -7,6 +7,7 @@ namespace Paqtcom\Simplicate\Endpoint;
 use Paqtcom\Simplicate\Exception\PutHrmEmployeeByIdInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PutHrmEmployeeByIdNotFoundException;
 use Paqtcom\Simplicate\Exception\PutHrmEmployeeByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\PutChunked;
 use Paqtcom\Simplicate\Model\PutEmployee;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
@@ -55,9 +56,9 @@ class PutHrmEmployeeById extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, PutChunked::class, 'json');
         }
         if (401 === $status) {
             throw new PutHrmEmployeeByIdUnauthorizedException($response);

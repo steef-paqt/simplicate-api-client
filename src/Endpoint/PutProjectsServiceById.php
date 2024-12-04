@@ -8,6 +8,7 @@ use Paqtcom\Simplicate\Exception\PutProjectsServiceByIdBadRequestException;
 use Paqtcom\Simplicate\Exception\PutProjectsServiceByIdInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PutProjectsServiceByIdNotFoundException;
 use Paqtcom\Simplicate\Exception\PutProjectsServiceByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\PutChunked;
 use Paqtcom\Simplicate\Model\PutProjectService;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
@@ -58,9 +59,9 @@ class PutProjectsServiceById extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, PutChunked::class, 'json');
         }
         if (400 === $status) {
             throw new PutProjectsServiceByIdBadRequestException($response);
