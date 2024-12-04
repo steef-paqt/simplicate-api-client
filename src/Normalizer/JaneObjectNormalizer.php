@@ -42,7 +42,7 @@ class JaneObjectNormalizer implements DenormalizerInterface, NormalizerInterface
                 throw new \RuntimeException("Normalizer $normalizer not found for the $model model");
             }
 
-            $this->normalizers[$model] = $normalizers[$normalizer] ?? null;
+            $this->normalizers[$model] = $normalizers[$normalizer];
             $this->supportedTypes[$model] = false;
         }
     }
