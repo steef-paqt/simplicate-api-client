@@ -7,7 +7,7 @@ namespace Paqtcom\Simplicate\Model;
 class PostDocument extends AbstractModel
 {
     /**
-     * @var PostDocumentLinkedTo[]
+     * @var PostDocumentLinkedTo
      */
     protected $linkedTo;
     /**
@@ -28,19 +28,19 @@ class PostDocument extends AbstractModel
     protected $description;
 
     /**
-     * @return PostDocumentLinkedTo[]
+     * @return PostDocumentLinkedTo
      */
-    public function getLinkedTo(): array
+    public function getLinkedTo()
     {
         return $this->linkedTo;
     }
 
     /**
-     * @param PostDocumentLinkedTo[] $linkedTo
+     * @param PostDocumentLinkedTo $linkedTo
      *
      * @return self
      */
-    public function setLinkedTo(array $linkedTo): self
+    public function setLinkedTo(PostDocumentLinkedTo $linkedTo): self
     {
         $this->initialized['linkedTo'] = true;
         $this->linkedTo = $linkedTo;

@@ -76,11 +76,7 @@ class PostDocumentNormalizer implements DenormalizerInterface, NormalizerInterfa
     {
         $data = [];
         if ($object->isInitialized('linkedTo') && null !== $object->getLinkedTo()) {
-            $values = [];
-            foreach ($object->getLinkedTo() as $value) {
-                $values[] = $this->normalizer->normalize($value, 'json', $context);
-            }
-            $data['linked_to'] = $values;
+            $data['linked_to'] = $this->normalizer->normalize($object->getLinkedTo(), 'json', $context);
         }
         if ($object->isInitialized('documentTypeId') && null !== $object->getDocumentTypeId()) {
             $data['document_type_id'] = $object->getDocumentTypeId();
