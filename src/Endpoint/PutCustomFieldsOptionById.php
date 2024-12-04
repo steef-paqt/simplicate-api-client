@@ -9,7 +9,7 @@ use Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdInternalServerErrorExc
 use Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdNotFoundException;
 use Paqtcom\Simplicate\Exception\PutCustomFieldsOptionByIdUnauthorizedException;
 use Paqtcom\Simplicate\Model\CustomFieldOption;
-use Paqtcom\Simplicate\Model\PutChunked;
+use Paqtcom\Simplicate\Model\RestPutResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -61,7 +61,7 @@ class PutCustomFieldsOptionById extends BaseEndpoint
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, PutChunked::class, 'json');
+            return $serializer->deserialize($body, RestPutResult::class, 'json');
         }
         if (400 === $status) {
             throw new PutCustomFieldsOptionByIdBadRequestException($response);

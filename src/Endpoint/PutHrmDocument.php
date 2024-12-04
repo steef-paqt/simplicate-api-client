@@ -7,8 +7,8 @@ namespace Paqtcom\Simplicate\Endpoint;
 use Paqtcom\Simplicate\Exception\PutHrmDocumentBadRequestException;
 use Paqtcom\Simplicate\Exception\PutHrmDocumentInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PutHrmDocumentUnauthorizedException;
-use Paqtcom\Simplicate\Model\PutChunked;
 use Paqtcom\Simplicate\Model\PutDocument;
+use Paqtcom\Simplicate\Model\RestPutResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -58,7 +58,7 @@ class PutHrmDocument extends BaseEndpoint
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, PutChunked::class, 'json');
+            return $serializer->deserialize($body, RestPutResult::class, 'json');
         }
         if (400 === $status) {
             throw new PutHrmDocumentBadRequestException($response);

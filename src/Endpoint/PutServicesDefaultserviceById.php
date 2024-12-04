@@ -9,7 +9,7 @@ use Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdInternalServerErro
 use Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdNotFoundException;
 use Paqtcom\Simplicate\Exception\PutServicesDefaultserviceByIdUnauthorizedException;
 use Paqtcom\Simplicate\Model\PostDefaultService;
-use Paqtcom\Simplicate\Model\PutChunked;
+use Paqtcom\Simplicate\Model\RestPutResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -61,7 +61,7 @@ class PutServicesDefaultserviceById extends BaseEndpoint
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, PutChunked::class, 'json');
+            return $serializer->deserialize($body, RestPutResult::class, 'json');
         }
         if (400 === $status) {
             throw new PutServicesDefaultserviceByIdBadRequestException($response);

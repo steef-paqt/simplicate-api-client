@@ -7,8 +7,8 @@ namespace Paqtcom\Simplicate\Endpoint;
 use Paqtcom\Simplicate\Exception\PutHrmTimetableByIdInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PutHrmTimetableByIdNotFoundException;
 use Paqtcom\Simplicate\Exception\PutHrmTimetableByIdUnauthorizedException;
-use Paqtcom\Simplicate\Model\PutChunked;
 use Paqtcom\Simplicate\Model\PutTimetable;
+use Paqtcom\Simplicate\Model\RestPutResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -58,7 +58,7 @@ class PutHrmTimetableById extends BaseEndpoint
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, PutChunked::class, 'json');
+            return $serializer->deserialize($body, RestPutResult::class, 'json');
         }
         if (401 === $status) {
             throw new PutHrmTimetableByIdUnauthorizedException($response);

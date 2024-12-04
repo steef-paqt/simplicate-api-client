@@ -8,8 +8,8 @@ use Paqtcom\Simplicate\Exception\PutTimersTimerByIdBadRequestException;
 use Paqtcom\Simplicate\Exception\PutTimersTimerByIdInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PutTimersTimerByIdNotFoundException;
 use Paqtcom\Simplicate\Exception\PutTimersTimerByIdUnauthorizedException;
-use Paqtcom\Simplicate\Model\PutChunked;
 use Paqtcom\Simplicate\Model\PutTimer;
+use Paqtcom\Simplicate\Model\RestPutResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -61,7 +61,7 @@ class PutTimersTimerById extends BaseEndpoint
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, PutChunked::class, 'json');
+            return $serializer->deserialize($body, RestPutResult::class, 'json');
         }
         if (400 === $status) {
             throw new PutTimersTimerByIdBadRequestException($response);

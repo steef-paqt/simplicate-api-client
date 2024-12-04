@@ -8,7 +8,7 @@ use Paqtcom\Simplicate\Exception\PutSalesQuotetemplateByIdBadRequestException;
 use Paqtcom\Simplicate\Exception\PutSalesQuotetemplateByIdInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PutSalesQuotetemplateByIdUnauthorizedException;
 use Paqtcom\Simplicate\Model\PostQuoteTemplate;
-use Paqtcom\Simplicate\Model\PutChunked;
+use Paqtcom\Simplicate\Model\RestPutResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -59,7 +59,7 @@ class PutSalesQuotetemplateById extends BaseEndpoint
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, PutChunked::class, 'json');
+            return $serializer->deserialize($body, RestPutResult::class, 'json');
         }
         if (400 === $status) {
             throw new PutSalesQuotetemplateByIdBadRequestException($response);

@@ -9,7 +9,7 @@ use Paqtcom\Simplicate\Exception\PutHoursHourstypeByIdInternalServerErrorExcepti
 use Paqtcom\Simplicate\Exception\PutHoursHourstypeByIdNotFoundException;
 use Paqtcom\Simplicate\Exception\PutHoursHourstypeByIdUnauthorizedException;
 use Paqtcom\Simplicate\Model\PostHoursType;
-use Paqtcom\Simplicate\Model\PutChunked;
+use Paqtcom\Simplicate\Model\RestPutResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -61,7 +61,7 @@ class PutHoursHourstypeById extends BaseEndpoint
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, PutChunked::class, 'json');
+            return $serializer->deserialize($body, RestPutResult::class, 'json');
         }
         if (400 === $status) {
             throw new PutHoursHourstypeByIdBadRequestException($response);

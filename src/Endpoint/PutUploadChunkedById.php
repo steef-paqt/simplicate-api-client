@@ -9,7 +9,6 @@ use Paqtcom\Simplicate\Exception\PutUploadChunkedByIdInternalServerErrorExceptio
 use Paqtcom\Simplicate\Exception\PutUploadChunkedByIdNotFoundException;
 use Paqtcom\Simplicate\Exception\PutUploadChunkedByIdUnauthorizedException;
 use Paqtcom\Simplicate\Model\PutChunked;
-use Paqtcom\Simplicate\Model\RestPutResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -61,7 +60,7 @@ class PutUploadChunkedById extends BaseEndpoint
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (200 === $status) {
-            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\PutChunked::class, 'json');
+            return $serializer->deserialize($body, \Paqtcom\Simplicate\Model\RestPutResult::class, 'json');
         }
         if (400 === $status) {
             throw new PutUploadChunkedByIdBadRequestException($response);
