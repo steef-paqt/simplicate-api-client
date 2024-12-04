@@ -8,6 +8,7 @@ use Paqtcom\Simplicate\Exception\PostSalesDocumentBadRequestException;
 use Paqtcom\Simplicate\Exception\PostSalesDocumentInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PostSalesDocumentUnauthorizedException;
 use Paqtcom\Simplicate\Model\PostDocument;
+use Paqtcom\Simplicate\Model\RestPostResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -55,9 +56,9 @@ class PostSalesDocument extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, RestPostResult::class, 'json');
         }
         if (400 === $status) {
             throw new PostSalesDocumentBadRequestException($response);

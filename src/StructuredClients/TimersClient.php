@@ -8,7 +8,6 @@
 namespace Paqtcom\Simplicate\StructuredClients;
 
 use Paqtcom\Simplicate\Model;
-use Paqtcom\Simplicate\Model\PutTimer;
 use Paqtcom\Simplicate\QueryBuilder;
 use Psr\Http\Message\ResponseInterface;
 
@@ -27,7 +26,7 @@ class TimersClient extends AbstractStructuredClient
         return $this->client->getTimersTimerById($id);
     }
 
-    public function postTimer(Model\PostTimer $body): ?ResponseInterface
+    public function postTimer(Model\PostTimer $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postTimersTimer($body);
     }
@@ -37,7 +36,7 @@ class TimersClient extends AbstractStructuredClient
         return $this->client->deleteTimersTimerById($id);
     }
 
-    public function putTimer(string $id, PutTimer $body): ?ResponseInterface
+    public function putTimer(string $id, Model\PutTimer $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putTimersTimerById($id, $body);
     }

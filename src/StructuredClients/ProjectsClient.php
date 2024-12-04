@@ -23,12 +23,12 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsAssignmentById($id);
     }
 
-    public function postAssignment(Model\PostAssignment $body): ?ResponseInterface
+    public function postAssignment(Model\PostAssignment $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postProjectsAssignment($body);
     }
 
-    public function putAssignment(string $id, Model\PutAssignment $body): ?ResponseInterface
+    public function putAssignment(string $id, Model\PutAssignment $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putProjectsAssignmentById($id, $body);
     }
@@ -48,12 +48,12 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsAssignmentstatusById($id, $queryParameters->toArray());
     }
 
-    public function postAssignmentStatus(Model\AssignmentStatus $body): ?ResponseInterface
+    public function postAssignmentStatus(Model\AssignmentStatus $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postProjectsAssignmentstatus($body);
     }
 
-    public function putAssignmentStatus(string $id, Model\AssignmentStatus $body): ?ResponseInterface
+    public function putAssignmentStatus(string $id, Model\AssignmentStatus $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putProjectsAssignmentstatusById($id, $body);
     }
@@ -68,12 +68,12 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsDocumentById($id);
     }
 
-    public function postDocument(Model\PostDocument $body): ?ResponseInterface
+    public function postDocument(Model\PostDocument $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postProjectsDocument($body);
     }
 
-    public function putDocument(Model\PutDocument $body): ?ResponseInterface
+    public function putDocument(Model\PutDocument $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putProjectsDocument($body);
     }
@@ -103,7 +103,7 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsProjectById($id);
     }
 
-    public function postProject(Model\PostProject $body): ?ResponseInterface
+    public function postProject(Model\PostProject $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postProjectsProject($body);
     }
@@ -113,7 +113,7 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->deleteProjectsProjectById($id);
     }
 
-    public function putProject(string $id, Model\PostProject $body): ?ResponseInterface
+    public function putProject(string $id, Model\PostProject $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putProjectsProjectById($id, $body);
     }
@@ -193,7 +193,7 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsReverseinvoiceById($id);
     }
 
-    public function postServiceByIdDuplicate(string $id, string $body): ?ResponseInterface
+    public function postServiceByIdDuplicate(string $id, string $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postProjectsServiceByIdDuplicate($id, $body);
     }
@@ -208,7 +208,7 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsServiceById($id);
     }
 
-    public function postService(Model\PostProjectService $body): ?ResponseInterface
+    public function postService(Model\PostProjectService $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postProjectsService($body);
     }
@@ -218,7 +218,7 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->deleteProjectsServiceById($id);
     }
 
-    public function putService(string $id, Model\PutProjectService $body): ?ResponseInterface
+    public function putService(string $id, Model\PutProjectService $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putProjectsServiceById($id, $body);
     }

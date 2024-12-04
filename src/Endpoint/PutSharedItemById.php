@@ -7,6 +7,7 @@ namespace Paqtcom\Simplicate\Endpoint;
 use Paqtcom\Simplicate\Exception\PutSharedItemByIdInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PutSharedItemByIdNotFoundException;
 use Paqtcom\Simplicate\Exception\PutSharedItemByIdUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestPutResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -55,9 +56,9 @@ class PutSharedItemById extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, RestPutResult::class, 'json');
         }
         if (401 === $status) {
             throw new PutSharedItemByIdUnauthorizedException($response);

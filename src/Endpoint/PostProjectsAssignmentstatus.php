@@ -9,6 +9,7 @@ use Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusInternalServerError
 use Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusNotFoundException;
 use Paqtcom\Simplicate\Exception\PostProjectsAssignmentstatusUnauthorizedException;
 use Paqtcom\Simplicate\Model\AssignmentStatus;
+use Paqtcom\Simplicate\Model\RestPostResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -57,9 +58,9 @@ class PostProjectsAssignmentstatus extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, RestPostResult::class, 'json');
         }
         if (400 === $status) {
             throw new PostProjectsAssignmentstatusBadRequestException($response);

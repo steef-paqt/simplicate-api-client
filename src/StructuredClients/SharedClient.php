@@ -23,7 +23,7 @@ class SharedClient extends AbstractStructuredClient
         return $this->client->getSharedItemById($id);
     }
 
-    public function postItem(Model\PostSharedItem $body): ?ResponseInterface
+    public function postItem(Model\PostSharedItem $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postSharedItem($body);
     }
@@ -33,7 +33,7 @@ class SharedClient extends AbstractStructuredClient
         return $this->client->deleteSharedItemById($id);
     }
 
-    public function putItem(string $id, Model\PostSharedItem $body): ?ResponseInterface
+    public function putItem(string $id, Model\PostSharedItem $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putSharedItemById($id, $body);
     }

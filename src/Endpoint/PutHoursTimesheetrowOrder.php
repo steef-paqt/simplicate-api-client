@@ -8,6 +8,7 @@ use Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderBadRequestException;
 use Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderNotFoundException;
 use Paqtcom\Simplicate\Exception\PutHoursTimesheetrowOrderUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestPutResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -56,9 +57,9 @@ class PutHoursTimesheetrowOrder extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, RestPutResult::class, 'json');
         }
         if (400 === $status) {
             throw new PutHoursTimesheetrowOrderBadRequestException($response);

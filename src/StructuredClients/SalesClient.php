@@ -23,12 +23,12 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesDocument($queryParameters->toArray());
     }
 
-    public function postDocument(Model\PostDocument $body): ?ResponseInterface
+    public function postDocument(Model\PostDocument $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postSalesDocument($body);
     }
 
-    public function putDocument(Model\PutDocument $body): ?ResponseInterface
+    public function putDocument(Model\PutDocument $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putSalesDocument($body);
     }
@@ -58,7 +58,7 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesQuote($queryParameters->toArray());
     }
 
-    public function postQuote(Model\PostQuote $body): ?ResponseInterface
+    public function postQuote(Model\PostQuote $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postSalesQuote($body);
     }
@@ -73,12 +73,12 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesQuoteById($id);
     }
 
-    public function putQuote(string $id, Model\PostQuote $body): ?ResponseInterface
+    public function putQuote(string $id, Model\PostQuote $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putSalesQuoteById($id, $body);
     }
 
-    public function putQuoteEmail(string $id, Model\PutQuoteEmail $body): ?ResponseInterface
+    public function putQuoteEmail(string $id, Model\PutQuoteEmail $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putSalesQuoteemailById($id, $body);
     }
@@ -98,7 +98,7 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesQuotetemplate($queryParameters->toArray());
     }
 
-    public function postQuoteTemplate(Model\PostQuoteTemplate $body): ?ResponseInterface
+    public function postQuoteTemplate(Model\PostQuoteTemplate $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postSalesQuotetemplate($body);
     }
@@ -113,7 +113,7 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesQuotetemplateById($id);
     }
 
-    public function putQuoteTemplate(string $id, Model\PostQuoteTemplate $body): ?ResponseInterface
+    public function putQuoteTemplate(string $id, Model\PostQuoteTemplate $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putSalesQuotetemplateById($id, $body);
     }
@@ -133,7 +133,7 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesSale($queryParameters->toArray());
     }
 
-    public function postSale(Model\PostSales $body): ?ResponseInterface
+    public function postSale(Model\PostSales $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postSalesSale($body);
     }
@@ -143,12 +143,12 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesSaleById($id);
     }
 
-    public function putSale(string $id, Model\PostSales $body): ?ResponseInterface
+    public function putSale(string $id, Model\PostSales $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putSalesSaleById($id, $body);
     }
 
-    public function postSalesByIdDuplicate(string $id, Model\PostDuplicateSales $body): ?ResponseInterface
+    public function postSalesByIdDuplicate(string $id, Model\PostDuplicateSales $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postSalesSalesByIdDuplicate($id, $body);
     }
@@ -223,7 +223,7 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesSalesstatusById($id);
     }
 
-    public function postServiceByIdDuplicate(string $id, string $body): ?ResponseInterface
+    public function postServiceByIdDuplicate(string $id, string $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postSalesServiceByIdDuplicate($id, $body);
     }
@@ -233,7 +233,7 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesService($queryParameters->toArray());
     }
 
-    public function postService(Model\PostSalesService $body): ?ResponseInterface
+    public function postService(Model\PostSalesService $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postSalesService($body);
     }
@@ -248,7 +248,7 @@ class SalesClient extends AbstractStructuredClient
         return $this->client->getSalesServiceById($id);
     }
 
-    public function putService(string $id, Model\PostSalesService $body): ?ResponseInterface
+    public function putService(string $id, Model\PostSalesService $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putSalesServiceById($id, $body);
     }

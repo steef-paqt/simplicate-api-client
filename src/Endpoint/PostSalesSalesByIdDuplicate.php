@@ -9,6 +9,7 @@ use Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateInternalServerErrorE
 use Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateNotFoundException;
 use Paqtcom\Simplicate\Exception\PostSalesSalesByIdDuplicateUnauthorizedException;
 use Paqtcom\Simplicate\Model\PostDuplicateSales;
+use Paqtcom\Simplicate\Model\RestPostResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -58,9 +59,9 @@ class PostSalesSalesByIdDuplicate extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, RestPostResult::class, 'json');
         }
         if (400 === $status) {
             throw new PostSalesSalesByIdDuplicateBadRequestException($response);

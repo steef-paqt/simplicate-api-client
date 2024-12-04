@@ -13,12 +13,12 @@ use Psr\Http\Message\ResponseInterface;
 
 class HoursClient extends AbstractStructuredClient
 {
-    public function postAbsence(Model\PostAbsence $body): ?ResponseInterface
+    public function postAbsence(Model\PostAbsence $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postHoursAbsence($body);
     }
 
-    public function putAbsence(string $id, Model\PostAbsence $body): ?ResponseInterface
+    public function putAbsence(string $id, Model\PostAbsence $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putHoursAbsenceById($id, $body);
     }
@@ -28,7 +28,7 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->getHoursApproval($queryParameters->toArray());
     }
 
-    public function postApproval(Model\PostApproval $body): ?ResponseInterface
+    public function postApproval(Model\PostApproval $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postHoursApproval($body);
     }
@@ -43,7 +43,7 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->getHoursApprovalById($id);
     }
 
-    public function putApproval(string $id, Model\PostApproval $body): ?ResponseInterface
+    public function putApproval(string $id, Model\PostApproval $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putHoursApprovalById($id, $body);
     }
@@ -73,7 +73,7 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->getHoursHour($queryParameters->toArray());
     }
 
-    public function postHour(Model\PostHours $body): ?ResponseInterface
+    public function postHour(Model\PostHours $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postHoursHour($body);
     }
@@ -88,7 +88,7 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->getHoursHourById($id);
     }
 
-    public function putHour(string $id, Model\PostHours $body): ?ResponseInterface
+    public function putHour(string $id, Model\PostHours $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putHoursHourById($id, $body);
     }
@@ -98,7 +98,7 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->getHoursHourstype($queryParameters->toArray());
     }
 
-    public function postHoursType(Model\PostHoursType $body): ?ResponseInterface
+    public function postHoursType(Model\PostHoursType $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postHoursHourstype($body);
     }
@@ -108,17 +108,17 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->getHoursHourstypeById($id);
     }
 
-    public function putHoursType(string $id, Model\PostHoursType $body): ?ResponseInterface
+    public function putHoursType(string $id, Model\PostHoursType $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putHoursHourstypeById($id, $body);
     }
 
-    public function postLeave(Model\PostLeave $body): ?ResponseInterface
+    public function postLeave(Model\PostLeave $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postHoursLeave($body);
     }
 
-    public function putLeave(string $id, Model\PostLeave $body): ?ResponseInterface
+    public function putLeave(string $id, Model\PostLeave $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putHoursLeaveById($id, $body);
     }
@@ -128,12 +128,12 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->getHoursSubmission($queryParameters->toArray());
     }
 
-    public function postSubmission(Model\PostSubmission $body): ?ResponseInterface
+    public function postSubmission(Model\PostSubmission $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postHoursSubmission($body);
     }
 
-    public function postSubmit(Model\Submit $body): ?ResponseInterface
+    public function postSubmit(Model\Submit $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postHoursSubmit($body);
     }
@@ -143,7 +143,7 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->getHoursTimesheetrow($queryParameters->toArray());
     }
 
-    public function postTimesheetRow(Model\PostTimesheetRow $body): ?ResponseInterface
+    public function postTimesheetRow(Model\PostTimesheetRow $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postHoursTimesheetrow($body);
     }
@@ -153,7 +153,7 @@ class HoursClient extends AbstractStructuredClient
         return $this->client->deleteHoursTimesheetrowById($id);
     }
 
-    public function putTimesheetRowOrder(array $body): ?ResponseInterface
+    public function putTimesheetRowOrder(array $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putHoursTimesheetrowOrder($body);
     }

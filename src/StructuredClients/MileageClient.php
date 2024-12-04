@@ -23,7 +23,7 @@ class MileageClient extends AbstractStructuredClient
         return $this->client->getMileageMileageById($id);
     }
 
-    public function postMileage(Model\PostMileage $body): ?ResponseInterface
+    public function postMileage(Model\PostMileage $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postMileageMileage($body);
     }
@@ -33,7 +33,7 @@ class MileageClient extends AbstractStructuredClient
         return $this->client->deleteMileageMileageById($id);
     }
 
-    public function putMileage(string $id, Model\PutMileage $body): ?ResponseInterface
+    public function putMileage(string $id, Model\PutMileage $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putMileageMileageById($id, $body);
     }

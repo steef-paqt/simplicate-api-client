@@ -18,7 +18,7 @@ class HrmClient extends AbstractStructuredClient
         return $this->client->getHrmAbsence($queryParameters->toArray());
     }
 
-    public function postAbsence(Model\PostAbsence $body): ?ResponseInterface
+    public function postAbsence(Model\PostAbsence $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postHrmAbsence($body);
     }
@@ -33,7 +33,7 @@ class HrmClient extends AbstractStructuredClient
         return $this->client->getHrmAbsenceById($id);
     }
 
-    public function putAbsence(string $id, Model\PostAbsence $body): ?ResponseInterface
+    public function putAbsence(string $id, Model\PostAbsence $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putHrmAbsenceById($id, $body);
     }
@@ -83,12 +83,12 @@ class HrmClient extends AbstractStructuredClient
         return $this->client->getHrmDocument($queryParameters->toArray());
     }
 
-    public function postDocument(Model\PostDocument $body): ?ResponseInterface
+    public function postDocument(Model\PostDocument $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postHrmDocument($body);
     }
 
-    public function putDocument(Model\PutDocument $body): ?ResponseInterface
+    public function putDocument(Model\PutDocument $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putHrmDocument($body);
     }
@@ -118,7 +118,7 @@ class HrmClient extends AbstractStructuredClient
         return $this->client->getHrmEmployee($queryParameters->toArray());
     }
 
-    public function postEmployee(Model\PostEmployee $body): ?ResponseInterface
+    public function postEmployee(Model\PostEmployee $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postHrmEmployee($body);
     }
@@ -128,7 +128,7 @@ class HrmClient extends AbstractStructuredClient
         return $this->client->getHrmEmployeeById($id);
     }
 
-    public function putEmployee(Model\PutEmployee $body): ?ResponseInterface
+    public function putEmployee(Model\PutEmployee $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putHrmEmployeeById($body);
     }
@@ -178,7 +178,7 @@ class HrmClient extends AbstractStructuredClient
         return $this->client->getHrmLeave($queryParameters->toArray());
     }
 
-    public function postLeave(Model\PostLeave $body): ?ResponseInterface
+    public function postLeave(Model\PostLeave $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postHrmLeave($body);
     }
@@ -188,7 +188,7 @@ class HrmClient extends AbstractStructuredClient
         return $this->client->getHrmLeaveById($id);
     }
 
-    public function putLeave(string $id, Model\PostLeave $body): ?ResponseInterface
+    public function putLeave(string $id, Model\PostLeave $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putHrmLeaveById($id, $body);
     }
@@ -223,7 +223,7 @@ class HrmClient extends AbstractStructuredClient
         return $this->client->getHrmTimetable($queryParameters->toArray());
     }
 
-    public function postTimetable(Model\PostTimetable $body): ?ResponseInterface
+    public function postTimetable(Model\PostTimetable $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postHrmTimetable($body);
     }
@@ -233,7 +233,7 @@ class HrmClient extends AbstractStructuredClient
         return $this->client->deleteHrmTimetableById($id);
     }
 
-    public function putTimetable(Model\PutTimetable $body): ?ResponseInterface
+    public function putTimetable(Model\PutTimetable $body): Model\RestPutResult|ResponseInterface|null
     {
         return $this->client->putHrmTimetableById($body);
     }

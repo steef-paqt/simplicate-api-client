@@ -8,6 +8,7 @@ use Paqtcom\Simplicate\Exception\PostHrmLeaveBadRequestException;
 use Paqtcom\Simplicate\Exception\PostHrmLeaveInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PostHrmLeaveUnauthorizedException;
 use Paqtcom\Simplicate\Model\PostLeave;
+use Paqtcom\Simplicate\Model\RestPostResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -55,9 +56,9 @@ class PostHrmLeave extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, RestPostResult::class, 'json');
         }
         if (400 === $status) {
             throw new PostHrmLeaveBadRequestException($response);

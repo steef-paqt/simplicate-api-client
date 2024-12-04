@@ -7,6 +7,7 @@ namespace Paqtcom\Simplicate\Endpoint;
 use Paqtcom\Simplicate\Exception\PostHoursSubmitInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PostHoursSubmitNotFoundException;
 use Paqtcom\Simplicate\Exception\PostHoursSubmitUnauthorizedException;
+use Paqtcom\Simplicate\Model\RestPostResult;
 use Paqtcom\Simplicate\Model\Submit;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
@@ -55,9 +56,9 @@ class PostHoursSubmit extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, RestPostResult::class, 'json');
         }
         if (401 === $status) {
             throw new PostHoursSubmitUnauthorizedException($response);

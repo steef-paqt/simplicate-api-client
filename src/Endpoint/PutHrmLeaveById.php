@@ -9,6 +9,7 @@ use Paqtcom\Simplicate\Exception\PutHrmLeaveByIdInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PutHrmLeaveByIdNotFoundException;
 use Paqtcom\Simplicate\Exception\PutHrmLeaveByIdUnauthorizedException;
 use Paqtcom\Simplicate\Model\PostLeave;
+use Paqtcom\Simplicate\Model\RestPutResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -58,9 +59,9 @@ class PutHrmLeaveById extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, RestPutResult::class, 'json');
         }
         if (400 === $status) {
             throw new PutHrmLeaveByIdBadRequestException($response);

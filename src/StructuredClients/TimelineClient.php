@@ -13,7 +13,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class TimelineClient extends AbstractStructuredClient
 {
-    public function postAttachment(Model\PostAttachment $body): ?ResponseInterface
+    public function postAttachment(Model\PostAttachment $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postTimelineAttachment($body);
     }
@@ -33,7 +33,7 @@ class TimelineClient extends AbstractStructuredClient
         return $this->client->getTimelineMessageById($id);
     }
 
-    public function postMessage(Model\PostMessage $body): ?ResponseInterface
+    public function postMessage(Model\PostMessage $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postTimelineMessage($body);
     }

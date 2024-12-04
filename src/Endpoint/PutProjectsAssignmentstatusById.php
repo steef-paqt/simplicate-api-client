@@ -9,6 +9,7 @@ use Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdInternalServerEr
 use Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdNotFoundException;
 use Paqtcom\Simplicate\Exception\PutProjectsAssignmentstatusByIdUnauthorizedException;
 use Paqtcom\Simplicate\Model\AssignmentStatus;
+use Paqtcom\Simplicate\Model\RestPutResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -58,9 +59,9 @@ class PutProjectsAssignmentstatusById extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, RestPutResult::class, 'json');
         }
         if (400 === $status) {
             throw new PutProjectsAssignmentstatusByIdBadRequestException($response);

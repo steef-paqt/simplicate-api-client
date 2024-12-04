@@ -8,6 +8,7 @@ use Paqtcom\Simplicate\Exception\PutSalesQuoteByIdBadRequestException;
 use Paqtcom\Simplicate\Exception\PutSalesQuoteByIdInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PutSalesQuoteByIdUnauthorizedException;
 use Paqtcom\Simplicate\Model\PostQuote;
+use Paqtcom\Simplicate\Model\RestPutResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -56,9 +57,9 @@ class PutSalesQuoteById extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, RestPutResult::class, 'json');
         }
         if (400 === $status) {
             throw new PutSalesQuoteByIdBadRequestException($response);

@@ -8,6 +8,7 @@ use Paqtcom\Simplicate\Exception\PostProjectsServiceInternalServerErrorException
 use Paqtcom\Simplicate\Exception\PostProjectsServiceNotFoundException;
 use Paqtcom\Simplicate\Exception\PostProjectsServiceUnauthorizedException;
 use Paqtcom\Simplicate\Model\PostProjectService;
+use Paqtcom\Simplicate\Model\RestPostResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -55,9 +56,9 @@ class PostProjectsService extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, RestPostResult::class, 'json');
         }
         if (401 === $status) {
             throw new PostProjectsServiceUnauthorizedException($response);
