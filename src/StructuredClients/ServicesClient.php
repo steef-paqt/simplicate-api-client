@@ -23,7 +23,7 @@ class ServicesClient extends AbstractStructuredClient
         return $this->client->getServicesDefaultserviceById($id);
     }
 
-    public function postDefaultService(Model\PostDefaultService $body): ?ResponseInterface
+    public function postDefaultService(Model\PostDefaultService $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postServicesDefaultservice($body);
     }

@@ -48,7 +48,7 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmDocument($queryParameters->toArray());
     }
 
-    public function postDocument(Model\PostDocument $body): ?ResponseInterface
+    public function postDocument(Model\PostDocument $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postCrmDocument($body);
     }
@@ -178,7 +178,7 @@ class CrmClient extends AbstractStructuredClient
         return $this->client->getCrmPerson($queryParameters->toArray());
     }
 
-    public function postPerson(Model\PostPerson $body): ?ResponseInterface
+    public function postPerson(Model\PostPerson $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postCrmPerson($body);
     }

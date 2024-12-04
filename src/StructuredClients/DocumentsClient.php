@@ -18,7 +18,7 @@ class DocumentsClient extends AbstractStructuredClient
         return $this->client->getDocumentsDocument($queryParameters->toArray());
     }
 
-    public function postDocument(Model\PostDocument $body): ?ResponseInterface
+    public function postDocument(Model\PostDocument $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postDocumentsDocument($body);
     }

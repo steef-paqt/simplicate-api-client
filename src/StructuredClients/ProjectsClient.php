@@ -23,7 +23,7 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsAssignmentById($id);
     }
 
-    public function postAssignment(Model\PostAssignment $body): ?ResponseInterface
+    public function postAssignment(Model\PostAssignment $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postProjectsAssignment($body);
     }
@@ -48,7 +48,7 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsAssignmentstatusById($id, $queryParameters->toArray());
     }
 
-    public function postAssignmentStatus(Model\AssignmentStatus $body): ?ResponseInterface
+    public function postAssignmentStatus(Model\AssignmentStatus $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postProjectsAssignmentstatus($body);
     }
@@ -68,7 +68,7 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsDocumentById($id);
     }
 
-    public function postDocument(Model\PostDocument $body): ?ResponseInterface
+    public function postDocument(Model\PostDocument $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postProjectsDocument($body);
     }
@@ -103,7 +103,7 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsProjectById($id);
     }
 
-    public function postProject(Model\PostProject $body): ?ResponseInterface
+    public function postProject(Model\PostProject $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postProjectsProject($body);
     }
@@ -193,7 +193,7 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsReverseinvoiceById($id);
     }
 
-    public function postServiceByIdDuplicate(string $id, string $body): ?ResponseInterface
+    public function postServiceByIdDuplicate(string $id, string $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postProjectsServiceByIdDuplicate($id, $body);
     }
@@ -208,7 +208,7 @@ class ProjectsClient extends AbstractStructuredClient
         return $this->client->getProjectsServiceById($id);
     }
 
-    public function postService(Model\PostProjectService $body): ?ResponseInterface
+    public function postService(Model\PostProjectService $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postProjectsService($body);
     }

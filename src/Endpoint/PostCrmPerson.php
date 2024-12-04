@@ -8,6 +8,7 @@ use Paqtcom\Simplicate\Exception\PostCrmPersonInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PostCrmPersonNotFoundException;
 use Paqtcom\Simplicate\Exception\PostCrmPersonUnauthorizedException;
 use Paqtcom\Simplicate\Model\PostPerson;
+use Paqtcom\Simplicate\Model\RestPostResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -55,9 +56,9 @@ class PostCrmPerson extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, RestPostResult::class, 'json');
         }
         if (401 === $status) {
             throw new PostCrmPersonUnauthorizedException($response);

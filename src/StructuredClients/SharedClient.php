@@ -23,7 +23,7 @@ class SharedClient extends AbstractStructuredClient
         return $this->client->getSharedItemById($id);
     }
 
-    public function postItem(Model\PostSharedItem $body): ?ResponseInterface
+    public function postItem(Model\PostSharedItem $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postSharedItem($body);
     }

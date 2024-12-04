@@ -8,6 +8,7 @@ use Paqtcom\Simplicate\Exception\PostHoursApprovalInternalServerErrorException;
 use Paqtcom\Simplicate\Exception\PostHoursApprovalNotFoundException;
 use Paqtcom\Simplicate\Exception\PostHoursApprovalUnauthorizedException;
 use Paqtcom\Simplicate\Model\PostApproval;
+use Paqtcom\Simplicate\Model\RestPostResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -55,9 +56,9 @@ class PostHoursApproval extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, RestPostResult::class, 'json');
         }
         if (401 === $status) {
             throw new PostHoursApprovalUnauthorizedException($response);

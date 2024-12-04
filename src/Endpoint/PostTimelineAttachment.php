@@ -8,6 +8,7 @@ use Paqtcom\Simplicate\Exception\PostTimelineAttachmentInternalServerErrorExcept
 use Paqtcom\Simplicate\Exception\PostTimelineAttachmentNotFoundException;
 use Paqtcom\Simplicate\Exception\PostTimelineAttachmentUnauthorizedException;
 use Paqtcom\Simplicate\Model\PostAttachment;
+use Paqtcom\Simplicate\Model\RestPostResult;
 use Paqtcom\Simplicate\Runtime\Client\BaseEndpoint;
 use Paqtcom\Simplicate\Runtime\Client\EndpointTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -52,9 +53,9 @@ class PostTimelineAttachment extends BaseEndpoint
     protected function transformResponseBody(ResponseInterface $response, SerializerInterface $serializer, ?string $contentType = null)
     {
         $status = $response->getStatusCode();
-        $response->getBody();
+        $body = (string) $response->getBody();
         if (200 === $status) {
-            return null;
+            return $serializer->deserialize($body, RestPostResult::class, 'json');
         }
         if (401 === $status) {
             throw new PostTimelineAttachmentUnauthorizedException($response);

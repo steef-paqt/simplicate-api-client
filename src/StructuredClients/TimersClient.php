@@ -27,7 +27,7 @@ class TimersClient extends AbstractStructuredClient
         return $this->client->getTimersTimerById($id);
     }
 
-    public function postTimer(Model\PostTimer $body): ?ResponseInterface
+    public function postTimer(Model\PostTimer $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postTimersTimer($body);
     }

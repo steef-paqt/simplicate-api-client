@@ -13,7 +13,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class UploadClient extends AbstractStructuredClient
 {
-    public function postChunked(PostChunked $body): ?ResponseInterface
+    public function postChunked(PostChunked $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postUploadChunked($body);
     }

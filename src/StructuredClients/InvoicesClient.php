@@ -18,7 +18,7 @@ class InvoicesClient extends AbstractStructuredClient
         return $this->client->getInvoicesDocument($queryParameters->toArray());
     }
 
-    public function postDocument(Model\PostDocument $body): ?ResponseInterface
+    public function postDocument(Model\PostDocument $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postInvoicesDocument($body);
     }
@@ -53,7 +53,7 @@ class InvoicesClient extends AbstractStructuredClient
         return $this->client->getInvoicesInvoice($queryParameters->toArray());
     }
 
-    public function postInvoice(Model\PostInvoice $body): ?ResponseInterface
+    public function postInvoice(Model\PostInvoice $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postInvoicesInvoice($body);
     }
@@ -88,7 +88,7 @@ class InvoicesClient extends AbstractStructuredClient
         return $this->client->getInvoicesPayment($queryParameters->toArray());
     }
 
-    public function postPayment(Model\Payment $body): ?ResponseInterface
+    public function postPayment(Model\Payment $body): Model\RestPostResult|ResponseInterface|null
     {
         return $this->client->postInvoicesPayment($body);
     }
