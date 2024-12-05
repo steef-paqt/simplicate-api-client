@@ -7,6 +7,7 @@ namespace Paqtcom\Simplicate\Normalizer;
 use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
 use Paqtcom\Simplicate\Model\HoursType;
+use Paqtcom\Simplicate\Model\VatClass;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -59,6 +60,15 @@ class HoursTypeNormalizer implements DenormalizerInterface, NormalizerInterface,
         }
         if (array_key_exists('color', $data)) {
             $object->setColor($data['color']);
+        }
+        if (array_key_exists('id', $data)) {
+            $object->setId($data['id']);
+        }
+        if (array_key_exists('type', $data)) {
+            $object->setType($data['type']);
+        }
+        if (array_key_exists('vatclass', $data)) {
+            $object->setVatclass($this->denormalizer->denormalize($data['vatclass'], VatClass::class, 'json', $context));
         }
 
         return $object;
