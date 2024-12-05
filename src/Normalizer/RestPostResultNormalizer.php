@@ -51,6 +51,12 @@ class RestPostResultNormalizer implements DenormalizerInterface, NormalizerInter
         }
         if (!empty($data['data']['id'])) {
             $object->setId($data['data']['id']);
+        } elseif (!empty($data['data'])) {
+            foreach ($data['data'] as $key => $value) {
+                if (str_ends_with($key, '_id')) { // e.g. "chunked_upload_id"
+                    $object->setId($value);
+                }
+            }
         }
         if (array_key_exists('metadata', $data)) {
             $object->setMetadata($this->denormalizer->denormalize($data['metadata'], MetaData::class, 'json', $context));
