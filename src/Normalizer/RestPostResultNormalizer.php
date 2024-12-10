@@ -53,7 +53,7 @@ class RestPostResultNormalizer implements DenormalizerInterface, NormalizerInter
             $object->setId($data['data']['id']);
         } elseif (!empty($data['data'])) {
             foreach ($data['data'] as $key => $value) {
-                if (str_ends_with($key, '_id')) { // e.g. "chunked_upload_id"
+                if (str_ends_with((string) $key, '_id')) { // e.g. "chunked_upload_id"
                     $object->setId($value);
                 }
             }
