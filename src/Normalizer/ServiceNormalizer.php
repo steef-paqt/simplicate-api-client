@@ -67,6 +67,9 @@ class ServiceNormalizer implements DenormalizerInterface, NormalizerInterface, D
         if (array_key_exists('invoice_method', $data)) {
             $object->setInvoiceMethod($data['invoice_method']);
         }
+        if (array_key_exists('subscription_cycle', $data)) {
+            $object->setSubscriptionCycle($data['subscription_cycle']);
+        }
         if (array_key_exists('amount', $data)) {
             $object->setAmount($data['amount']);
         }
@@ -83,6 +86,9 @@ class ServiceNormalizer implements DenormalizerInterface, NormalizerInterface, D
         return $object;
     }
 
+    /**
+     * @param Service $object
+     */
     public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
@@ -97,6 +103,9 @@ class ServiceNormalizer implements DenormalizerInterface, NormalizerInterface, D
         }
         if ($object->isInitialized('invoiceMethod') && null !== $object->getInvoiceMethod()) {
             $data['invoice_method'] = $object->getInvoiceMethod();
+        }
+        if ($object->isInitialized('subscriptionCycle') && null !== $object->getSubscriptionCycle()) {
+            $data['subscription_cycle'] = $object->getSubscriptionCycle();
         }
         if ($object->isInitialized('amount') && null !== $object->getAmount()) {
             $data['amount'] = $object->getAmount();

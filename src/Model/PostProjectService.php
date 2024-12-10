@@ -52,6 +52,12 @@ class PostProjectService extends AbstractModel
      * @var string
      */
     protected $invoiceMethod;
+
+    /**
+     * @var string
+     */
+    protected $subscriptionCycle;
+
     /**
      * @var PostProjectServiceHoursType[]
      */
@@ -290,6 +296,27 @@ class PostProjectService extends AbstractModel
     {
         $this->initialized['invoiceMethod'] = true;
         $this->invoiceMethod = $invoiceMethod;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubscriptionCycle(): string
+    {
+        return $this->subscriptionCycle;
+    }
+
+    /**
+     * @param string $subscriptionCycle
+     *
+     * @return self
+     */
+    public function setSubscriptionCycle(string $subscriptionCycle): self
+    {
+        $this->initialized['subscriptionCycle'] = true;
+        $this->subscriptionCycle = $subscriptionCycle;
 
         return $this;
     }

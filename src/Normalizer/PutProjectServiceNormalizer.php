@@ -65,6 +65,9 @@ class PutProjectServiceNormalizer implements DenormalizerInterface, NormalizerIn
         if (array_key_exists('invoice_method', $data)) {
             $object->setInvoiceMethod($data['invoice_method']);
         }
+        if (array_key_exists('subscription_cycle', $data)) {
+            $object->setSubscriptionCycle($data['subscription_cycle']);
+        }
         if (array_key_exists('hour_types', $data)) {
             $values = [];
             foreach ($data['hour_types'] as $value) {
@@ -97,6 +100,9 @@ class PutProjectServiceNormalizer implements DenormalizerInterface, NormalizerIn
         return $object;
     }
 
+    /**
+     * @param PutProjectService $object
+     */
     public function normalize($object, $format = null, array $context = []): float|int|bool|ArrayObject|array|string|null
     {
         $data = [];
@@ -108,6 +114,9 @@ class PutProjectServiceNormalizer implements DenormalizerInterface, NormalizerIn
         }
         if ($object->isInitialized('invoiceMethod') && null !== $object->getInvoiceMethod()) {
             $data['invoice_method'] = $object->getInvoiceMethod();
+        }
+        if ($object->isInitialized('subscriptionCycle') && null !== $object->getSubscriptionCycle()) {
+            $data['subscription_cycle'] = $object->getSubscriptionCycle();
         }
         if ($object->isInitialized('hourTypes') && null !== $object->getHourTypes()) {
             $values = [];
