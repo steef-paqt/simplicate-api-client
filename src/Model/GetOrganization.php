@@ -19,7 +19,7 @@ class GetOrganization extends AbstractModel
      */
     protected $postalAddress;
     /**
-     * @var RelationType
+     * @var ?RelationType
      */
     protected $relationType;
     /**
@@ -79,7 +79,7 @@ class GetOrganization extends AbstractModel
      */
     protected $isActive;
     /**
-     * @var string
+     * @var ?string
      */
     protected $name;
     /**
@@ -115,27 +115,27 @@ class GetOrganization extends AbstractModel
      */
     protected $hasDifferentPostalAddress;
     /**
-     * @var Industry
+     * @var ?Industry
      */
     protected $industry;
     /**
-     * @var string
+     * @var ?string
      */
     protected $invoiceReceiver;
     /**
-     * @var bool
+     * @var ?bool
      */
     protected $allowAutocollect;
     /**
-     * @var string
+     * @var ?string
      */
     protected $bankAccount;
     /**
-     * @var string
+     * @var ?string
      */
     protected $bankBic;
     /**
-     * @var string
+     * @var ?string
      */
     protected $relationNumber;
 
@@ -202,10 +202,7 @@ class GetOrganization extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return RelationType
-     */
-    public function getRelationType(): RelationType
+    public function getRelationType(): ?RelationType
     {
         return $this->relationType;
     }
@@ -517,10 +514,7 @@ class GetOrganization extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -706,10 +700,7 @@ class GetOrganization extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return Industry
-     */
-    public function getIndustry(): Industry
+    public function getIndustry(): ?Industry
     {
         return $this->industry;
     }
@@ -727,10 +718,7 @@ class GetOrganization extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getInvoiceReceiver(): string
+    public function getInvoiceReceiver(): ?string
     {
         return $this->invoiceReceiver;
     }
@@ -748,10 +736,7 @@ class GetOrganization extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowAutocollect(): bool
+    public function getAllowAutocollect(): ?bool
     {
         return $this->allowAutocollect;
     }
@@ -769,10 +754,7 @@ class GetOrganization extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getBankAccount(): string
+    public function getBankAccount(): ?string
     {
         return $this->bankAccount;
     }
@@ -790,10 +772,7 @@ class GetOrganization extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getBankBic(): string
+    public function getBankBic(): ?string
     {
         return $this->bankBic;
     }
@@ -811,10 +790,7 @@ class GetOrganization extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getRelationNumber(): string
+    public function getRelationNumber(): ?string
     {
         return $this->relationNumber;
     }
