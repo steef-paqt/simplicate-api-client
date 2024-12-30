@@ -7,7 +7,9 @@ namespace Paqtcom\Simplicate\Normalizer;
 use ArrayObject;
 use Jane\Component\JsonSchemaRuntime\Reference;
 use Paqtcom\Simplicate\Model\Avatar;
+use Paqtcom\Simplicate\Model\CivilStatus;
 use Paqtcom\Simplicate\Model\Employee;
+use Paqtcom\Simplicate\Model\EmployeeType;
 use Paqtcom\Simplicate\Runtime\Normalizer\CheckArray;
 use Paqtcom\Simplicate\Runtime\Normalizer\ValidatorTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -71,14 +73,14 @@ class EmployeeNormalizer implements DenormalizerInterface, NormalizerInterface, 
         if (array_key_exists('function', $data)) {
             $object->setFunction($data['function']);
         }
-        if (array_key_exists('type', $data)) {
-            $object->setType($data['type']);
+        if (array_key_exists('type', $data) && is_array($data['type'])) {
+            $object->setType($this->denormalizer->denormalize($data['type'], EmployeeType::class, 'json', $context));
         }
         if (array_key_exists('employment_status', $data)) {
             $object->setEmploymentStatus($data['employment_status']);
         }
         if (array_key_exists('civil_status', $data)) {
-            $object->setCivilStatus($data['civil_status']);
+            $object->setCivilStatus($this->denormalizer->denormalize($data['civil_status'], CivilStatus::class, 'json', $context));
         }
         if (array_key_exists('work_phone', $data)) {
             $object->setWorkPhone($data['work_phone']);

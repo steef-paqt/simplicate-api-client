@@ -27,7 +27,7 @@ class Employee extends AbstractModel
      */
     protected $function;
     /**
-     * @var mixed
+     * @var ?EmployeeType
      */
     protected $type;
     /**
@@ -35,7 +35,7 @@ class Employee extends AbstractModel
      */
     protected $employmentStatus;
     /**
-     * @var string
+     * @var ?CivilStatus
      */
     protected $civilStatus;
     /**
@@ -180,20 +180,12 @@ class Employee extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getType()
+    public function getType(): ?EmployeeType
     {
         return $this->type;
     }
 
-    /**
-     * @param mixed $type
-     *
-     * @return self
-     */
-    public function setType($type): self
+    public function setType(EmployeeType $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -222,20 +214,17 @@ class Employee extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCivilStatus(): string
+    public function getCivilStatus(): ?CivilStatus
     {
         return $this->civilStatus;
     }
 
     /**
-     * @param string $civilStatus
+     * @param CivilStatus $civilStatus
      *
      * @return self
      */
-    public function setCivilStatus(string $civilStatus): self
+    public function setCivilStatus(CivilStatus $civilStatus): self
     {
         $this->initialized['civilStatus'] = true;
         $this->civilStatus = $civilStatus;
