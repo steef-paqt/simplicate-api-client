@@ -23,7 +23,7 @@ class Employee extends AbstractModel
      */
     protected $bankAccount;
     /**
-     * @var string
+     * @var ?string
      */
     protected $function;
     /**
@@ -159,10 +159,7 @@ class Employee extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFunction(): string
+    public function getFunction(): ?string
     {
         return $this->function;
     }
