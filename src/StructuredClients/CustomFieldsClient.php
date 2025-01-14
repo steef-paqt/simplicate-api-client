@@ -63,9 +63,9 @@ class CustomFieldsClient extends AbstractStructuredClient
         return $this->client->getCustomfieldsOptionById($id, $queryParameters->toArray());
     }
 
-    public function postOption(Model\CustomFieldOption $body): Model\RestPostResult|ResponseInterface|null
+    public function postOption(string $id, Model\CustomFieldOption $body): Model\RestPostResult|ResponseInterface|null
     {
-        return $this->client->postCustomfieldsOptionById($body);
+        return $this->client->postCustomfieldsOptionById($id, $body);
     }
 
     public function putOption(string $id, Model\CustomFieldOption $body): Model\RestPutResult|ResponseInterface|null

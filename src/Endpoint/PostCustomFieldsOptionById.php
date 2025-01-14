@@ -20,9 +20,10 @@ class PostCustomFieldsOptionById extends BaseEndpoint
     use EndpointTrait;
 
     /**
+     * @param string $id The custom field id
      * @param CustomFieldOption $body CustomFieldOption object containing data
      */
-    public function __construct(CustomFieldOption $body)
+    public function __construct(protected string $id, CustomFieldOption $body)
     {
         $this->body = $body;
     }
@@ -34,7 +35,7 @@ class PostCustomFieldsOptionById extends BaseEndpoint
 
     public function getUri(): string
     {
-        return '/customfields/option/{id}';
+        return str_replace(['{id}'], [$this->id], '/customfields/option/{id}');
     }
 
     public function getBody(SerializerInterface $serializer, $streamFactory = null): array
