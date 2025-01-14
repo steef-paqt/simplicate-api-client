@@ -771,20 +771,15 @@ class Client extends ParentClient
     }
 
     /**
-     * @param array $queryParameters {
-     *     @var int $offset The offset to search from
-     *     @var int $limit The limit of max allowed results
-     *     @var string $sort Sort the result by column name
-     * }
      * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsGroupByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsGroupByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsGroupByIdInternalServerErrorException
      *
      * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldGroup|\Psr\Http\Message\ResponseInterface
      */
-    public function getCustomFieldsGroupById(array $queryParameters = [])
+    public function getCustomFieldsGroupById(string $id)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomFieldsGroupById($queryParameters));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomFieldsGroupById($id));
     }
 
     /**
@@ -835,20 +830,15 @@ class Client extends ParentClient
     }
 
     /**
-     * @param array $queryParameters {
-     *     @var int $offset The offset to search from
-     *     @var int $limit The limit of max allowed results
-     *     @var string $sort Sort the result by column name
-     * }
      * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsModelByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsModelByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsModelByIdInternalServerErrorException
      *
      * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldModel|\Psr\Http\Message\ResponseInterface
      */
-    public function getCustomFieldsModelById(array $queryParameters = [])
+    public function getCustomFieldsModelById(string $id)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomFieldsModelById($queryParameters));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomFieldsModelById($id));
     }
 
     /**
@@ -946,20 +936,15 @@ class Client extends ParentClient
     }
 
     /**
-     * @param array $queryParameters {
-     *     @var int $offset The offset to search from
-     *     @var int $limit The limit of max allowed results
-     *     @var string $sort Sort the result by column name
-     * }
      * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeByIdUnauthorizedException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeByIdNotFoundException
      * @throws \Paqtcom\Simplicate\Exception\GetCustomFieldsTypeByIdInternalServerErrorException
      *
      * @return null|\Paqtcom\Simplicate\Model\RestResultCustomFieldType|\Psr\Http\Message\ResponseInterface
      */
-    public function getCustomFieldsTypeById(array $queryParameters = [])
+    public function getCustomFieldsTypeById(string $id)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomFieldsTypeById($queryParameters));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\GetCustomFieldsTypeById($id));
     }
 
     /**

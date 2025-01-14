@@ -66,16 +66,16 @@ class CustomFieldNormalizer implements DenormalizerInterface, NormalizerInterfac
             $object->setRenderType($data['render_type']);
         }
         if (array_key_exists('position', $data)) {
-            $object->setPosition($data['position']);
+            $object->setPosition((int) $data['position']);
         }
         if (array_key_exists('filterable', $data)) {
-            $object->setFilterable($data['filterable']);
+            $object->setFilterable((bool) $data['filterable']);
         }
         if (array_key_exists('searchable', $data)) {
-            $object->setSearchable($data['searchable']);
+            $object->setSearchable((bool) $data['searchable']);
         }
         if (array_key_exists('mandatory', $data)) {
-            $object->setMandatory($data['mandatory']);
+            $object->setMandatory((bool) $data['mandatory']);
         }
         if (array_key_exists('value_type', $data)) {
             $object->setValueType($data['value_type']);

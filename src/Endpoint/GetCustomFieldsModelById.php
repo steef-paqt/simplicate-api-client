@@ -19,15 +19,10 @@ class GetCustomFieldsModelById extends BaseEndpoint
     use EndpointTrait;
 
     /**
-     * @param array $queryParameters {
-     *     @var int $offset The offset to search from
-     *     @var int $limit The limit of max allowed results
-     *     @var string $sort Sort the result by column name
-     * }
+     * @param string $id The model's id
      */
-    public function __construct(array $queryParameters = [])
+    public function __construct(protected string $id)
     {
-        $this->queryParameters = $queryParameters;
     }
 
     public function getMethod(): string
@@ -37,7 +32,7 @@ class GetCustomFieldsModelById extends BaseEndpoint
 
     public function getUri(): string
     {
-        return '/customfields/model/{id}';
+        return str_replace(['{id}'], [$this->id], '/customfields/model/{id}');
     }
 
     public function getBody(SerializerInterface $serializer, $streamFactory = null): array

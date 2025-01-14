@@ -58,7 +58,7 @@ class CustomFieldOptionNormalizer implements DenormalizerInterface, NormalizerIn
             $object->setValue($data['value']);
         }
         if (array_key_exists('position', $data)) {
-            $object->setPosition($data['position']);
+            $object->setPosition((int) $data['position']);
         }
 
         return $object;

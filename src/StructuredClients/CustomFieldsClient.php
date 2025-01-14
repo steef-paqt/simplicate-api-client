@@ -23,9 +23,9 @@ class CustomFieldsClient extends AbstractStructuredClient
         return $this->client->deleteCustomfieldsGroupById($id);
     }
 
-    public function getGroup(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldGroup|ResponseInterface|null
+    public function getGroup(string $id): Model\RestResultCustomFieldGroup|ResponseInterface|null
     {
-        return $this->client->getCustomfieldsGroupById($queryParameters->toArray());
+        return $this->client->getCustomfieldsGroupById($id);
     }
 
     public function postGroup(string $id, Model\CustomFieldGroup $body): Model\RestPostResult|ResponseInterface|null
@@ -43,9 +43,9 @@ class CustomFieldsClient extends AbstractStructuredClient
         return $this->client->getCustomfieldsModel($queryParameters->toArray());
     }
 
-    public function getModel(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldModel|ResponseInterface|null
+    public function getModel(string $id): Model\RestResultCustomFieldModel|ResponseInterface|null
     {
-        return $this->client->getCustomfieldsModelById($queryParameters->toArray());
+        return $this->client->getCustomfieldsModelById($id);
     }
 
     public function getOptions(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldOptions|ResponseInterface|null
@@ -78,8 +78,8 @@ class CustomFieldsClient extends AbstractStructuredClient
         return $this->client->getCustomfieldsType($queryParameters->toArray());
     }
 
-    public function getType(QueryBuilder $queryParameters = new QueryBuilder()): Model\RestResultCustomFieldType|ResponseInterface|null
+    public function getType(string $id): Model\RestResultCustomFieldType|ResponseInterface|null
     {
-        return $this->client->getCustomfieldsTypeById($queryParameters->toArray());
+        return $this->client->getCustomfieldsTypeById($id);
     }
 }

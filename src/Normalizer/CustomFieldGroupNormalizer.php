@@ -56,7 +56,7 @@ class CustomFieldGroupNormalizer implements DenormalizerInterface, NormalizerInt
             $object->setName($data['name']);
         }
         if (array_key_exists('position', $data)) {
-            $object->setPosition($data['position']);
+            $object->setPosition((string) $data['position']);
         }
         if (array_key_exists('model', $data)) {
             $object->setModel($this->denormalizer->denormalize($data['model'], CustomFieldModel::class, 'json', $context));

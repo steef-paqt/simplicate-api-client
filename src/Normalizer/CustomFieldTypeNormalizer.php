@@ -58,19 +58,19 @@ class CustomFieldTypeNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setName($data['name']);
         }
         if (array_key_exists('position', $data)) {
-            $object->setPosition($data['position']);
+            $object->setPosition((int) $data['position']);
         }
         if (array_key_exists('is_mandatory_configurable', $data)) {
-            $object->setIsMandatoryConfigurable($data['is_mandatory_configurable']);
+            $object->setIsMandatoryConfigurable((bool) $data['is_mandatory_configurable']);
         }
         if (array_key_exists('is_searchable_configurable', $data)) {
-            $object->setIsSearchableConfigurable($data['is_searchable_configurable']);
+            $object->setIsSearchableConfigurable((bool) $data['is_searchable_configurable']);
         }
         if (array_key_exists('is_filterable_configurable', $data)) {
-            $object->setIsFilterableConfigurable($data['is_filterable_configurable']);
+            $object->setIsFilterableConfigurable((bool) $data['is_filterable_configurable']);
         }
         if (array_key_exists('is_collective_mutatable_configurable', $data)) {
-            $object->setIsCollectiveMutatableConfigurable($data['is_collective_mutatable_configurable']);
+            $object->setIsCollectiveMutatableConfigurable((bool) $data['is_collective_mutatable_configurable']);
         }
 
         return $object;
