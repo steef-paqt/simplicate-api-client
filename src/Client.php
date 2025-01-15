@@ -898,9 +898,9 @@ class Client extends ParentClient
      *
      * @return null|\Psr\Http\Message\ResponseInterface
      */
-    public function postCustomFieldsOptionById(\Paqtcom\Simplicate\Model\CustomFieldOption $body)
+    public function postCustomFieldsOptionById(string $id, \Paqtcom\Simplicate\Model\CustomFieldOption $body)
     {
-        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCustomFieldsOptionById($body));
+        return $this->executeEndpoint(new \Paqtcom\Simplicate\Endpoint\PostCustomFieldsOptionById($id, $body));
     }
 
     /**
