@@ -130,6 +130,10 @@ class GetProjectService extends AbstractModel
      * @var bool
      */
     protected $trackCost;
+    /**
+     * @var ?int
+     */
+    protected $elapsedCycles;
 
     /**
      * @return string
@@ -775,6 +779,19 @@ class GetProjectService extends AbstractModel
     {
         $this->initialized['trackCost'] = true;
         $this->trackCost = $trackCost;
+
+        return $this;
+    }
+
+    public function getElapsedCycles(): ?int
+    {
+        return $this->elapsedCycles;
+    }
+
+    public function setElapsedCycles(int $elapsedCycle): self
+    {
+        $this->initialized['elapsedCycles'] = true;
+        $this->elapsedCycles = $elapsedCycle;
 
         return $this;
     }
