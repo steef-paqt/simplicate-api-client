@@ -79,11 +79,11 @@ class GetPerson extends AbstractModel
      */
     protected $initials;
     /**
-     * @var string
+     * @var ?string
      */
     protected $firstName;
     /**
-     * @var string
+     * @var ?string
      */
     protected $familyNamePrefix;
     /**
@@ -529,10 +529,7 @@ class GetPerson extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFirstName(): string
+    public function getFirstName(): ?string
     {
         return $this->firstName;
     }
@@ -550,10 +547,7 @@ class GetPerson extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFamilyNamePrefix(): string
+    public function getFamilyNamePrefix(): ?string
     {
         return $this->familyNamePrefix;
     }
