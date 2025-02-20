@@ -172,7 +172,7 @@ class GetProjectServiceNormalizer implements DenormalizerInterface, NormalizerIn
             $object->setTrackCost((bool) $data['track_cost']);
         }
         if (array_key_exists('elapsed_cycles', $data)) {
-            $object->setElapsedCycles((float) $data['elapsed_cycles']);
+            $object->setElapsedCycles((int) $data['elapsed_cycles']);
         }
 
         return $object;
