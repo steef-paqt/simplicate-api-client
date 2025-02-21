@@ -27,7 +27,7 @@ class GetInvoiceLine extends AbstractModel
      */
     protected $totalVat;
     /**
-     * @var string
+     * @var ?string
      */
     protected $serviceId;
     /**
@@ -161,9 +161,9 @@ class GetInvoiceLine extends AbstractModel
     }
 
     /**
-     * @return string
+     * @return ?string
      */
-    public function getServiceId(): string
+    public function getServiceId(): ?string
     {
         return $this->serviceId;
     }
