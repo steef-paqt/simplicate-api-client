@@ -111,7 +111,7 @@ class GetProject extends AbstractModel
      */
     protected $personId;
     /**
-     * @var string
+     * @var ?string
      */
     protected $organizationId;
     /**
@@ -697,10 +697,7 @@ class GetProject extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOrganizationId(): string
+    public function getOrganizationId(): ?string
     {
         return $this->organizationId;
     }
