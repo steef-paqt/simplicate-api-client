@@ -531,10 +531,7 @@ class GetProjectService extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStartDate(): string
+    public function getStartDate(): ?string
     {
         return $this->startDate;
     }
@@ -552,10 +549,7 @@ class GetProjectService extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getEndDate(): string
+    public function getEndDate(): ?string
     {
         return $this->endDate;
     }
@@ -573,10 +567,7 @@ class GetProjectService extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getSubscriptionCycle(): string
+    public function getSubscriptionCycle(): ?string
     {
         return $this->subscriptionCycle;
     }
@@ -657,10 +648,7 @@ class GetProjectService extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getExplanation(): string
+    public function getExplanation(): ?string
     {
         return $this->explanation;
     }
