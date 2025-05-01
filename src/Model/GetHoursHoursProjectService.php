@@ -9,7 +9,7 @@ class GetHoursHoursProjectService extends AbstractModel
     /**
      * @var string
      */
-    protected $id = 'service:abc123';
+    protected $id = '';
     /**
      * @var string
      */
@@ -19,21 +19,21 @@ class GetHoursHoursProjectService extends AbstractModel
      *
      * @var string
      */
-    protected $startDate = '2020-01-01';
+    protected $startDate = '';
     /**
      * Y-m-d, eg. 2020-01-01
      *
      * @var string
      */
-    protected $untilDate = '2020-01-01';
+    protected $untilDate = '';
     /**
      * @var string
      */
-    protected $defaultServiceId = 'defaultservice:abc123';
+    protected $defaultServiceId = '';
     /**
      * @var string
      */
-    protected $revenueGroupId = 'revenuegroup:abc123';
+    protected $revenueGroupId = '';
 
     /**
      * @return string
