@@ -33,7 +33,7 @@ class HoursType extends AbstractModel
     /**
      * @var VatClass
      */
-    protected $vatclass;
+    protected $vatClass;
 
     /**
      * @return string
