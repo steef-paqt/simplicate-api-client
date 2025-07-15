@@ -119,7 +119,7 @@ class GetProjectService extends AbstractModel
      */
     protected $amount;
     /**
-     * @var float
+     * @var ?float
      */
     protected $price;
     /**
@@ -711,7 +711,7 @@ class GetProjectService extends AbstractModel
     /**
      * @return float
      */
-    public function getPrice(): float
+    public function getPrice(): ?float
     {
         return $this->price;
     }
