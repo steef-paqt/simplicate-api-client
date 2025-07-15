@@ -15,7 +15,7 @@ class GetInvoice extends AbstractModel
      */
     protected $contactId;
     /**
-     * @var PaymentTerm
+     * @var ?PaymentTerm
      */
     protected $paymentTerm;
     /**
@@ -170,9 +170,9 @@ class GetInvoice extends AbstractModel
     }
 
     /**
-     * @return PaymentTerm
+     * @return ?PaymentTerm
      */
-    public function getPaymentTerm(): PaymentTerm
+    public function getPaymentTerm(): ?PaymentTerm
     {
         return $this->paymentTerm;
     }
